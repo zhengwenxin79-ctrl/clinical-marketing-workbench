@@ -55,6 +55,11 @@ window.SalesCollaboration=(()=>{
      </div>
    </div>
 
+   <div class="sales-detail-block" style="background:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #0f243e;padding:14px 18px;border-radius:7px;margin-bottom:16px;">
+     <h3 style="display:flex;align-items:center;gap:6px;color:#0f243e;margin-top:0;"><span>👨‍⚕️</span> 目标 PI 履历画像与客情档案</h3>
+     ${r.expert_keys.length?r.expert_keys.map(k=>{const p=E.get(k);return p?window.PIRecommendations.profile({D,p,c:window.PIRecommendations.build(D).find(c=>c.person.key===k),esc,link,hash,compact:true,isFavorite:(S.favorites||[]).some(f=>f.actor_id===(role==='sales'?salesId:role)&&f.person_key===k)}):'';}).join(''):'<p class="muted">未绑定特定人物，可与该科室科研副主任或青年PI开展接洽。</p>'}
+   </div>
+
    <div class="sales-detail-block" style="background:#f0fdf4;border:1px solid #bbf7d0;border-left:4px solid #16a34a;padding:14px 18px;border-radius:7px;margin-bottom:16px;">
      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
        <h3 style="color:#166534;margin:0;font-size:15px;display:flex;align-items:center;gap:6px;">
@@ -82,11 +87,6 @@ window.SalesCollaboration=(()=>{
      <p style="font-size:14px;color:#1e293b;margin:4px 0 8px;"><strong>参与环节：</strong>${esc(r.participation||'结合吉因加多组学整合算法与标志物筛选方案，讨论队列入组与生信建模')}</p>
      <p style="font-size:13px;color:#64748b;margin:0 0 10px;"><strong>进院交流前提与待核实条件：</strong>${esc(r.conditions||'需先确认随访终点、已有标本类型与独立验证队列规划')}</p>
      ${capabilities(r)}
-   </div>
-
-   <div class="sales-detail-block">
-     <h3 style="display:flex;align-items:center;gap:6px;"><span>👨‍⚕️</span> 目标 PI 履历画像与客情档案</h3>
-     ${r.expert_keys.length?r.expert_keys.map(k=>{const p=E.get(k);return p?window.PIRecommendations.profile({D,p,c:window.PIRecommendations.build(D).find(c=>c.person.key===k),esc,link,hash,compact:true,isFavorite:(S.favorites||[]).some(f=>f.actor_id===(role==='sales'?salesId:role)&&f.person_key===k)}):'';}).join(''):'<p class="muted">未绑定特定人物，可与该科室科研副主任或青年PI开展接洽。</p>'}
    </div>
 
    <div class="sales-detail-block">
