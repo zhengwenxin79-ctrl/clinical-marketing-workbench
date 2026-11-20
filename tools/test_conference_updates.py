@@ -40,8 +40,9 @@ def http_json(method, url, data=None, token=None):
         return e.code, json.loads(e.read().decode("utf-8"))
 
 def run_tests():
+    manage_conference_updates.UPDATES_DB_PATH = UPDATES_DB
     print("=== [Conference Updates Test 1] Schema Initialization & Table Verification ===")
-    conn = manage_conference_updates.get_db()
+    conn = manage_conference_updates.get_db(UPDATES_DB)
     c = conn.cursor()
     
     # Check tables
@@ -50,6 +51,11 @@ def run_tests():
     assert "conference_review_queue" in tables, "Missing conference_review_queue table"
     assert "weekly_update_events" in tables, "Missing weekly_update_events table"
     print("  -> Passed: 3 core tables verified in conference_updates.db.")
+
+    # Backup existing database content before running tests
+    bak_staging = c.execute("SELECT * FROM raw_conference_staging").fetchall()
+    bak_queue = c.execute("SELECT * FROM conference_review_queue").fetchall()
+    bak_events = c.execute("SELECT * FROM weekly_update_events").fetchall()
 
     # Clean test data from review queue and staging for deterministic test run
     c.execute("DELETE FROM raw_conference_staging")
