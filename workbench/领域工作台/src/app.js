@@ -16,7 +16,8 @@ function measures(t,s){const conf=conference(t.report_ids,s);if(t.origin==='pape
 function showDialog(title,body){$('detail-title').textContent=title;$('detail-body').innerHTML=body;if(!$('detail').open)$('detail').showModal();}
 function knownExperts(keys){return keys.map(k=>E.get(k)).filter(x=>x&&x.tier_code!=='undetermined');}
 function topicDetail(id,s){const t=T.get(id);if(!t)return;const m=measures(t,s),leaders=knownExperts(t.expert_keys),speakerCount=t.expert_keys.filter(k=>E.get(k)?.source_kind==='conference').length;
- const reports=m.conference.reports.slice(0,18),papers=m.papers;showDialog(t.name,`<div class="sales-topic-action"><a href="${hash('sales',{role:'market',sales_tab:'recommend',mode:'edit',topic:id})}">整理为销售推荐</a><span>使用当前议题的已有资料准备交流</span></div><div class="detail-counts"><a data-count-link="conference" href="${hash('conferences',{topic:id,format:s.format,region:s.region,sort:s.sort})}" title="查看当前议题的全部匹配会议报告">会议报告 ${m.conference.reports.length}条 <small aria-hidden="true">→</small></a><a data-count-link="papers" href="${hash('papers',{topic:id,format:s.format,region:s.region,sort:s.sort})}" title="查看当前议题的主池论文">主池论文 ${papers.length}篇 <small aria-hidden="true">→</small></a>${m.markers.length?`<button type="button" data-jump-markers>指标方向 ${m.markers.length}项 <small aria-hidden="true">↓</small></button>`:'<span class="count-disabled" aria-disabled="true" title="当前议题暂无关联指标">指标方向 0项</span>'}<a href="${hash('conferences')}" style="margin-left:auto;color:#1e40af;font-weight:600;display:inline-flex;align-items:center;gap:4px;" title="查看最新会议动态">📅 回到最新会议动态 →</a></div><div class="evidence-grid"><div><h3>会议动向</h3>${reports.length?reports.map(r=>`<article class="source-row"><div class="meta">${esc(r.conference_id)} · ${esc(r.report_format)} · ${esc(r.code)}</div><h3>${link(r.detail_url,r.title)}</h3><p class="meta">${r.speaker_keys.map(k=>esc(E.get(k)?.display_name||'')).join('、')||'讲者待核'}</p></article>`).join(''):empty(t.origin==='paper_directory_extension'?'论文补充议题，会议对应尚未建立。':'当前报告形式范围内没有归入本议题的报告。')}<h3 class="section">论文进展</h3>${papers.length?papers.map(p=>`<article class="source-row"><div class="meta">${esc(p.journal)} · ${esc(p.publication_date)}</div><h3>${link(p.detail_url,p.title)}</h3><p>${esc(p.finding||'具体结果待整理')}</p></article>`).join(''):empty('主池尚无已对应论文，不能据此判断领域没有研究。')}<h3 class="section" id="topic-biomarkers" tabindex="-1">Biomarker线索</h3>${m.markers.length?`<div class="links">${m.markers.map(b=>link(b.detail_url,b.name)).join('')}</div>`:empty('当前证据尚未关联指标；可在Biomarker视图继续按用途查看。')}<h3 class="section">吉因加参与环节</h3><p class="reading-note">按具体指标的样本、用途和检测方法查看已整理的参与候选；不从整个研究议题直接推定检测产品。</p><div class="links">${link('../标志物视图/index.html#translation','查看指标用途与能力适配候选')}</div><details><summary>原始对应与分类依据</summary><p>${esc(t.boundary)}</p>${D.taxonomy.mappings.filter(x=>x.topic_id===id).map(x=>`<p>${esc(x.source_kind)}：${esc(x.source_id)} · ${esc(x.basis)}</p>`).join('')}<p>会议与论文数量分列，不相加为独立研究数。当前主池160篇，另有${t.supporting_paper_ids.length}篇已有背景/补充来源。</p><p>口头/海报切换只改变会议数量；论文使用原论文窗口与纳入规则。</p></details></div><aside class="aside"><h3>相关专家与团队</h3><p class="reading-note">学术角色与论文署名分别记录。</p>${leaders.slice(0,10).map(p=>`<div class="person-mini"><a href="${hash('experts',{person:p.key})}"><b>${esc(p.display_name)}</b></a><small>${esc(p.institution_source)}</small>${tag(p.tier_label)}<small>${esc(p.source_label)} · ${p.source_kind==='paper'?'署名参与，PI待核':'讲者身份'}</small></div>`).join('')||empty('当前相关人物的角色仍待核。')}<div class="links"><a href="${hash('experts',{topic:id,tier:'all'})}">查看全部相关人物 →</a></div><p class="reading-note">${speakerCount}条讲者来源身份；跨来源同名不自动合并。角色不参与热点计分。</p></aside></div>`);const jump=$('detail-body').querySelector('[data-jump-markers]');if(jump)jump.onclick=()=>{const target=$('topic-biomarkers');target.scrollIntoView({block:'start',behavior:'smooth'});target.focus({preventScroll:true});};}
+ const u=getUser();
+ const reports=m.conference.reports.slice(0,18),papers=m.papers;showDialog(t.name,`${u.role==='market'?`<div class="sales-topic-action"><a href="${hash('sales',{role:'market',sales_tab:'recommend',mode:'edit',topic:id})}">整理为销售推荐</a><span>使用当前议题的已有资料准备交流</span></div>`:''}<div class="detail-counts"><a data-count-link="conference" href="${hash('conferences',{topic:id,format:s.format,region:s.region,sort:s.sort})}" title="查看当前议题的全部匹配会议报告">会议报告 ${m.conference.reports.length}条 <small aria-hidden="true">→</small></a><a data-count-link="papers" href="${hash('papers',{topic:id,format:s.format,region:s.region,sort:s.sort})}" title="查看当前议题的主池论文">主池论文 ${papers.length}篇 <small aria-hidden="true">→</small></a>${m.markers.length?`<button type="button" data-jump-markers>指标方向 ${m.markers.length}项 <small aria-hidden="true">↓</small></button>`:'<span class="count-disabled" aria-disabled="true" title="当前议题暂无关联指标">指标方向 0项</span>'}<a href="${hash('conferences')}" style="margin-left:auto;color:#1e40af;font-weight:600;display:inline-flex;align-items:center;gap:4px;" title="查看最新会议动态">📅 回到最新会议动态 →</a></div><div class="evidence-grid"><div><h3>会议动向</h3>${reports.length?reports.map(r=>`<article class="source-row"><div class="meta">${esc(r.conference_id)} · ${esc(r.report_format)} · ${esc(r.code)}</div><h3>${link(r.detail_url,r.title)}</h3><p class="meta">${r.speaker_keys.map(k=>esc(E.get(k)?.display_name||'')).join('、')||'讲者待核'}</p></article>`).join(''):empty(t.origin==='paper_directory_extension'?'论文补充议题，会议对应尚未建立。':'当前报告形式范围内没有归入本议题的报告。')}<h3 class="section">论文进展</h3>${papers.length?papers.map(p=>`<article class="source-row"><div class="meta">${esc(p.journal)} · ${esc(p.publication_date)}</div><h3>${link(p.detail_url,p.title)}</h3><p>${esc(p.finding||'具体结果待整理')}</p></article>`).join(''):empty('主池尚无已对应论文，不能据此判断领域没有研究。')}<h3 class="section" id="topic-biomarkers" tabindex="-1">Biomarker线索</h3>${m.markers.length?`<div class="links">${m.markers.map(b=>link(b.detail_url,b.name)).join('')}</div>`:empty('当前证据尚未关联指标；可在Biomarker视图继续按用途查看。')}<h3 class="section">吉因加参与环节</h3><p class="reading-note">按具体指标的样本、用途和检测方法查看已整理的参与候选；不从整个研究议题直接推定检测产品。</p><div class="links">${link('../标志物视图/index.html#translation','查看指标用途与能力适配候选')}</div><details><summary>原始对应与分类依据</summary><p>${esc(t.boundary)}</p>${D.taxonomy.mappings.filter(x=>x.topic_id===id).map(x=>`<p>${esc(x.source_kind)}：${esc(x.source_id)} · ${esc(x.basis)}</p>`).join('')}<p>会议与论文数量分列，不相加为独立研究数。当前主池160篇，另有${t.supporting_paper_ids.length}篇已有背景/补充来源。</p><p>口头/海报切换只改变会议数量；论文使用原论文窗口与纳入规则。</p></details></div><aside class="aside"><h3>相关专家与团队</h3><p class="reading-note">学术角色与论文署名分别记录。</p>${leaders.slice(0,10).map(p=>`<div class="person-mini"><a href="${hash('experts',{person:p.key})}"><b>${esc(p.display_name)}</b></a><small>${esc(p.institution_source)}</small>${tag(p.tier_label)}<small>${esc(p.source_label)} · ${p.source_kind==='paper'?'署名参与，PI待核':'讲者身份'}</small></div>`).join('')||empty('当前相关人物的角色仍待核。')}<div class="links"><a href="${hash('experts',{topic:id,tier:'all'})}">查看全部相关人物 →</a></div><p class="reading-note">${speakerCount}条讲者来源身份；跨来源同名不自动合并。角色不参与热点计分。</p></aside></div>`);const jump=$('detail-body').querySelector('[data-jump-markers]');if(jump)jump.onclick=()=>{const target=$('topic-biomarkers');target.scrollIntoView({block:'start',behavior:'smooth'});target.focus({preventScroll:true});};}
 function peopleCard(p){return `<article class="card" data-person="${esc(p.key)}"><h3><a href="${hash('experts',{person:p.key})}">${esc(p.display_name)}</a></h3><p class="institution">${esc(p.institution_source)}</p>${tag(p.tier_label,p.tier_code==='undetermined')}${tag(p.source_kind==='paper'?(p.identity_status==='name_and_institution_checked'?'已核署名参与':'作者身份待核'):'会议讲者',p.source_kind==='paper'&&p.identity_status!=='name_and_institution_checked')}<p>${esc(p.role_scope)}</p><p class="muted">${p.report_ids.length}条讲题 · ${p.paper_ids.length}篇关联论文</p><div class="links"><a href="${hash('experts',{person:p.key})}">研究方向与原始依据 →</a></div></article>`;}
 function expertDetail(key){const p=E.get(key);if(!p)return;showDialog(p.display_name,`${tag(p.tier_label,p.tier_code==='undetermined')}${tag(p.source_label)}<p>${esc(p.institution_source)}</p><h3 class="section">学术角色与身份依据</h3><p>${esc(p.role_basis)}</p><p>${esc(p.role_scope)}</p><p class="reading-note">${esc(p.tenure_status)}；${esc(p.pi_status)}</p><div class="links">${link(p.detail_url,'来源人物记录')}${p.source_url?link(p.source_url,'原始身份依据',true):''}</div><h3 class="section">正在讨论的讲题</h3>${p.report_ids.slice(0,30).map(id=>{const r=R.get(id);return `<div class="source-row"><h3>${link(r.detail_url,r.title)}</h3><div class="meta">${esc(r.conference_id)} · ${esc(r.code)} · ${esc(r.date)}</div></div>`;}).join('')||empty('当前来源身份未关联会议报告。')}<h3 class="section">关联论文</h3>${p.paper_ids.map(id=>{const x=P.get(id);return `<div class="source-row"><h3>${link(x.detail_url,x.title)}</h3><p class="meta">${esc(x.journal)} · ${esc(x.publication_date)} · ${esc(p.pi_status)}</p></div>`;}).join('')||empty('当前来源身份尚未建立明确论文关联。')}<h3 class="section">相关研究议题</h3><div class="links">${p.topic_ids.map(id=>`<a href="${hash('topics',{detail:id,board:T.get(id).board_id})}">${esc(T.get(id).name)}</a>`).join('')}</div><details><summary>身份与资料缺口</summary><p>${esc(p.evidence_gaps||'角色领域及当前任期仍按原来源记录。')}</p><p>按来源身份保存；不会因为名字相同就把会议讲者、论文作者合成同一位PI。</p></details>`);}
 function topicsView(s){const boardRows=D.boards.map(b=>{const ts=b.topic_ids.map(id=>measures(T.get(id),s)),ids=unique(ts.flatMap(t=>t.report_ids)),m=conference(ids,s);return {...b,meeting:m,pc:ts.reduce((n,t)=>n+t.paper_ids.length,0)};}).sort((a,b)=>s.sort==='papers'?b.pc-a.pc||(b.meeting.share||0)-(a.meeting.share||0):(b.meeting.share||0)-(a.meeting.share||0)||b.pc-a.pc);
@@ -38,8 +39,69 @@ function expertsView(s){const levels=['international','national','regional','und
  V.innerHTML=`<section class="panel"><div class="toolbar"><label>学术角色<select id="expert-tier">${options([['known','已有角色依据'],['all','全部角色含待定'],['international','国际'],['national','全国'],['regional','区域 / 专科'],['undetermined','待定']],s.tier)}</select></label><label>人物来源<select id="expert-source">${options([['all','全部来源身份'],['conference','会议讲者'],['paper','论文参与线索']],s.source)}</select></label><span class="toolbar-note">${rows.length}条匹配来源身份；跨来源未自动合并，不当作全领域PI人数。</span></div>${s.topic?`<p>当前议题：${esc(T.get(s.topic)?.name||s.topic)} <a href="${hash('experts')}">清除议题筛选</a></p>`:''}<p class="reading-note">学术带头人角色、论文署名和课题PI分别记录。角色不参与热点加分；待定表示缺证，不表示学术水平低。</p></section><div class="grid">${rows.slice((page-1)*15,page*15).map(peopleCard).join('')||empty('没有匹配人物。可切换全部角色或调整关键词。')}</div><div class="pager"><button id="prev" ${page===1?'disabled':''}>上一页</button><span>${page} / ${pages}</span><button id="next" ${page===pages?'disabled':''}>下一页</button></div>`;
  $('expert-tier').onchange=()=>update({tier:$('expert-tier').value,page:null});$('expert-source').onchange=()=>update({source:$('expert-source').value,page:null});$('prev').onclick=()=>update({page:page-1});$('next').onclick=()=>update({page:page+1});}
 function method(){showDialog('框架、分类与来源',`<pre class="architecture">研究领域 → 领域热点（研究议题 / Biomarker）\n资料入口 → 会议库 / 论文库\n人物关系 → 专家与团队，关联讲题和论文\n研究参与 → 从具体议题 / 指标用途查看公司能力候选</pre><h3 class="section">同一研究问题的两条证据线</h3><p>${esc(D.method.mapping)}</p><p>${esc(D.method.paper)}</p><p>会议关注沿用各会议同类已归类报告占比；国内与国际分别平均，平衡概览为两侧各50%。只用于会议这一栏，不与论文篇数或专家角色相加。</p><h3 class="section">信息与人物的关系</h3><p>${esc(D.method.people)}</p><p>Biomarker通过已有报告/论文证据关联主题，属于领域内部的研究对象；未取得准确分类的材料保留待归类。同名指标、同队列或同一研究关系须另外核实。</p><h3 class="section">采集与开发分工</h3><p>${esc(D.method.roles)}</p><p>当前只用CDS/ADA及已有论文、指标、身份记录；其它五领域只搭结构，不生成虚构内容。</p><div class="links"><a href="../框架配置/糖尿病统一议题映射.json">统一议题映射</a><a href="../框架配置/WorkBuddy资料入库约定.md">WorkBuddy资料交付约定</a><a href="使用说明.md">页面结构与运行方法</a></div>`);}
-function render(){if(window.SalesCollaboration&&!window.SalesCollaboration.canLeave()){history.replaceState(null,'',document.body.dataset.renderedHash||'#topics');$('domain').value=state().field;return;}const s=state(),domain=D.navigation.domains.find(x=>x.id===s.field),module=D.navigation.modules.find(x=>x.id===s.tab);$('domain').value=s.field;if(document.activeElement!==$('q'))$('q').value=s.search;
- $('primary-nav').innerHTML=D.navigation.modules.map(x=>`<a class="${x.id===s.tab?'active':''}" ${x.id===s.tab?'aria-current="page"':''} href="${hash(x.id)}">${esc(x.label)}</a>`).join('');$('eyebrow').textContent=domain.name+' / '+module.label;$('title').textContent=domain.name+module.label;$('subtitle').textContent=module.question;$('domain-tabs').innerHTML=`<a id="topic-tab" class="${s.tab==='topics'?'active':''}" href="${hash('topics')}">研究议题</a><a href="${hash('conferences')}" style="color:#2563eb;font-weight:600;">📅 回到最新会议动态</a><a href="../标志物视图/index.html">Biomarker</a>`;$('domain-tabs').hidden=s.tab!=='topics';
+function getUser(){
+  try{
+    const raw=localStorage.getItem('clinical-auth:current-user');
+    if(raw){const u=JSON.parse(raw);if(u&&u.role)return u;}
+  }catch(e){}
+  const h=location.hash;
+  if(h.includes('sales=')){
+    const m=h.match(/sales=([^&]+)/);
+    const sid=m?m[1]:'sales_a';
+    return {id:sid,name:sid==='sales_b'?'销售代表B (华南区)':'销售代表A (华东区)',role:'sales'};
+  }
+  if(h.startsWith('#sales')){
+    return {id:'sales_a',name:'销售代表A',role:'sales'};
+  }
+  return {id:'market_admin',name:'市场部专员',role:'market'};
+}
+function render(){
+  const user=getUser();
+  if(window.SalesCollaboration&&!window.SalesCollaboration.canLeave()){
+    history.replaceState(null,'',document.body.dataset.renderedHash||'#topics');
+    $('domain').value=state().field;
+    return;
+  }
+  let s=state();
+
+  // 严格角色隔离与重定向拦截
+  if(user.role==='sales'&&s.tab==='market'){
+    location.hash='#sales?sales='+user.id;
+    return;
+  }
+  if(user.role==='market'&&s.tab==='sales'){
+    location.hash='#market';
+    return;
+  }
+
+  const domain=D.navigation.domains.find(x=>x.id===s.field)||D.navigation.domains[0];
+  const module=D.navigation.modules.find(x=>x.id===s.tab)||D.navigation.modules[0];
+  $('domain').value=s.field;
+  if(document.activeElement!==$('q'))$('q').value=s.search;
+
+  // 根据当前角色严格过滤主导航：销售代表看不到市场工作台，市场人员看不到销售个人台
+  const visibleModules=D.navigation.modules.filter(m=>{
+    if(user.role==='sales')return m.id!=='market';
+    return m.id!=='sales';
+  });
+
+  let navHtml=visibleModules.map(x=>`<a class="${x.id===s.tab?'active':''}" ${x.id===s.tab?'aria-current="page"':''} href="${hash(x.id,user.role==='sales'?{sales:user.id}:{})}">${esc(x.label)}</a>`).join('');
+  if(user.role==='market'){
+    navHtml+=`<a href="会议审核入库.html" style="color:#d97706;font-weight:600;" title="市场部专属会议审核入库通道">🏛️ 会议审核入库</a>`;
+  }
+  $('primary-nav').innerHTML=navHtml;
+
+  // 顶部用户状态条渲染
+  const userBar=$('user-bar');
+  if(userBar){
+    if(user.role==='sales'){
+      userBar.innerHTML=`<span style="background:#1e3a8a;color:#93c5fd;border:1px solid #3b82f6;padding:4px 12px;border-radius:14px;font-size:12px;font-weight:600;">👤 ${esc(user.name)}</span><a href="../../登录工作台.html" style="color:#cbd5e1;font-size:12px;text-decoration:none;">[切换账号]</a>`;
+    }else{
+      userBar.innerHTML=`<span style="background:#064e3b;color:#6ee7b7;border:1px solid #10b981;padding:4px 12px;border-radius:14px;font-size:12px;font-weight:600;">🏛️ 市场部专员</span><a href="../../登录工作台.html" style="color:#cbd5e1;font-size:12px;text-decoration:none;">[切换账号]</a>`;
+    }
+  }
+
+  $('eyebrow').textContent=domain.name+' / '+module.label;$('title').textContent=domain.name+module.label;$('subtitle').textContent=module.question;$('domain-tabs').innerHTML=`<a id="topic-tab" class="${s.tab==='topics'?'active':''}" href="${hash('topics')}">研究议题</a><a href="${hash('conferences')}" style="color:#2563eb;font-weight:600;">📅 回到最新会议动态</a><a href="../标志物视图/index.html">Biomarker</a>`;$('domain-tabs').hidden=s.tab!=='topics';
  if(s.field!=='diabetes'&&window.DomainFrameworks&&window.DomainFrameworks.getDomain(s.field)){
   if(s.tab==='topics')V.innerHTML=window.DomainFrameworks.renderDomainDashboard(s.field,s,esc,hash);
   else if(s.tab==='conferences')V.innerHTML=window.DomainFrameworks.renderDomainConferences(s.field,esc);
