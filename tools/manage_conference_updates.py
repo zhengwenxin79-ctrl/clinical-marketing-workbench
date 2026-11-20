@@ -366,7 +366,7 @@ def sync_weekly_change_log(conn=None):
 def main():
     parser = argparse.ArgumentParser(description="Conference Staging and Review Management Tool")
     parser.add_argument("--init", action="store_true", help="Initialize conference_updates.db")
-    parser.add_argument("--ingest", type=Path, help="Ingest crawled conferences from JSON")
+    parser.add_argument("--ingest", "--import-file", dest="ingest", type=Path, help="Ingest crawled conferences from JSON")
     parser.add_argument("--list-pending", action="store_true", help="List all pending items in review queue")
     parser.add_argument("--approve", type=str, help="Approve queue_id")
     parser.add_argument("--reject", type=str, help="Reject queue_id")
@@ -383,8 +383,10 @@ def main():
         cnt = sync_anchors_to_db(conn)
         print(f"Synced {cnt} conference anchors (organizations, core series, international anchors) into conference_anchors table.")
     elif args.ingest:
-        items = json.loads(args.ingest.read_text(encoding="utf-8"))
-        res = ingest_crawled_conferences(items, conn=conn)
+        raw_data = json.loads(args.ingest.read_text(encoding="utf-8"))
+        items = raw_data.get("items", raw_data) if isinstance(raw_data, dict) else raw_data
+        batch_id = raw_data.get("batch_id") if isinstance(raw_data, dict) else None
+        res = ingest_crawled_conferences(items, batch_id=batch_id, conn=conn)
         print(json.dumps(res, ensure_ascii=False, indent=2))
     elif args.list_pending:
         c = conn.cursor()

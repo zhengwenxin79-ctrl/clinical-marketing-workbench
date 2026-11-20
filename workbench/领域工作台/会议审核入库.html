@@ -440,13 +440,13 @@
           </select>
         </div>
         <div class="filter-group">
-          <label>学术评级 (Tier)：</label>
+          <label>学术层级与定位：</label>
           <select id="filter-tier" onchange="renderQueue()">
-            <option value="all" selected>全部评级 (A/B/C/D)</option>
-            <option value="A">👑 A 类 · 国际顶级核心</option>
-            <option value="B">🏛️ B 类 · 国内全国性核心</option>
-            <option value="C">📍 C 类 · 省级区域重点</option>
-            <option value="D">🔬 D 类 · 专科专题/待定</option>
+            <option value="all" selected>全部层级 (A/B/C/D)</option>
+            <option value="A">👑 A 类 · 国际风向标 (仅议题/PI)</option>
+            <option value="B">🏛️ B 类 · 国内全国核心 (重点参会/深拆PI)</option>
+            <option value="C">📍 C 类 · 省级区域重点 (属地销售拜访)</option>
+            <option value="D">🔬 D 类 · 专科研讨培训 (选择性关注)</option>
           </select>
         </div>
       </div>
@@ -736,10 +736,10 @@ function renderQueue() {
   }
 
   const TIER_LABELS = {
-    "A": "👑 A类 · 国际顶级",
-    "B": "🏛️ B类 · 国家级核心",
-    "C": "📍 C类 · 省级重点",
-    "D": "🔬 D类 · 专科研讨"
+    "A": "👑 A类 · 国际风向标 (仅议题/PI)",
+    "B": "🏛️ B类 · 国内全国核心 (重点参会/深拆PI)",
+    "C": "📍 C类 · 省级区域重点 (属地销售拜访)",
+    "D": "🔬 D类 · 专科研讨培训 (选择性关注)"
   };
 
   container.innerHTML = filtered.map(item => {

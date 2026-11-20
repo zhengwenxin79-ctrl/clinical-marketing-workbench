@@ -84,43 +84,65 @@ def generate_search_queries(target_year=None):
 
 def evaluate_conference_relevance(item):
     """Evaluates raw conference info against 《会议收集评级》Skill criteria.
+    Business Logic:
+      - Domestic conferences (国内会议): Evaluated against commercial clinical research conversion criteria
+        (重点关注 / 常规关注 / 低优先级 / 待确认), aiming at BD PI visits and clinical research sponsorship.
+      - International conferences (国际会议): Treated strictly as '前沿学术风向标', focusing ONLY on
+        hot topics, biomarker breakthroughs, and leading international PIs (no domestic BD event logistics).
     Returns:
-      relevance_tier: '重点关注' | '常规关注' | '低优先级' | '剔除'
+      relevance_tier: '重点关注' | '常规关注' | '国际风向标(议题/PI)' | '低优先级' | '剔除'
       reason: Explanatory rationale
       matched_keywords: list of matched keywords
       suggested_field: field_id
     """
+    cid = item.get("conference_id", "").upper()
+    tier_raw = str(item.get("tier") or item.get("tier_code") or item.get("tier_level") or "").strip().upper()
     text = f"{item.get('conference_name', '')} {item.get('raw_content', '')} {item.get('summary', '')}".lower()
+
+    is_international = (
+        "A" in tier_raw or "INTERNATIONAL" in tier_raw or "国际核心" in tier_raw or "国际顶级" in tier_raw or
+        cid in {"ADA2026", "EASD2026", "ACC2026", "ESC2026", "EULAR2026", "ISTH2026", "RSNA2026", "ASCO2026"}
+    )
+
+    # 1. Check International Anchor Mode
+    if is_international:
+        return {
+            "relevance_tier": "国际前沿风向标",
+            "track_mode": "international_benchmark",
+            "reason": "国际学术风向标：不设国内销售线下跑会排期；专门提取国际最新学术议题、突破性临床研究结果与国际顶级PI带头人，输入知识图谱与学术背书",
+            "matched_keywords": ["国际核心", "学术风向标"],
+            "passed_gating": True
+        }
     
-    # 1. Check negative noise
+    # 2. Domestic Conference Evaluation
+    # 2.1 Check negative noise
     for neg in NEGATIVE_NOISE_KEYWORDS:
         if neg in text:
             return {
                 "relevance_tier": "低优先级",
+                "track_mode": "domestic_market",
                 "reason": f"包含临床实践/护理/非科研关键词（{neg}），建议降低关注优先级",
                 "matched_keywords": [neg],
                 "passed_gating": False
             }
 
-    # 2. Check positive research keywords
+    # 2.2 Check positive research keywords
     matched_pos = [k for k in POSITIVE_RESEARCH_KEYWORDS if k in text]
-    
-    # 3. Check official tier
-    tier_level = item.get("tier_level", "")
-    is_top_tier = any(t in tier_level for t in ["国家重点", "国际顶级", "中华医学会", "中国医师协会"])
+    is_top_national = any(t in tier_raw or t in text for t in ["b", "国家级", "全国", "中华医学会", "中国医师协会", "csco"])
 
-    if len(matched_pos) >= 2 or (len(matched_pos) >= 1 and is_top_tier):
+    if len(matched_pos) >= 2 or (len(matched_pos) >= 1 and is_top_national):
         tier = "重点关注"
-        reason = f"高价值临床科研会议：命中重点科研方向（{'、'.join(matched_pos[:3])}），具备清晰转化研究与组学/标志物合作切入点"
-    elif len(matched_pos) >= 1 or is_top_tier:
+        reason = f"高价值国内临床科研会议：命中核心转化方向（{'、'.join(matched_pos[:3])}），具备明确的组学/标志物科研合作切入点，建议取日程深拆PI"
+    elif len(matched_pos) >= 1 or is_top_national:
         tier = "常规关注"
-        reason = f"具备临床学术价值：涉及相关学科前沿进展，参会学者中有潜在合作PI团队"
+        reason = f"国内重要专科学术会议：具备临床学术价值，供覆盖区域属地销售代表（BD）选择性参会与拜访PI"
     else:
         tier = "待确认"
         reason = "尚未提取到详尽日程或科研专题依据，保留基本信息待获取议程后二次定级"
 
     return {
         "relevance_tier": tier,
+        "track_mode": "domestic_market",
         "reason": reason,
         "matched_keywords": matched_pos,
         "passed_gating": True
