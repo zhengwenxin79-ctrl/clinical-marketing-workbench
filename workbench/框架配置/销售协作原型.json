@@ -4,11 +4,13 @@
   "salespeople": [
     {
       "id": "demo-sales-a",
-      "name": "演示销售A"
+      "name": "销售代表A（华北区·张强）",
+      "territory": "华北战区（北京/天津/河北/山东/山西）"
     },
     {
       "id": "demo-sales-b",
-      "name": "演示销售B"
+      "name": "销售代表B（华南区·陈丽）",
+      "territory": "华南战区（广东/广西/福建/海南）"
     }
   ],
   "capabilities": [
@@ -77,6 +79,122 @@
     ],
     "expert_keys": []
   },
+  "initial_recommendations": [
+    {
+      "id": "BATTLE-CARD-001",
+      "domain_id": "diabetes",
+      "topic_id": "DM:Q17",
+      "title": "【高优商机作战卡】正常白蛋白尿DKD隐匿肾损伤预测多组学转化研究",
+      "match_score": 96,
+      "assignee_id": "demo-sales-a",
+      "due_date": "2026-11-25",
+      "status": "assigned",
+      "is_demo": false,
+      "pain_point": "常规尿白蛋白与临床生化在早期肾小管损伤阶段敏感性差，临床团队拥有100+例随访样本，但缺乏多组学联合标志物挖掘与算法建模能力，急需冲刺高分临床转化文章。",
+      "research_question": "正常白蛋白尿、肾功能尚保留的糖尿病人群，如何发现隐匿肾小管损伤并预测后续微血管并发症？",
+      "reason": "北京大学人民医院纪立农教授团队在 CDS 2026 报告关于早期非蛋白尿DKD机制口头报告；课题组经费充裕，在研国家级多中心慢病队列，急需外部多组学标志物技术支持。",
+      "participation": "结合吉因加 T10（6Dmarker / V-USE 多组学整合与Biomarker建模）及 T14（高精度蛋白质组学），为团队提供候选指标筛选、多组学联合建模与独立验证队列方案。",
+      "conditions": "需了解随访终点、已有血尿样本量、冻存条件与独立验证队列规划。",
+      "suggested_action": "建议销售代表提前预约纪教授团队青年骨干拜访；交流时重点询问早期肾小管损伤标志物筛选需求，介绍6Dmarker多组学在类似队列的成功模型，促成技术方案交流。",
+      "break_ice_script": "纪主任/教授您好，拜读了团队在CDS上关于非蛋白尿早期肾小管损伤的报告，非常有启发。我们吉因加最近用6Dmarker多组学整合算法在华北类似队列中建立了早期肾损伤预测模型，想找时间向您汇报下，看能不能结合您手头的随访队列联合发表一篇高分转化医学文章？",
+      "links": [
+        {
+          "kind": "report",
+          "id": "CDS2026:S_026"
+        },
+        {
+          "kind": "report",
+          "id": "CDS2026:OR_035"
+        },
+        {
+          "kind": "paper",
+          "id": "PMID:42905866"
+        }
+      ],
+      "capability_ids": [
+        "T10",
+        "T14"
+      ],
+      "expert_keys": [
+        "CDS2026|PERSON:edd382b56fbf95f98e05"
+      ],
+      "created_at": "2026-11-20T09:00:00",
+      "updated_at": "2026-11-20T09:00:00"
+    },
+    {
+      "id": "BATTLE-CARD-002",
+      "domain_id": "diabetes",
+      "topic_id": "DM:Q08",
+      "title": "【高优商机作战卡】外周免疫微环境与糖尿病大血管病变单细胞图谱研究",
+      "match_score": 92,
+      "assignee_id": "demo-sales-a",
+      "due_date": "2026-11-28",
+      "status": "in_progress",
+      "is_demo": false,
+      "pain_point": "微量临床组织穿刺或PBMC标本解离质控要求极高，科室缺乏单细胞转录组（scRNA-seq）建库与生物信息学深度分析经验。",
+      "research_question": "高糖与代谢应激微环境下，单核巨噬细胞向促炎表型分化的关键调控靶标是什么？",
+      "reason": "北京大学第一医院顾楠教授团队承担新立项前沿转化课题，在 CDS 2026 发布血管并发症演讲，迫切需要引入单细胞组学解析细胞亚群异质性。",
+      "participation": "结合吉因加 T03（单细胞组学：InCell/scRNA 细胞图谱与微环境解析），提供从微量组织样本超微量解离、单细胞建库测序到生信深度挖掘的一站式交付。",
+      "conditions": "需了解新鲜或微量冻存组织样本类型，确认细胞活率要求。",
+      "suggested_action": "联系课题组主要负责科研的骨干，介绍吉因加微量临床样本单细胞解离SOP及三甲医院转化标杆案例。",
+      "break_ice_script": "顾主任您好，关注到您在并发症微环境机制上的最新分享。我们吉因加专门针对微量临床冷冻样本优化了单细胞全流程SOP，已支持多篇顶刊文章产出。希望能与您预约15分钟交流，看能否协助您完成手头样本的单细胞科研解析。",
+      "links": [
+        {
+          "kind": "report",
+          "id": "CDS2026:S_062"
+        },
+        {
+          "kind": "report",
+          "id": "CDS2026:OR_099"
+        }
+      ],
+      "capability_ids": [
+        "T03"
+      ],
+      "expert_keys": [
+        "CDS2026|PERSON:a18f8ca3d2628766f439"
+      ],
+      "created_at": "2026-11-20T10:00:00",
+      "updated_at": "2026-11-20T10:00:00"
+    },
+    {
+      "id": "BATTLE-CARD-003",
+      "domain_id": "diabetes",
+      "topic_id": "DM:Q18",
+      "title": "【高优商机作战卡】代谢性骨矿盐异常与微血管病变高敏蛋白组学研究",
+      "match_score": 94,
+      "assignee_id": "demo-sales-b",
+      "due_date": "2026-11-26",
+      "status": "assigned",
+      "is_demo": false,
+      "pain_point": "临床3年随访队列完整，但常规生化指标已无法发表高分顶刊（>10分），急需引入靶向高敏蛋白组（Olink）与多组学机器学习模型深入挖掘分子标志物。",
+      "research_question": "骨矿盐代谢指标紊乱如何通过微血管靶器官损伤协同加速并发症？",
+      "reason": "中青年高潜骨干黄斌主任在 CDS 2026 报告关于骨矿盐代谢与并发症交叉课题；发文章与冲刺省级重点人才诉求强烈，决策链条短。",
+      "participation": "参考吉因加 T14（高敏靶向蛋白质组学/Olink平台）及 T10（多组学建模），针对队列血清样本开展高通量低丰度蛋白筛选与临床终点预测。",
+      "conditions": "需确认血清样本冻融次数（建议<2次）及随访临床资料完整度。",
+      "suggested_action": "华南销售代表直接预约科室拜访，携带吉因加Olink平台及多组学模型发表的类似文章作为破冰材料。",
+      "break_ice_script": "黄主任您好，拜读了您在CDS上关于骨代谢与并发症交叉课题的研究，选题非常前沿。我们吉因加在华南有专门的技术支持团队，最近用Olink蛋白组联合模型协助同济和中大团队发了高分文章，想找时间到您科室拜访汇报，看如何协助您的随访队列完成多组学冲刺。",
+      "links": [
+        {
+          "kind": "report",
+          "id": "CDS2026:OR_003"
+        },
+        {
+          "kind": "report",
+          "id": "CDS2026:OR_140"
+        }
+      ],
+      "capability_ids": [
+        "T10",
+        "T14"
+      ],
+      "expert_keys": [
+        "CDS2026|PERSON:a5021924cdeb7e2aa64d"
+      ],
+      "created_at": "2026-11-20T11:00:00",
+      "updated_at": "2026-11-20T11:00:00"
+    }
+  ],
   "demo_feedback": {
     "contact_status": "contacted",
     "contact_name": "演示联系人（虚构）",
