@@ -33,7 +33,74 @@ window.SalesCollaboration=(()=>{
  return `<section class="panel"><div class="sales-section-head"><div><h2>${r.id?'编辑推荐':'创建推荐'}</h2><p class="muted">从已有研究资料整理沟通准备。标 * 为必填。</p></div><button type="button" id="cancel-sales-edit">返回列表</button></div>${r.is_demo?'<p class="sales-note">当前是演示推荐，编辑后仍保留演示标识。</p>':''}<form id="sales-recommendation-form" class="sales-form" data-edit-id="${esc(r.id)}"><div class="sales-fields"><label class="sales-field wide">所属领域<input value="糖尿病" disabled></label><label class="sales-field wide">关联研究议题 *<select name="topic_id" id="sales-topic">${options(D.topics.map(t=>[t.topic_id,t.name]),r.topic_id)}</select></label><label class="sales-field wide">推荐标题 *<input name="title" value="${esc(r.title)}" maxlength="200" required></label>${area('research_question','研究问题',r.research_question,true)}${area('reason','为什么值得交流',r.reason,true)}${area('participation','吉因加可参与环节',r.participation)}${area('conditions','适用条件与待确认',r.conditions)}${area('suggested_action','建议行动',r.suggested_action,true)}<label class="sales-field">负责销售（分配时必选）<select name="assignee_id">${options([['','暂不分配'],...C.salespeople.map(p=>[p.id,p.name])],r.assignee_id)}</select></label><label class="sales-field">建议跟进日期<input type="date" name="due_date" value="${esc(r.due_date)}"></label></div><fieldset><legend>关联会议与论文</legend><div id="sales-source-choices">${sourceChoices(r.topic_id,r)}</div></fieldset><fieldset><legend>相关专家或团队（可选）</legend><div id="sales-expert-choices">${expertChoices(r.topic_id,r)}</div></fieldset><fieldset><legend>能力底表参考（可选）</legend><p class="muted">当前原型接入已有T10、T14、T03底表摘录。其它能力可在参与环节说明中引用并附待核条件。</p><div class="sales-checkboxes">${rawChecks('capability',C.capabilities.map(c=>({id:c.id,title:c.id+' · '+c.name,note:c.status})),r.capability_ids)}</div></fieldset><p data-form-error class="sales-note error" role="alert" hidden></p><div class="sales-actions"><button type="submit" name="intent" value="draft" ${storageError?'disabled':''}>保存草稿</button><button type="submit" name="intent" value="assign" class="primary" ${storageError?'disabled':''}>${r.status==='in_progress'?'保存并继续跟进':'保存并分配'}</button><span class="sales-meta">仅保存到当前浏览器</span></div></form></section>`;}
  function summary(){const fs=S.feedback.filter(f=>visible.some(r=>r.id===f.recommendation_id)),unreviewed=fs.filter(f=>!f.reviewed_at),support=visible.map(r=>({r,f:feedbackFor(r).find(f=>f.support?.trim()),next:latest(r)})).filter(x=>x.f&&x.r.status!=='archived');
  return window.RecommendationFeedback.summary(qualityContext,visible)+`<div class="stats">${[[visible.length,'推荐记录'],[visible.filter(r=>['assigned','in_progress'].includes(r.status)).length,'待跟进 / 跟进中'],[fs.length,'跟进反馈'],[unreviewed.length,'待市场复核']].map(([n,l])=>`<div class="stat"><b>${n}</b><span>${l}</span></div>`).join('')}</div><div class="sales-summary-grid"><section class="panel"><h2>待支持事项</h2><p class="muted">按每条推荐最近非空支持记录展示；后续未填写不视为撤销，结束需求时请明确说明。</p>${support.map(({r,f,next})=>`<div class="sales-support">${r.is_demo?'<span class="sales-demo">虚构演示</span>':''}<p><a href="${hash('sales',{role,sales:salesId,sales_tab:'follow',rec:r.id})}"><b>${esc(r.title)}</b></a></p><p>${esc(f.support)}</p><p class="sales-meta">下一步：${esc(next.next_action)} · ${esc(next.next_date||'时间待定')}</p></div>`).join('')||empty('暂无已反馈的支持需求。')}</section><section class="panel"><h2>客户研究问题</h2><p class="muted">展示沟通记录，尚未转成已核实的客户画像。</p>${visible.map(r=>({r,f:feedbackFor(r).find(f=>f.need?.trim())})).filter(x=>x.f).map(({r,f})=>`<div class="sales-support">${f.is_demo?'<span class="sales-demo">虚构演示</span>':''}<p>${esc(f.need)}</p><p class="sales-meta">${esc(f.contact_name||'联系人待了解')} · ${esc(f.institution||'单位待了解')} · ${esc(dateTime(f.created_at))}</p></div>`).join('')||empty('销售填写沟通结果后，在这里汇总研究问题。')}</section></div><section class="panel sales-summary-list"><h2>跟进进度与复核</h2>${visible.map(r=>`<div class="sales-detail-block"><div class="sales-section-head"><h3>${esc(r.title)}</h3>${status(r)}</div><p class="muted">负责：${esc(person(r.assignee_id))} · ${feedbackFor(r).length}条反馈</p>${timeline(r)}</div>`).join('')||empty('暂无推荐记录。')}</section>`;}
- const list=()=>`<div class="sales-workspace"><aside class="panel sales-list" aria-label="推荐列表">${rows.map(r=>`<button class="sales-list-item ${chosen?.id===r.id?'active':''}" data-rec="${esc(r.id)}">${status(r)}<strong>${esc(r.title)}</strong><small>${esc(person(r.assignee_id))} · ${esc(r.due_date||'跟进时间待定')}</small><small>${feedbackFor(r).length}条反馈${latest(r)?.next_date?' · 下次 '+esc(latest(r).next_date):''}</small><small class="quality-list-label" data-quality-badge="${esc(r.id)}">推荐评价：${esc(window.RecommendationFeedback.label(window.RecommendationFeedback.latest(S,r)))}</small></button>`).join('')||empty('没有匹配推荐。')}</aside>${detail(chosen)}</div>`;
+ function conferencePushesBlock(){
+  let pushes=[];
+  try{
+    const raw=localStorage.getItem('clinical-workbench:conference-pushes:v1');
+    pushes=raw?JSON.parse(raw):[];
+  }catch(e){}
+  if(!pushes||pushes.length===0){
+    pushes=[
+      {
+        id:'CPUSH-CDS2026',
+        conference_id:'CDS2026',
+        conference_name:'中华医学会糖尿病学分会第三十一次全国学术会议 (CDS 2026)',
+        tier_code:'B',
+        city:'厦门市 / 上海市',
+        start_date:'2026-11-18',
+        end_date:'2026-11-21',
+        market_note:'市场部重点推荐：关注大会减重、胰岛素抵抗与并发症早期筛查分论坛，重点拜访演讲PI并挖掘转化医学科研合作商机。',
+        action_suggestion:'建议销售代表提前2周预约主要讲者差旅间歇拜访，配合吉因加多组学转化方案开展接洽。',
+        recommended_by:'市场部学术组',
+        target_sales:'all',
+        created_at:'2026-11-20'
+      }
+    ];
+  }
+  const myPushes=pushes.filter(p=>!p.target_sales||p.target_sales==='all'||p.target_sales===salesId);
+  if(!myPushes.length)return '';
+  const TIER_BADGES={
+    'A':'<span style="background:#f5f3ff;color:#6b21a8;border:1px solid #d8b4fe;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">👑 A类 国际顶级</span>',
+    'B':'<span style="background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">🏛️ B类 国家级核心</span>',
+    'C':'<span style="background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">📍 C类 省级重点</span>',
+    'D':'<span style="background:#f8fafc;color:#475569;border:1px solid #cbd5e1;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600;">🔬 D类 专科研讨</span>'
+  };
+  return `<section class="panel" style="margin-bottom:20px;border-left:4px solid #2867df;background:#fbfdff;">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--line);">
+      <h3 style="margin:0;font-size:17px;display:flex;align-items:center;gap:8px;color:#172f4e;">
+        <span>📢</span> 本周市场部推荐重点会议
+        <span style="font-size:12px;font-weight:normal;background:#eff6ff;color:#2563eb;padding:2px 8px;border-radius:12px;border:1px solid #bfdbfe;">市场部定向协同</span>
+      </h3>
+      <span style="font-size:13px;color:var(--muted)">共 ${myPushes.length} 场高意向推荐会议</span>
+    </div>
+    <div style="display:grid;gap:12px;">
+      ${myPushes.map(p=>`
+        <div style="background:white;border:1px solid var(--line);border-radius:7px;padding:14px 16px;display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;">
+          <div>
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap;">
+              ${TIER_BADGES[(p.tier_code||'B').toUpperCase()]||''}
+              <strong style="font-size:15px;color:var(--ink);">${esc(p.conference_name)}</strong>
+              <span style="font-size:12px;color:var(--muted);background:#f1f5f9;padding:2px 6px;border-radius:4px;">📅 ${esc(p.start_date||'待定')} ~ ${esc(p.end_date||'待定')}</span>
+              <span style="font-size:12px;color:var(--muted);background:#f1f5f9;padding:2px 6px;border-radius:4px;">📍 ${esc(p.city||'地点待定')}</span>
+            </div>
+            <p style="font-size:13px;color:#334155;margin:4px 0;background:#f8fafc;padding:6px 10px;border-radius:4px;border-left:3px solid #38bdf8;">
+              <strong>市场部指引：</strong>${esc(p.market_note||'请关注分论坛讲者学术报告')}
+            </p>
+            <div style="font-size:12px;color:var(--muted);display:flex;gap:14px;align-items:center;">
+              <span>行动建议：${esc(p.action_suggestion||'提前拜访核心PI')}</span>
+              <span>推荐人：${esc(p.recommended_by||'市场学术组')}</span>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px;min-width:110px;">
+            <button class="primary" style="font-size:12px;padding:6px 12px;" data-claim-conf="${esc(p.conference_name)}" data-claim-cid="${esc(p.conference_id||'')}">📌 认领跟进</button>
+            <a href="#conferences" style="font-size:12px;text-align:center;color:var(--blue);text-decoration:none;">👀 查看会议库</a>
+          </div>
+        </div>
+      `).join('')}
+    </div>
+  </section>`;
+ }
+ const list=()=>`${conferencePushesBlock()}<div class="sales-workspace"><aside class="panel sales-list" aria-label="推荐列表">${rows.map(r=>`<button class="sales-list-item ${chosen?.id===r.id?'active':''}" data-rec="${esc(r.id)}">${status(r)}<strong>${esc(r.title)}</strong><small>${esc(person(r.assignee_id))} · ${esc(r.due_date||'跟进时间待定')}</small><small>${feedbackFor(r).length}条反馈${latest(r)?.next_date?' · 下次 '+esc(latest(r).next_date):''}</small><small class="quality-list-label" data-quality-badge="${esc(r.id)}">推荐评价：${esc(window.RecommendationFeedback.label(window.RecommendationFeedback.latest(S,r)))}</small></button>`).join('')||empty('没有匹配推荐。')}</aside>${detail(chosen)}</div>`;
  const actor=role==='sales'?salesId:role;
  function toggleFavorite(key){if(!E.has(key))return;const favorites=[...(S.favorites||[])],i=favorites.findIndex(f=>f.actor_id===actor&&f.person_key===key),saved=i<0;if(saved)favorites.push({actor_id:actor,person_key:key,created_at:now()});else favorites.splice(i,1);if(!save(C,{...S,favorites})){let notice=V.querySelector('[data-favorite-error]');if(!notice){notice=document.createElement('p');notice.className='sales-note error';notice.dataset.favoriteError='true';notice.setAttribute('role','alert');V.querySelector('.sales-app').prepend(notice);}notice.textContent=storageError;return;}S.favorites=favorites;if(auto){rerender();return;}V.querySelectorAll('[data-pi-favorite]').forEach(b=>{if(b.dataset.piFavorite!==key)return;b.classList.toggle('saved',saved);b.setAttribute('aria-pressed',String(saved));b.setAttribute('aria-label',(saved?'取消收藏':'收藏')+E.get(key).display_name);b.textContent=b.classList.contains('icon')?(saved?'★':'☆'):(saved?'★ 已收藏':'☆ 收藏');});}
  const isEditor=canEdit&&q.get('mode')==='edit',autoMode=tab==='recommend'&&!isEditor&&!q.get('rec')&&q.get('recommend_view')!=='records'&&(role!=='sales'||['directory','favorites'].includes(q.get('recommend_view')));
@@ -58,6 +125,7 @@ window.SalesCollaboration=(()=>{
  if($('quality-summary-scope'))$('quality-summary-scope').onchange=()=>update({quality_scope:$('quality-summary-scope').value});
  const ff=$('sales-feedback-form');if($('jump-sales-feedback'))$('jump-sales-feedback').onclick=()=>{ff.scrollIntoView({behavior:'smooth',block:'start'});ff.querySelector('select').focus({preventScroll:true});};if(ff){ff.oninput=()=>{dirty=true;};ff.onchange=()=>{dirty=true;};const fill=$('fill-demo-feedback');if(fill)fill.onclick=()=>{for(const [k,v] of Object.entries(C.demo_feedback))ff.elements[k].value=v;ff.elements.contact_date.value=today();ff.elements.next_owner_id.value=salesId;dirty=true;};ff.onsubmit=e=>{e.preventDefault();const fd=new FormData(ff),get=k=>String(fd.get(k)||'').trim();if(!get('next_action')){formError(ff,'请记录下一步；暂缓时也可填写等待条件。');return;}if(get('contact_status')==='contacted'&&!get('contact_date')){formError(ff,'已接触时请填写沟通日期。');return;}if(get('contact_date')>today()){formError(ff,'沟通日期不能晚于今天。');return;}const f={id:uid('FB'),recommendation_id:chosen.id,author_id:salesId,is_demo:chosen.is_demo,created_at:now(),...Object.fromEntries(['contact_status','contact_date','contact_name','institution','need','cohort','support','next_action','next_owner_id','next_date'].map(k=>[k,get(k)])),reviewed_at:null,review_note:''},r={...chosen,status:f.contact_status==='not_contacted'?chosen.status:'in_progress',updated_at:now()};if(commit({...S,recommendations:S.recommendations.map(x=>x.id===r.id?r:x),feedback:[...S.feedback,f]},'反馈已保存，历史记录保留，市场可查看并复核。'))refresh();else formError(ff,storageError);};}
  V.querySelectorAll('[data-review]').forEach(b=>b.onclick=()=>{const id=b.dataset.review,note=[...V.querySelectorAll('[data-review-note]')].find(x=>x.dataset.reviewNote===id)?.value.trim()||'';if(commit({...S,feedback:S.feedback.map(f=>f.id===id?{...f,reviewed_at:now(),review_note:note}:f)},'已标记市场复核；研究证据和客户画像未自动修改。'))refresh();});
+ V.querySelectorAll('[data-claim-conf]').forEach(b=>{b.onclick=()=>{const cname=b.dataset.claimConf;alert('✅ 已成功认领跟进会议：'+cname+'！\n已记录至当前销售跟进任务中。');b.textContent='✓ 已认领';b.disabled=true;b.style.opacity='0.6';};});
  }
  return {render,canLeave,clearDirty:()=>{dirty=false;window.RecommendationFeedback.clearDirty();}};
 })();

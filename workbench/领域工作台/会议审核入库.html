@@ -493,6 +493,37 @@
   </div>
 </div>
 
+<!-- Recommend to Sales Modal -->
+<div class="modal-backdrop" id="recommend-modal">
+  <div class="modal-dialog">
+    <div class="modal-head">
+      <h3>📢 推荐会议至销售工作台</h3>
+      <button style="border:none;background:none;font-size:18px;cursor:pointer;" onclick="closeRecommendModal()">×</button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size:15px; font-weight:600; color:var(--ink); margin:0 0 12px;" id="rec-modal-title"></p>
+      <div style="display:grid; gap:14px;">
+        <label style="display:grid; gap:5px; font-size:13px; color:var(--muted);">
+          推送销售代表：
+          <select id="rec-modal-target" style="width:100%;">
+            <option value="all" selected>全员销售代表 (All Sales)</option>
+            <option value="sales_a">销售代表A (华东大区)</option>
+            <option value="sales_b">销售代表B (华南与华北大区)</option>
+          </select>
+        </label>
+        <label style="display:grid; gap:5px; font-size:13px; color:var(--muted);">
+          市场部商机指引与建议行动：
+          <textarea id="rec-modal-note" placeholder="例如：该会议为重点关注学术大会，分论坛聚焦代谢及转化医学前沿，建议提前拜访排期相关演讲PI，挖掘科研课题合作商机..."></textarea>
+        </label>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="closeRecommendModal()">取消</button>
+      <button class="btn btn-primary" onclick="confirmRecommendToSales()">确认推送至销售台</button>
+    </div>
+  </div>
+</div>
+
 <script>
 const API_BASE = "http://127.0.0.1:8768";
 let token = localStorage.getItem("auth_token") || "MARKET_DEMO_TOKEN";
@@ -752,7 +783,12 @@ function renderQueue() {
             <button class="btn btn-success" onclick="reviewItem('${item.queue_id}', 'approve')">✅ 批准并发布</button>
             <button class="btn btn-outline" style="color:var(--red); border-color:#fca5a5;" onclick="openRejectModal('${item.queue_id}')">❌ 驳回忽略</button>
           ` : `
-            <span style="font-size: 13px; color: var(--muted); text-align: center; padding: 6px 0;">已完成归档 (${tierDisplay})</span>
+            <span style="font-size: 13px; color: var(--muted); text-align: center; padding: 2px 0;">已完成归档 (${tierDisplay})</span>
+          `}
+          ${item.recommended_to_sales ? `
+            <span style="font-size:12px;color:#0284c7;background:#e0f2fe;padding:5px 8px;border-radius:4px;border:1px solid #bae6fd;text-align:center;font-weight:600;">📢 已推销售 (${item.recommended_to_sales==='all'?'全员':item.recommended_to_sales})</span>
+          ` : `
+            <button class="btn btn-outline" style="border-color:#38bdf8;color:#0284c7;background:#f0f9ff;" onclick="openRecommendModal('${item.queue_id}')">📢 推荐给销售</button>
           `}
         </div>
       </div>
@@ -826,6 +862,81 @@ async function confirmReject() {
     await reviewItem(targetQueueId, "reject", note || "人工复核未通过，已驳回");
     closeRejectModal();
   }
+}
+
+let targetRecQueueId = null;
+
+function openRecommendModal(queueId) {
+  targetRecQueueId = queueId;
+  const item = currentQueue.find(i => i.queue_id === queueId);
+  if (!item) return;
+  const tier = (item.tier_code || item.tier || 'B').toUpperCase();
+  document.getElementById("rec-modal-title").textContent = `正在推荐：${item.conference_name} (${tier}类会议)`;
+  document.getElementById("rec-modal-note").value = `重点关注该会议分论坛学术讲者与转化医学商机，建议提前联系重点PI排期沟通，挖掘多组学科研课题合作机会。`;
+  document.getElementById("recommend-modal").style.display = "flex";
+}
+
+function closeRecommendModal() {
+  targetRecQueueId = null;
+  document.getElementById("recommend-modal").style.display = "none";
+}
+
+async function confirmRecommendToSales() {
+  if (!targetRecQueueId) return;
+  const item = currentQueue.find(i => i.queue_id === targetRecQueueId);
+  if (!item) return;
+
+  const targetSales = document.getElementById("rec-modal-target").value;
+  const marketNote = document.getElementById("rec-modal-note").value.trim();
+  const tier = (item.tier_code || item.tier || "B").toUpperCase();
+
+  const pushRecord = {
+    id: "CPUSH-" + Date.now(),
+    conference_id: item.conference_id,
+    conference_name: item.conference_name,
+    abbreviation: item.abbreviation,
+    tier_code: tier,
+    field_id: item.field_id,
+    start_date: item.start_date,
+    end_date: item.end_date,
+    city: item.city,
+    official_url: item.official_url,
+    target_sales: targetSales,
+    market_note: marketNote,
+    action_suggestion: "建议销售代表提前2周预约主要讲者差旅间歇拜访，配合吉因加多组学转化方案开展接洽。",
+    recommended_by: "市场学术部",
+    created_at: new Date().toISOString()
+  };
+
+  // If backend connected, post to API
+  if (isBackendConnected) {
+    try {
+      await fetch(`${API_BASE}/api/conference/recommend-to-sales`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`
+        },
+        body: JSON.stringify(pushRecord)
+      });
+    } catch(e) {
+      console.warn("Backend recommend push failed:", e);
+    }
+  }
+
+  // Also persist to localStorage for cross-page static sharing
+  try {
+    let existing = JSON.parse(localStorage.getItem('clinical-workbench:conference-pushes:v1') || '[]');
+    // Filter out same conference to avoid duplicate push
+    existing = existing.filter(x => x.conference_id !== item.conference_id);
+    existing.unshift(pushRecord);
+    localStorage.setItem('clinical-workbench:conference-pushes:v1', JSON.stringify(existing));
+  } catch(e) {}
+
+  item.recommended_to_sales = targetSales;
+  closeRecommendModal();
+  renderQueue();
+  alert(`🎉 成功将【${item.conference_name}】推送至销售工作台！\n销售代表登录后可在“本周市场推荐会议”查收并认领跟进。`);
 }
 
 function simulateNewBatch() {

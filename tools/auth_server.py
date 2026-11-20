@@ -258,6 +258,17 @@ class RBACRequestHandler(SimpleHTTPRequestHandler):
             conn.close()
             return self.send_json(200, {"total": len(rows), "events": rows})
 
+        if path == "/api/conference/sales-recommendations":
+            conn = sqlite3.connect(BUSINESS_DB_PATH)
+            conn.row_factory = sqlite3.Row
+            c = conn.cursor()
+            if user["role"] == "sales":
+                rows = [dict(r) for r in c.execute("SELECT * FROM business_conference_recommendations WHERE target_sales = 'all' OR target_sales = ? ORDER BY created_at DESC", (user["id"],)).fetchall()]
+            else:
+                rows = [dict(r) for r in c.execute("SELECT * FROM business_conference_recommendations ORDER BY created_at DESC").fetchall()]
+            conn.close()
+            return self.send_json(200, {"total": len(rows), "items": rows})
+
         return self.send_json(404, {"error": "API route not found"})
 
     def handle_api_post(self, path):
@@ -493,6 +504,34 @@ class RBACRequestHandler(SimpleHTTPRequestHandler):
                 return self.send_json(400, {"error": "items 必须是非空数组"})
             res = manage_conference_updates.ingest_crawled_conferences(items, batch_id=batch_id)
             return self.send_json(200, res)
+
+        if path == "/api/conference/recommend-to-sales":
+            if user["role"] != "market":
+                conn.close()
+                return self.send_json(403, {"error": "权限拒绝：仅市场部人员可向销售推荐会议"})
+            cid = body.get("conference_id")
+            cname = body.get("conference_name")
+            if not cid or not cname:
+                conn.close()
+                return self.send_json(400, {"error": "缺少 conference_id 或 conference_name"})
+            rec_id = "CREC-" + secrets.token_hex(6)
+            c.execute("""
+            INSERT INTO business_conference_recommendations (
+                id, conference_id, conference_name, abbreviation, tier_code,
+                field_id, start_date, end_date, city, official_url,
+                target_sales, recommended_by, market_note, action_suggestion, created_at
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """, (
+                rec_id, cid, cname, body.get("abbreviation", "CONF"),
+                body.get("tier_code", "B"), body.get("field_id", "diabetes"),
+                body.get("start_date"), body.get("end_date"), body.get("city"),
+                body.get("official_url"), body.get("target_sales", "all"),
+                user["id"], body.get("market_note", ""), body.get("action_suggestion", "建议关注分论坛PI与商机"),
+                now_str
+            ))
+            conn.commit()
+            conn.close()
+            return self.send_json(200, {"success": True, "id": rec_id})
 
         conn.close()
         return self.send_json(404, {"error": "API route not found"})
