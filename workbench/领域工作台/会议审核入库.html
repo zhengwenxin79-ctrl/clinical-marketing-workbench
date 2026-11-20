@@ -234,11 +234,11 @@
     .tag-approved { background: var(--green-bg); color: var(--green); border: 1px solid #bbf7d0; }
     .tag-rejected { background: var(--red-bg); color: var(--red); border: 1px solid #fecaca; }
 
-    /* Tier ABCD Badges */
-    .tag-tier-a { background: #f5f3ff; color: #6b21a8; border: 1px solid #d8b4fe; font-weight: 700; }
-    .tag-tier-b { background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; font-weight: 700; }
-    .tag-tier-c { background: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0; font-weight: 700; }
-    .tag-tier-d { background: #f8fafc; color: #475569; border: 1px solid #cbd5e1; font-weight: 600; }
+    /* Priority & Tier Badges */
+    .tag-priority-high { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; font-weight: 700; }
+    .tag-priority-normal { background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; font-weight: 600; }
+    .tag-priority-low { background: #f8fafc; color: #64748b; border: 1px solid #cbd5e1; font-weight: 500; }
+    .tag-priority-intl { background: #f5f3ff; color: #7e22ce; border: 1px solid #d8b4fe; font-weight: 600; }
     .tier-select {
       padding: 3px 6px; font-size: 12px; font-weight: 600; border-radius: 4px;
       border: 1px solid var(--line); background: #f8faff; color: var(--ink);
@@ -440,13 +440,13 @@
           </select>
         </div>
         <div class="filter-group">
-          <label>学术层级与定位：</label>
-          <select id="filter-tier" onchange="renderQueue()">
-            <option value="all" selected>全部层级 (A/B/C/D)</option>
-            <option value="A">👑 A 类 · 国际风向标 (仅议题/PI)</option>
-            <option value="B">🏛️ B 类 · 国内全国核心 (重点参会/深拆PI)</option>
-            <option value="C">📍 C 类 · 省级区域重点 (属地销售拜访)</option>
-            <option value="D">🔬 D 类 · 专科研讨培训 (选择性关注)</option>
+          <label>评级与关注度：</label>
+          <select id="filter-priority" onchange="renderQueue()">
+            <option value="all" selected>全部国内/国际会议 (All)</option>
+            <option value="重点关注">🔥 国内·重点关注 (优先到会/深拆PI)</option>
+            <option value="常规关注">⭐ 国内·常规关注 (属地销售拜访)</option>
+            <option value="低优先级">💤 国内·低优先级 (手术/康复/非重点)</option>
+            <option value="国际风向标">🌐 国际前沿风向标 (仅议题/PI)</option>
           </select>
         </div>
       </div>
@@ -708,10 +708,29 @@ function updateStats() {
   document.getElementById("stat-rejected").textContent = rejected;
 }
 
+function getItemPriority(item) {
+  if (item.priority) return item.priority;
+  const cid = (item.conference_id || "").toUpperCase();
+  const isIntl = cid.startsWith("ADA") || cid.startsWith("EASD") || cid.startsWith("ACC") || cid.startsWith("ESC") || cid.startsWith("RSNA") || cid.startsWith("EULAR") || cid.startsWith("ISTH") || item.tier_code === 'A';
+  if (isIntl) return "国际风向标";
+  const note = (item.review_note || "").toLowerCase();
+  const name = (item.conference_name || "");
+  if (note.includes("重点关注") || name.includes("呼吸医师年会") || name.includes("脑卒中大会") || name.includes("中山神经") || name.includes("泛血管医学大会") || name.includes("北京医学会风湿") || name.includes("多组学")) {
+    return "重点关注";
+  }
+  if (note.includes("常规关注") || name.includes("自身免疫与精准诊疗") || name.includes("高血压专委会") || name.includes("航天") || name.includes("微循环") || name.includes("浙江省中医药学会")) {
+    return "常规关注";
+  }
+  if (note.includes("低优先级") || item.tier_code === 'D' || name.includes("介入") || name.includes("手术") || name.includes("康复") || name.includes("培训班")) {
+    return "低优先级";
+  }
+  return item.tier_code === 'B' ? "重点关注" : item.tier_code === 'C' ? "常规关注" : "低优先级";
+}
+
 function renderQueue() {
   const statusFilter = document.getElementById("filter-status").value;
   const fieldFilter = document.getElementById("filter-field").value;
-  const tierFilter = document.getElementById("filter-tier") ? document.getElementById("filter-tier").value : "all";
+  const priorityFilter = document.getElementById("filter-priority") ? document.getElementById("filter-priority").value : "all";
 
   let filtered = currentQueue.slice();
   if (statusFilter !== "all") {
@@ -720,8 +739,8 @@ function renderQueue() {
   if (fieldFilter !== "all") {
     filtered = filtered.filter(i => i.field_id === fieldFilter);
   }
-  if (tierFilter !== "all") {
-    filtered = filtered.filter(i => (i.tier_code || i.tier || "B").toUpperCase() === tierFilter);
+  if (priorityFilter !== "all") {
+    filtered = filtered.filter(i => getItemPriority(i) === priorityFilter);
   }
 
   const container = document.getElementById("queue-container");
@@ -735,26 +754,25 @@ function renderQueue() {
     return;
   }
 
-  const TIER_LABELS = {
-    "A": "👑 A类 · 国际风向标 (仅议题/PI)",
-    "B": "🏛️ B类 · 国内全国核心 (重点参会/深拆PI)",
-    "C": "📍 C类 · 省级区域重点 (属地销售拜访)",
-    "D": "🔬 D类 · 专科研讨培训 (选择性关注)"
+  const PRIORITY_BADGES = {
+    "重点关注": '<span class="tag tag-priority-high">🔥 重点关注</span>',
+    "常规关注": '<span class="tag tag-priority-normal">⭐ 常规关注</span>',
+    "低优先级": '<span class="tag tag-priority-low">💤 低优先级</span>',
+    "国际风向标": '<span class="tag tag-priority-intl">🌐 国际风向标 (仅议题/PI)</span>'
   };
 
   container.innerHTML = filtered.map(item => {
     const typeLabel = item.change_type === "first_seen" ? "🆕 首次收录" : item.change_type === "source_update" ? "🔄 日程变更" : "🚫 重复日程";
     const statusLabel = item.review_status === "pending" ? "待人工审核" : item.review_status === "approved" ? "已批准入库" : "已驳回/去重";
     const domainName = DOMAIN_NAMES[item.field_id] || item.field_id;
-    const tier = (item.tier_code || item.tier || "B").toUpperCase();
-    const tierClass = "tag-tier-" + tier.toLowerCase();
-    const tierDisplay = TIER_LABELS[tier] || ("评级 " + tier);
+    const priority = getItemPriority(item);
+    const priorityBadge = PRIORITY_BADGES[priority] || `<span class="tag">${priority}</span>`;
 
     return `
       <div class="queue-card" data-id="${item.queue_id}">
         <div class="queue-card-main">
           <div class="card-meta">
-            <span class="tag ${tierClass}">${tierDisplay}</span>
+            ${priorityBadge}
             <span class="tag tag-${item.change_type}">${typeLabel}</span>
             <span class="tag tag-domain">${domainName}</span>
             <span class="tag tag-${item.review_status}">${statusLabel}</span>
@@ -767,23 +785,23 @@ function renderQueue() {
             <span>📍 举办地点：${item.city || '待定'}</span>
             ${item.official_url ? `<span>🔗 <a href="${item.official_url}" target="_blank" rel="noopener">官方链接</a></span>` : ''}
           </div>
-          ${item.review_note ? `<div class="card-note"><strong>审核/变更备注：</strong>${item.review_note} ${item.reviewed_by ? `(操作人: ${item.reviewed_by})` : ''}</div>` : ''}
+          ${item.review_note ? `<div class="card-note"><strong>评级依据与科研线索：</strong>${item.review_note} ${item.reviewed_by ? `(操作人: ${item.reviewed_by})` : ''}</div>` : ''}
         </div>
         <div class="card-actions">
           ${item.review_status === 'pending' ? `
             <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;">
               <span style="font-size:12px;color:var(--muted);white-space:nowrap;">核定评级:</span>
-              <select class="tier-select" id="tier-sel-${item.queue_id}" onchange="changeItemTier('${item.queue_id}', this.value)">
-                <option value="A" ${tier==='A'?'selected':''}>A 类 国际顶级</option>
-                <option value="B" ${tier==='B'?'selected':''}>B 类 国家核心</option>
-                <option value="C" ${tier==='C'?'selected':''}>C 类 省级重点</option>
-                <option value="D" ${tier==='D'?'selected':''}>D 类 专科研讨</option>
+              <select class="tier-select" id="priority-sel-${item.queue_id}" onchange="changeItemPriority('${item.queue_id}', this.value)">
+                <option value="重点关注" ${priority==='重点关注'?'selected':''}>🔥 重点关注</option>
+                <option value="常规关注" ${priority==='常规关注'?'selected':''}>⭐ 常规关注</option>
+                <option value="低优先级" ${priority==='低优先级'?'selected':''}>💤 低优先级</option>
+                <option value="国际风向标" ${priority==='国际风向标'?'selected':''}>🌐 国际风向标</option>
               </select>
             </div>
             <button class="btn btn-success" onclick="reviewItem('${item.queue_id}', 'approve')">✅ 批准并发布</button>
             <button class="btn btn-outline" style="color:var(--red); border-color:#fca5a5;" onclick="openRejectModal('${item.queue_id}')">❌ 驳回忽略</button>
           ` : `
-            <span style="font-size: 13px; color: var(--muted); text-align: center; padding: 2px 0;">已完成归档 (${tierDisplay})</span>
+            <span style="font-size: 13px; color: var(--muted); text-align: center; padding: 2px 0;">已完成归档 (${priority})</span>
           `}
           ${item.recommended_to_sales ? `
             <span style="font-size:12px;color:#0284c7;background:#e0f2fe;padding:5px 8px;border-radius:4px;border:1px solid #bae6fd;text-align:center;font-weight:600;">📢 已推销售 (${item.recommended_to_sales==='all'?'全员':item.recommended_to_sales})</span>
@@ -794,6 +812,14 @@ function renderQueue() {
       </div>
     `;
   }).join('');
+}
+
+function changeItemPriority(queueId, p) {
+  const item = currentQueue.find(i => i.queue_id === queueId);
+  if (item) {
+    item.priority = p;
+    renderQueue();
+  }
 }
 
 function changeItemTier(queueId, tier) {
