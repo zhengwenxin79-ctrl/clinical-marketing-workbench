@@ -1,43 +1,42 @@
-# WorkBuddy 采集交付包使用说明与一键入库指南
+# WorkBuddy 采集交付包使用说明（零终端与自动化入库指南）
 
-本交付包专为 **WorkBuddy**（智能体/爬虫）量身定制，用于标准化执行 2026 年临床学术会议动态采集任务，并与主系统无缝接轨。
+本交付包专为 **WorkBuddy**（智能体/采集机器人）量身定制，现已支持**完全免人工敲命令（零终端）**与 **GitHub Actions 全自动云端发布**。
 
 ---
 
 ## 📁 交付包内容清单
 
-1. **`01_给WorkBuddy的执行提示词.txt`**：全套提示词，包含角色设定、采集范围、提取字段、纪律规则及输出格式，直接全选复制给 WorkBuddy。
+1. **`01_给WorkBuddy的执行提示词.txt`**：全套提示词，直接全选复制给 WorkBuddy。
 2. **`02_首批监控锚点清单_Top15.json`**：精选出的 15 个顶级医学会与国际重大会议清单及官网入口。
 3. **`03_交付规范与数据契约_Schema.json`**：严格的 JSON 结构契约。
-4. **`04_标准交付示例_batch_sample.json`**：标准产物样本，可供 WorkBuddy 作为 Few-Shot 参照。
+4. **`04_标准交付示例_batch_sample.json`**：标准产物样本（Few-Shot 参照）。
+5. **`05_WorkBuddy下周会议采集与ABCD评级提示词.txt`**：下周会议专属采集评级指令。
+6. **`06_官方评级金标准参考_20261123周度.csv`**：评级标杆参考对照表。
 
 ---
 
-## 🚀 执行四步走
+## 🚀 两种免终端（Zero-Terminal）入库方式
 
-### 第一步：将提示词给到 WorkBuddy
-打开 WorkBuddy 界面，全选复制 **`01_给WorkBuddy的执行提示词.txt`** 发送给它开始执行。
+### 方式一：网页端一键选择文件导入（最快最简单，完全不用命令行）
+无论 WorkBuddy 把采集结果存放在何处（或直接在聊天中发给您），您只需：
+1. 打开在线审核工作台：[https://zhengwenxin79-ctrl.github.io/clinical-marketing-workbench/会议审核入库.html](https://zhengwenxin79-ctrl.github.io/clinical-marketing-workbench/会议审核入库.html)
+2. 在工具栏上点击 **【📁 导入交付文件 (JSON/CSV)】**；
+3. 选择 WorkBuddy 生成的 `.json` 或 `.csv` 文件；
+4. **网页即刻自动解析全部会议、自动标记 ABCD 评级与重点标签，直接加载进待审核列表！**
 
-### 第二步：保存产物文件
-让 WorkBuddy 将采集生成的 JSON 结果保存到项目目录下的：
-```
-clinical-marketing-antigravity-20261119/crawled_batches/batch_20261120_workbuddy.json
-```
-*(注：如果目录 `crawled_batches/` 尚未存在，工具会自动创建)*
+---
 
-### 第三步：一键校验并入库暂存队列（命令行）
-在项目根目录下打开终端，执行以下命令：
-```bash
-python tools/manage_conference_updates.py --import-file crawled_batches/batch_20261120_workbuddy.json
-```
-**系统将自动完成：**
-1. 校验 JSON 格式与字段合法性；
-2. 自动与现有数据库比对（首次收录 `first_seen` / 日程变更 `source_update` / 重复日程 `duplicate`）；
-3. 将重复项自动过滤归档，有效新会议或日程变更自动存入 `conference_updates.db` 的【待市场部审核队列】。
+### 方式二：WorkBuddy 直推 GitHub，云端自动入库发布（全自动无人值守）
+如果 WorkBuddy 拥有终端权限，您只需在给 WorkBuddy 的提示词最后加一段指令：
+> “采集生成 JSON 文件后，保存至 `crawled_batches/` 目录，然后执行以下 Git 命令推送至 GitHub：
+> ```bash
+> git add crawled_batches/
+> git commit -m "feat(batch): WorkBuddy 采集批次交付"
+> git push origin main
+> ```”
 
-### 第四步：市场部审核发布
-打开已统一风格的审核工作台：
-- 本地访问：[http://127.0.0.1:8768/workbench/领域工作台/会议审核入库.html](http://127.0.0.1:8768/workbench/领域工作台/会议审核入库.html)
-- 或线上访问：[https://zhengwenxin79-ctrl.github.io/clinical-marketing-workbench/会议审核入库.html](https://zhengwenxin79-ctrl.github.io/clinical-marketing-workbench/会议审核入库.html)
-
-在界面上点击 **【✅ 批准并发布】**，数据即刻生效并同步至首页的每周最新动态！
+**云端自动化流（已配置 GitHub Actions CI/CD）：**
+1. GitHub 检测到 WorkBuddy 推送了新的采集文件；
+2. 云端 Linux 容器自动运行 `python tools/auto_ingest_batches.py` 自动入库与去重；
+3. 自动重新生成静态工作台并发布到 GitHub Pages；
+4. 您无需在本地电脑运行任何命令，直接在手机或电脑浏览器打开页面即可审核！
