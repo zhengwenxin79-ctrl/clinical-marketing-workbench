@@ -11,23 +11,18 @@ with open("workbench/框架配置/static_demo_queue.json", "r", encoding="utf-8"
 
 json_str = json.dumps(static_items, ensure_ascii=False, indent=2)
 
-# Replace STATIC_DEMO_QUEUE
-# From 'const STATIC_DEMO_QUEUE = [' up to '];'
+# 1. Replace STATIC_DEMO_QUEUE
 pattern = r"const STATIC_DEMO_QUEUE = \[.*?\];"
 replacement = f"const STATIC_DEMO_QUEUE = {json_str};"
-
 new_content = re.sub(pattern, replacement, content, flags=re.DOTALL)
 
-# Ensure fallbackToStaticQueue uses localStorage
-old_fallback = """function fallbackToStaticQueue() {
-  if (!currentQueue || currentQueue.length === 0) {
-    currentQueue = JSON.parse(JSON.stringify(STATIC_DEMO_QUEUE));
-  }
-}"""
-
+# 2. Update fallbackToStaticQueue to use demo_review_queue_v4 and clear obsolete v1/v2
+pattern_fallback = r"function fallbackToStaticQueue\(\)\s*\{[\s\S]*?\n\}"
 new_fallback = """function fallbackToStaticQueue() {
   try {
-    const cached = localStorage.getItem("demo_review_queue_v2");
+    localStorage.removeItem("demo_review_queue_v2");
+    localStorage.removeItem("demo_review_queue");
+    const cached = localStorage.getItem("demo_review_queue_v4");
     if (cached) {
       currentQueue = JSON.parse(cached);
       return;
@@ -37,43 +32,37 @@ new_fallback = """function fallbackToStaticQueue() {
   }
   currentQueue = JSON.parse(JSON.stringify(STATIC_DEMO_QUEUE));
   try {
-    localStorage.setItem("demo_review_queue_v2", JSON.stringify(currentQueue));
+    localStorage.setItem("demo_review_queue_v4", JSON.stringify(currentQueue));
   } catch (e) {}
 }"""
+new_content = re.sub(pattern_fallback, new_fallback, new_content)
 
-if old_fallback in new_content:
-    new_content = new_content.replace(old_fallback, new_fallback)
-else:
-    print("Warning: old_fallback not matched exactly, checking regex...")
-    pattern_fallback = r"function fallbackToStaticQueue\(\)\s*\{[\s\S]*?\n\}"
-    new_content = re.sub(pattern_fallback, new_fallback, new_content)
+# 3. Update localStorage key in reviewItem
+new_content = new_content.replace('localStorage.setItem("demo_review_queue_v2"', 'localStorage.setItem("demo_review_queue_v4"')
 
-# Ensure reviewItem updates localStorage in static mode
-old_review_static = """    item.review_status = action === "approve" ? "approved" : "rejected";
-    item.tier_code = chosenTier;
-    item.tier = chosenTier;
-    item.reviewed_by = "market_user";
-    item.reviewed_at = new Date().toISOString();
-    if (note) item.review_note = (item.review_note ? item.review_note + " | " : "") + note;
-    updateStats();
-    renderQueue();"""
-
-new_review_static = """    item.review_status = action === "approve" ? "approved" : "rejected";
-    item.tier_code = chosenTier;
-    item.tier = chosenTier;
-    item.reviewed_by = "market_user";
-    item.reviewed_at = new Date().toISOString();
-    if (note) item.review_note = (item.review_note ? item.review_note + " | " : "") + note;
+# 4. Add resetQueueToGoldStandard function if not present
+if "function resetQueueToGoldStandard" not in new_content:
+    reset_func = """
+function resetQueueToGoldStandard() {
+  if (confirm("是否重置当前沙盒数据为官方金标准 17 场会议批次？已做的人工审核操作将被恢复。")) {
+    localStorage.removeItem("demo_review_queue_v4");
+    currentQueue = JSON.parse(JSON.stringify(STATIC_DEMO_QUEUE));
     try {
-      localStorage.setItem("demo_review_queue_v2", JSON.stringify(currentQueue));
-    } catch (e) {}
+      localStorage.setItem("demo_review_queue_v4", JSON.stringify(currentQueue));
+    } catch(e) {}
     updateStats();
-    renderQueue();"""
+    renderQueue();
+    alert("✅ 已成功重置为官方金标准批次（6 场重点关注、5 场常规关注、6 场低优先级）！");
+  }
+}
+"""
+    new_content = new_content.replace('function simulateNewBatch() {', reset_func + '\nfunction simulateNewBatch() {')
 
-if old_review_static in new_content:
-    new_content = new_content.replace(old_review_static, new_review_static)
-else:
-    print("Warning: old_review_static not matched exactly")
+# 5. Add Reset button into toolbar if not present
+if "resetQueueToGoldStandard()" not in new_content:
+    old_btn = '<button class="btn btn-outline" onclick="simulateNewBatch()">'
+    new_btn = '<button class="btn btn-outline" onclick="resetQueueToGoldStandard()">🔄 重置金标准批次</button>\n        <button class="btn btn-outline" onclick="simulateNewBatch()">'
+    new_content = new_content.replace(old_btn, new_btn)
 
 with open(html_path, "w", encoding="utf-8") as f:
     f.write(new_content)
