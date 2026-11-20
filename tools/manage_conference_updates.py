@@ -55,6 +55,7 @@ def init_schema(conn):
         field_id TEXT NOT NULL,
         conference_name TEXT NOT NULL,
         abbreviation TEXT,
+        tier_code TEXT DEFAULT 'B', -- A, B, C, D
         start_date TEXT,
         end_date TEXT,
         city TEXT,
@@ -92,6 +93,12 @@ def init_schema(conn):
         metadata_json TEXT
     )
     """)
+
+    # Ensure tier_code exists in conference_review_queue
+    cols = [col[1] for col in c.execute("PRAGMA table_info(conference_review_queue)").fetchall()]
+    if "tier_code" not in cols:
+        c.execute("ALTER TABLE conference_review_queue ADD COLUMN tier_code TEXT DEFAULT 'B'")
+
     conn.commit()
 
 def sync_anchors_to_db(conn=None):
@@ -221,6 +228,26 @@ def ingest_crawled_conferences(items, batch_id=None, conn=None):
             change_type = "first_seen"
             results["first_seen"] += 1
 
+        # Deduce Tier code (A, B, C, D)
+        tier_raw = str(item.get("tier") or item.get("tier_code") or item.get("tier_level") or "").strip().upper()
+        if "A" in tier_raw or "INTERNATIONAL" in tier_raw or "国际" in tier_raw:
+            tier_code = "A"
+        elif "B" in tier_raw or "NATIONAL" in tier_raw or "全国" in tier_raw:
+            tier_code = "B"
+        elif "C" in tier_raw or "REGIONAL" in tier_raw or "区域" in tier_raw or "省" in tier_raw:
+            tier_code = "C"
+        elif "D" in tier_raw or "TOPIC" in tier_raw or "专题" in tier_raw:
+            tier_code = "D"
+        else:
+            if cid in {"ADA2026", "EASD2026", "ACC2026", "ESC2026", "EULAR2026", "ISTH2026"}:
+                tier_code = "A"
+            elif any(k in name for k in ("中华医学会", "中国医师协会", "CSCO", "全国", "年会")):
+                tier_code = "B"
+            elif any(k in name for k in ("省", "市", "华东", "华北", "华南", "西部")):
+                tier_code = "C"
+            else:
+                tier_code = "B"
+
         # Enqueue for review (duplicates are marked rejected by default)
         queue_id = "REV-" + secrets.token_hex(6)
         if change_type == "duplicate":
@@ -234,13 +261,13 @@ def ingest_crawled_conferences(items, batch_id=None, conn=None):
         INSERT INTO conference_review_queue (
             queue_id, raw_id, conference_id, change_type, review_status,
             reviewed_by, reviewed_at, review_note, field_id, conference_name,
-            abbreviation, start_date, end_date, city, official_url, created_at
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            abbreviation, tier_code, start_date, end_date, city, official_url, created_at
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (
             queue_id, raw_id, cid, change_type, status,
             "system" if change_type == "duplicate" else None,
             now_str if change_type == "duplicate" else None,
-            note, field_id, name, abbr, item.get("start_date"),
+            note, field_id, name, abbr, tier_code, item.get("start_date"),
             item.get("end_date"), item.get("city"), item.get("official_url") or item.get("source_url"),
             now_str
         ))
@@ -254,7 +281,7 @@ def ingest_crawled_conferences(items, batch_id=None, conn=None):
     conn.commit()
     return results
 
-def review_queue_item(queue_id, action, reviewed_by="market_admin", note="", conn=None):
+def review_queue_item(queue_id, action, reviewed_by="market_admin", note="", tier_code=None, conn=None):
     if conn is None:
         conn = get_db()
     c = conn.cursor()
@@ -264,12 +291,13 @@ def review_queue_item(queue_id, action, reviewed_by="market_admin", note="", con
 
     status = "approved" if action == "approve" else "rejected"
     now_str = datetime.datetime.now(datetime.timezone.utc).isoformat()
+    final_tier = tier_code or dict(row).get("tier_code") or "B"
 
     c.execute("""
     UPDATE conference_review_queue SET
-        review_status = ?, reviewed_by = ?, reviewed_at = ?, review_note = ?
+        review_status = ?, reviewed_by = ?, reviewed_at = ?, review_note = ?, tier_code = ?
     WHERE queue_id = ?
-    """, (status, reviewed_by, now_str, note, queue_id))
+    """, (status, reviewed_by, now_str, note, final_tier, queue_id))
 
     # If approved, generate weekly update event
     if status == "approved":

@@ -476,7 +476,8 @@ class RBACRequestHandler(SimpleHTTPRequestHandler):
             note = body.get("note", "")
             if not queue_id or action not in ("approve", "reject"):
                 return self.send_json(400, {"error": "缺少 queue_id 或 action 取值非法 (approve/reject)"})
-            res = manage_conference_updates.review_queue_item(queue_id, action, reviewed_by=user["id"], note=note)
+            tier_code = body.get("tier_code")
+            res = manage_conference_updates.review_queue_item(queue_id, action, reviewed_by=user["id"], note=note, tier_code=tier_code)
             if res.get("success"):
                 manage_conference_updates.sync_weekly_change_log()
             return self.send_json(200 if res.get("success") else 400, res)

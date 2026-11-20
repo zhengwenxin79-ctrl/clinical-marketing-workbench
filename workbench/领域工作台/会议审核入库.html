@@ -234,6 +234,16 @@
     .tag-approved { background: var(--green-bg); color: var(--green); border: 1px solid #bbf7d0; }
     .tag-rejected { background: var(--red-bg); color: var(--red); border: 1px solid #fecaca; }
 
+    /* Tier ABCD Badges */
+    .tag-tier-a { background: #f5f3ff; color: #6b21a8; border: 1px solid #d8b4fe; font-weight: 700; }
+    .tag-tier-b { background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; font-weight: 700; }
+    .tag-tier-c { background: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0; font-weight: 700; }
+    .tag-tier-d { background: #f8fafc; color: #475569; border: 1px solid #cbd5e1; font-weight: 600; }
+    .tier-select {
+      padding: 3px 6px; font-size: 12px; font-weight: 600; border-radius: 4px;
+      border: 1px solid var(--line); background: #f8faff; color: var(--ink);
+    }
+
     .card-title { font-size: 17px; font-weight: 600; margin: 0 0 6px; color: var(--ink); }
     .card-details {
       display: flex;
@@ -429,6 +439,16 @@
             <option value="vascular">血管与器官损伤</option>
           </select>
         </div>
+        <div class="filter-group">
+          <label>学术评级 (Tier)：</label>
+          <select id="filter-tier" onchange="renderQueue()">
+            <option value="all" selected>全部评级 (A/B/C/D)</option>
+            <option value="A">👑 A 类 · 国际顶级核心</option>
+            <option value="B">🏛️ B 类 · 国内全国性核心</option>
+            <option value="C">📍 C 类 · 省级区域重点</option>
+            <option value="D">🔬 D 类 · 专科专题/待定</option>
+          </select>
+        </div>
       </div>
       <div style="display:flex; gap:10px;">
         <button class="btn btn-outline" onclick="simulateNewBatch()">📥 导入/模拟新抓取批次</button>
@@ -497,6 +517,7 @@ const STATIC_DEMO_QUEUE = [
     conference_name: "中华医学会糖尿病学分会第三十一次全国学术会议",
     abbreviation: "CDS 2026",
     field_id: "diabetes",
+    tier_code: "B",
     start_date: "2026-11-18",
     end_date: "2026-11-21",
     city: "上海市",
@@ -513,11 +534,13 @@ const STATIC_DEMO_QUEUE = [
     conference_name: "86th Scientific Sessions of the American Diabetes Association",
     abbreviation: "ADA 2026",
     field_id: "diabetes",
+    tier_code: "A",
     start_date: "2026-06-12",
     end_date: "2026-06-16",
     city: "New Orleans, LA",
     official_url: "https://professional.diabetes.org/scientific-sessions",
     change_type: "first_seen",
+    tier_code: chosen.cid.startsWith("ISTH") ? "A" : "B",
     review_status: "pending",
     review_note: "国际锚点监控命中：官网公布 2026 年摘要提交入口与主旨论坛题目",
     batch_id: "batch_20261120_ada",
@@ -529,6 +552,7 @@ const STATIC_DEMO_QUEUE = [
     conference_name: "中国临床肿瘤学会第二十九届全国学术年会",
     abbreviation: "CSCO 2026",
     field_id: "vascular",
+    tier_code: "B",
     start_date: "2026-09-23",
     end_date: "2026-09-27",
     city: "厦门市",
@@ -547,6 +571,7 @@ const STATIC_DEMO_QUEUE = [
     conference_name: "中华医学会第二十八次全国心血管年会",
     abbreviation: "CSC 2026",
     field_id: "cardiovascular",
+    tier_code: "B",
     start_date: "2026-10-15",
     end_date: "2026-10-18",
     city: "北京市",
@@ -655,6 +680,7 @@ function updateStats() {
 function renderQueue() {
   const statusFilter = document.getElementById("filter-status").value;
   const fieldFilter = document.getElementById("filter-field").value;
+  const tierFilter = document.getElementById("filter-tier") ? document.getElementById("filter-tier").value : "all";
 
   let filtered = currentQueue.slice();
   if (statusFilter !== "all") {
@@ -663,27 +689,41 @@ function renderQueue() {
   if (fieldFilter !== "all") {
     filtered = filtered.filter(i => i.field_id === fieldFilter);
   }
+  if (tierFilter !== "all") {
+    filtered = filtered.filter(i => (i.tier_code || i.tier || "B").toUpperCase() === tierFilter);
+  }
 
   const container = document.getElementById("queue-container");
   if (!filtered.length) {
     container.innerHTML = `
       <div class="empty-state">
         <h3>当前筛选条件下无记录</h3>
-        <p>可尝试切换审核状态或领域，或点击右上角【导入/模拟新抓取批次】测试审核流。</p>
+        <p>可尝试切换评级、审核状态或领域，或点击右上角【导入/模拟新抓取批次】测试审核流。</p>
       </div>
     `;
     return;
   }
 
+  const TIER_LABELS = {
+    "A": "👑 A类 · 国际顶级",
+    "B": "🏛️ B类 · 国家级核心",
+    "C": "📍 C类 · 省级重点",
+    "D": "🔬 D类 · 专科研讨"
+  };
+
   container.innerHTML = filtered.map(item => {
     const typeLabel = item.change_type === "first_seen" ? "🆕 首次收录" : item.change_type === "source_update" ? "🔄 日程变更" : "🚫 重复日程";
     const statusLabel = item.review_status === "pending" ? "待人工审核" : item.review_status === "approved" ? "已批准入库" : "已驳回/去重";
     const domainName = DOMAIN_NAMES[item.field_id] || item.field_id;
+    const tier = (item.tier_code || item.tier || "B").toUpperCase();
+    const tierClass = "tag-tier-" + tier.toLowerCase();
+    const tierDisplay = TIER_LABELS[tier] || ("评级 " + tier);
 
     return `
       <div class="queue-card" data-id="${item.queue_id}">
         <div class="queue-card-main">
           <div class="card-meta">
+            <span class="tag ${tierClass}">${tierDisplay}</span>
             <span class="tag tag-${item.change_type}">${typeLabel}</span>
             <span class="tag tag-domain">${domainName}</span>
             <span class="tag tag-${item.review_status}">${statusLabel}</span>
@@ -700,10 +740,19 @@ function renderQueue() {
         </div>
         <div class="card-actions">
           ${item.review_status === 'pending' ? `
+            <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;">
+              <span style="font-size:12px;color:var(--muted);white-space:nowrap;">核定评级:</span>
+              <select class="tier-select" id="tier-sel-${item.queue_id}" onchange="changeItemTier('${item.queue_id}', this.value)">
+                <option value="A" ${tier==='A'?'selected':''}>A 类 国际顶级</option>
+                <option value="B" ${tier==='B'?'selected':''}>B 类 国家核心</option>
+                <option value="C" ${tier==='C'?'selected':''}>C 类 省级重点</option>
+                <option value="D" ${tier==='D'?'selected':''}>D 类 专科研讨</option>
+              </select>
+            </div>
             <button class="btn btn-success" onclick="reviewItem('${item.queue_id}', 'approve')">✅ 批准并发布</button>
             <button class="btn btn-outline" style="color:var(--red); border-color:#fca5a5;" onclick="openRejectModal('${item.queue_id}')">❌ 驳回忽略</button>
           ` : `
-            <span style="font-size: 13px; color: var(--muted); text-align: center; padding: 6px 0;">已完成归档</span>
+            <span style="font-size: 13px; color: var(--muted); text-align: center; padding: 6px 0;">已完成归档 (${tierDisplay})</span>
           `}
         </div>
       </div>
@@ -711,7 +760,19 @@ function renderQueue() {
   }).join('');
 }
 
+function changeItemTier(queueId, tier) {
+  const item = currentQueue.find(i => i.queue_id === queueId);
+  if (item) {
+    item.tier_code = tier;
+    item.tier = tier;
+    renderQueue();
+  }
+}
+
 async function reviewItem(queueId, action, note = "") {
+  const tierSel = document.getElementById("tier-sel-" + queueId);
+  const chosenTier = tierSel ? tierSel.value : "B";
+
   if (isBackendConnected) {
     try {
       const res = await fetch(`${API_BASE}/api/conference/review`, {
@@ -720,7 +781,7 @@ async function reviewItem(queueId, action, note = "") {
           "Content-Type": "application/json",
           "Authorization": `Bearer ${token}`
         },
-        body: JSON.stringify({ queue_id: queueId, action: action, note: note })
+        body: JSON.stringify({ queue_id: queueId, action: action, note: note, tier_code: chosenTier })
       });
       const result = await res.json();
       if (res.ok && result.success) {
@@ -738,6 +799,8 @@ async function reviewItem(queueId, action, note = "") {
   const item = currentQueue.find(i => i.queue_id === queueId);
   if (item) {
     item.review_status = action === "approve" ? "approved" : "rejected";
+    item.tier_code = chosenTier;
+    item.tier = chosenTier;
     item.reviewed_by = "market_user";
     item.reviewed_at = new Date().toISOString();
     if (note) item.review_note = (item.review_note ? item.review_note + " | " : "") + note;
@@ -786,6 +849,7 @@ function simulateNewBatch() {
     city: chosen.city,
     official_url: "https://www.cma.org.cn/meeting/" + chosen.cid.toLowerCase(),
     change_type: "first_seen",
+    tier_code: chosen.cid.startsWith("ISTH") ? "A" : "B",
     review_status: "pending",
     review_note: "学术监控锚点自动抓取新排期，等待市场部人工核验",
     batch_id: "batch_" + new Date().toISOString().slice(0,10).replace(/-/g,''),
