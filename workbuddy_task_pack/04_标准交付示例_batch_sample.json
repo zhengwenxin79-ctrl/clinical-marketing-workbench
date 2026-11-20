@@ -1,0 +1,44 @@
+{
+  "batch_id": "batch_20261120_workbuddy_sample",
+  "generated_at": "2026-11-20T15:30:00+08:00",
+  "source": "WorkBuddy_Agent_Run",
+  "total_extracted": 3,
+  "items": [
+    {
+      "conference_id": "CDS2026",
+      "conference_name": "中华医学会糖尿病学分会第三十一次全国学术会议",
+      "abbreviation": "CDS 2026",
+      "field_id": "diabetes",
+      "start_date": "2026-11-18",
+      "end_date": "2026-11-21",
+      "city": "上海市",
+      "official_url": "https://cds26.tiemeeting.com/CN",
+      "description": "官网发布第一轮通知与征文通知，明确会期与主要分论坛方向",
+      "raw_text_snippet": "中华医学会糖尿病学分会定于2026年11月18-21日在上海世博展览馆召开第三十一次全国学术会议。大会将围绕糖尿病发病机制、胰岛素抵抗、并发症早期筛查等前沿议题开展研讨..."
+    },
+    {
+      "conference_id": "CSE2026",
+      "conference_name": "中华医学会内分泌学分会第二十三次全国内分泌学学术会议",
+      "abbreviation": "CSE 2026",
+      "field_id": "diabetes",
+      "start_date": "2026-08-20",
+      "end_date": "2026-08-23",
+      "city": "成都市",
+      "official_url": "https://cse2026.sciconf.cn/",
+      "description": "全国内分泌学学术年会官方网站上线，公布会期与举办城市",
+      "raw_text_snippet": "由中华医学会、中华医学会内分泌学分会主办的第二十三次全国内分泌学学术会议定于2026年8月20-23日在四川省成都市世纪城国际会议中心举行..."
+    },
+    {
+      "conference_id": "ADA2026",
+      "conference_name": "86th Scientific Sessions of the American Diabetes Association",
+      "abbreviation": "ADA 2026",
+      "field_id": "diabetes",
+      "start_date": "2026-06-12",
+      "end_date": "2026-06-16",
+      "city": "New Orleans, LA",
+      "official_url": "https://professional.diabetes.org/scientific-sessions",
+      "description": "ADA 官网开放 2026 年度会议注册与 Late-Breaking 摘要提交通道",
+      "raw_text_snippet": "The 86th Scientific Sessions will take place June 12–16, 2026 in New Orleans, Louisiana. Join leading physicians and researchers for groundbreaking clinical trial updates..."
+    }
+  ]
+}

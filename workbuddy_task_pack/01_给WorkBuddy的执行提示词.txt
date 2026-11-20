@@ -1,0 +1,77 @@
+# ==============================================================================
+# WorkBuddy 任务提示词：2026年临床科研学术会议动态采集任务（第一批）
+# 使用方法：请全选复制以下提示词，直接粘贴给 WorkBuddy 执行。
+# ==============================================================================
+
+【任务角色与目标】
+你是一名专业的临床医学情报与学术会议采集助手。
+你的任务是：根据给定的学术监控锚点（或搜索矩阵），检索并提取 2026 年度国内及国际重大会议的最新官方排期与学术议程，输出为标准的结构化 JSON 批次文件。
+
+【采集策略与首批重点目标（Top 15 优先）】
+请优先访问或检索以下 15 个临床重点会议与学会主页的 2026 年最新通知/排期：
+1. 中华医学会糖尿病学分会全国学术会议 (CDS 2026) -> 官网: https://cds26.tiemeeting.com/CN 或 https://www.cma.org.cn
+2. 中华医学会内分泌学分会学术会议 (CSE 2026) -> 官网: https://cse2026.sciconf.cn/
+3. 中国临床肿瘤学会全国学术年会 (CSCO 2026) -> 官网: http://www.csco.org.cn
+4. 中华医学会风湿病学分会学术年会 (CRA 2026) -> 官网: https://cmacra2026.sciconf.cn/
+5. 中国医师协会风湿免疫科医师分会年会 (CARIP 2026) -> 官网: https://carip2026.cnconf.com/msite/main/cn
+6. 中华医学会心血管病学年会 (CSC 2026) -> 官网: http://csc2026.medmeeting.org
+7. 中华医学会呼吸病学年会 (CTS 2026) -> 官网: https://cts2026.sciconf.cn/
+8. 中华医学会神经病学分会学术会议 (NNS 2026) -> 官网: http://cns2026.medmeeting.org
+9. 中国国际血管医学大会 (CCVM 2026) -> 官网: http://www.ccvm.org.cn
+10. 美国糖尿病学会科学年会 (ADA 2026) -> 官网: https://professional.diabetes.org/scientific-sessions
+11. 欧洲糖尿病研究学会年会 (EASD 2026) -> 官网: https://www.easd.org/annual-meeting.html
+12. 美国心脏病学会科学年会 (ACC 2026) -> 官网: https://accscientificsession.acc.org/
+13. 欧洲心脏病学会年会 (ESC 2026) -> 官网: https://www.escardio.org/Congresses-&-Events
+14. 欧洲抗风湿联盟年会 (EULAR 2026) -> 官网: https://congress.eular.org/
+15. 国际血栓与止血学会大会 (ISTH 2026) -> 官网: https://www.isth2026.org/
+
+【采集与提取字段要求】
+对每一个查证到的学术会议，必须提取并格式化为以下 10 个字段：
+- conference_id: 会议规范英文简称+年份（如 "CDS2026", "ADA2026", "CSCO2026"）
+- conference_name: 会议官方中文全称（如 "中华医学会糖尿病学分会第三十一次全国学术会议"）
+- abbreviation: 常用缩写（如 "CDS 2026"）
+- field_id: 归属领域代码，必须属于以下六个之一：
+    * "diabetes"（糖尿病与代谢）
+    * "cardiovascular"（心血管健康）
+    * "rheumatology"（风湿免疫）
+    * "neurology"（神经疾病）
+    * "respiratory"（呼吸系统）
+    * "vascular"（血管与器官损伤）
+- start_date: 开始日期，严格格式 YYYY-MM-DD（若具体日未定，可写至月份如 2026-11-01）
+- end_date: 结束日期，严格格式 YYYY-MM-DD
+- city: 举办城市或国家地区（如 "上海市", "厦门市", "New Orleans, LA"）
+- official_url: 官方通知或官网直接链接
+- description: 变更或最新动向简述（如 "官网发布第一轮征文通知，摘要截稿日期2026-08-30"）
+- raw_text_snippet: 网页上提取到的原始通告摘要（用于人工审核核验）
+
+【核心质量与纪律要求】
+1. 真实性第一：只收录真实检索到的官方通告与公开日程，严禁虚构或推断会议日期。
+2. 过滤商业噪声：排除商业性质展会、企业内部培训和非学术推介会。
+3. 严格输出标准 JSON：不要附加闲聊或 markdown 代码块外的解释，必须保证可以被 json.loads 解析。
+
+【输出目标文件路径】
+请将结果保存为 JSON 文件，存入以下路径：
+`crawled_batches/batch_20261120_workbuddy.json`
+（批次名称中的日期请替换为实际运行当天）
+
+【标准输出 JSON 模板格式】
+{
+  "batch_id": "batch_20261120_workbuddy_001",
+  "generated_at": "2026-11-20T15:30:00+08:00",
+  "source": "WorkBuddy_Agent_Run",
+  "total_extracted": 3,
+  "items": [
+    {
+      "conference_id": "CDS2026",
+      "conference_name": "中华医学会糖尿病学分会第三十一次全国学术会议",
+      "abbreviation": "CDS 2026",
+      "field_id": "diabetes",
+      "start_date": "2026-11-18",
+      "end_date": "2026-11-21",
+      "city": "上海市",
+      "official_url": "https://cds26.tiemeeting.com/CN",
+      "description": "官网更新大会排期及分论坛征文通告",
+      "raw_text_snippet": "中华医学会糖尿病学分会定于2026年11月18-21日在上海召开第三十一次全国学术会议，现开启网上投稿..."
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "WorkBuddyConferenceBatchSchema",
+  "description": "临床会议动态采集批次标准数据契约",
+  "type": "object",
+  "required": ["batch_id", "generated_at", "items"],
+  "properties": {
+    "batch_id": {
+      "type": "string",
+      "description": "批次唯一编号，格式如 batch_YYYYMMDD_workbuddy_001"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "采集生成时间 (ISO-8601格式，带时区)"
+    },
+    "source": {
+      "type": "string",
+      "description": "采集执行者标识，如 WorkBuddy"
+    },
+    "total_extracted": {
+      "type": "integer",
+      "description": "本批次抽取的会议总条目数"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "conference_id",
+          "conference_name",
+          "field_id",
+          "start_date",
+          "end_date",
+          "city"
+        ],
+        "properties": {
+          "conference_id": {
+            "type": "string",
+            "description": "规范会议编码（大写+年份），如 CDS2026, ADA2026"
+          },
+          "conference_name": {
+            "type": "string",
+            "description": "会议官方完整名称"
+          },
+          "abbreviation": {
+            "type": "string",
+            "description": "学术简称，如 CDS 2026"
+          },
+          "field_id": {
+            "type": "string",
+            "enum": [
+              "diabetes",
+              "cardiovascular",
+              "rheumatology",
+              "neurology",
+              "respiratory",
+              "vascular"
+            ],
+            "description": "所属疾病领域代码"
+          },
+          "start_date": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+            "description": "开会开始日期 (YYYY-MM-DD)"
+          },
+          "end_date": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+            "description": "开会结束日期 (YYYY-MM-DD)"
+          },
+          "city": {
+            "type": "string",
+            "description": "举办城市"
+          },
+          "official_url": {
+            "type": "string",
+            "description": "主办方官网或会议官方发布入口"
+          },
+          "description": {
+            "type": "string",
+            "description": "动态说明或日程提炼"
+          },
+          "raw_text_snippet": {
+            "type": "string",
+            "description": "网页采集到的原始依据文本"
+          }
+        }
+      }
+    }
+  }
+}

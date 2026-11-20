@@ -1,0 +1,141 @@
+{
+  "description": "临床科研学术会议首批抓取目标清单 (WorkBuddy Prioritized Anchors Top 15)",
+  "total_anchors": 15,
+  "anchors": [
+    {
+      "rank": 1,
+      "conference_id": "CDS2026",
+      "conference_name": "中华医学会糖尿病学分会全国学术会议",
+      "field_id": "diabetes",
+      "field_name": "糖尿病与代谢",
+      "official_entry": "https://cds26.tiemeeting.com/CN",
+      "focus": "主旨论坛、分论坛排期、征文截稿日、CGM/胰岛素抵抗议题"
+    },
+    {
+      "rank": 2,
+      "conference_id": "CSE2026",
+      "conference_name": "中华医学会内分泌学分会学术会议",
+      "field_id": "diabetes",
+      "field_name": "糖尿病与代谢",
+      "official_entry": "https://cse2026.sciconf.cn/",
+      "focus": "内分泌代谢病前沿进展、激素调控、下丘脑与垂体"
+    },
+    {
+      "rank": 3,
+      "conference_id": "CSCO2026",
+      "conference_name": "中国临床肿瘤学会全国学术年会",
+      "field_id": "vascular",
+      "field_name": "血管与器官损伤",
+      "official_entry": "http://www.csco.org.cn",
+      "focus": "国内顶级肿瘤与器官靶向治疗进展"
+    },
+    {
+      "rank": 4,
+      "conference_id": "CRA2026",
+      "conference_name": "中华医学会风湿病学分会学术年会",
+      "field_id": "rheumatology",
+      "field_name": "风湿免疫",
+      "official_entry": "https://cmacra2026.sciconf.cn/",
+      "focus": "SLE系统性红斑狼疮、类风湿关节炎前沿进展"
+    },
+    {
+      "rank": 5,
+      "conference_id": "CARIP2026",
+      "conference_name": "中国医师协会风湿免疫科医师分会年会",
+      "field_id": "rheumatology",
+      "field_name": "风湿免疫",
+      "official_entry": "https://carip2026.cnconf.com/msite/main/cn",
+      "focus": "风湿科临床转化与专家诊疗规范"
+    },
+    {
+      "rank": 6,
+      "conference_id": "CSC2026",
+      "conference_name": "中华医学会心血管病学年会",
+      "field_id": "cardiovascular",
+      "field_name": "心血管健康",
+      "official_entry": "http://csc2026.medmeeting.org",
+      "focus": "冠心病、心衰、泛血管动脉粥样硬化"
+    },
+    {
+      "rank": 7,
+      "conference_id": "CTS2026",
+      "conference_name": "中华医学会呼吸病学年会",
+      "field_id": "respiratory",
+      "field_name": "呼吸系统",
+      "official_entry": "https://cts2026.sciconf.cn/",
+      "focus": "COPD慢阻肺、哮喘与肺纤维化早期诊断"
+    },
+    {
+      "rank": 8,
+      "conference_id": "NNS2026",
+      "conference_name": "中华医学会神经病学分会学术会议",
+      "field_id": "neurology",
+      "field_name": "神经疾病",
+      "official_entry": "http://cns2026.medmeeting.org",
+      "focus": "脑卒中、神经退行性病变、阿尔茨海默病分子标志物"
+    },
+    {
+      "rank": 9,
+      "conference_id": "CCVM2026",
+      "conference_name": "中国国际血管医学大会",
+      "field_id": "vascular",
+      "field_name": "血管与器官损伤",
+      "official_entry": "http://www.ccvm.org.cn",
+      "focus": "血管健康评估、内皮损伤与靶器官保护"
+    },
+    {
+      "rank": 10,
+      "conference_id": "ADA2026",
+      "conference_name": "86th Scientific Sessions of the American Diabetes Association",
+      "field_id": "diabetes",
+      "field_name": "糖尿病与代谢",
+      "official_entry": "https://professional.diabetes.org/scientific-sessions",
+      "focus": "全球顶级糖尿病年会、重磅临床试验发布"
+    },
+    {
+      "rank": 11,
+      "conference_id": "EASD2026",
+      "conference_name": "62nd EASD Annual Meeting",
+      "field_id": "diabetes",
+      "field_name": "糖尿病与代谢",
+      "official_entry": "https://www.easd.org/annual-meeting.html",
+      "focus": "欧洲顶级代谢医学研究大会"
+    },
+    {
+      "rank": 12,
+      "conference_id": "ACC2026",
+      "conference_name": "American College of Cardiology Scientific Session",
+      "field_id": "cardiovascular",
+      "field_name": "心血管健康",
+      "official_entry": "https://accscientificsession.acc.org/",
+      "focus": "心血管全球最新突破性临床试验"
+    },
+    {
+      "rank": 13,
+      "conference_id": "ESC2026",
+      "conference_name": "European Society of Cardiology Congress",
+      "field_id": "cardiovascular",
+      "field_name": "心血管健康",
+      "official_entry": "https://www.escardio.org/Congresses-&-Events",
+      "focus": "欧洲心血管年会"
+    },
+    {
+      "rank": 14,
+      "conference_id": "EULAR2026",
+      "conference_name": "European Alliance of Associations for Rheumatology Congress",
+      "field_id": "rheumatology",
+      "field_name": "风湿免疫",
+      "official_entry": "https://congress.eular.org/",
+      "focus": "欧洲风湿病学顶级大会"
+    },
+    {
+      "rank": 15,
+      "conference_id": "ISTH2026",
+      "conference_name": "International Society on Thrombosis and Haemostasis Congress",
+      "field_id": "vascular",
+      "field_name": "血管与器官损伤",
+      "official_entry": "https://www.isth2026.org/",
+      "focus": "国际血栓与止血学会大会"
+    }
+  ]
+}
