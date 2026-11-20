@@ -1,273 +1,472 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>会议更新与审核入库工作台 - 市场部专属</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>会议审核与动态入库 - 临床科研智能营销工作台</title>
   <style>
     :root {
-      --bg: #0f172a;
-      --card-bg: #1e293b;
-      --card-border: #334155;
-      --text: #f8fafc;
-      --text-muted: #94a3b8;
-      --primary: #38bdf8;
-      --primary-hover: #0284c7;
-      --success: #34d399;
-      --success-bg: rgba(52, 211, 153, 0.15);
-      --warning: #fbbf24;
-      --warning-bg: rgba(251, 191, 36, 0.15);
-      --danger: #f87171;
-      --danger-bg: rgba(248, 113, 113, 0.15);
-      --purple: #c084fc;
-      --purple-bg: rgba(192, 132, 252, 0.15);
+      --navy: #172f4e;
+      --ink: #203956;
+      --muted: #6b8099;
+      --blue: #3268a4;
+      --blue-hover: #23528b;
+      --purple: #71629a;
+      --bg: #f3f6fb;
+      --line: #dae4f0;
+      --pale: #edf4fd;
+      --green: #15803d;
+      --green-bg: #eaf8ef;
+      --amber: #b45309;
+      --amber-bg: #fef3c7;
+      --red: #b91c1c;
+      --red-bg: #fee2e2;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * { box-sizing: border-box; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      margin: 0;
       background: var(--bg);
-      color: var(--text);
-      line-height: 1.5;
-      padding: 24px;
+      color: var(--ink);
+      font: 15px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
     }
-    .container { max-width: 1280px; margin: 0 auto; }
-    header {
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    button, input, select, textarea {
+      font: inherit;
+      color: inherit;
+      border: 1px solid #c6d5e7;
+      border-radius: 6px;
+      padding: 8px 12px;
+      background: white;
+      max-width: 100%;
+    }
+    button { cursor: pointer; }
+    button:hover { background: var(--pale); border-color: #8aa9cf; }
+
+    /* Header */
+    header { background: var(--navy); color: white; }
+    .header-inner {
+      max-width: 1400px;
+      margin: auto;
+      padding: 20px 28px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding-bottom: 20px;
-      border-bottom: 1px solid var(--card-border);
-      margin-bottom: 24px;
+      gap: 24px;
     }
-    .brand h1 { font-size: 24px; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 10px; }
-    .brand p { font-size: 14px; color: var(--text-muted); margin-top: 4px; }
-    .user-bar { display: flex; align-items: center; gap: 12px; }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: white;
+      text-decoration: none;
+      margin-right: auto;
+    }
+    .brand b {
+      display: grid;
+      place-items: center;
+      background: #2867df;
+      border-radius: 9px;
+      width: 44px;
+      height: 44px;
+      font-size: 22px;
+      color: white;
+    }
+    .brand strong { font-size: 20px; display: block; }
+    .brand small { display: block; font-size: 13px; color: #b6c8df; }
     .user-badge {
-      background: rgba(56, 189, 248, 0.15);
-      color: var(--primary);
+      background: #244563;
+      color: #93c5fd;
+      border: 1px solid #486d92;
       padding: 6px 14px;
       border-radius: 20px;
       font-size: 13px;
       font-weight: 600;
-      border: 1px solid rgba(56, 189, 248, 0.3);
     }
-    .btn {
-      padding: 8px 16px;
-      border-radius: 8px;
-      border: none;
+    .header-links { display: flex; align-items: center; gap: 14px; font-size: 13px; }
+    .header-links a { color: #b6c8df; }
+    .header-links a:hover { color: white; }
+
+    /* Nav */
+    .primary-nav {
+      display: flex;
+      gap: 8px;
+      background: white;
+      padding: 0 max(28px, calc((100% - 1344px)/2));
+      border-bottom: 1px solid var(--line);
+      white-space: nowrap;
+      overflow: auto;
+    }
+    .primary-nav a { padding: 16px 20px; font-weight: 600; color: var(--ink); text-decoration: none; }
+    .primary-nav a:hover { color: var(--blue); }
+    .primary-nav a.active { background: var(--pale); border-bottom: 3px solid #2867df; color: var(--blue); }
+
+    /* Main Container */
+    main { max-width: 1400px; margin: auto; padding: 28px; }
+    .page-intro {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    .eyebrow { font-size: 13px; color: var(--blue); margin: 0; font-weight: 600; }
+    h1 { font-size: 26px; margin: 4px 0 6px; }
+    .subtitle { color: var(--muted); font-size: 14px; margin: 0; }
+
+    /* Mode Banner */
+    .env-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      border-radius: 6px;
+      margin-bottom: 20px;
       font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s;
-      text-decoration: none;
+      border: 1px solid var(--line);
+      background: white;
+    }
+    .env-status-pill {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-    }
-    .btn-primary { background: var(--primary); color: #0f172a; }
-    .btn-primary:hover { background: var(--primary-hover); }
-    .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--card-border); }
-    .btn-outline:hover { background: var(--card-border); }
-    .btn-success { background: var(--success); color: #064e3b; }
-    .btn-danger { background: var(--danger); color: #450a0a; }
-
-    /* Stats Overview */
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      margin-bottom: 24px;
-    }
-    .stat-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
+      font-weight: 600;
+      padding: 3px 10px;
       border-radius: 12px;
-      padding: 16px 20px;
+      font-size: 12px;
     }
-    .stat-card .label { font-size: 13px; color: var(--text-muted); }
-    .stat-card .value { font-size: 28px; font-weight: 700; margin-top: 4px; color: #fff; }
-    .stat-card .desc { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+    .env-online { background: #dcfce7; color: #166534; }
+    .env-offline { background: #fef3c7; color: #92400e; }
 
-    /* Toolbar & Filter */
+    /* Stats */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin: 0 0 24px;
+    }
+    .stat {
+      border: 1px solid var(--line);
+      background: white;
+      border-radius: 8px;
+      padding: 16px 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+    .stat b { font-size: 28px; display: block; line-height: 1.2; margin-bottom: 4px; }
+    .stat span { font-size: 13px; color: var(--muted); }
+
+    /* Panel & Toolbar */
+    .panel {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 22px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
     .toolbar {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      gap: 14px;
       flex-wrap: wrap;
-      gap: 16px;
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 12px;
-      padding: 14px 20px;
       margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--line);
     }
-    .filters { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-    .filter-group { display: flex; align-items: center; gap: 8px; font-size: 13px; }
-    select, input {
-      background: #0f172a;
-      border: 1px solid var(--card-border);
-      color: #fff;
-      padding: 6px 12px;
-      border-radius: 6px;
-      font-size: 13px;
-      outline: none;
-    }
-    select:focus, input:focus { border-color: var(--primary); }
+    .filter-group { display: flex; align-items: center; gap: 10px; font-size: 13px; }
+    .filter-group label { color: var(--muted); font-size: 13px; }
 
-    /* Table & Cards */
+    /* Buttons */
+    .btn {
+      padding: 8px 16px;
+      border-radius: 6px;
+      border: 1px solid transparent;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .btn-primary { background: #2867df; color: white; }
+    .btn-primary:hover { background: #1c52b8; text-decoration: none; }
+    .btn-outline { background: white; color: var(--ink); border: 1px solid #c6d5e7; }
+    .btn-outline:hover { background: var(--pale); border-color: #8aa9cf; text-decoration: none; }
+    .btn-success { background: #16a34a; color: white; }
+    .btn-success:hover { background: #15803d; }
+    .btn-danger { background: #dc2626; color: white; }
+    .btn-danger:hover { background: #b91c1c; }
+
+    /* Queue List & Cards */
     .queue-list { display: flex; flex-direction: column; gap: 14px; }
-    .queue-item {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 12px;
-      padding: 20px;
+    .queue-card {
+      border: 1px solid var(--line);
+      background: white;
+      border-radius: 8px;
+      padding: 20px 22px;
       display: grid;
       grid-template-columns: 1fr auto;
       gap: 20px;
       align-items: center;
-      transition: border-color 0.2s;
+      transition: border-color 0.15s, box-shadow 0.15s;
     }
-    .queue-item:hover { border-color: #475569; }
-    .item-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
-    .badge {
+    .queue-card:hover {
+      border-color: #9cbddf;
+      box-shadow: 0 2px 8px rgba(32,57,86,0.06);
+    }
+    .queue-card-main { min-width: 0; }
+    .card-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+    
+    /* Tags */
+    .tag {
       display: inline-block;
-      padding: 3px 8px;
-      border-radius: 6px;
       font-size: 12px;
-      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-weight: 500;
     }
-    .badge-first_seen { background: var(--success-bg); color: var(--success); border: 1px solid rgba(52,211,153,0.3); }
-    .badge-source_update { background: rgba(56,189,248,0.15); color: var(--primary); border: 1px solid rgba(56,189,248,0.3); }
-    .badge-duplicate { background: rgba(148,163,184,0.15); color: var(--text-muted); border: 1px solid rgba(148,163,184,0.3); }
-    .badge-domain { background: var(--purple-bg); color: var(--purple); }
-    .badge-status-pending { background: var(--warning-bg); color: var(--warning); border: 1px solid rgba(251,191,36,0.3); }
-    .badge-status-approved { background: var(--success-bg); color: var(--success); border: 1px solid rgba(52,211,153,0.3); }
-    .badge-status-rejected { background: var(--danger-bg); color: var(--danger); border: 1px solid rgba(248,113,113,0.3); }
+    .tag-first_seen { background: var(--green-bg); color: var(--green); border: 1px solid #bbf7d0; }
+    .tag-source_update { background: var(--pale); color: var(--blue); border: 1px solid #bfdbfe; }
+    .tag-duplicate { background: #f1f5f9; color: var(--muted); border: 1px solid #e2e8f0; }
+    .tag-domain { background: #f3e8ff; color: #7e22ce; border: 1px solid #e9d5ff; }
+    .tag-pending { background: var(--amber-bg); color: var(--amber); border: 1px solid #fde68a; font-weight: 600; }
+    .tag-approved { background: var(--green-bg); color: var(--green); border: 1px solid #bbf7d0; }
+    .tag-rejected { background: var(--red-bg); color: var(--red); border: 1px solid #fecaca; }
 
-    .item-title { font-size: 18px; font-weight: 600; color: #fff; margin-bottom: 6px; }
-    .item-details { font-size: 13px; color: var(--text-muted); display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 8px; }
-    .item-details span { display: flex; align-items: center; gap: 4px; }
-    .item-note { font-size: 13px; color: #cbd5e1; background: rgba(0,0,0,0.25); padding: 8px 12px; border-radius: 6px; border-left: 3px solid var(--primary); }
+    .card-title { font-size: 17px; font-weight: 600; margin: 0 0 6px; color: var(--ink); }
+    .card-details {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .card-details span { display: inline-flex; align-items: center; gap: 4px; }
+    .card-note {
+      font-size: 13px;
+      color: #334155;
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      border-left: 3px solid #2867df;
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin-top: 6px;
+    }
 
-    .item-actions { display: flex; flex-direction: column; gap: 8px; min-width: 160px; }
+    .card-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      min-width: 150px;
+      align-items: stretch;
+    }
+
     .empty-state {
       text-align: center;
-      padding: 60px 20px;
-      background: var(--card-bg);
-      border: 1px dashed var(--card-border);
-      border-radius: 12px;
-      color: var(--text-muted);
+      padding: 50px 20px;
+      background: #f8faff;
+      border: 1px dashed var(--line);
+      border-radius: 8px;
+      color: var(--muted);
     }
-    .empty-state h3 { font-size: 18px; color: #fff; margin-bottom: 8px; }
+    .empty-state h3 { font-size: 17px; color: var(--ink); margin-bottom: 6px; }
 
     /* Modal */
     .modal-backdrop {
       position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.7);
+      background: rgba(23, 47, 78, 0.45);
+      backdrop-filter: blur(2px);
       display: none; justify-content: center; align-items: center; z-index: 1000;
     }
-    .modal {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 14px;
-      padding: 24px;
+    .modal-dialog {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 10px;
       width: 480px;
       max-width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+      overflow: hidden;
     }
-    .modal h3 { font-size: 18px; margin-bottom: 12px; color: #fff; }
-    .modal textarea {
+    .modal-head {
+      background: #f8faff;
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .modal-head h3 { font-size: 17px; margin: 0; color: var(--ink); }
+    .modal-body { padding: 20px; }
+    .modal-body textarea {
       width: 100%; height: 100px;
-      background: #0f172a; border: 1px solid var(--card-border);
-      color: #fff; padding: 10px; border-radius: 8px; font-size: 13px;
-      margin-bottom: 16px; outline: none;
+      margin-top: 8px; resize: vertical;
     }
-    .modal-actions { display: flex; justify-content: flex-end; gap: 10px; }
+    .modal-footer {
+      padding: 14px 20px;
+      background: #f8faff;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    footer {
+      max-width: 1400px;
+      margin: 30px auto 0;
+      padding: 20px 28px;
+      font-size: 13px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .queue-card { grid-template-columns: 1fr; }
+      .card-actions { flex-direction: row; flex-wrap: wrap; }
+    }
   </style>
 </head>
 <body>
-<div class="container">
-  <header>
-    <div class="brand">
-      <h1><span>🏛️</span> 会议更新与审核入库工作台</h1>
-      <p>独立会议更新库（conference_updates.db） · 市场部专属审核通道 · 自动去重与每周动态同步</p>
+
+<header>
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <b>审</b>
+      <span>
+        <strong>临床科研智能营销工作台</strong>
+        <small>会议动态审核入库 · 市场部专属通道</small>
+      </span>
+    </a>
+    <div style="display:flex;align-items:center;gap:14px;margin-left:auto;">
+      <span class="user-badge" id="user-badge">市场部 (已鉴权)</span>
+      <div class="header-links">
+        <a href="index.html">返回工作台主页</a>
+        <a href="登录工作台.html">切换身份</a>
+      </div>
     </div>
-    <div class="user-bar">
-      <span class="user-badge" id="user-badge">市场部人员 (已鉴权)</span>
-      <a href="index.html" class="btn btn-outline">返回领域工作台</a>
-      <a href="/登录工作台.html" class="btn btn-outline">切换账号</a>
+  </div>
+</header>
+
+<nav class="primary-nav" aria-label="主模块导航">
+  <a href="index.html#topics">领域热点</a>
+  <a href="index.html#conferences">会议库</a>
+  <a href="index.html#weekly">最新会议动态</a>
+  <a href="会议审核入库.html" class="active">会议审核入库</a>
+  <a href="index.html#market">市场工作台</a>
+  <a href="index.html#sales">销售协作</a>
+</nav>
+
+<main>
+  <div class="page-intro">
+    <div>
+      <p class="eyebrow">市场部专属审核中心 · 动态入库控制台</p>
+      <h1>学术会议更新与审核入库</h1>
+      <p class="subtitle">独立会议库 (conference_updates.db) · 59个核心监控锚点 · 自动日程比对与每周动态同步</p>
     </div>
-  </header>
+    <div style="display:flex; gap:10px;">
+      <a href="index.html#weekly" class="btn btn-outline">👀 查看已发布每周动态</a>
+    </div>
+  </div>
+
+  <!-- Environment & API Connection Banner -->
+  <div class="env-banner">
+    <div style="display:flex; align-items:center; gap:10px;">
+      <span id="env-badge" class="env-status-pill env-offline">检查后端连通性...</span>
+      <span id="env-desc" style="color:var(--muted)">正在检测本地 Python 认证与入库服务 (http://127.0.0.1:8768)...</span>
+    </div>
+    <div>
+      <button class="btn btn-outline" style="padding:4px 10px; font-size:12px;" onclick="checkConnection(true)">重新检测</button>
+    </div>
+  </div>
 
   <!-- Stats Grid -->
-  <div class="stats-grid">
-    <div class="stat-card">
-      <div class="label">待市场部审核</div>
-      <div class="value" id="stat-pending" style="color: var(--warning);">0</div>
-      <div class="desc">新收录或日程变更待人工核查</div>
+  <div class="stats">
+    <div class="stat">
+      <b style="color: var(--amber);" id="stat-pending">0</b>
+      <span>待市场部审核核查</span>
     </div>
-    <div class="stat-card">
-      <div class="label">已审核批准</div>
-      <div class="value" id="stat-approved" style="color: var(--success);">0</div>
-      <div class="desc">已同步发布至每周会议动态</div>
+    <div class="stat">
+      <b style="color: var(--green);" id="stat-approved">0</b>
+      <span>已批准入库并发布</span>
     </div>
-    <div class="stat-card">
-      <div class="label">自动去重 / 驳回</div>
-      <div class="value" id="stat-rejected" style="color: var(--text-muted);">0</div>
-      <div class="desc">完全同日程自动过滤或不收录</div>
+    <div class="stat">
+      <b style="color: var(--muted);" id="stat-rejected">0</b>
+      <span>完全重复去重 / 驳回</span>
     </div>
-    <div class="stat-card">
-      <div class="label">会议更新库连通状态</div>
-      <div class="value" id="stat-status" style="font-size: 20px; color: var(--primary);">检查中...</div>
-      <div class="desc" id="stat-status-desc">框架配置/会议更新记录.json</div>
+    <div class="stat">
+      <b style="color: var(--blue);" id="stat-anchors">59</b>
+      <span>学术监控锚点覆盖</span>
     </div>
   </div>
 
-  <!-- Toolbar -->
-  <div class="toolbar">
-    <div class="filters">
-      <div class="filter-group">
-        <label>审核状态：</label>
-        <select id="filter-status" onchange="renderQueue()">
-          <option value="pending" selected>待审核 (Pending)</option>
-          <option value="approved">已批准入库 (Approved)</option>
-          <option value="rejected">已去重 / 驳回 (Rejected)</option>
-          <option value="all">全部记录 (All)</option>
-        </select>
+  <!-- Main Panel -->
+  <div class="panel">
+    <div class="toolbar">
+      <div style="display:flex; gap:16px; align-items:center; flex-wrap:wrap;">
+        <div class="filter-group">
+          <label>审核状态：</label>
+          <select id="filter-status" onchange="renderQueue()">
+            <option value="pending" selected>待人工审核 (Pending)</option>
+            <option value="approved">已批准入库 (Approved)</option>
+            <option value="rejected">已去重 / 驳回 (Rejected)</option>
+            <option value="all">全部更新批次 (All)</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>所属领域：</label>
+          <select id="filter-field" onchange="renderQueue()">
+            <option value="all" selected>全部六大疾病领域</option>
+            <option value="diabetes">糖尿病与代谢</option>
+            <option value="cardiovascular">心血管健康</option>
+            <option value="rheumatology">风湿免疫</option>
+            <option value="neurology">神经疾病</option>
+            <option value="respiratory">呼吸系统</option>
+            <option value="vascular">血管与器官损伤</option>
+          </select>
+        </div>
       </div>
-      <div class="filter-group">
-        <label>所属领域：</label>
-        <select id="filter-field" onchange="renderQueue()">
-          <option value="all" selected>全部六大领域</option>
-          <option value="diabetes">糖尿病与代谢</option>
-          <option value="cardiovascular">心血管健康</option>
-          <option value="rheumatology">风湿免疫</option>
-          <option value="neurology">神经疾病</option>
-          <option value="respiratory">呼吸系统</option>
-          <option value="vascular">血管与器官损伤</option>
-        </select>
+      <div style="display:flex; gap:10px;">
+        <button class="btn btn-outline" onclick="simulateNewBatch()">📥 导入/模拟新抓取批次</button>
+        <button class="btn btn-primary" onclick="loadQueueData()">🔄 刷新列表</button>
       </div>
     </div>
-    <div style="display: flex; gap: 10px;">
-      <button class="btn btn-outline" onclick="simulateCrawlBatch()">📥 模拟抓取批次推送</button>
-      <button class="btn btn-primary" onclick="loadData()">🔄 刷新列表</button>
+
+    <!-- Queue List -->
+    <div class="queue-list" id="queue-container">
+      <div class="empty-state">
+        <h3>数据加载中...</h3>
+        <p>正在同步会议更新暂存队列</p>
+      </div>
     </div>
   </div>
+</main>
 
-  <!-- Queue Items List -->
-  <div class="queue-list" id="queue-container">
-    <div class="empty-state">
-      <h3>正在加载审核队列...</h3>
-      <p>请确保后端服务运行于 http://127.0.0.1:8768</p>
-    </div>
+<footer>
+  <div>
+    <strong>吉因加 · 临床营销智能工作台</strong> · 市场会议审核子系统 · 严格保障 baseline 研究数据库只读完整性
   </div>
-</div>
+  <div>
+    监控锚点库: 59 个学术组织与顶级会议系列 · 本地服务端口: 8768
+  </div>
+</footer>
 
-<!-- Modal for Reject Note -->
+<!-- Reject Dialog Modal -->
 <div class="modal-backdrop" id="reject-modal">
-  <div class="modal">
-    <h3>填写驳回 / 忽略原因</h3>
-    <textarea id="reject-note" placeholder="请输入驳回说明（如：日程未最终敲定、非目标学术层级会议等）..."></textarea>
-    <div class="modal-actions">
+  <div class="modal-dialog">
+    <div class="modal-head">
+      <h3>填写驳回 / 忽略原因</h3>
+      <button style="border:none;background:none;font-size:18px;cursor:pointer;" onclick="closeRejectModal()">×</button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size:13px; color:var(--muted); margin:0 0 6px;">请输入驳回原因，将永久存入 conference_updates.db 审计日志：</p>
+      <textarea id="reject-note" placeholder="例如：官方已取消该线下分论坛、日程非本年度目标、学术层级未达到要求等..."></textarea>
+    </div>
+    <div class="modal-footer">
       <button class="btn btn-outline" onclick="closeRejectModal()">取消</button>
       <button class="btn btn-danger" onclick="confirmReject()">确认驳回</button>
     </div>
@@ -275,10 +474,11 @@
 </div>
 
 <script>
-let currentQueue = [];
-let targetQueueId = null;
 const API_BASE = "http://127.0.0.1:8768";
 let token = localStorage.getItem("auth_token") || "MARKET_DEMO_TOKEN";
+let isBackendConnected = false;
+let currentQueue = [];
+let targetQueueId = null;
 
 const DOMAIN_NAMES = {
   "diabetes": "糖尿病与代谢",
@@ -289,60 +489,156 @@ const DOMAIN_NAMES = {
   "vascular": "血管与器官损伤"
 };
 
-async function checkAuth() {
+// 预设静态演示批次（当无本地后端运行在 GitHub Pages 上时提供平滑交互体验）
+const STATIC_DEMO_QUEUE = [
+  {
+    queue_id: "demo-q-001",
+    conference_id: "CDS2026",
+    conference_name: "中华医学会糖尿病学分会第三十一次全国学术会议",
+    abbreviation: "CDS 2026",
+    field_id: "diabetes",
+    start_date: "2026-11-18",
+    end_date: "2026-11-21",
+    city: "上海市",
+    official_url: "https://cds2026.cma.org.cn",
+    change_type: "source_update",
+    review_status: "pending",
+    review_note: "爬虫检测到官网更新了详细分论坛排期与征文截止日 (2026-08-30)",
+    batch_id: "batch_20261120_cds",
+    created_at: "2026-11-20T08:30:00"
+  },
+  {
+    queue_id: "demo-q-002",
+    conference_id: "ADA2026",
+    conference_name: "86th Scientific Sessions of the American Diabetes Association",
+    abbreviation: "ADA 2026",
+    field_id: "diabetes",
+    start_date: "2026-06-12",
+    end_date: "2026-06-16",
+    city: "New Orleans, LA",
+    official_url: "https://professional.diabetes.org/scientific-sessions",
+    change_type: "first_seen",
+    review_status: "pending",
+    review_note: "国际锚点监控命中：官网公布 2026 年摘要提交入口与主旨论坛题目",
+    batch_id: "batch_20261120_ada",
+    created_at: "2026-11-20T09:15:00"
+  },
+  {
+    queue_id: "demo-q-003",
+    conference_id: "CSCO2026",
+    conference_name: "中国临床肿瘤学会第二十九届全国学术年会",
+    abbreviation: "CSCO 2026",
+    field_id: "vascular",
+    start_date: "2026-09-23",
+    end_date: "2026-09-27",
+    city: "厦门市",
+    official_url: "http://www.csco.org.cn",
+    change_type: "first_seen",
+    review_status: "approved",
+    review_note: "已批准：收录为 2026 Q3 重点监控学术会议，关注肿瘤与器官血管损伤交叉议题",
+    reviewed_by: "market_admin",
+    reviewed_at: "2026-11-20T10:00:00",
+    batch_id: "batch_20261119_csco",
+    created_at: "2026-11-19T14:20:00"
+  },
+  {
+    queue_id: "demo-q-004",
+    conference_id: "CMA-CV-2026",
+    conference_name: "中华医学会第二十八次全国心血管年会",
+    abbreviation: "CSC 2026",
+    field_id: "cardiovascular",
+    start_date: "2026-10-15",
+    end_date: "2026-10-18",
+    city: "北京市",
+    official_url: "http://csc2026.medmeeting.org",
+    change_type: "duplicate",
+    review_status: "rejected",
+    review_note: "系统自动识别：与已录入的全国心血管年会时间地点完全吻合，自动去重",
+    reviewed_by: "auto_dedup_engine",
+    reviewed_at: "2026-11-20T09:00:00",
+    batch_id: "batch_20261120_csc",
+    created_at: "2026-11-20T08:59:00"
+  }
+];
+
+async function checkConnection(manual = false) {
+  const badge = document.getElementById("env-badge");
+  const desc = document.getElementById("env-desc");
+  badge.className = "env-status-pill env-offline";
+  badge.textContent = "检测中...";
+  desc.textContent = "正在连接 http://127.0.0.1:8768...";
+
   try {
     const res = await fetch(`${API_BASE}/api/auth/me`, {
       headers: { "Authorization": `Bearer ${token}` }
     });
     if (res.ok) {
+      isBackendConnected = true;
       const data = await res.json();
-      document.getElementById("user-badge").textContent = `${data.user.name} (${data.user.role === 'market' ? '市场部权限' : '销售代表'})`;
-      if (data.user.role !== 'market') {
-        alert("提示：当前账号角色为销售代表，仅市场部人员拥有会议审核与入库权限。");
+      badge.className = "env-status-pill env-online";
+      badge.textContent = "🟢 本地后端已连通";
+      desc.textContent = `实时读写 conference_updates.db · 登录身份: ${data.user.name} (${data.user.role === 'market' ? '市场部权限' : '销售代表'})`;
+      document.getElementById("user-badge").textContent = `${data.user.name} (市场部)`;
+      return true;
+    }
+  } catch (e) {
+    // try login as market
+    try {
+      const loginRes = await fetch(`${API_BASE}/api/auth/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username: "market", password: "market123" })
+      });
+      if (loginRes.ok) {
+        const loginData = await loginRes.json();
+        token = loginData.token;
+        localStorage.setItem("auth_token", token);
+        isBackendConnected = true;
+        badge.className = "env-status-pill env-online";
+        badge.textContent = "🟢 本地后端已连通";
+        desc.textContent = `实时读写 conference_updates.db · 登录身份: ${loginData.user.name} (市场部)`;
+        document.getElementById("user-badge").textContent = `${loginData.user.name} (市场部)`;
+        return true;
       }
-    } else {
-      // Try login as market default for demo convenience
-      await autoLoginMarket();
-    }
-  } catch (e) {
-    console.warn("Auth server connection failed, running in offline view mode:", e);
+    } catch (e2) {}
   }
+
+  isBackendConnected = false;
+  badge.className = "env-status-pill env-offline";
+  badge.textContent = "🌐 静态演示/离线模式";
+  desc.textContent = "未检测到本地 8768 端口服务。当前以静态沙盒数据交互演示；本地启动 `python tools/auth_server.py` 后即可实时持久化写入数据库。";
+  if (manual) {
+    alert("当前处于静态预览模式。如果需要实时数据库写入，请在本地终端运行：\npython tools/auth_server.py");
+  }
+  return false;
 }
 
-async function autoLoginMarket() {
-  try {
-    const res = await fetch(`${API_BASE}/api/auth/login`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username: "market", password: "market123" })
-    });
-    if (res.ok) {
-      const data = await res.json();
-      token = data.token;
-      localStorage.setItem("auth_token", token);
-      document.getElementById("user-badge").textContent = `${data.user.name} (市场部权限)`;
+async function loadQueueData() {
+  const connected = await checkConnection();
+  if (connected) {
+    try {
+      const res = await fetch(`${API_BASE}/api/conference/queue?status=all`, {
+        headers: { "Authorization": `Bearer ${token}` }
+      });
+      if (res.ok) {
+        const data = await res.json();
+        currentQueue = data.items || [];
+      } else {
+        fallbackToStaticQueue();
+      }
+    } catch (e) {
+      fallbackToStaticQueue();
     }
-  } catch (e) {
-    console.error("Auto login failed:", e);
+  } else {
+    fallbackToStaticQueue();
   }
+  updateStats();
+  renderQueue();
 }
 
-async function loadData() {
-  await checkAuth();
-  try {
-    const res = await fetch(`${API_BASE}/api/conference/queue?status=all`, {
-      headers: { "Authorization": `Bearer ${token}` }
-    });
-    if (res.ok) {
-      const data = await res.json();
-      currentQueue = data.items || [];
-      updateStats();
-      renderQueue();
-    } else {
-      showError("无法获取审核队列数据，请确认是否具备市场部权限。");
-    }
-  } catch (e) {
-    showError("连接本地认证服务失败，请先启动 tools/auth_server.py。");
+function fallbackToStaticQueue() {
+  if (!currentQueue || currentQueue.length === 0) {
+    currentQueue = JSON.parse(JSON.stringify(STATIC_DEMO_QUEUE));
   }
 }
 
@@ -354,18 +650,6 @@ function updateStats() {
   document.getElementById("stat-pending").textContent = pending;
   document.getElementById("stat-approved").textContent = approved;
   document.getElementById("stat-rejected").textContent = rejected;
-
-  const statusEl = document.getElementById("stat-status");
-  const statusDesc = document.getElementById("stat-status-desc");
-  if (approved > 0) {
-    statusEl.textContent = "已接入 (connected)";
-    statusEl.style.color = "var(--success)";
-    statusDesc.textContent = `已收录 ${approved} 条经复核会议事件`;
-  } else {
-    statusEl.textContent = "待接入 (not_connected)";
-    statusEl.style.color = "var(--warning)";
-    statusDesc.textContent = "暂无经市场部批准的更新事件";
-  }
 }
 
 function renderQueue() {
@@ -385,7 +669,7 @@ function renderQueue() {
     container.innerHTML = `
       <div class="empty-state">
         <h3>当前筛选条件下无记录</h3>
-        <p>可尝试切换审核状态或领域，或点击右上角【模拟抓取批次推送】测试入库机制。</p>
+        <p>可尝试切换审核状态或领域，或点击右上角【导入/模拟新抓取批次】测试审核流。</p>
       </div>
     `;
     return;
@@ -393,32 +677,33 @@ function renderQueue() {
 
   container.innerHTML = filtered.map(item => {
     const typeLabel = item.change_type === "first_seen" ? "🆕 首次收录" : item.change_type === "source_update" ? "🔄 日程变更" : "🚫 重复日程";
-    const statusLabel = item.review_status === "pending" ? "待审核" : item.review_status === "approved" ? "已批准入库" : "已驳回/去重";
+    const statusLabel = item.review_status === "pending" ? "待人工审核" : item.review_status === "approved" ? "已批准入库" : "已驳回/去重";
     const domainName = DOMAIN_NAMES[item.field_id] || item.field_id;
 
     return `
-      <div class="queue-item" data-id="${item.queue_id}">
-        <div>
-          <div class="item-meta">
-            <span class="badge badge-${item.change_type}">${typeLabel}</span>
-            <span class="badge badge-domain">${domainName}</span>
-            <span class="badge badge-status-${item.review_status}">${statusLabel}</span>
-            <span style="font-size: 12px; color: var(--text-muted);">会议编号: ${item.conference_id}</span>
+      <div class="queue-card" data-id="${item.queue_id}">
+        <div class="queue-card-main">
+          <div class="card-meta">
+            <span class="tag tag-${item.change_type}">${typeLabel}</span>
+            <span class="tag tag-domain">${domainName}</span>
+            <span class="tag tag-${item.review_status}">${statusLabel}</span>
+            <span style="font-size: 12px; color: var(--muted);">会议编码: ${item.conference_id}</span>
+            ${item.batch_id ? `<span style="font-size: 11px; color: var(--muted); background: #f1f5f9; padding: 2px 6px; border-radius: 3px;">批次: ${item.batch_id}</span>` : ''}
           </div>
-          <h2 class="item-title">${item.conference_name} (${item.abbreviation || 'CONF'})</h2>
-          <div class="item-details">
-            <span>📅 日期：${item.start_date || '待定'} ~ ${item.end_date || '待定'}</span>
+          <h2 class="card-title">${item.conference_name} ${item.abbreviation ? `(${item.abbreviation})` : ''}</h2>
+          <div class="card-details">
+            <span>📅 会期：${item.start_date || '待定'} ~ ${item.end_date || '待定'}</span>
             <span>📍 举办地点：${item.city || '待定'}</span>
-            ${item.official_url ? `<span>🔗 <a href="${item.official_url}" target="_blank" style="color: var(--primary);">官方来源链接</a></span>` : ''}
+            ${item.official_url ? `<span>🔗 <a href="${item.official_url}" target="_blank" rel="noopener">官方链接</a></span>` : ''}
           </div>
-          ${item.review_note ? `<div class="item-note"><strong>审核记录/备注：</strong>${item.review_note} (审核人: ${item.reviewed_by || '系统'}, 时间: ${item.reviewed_at ? item.reviewed_at.slice(0,19).replace('T',' ') : '自动'})</div>` : ''}
+          ${item.review_note ? `<div class="card-note"><strong>审核/变更备注：</strong>${item.review_note} ${item.reviewed_by ? `(操作人: ${item.reviewed_by})` : ''}</div>` : ''}
         </div>
-        <div class="item-actions">
+        <div class="card-actions">
           ${item.review_status === 'pending' ? `
             <button class="btn btn-success" onclick="reviewItem('${item.queue_id}', 'approve')">✅ 批准并发布</button>
-            <button class="btn btn-danger" onclick="openRejectModal('${item.queue_id}')">❌ 驳回忽略</button>
+            <button class="btn btn-outline" style="color:var(--red); border-color:#fca5a5;" onclick="openRejectModal('${item.queue_id}')">❌ 驳回忽略</button>
           ` : `
-            <span style="font-size: 13px; color: var(--text-muted); text-align: right;">已完成审核处理</span>
+            <span style="font-size: 13px; color: var(--muted); text-align: center; padding: 6px 0;">已完成归档</span>
           `}
         </div>
       </div>
@@ -427,23 +712,37 @@ function renderQueue() {
 }
 
 async function reviewItem(queueId, action, note = "") {
-  try {
-    const res = await fetch(`${API_BASE}/api/conference/review`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${token}`
-      },
-      body: JSON.stringify({ queue_id: queueId, action: action, note: note })
-    });
-    const result = await res.json();
-    if (res.ok && result.success) {
-      await loadData();
-    } else {
-      alert("审核失败：" + (result.error || "未知错误"));
+  if (isBackendConnected) {
+    try {
+      const res = await fetch(`${API_BASE}/api/conference/review`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`
+        },
+        body: JSON.stringify({ queue_id: queueId, action: action, note: note })
+      });
+      const result = await res.json();
+      if (res.ok && result.success) {
+        await loadQueueData();
+        return;
+      } else {
+        alert("审核处理失败：" + (result.error || "未知错误"));
+      }
+    } catch (e) {
+      console.warn("API request failed, fallback to local state mutation:", e);
     }
-  } catch (e) {
-    alert("网络请求异常：" + e.message);
+  }
+
+  // 静态本地演示模式下的状态更新
+  const item = currentQueue.find(i => i.queue_id === queueId);
+  if (item) {
+    item.review_status = action === "approve" ? "approved" : "rejected";
+    item.reviewed_by = "market_user";
+    item.reviewed_at = new Date().toISOString();
+    if (note) item.review_note = (item.review_note ? item.review_note + " | " : "") + note;
+    updateStats();
+    renderQueue();
   }
 }
 
@@ -459,73 +758,50 @@ function closeRejectModal() {
 }
 
 async function confirmReject() {
-  if (!targetQueueId) return;
-  const note = document.getElementById("reject-note").value.trim() || "市场部审核判定不符合入库标准";
-  await reviewItem(targetQueueId, "reject", note);
-  closeRejectModal();
-}
-
-async function simulateCrawlBatch() {
-  const timestamp = new Date().toISOString().slice(11, 19).replace(/:/g, '');
-  const mockItems = [
-    {
-      conference_id: `ESC-HEART-2026`,
-      conference_name: `欧洲心脏病学会年会 2026 (ESC Congress ${timestamp})`,
-      abbreviation: "ESC",
-      field_id: "cardiovascular",
-      start_date: "2026-08-28",
-      end_date: "2026-08-31",
-      city: "Madrid, Spain",
-      source_url: "https://www.escardio.org/Congresses-Events/ESC-Congress",
-      tier_level: "国际顶级学会年会"
-    },
-    {
-      conference_id: "CDS2026",
-      conference_name: "中华医学会第二十八次糖尿病学术会议 (CDS 2026)",
-      abbreviation: "CDS",
-      field_id: "diabetes",
-      start_date: "2026-11-20", // Slightly altered
-      end_date: "2026-11-23",
-      city: "厦门",
-      source_url: "https://cds2026.cma.org.cn/update-schedule",
-      tier_level: "国家重点学术年会"
-    }
-  ];
-
-  try {
-    const res = await fetch(`${API_BASE}/api/conference/ingest`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${token}`
-      },
-      body: JSON.stringify({ items: mockItems })
-    });
-    const result = await res.json();
-    if (res.ok) {
-      alert(`模拟批次抓取推送成功！\n共提交: ${result.total} 场\n首次收录: ${result.first_seen} 场\n日程变更: ${result.source_update} 场\n自动去重: ${result.duplicate} 场`);
-      await loadData();
-    } else {
-      alert("推送失败：" + (result.error || "未知错误"));
-    }
-  } catch (e) {
-    alert("请求异常：" + e.message);
+  const note = document.getElementById("reject-note").value.trim();
+  if (targetQueueId) {
+    await reviewItem(targetQueueId, "reject", note || "人工复核未通过，已驳回");
+    closeRejectModal();
   }
 }
 
-function showError(msg) {
-  document.getElementById("queue-container").innerHTML = `
-    <div class="empty-state">
-      <h3 style="color: var(--danger);">⚠️ 提示</h3>
-      <p>${msg}</p>
-      <div style="margin-top: 14px;">
-        <button class="btn btn-outline" onclick="loadData()">重试</button>
-      </div>
-    </div>
-  `;
+function simulateNewBatch() {
+  const newId = "sim-" + Math.floor(Math.random() * 9000 + 1000);
+  const sampleConfs = [
+    { name: "中华医学会风湿病学分会学术年会 (CRA 2026)", abbr: "CRA 2026", cid: "CRA2026", field: "rheumatology", city: "南京市", date: "2026-05-14 ~ 2026-05-17" },
+    { name: "第28届国际血栓与止血学会大会 (ISTH 2026)", abbr: "ISTH 2026", cid: "ISTH2026", field: "vascular", city: "Melbourne", date: "2026-07-11 ~ 2026-07-15" },
+    { name: "中华医学会呼吸病学年会 (CTS 2026)", abbr: "CTS 2026", cid: "CTS2026", field: "respiratory", city: "成都市", date: "2026-10-22 ~ 2026-10-25" }
+  ];
+  const chosen = sampleConfs[Math.floor(Math.random() * sampleConfs.length)];
+  const dates = chosen.date.split(" ~ ");
+
+  const newItem = {
+    queue_id: newId,
+    conference_id: chosen.cid,
+    conference_name: chosen.name,
+    abbreviation: chosen.abbr,
+    field_id: chosen.field,
+    start_date: dates[0],
+    end_date: dates[1],
+    city: chosen.city,
+    official_url: "https://www.cma.org.cn/meeting/" + chosen.cid.toLowerCase(),
+    change_type: "first_seen",
+    review_status: "pending",
+    review_note: "学术监控锚点自动抓取新排期，等待市场部人工核验",
+    batch_id: "batch_" + new Date().toISOString().slice(0,10).replace(/-/g,''),
+    created_at: new Date().toISOString()
+  };
+
+  currentQueue.unshift(newItem);
+  updateStats();
+  renderQueue();
+  alert(`✅ 成功模拟收录 1 条学术新排期：${chosen.name}！\n已加入待审核队列。`);
 }
 
-window.onload = loadData;
+// 初始化
+window.addEventListener("DOMContentLoaded", () => {
+  loadQueueData();
+});
 </script>
 </body>
 </html>
