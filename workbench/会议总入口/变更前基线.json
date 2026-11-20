@@ -1,0 +1,57 @@
+{
+  "backup": "备份/会议总入口接入前_2026-11-17",
+  "files": [
+    {
+      "path": "会议视图/index.html",
+      "sha256": "62cfb1b56dbc1452045c441ea06833dd0fd72cab9872b7230878e32fc37a4281"
+    },
+    {
+      "path": "会议视图/ada.html",
+      "sha256": "9a2008dbf0d4f081056f9d9c0cdae8356b34f837bd2ed5bcb81323400c99ea47"
+    },
+    {
+      "path": "会议视图/src/template.html",
+      "sha256": "70f61e694aa616bd285f079200f38eef3c4cd2e99e5e674ed0fd25825ce5e88b"
+    },
+    {
+      "path": "会议视图/src/style.css",
+      "sha256": "5302853388fb8953a2345abda5d284efcd0b749115432dbfe3d646c8849cec3c"
+    },
+    {
+      "path": "会议视图/生成记录.json",
+      "sha256": "0c8119fe43572f4215c05c2fa06bf7429da18600b3906d61dbfdc66dbe1aa26e"
+    },
+    {
+      "path": "会议视图/ADA生成记录.json",
+      "sha256": "fa10e2faa770d3c78b56e54a0c77ed85cbd046a70f555bd2fa0eb81ac2a7f19c"
+    },
+    {
+      "path": "会议视图/会议数据快照.json",
+      "sha256": "2109cfb93616a197e3cf57d66cbea8ce5c0cfd9a9542dc4d6348e23cc3b9a60e"
+    },
+    {
+      "path": "会议视图/ADA会议数据快照.json",
+      "sha256": "a1483d7d4e9269fb1a349ad2b5ce9ee1f5809eaea943e776bc1848ae9e34254c"
+    },
+    {
+      "path": "会议视图/使用说明.md",
+      "sha256": "1be93c5f4e9c522fd4bfac7b27d43afb38f126e1926749e27435a2657c446818"
+    },
+    {
+      "path": "00 数据中心说明.md",
+      "sha256": "3bfba70479ce67d30d348ef779089364a64942268c362b9c3ba21c94f119b8d9"
+    },
+    {
+      "path": "会议视图/src/app.js",
+      "sha256": "282d8188532ea642174ae540e36b50fc935f61dde31b5362e057f8548dca7cd3"
+    },
+    {
+      "path": "会议视图/src/ada-app.js",
+      "sha256": "64d24fc2f4fd707c440baa6b97bb458dd5573d9dc0c7ed28b76a309314372776"
+    },
+    {
+      "path": "数据库/marketing.db",
+      "sha256": "f1fd660c1349ac4701a78db189ea097c5a1ffd3952297220ea555ee423185c22"
+    }
+  ]
+}

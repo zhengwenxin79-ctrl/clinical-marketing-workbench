@@ -1,0 +1,33 @@
+{
+  "result": "generated",
+  "database_sha256": "645adc48a9af2eb67a9df04a0f4990fce706a5a4fcf2fe467c8e2372f0e78568",
+  "snapshot_sha256": "d2f35aa45bc3f14cf5e9c92f918cffe7d1ad91dfc1ba5d73cfdd9b5d9ce5080c",
+  "html_sha256": "bb94a1680016a9b6f3b10a198a95ac0dfdba93af1f1d3df883e434fdf4cdd78c",
+  "counts": {
+    "biomarkers": 39,
+    "contexts": 43,
+    "evidence": 45,
+    "report_mentions": 19,
+    "paper_mentions": 15,
+    "result_evidence": 21,
+    "result_papers": 10,
+    "research_result_papers": 8,
+    "reference_result_papers": 2,
+    "reference_entities": 7,
+    "external_validation": 0,
+    "confirmed_studies": 0,
+    "unresolved_study_sources": 34,
+    "capability_candidates": 11,
+    "clinical_priority_confirmed": 0,
+    "reviewed_sources": 40,
+    "reviewed_reports": 20,
+    "reviewed_papers": 20,
+    "pending_content": 6,
+    "paper_pool": 618,
+    "paper_in_window": 506
+  },
+  "audit_version": "BM:LOCAL-ABSTRACT-AUDIT:20261118:v2",
+  "database_unchanged": true,
+  "new_collection": false,
+  "published": false
+}

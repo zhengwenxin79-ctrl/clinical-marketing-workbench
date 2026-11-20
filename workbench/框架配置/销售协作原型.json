@@ -1,0 +1,197 @@
+{
+  "version": "sales-prototype:v2-pi-recommendations",
+  "storage_key": "clinical-workbench:sales:v1",
+  "salespeople": [
+    {
+      "id": "demo-sales-a",
+      "name": "演示销售A"
+    },
+    {
+      "id": "demo-sales-b",
+      "name": "演示销售B"
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "T10",
+      "name": "6Dmarker／V-USE：多组学整合与Biomarker建模",
+      "status": "能力底表已确认官网平台介绍，当前交付与预测表现待核实",
+      "participation": "结合临床变量和组学数据，讨论候选指标筛选、建模与验证设计。",
+      "conditions": "先确认样本、随访终点、队列规模和独立验证条件，再由技术支持核实可交付模块。",
+      "source_url": "../原始资料/WorkBuddy更新_2026-11-18/公司能力底表_2026-11-10.md",
+      "locator": "T10，第49行；底表整理日期2026-11-10",
+      "excerpt": "官网介绍多组学整合、Biomarker 建模与 V-USE 数据服务。"
+    },
+    {
+      "id": "T14",
+      "name": "蛋白组学：候选蛋白研究参与",
+      "status": "能力底表已确认官网有蛋白组类别，Olink及具体服务细节待核实",
+      "participation": "围绕候选蛋白筛选或验证，与技术支持讨论平台、panel、样本及质控适配。",
+      "conditions": "确认研究用途与样本基质；具体平台、自建或合作方式及现行交付需另行核实。",
+      "source_url": "../原始资料/WorkBuddy更新_2026-11-18/公司能力底表_2026-11-10.md",
+      "locator": "T14，第53行；底表整理日期2026-11-10",
+      "excerpt": "官网组学图列蛋白组；具体 Olink 线索来自本地手册。"
+    },
+    {
+      "id": "T03",
+      "name": "单细胞组学：细胞图谱与状态研究",
+      "status": "能力底表已确认官网有单细胞组学类别，细分流程与实际交付待核实",
+      "participation": "围绕研究组织和细胞状态问题，讨论单细胞或单核研究设计、候选细胞群与标志物发现。",
+      "conditions": "确认组织、鲜样或冻存条件和研究目的；具体平台与流程由技术支持核实。",
+      "source_url": "../原始资料/WorkBuddy更新_2026-11-18/公司能力底表_2026-11-10.md",
+      "locator": "T03，第42行；底表整理日期2026-11-10",
+      "excerpt": "官网组学图列单细胞；InCell、scRNA／scVDJ／scATAC及单核等细项来自本地手册。"
+    }
+  ],
+  "demo_recommendation": {
+    "id": "DEMO-DKD-001",
+    "domain_id": "diabetes",
+    "topic_id": "DM:Q17",
+    "title": "演示推荐｜了解正常白蛋白尿糖尿病人群的肾损伤研究需求",
+    "research_question": "正常白蛋白尿、肾功能尚保留的糖尿病人群，如何发现隐匿肾损伤并观察后续进展？",
+    "reason": "已有CDS日程围绕非蛋白尿DKD与隐匿肾小管损伤安排报告，已有Diabetes论文讨论正常白蛋白尿T2D人群的蛋白标志物。可据此准备科研交流，了解团队是否有相应队列与验证计划。",
+    "participation": "参考T10的多组学整合与建模方向、T14的蛋白组类别，讨论候选指标筛选和验证设计；具体检测平台、样本和交付由技术支持确认。",
+    "conditions": "先了解队列入组、已有样本、随访终点与验证人群；当前推荐只是研究交流准备，不认定团队已有合作需求或公司已有该病种临床检测产品。",
+    "suggested_action": "会前阅读关联讲题和摘要；交流时询问早期肾损伤研究问题、样本与随访条件，再判断是否需要技术支持参加下一轮讨论。",
+    "assignee_id": "demo-sales-a",
+    "due_date": "",
+    "status": "assigned",
+    "is_demo": true,
+    "links": [
+      {
+        "kind": "report",
+        "id": "CDS2026:S_126"
+      },
+      {
+        "kind": "report",
+        "id": "CDS2026:OR_003"
+      },
+      {
+        "kind": "paper",
+        "id": "PMID:42905866"
+      }
+    ],
+    "capability_ids": [
+      "T10",
+      "T14"
+    ],
+    "expert_keys": []
+  },
+  "demo_feedback": {
+    "contact_status": "contacted",
+    "contact_name": "演示联系人（虚构）",
+    "institution": "演示医院（虚构）",
+    "need": "【虚构演示】希望讨论正常白蛋白尿T2D人群早期肾损伤的科研设计。",
+    "cohort": "【虚构演示】队列和样本条件尚未核实，待下一次沟通了解。",
+    "support": "【虚构演示】希望技术支持提供队列设计讨论提纲。",
+    "next_action": "【虚构演示】整理待确认问题，安排一次技术交流。"
+  },
+  "auto_recommendation": {
+    "version": "pi-local-matching:v1",
+    "mode": "saved_ai_analysis_and_local_matching",
+    "model_connected": false,
+    "eligible_tiers": [
+      "international",
+      "national"
+    ],
+    "principle": "学术角色有依据、已有讲题与研究问题相关、公司可参与环节可追溯；不把学术职务等同课题PI或真实合作意向。",
+    "clinical_topics": [
+      "DM:Q01A",
+      "DM:Q01B",
+      "DM:Q02",
+      "DM:Q03A",
+      "DM:Q17",
+      "DM:Q20",
+      "DM:Q25A",
+      "DM:Q27",
+      "DM:Q28",
+      "DM:Q30"
+    ],
+    "cell_topics": [
+      "DM:Q05",
+      "DM:Q14",
+      "DM:Q16",
+      "DM:Q18",
+      "DM:Q29",
+      "DM:Q41",
+      "DM:Q42"
+    ],
+    "specific_signals": [
+      "标志物",
+      "biomarker",
+      "分型",
+      "异质",
+      "预测",
+      "表型",
+      "风险评估",
+      "单细胞",
+      "单核",
+      "转录组",
+      "蛋白组",
+      "甲基化",
+      "single-cell",
+      "transcriptom",
+      "proteomic"
+    ],
+    "protein_signals": [
+      "蛋白组",
+      "蛋白标志",
+      "proteomic",
+      "protein biomarker"
+    ],
+    "cell_signals": [
+      "单细胞",
+      "单核",
+      "细胞图谱",
+      "转录组",
+      "single-cell",
+      "single-nucleus",
+      "transcriptom"
+    ],
+    "excluded_clinical_signals": [
+      "综述"
+    ],
+    "saved_ai_reviews": [
+      {
+        "person_source_key": "CDS2026|PERSON:d89e67ef9a6cba49e2f2",
+        "report_id": "CDS2026:S_147",
+        "rationale": "讲题直接关注糖尿病前期精准分型，与临床人群异质性研究相关。可先了解现有分型依据、队列与样本，再判断是否需要组学补充。",
+        "collaboration_cut_in": "围绕T10讨论临床变量与候选组学指标的联合分型及验证设计。",
+        "gap": "讲题未明确使用组学或已有合作需求，T10目前是可讨论的研究方案。",
+        "reviewed_on": "2026-11-19",
+        "review_type": "AI analysis of existing local evidence",
+        "input_database_sha256": "645adc48a9af2eb67a9df04a0f4990fce706a5a4fcf2fe467c8e2372f0e78568"
+      },
+      {
+        "person_source_key": "CDS2026|PERSON:36036eeb07e2e1b27578",
+        "report_id": "CDS2026:S_198",
+        "rationale": "讲题明确提出多维度标志物联合构建糖网风险预警模型，与T10多组学整合和Biomarker建模的研究任务贴近。",
+        "collaboration_cut_in": "了解已选指标、样本基质、预测终点与外部验证队列，讨论建模和验证环节。",
+        "gap": "尚不清楚具体指标、检测平台、数据权限及独立验证情况，不能据题名认定模型已可临床使用。",
+        "reviewed_on": "2026-11-19",
+        "review_type": "AI analysis of existing local evidence",
+        "input_database_sha256": "645adc48a9af2eb67a9df04a0f4990fce706a5a4fcf2fe467c8e2372f0e78568"
+      },
+      {
+        "person_source_key": "CDS2026|PERSON:d57e79f171c824a0106e",
+        "report_id": "CDS2026:S_142",
+        "rationale": "讲题明确采用多组学进行糖尿病合并脂肪肝的精准分型，适合围绕分型研究设计与数据整合开展交流。",
+        "collaboration_cut_in": "参考T10，讨论多组学与临床表型整合、分型稳定性和独立人群验证。",
+        "gap": "未读到该报告完整结果，具体组学类型、队列与公司交付适配仍需确认。",
+        "reviewed_on": "2026-11-19",
+        "review_type": "AI analysis of existing local evidence",
+        "input_database_sha256": "645adc48a9af2eb67a9df04a0f4990fce706a5a4fcf2fe467c8e2372f0e78568"
+      },
+      {
+        "person_source_key": "CDS2026|PERSON:7b669c2c2111d801a6a1",
+        "report_id": "CDS2026:S_029",
+        "rationale": "讲题关注T1D异质性与抗体检测，提供具体临床分层问题，可先了解抗体与临床表型联合研究的计划。",
+        "collaboration_cut_in": "参考T10讨论多变量分层或预测研究设计；是否需要额外组学检测由团队问题和样本条件决定。",
+        "gap": "抗体检测不直接对应当前底表中的现成检测产品，当前仅建议研究设计与分析层交流。",
+        "reviewed_on": "2026-11-19",
+        "review_type": "AI analysis of existing local evidence",
+        "input_database_sha256": "645adc48a9af2eb67a9df04a0f4990fce706a5a4fcf2fe467c8e2372f0e78568"
+      }
+    ]
+  }
+}

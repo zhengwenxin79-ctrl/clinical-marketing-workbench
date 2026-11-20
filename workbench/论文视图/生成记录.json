@@ -1,0 +1,15 @@
+{
+  "result": "generated",
+  "paper_count": 618,
+  "in_window": 506,
+  "legacy_core_candidates": 162,
+  "issue_ranked_papers": 160,
+  "issues": 51,
+  "highlights": 7,
+  "author_records": 6058,
+  "source_count": 7,
+  "role_people": 3,
+  "database_sha256": "645adc48a9af2eb67a9df04a0f4990fce706a5a4fcf2fe467c8e2372f0e78568",
+  "html_sha256": "ec8d73c83aa2a40285a97ee9469dcfc2209ae44cfc51cc00be4cf470fbc70bcd",
+  "published": false
+}

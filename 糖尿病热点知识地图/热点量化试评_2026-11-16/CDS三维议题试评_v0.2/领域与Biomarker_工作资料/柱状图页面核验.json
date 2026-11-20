@@ -1,0 +1,14 @@
+{
+  "result": "passed",
+  "checks": [
+    "会议柱状图在筛选和词云上方；CDS3/1条、3.75%可复算；ADA禁用全会占比，双来源分图",
+    "研究三种计数切换、26条展开、筛选空态、柱子可进入原始证据详情",
+    "转化6/11/9词条原始分布；点击柱子联动与恢复；2参照独立显示",
+    "390/768/1440px三视角图表无整页横向溢出",
+    "离线图表正常，无外部脚本、无JS异常"
+  ],
+  "errors": [],
+  "new_collection": false,
+  "published": false,
+  "browser": "独立Chrome for Testing，临时profile，finally关闭"
+}

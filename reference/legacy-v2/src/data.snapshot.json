@@ -1,0 +1,5524 @@
+{
+  "cutoff": "2026-11-11",
+  "batch": "B03",
+  "batch_count": 3,
+  "previous_batch": "B02",
+  "changes": {
+    "batch": "B02",
+    "previous_batch": "B01",
+    "collected_on": "2026-11-11",
+    "new_ids": [
+      "A07",
+      "A08",
+      "A09",
+      "A10",
+      "A11",
+      "A12",
+      "A13",
+      "A14",
+      "A15",
+      "A16",
+      "A17",
+      "A18",
+      "A19",
+      "A20",
+      "A21",
+      "A22",
+      "A23",
+      "A24",
+      "A25",
+      "A26",
+      "A27"
+    ],
+    "result_upgraded": [
+      "A03",
+      "A04",
+      "A05"
+    ],
+    "context_corrected": [
+      "A06"
+    ],
+    "previous_count": 6,
+    "current_count": 27,
+    "interpretation": "同一天两批定向采集；新增为资料覆盖扩展，不能解释为领域升温或今日新发表研究。"
+  },
+  "domains": {
+    "D1": "新药与联合治疗",
+    "D2": "肥胖、缓解与长期维持",
+    "D3": "心肾肝眼等结局",
+    "D4": "T1D疾病修饰与细胞替代",
+    "D5": "CGM、AID与数字技术",
+    "D6": "分型、标志物与风险",
+    "D7": "机制与转化方法",
+    "D8": "特殊与高风险人群",
+    "D9": "预防、生活方式与实施"
+  },
+  "papers": [
+    {
+      "id": "R01",
+      "theme": "H01",
+      "category": "发生机制与疾病分型",
+      "title_cn": "T2D临床亚型的胰岛单细胞差异",
+      "doi": "10.1007/s00125-026-06842-y",
+      "pmid": "42678439",
+      "journal": "Diabetologia",
+      "date": "2026-09-01 在线",
+      "reading_level": "摘要",
+      "design": "43名T2D供者用于分型；其中32名供者、131,083个细胞用于单细胞分析；比较MARD、MOD、SIDD、SIRD。",
+      "result": "SIDD的β细胞身份与分泌通路损伤更突出；SIRD偏代谢活化，保留较多成熟特征。",
+      "limits": "供者数小且为组织分析；细胞数不等于独立患者数，尚不能用作血液分型检测。",
+      "technology": "单细胞RNA测序；临床聚类",
+      "team": "Xie X等；电子科技大学相关四川省肿瘤医院实验室（作者署名单位）",
+      "original_title": "Single-cell profiling of pancreatic islets maps subtype-associated molecular alterations in type 2 diabetes.",
+      "online_date": "2026-09-01",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B01",
+      "event_type": "组织分型探索",
+      "thread_ids": [
+        "T01"
+      ],
+      "domain_ids": [
+        "D6",
+        "D7"
+      ],
+      "entity_kind": "paper",
+      "ada_source_ids": [],
+      "product_relation": {
+        "group": "product",
+        "reason": "已有直接或相关技术证据；公司可交付性单独待核。",
+        "links": [
+          {
+            "tech_id": "SC",
+            "relation": "direct",
+            "basis": "研究直接测胰岛单细胞转录组，对照临床亚型。",
+            "research_question": "T2D亚型的胰岛细胞差异是否能连接可检测标志物？",
+            "fit_status": "文献技术关联；公司当前流程/样本/交付适配待核"
+          }
+        ]
+      },
+      "narrative": {
+        "title": "T2D不同临床亚型，胰岛细胞有何差异？",
+        "paragraphs": [
+          "Xie X等研究者将2型糖尿病供者的临床分型与胰岛单细胞转录组结合，探索不同患者亚型是否对应不同的β细胞状态。",
+          "研究观察到，胰岛素分泌不足型的β细胞身份与分泌通路受损更明显，而胰岛素抵抗型呈现不同的代谢特征。这为理解临床异质性提供了细胞层面的线索，尚需进一步验证其临床分层价值。"
+        ],
+        "focus": "单细胞转录组：比较T2D临床亚型的β细胞状态，筛选与患者分型相关的候选分子，并设计临床样本验证。"
+      }
+    },
+    {
+      "id": "R02",
+      "theme": "H01",
+      "category": "治疗与应答差异",
+      "title_cn": "GLP1R变异与药物应答",
+      "doi": "10.2337/dc26-0662",
+      "pmid": "42561183",
+      "journal": "Diabetes Care",
+      "date": "2026-11-01 卷期；在线日待核",
+      "reading_level": "摘要",
+      "design": "韩国社区队列6,373人；用药队列177人；另有钳夹17人、人胰岛21份与体外实验。",
+      "result": "R131Q每个等位基因与用药6个月HbA1c额外下降0.53个百分点相关，并有受体功能实验支持。",
+      "limits": "药物队列非基因分层随机试验；族群外验证和临床增益待补，不能据此推荐常规基因用药检测。",
+      "technology": "遗传学；长期OGTT；功能验证",
+      "team": "Lee H等；首尔大学、Mayo Clinic等（作者单位）",
+      "original_title": "The Gain-of-Function GLP1R R131Q Variant Preserves β-Cell Function and Enhances Response to GLP-1 Receptor Agonists.",
+      "online_date": null,
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B01",
+      "event_type": "药物遗传观察",
+      "thread_ids": [
+        "T01"
+      ],
+      "domain_ids": [
+        "D1",
+        "D6"
+      ],
+      "entity_kind": "paper",
+      "ada_source_ids": [],
+      "product_relation": {
+        "group": "pending",
+        "reason": "GLP1R遗传关联与应答问题相关，但未确认可匹配的公司检测流程。",
+        "links": []
+      },
+      "narrative": {
+        "title": "遗传差异能否解释GLP-1RA的应答差异？",
+        "paragraphs": [
+          "Lee H等研究者围绕GLP1R变异与治疗应答的关系，结合人群随访、用药队列及功能实验开展研究。",
+          "他们发现特定变异与更明显的血糖改善相关，并获得受体功能实验的支持。该结果提示遗传背景可能参与药物应答差异的形成，但仍不能直接据此建立临床选药规则。"
+        ],
+        "focus": "遗传变异与药物应答分析：围绕GLP1R变异开展应答分层研究，评价遗传信息对临床特征的补充价值。"
+      }
+    },
+    {
+      "id": "R03",
+      "theme": "H03",
+      "category": "诊断与风险识别",
+      "title_cn": "纵向蛋白组与发病风险",
+      "doi": "10.2337/db26-0148",
+      "pmid": "42709505",
+      "journal": "Diabetes",
+      "date": "2026-11-01 卷期；在线日待核",
+      "reading_level": "摘要＋会议摘要对读",
+      "design": "MESA 5,322人；约16年跨度3个采样时点；Olink Explore 3K；时间更新Cox，并与UK Biobank单时点结果比较。",
+      "result": "重复测量发现额外关联及不同通路，提示时间变化能补充基线蛋白信息。",
+      "limits": "关联数增加不等于预测模型增益；会议与论文数值不同，以正式论文为准。与A01同一研究版本，不能算两次独立验证。",
+      "technology": "纵向蛋白组；队列；孟德尔随机化",
+      "team": "Chen ZZ／Mi MY等；Beth Israel Deaconess与Harvard等（作者单位）",
+      "original_title": "Longitudinal Repeated Protein Measurements in a Multiethnic Cohort Identify Novel Diabetes Biomarkers That Reveal Unique Disease Pathways.",
+      "online_date": null,
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B01",
+      "event_type": "纵向蛋白队列",
+      "thread_ids": [
+        "T03"
+      ],
+      "domain_ids": [
+        "D6"
+      ],
+      "entity_kind": "paper",
+      "ada_source_ids": [
+        "A01"
+      ],
+      "product_relation": {
+        "group": "product",
+        "reason": "已有直接或相关技术证据；公司可交付性单独待核。",
+        "links": [
+          {
+            "tech_id": "PR",
+            "relation": "direct",
+            "basis": "MESA纵向蛋白组；A01和R03是同研究版本。",
+            "research_question": "重复测量相对单次检测增加多少预测信息？",
+            "fit_status": "文献技术关联；公司当前流程/样本/交付适配待核"
+          }
+        ]
+      },
+      "narrative": {
+        "title": "重复检测血浆蛋白，能否补充糖尿病风险信息？",
+        "paragraphs": [
+          "Chen ZZ、Mi MY等研究者利用MESA队列的多次采样，研究蛋白随时间变化的信息是否能补充单次基线测量。",
+          "纵向分析发现了额外的糖尿病相关蛋白与通路线索，提示动态变化值得纳入风险研究。预测增益、检测时点与实际应用条件仍需进一步核实。"
+        ],
+        "focus": "纵向血浆蛋白组：筛选随病程变化的候选蛋白，比较重复测量与单次检测对糖尿病风险判断的增量价值。"
+      }
+    },
+    {
+      "id": "R04",
+      "theme": "H05",
+      "category": "诊断与风险识别",
+      "title_cn": "单一自身抗体阳性者的进展分层",
+      "doi": "10.2337/dc26-1111",
+      "pmid": "42684379",
+      "journal": "Diabetes Care",
+      "date": "2026-09-02 在线",
+      "reading_level": "摘要",
+      "design": "TrialNet自然史中T1D患者亲属；单一自身抗体阳性；OGTT葡萄糖＋C肽、Cox及随机森林；摘要未给总样本量。",
+      "result": "联合β细胞功能指标区分出高、低进展风险组，支持抗体之外加入代谢表型。",
+      "limits": "亲属筛查人群的结果不能直接推到普通人群；阈值需要前瞻性验证。与R13共享TrialNet网络，但研究人群及分析不同。",
+      "technology": "OGTT；C肽；抗体；风险模型",
+      "team": "Sims EK等；Indiana University、South Florida等（作者单位）",
+      "original_title": "β-Cell Dysfunction Identifies Individuals With Single Autoantibody Positivity at Increased Risk of Type 1 Diabetes Progression.",
+      "online_date": "2026-09-02",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B01",
+      "event_type": "自然史观察",
+      "thread_ids": [
+        "T06"
+      ],
+      "domain_ids": [
+        "D4",
+        "D6"
+      ],
+      "entity_kind": "paper",
+      "ada_source_ids": [],
+      "product_relation": {
+        "group": "pending",
+        "reason": "抗体/C肽分层可提出标志物问题，当前无对应组学流程证据。",
+        "links": []
+      },
+      "narrative": {
+        "title": "只有一项自身抗体阳性时，谁更可能进展为T1D？",
+        "paragraphs": [
+          "Sims EK等研究者关注单一胰岛自身抗体阳性人群，利用TrialNet自然史资料研究β细胞功能能否帮助区分后续进展风险。",
+          "将葡萄糖与C肽等代谢表型纳入后，研究识别出了不同风险的亚群。它提示抗体数量之外仍有分层信息，但研究人群和阈值需要前瞻性验证。"
+        ],
+        "focus": "自身抗体与C肽联合分层：研究单一抗体阳性人群的进展差异，为长期随访和候选标志物验证选择入组人群。"
+      }
+    },
+    {
+      "id": "R05",
+      "theme": "H02",
+      "category": "治疗与应答差异",
+      "title_cn": "免疫治疗应答的基线代谢线索",
+      "doi": "10.2337/db26-0158",
+      "pmid": "42610933",
+      "journal": "Diabetes",
+      "date": "2026-11-01 卷期；在线日待核",
+      "reading_level": "摘要",
+      "design": "AbATE试验41名新发T1D个体的基线血清；半靶向LC高分辨串联质谱；按2年C肽下降划分应答。NCT00129259。",
+      "result": "15项代谢物差异用于随机森林，内部测试AUC为0.881。",
+      "limits": "这是既有试验样本的探索分析；41人且内部拆分，缺独立外部队列，不能把AUC当临床可用性能。",
+      "technology": "代谢组；机器学习；治疗分层",
+      "team": "Flammer ER等；University of Florida、Immune Tolerance Network（作者单位）",
+      "original_title": "Baseline Serum Metabolites as Predictors of Teplizumab Response in Individuals With Type 1 Diabetes.",
+      "online_date": null,
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B01",
+      "event_type": "小样本探索",
+      "thread_ids": [
+        "T05"
+      ],
+      "domain_ids": [
+        "D4",
+        "D6"
+      ],
+      "entity_kind": "paper",
+      "ada_source_ids": [],
+      "product_relation": {
+        "group": "product",
+        "reason": "已有直接或相关技术证据；公司可交付性单独待核。",
+        "links": [
+          {
+            "tech_id": "MT",
+            "relation": "direct",
+            "basis": "基线血清LC-高分辨串联质谱代谢测量。",
+            "research_question": "免疫治疗前的代谢特征能否帮助应答分层？",
+            "fit_status": "文献技术关联；公司当前流程/样本/交付适配待核"
+          }
+        ]
+      },
+      "narrative": {
+        "title": "治疗前的代谢特征能否提示T1D免疫治疗应答？",
+        "paragraphs": [
+          "Flammer ER等研究者分析AbATE试验受试者的基线血清，探索免疫治疗前的代谢特征是否与后续β细胞功能变化相关。",
+          "团队找到了一组代谢物差异，并构建了应答分类模型。现有结果来自小样本及内部测试，更适合作为外部验证的候选线索。"
+        ],
+        "focus": "血清代谢检测：筛选免疫治疗前的应答相关代谢物，在独立人群中评价其对治疗反应分层的价值。"
+      }
+    },
+    {
+      "id": "R06",
+      "theme": "H04",
+      "category": "监测与长期管理",
+      "title_cn": "CGM用于基础胰岛素治疗的T2D",
+      "doi": "10.1016/S2213-8587(26)00076-8",
+      "pmid": "42035781",
+      "journal": "Lancet Diabetes Endocrinol",
+      "date": "2026-04-23 在线",
+      "reading_level": "完整结构化摘要",
+      "design": "FreeDM2：英国24中心，303人随机（198 CGM、105自测血糖）；基础胰岛素＋现代降糖药；随访32周。NCT05944432。",
+      "result": "16周HbA1c校正组间差为−0.6个百分点（95%CI −0.8至−0.3），32周为−0.5。",
+      "limits": "开放设计；只支持所纳入治疗人群和随访期，不证明所有T2D或长期并发症获益。Abbott资助。",
+      "technology": "CGM；随机对照；HbA1c",
+      "team": "Wilmot EG等；Nottingham、Derby及英国多中心（作者单位）",
+      "original_title": "Continuous glucose monitoring versus self-monitoring of blood glucose in individuals with type 2 diabetes: a randomised, multicentre, open-label, superiority trial.",
+      "online_date": "2026-04-23",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B01",
+      "event_type": "随机对照试验",
+      "thread_ids": [
+        "T04"
+      ],
+      "domain_ids": [
+        "D5"
+      ],
+      "entity_kind": "paper",
+      "ada_source_ids": [],
+      "product_relation": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "narrative": {
+        "title": "接受基础胰岛素治疗的T2D患者能否从CGM中受益？",
+        "paragraphs": [
+          "Wilmot EG等研究者在英国多中心开展FreeDM2随机试验，比较持续葡萄糖监测与常规自我血糖监测。",
+          "研究在接受基础胰岛素及现代降糖药的T2D成人中观察到更好的血糖控制。该结果补充了CGM在这一人群中的应用证据，长期并发症获益仍需另行研究。"
+        ],
+        "focus": "持续葡萄糖监测：以基础胰岛素治疗人群为研究场景，设计血糖波动、管理方式与长期结局的随访研究。"
+      }
+    },
+    {
+      "id": "R07",
+      "theme": "H05",
+      "category": "诊断与风险识别",
+      "title_cn": "粪便短链脂肪酸的阴性风险证据",
+      "doi": "10.2337/dc26-0516",
+      "pmid": "42566298",
+      "journal": "Diabetes Care",
+      "date": "2026-11-01 卷期；在线日待核",
+      "reading_level": "摘要",
+      "design": "ENDIA母婴出生队列嵌套病例对照：54例出现持续胰岛自身免疫／临床T1D，161名对照；1,120份粪便；LC-MS。",
+      "result": "孕期及幼儿粪便SCFA水平未与自身免疫发生建立关联。",
+      "limits": "阴性结果约束该样本、测量和结局下的假说；不等于否定整个微生物组机制，也不证明补充SCFA有效。",
+      "technology": "纵向样本；靶向代谢检测；病例对照",
+      "team": "Tillett BJ等；University of Queensland、Monash等（作者单位）",
+      "original_title": "Fecal Short-Chain Fatty Acids in Young Children and Their Mothers Are Not Associated With Progression to Islet Autoimmunity.",
+      "online_date": null,
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B01",
+      "event_type": "阴性结果",
+      "thread_ids": [
+        "T06"
+      ],
+      "domain_ids": [
+        "D4",
+        "D9"
+      ],
+      "entity_kind": "paper",
+      "ada_source_ids": [],
+      "product_relation": {
+        "group": "product",
+        "reason": "已有直接或相关技术证据；公司可交付性单独待核。",
+        "links": [
+          {
+            "tech_id": "MT",
+            "relation": "direct",
+            "basis": "粪便LC-MS靶向短链脂肪酸；研究结果阴性。",
+            "research_question": "哪些代谢指标未提供预期风险信号，是否应收窄研究主张？",
+            "fit_status": "文献技术关联；公司当前流程/样本/交付适配待核"
+          }
+        ]
+      },
+      "narrative": {
+        "title": "短链脂肪酸是否能提示儿童胰岛自身免疫风险？",
+        "paragraphs": [
+          "Tillett BJ等研究者在ENDIA母婴队列中，追踪孕期及幼儿粪便中的短链脂肪酸，研究其与后续胰岛自身免疫的关系。",
+          "这项分析未建立预期的关联。阴性结果提示，不能仅凭机制上的合理性就将这些代谢指标视为可用的风险标志物。"
+        ],
+        "focus": "靶向代谢检测：利用该研究的阴性结果重新评估短链脂肪酸候选指标，明确后续指标选择与验证问题。"
+      }
+    },
+    {
+      "id": "R08",
+      "theme": "H06",
+      "category": "治疗与应答差异",
+      "title_cn": "SGLT2用药过程中的酮症酸中毒风险",
+      "doi": "10.1016/S2213-8587(26)00162-2",
+      "pmid": "42679839",
+      "journal": "Lancet Diabetes Endocrinol",
+      "date": "2026-09-01 在线",
+      "reading_level": "完整结构化摘要",
+      "design": "瑞典、丹麦、挪威注册数据；282,282名T2D患者、322,597次治疗段；队列＋嵌套病例对照。",
+      "result": "1,452次酮症酸中毒，发生率2.43/千人年；风险与高HbA1c、营养不良、既往事件等相关，非仅起始期。",
+      "limits": "观察研究；部分伴发事件可能登记偏倚；缺未用药直接因果比较，不可据此否定心肾获益或自行改变治疗。",
+      "technology": "真实世界；全国注册；安全分层",
+      "team": "Kadesjö E等；Karolinska及丹麦Statens Serum Institut等（作者单位）",
+      "original_title": "Ketoacidosis with SGLT2 inhibitors in routine clinical practice of type 2 diabetes: Scandinavian cohort and nested case-control study.",
+      "online_date": "2026-09-01",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B01",
+      "event_type": "真实世界安全性",
+      "thread_ids": [
+        "T08"
+      ],
+      "domain_ids": [
+        "D1",
+        "D8"
+      ],
+      "entity_kind": "paper",
+      "ada_source_ids": [],
+      "product_relation": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "narrative": {
+        "title": "SGLT2治疗期间，酮症酸中毒风险集中在哪些人群？",
+        "paragraphs": [
+          "Kadesjö E等研究者利用北欧多国医疗注册资料，分析T2D患者接受SGLT2抑制剂治疗期间的酮症酸中毒事件。",
+          "风险与高HbA1c、营养不良和既往事件等因素相关，也并非只出现在开始用药时。研究补充了真实使用中的安全分层信息，仍需结合药物整体获益解释。"
+        ],
+        "focus": "用药安全分层：围绕SGLT2治疗期间的酮症酸中毒风险，研究临床特征、采样时点与随访指标如何组合。"
+      }
+    },
+    {
+      "id": "R09",
+      "theme": "H02",
+      "category": "发生机制与疾病分型",
+      "title_cn": "胰岛成纤维细胞与β细胞损伤",
+      "doi": "10.2337/db25-0863",
+      "pmid": "41701561",
+      "journal": "Diabetes",
+      "date": "2026-04-01 卷期；在线日待核",
+      "reading_level": "摘要",
+      "design": "单细胞分析、共培养、人胰腺样本与啮齿动物干预；各实验样本量摘要未列。",
+      "result": "成纤维细胞谷氨酸—β细胞NMDAR通路与PANoptosis相关，动物阻断实验支持潜在干预方向。",
+      "limits": "人组织线索与动物机制尚不等于人体治疗有效；属于转化观察，不作为现成临床检测或成熟治疗。",
+      "technology": "单细胞；细胞互作；机制与动物验证",
+      "team": "Xiang Z等；山东大学齐鲁医院普通外科（作者单位；中文姓名待核）",
+      "original_title": "Activation of the Pancreatic \"Metabolic Synapse\" Aggravates Type 2 Diabetes Mellitus by Inducing PANoptosis in β-Cells.",
+      "online_date": null,
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B01",
+      "event_type": "临床前机制",
+      "thread_ids": [
+        "T07"
+      ],
+      "domain_ids": [
+        "D7"
+      ],
+      "entity_kind": "paper",
+      "ada_source_ids": [],
+      "product_relation": {
+        "group": "product",
+        "reason": "已有直接或相关技术证据；公司可交付性单独待核。",
+        "links": [
+          {
+            "tech_id": "SC",
+            "relation": "direct",
+            "basis": "原始摘要明确单细胞/细胞互作，并有组织或动物机制验证。",
+            "research_question": "微环境如何影响β细胞功能，哪些信号值得向临床样本验证？",
+            "fit_status": "文献技术关联；公司当前流程/样本/交付适配待核"
+          }
+        ]
+      },
+      "narrative": {
+        "title": "胰岛成纤维细胞如何影响β细胞损伤？",
+        "paragraphs": [
+          "Xiang Z等研究者结合单细胞分析、组织及动物实验，研究胰岛成纤维细胞与β细胞之间的相互作用。",
+          "研究将成纤维细胞来源的谷氨酸信号与β细胞损伤通路联系起来，并通过动物干预获得机制支持。它提供的是临床转化前的线索，尚非人体治疗效果或体液检测性能。"
+        ],
+        "focus": "单细胞与细胞互作分析：定位成纤维细胞—β细胞的损伤通路，选择候选信号开展组织、体液与功能验证。"
+      }
+    },
+    {
+      "id": "R10",
+      "theme": "H02",
+      "category": "发生机制与疾病分型",
+      "title_cn": "周细胞HGF与β细胞功能",
+      "doi": "10.2337/db26-0227",
+      "pmid": "42616555",
+      "journal": "Diabetes",
+      "date": "2026-11-01 卷期；在线日待核",
+      "reading_level": "摘要",
+      "design": "人胰岛单细胞转录组、小鼠细胞谱、转基因与培养体系；实验样本量待全文。",
+      "result": "提示周细胞是胰岛内源HGF的重要来源；去除周细胞HGF可损伤胰岛素产生／分泌。",
+      "limits": "主要功能证据来自小鼠；不等于人血HGF能预测疾病，或补充HGF已具临床疗效。",
+      "technology": "单细胞；条件基因工具；微血管—胰岛互作",
+      "team": "Puyesky S等；Tel Aviv University（作者单位）",
+      "original_title": "HGF Endogenously Produced by Pancreatic Pericytes Regulates β-Cell Function.",
+      "online_date": null,
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B01",
+      "event_type": "临床前机制",
+      "thread_ids": [
+        "T07"
+      ],
+      "domain_ids": [
+        "D7"
+      ],
+      "entity_kind": "paper",
+      "ada_source_ids": [],
+      "product_relation": {
+        "group": "product",
+        "reason": "已有直接或相关技术证据；公司可交付性单独待核。",
+        "links": [
+          {
+            "tech_id": "SC",
+            "relation": "direct",
+            "basis": "原始摘要明确单细胞/细胞互作，并有组织或动物机制验证。",
+            "research_question": "微环境如何影响β细胞功能，哪些信号值得向临床样本验证？",
+            "fit_status": "文献技术关联；公司当前流程/样本/交付适配待核"
+          }
+        ]
+      },
+      "narrative": {
+        "title": "胰岛周细胞产生的HGF有何作用？",
+        "paragraphs": [
+          "Puyesky S等研究者利用人胰岛单细胞资料及小鼠实验，研究周细胞与β细胞功能之间的联系。",
+          "结果提示周细胞是胰岛内源HGF的重要来源，去除这一来源可损伤胰岛素产生或分泌。该发现拓展了对胰岛微环境的理解，但尚不能直接转化为临床检测用途。"
+        ],
+        "focus": "单细胞与胰岛微环境研究：围绕周细胞来源HGF开展细胞功能研究，并探索相关信号的体液可检测性。"
+      }
+    },
+    {
+      "id": "R11",
+      "theme": "H03",
+      "category": "并发症、共病与预后",
+      "title_cn": "正常白蛋白尿仍发生肾功能下降",
+      "doi": "10.2337/db26-0626",
+      "pmid": "42905866",
+      "journal": "Diabetes",
+      "date": "2026-10-21 在线",
+      "reading_level": "摘要；复核已有条目",
+      "design": "正常白蛋白尿T2D；检测炎症、肾小管损伤及纤维化相关蛋白与复合肾结局／轨迹；摘要未列人数及完整对照模型。",
+      "result": "TNFR1/2、KIM1、MMP7等提供UACR之外的关联信息；部分动态轨迹与结局相关。",
+      "limits": "不能概括为UACR无用；尚缺完整队列、独立验证、增量预测及治疗监测设计。已有代谢库E06，本轮重新核对，非新发现。",
+      "technology": "候选蛋白；纵向肾风险；尿液相关指标",
+      "team": "Moedt E／Ju W等；Groningen、Michigan等（作者单位）",
+      "original_title": "Novel Protein Biomarkers to Monitor Kidney Function Decline and Treatment Response in Individuals With Normoalbuminuria and Type 2 Diabetes.",
+      "online_date": "2026-10-21",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B01",
+      "event_type": "肾风险摘要线索",
+      "thread_ids": [
+        "T02"
+      ],
+      "domain_ids": [
+        "D3",
+        "D6"
+      ],
+      "entity_kind": "paper",
+      "ada_source_ids": [],
+      "product_relation": {
+        "group": "product",
+        "reason": "已有直接或相关技术证据；公司可交付性单独待核。",
+        "links": [
+          {
+            "tech_id": "PR",
+            "relation": "direct",
+            "basis": "原始研究检测候选蛋白与肾风险关联，具体平台仍待核。",
+            "research_question": "正常白蛋白尿时哪些蛋白信号提示后续肾功能下降？",
+            "fit_status": "文献技术关联；公司当前流程/样本/交付适配待核"
+          }
+        ]
+      },
+      "narrative": {
+        "title": "白蛋白尿尚正常时，哪些信号提示肾功能风险？",
+        "paragraphs": [
+          "Moedt E、Ju W等研究者关注正常白蛋白尿的T2D患者，研究炎症、肾小管损伤及纤维化相关蛋白与后续肾功能变化的关系。",
+          "部分候选蛋白及其变化轨迹提供了UACR之外的关联信息，提示常规筛查不明显异常时仍值得研究残余风险。完整样本和模型比较仍需回查原文。"
+        ],
+        "focus": "候选蛋白检测：围绕正常白蛋白尿T2D人群筛选肾风险信号，评价其在UACR等常规指标之外的增量价值。"
+      }
+    },
+    {
+      "id": "R12",
+      "theme": "H05",
+      "category": "诊断与风险识别",
+      "title_cn": "妊娠糖尿病后遗传评分的适用边界",
+      "doi": "10.1007/s00125-026-06824-0",
+      "pmid": "42550202",
+      "journal": "Diabetologia",
+      "date": "2026-08-04 在线",
+      "reading_level": "完整结构化摘要",
+      "design": "370名既往GDM女性；中位30年随访；全国登记＋糖耐量；比较PGS与临床因素。",
+      "result": "T1D：临床模型AUC 0.839，合并PGS 0.887；T2D：临床0.745，合并0.752，单独PGS 0.539。",
+      "limits": "样本与事件数有限、历史妊娠队列；T1D与T2D的预测价值明显不同，外部族群校准及决策效益待补。",
+      "technology": "多基因评分；长期队列；风险模型",
+      "team": "Jørgensen IL等；Rigshospitalet及University of Copenhagen（作者单位）",
+      "original_title": "Predicting future risk of type 1 and type 2 diabetes after gestational diabetes mellitus using polygenic scores: a cohort study.",
+      "online_date": "2026-08-04",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B01",
+      "event_type": "风险预测队列",
+      "thread_ids": [
+        "T06"
+      ],
+      "domain_ids": [
+        "D6",
+        "D8"
+      ],
+      "entity_kind": "paper",
+      "ada_source_ids": [],
+      "product_relation": {
+        "group": "pending",
+        "reason": "多基因评分研究；不能直接视为WES或公司现成预测产品。",
+        "links": []
+      },
+      "narrative": {
+        "title": "妊娠糖尿病后的长期风险，遗传评分能增加多少信息？",
+        "paragraphs": [
+          "Jørgensen IL等研究者长期随访既往GDM女性，比较多基因评分与临床资料对后续糖尿病风险的预测能力。",
+          "遗传评分对T1D与T2D表现不同：加入评分对T1D模型有补充，而对T2D的增益较小。这提示风险工具应按疾病类型和使用场景分别评价。"
+        ],
+        "focus": "遗传风险评分：研究GDM后T1D与T2D的长期风险差异，分别评价遗传信息对临床预测模型的补充价值。"
+      }
+    },
+    {
+      "id": "R13",
+      "theme": "H01",
+      "category": "发生机制与疾病分型",
+      "title_cn": "T1D免疫亚群与治疗反应异质性",
+      "doi": "10.1007/s00125-026-06794-3",
+      "pmid": "42432282",
+      "journal": "Diabetologia",
+      "date": "2026-07-11 在线",
+      "reading_level": "全文：方法、结果与局限",
+      "design": "六项TrialNet免疫试验560人，另有61人验证队列；血浆诱导标准报告细胞转录反应＋芯片，辅以流式／miRNA。GSE302205。",
+      "result": "发现两个免疫亚群及治疗反应差异线索；验证集可分群，但未复现大队列的表型关联。",
+      "limits": "回顾性分层，尚需前瞻性治疗分配验证；这是血浆作用于细胞后的转录检测，不是直接测血浆cfRNA。",
+      "technology": "免疫分型；转录芯片；流式；miRNA",
+      "team": "Bedrat A／Hessner MJ等；Medical College of Wisconsin及Children’s Wisconsin（作者单位）",
+      "original_title": "Age-independent immune subtypes in type 1 diabetes exhibit distinct post-onset progression rates and immunotherapeutic responses.",
+      "online_date": "2026-07-11",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B01",
+      "event_type": "免疫分群再分析",
+      "thread_ids": [
+        "T05"
+      ],
+      "domain_ids": [
+        "D4",
+        "D6"
+      ],
+      "entity_kind": "paper",
+      "ada_source_ids": [],
+      "product_relation": {
+        "group": "pending",
+        "reason": "免疫分群采用血浆诱导转录反应及芯片，不是cfRNA或免疫组库；可匹配流程待评估。",
+        "links": []
+      },
+      "narrative": {
+        "title": "T1D免疫亚群能否解释治疗反应的异质性？",
+        "paragraphs": [
+          "Bedrat A、Hessner MJ等研究者整合多项TrialNet试验，利用血浆诱导的报告细胞转录反应及相关免疫测量，研究患者是否存在不同免疫亚群。",
+          "研究发现了亚群及治疗反应差异线索，但部分表型关联未在验证队列复现。该工作提示分群可能有价值，也提醒需要核实可重复性与样本重叠。"
+        ],
+        "focus": "功能性转录反应分析：利用血浆诱导的报告细胞反应识别免疫亚群，探索其与T1D治疗应答差异的关系。"
+      }
+    },
+    {
+      "id": "R14",
+      "theme": "H04",
+      "category": "监测与长期管理",
+      "title_cn": "数字干预在CGM之上的增益",
+      "doi": "10.1007/s00125-026-06880-6",
+      "pmid": "42820970",
+      "journal": "Diabetologia",
+      "date": "2026-10-01 在线",
+      "reading_level": "PubMed完整摘要；期刊正文访问不稳定",
+      "design": "德国24中心，非胰岛素T2D；327人随机、320人进入ITT分析；两组均间歇使用CGM，对比glucura与对照App，6个月。DRKS00032537。",
+      "result": "HbA1c校正组间差−0.46个百分点；提示数字生活方式／自我管理支持可有附加价值。",
+      "limits": "两组都有CGM，不能归因为CGM单独效果；开放设计、长期持续性待核。资助方为Perfood。",
+      "technology": "数字疗法；CGM；随机对照",
+      "team": "Freckmann G／Schröder T等；Ulm、Lübeck、Perfood等（作者单位）",
+      "original_title": "Efficacy of the digital therapeutic glucura combined with CGM in the treatment of type 2 diabetes: a randomised controlled trial over 6 months.",
+      "online_date": "2026-10-01",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B01",
+      "event_type": "随机对照试验",
+      "thread_ids": [
+        "T04"
+      ],
+      "domain_ids": [
+        "D5",
+        "D9"
+      ],
+      "entity_kind": "paper",
+      "ada_source_ids": [],
+      "product_relation": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "narrative": {
+        "title": "已有CGM之后，数字干预还能带来多少帮助？",
+        "paragraphs": [
+          "Freckmann G、Schröder T等研究者在德国开展随机试验，在两组都使用间歇CGM的条件下，比较数字生活方式与自我管理支持的额外作用。",
+          "干预组获得了更明显的HbA1c改善，提示技术反馈与行为支持的组合值得研究。结果仍限于所测试的管理方案及随访时间。"
+        ],
+        "focus": "CGM与数字干预研究：在共同监测基础上评价行为支持的额外作用，为组合管理方案选择结局和随访指标。"
+      }
+    },
+    {
+      "id": "R15",
+      "theme": "H05",
+      "category": "治疗与应答差异",
+      "title_cn": "限时进食与个体饮食指导比较",
+      "doi": "10.1007/s00125-026-06762-x",
+      "pmid": "42251202",
+      "journal": "Diabetologia",
+      "date": "2026-06-06 在线",
+      "reading_level": "全文：方法、结果与讨论",
+      "design": "澳大利亚247名T2D高风险、尚未诊断T2D成人，随机124人9小时限时进食、123人个体饮食指导；两组均有远程辅导。NCT04762251。",
+      "result": "4个月HbA1c达到非劣效、未显示优效；12个月不能继续确认非劣效，绝对变化均较小。",
+      "limits": "不能把非劣效写成更有效，不能外推为治疗确诊T2D或实现缓解的证据。",
+      "technology": "生活方式；预防；非劣效随机试验",
+      "team": "Parr EB／Hawley JA／Heilbronn LK等；Australian Catholic University、Adelaide等（作者单位）",
+      "original_title": "Time-restricted eating versus dietetic guidance on glycaemic outcomes in adults at risk of type 2 diabetes: a non-inferiority randomised clinical trial.",
+      "online_date": "2026-06-06",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B01",
+      "event_type": "非优效与长期边界",
+      "thread_ids": [
+        "T06"
+      ],
+      "domain_ids": [
+        "D9"
+      ],
+      "entity_kind": "paper",
+      "ada_source_ids": [],
+      "product_relation": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "narrative": {
+        "title": "限时进食能否优于个体化饮食指导？",
+        "paragraphs": [
+          "Parr EB、Hawley JA、Heilbronn LK等研究者在T2D高风险成人中，比较限时进食与个体化饮食指导，并为两组提供远程支持。",
+          "短期分析支持非劣效，却未显示优效；较长期随访也不能继续确认非劣效。研究提示饮食策略需要同时看短期效果、持续性与比较对象。"
+        ],
+        "focus": "生活方式干预研究：比较限时进食与个体化指导的短期效果、长期持续性和依从性，为预防研究选择评价时间窗。"
+      }
+    },
+    {
+      "id": "R16",
+      "theme": "cfRNA与孕期早期风险",
+      "category": "直接技术证据",
+      "title_cn": "血浆cfRNA用于妊娠糖尿病早期风险研究",
+      "doi": "10.1080/15592294.2025.2612399",
+      "pmid": "41662250",
+      "journal": "Epigenetics",
+      "date": "2026-02-09 在线；卷期标2026年12月，不作12月新发表",
+      "reading_level": "PubMed原始完整摘要；未全文精读",
+      "design": "孕约16周血浆，108人（GDM54、对照54）；高通量cf-mRNA/cf-lncRNA测序与预测模型；另有外部验证队列，规模待全文核实。",
+      "result": "35基因cfRNA模型，内部测试AUC 0.84、外部验证0.73；观察到胎盘来源RNA及核糖体相关信号变化。",
+      "limits": "样本规模有限，外部验证性能较内部下降；外部样本量、校准和相对临床模型增益待全文核实。GDM不能直接外推普通T2D；论文流程不证明吉因加当前捕获方案等效。",
+      "technology": "血浆cf-mRNA与cf-lncRNA；高通量测序；来源分析；风险模型",
+      "team": "Songchang Chen、Yuwei Liu等；复旦大学/BGI等。外部研究，不是公司已确认案例。",
+      "original_title": "Early characterization of pregnancy glycemic traits in gestational diabetes mellitus by plasma cell-free mRNA and non-coding RNA",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B03",
+      "domain_ids": [
+        "D6",
+        "D8"
+      ],
+      "event_type": "cfRNA风险探索",
+      "notes_file": "11 产品技术相关热点与其它领域热点",
+      "online_date": "2026-02-09",
+      "thread_ids": [
+        "T18"
+      ],
+      "entity_kind": "paper",
+      "ada_source_ids": [],
+      "product_relation": {
+        "group": "product",
+        "reason": "已有直接或相关技术证据；公司可交付性单独待核。",
+        "links": [
+          {
+            "tech_id": "CF",
+            "relation": "direct",
+            "basis": "原始研究明确使用孕期血浆cf-mRNA/cf-lncRNA高通量测序。",
+            "research_question": "能否在常规诊断前识别GDM风险，是否增加临床模型的预测价值？",
+            "fit_status": "文献技术关联；公司当前流程/样本/交付适配待核"
+          }
+        ]
+      },
+      "narrative": {
+        "title": "孕期血浆cfRNA能否提前识别GDM风险？",
+        "paragraphs": [
+          "复旦大学、BGI等机构的Songchang Chen、Yuwei Liu等研究者，围绕妊娠糖尿病的早期风险识别开展研究。他们分析孕约16周的血浆游离mRNA和长链非编码RNA，探索诊断前能否观察到相关分子信号。",
+          "团队构建了cfRNA预测模型，并在外部队列中进行了验证。研究同时观察到胎盘来源RNA及蛋白合成相关信号的变化；外部性能较内部测试下降，临床增益仍需进一步评价。"
+        ],
+        "focus": "血浆cfRNA检测：筛选常规诊断前的GDM风险标志物，评价其对临床预测模型的补充价值，并设计独立队列验证。"
+      }
+    },
+    {
+      "id": "R17",
+      "theme": "尿液RNA与糖尿病肾病鉴别",
+      "category": "相关研究，流程不同",
+      "title_cn": "糖尿病肾病尿液RNA：分清游离、囊泡和细胞成分",
+      "doi": "10.1136/bmjdrc-2026-006123",
+      "pmid": "42184991",
+      "journal": "BMJ Open Diabetes Research & Care",
+      "date": "2026-05-25 在线",
+      "reading_level": "原始摘要＋正文方法/结果关键段；补充材料未核读",
+      "design": "活检明确DKD/NDKD、无肾病T2D及健康人，发现组每组40；分别测尿液细胞、无细胞尿液和EV的候选lncRNA，使用实时PCR，并有独立验证。",
+      "result": "不同尿液成分可见MALAT1/PVT1等差异；论文最终重点验证的是尿液细胞来源MALAT1，不是血浆cfRNA模型。",
+      "limits": "尿液细胞、无细胞尿液、EV三种输入不能互换；尿液细胞MALAT1的性能不得归给游离RNA。候选靶向PCR不等同血浆捕获测序，病理病例选择与跨中心验证仍需考虑。",
+      "technology": "尿液三组分lncRNA；实时PCR；肾组织验证",
+      "team": "Madhurima Basu、Subhasis Neogi等；印度IPGMER等。外部研究。",
+      "original_title": "Integrated multicompartment urinary long non-coding RNAs profiling (cellular, cell-free, and extracellular vesicle) for better differential diagnosis of biopsy-proven diabetic and non-diabetic kidney disease beyond conventional markers",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B03",
+      "domain_ids": [
+        "D3",
+        "D6"
+      ],
+      "event_type": "尿液RNA组分研究",
+      "notes_file": "11 产品技术相关热点与其它领域热点",
+      "online_date": "2026-05-25",
+      "thread_ids": [
+        "T18"
+      ],
+      "entity_kind": "paper",
+      "ada_source_ids": [],
+      "product_relation": {
+        "group": "product",
+        "reason": "已有直接或相关技术证据；公司可交付性单独待核。",
+        "links": [
+          {
+            "tech_id": "CF",
+            "relation": "related",
+            "basis": "研究包含无细胞尿液lncRNA检测；最佳验证结果属于尿液细胞成分，且采用靶向PCR。",
+            "research_question": "哪些尿液成分能帮助DKD与NDKD鉴别，能否转化为匹配的cfRNA研究？",
+            "fit_status": "文献技术关联；公司当前流程/样本/交付适配待核"
+          }
+        ]
+      },
+      "narrative": {
+        "title": "尿液RNA能否帮助区分糖尿病患者的肾病类型？",
+        "paragraphs": [
+          "印度IPGMER的Madhurima Basu、Subhasis Neogi等研究者，围绕糖尿病肾病与非糖尿病肾病的鉴别开展研究。他们比较了尿液细胞、无细胞尿液和细胞外囊泡中的候选长链非编码RNA，并进行了独立队列验证。",
+          "其中，研究重点验证的是尿液细胞来源的MALAT1。这项研究为尿液RNA辅助肾病鉴别提供了线索，也提示评价检测时需要明确有效信号究竟来自哪种尿液成分。"
+        ],
+        "focus": "尿液RNA标志物研究：分别比较尿液细胞、无细胞尿液和EV中的候选lncRNA，为DKD与NDKD鉴别选择样本组分和验证靶标。"
+      }
+    }
+  ],
+  "topics": [
+    {
+      "code": "OR_031",
+      "time": "17:20-17:28",
+      "kind": "论文发言",
+      "title": "胰岛素治疗糖尿病人群β细胞衰竭表型的数据驱动分型及其临床特征",
+      "people": [
+        {
+          "name": "曾明旺",
+          "institution": "天津医科大学",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=vzddP"
+        }
+      ],
+      "date": "2026年11月20日",
+      "room": "会场7-多功能厅C1",
+      "session": "论文交流：胰岛生物学及胰岛素抵抗",
+      "session_id": "session40605",
+      "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40605",
+      "evidence": "planned agenda; no results",
+      "group": "临床亚群",
+      "research_question": "β细胞衰竭表型能否改进分层？",
+      "technology_from_title_or_pending": "数据驱动分型",
+      "related_records": "H01；R01／R02是相关问题，未核同研究",
+      "relation_status": "topic relation only; not confirmed same study",
+      "thread_ids": [
+        "T01"
+      ]
+    },
+    {
+      "code": "S_029",
+      "time": "14:30-14:48",
+      "kind": "专题报告",
+      "title": "中国1型糖尿病的异质性与抗体检测",
+      "people": [
+        {
+          "name": "周智广",
+          "institution": "中南大学湘雅二医院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=g7bev"
+        }
+      ],
+      "date": "2026年11月19日",
+      "room": "会场3-多功能厅B1",
+      "session": "1型糖尿病的早期识别与干预",
+      "session_id": "session40542",
+      "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40542",
+      "evidence": "planned agenda; no results",
+      "group": "临床亚群",
+      "research_question": "T1D抗体与异质性如何关联？",
+      "technology_from_title_or_pending": "抗体检测",
+      "related_records": "H01／H05；R04／R13",
+      "relation_status": "topic relation only; not confirmed same study",
+      "thread_ids": [
+        "T01",
+        "T06"
+      ]
+    },
+    {
+      "code": "OR_092",
+      "time": "14:40-14:48",
+      "kind": "论文发言",
+      "title": "不同筛选推荐标准在中国妊娠期糖尿病女性中对GCK-MODY的识别效能及一种新型可解释机器学习模型的建立",
+      "people": [
+        {
+          "name": "唐 蕾",
+          "institution": "中国医科大学附属盛京医院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=pLArb"
+        }
+      ],
+      "date": "2026年11月20日",
+      "room": "会场7-多功能厅C1",
+      "session": "论文交流：糖尿病临床诊断与治疗 1",
+      "session_id": "session40611",
+      "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40611",
+      "evidence": "planned agenda; no results",
+      "group": "临床亚群",
+      "research_question": "GDM中如何识别GCK-MODY？",
+      "technology_from_title_or_pending": "可解释机器学习；遗传确诊流程待核",
+      "related_records": "H01／H05；R12仅作不同病型风险背景",
+      "relation_status": "topic relation only; not confirmed same study",
+      "thread_ids": [
+        "T01",
+        "T06"
+      ]
+    },
+    {
+      "code": "OR_003",
+      "time": "14:20-14:28",
+      "kind": "论文发言",
+      "title": "正常白蛋白尿且肾功能保留糖尿病患者的隐匿性肾小管损伤：4046例队列与多尺度转录组研究",
+      "people": [
+        {
+          "name": "黄 斌",
+          "institution": "中国科学技术大学附属第一医院（安徽省立医院）",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=WnD6j"
+        }
+      ],
+      "date": "2026年11月20日",
+      "room": "会场8-多功能厅C2",
+      "session": "论文交流：糖尿病转化医学与精准医疗 2",
+      "session_id": "session40603",
+      "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40603",
+      "evidence": "planned agenda; no results",
+      "group": "早期风险",
+      "research_question": "常规指标正常时如何识别肾小管损伤？",
+      "technology_from_title_or_pending": "队列；转录组",
+      "related_records": "H03；R11问题相关，尚未核为同研究",
+      "relation_status": "topic relation only; not confirmed same study",
+      "thread_ids": [
+        "T02"
+      ]
+    },
+    {
+      "code": "OR_005",
+      "time": "14:40-14:48",
+      "kind": "论文发言",
+      "title": "基于静态和动态聚类算法的成人新发糖尿病肾病综合表型——一项数据驱动的多中心研究",
+      "people": [
+        {
+          "name": "李 昆",
+          "institution": "首都医科大学附属北京潞河医院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=1RvoY"
+        }
+      ],
+      "date": "2026年11月20日",
+      "room": "会场8-多功能厅C2",
+      "session": "论文交流：糖尿病转化医学与精准医疗 2",
+      "session_id": "session40603",
+      "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40603",
+      "evidence": "planned agenda; no results",
+      "group": "早期风险",
+      "research_question": "DKD亚群是否具有不同进展路径？",
+      "technology_from_title_or_pending": "静态／动态聚类；多中心",
+      "related_records": "H01／H03；需新增原始结果",
+      "relation_status": "topic relation only; not confirmed same study",
+      "thread_ids": [
+        "T02"
+      ]
+    },
+    {
+      "code": "OR_007",
+      "time": "15:00-15:08",
+      "kind": "论文发言",
+      "title": "基于代谢物的糖尿病视网膜病变与肾脏病变发生发展异质性的纵向关联研究",
+      "people": [
+        {
+          "name": "毛百微",
+          "institution": "上海市第一人民医院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=Z8Djv"
+        }
+      ],
+      "date": "2026年11月20日",
+      "room": "会场8-多功能厅C2",
+      "session": "论文交流：糖尿病转化医学与精准医疗 2",
+      "session_id": "session40603",
+      "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40603",
+      "evidence": "planned agenda; no results",
+      "group": "器官风险",
+      "research_question": "眼与肾病变的代谢信号能否区分？",
+      "technology_from_title_or_pending": "代谢物；纵向关联",
+      "related_records": "H03；眼部原始证据待补",
+      "relation_status": "topic relation only; not confirmed same study",
+      "thread_ids": [
+        "T03"
+      ]
+    },
+    {
+      "code": "S_198",
+      "time": "14:00-14:18",
+      "kind": "专题报告",
+      "title": "多维度标志物联合构建糖网风险预警模型",
+      "people": [
+        {
+          "name": "匡洪宇",
+          "institution": "哈尔滨医科大学附属第一医院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=Z8D7o"
+        }
+      ],
+      "date": "2026年11月20日",
+      "room": "会场5-多功能厅B3",
+      "session": "糖尿病视网膜病变筛查与治疗",
+      "session_id": "session40563",
+      "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40563",
+      "evidence": "planned agenda; no results",
+      "group": "器官风险",
+      "research_question": "多指标怎样帮助识别糖网风险？",
+      "technology_from_title_or_pending": "联合标志物；风险模型",
+      "related_records": "H03；需补模型、验证与终点",
+      "relation_status": "topic relation only; not confirmed same study",
+      "thread_ids": [
+        "T03"
+      ]
+    },
+    {
+      "code": "OR_333",
+      "time": "10:10-10:18",
+      "kind": "论文发言",
+      "title": "循环生物标志物预测早期心血管 - 肾脏 - 代谢综合征 0–2 期心肾代谢结局风险：一项前瞻性队列研究",
+      "people": [
+        {
+          "name": "程 棣",
+          "institution": "上海交通大学医学院附属第六人民医院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=7p37E"
+        }
+      ],
+      "date": "2026年11月21日",
+      "room": "会场7-多功能厅C1",
+      "session": "论文交流：糖尿病流行病学及卫生经济学 2",
+      "session_id": "session40602",
+      "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40602",
+      "evidence": "planned agenda; no results",
+      "group": "器官风险",
+      "research_question": "循环指标能否提前识别心肾代谢结局？",
+      "technology_from_title_or_pending": "前瞻性队列；循环标志物",
+      "related_records": "H03；与R03非已核同研究",
+      "relation_status": "topic relation only; not confirmed same study",
+      "thread_ids": [
+        "T03"
+      ]
+    },
+    {
+      "code": "S_200",
+      "time": "14:40-14:58",
+      "kind": "专题报告",
+      "title": "基于眼底图像的糖尿病并发症筛查预警",
+      "people": [
+        {
+          "name": "李华婷",
+          "institution": "上海交通大学医学院附属第六人民医院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=Z8Ddo"
+        }
+      ],
+      "date": "2026年11月20日",
+      "room": "会场5-多功能厅B3",
+      "session": "糖尿病视网膜病变筛查与治疗",
+      "session_id": "session40563",
+      "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40563",
+      "evidence": "planned agenda; no results",
+      "group": "器官风险",
+      "research_question": "眼底信息能否支持并发症筛查？",
+      "technology_from_title_or_pending": "眼底影像",
+      "related_records": "H03／H04；尚非组学证据",
+      "relation_status": "topic relation only; not confirmed same study",
+      "thread_ids": [
+        "T03"
+      ]
+    },
+    {
+      "code": "OR_027",
+      "time": "16:40-16:48",
+      "kind": "论文发言",
+      "title": "2型糖尿病胰岛内分泌-免疫互作的空间转录组图谱",
+      "people": [
+        {
+          "name": "毛泓丰",
+          "institution": "上海交通大学医学院附属第六人民医院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=4MPPM"
+        }
+      ],
+      "date": "2026年11月20日",
+      "room": "会场7-多功能厅C1",
+      "session": "论文交流：胰岛生物学及胰岛素抵抗",
+      "session_id": "session40605",
+      "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40605",
+      "evidence": "planned agenda; no results",
+      "group": "细胞机制",
+      "research_question": "胰岛内分泌与免疫细胞如何相互作用？",
+      "technology_from_title_or_pending": "空间转录组",
+      "related_records": "H02；R01／R09／R10作相邻机制背景",
+      "relation_status": "topic relation only; not confirmed same study",
+      "thread_ids": [
+        "T07"
+      ]
+    },
+    {
+      "code": "OR_008",
+      "time": "15:10-15:18",
+      "kind": "论文发言",
+      "title": "单细胞联合空间转录组技术解析糖尿病肾病肾脏纤维化微环境起源及机制研究",
+      "people": [
+        {
+          "name": "余超伦",
+          "institution": "广东省人民医院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=YGDor"
+        }
+      ],
+      "date": "2026年11月20日",
+      "room": "会场8-多功能厅C2",
+      "session": "论文交流：糖尿病转化医学与精准医疗 2",
+      "session_id": "session40603",
+      "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40603",
+      "evidence": "planned agenda; no results",
+      "group": "细胞机制",
+      "research_question": "肾纤维化的细胞微环境如何形成？",
+      "technology_from_title_or_pending": "单细胞＋空间转录组",
+      "related_records": "H03；A02仅作相关组织技术背景",
+      "relation_status": "topic relation only; not confirmed same study",
+      "thread_ids": [
+        "T02",
+        "T07"
+      ]
+    },
+    {
+      "code": "S_174",
+      "time": "14:00-14:18",
+      "kind": "专题报告",
+      "title": "胰岛β细胞功能的多维评估体系",
+      "people": [
+        {
+          "name": "杨 涛",
+          "institution": "江苏省人民医院（南京医科大学第一附属医院）",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=2Pvkp"
+        }
+      ],
+      "date": "2026年11月20日",
+      "room": "会场3-多功能厅B1",
+      "session": "胰岛β细胞功能与保护",
+      "session_id": "session40545",
+      "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40545",
+      "evidence": "planned agenda; no results",
+      "group": "细胞功能",
+      "research_question": "β细胞功能应该怎样多维评估？",
+      "technology_from_title_or_pending": "评估方法待原报告",
+      "related_records": "H02；R04／R05可帮助梳理终点",
+      "relation_status": "topic relation only; not confirmed same study",
+      "thread_ids": [
+        "T07"
+      ]
+    },
+    {
+      "code": "S_170",
+      "time": "10:40-10:58",
+      "kind": "专题报告",
+      "title": "1型糖尿病免疫治疗主要终点评估：进展、挑战与展望",
+      "people": [
+        {
+          "name": "顾 愹",
+          "institution": "江苏省人民医院（南京医科大学第一附属医院）",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=xj6O5"
+        }
+      ],
+      "date": "2026年11月20日",
+      "room": "会场3-多功能厅B1",
+      "session": "1型糖尿病的免疫治疗进展",
+      "session_id": "session40544",
+      "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40544",
+      "evidence": "planned agenda; no results",
+      "group": "免疫干预",
+      "research_question": "T1D免疫治疗终点应如何选择？",
+      "technology_from_title_or_pending": "终点评估",
+      "related_records": "H02；R05／R13，不能替代本报告结论",
+      "relation_status": "topic relation only; not confirmed same study",
+      "thread_ids": [
+        "T05"
+      ]
+    },
+    {
+      "code": "S_179",
+      "time": "15:50-16:08",
+      "kind": "专题报告",
+      "title": "胰岛暨再生胰岛移植的长征经验",
+      "people": [
+        {
+          "name": "殷 浩",
+          "institution": "中国人民解放军海军军医大学第二附属医院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=nzYkA"
+        }
+      ],
+      "date": "2026年11月20日",
+      "room": "会场3-多功能厅B1",
+      "session": "β细胞再生的基础与临床",
+      "session_id": "session40546",
+      "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40546",
+      "evidence": "planned agenda; no results",
+      "group": "细胞替代",
+      "research_question": "胰岛再生和移植的转化条件是什么？",
+      "technology_from_title_or_pending": "再生胰岛；移植",
+      "related_records": "H02；临床方案、随访、安全性待核",
+      "relation_status": "topic relation only; not confirmed same study",
+      "thread_ids": [
+        "T05",
+        "T07"
+      ]
+    },
+    {
+      "code": "S_076",
+      "time": "17:00-17:18",
+      "kind": "专题报告",
+      "title": "GDM子代胰岛发育及功能异常的表观遗传调控机制",
+      "people": [
+        {
+          "name": "丁国莲",
+          "institution": "复旦大学附属妇产科医院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=YGDp7"
+        }
+      ],
+      "date": "2026年11月19日",
+      "room": "会场8-多功能厅C2",
+      "session": "妊娠期内分泌疾病管理的新技术应用",
+      "session_id": "session40586",
+      "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40586",
+      "evidence": "planned agenda; no results",
+      "group": "妊娠与子代",
+      "research_question": "母体高血糖如何影响子代胰岛？",
+      "technology_from_title_or_pending": "表观遗传机制",
+      "related_records": "H05；R12并非该子代研究证据",
+      "relation_status": "topic relation only; not confirmed same study",
+      "thread_ids": [
+        "T06"
+      ]
+    },
+    {
+      "code": "S_055",
+      "time": "15:10-15:28",
+      "kind": "专题报告",
+      "title": "基于连续葡萄糖监测揭示的代谢健康新标志物",
+      "people": [
+        {
+          "name": "王伟好",
+          "institution": "北京医院 国家老年医学中心",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=zdo29"
+        }
+      ],
+      "date": "2026年11月19日",
+      "room": "会场6-多功能厅B4",
+      "session": "AI技术与糖尿病诊治",
+      "session_id": "session40574",
+      "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40574",
+      "evidence": "planned agenda; no results",
+      "group": "动态管理",
+      "research_question": "CGM动态数据能形成哪些新指标？",
+      "technology_from_title_or_pending": "CGM衍生指标",
+      "related_records": "H04；R06／R14验证的是干预，不是该指标",
+      "relation_status": "topic relation only; not confirmed same study",
+      "thread_ids": [
+        "T04"
+      ]
+    },
+    {
+      "code": "S_237",
+      "time": "09:30-09:48",
+      "kind": "专题报告",
+      "title": "多组学与AI赋能代谢病精准生活方式干预",
+      "people": [
+        {
+          "name": "倪岳琼",
+          "institution": "上海交通大学医学院附属第六人民医院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=qDJGE"
+        }
+      ],
+      "date": "2026年11月21日",
+      "room": "会场3-多功能厅B1",
+      "session": "中青年医师学术专场1：糖尿病前沿研究与转化医学",
+      "session_id": "session40588",
+      "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40588",
+      "evidence": "planned agenda; no results",
+      "group": "动态管理",
+      "research_question": "组学和AI能否帮助选择生活方式干预？",
+      "technology_from_title_or_pending": "多组学＋AI",
+      "related_records": "H04／H05；干预增益、外部验证待核",
+      "relation_status": "topic relation only; not confirmed same study",
+      "thread_ids": [
+        "T04"
+      ]
+    },
+    {
+      "code": "S_142",
+      "time": "15:30-15:48",
+      "kind": "专题报告",
+      "title": "糖尿病合并脂肪肝的多组学精准分型及分层诊疗",
+      "people": [
+        {
+          "name": "翁建平",
+          "institution": "安徽医科大学",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=R1OZw"
+        }
+      ],
+      "date": "2026年11月19日",
+      "room": "会场17-多功能厅E3",
+      "session": "MASLD与糖尿病共管",
+      "session_id": "session40555",
+      "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40555",
+      "evidence": "planned agenda; no results",
+      "group": "共病空白",
+      "research_question": "糖尿病合并脂肪肝该怎样分型？",
+      "technology_from_title_or_pending": "多组学分型",
+      "related_records": "H01／H03；本轮原始论文不足",
+      "relation_status": "topic relation only; not confirmed same study",
+      "thread_ids": []
+    },
+    {
+      "code": "S_238",
+      "time": "10:00-10:18",
+      "kind": "专题报告",
+      "title": "糖尿病认知障碍早期逆转策略",
+      "people": [
+        {
+          "name": "毕 艳",
+          "institution": "南京大学医学院附属鼓楼医院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=d4DmO"
+        }
+      ],
+      "date": "2026年11月21日",
+      "room": "会场3-多功能厅B1",
+      "session": "中青年医师学术专场2：内分泌代谢相关疾病热点问题",
+      "session_id": "session40589",
+      "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40589",
+      "evidence": "planned agenda; no results",
+      "group": "共病空白",
+      "research_question": "认知损伤早期有哪些可干预环节？",
+      "technology_from_title_or_pending": "干预技术待报告",
+      "related_records": "H03／H05；不能据议题认定可逆转",
+      "relation_status": "topic relation only; not confirmed same study",
+      "thread_ids": []
+    },
+    {
+      "code": "OR_301",
+      "time": "17:10-17:18",
+      "kind": "论文发言",
+      "title": "糖尿病肌少症患者的血清代谢组学特征及关键代谢物筛选：一项前瞻性观察性研究",
+      "people": [
+        {
+          "name": "吴奕池",
+          "institution": "中国人民解放军陆军军医大学第二附属医院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=ymw0o"
+        }
+      ],
+      "date": "2026年11月20日",
+      "room": "会场16-多功能厅E2",
+      "session": "论文交流：糖尿病相关内分泌疾病 3",
+      "session_id": "session40632",
+      "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40632",
+      "evidence": "planned agenda; no results",
+      "group": "共病空白",
+      "research_question": "哪些血清代谢信号关联肌少症？",
+      "technology_from_title_or_pending": "血清代谢组；前瞻观察",
+      "related_records": "H03；人数、特征与验证待核",
+      "relation_status": "topic relation only; not confirmed same study",
+      "thread_ids": []
+    },
+    {
+      "code": "OR_305",
+      "time": "14:20-14:28",
+      "kind": "论文发言",
+      "title": "短链脂肪酸产生菌缺乏与促炎通路富集：LADA快速进展表型的肠道菌群宏基因组特征",
+      "people": [
+        {
+          "name": "方圆圆",
+          "institution": "河南省人民医院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=O5OwE"
+        }
+      ],
+      "date": "2026年11月20日",
+      "room": "会场17-多功能厅E3",
+      "session": "论文交流：糖尿病与肠道环境 1",
+      "session_id": "session40633",
+      "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40633",
+      "evidence": "planned agenda; no results",
+      "group": "肠道与免疫",
+      "research_question": "LADA进展速度与菌群特征如何关联？",
+      "technology_from_title_or_pending": "宏基因组",
+      "related_records": "H01／H05；与R07人群、检测不同",
+      "relation_status": "topic relation only; not confirmed same study",
+      "thread_ids": [
+        "T06"
+      ]
+    },
+    {
+      "code": "OR_313",
+      "time": "15:40-15:48",
+      "kind": "论文发言",
+      "title": "不同糖代谢人群血清细胞因子表达特征及其对生活方式干预下血糖转归的预测价值",
+      "people": [
+        {
+          "name": "吴丽莉",
+          "institution": "中日友好医院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=7p38O"
+        }
+      ],
+      "date": "2026年11月20日",
+      "room": "会场17-多功能厅E3",
+      "session": "论文交流：糖尿病与肠道环境 2",
+      "session_id": "session40634",
+      "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40634",
+      "evidence": "planned agenda; no results",
+      "group": "免疫与应答",
+      "research_question": "细胞因子能否预测生活方式干预结局？",
+      "technology_from_title_or_pending": "血清细胞因子",
+      "related_records": "H05；独立验证与预测增益待核",
+      "relation_status": "topic relation only; not confirmed same study",
+      "thread_ids": [
+        "T06"
+      ]
+    },
+    {
+      "code": "S_258",
+      "time": "10:20-10:38",
+      "kind": "专题报告",
+      "title": "糖尿病专病数据库建设与临床研究设计",
+      "people": [
+        {
+          "name": "胡 承",
+          "institution": "上海交通大学医学院附属第六人民医院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=8pvDR"
+        }
+      ],
+      "date": "2026年11月21日",
+      "room": "会场6-多功能厅B4",
+      "session": "编研对话：科研设计与投稿(2/2)",
+      "session_id": "session41189",
+      "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session41189",
+      "evidence": "planned agenda; no results",
+      "group": "研究支撑",
+      "research_question": "专病数据如何支撑可验证的研究？",
+      "technology_from_title_or_pending": "专病数据库；临床设计",
+      "related_records": "共用支撑；不当作疾病热点",
+      "relation_status": "topic relation only; not confirmed same study",
+      "thread_ids": []
+    }
+  ],
+  "threads": [
+    {
+      "id": "T01",
+      "name": "疾病分型与药物应答差异",
+      "papers": [
+        "R01",
+        "R02"
+      ],
+      "topics": [
+        "OR_031",
+        "S_029",
+        "OR_092"
+      ],
+      "status": "候选热点",
+      "why": "组织亚型与药物遗传学分别提供新线索，适合持续看分型是否影响临床选择。",
+      "boundary": "不同人群与方法尚未形成统一临床分型；前瞻性决策获益待证实。",
+      "ada": []
+    },
+    {
+      "id": "T02",
+      "name": "正常白蛋白尿下的肾风险信号",
+      "papers": [
+        "R11"
+      ],
+      "topics": [
+        "OR_003",
+        "OR_005",
+        "OR_008"
+      ],
+      "status": "候选热点",
+      "why": "常规指标尚不明显异常的患者仍需要风险识别，国内议题与近期论文提示可继续追踪。",
+      "boundary": "仅一篇直接论文，且为摘要层；CDS题目不能充当独立结果验证。",
+      "ada": []
+    },
+    {
+      "id": "T03",
+      "name": "纵向标志物与多器官风险",
+      "papers": [
+        "R03"
+      ],
+      "topics": [
+        "OR_007",
+        "OR_333",
+        "S_198",
+        "S_200"
+      ],
+      "status": "研究观察",
+      "why": "重复采样可能提供单次测量之外的信息；会议还提出眼、肾与心肾代谢结局线索。",
+      "boundary": "MESA会议与论文为同研究版本；眼病、心血管结局的原始证据尚不足。",
+      "ada": [
+        "A01"
+      ]
+    },
+    {
+      "id": "T04",
+      "name": "CGM受益人群与数字干预增益",
+      "papers": [
+        "R06",
+        "R14"
+      ],
+      "topics": [
+        "S_055",
+        "S_237"
+      ],
+      "status": "临床试验进展",
+      "why": "两项不同随机试验支持特定场景的短期血糖改善，值得持续追踪人群扩展与管理方式。",
+      "boundary": "尚未证明长期并发症获益；有CGM的数字干预与CGM单独效果需要分开。",
+      "ada": [
+        "A03",
+        "A05",
+        "A18"
+      ]
+    },
+    {
+      "id": "T05",
+      "name": "T1D免疫干预的应答分层",
+      "papers": [
+        "R05",
+        "R13"
+      ],
+      "topics": [
+        "S_170",
+        "S_179"
+      ],
+      "status": "探索性进展",
+      "why": "代谢特征与免疫亚群都指向治疗反应差异，可能帮助提出更具体的验证问题。",
+      "boundary": "小样本和回顾分析为主；不能从内部模型性能推出临床选药用途。",
+      "ada": [
+        "A21",
+        "A27"
+      ]
+    },
+    {
+      "id": "T06",
+      "name": "高危分层工具的效果与边界",
+      "papers": [
+        "R04",
+        "R07",
+        "R12",
+        "R15"
+      ],
+      "topics": [
+        "S_029",
+        "OR_092",
+        "S_076",
+        "OR_305",
+        "OR_313"
+      ],
+      "status": "保留反向证据",
+      "why": "新工具与干预并非对所有人群都有效；阴性与非优效结果会改变研究判断。",
+      "boundary": "不同病型、人群与终点分别解释；不能合并成一种统一预防策略。",
+      "ada": []
+    },
+    {
+      "id": "T07",
+      "name": "β细胞微环境与细胞互作",
+      "papers": [
+        "R09",
+        "R10"
+      ],
+      "topics": [
+        "OR_027",
+        "OR_008",
+        "S_174",
+        "S_179"
+      ],
+      "status": "机制观察",
+      "why": "两项机制研究将细胞周围环境与β细胞功能相连，提供临床转化前的研究方向。",
+      "boundary": "动物和组织证据为主，距离体液检测性能及人体疗效仍有验证环节。",
+      "ada": []
+    },
+    {
+      "id": "T08",
+      "name": "降糖治疗中的安全风险分层",
+      "papers": [
+        "R08"
+      ],
+      "topics": [],
+      "status": "安全关注",
+      "why": "大规模日常医疗数据补充了治疗期间的风险分布，值得与疗效研究共同追踪。",
+      "boundary": "本轮只有一项主要安全研究；不能据此评价药物的总体获益风险。",
+      "ada": []
+    },
+    {
+      "id": "T09",
+      "name": "GLP-1RA相关肾内细胞通路",
+      "papers": [],
+      "topics": [],
+      "status": "会议摘要进展",
+      "why": "ADA小样本肾活检分析提供药物使用相关的细胞通路线索。",
+      "boundary": "只有观察性会议摘要结果，不能证明因果效应或体液风险预测性能。",
+      "ada": [
+        "A02"
+      ]
+    },
+    {
+      "id": "T10",
+      "name": "口服GLP-1RA的比较与联合",
+      "papers": [],
+      "topics": [],
+      "status": "临床试验进展",
+      "why": "多项原始随机试验补充不同口服分子、比较对象及胰岛素背景下的证据。",
+      "boundary": "各试验背景、人群与统计口径不同；降糖不等于心肾获益，耐受性及停药需一并解释。",
+      "ada": [
+        "A04",
+        "A07",
+        "A08",
+        "A12",
+        "A13"
+      ]
+    },
+    {
+      "id": "T11",
+      "name": "工程化β细胞的移植免疫保护",
+      "papers": [],
+      "topics": [],
+      "status": "临床前线索待核",
+      "why": "ADA遴选题目指向细胞替代与免疫保护，适合作为追踪入口。",
+      "boundary": "已核为小鼠移植模型，尚未取得完整原始结果；不能称为人体治愈。",
+      "ada": [
+        "A06"
+      ]
+    },
+    {
+      "id": "T12",
+      "name": "Amylin联合的增量价值",
+      "papers": [],
+      "topics": [],
+      "status": "临床试验进展",
+      "why": "REIMAGINE三项试验分别覆盖早期T2D、口服药背景与胰岛素背景，比较单组分与组合的增益。",
+      "boundary": "不同人群与估计口径分开；降糖或减重不能直接证明停药后持久缓解。",
+      "ada": [
+        "A09",
+        "A10",
+        "A11"
+      ]
+    },
+    {
+      "id": "T13",
+      "name": "多受体方案与体重之外的结局",
+      "papers": [],
+      "topics": [],
+      "status": "临床与邻域进展",
+      "why": "三受体及双受体研究同时涉及T2D和无糖尿病肥胖，后者开始关注功能及症状。",
+      "boundary": "无糖尿病研究标邻域背景；不同估计口径不可直接比较，不据减重推长期器官获益。",
+      "ada": [
+        "A13",
+        "A14",
+        "A15",
+        "A16",
+        "A17"
+      ]
+    },
+    {
+      "id": "T14",
+      "name": "器官结局与替代指标的距离",
+      "papers": [],
+      "topics": [],
+      "status": "保留阴性结果",
+      "why": "糖网子研究未见组间差异，肝脂肪研究提供影像结果，提示需要分别追踪各类结局。",
+      "boundary": "眼、肝与心肾不能混为统一结局；糖网为主试验子研究，肝脂肪不是纤维化或临床硬结局。",
+      "ada": [
+        "A17",
+        "A22"
+      ]
+    },
+    {
+      "id": "T15",
+      "name": "孕期风险预测与诊断边界",
+      "papers": [],
+      "topics": [],
+      "status": "阳性与阴性并存",
+      "why": "孕期动态葡萄糖有探索信号，同时出现增量预测不足和CGM不能替代OGTT的结果。",
+      "boundary": "孕早期预测和中期诊断分开；A24/A25共享GOMOMs队列，不算独立人群重复验证。",
+      "ada": [
+        "A23",
+        "A24",
+        "A25"
+      ]
+    },
+    {
+      "id": "T16",
+      "name": "临床研究如何进入真实管理",
+      "papers": [],
+      "topics": [],
+      "status": "实施研究进展",
+      "why": "饮食获取与电话管理试验、早期T1D免疫治疗病历研究，补充实际使用和完成条件。",
+      "boundary": "复合干预不能拆成单一食物疗效；无对照真实世界完成率也不是治疗因果效应。",
+      "ada": [
+        "A26",
+        "A27"
+      ]
+    },
+    {
+      "id": "T17",
+      "name": "T1D纵向测量与多组学分层",
+      "papers": [],
+      "topics": [],
+      "status": "方法与探索观察",
+      "why": "C肽纵向终点、免疫代谢分层和EV蛋白方法线索，补充如何测量病程与个体差异。",
+      "boundary": "重分析、小样本与原始结果待核并存；不能直接推出临床预测或选药用途。",
+      "ada": [
+        "A19",
+        "A20",
+        "A21"
+      ]
+    },
+    {
+      "id": "T18",
+      "name": "cfRNA与体液RNA分层探索",
+      "papers": [
+        "R16",
+        "R17"
+      ],
+      "topics": [],
+      "status": "探索性研究",
+      "why": "孕期血浆cfRNA有风险模型结果，尿液多成分研究则提醒分清信号来自哪种样本。",
+      "boundary": "血浆与尿液、游离/EV/细胞RNA及测序/PCR分开；不能把尿液细胞检测性能算给cfRNA。",
+      "ada": []
+    }
+  ],
+  "ada": [
+    {
+      "id": "A01",
+      "code": "2319-P",
+      "title": "重复蛋白测量寻找新的糖尿病发病信号",
+      "topic": "纵向蛋白组与发病风险",
+      "source_date": "2026-06-05",
+      "date_basis": "摘要刊出日期，非现场报告核实",
+      "evidence_status": "已读结果；关联论文",
+      "has_results": true,
+      "merged_paper": "R03",
+      "unique_study_id": "R03",
+      "thread_ids": [
+        "T03"
+      ],
+      "design": "MESA 5,322人、三个采样时点的蛋白组分析。",
+      "result": "纵向分析提供单时点之外的糖尿病相关蛋白与通路线索。",
+      "limits": "与R03正式论文为同研究版本，不额外增加独立研究数；版本间统计口径差异待全文核对。",
+      "why": "提示动态采样可能补充基线测量，值得追踪新增信息能否改善预测。",
+      "team": "Zsu-Zsu Chen等；计划报告人见官方程序第114物理页。",
+      "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/2319-P/168859/2319-P-Longitudinal-vs-Single-Timepoint-Proteomics",
+      "doi": "10.2337/db26-2319-P",
+      "reading_level": "原站索引完整结果摘要＋程序核对",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "reading_scope": "首轮定向读取；非大会全部热点",
+      "entity_kind": "ada",
+      "first_seen_batch": "B01",
+      "last_checked_on": "2026-11-11",
+      "conference_abstract_date": "2026-06-05",
+      "evidence_level": "会议摘要",
+      "scope": "糖尿病研究",
+      "domain_ids": [
+        "D6"
+      ],
+      "sources": [
+        {
+          "label": "原会议来源",
+          "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/2319-P/168859/2319-P-Longitudinal-vs-Single-Timepoint-Proteomics"
+        }
+      ],
+      "paper": null,
+      "version_relations": [
+        {
+          "related_id": "R03",
+          "type": "同研究会议/论文版本，已合并展示"
+        }
+      ],
+      "next_evidence": "补外部验证、校准与相对临床基础模型的增量，核共享样本。",
+      "online_date": "2026-06-05",
+      "title_cn": "重复蛋白测量寻找新的糖尿病发病信号",
+      "product_relation": {
+        "group": "product",
+        "reason": "已有直接或相关技术证据；公司可交付性单独待核。",
+        "links": [
+          {
+            "tech_id": "PR",
+            "relation": "direct",
+            "basis": "MESA纵向蛋白组；A01和R03是同研究版本。",
+            "research_question": "重复测量相对单次检测增加多少预测信息？",
+            "fit_status": "文献技术关联；公司当前流程/样本/交付适配待核"
+          }
+        ]
+      },
+      "narrative": {
+        "title": "多次采样的蛋白组能否补充糖尿病风险判断？",
+        "paragraphs": [
+          "Zsu-Zsu Chen等研究者在MESA队列中，比较纵向蛋白变化与单次测量对糖尿病相关信号的识别能力。",
+          "研究提示重复测量能提供额外的通路线索。该会议记录与R03正式论文属于同一研究，不能作为两项独立验证计算。"
+        ],
+        "focus": "纵向血浆蛋白组：研究蛋白变化轨迹对糖尿病风险判断的贡献，结合R03正式论文确定采样与验证问题。"
+      }
+    },
+    {
+      "id": "A02",
+      "code": "1113-OR",
+      "title": "GLP-1RA使用者的肾内细胞通路差异",
+      "topic": "GLP-1RA与肾内细胞通路",
+      "source_date": "2026-06-05",
+      "date_basis": "摘要刊出日期，非现场报告核实",
+      "evidence_status": "已读结果；小样本观察",
+      "has_results": true,
+      "merged_paper": null,
+      "unique_study_id": "A02",
+      "thread_ids": [
+        "T09"
+      ],
+      "design": "11名肾病受试者肾活检的单细胞分析，比较GLP-1RA使用者与非使用者；约11.8万细胞。",
+      "result": "观察到血管、免疫和肾小管相关通路信号差异，提供用药相关肾内机制线索。",
+      "limits": "患者数为11，细胞数不是独立患者数；观察关联不能证明药物因果效应，也不能推出体液标志物性能。",
+      "why": "将药物使用与肾内细胞层次联系起来，可继续追踪机制与临床结局如何连接。",
+      "team": "Ye Ji Choi为程序列出的计划报告人；作者含Kretzler、Bjornstad等，逐人机构待核。",
+      "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1113-OR/168085/1113-OR-ADA-Presidents-Select-Abstract-Single-Cell",
+      "doi": "10.2337/db26-1113-OR",
+      "reading_level": "原站索引完整结果摘要＋程序核对",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "reading_scope": "首轮定向读取；非大会全部热点",
+      "entity_kind": "ada",
+      "first_seen_batch": "B01",
+      "last_checked_on": "2026-11-11",
+      "conference_abstract_date": "2026-06-05",
+      "evidence_level": "会议摘要",
+      "scope": "糖尿病研究",
+      "domain_ids": [
+        "D3",
+        "D7"
+      ],
+      "sources": [
+        {
+          "label": "原会议来源",
+          "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1113-OR/168085/1113-OR-ADA-Presidents-Select-Abstract-Single-Cell"
+        }
+      ],
+      "paper": null,
+      "version_relations": [],
+      "next_evidence": "补临床硬结局、预设分析和更长期随访；不能仅用血糖或影像代替。；补独立样本、机制干预及人体转化证据。",
+      "online_date": "2026-06-05",
+      "title_cn": "GLP-1RA使用者的肾内细胞通路差异",
+      "product_relation": {
+        "group": "product",
+        "reason": "已有直接或相关技术证据；公司可交付性单独待核。",
+        "links": [
+          {
+            "tech_id": "SC",
+            "relation": "direct",
+            "basis": "肾活检单细胞分析，比较GLP-1RA使用相关通路。",
+            "research_question": "药物相关细胞变化能否解释应答差异或残余肾风险？",
+            "fit_status": "文献技术关联；公司当前流程/样本/交付适配待核"
+          }
+        ]
+      },
+      "narrative": {
+        "title": "GLP-1RA使用者的肾内细胞通路有何不同？",
+        "paragraphs": [
+          "含Kretzler、Bjornstad等作者的研究团队，利用肾活检单细胞资料，比较GLP-1RA使用者与非使用者的细胞通路特征。",
+          "研究观察到血管、免疫及肾小管相关信号差异，为理解药物使用与肾内变化的联系提供了线索。患者数量较少，观察关联尚不能证明药物因果效应。"
+        ],
+        "focus": "肾组织单细胞分析：定位GLP-1RA使用相关的细胞与通路，为药物应答差异及残余肾风险研究寻找候选信号。"
+      }
+    },
+    {
+      "id": "A03",
+      "code": "1170-OR",
+      "title": "CONNECT：非胰岛素T2D人群使用CGM",
+      "topic": "CGM应用人群扩展",
+      "source_date": "2026-10-14",
+      "date_basis": "所读正式论文的在线日期；会议原摘要日期另存",
+      "evidence_status": "正式论文结果已读",
+      "has_results": true,
+      "merged_paper": null,
+      "unique_study_id": "A03",
+      "thread_ids": [
+        "T04"
+      ],
+      "design": "CONNECT，非胰岛素治疗T2D成人，145人CGM、138人常规管理；美国22家基层机构；26周RCT，NCT06601166。",
+      "result": "283人随机研究：26周CGM组HbA1c较常规管理多下降0.9个百分点（95%CI −1.1至−0.6），TIR多21个百分点；未报告严重低血糖。",
+      "limits": "此前会议基线摘要写21家机构，正式论文为22家，保留版本差异；Dexcom资助；26周血糖结果不能推成长程并发症获益。",
+      "why": "从基线线索升级为有结果的随机试验，补充CGM用于非胰岛素T2D基层管理的证据。",
+      "team": "Tamara K Oser、Thomas Martens等；第一作者不自动等于会议报告人。",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42878622/",
+      "doi": "10.2337/db26-1170-OR",
+      "reading_level": "PubMed原始论文完整摘要；未全文精读",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "reading_scope": "首轮定向读取；非大会全部热点",
+      "entity_kind": "ada",
+      "first_seen_batch": "B01",
+      "last_checked_on": "2026-11-11",
+      "conference_abstract_date": "2026-06-06",
+      "evidence_level": "正式论文摘要",
+      "scope": "糖尿病研究",
+      "domain_ids": [
+        "D5"
+      ],
+      "sources": [
+        {
+          "label": "原会议来源",
+          "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1170-OR/167182"
+        },
+        {
+          "label": "原始论文摘要",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42878622/"
+        },
+        {
+          "label": "期刊原文",
+          "url": "https://doi.org/10.1056/NEJMoa2608571"
+        }
+      ],
+      "paper": {
+        "pmid": "42878622",
+        "doi": "10.1056/NEJMoa2608571",
+        "journal": "The New England journal of medicine",
+        "title": "Continuous Glucose Monitoring in Non-Insulin-Treated Type 2 Diabetes.",
+        "online_date": "2026-10-14"
+      },
+      "upgraded_in": "B02",
+      "version_relations": [],
+      "next_evidence": "补真实实施成本、长期结局、设备/算法版本与亚组可复制性。",
+      "online_date": "2026-10-14",
+      "title_cn": "CONNECT：非胰岛素T2D人群使用CGM",
+      "product_relation": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "narrative": {
+        "title": "非胰岛素治疗的T2D人群能否从CGM中受益？",
+        "paragraphs": [
+          "Tamara K Oser、Thomas Martens等研究者在CONNECT随机试验中，将CGM与常规管理用于基层医疗中的非胰岛素T2D成人。",
+          "正式论文报告CGM组获得了更好的HbA1c和目标范围内时间表现。这使此前只有基线资料的会议线索形成了结果证据，但长期并发症获益仍需独立研究。"
+        ],
+        "focus": "持续葡萄糖监测：以非胰岛素治疗T2D人群为场景，研究管理获益、患者差异与后续随访指标。"
+      }
+    },
+    {
+      "id": "A04",
+      "code": "1253-OR",
+      "title": "ACHIEVE-5：口服GLP-1RA加入基础胰岛素方案",
+      "topic": "口服GLP-1RA治疗策略",
+      "source_date": "2026-08-04",
+      "date_basis": "JAMA卷期日期2026-08-04；首发在线日待核；不把PubMed入库日当发表日",
+      "evidence_status": "正式论文结果已读",
+      "has_results": true,
+      "merged_paper": null,
+      "unique_study_id": "A04",
+      "thread_ids": [
+        "T10"
+      ],
+      "design": "ACHIEVE-5，72中心双盲Ⅲ期，基础甘精胰岛素±二甲双胍/SGLT2i；40周；NCT06109311。",
+      "result": "546人RCT：40周orforglipron 3/12/36mg的HbA1c变化为−1.58/−1.88/−1.82个百分点，安慰剂−0.79；体重下降更多，常见胃肠道不良反应。",
+      "limits": "未全文核读；疗效不等于心肾结局。JAMA卷期2026-08-04，首发在线日此轮未独立核清；不混用会议报道与论文不同估计口径。",
+      "why": "补全口服治疗加入基础胰岛素后的效果与耐受性。",
+      "team": "Francesco Giorgino、Sherwin D'Souza等；第一作者不自动等于会议报告人。",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42251769/",
+      "doi": "10.2337/db26-1253-OR",
+      "reading_level": "PubMed原始论文完整摘要；未全文精读",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "reading_scope": "首轮定向读取；非大会全部热点",
+      "entity_kind": "ada",
+      "first_seen_batch": "B01",
+      "last_checked_on": "2026-11-11",
+      "conference_abstract_date": "2026-06-07",
+      "evidence_level": "正式论文摘要",
+      "scope": "糖尿病研究",
+      "domain_ids": [
+        "D1"
+      ],
+      "sources": [
+        {
+          "label": "原会议来源",
+          "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1253-OR/167106/1253-OR-ADA-Presidents-Select-Abstract-Efficacy"
+        },
+        {
+          "label": "原始论文摘要",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42251769/"
+        },
+        {
+          "label": "期刊原文",
+          "url": "https://doi.org/10.1001/jama.2026.9512"
+        }
+      ],
+      "paper": {
+        "pmid": "42251769",
+        "doi": "10.1001/jama.2026.9512",
+        "journal": "JAMA",
+        "title": "Orforglipron Added to Titrated Insulin Glargine in Type 2 Diabetes: The ACHIEVE-5 Randomized Clinical Trial.",
+        "online_date": null
+      },
+      "upgraded_in": "B02",
+      "version_relations": [],
+      "next_evidence": "追踪更长期安全性、停药/依从性与器官结局；对照和估计口径一致后再比较。",
+      "online_date": "2026-08-04",
+      "title_cn": "ACHIEVE-5：口服GLP-1RA加入基础胰岛素方案",
+      "product_relation": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "narrative": {
+        "title": "口服GLP-1RA加入基础胰岛素后，效果如何？",
+        "paragraphs": [
+          "Francesco Giorgino、Sherwin D’Souza等研究者通过ACHIEVE-5试验，研究orforglipron加入基础甘精胰岛素后的效果和耐受性。",
+          "与安慰剂相比，联合方案改善了血糖与体重，常见不良反应为胃肠道事件。这补充了胰岛素背景下口服治疗的证据，尚不等于证明长期心肾结局。"
+        ],
+        "focus": "联合治疗应答研究：围绕口服GLP-1RA与基础胰岛素联用，分析获益人群、耐受性及长期随访问题。"
+      }
+    },
+    {
+      "id": "A05",
+      "code": "1063-OR",
+      "title": "晚期肾病住院人群的自动胰岛素输注",
+      "topic": "监测与自动输注的特殊场景",
+      "source_date": "2026-06-05",
+      "date_basis": "摘要刊出日期；完整结果未核",
+      "evidence_status": "原始摘要结果已读",
+      "has_results": true,
+      "merged_paper": null,
+      "unique_study_id": "A05",
+      "thread_ids": [
+        "T04"
+      ],
+      "design": "住院糖尿病且eGFR<30，27人随机分配AID 14人或MDI+CGM 13人。",
+      "result": "AID组TIR为69%±18%，对照36%±19%；差33个百分点（95%CI 21至47）；低血糖时间未见组间差异。",
+      "limits": "小样本、住院场景；与A18 AIDING人员和场景高度相关，主试验/亚组关系仍待注册号或原文确认，不作为独立重复验证；不与澳丹40人门诊交叉试验混同。",
+      "why": "提示技术应用从普通门诊扩展到复杂住院场景，需补完整证据。",
+      "team": "Tugce Akcan为计划报告人；作者Rayhan Lal、Sue Brown等，机构待核。",
+      "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1063-OR/167932/1063-OR-ADA-Presidents-Select-Abstract-Automated",
+      "doi": "10.2337/db26-1063-OR",
+      "reading_level": "原站索引完整结果摘要",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "reading_scope": "首轮定向读取；非大会全部热点",
+      "entity_kind": "ada",
+      "first_seen_batch": "B01",
+      "last_checked_on": "2026-11-11",
+      "conference_abstract_date": "2026-06-05",
+      "evidence_level": "会议摘要",
+      "scope": "糖尿病研究",
+      "domain_ids": [
+        "D5",
+        "D8"
+      ],
+      "sources": [
+        {
+          "label": "原始会议摘要",
+          "url": "https://doi.org/10.2337/db26-1063-OR"
+        }
+      ],
+      "paper": null,
+      "upgraded_in": "B02",
+      "version_relations": [
+        {
+          "related_id": "A18",
+          "type": "可能主试验/亚组，待核，不按独立重复验证计数"
+        }
+      ],
+      "next_evidence": "补真实实施成本、长期结局、设备/算法版本与亚组可复制性。；补独立特殊人群研究；避免从普通成人T2D外推。",
+      "online_date": "2026-06-05",
+      "title_cn": "晚期肾病住院人群的自动胰岛素输注",
+      "product_relation": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "narrative": {
+        "title": "晚期肾病患者住院时，AID能否改善血糖管理？",
+        "paragraphs": [
+          "Tugce Akcan、Rayhan Lal、Sue Brown等研究相关人员，围绕晚期肾病住院患者的血糖管理，比较自动胰岛素输注与多次注射加CGM。",
+          "小样本随机研究中，AID组在目标血糖范围内的时间更多，低血糖时间未见组间差异。它与AIDING主研究报道可能存在主试验或亚组关系，尚需进一步核实。"
+        ],
+        "focus": "住院自动胰岛素输注研究：以晚期肾病患者为场景，研究血糖波动、低血糖与医疗流程的评价指标。"
+      }
+    },
+    {
+      "id": "A06",
+      "code": "1315-OR",
+      "title": "工程化β细胞与移植免疫排斥",
+      "topic": "工程化β细胞替代",
+      "source_date": "2026-06-08",
+      "date_basis": "原站摘要刊出日2026-06-08；实际现场报告未独立核实",
+      "evidence_status": "小鼠场景已核；结果待核",
+      "has_results": false,
+      "merged_paper": null,
+      "unique_study_id": "A06",
+      "thread_ids": [
+        "T11"
+      ],
+      "design": "原站摘要方法片段确认使用NOD及STZ相关小鼠移植模型，非人体试验。",
+      "result": "本轮核清其为小鼠概念验证方向；原站结果段未完整取得，仍不转写疗效。",
+      "limits": "未取得完整原始结果和样本/存活时长；不得称人体治愈或已验证临床移植方案。",
+      "why": "可作为细胞替代与免疫保护方向的观察入口，需要原始摘要建立证据边界。",
+      "team": "Lifu Ruan等；会前程序物理第367页列Lifu Ruan为计划报告人。",
+      "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1315-OR/167070",
+      "doi": "10.2337/db26-1315-OR",
+      "reading_level": "原站索引题目与方法片段＋官方程序；结果未完整取得",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "reading_scope": "首轮定向读取；非大会全部热点",
+      "entity_kind": "ada",
+      "first_seen_batch": "B01",
+      "last_checked_on": "2026-11-11",
+      "conference_abstract_date": "2026-06-08",
+      "evidence_level": "结果待核",
+      "scope": "糖尿病研究",
+      "domain_ids": [
+        "D4",
+        "D7"
+      ],
+      "sources": [
+        {
+          "label": "原始摘要入口",
+          "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1315-OR/167070"
+        }
+      ],
+      "paper": null,
+      "upgraded_in": "B02",
+      "version_relations": [],
+      "next_evidence": "先取得完整原始摘要结果、样本与验证细节，再决定是否升级证据状态。",
+      "online_date": "2026-06-08",
+      "title_cn": "工程化β细胞与移植免疫排斥",
+      "product_relation": {
+        "group": "pending",
+        "reason": "工程β细胞小鼠移植，尚缺原始结果与明确公司承接环节。",
+        "links": []
+      },
+      "narrative": {
+        "title": "工程化β细胞如何应对移植免疫排斥？",
+        "paragraphs": [
+          "Lifu Ruan等研究者围绕PD-L1/HVEM工程化β细胞开展小鼠移植概念验证，探索免疫保护的可能路径。",
+          "当前已核到实验场景与方法线索，完整原始结果尚未取得。因此这条记录用于观察研究方向，不能据此判断移植持续时间或人体治疗效果。"
+        ],
+        "focus": "工程β细胞研究：围绕PD-L1/HVEM免疫保护策略，梳理移植存活、免疫排斥与功能维持的评价问题，追踪原始实验结果。"
+      }
+    },
+    {
+      "id": "A07",
+      "code": "ACHIEVE-2",
+      "title": "ACHIEVE-2：口服orforglipron与达格列净比较",
+      "topic": "ACHIEVE-2",
+      "domain_ids": [
+        "D1"
+      ],
+      "thread_ids": [
+        "T10"
+      ],
+      "design": "962人，二甲双胍控制不足；40周开放Ⅲ期RCT；NCT06192108。",
+      "result": "治疗方案估计下，HbA1c下降1.23–1.56个百分点，对照0.81；胃肠道事件与停药更多。",
+      "limits": "开放设计；不能以降糖优效推出心肾保护优效；Lilly资助。",
+      "why": "头对头比较需同时看耐受性和退出治疗。",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42259339/",
+      "source_date": "2026-06-08",
+      "date_basis": "所读正式论文在线日期；会后报道日期另存",
+      "evidence_status": "正式论文结果已读",
+      "evidence_level": "正式论文摘要",
+      "has_results": true,
+      "team": "Michelle Welch、Thomas Forst等；资助信息见原始摘要。",
+      "reading_level": "PubMed原始论文完整摘要；未全文精读",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A07",
+      "sources": [
+        {
+          "label": "原始论文摘要",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42259339/"
+        },
+        {
+          "label": "期刊原文",
+          "url": "https://doi.org/10.1016/S0140-6736(26)00800-7"
+        },
+        {
+          "label": "ADA会后报道（会议关联依据）",
+          "url": "https://diabetes.org/newsroom/press-releases/achieve-trials-demonstrate-comparative-benefits-novel-small-molecule-oral"
+        }
+      ],
+      "paper": {
+        "pmid": "42259339",
+        "doi": "10.1016/S0140-6736(26)00800-7",
+        "journal": "Lancet (London, England)",
+        "title": "Orforglipron compared with dapagliflozin in adults with type 2 diabetes and inadequate glycaemic control with metformin (ACHIEVE-2): a multicentre, randomised, non-inferiority, open-label, phase 3 trial.",
+        "online_date": "2026-06-08"
+      },
+      "scope": "糖尿病研究",
+      "version_relations": [],
+      "next_evidence": "追踪更长期安全性、停药/依从性与器官结局；对照和估计口径一致后再比较。",
+      "online_date": "2026-06-08",
+      "title_cn": "ACHIEVE-2：口服orforglipron与达格列净比较",
+      "product_relation": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "narrative": {
+        "title": "口服orforglipron与达格列净的比较带来什么信息？",
+        "paragraphs": [
+          "Michelle Welch、Thomas Forst等研究者在ACHIEVE-2试验中，比较两种口服方案用于二甲双胍控制不足的T2D成人。",
+          "Orforglipron组的降糖幅度更大，同时胃肠道事件与停药更多。头对头比较提示，评价新方案需要同时考虑效果和耐受性。"
+        ],
+        "focus": "治疗比较研究：围绕降糖效果与耐受性的权衡提出患者分层问题，设计应答差异和器官结局的后续评价。"
+      }
+    },
+    {
+      "id": "A08",
+      "code": "ACHIEVE-3",
+      "title": "ACHIEVE-3：两种口服GLP-1RA头对头比较",
+      "topic": "ACHIEVE-3",
+      "domain_ids": [
+        "D1"
+      ],
+      "thread_ids": [
+        "T10"
+      ],
+      "design": "1698人，二甲双胍控制不足；52周开放Ⅲ期RCT；NCT06045221。",
+      "result": "治疗方案估计下36mg orforglipron与14mg口服司美格鲁肽的HbA1c差−0.44个百分点（95%CI −0.62至−0.26）；前者胃肠道事件及因不良事件停药更多。",
+      "limits": "原始论文2月已在线；6月报道不算新独立研究。对照人群为二甲双胍控制不足，非已经口服司美格鲁肽治疗失败。",
+      "why": "从新闻中的效果比较回到真实背景治疗和代价。",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41765029/",
+      "source_date": "2026-02-26",
+      "date_basis": "所读正式论文在线日期；会后报道日期另存",
+      "evidence_status": "正式论文结果已读",
+      "evidence_level": "正式论文摘要",
+      "has_results": true,
+      "team": "Julio Rosenstock、Daisuke Yabe等；资助信息见原始摘要。",
+      "reading_level": "PubMed原始论文完整摘要；未全文精读",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A08",
+      "sources": [
+        {
+          "label": "原始论文摘要",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41765029/"
+        },
+        {
+          "label": "期刊原文",
+          "url": "https://doi.org/10.1016/S0140-6736(26)00202-3"
+        },
+        {
+          "label": "ADA会后报道（会议关联依据）",
+          "url": "https://diabetes.org/newsroom/press-releases/achieve-trials-demonstrate-comparative-benefits-novel-small-molecule-oral"
+        }
+      ],
+      "paper": {
+        "pmid": "41765029",
+        "doi": "10.1016/S0140-6736(26)00202-3",
+        "journal": "Lancet (London, England)",
+        "title": "Efficacy and safety of once-daily oral orforglipron compared with oral semaglutide in adults with type 2 diabetes (ACHIEVE-3): a multinational, multicentre, non-inferiority, open-label, randomised, phase 3 trial.",
+        "online_date": "2026-02-26"
+      },
+      "scope": "糖尿病研究",
+      "version_relations": [],
+      "next_evidence": "追踪更长期安全性、停药/依从性与器官结局；对照和估计口径一致后再比较。",
+      "online_date": "2026-02-26",
+      "title_cn": "ACHIEVE-3：两种口服GLP-1RA头对头比较",
+      "product_relation": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "narrative": {
+        "title": "两种口服GLP-1RA的差异应如何评价？",
+        "paragraphs": [
+          "Julio Rosenstock、Daisuke Yabe等研究者通过ACHIEVE-3，比较orforglipron与口服司美格鲁肽用于二甲双胍控制不足的T2D成人。",
+          "试验显示降糖效果存在差异，也伴随胃肠道事件、停药及心率变化方面的不同。该论文在大会前已发表，会议报道不构成另一项独立试验。"
+        ],
+        "focus": "口服GLP-1RA比较研究：同时评价血糖改善、耐受性和停药，为不同患者的获益与风险分层提出问题。"
+      }
+    },
+    {
+      "id": "A09",
+      "code": "REIMAGINE 1",
+      "title": "REIMAGINE 1：CagriSema用于早期T2D",
+      "topic": "REIMAGINE 1",
+      "domain_ids": [
+        "D1",
+        "D2"
+      ],
+      "thread_ids": [
+        "T12"
+      ],
+      "design": "189人，饮食运动控制不足；40周双盲Ⅲ期RCT；NCT06323174。",
+      "result": "疗效估计下高剂量组合HbA1c较安慰剂多降1.7个百分点（95%CI −2.0至−1.3），体重下降13.8%与1.4%；常见胃肠道事件。",
+      "limits": "摘要所读为40周治疗；未核停药后缓解的严格定义和持续性，不能称治愈。",
+      "why": "联合机制能否带来增益，以及早期治疗后能否持久，是不同问题。",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42251860/",
+      "source_date": "2026-06-07",
+      "date_basis": "所读正式论文在线日期；会后报道日期另存",
+      "evidence_status": "正式论文结果已读",
+      "evidence_level": "正式论文摘要",
+      "has_results": true,
+      "team": "Vanita R Aroda、Raffaella Buzzetti等；资助信息见原始摘要。",
+      "reading_level": "PubMed原始论文完整摘要；未全文精读",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A09",
+      "sources": [
+        {
+          "label": "原始论文摘要",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42251860/"
+        },
+        {
+          "label": "期刊原文",
+          "url": "https://doi.org/10.1016/S2213-8587(26)00126-9"
+        },
+        {
+          "label": "ADA会后报道（会议关联依据）",
+          "url": "https://diabetes.org/newsroom/press-releases/once-weekly-cagrisema-amylin-semaglutide-combination-injection-more"
+        }
+      ],
+      "paper": {
+        "pmid": "42251860",
+        "doi": "10.1016/S2213-8587(26)00126-9",
+        "journal": "The lancet. Diabetes & endocrinology",
+        "title": "Efficacy and safety of once-weekly cagrilintide-semaglutide (CagriSema) in adults with type 2 diabetes inadequately controlled on diet and exercise (REIMAGINE 1): a randomised, double-blind, placebo-controlled, phase 3a study.",
+        "online_date": "2026-06-07"
+      },
+      "scope": "糖尿病研究",
+      "version_relations": [],
+      "next_evidence": "追踪更长期安全性、停药/依从性与器官结局；对照和估计口径一致后再比较。；补停药后维持、严格缓解定义、体成分/功能与糖尿病亚组。",
+      "online_date": "2026-06-07",
+      "title_cn": "REIMAGINE 1：CagriSema用于早期T2D",
+      "product_relation": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "narrative": {
+        "title": "Amylin与GLP-1联合能否改善早期T2D管理？",
+        "paragraphs": [
+          "Vanita R Aroda、Raffaella Buzzetti等研究者在REIMAGINE 1中，研究CagriSema用于饮食运动控制不足的早期T2D。",
+          "组合治疗较安慰剂改善了血糖和体重。现有治疗期结果支持继续研究这一策略，但停药后是否持久缓解是另一项需要验证的问题。"
+        ],
+        "focus": "联合治疗与缓解研究：围绕Amylin/GLP-1联合方案设计治疗期应答、停药后维持及长期随访问题。"
+      }
+    },
+    {
+      "id": "A10",
+      "code": "REIMAGINE 2",
+      "title": "REIMAGINE 2：CagriSema与单组分治疗比较",
+      "topic": "REIMAGINE 2",
+      "domain_ids": [
+        "D1",
+        "D2"
+      ],
+      "thread_ids": [
+        "T12"
+      ],
+      "design": "2713人，二甲双胍±SGLT2i、超重/肥胖；68周Ⅲ期RCT；NCT06065540。",
+      "result": "疗效估计下高剂量组合与司美格鲁肽2.4mg的HbA1c差−0.16个百分点（95%CI −0.27至−0.05）；常见胃肠道事件。",
+      "limits": "正式论文随机人数2713，ADA新闻写2728；此处采论文。统计显著之外仍需评价绝对增益、耐受性和成本。",
+      "why": "关注组合相对已有效治疗的增量，而非只与安慰剂比。",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42251859/",
+      "source_date": "2026-06-07",
+      "date_basis": "所读正式论文在线日期；会后报道日期另存",
+      "evidence_status": "正式论文结果已读",
+      "evidence_level": "正式论文摘要",
+      "has_results": true,
+      "team": "John B Buse、Harpreet S Bajaj等；资助信息见原始摘要。",
+      "reading_level": "PubMed原始论文完整摘要；未全文精读",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A10",
+      "sources": [
+        {
+          "label": "原始论文摘要",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42251859/"
+        },
+        {
+          "label": "期刊原文",
+          "url": "https://doi.org/10.1016/S2213-8587(26)00125-7"
+        },
+        {
+          "label": "ADA会后报道（会议关联依据）",
+          "url": "https://diabetes.org/newsroom/press-releases/once-weekly-cagrisema-amylin-semaglutide-combination-injection-more"
+        }
+      ],
+      "paper": {
+        "pmid": "42251859",
+        "doi": "10.1016/S2213-8587(26)00125-7",
+        "journal": "The lancet. Diabetes & endocrinology",
+        "title": "Cagrilintide-semaglutide (CagriSema) versus semaglutide or cagrilintide in people with type 2 diabetes (REIMAGINE 2): a double-blind, randomised, controlled, phase 3 study.",
+        "online_date": "2026-06-07"
+      },
+      "scope": "糖尿病研究",
+      "version_relations": [],
+      "next_evidence": "追踪更长期安全性、停药/依从性与器官结局；对照和估计口径一致后再比较。；补停药后维持、严格缓解定义、体成分/功能与糖尿病亚组。",
+      "online_date": "2026-06-07",
+      "title_cn": "REIMAGINE 2：CagriSema与单组分治疗比较",
+      "product_relation": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "narrative": {
+        "title": "CagriSema相对单组分治疗增加了什么？",
+        "paragraphs": [
+          "John B Buse、Harpreet S Bajaj等研究者通过REIMAGINE 2，在口服药背景治疗下比较CagriSema与其单组分方案。",
+          "高剂量组合在HbA1c上获得了统计学增益，同时仍需考虑绝对改善幅度和胃肠道耐受性。研究把问题从“是否有效”推进到“相对现有治疗增加多少价值”。"
+        ],
+        "focus": "联合方案增量评价：比较组合与单组分治疗的效果、耐受性及绝对改善幅度，为后续研究选择对照与评价终点。"
+      }
+    },
+    {
+      "id": "A11",
+      "code": "REIMAGINE 3",
+      "title": "REIMAGINE 3：CagriSema加入基础胰岛素",
+      "topic": "REIMAGINE 3",
+      "domain_ids": [
+        "D1",
+        "D2"
+      ],
+      "thread_ids": [
+        "T12"
+      ],
+      "design": "274人，基础胰岛素±二甲双胍；40周双盲Ⅲ期RCT；NCT06323161。",
+      "result": "疗效估计下高剂量组合HbA1c较安慰剂多降1.68个百分点（95%CI −1.95至−1.41）；组合体重下降10–12%；未报告严重低血糖。",
+      "limits": "40周替代终点；不能与ACHIEVE-5跨试验数字直接排名，也未证明长期器官结局。",
+      "why": "在胰岛素背景下追踪降糖、体重和低血糖之间的平衡。",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42251856/",
+      "source_date": "2026-06-07",
+      "date_basis": "所读正式论文在线日期；会后报道日期另存",
+      "evidence_status": "正式论文结果已读",
+      "evidence_level": "正式论文摘要",
+      "has_results": true,
+      "team": "Julio Rosenstock、Liana K Billings等；资助信息见原始摘要。",
+      "reading_level": "PubMed原始论文完整摘要；未全文精读",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A11",
+      "sources": [
+        {
+          "label": "原始论文摘要",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42251856/"
+        },
+        {
+          "label": "期刊原文",
+          "url": "https://doi.org/10.1016/S0140-6736(26)01022-6"
+        },
+        {
+          "label": "ADA会后报道（会议关联依据）",
+          "url": "https://diabetes.org/newsroom/press-releases/once-weekly-cagrisema-amylin-semaglutide-combination-injection-more"
+        }
+      ],
+      "paper": {
+        "pmid": "42251856",
+        "doi": "10.1016/S0140-6736(26)01022-6",
+        "journal": "Lancet (London, England)",
+        "title": "Cagrilintide-semaglutide (CagriSema) as an add-on to basal insulin in adults with type 2 diabetes (REIMAGINE 3): a randomised, double-blind, placebo-controlled, multicentre, phase 3 study.",
+        "online_date": "2026-06-07"
+      },
+      "scope": "糖尿病研究",
+      "version_relations": [],
+      "next_evidence": "追踪更长期安全性、停药/依从性与器官结局；对照和估计口径一致后再比较。；补停药后维持、严格缓解定义、体成分/功能与糖尿病亚组。",
+      "online_date": "2026-06-07",
+      "title_cn": "REIMAGINE 3：CagriSema加入基础胰岛素",
+      "product_relation": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "narrative": {
+        "title": "CagriSema加入基础胰岛素后有什么变化？",
+        "paragraphs": [
+          "Julio Rosenstock、Liana K Billings等研究者在REIMAGINE 3中，评价CagriSema用于基础胰岛素治疗的T2D成人。",
+          "试验观察到血糖和体重改善，所报告随访中未出现严重低血糖。不同治疗试验的人群和统计口径不相同，不能直接按数值进行跨试验排名。"
+        ],
+        "focus": "联合治疗分层研究：以基础胰岛素治疗的T2D人群为场景，追踪血糖、体重、低血糖与长期应答差异。"
+      }
+    },
+    {
+      "id": "A12",
+      "code": "SOLSTICE",
+      "title": "SOLSTICE：另一种口服小分子GLP-1RA的T2D数据",
+      "topic": "SOLSTICE",
+      "domain_ids": [
+        "D1"
+      ],
+      "thread_ids": [
+        "T10"
+      ],
+      "design": "406人随机、404人用药；26周Ⅱb期；NCT06579105。",
+      "result": "不同elecoglipron剂量HbA1c下降0.91–1.88个百分点，安慰剂0.15；常见胃肠道事件。",
+      "limits": "Ⅱ期探索；口服司美格鲁肽为开放探索组，不能据摘要称严格头对头优效。406随机与404用药分母分开。",
+      "why": "补充不同研发分子，继续追Ⅲ期效果与耐受性。",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42259343/",
+      "source_date": "2026-06-08",
+      "date_basis": "所读正式论文在线日期；会后报道日期另存",
+      "evidence_status": "正式论文结果已读",
+      "evidence_level": "正式论文摘要",
+      "has_results": true,
+      "team": "Vanita R Aroda、Melanie J Davies等；资助信息见原始摘要。",
+      "reading_level": "PubMed原始论文完整摘要；未全文精读",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A12",
+      "sources": [
+        {
+          "label": "原始论文摘要",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42259343/"
+        },
+        {
+          "label": "期刊原文",
+          "url": "https://doi.org/10.1016/S0140-6736(26)00802-0"
+        },
+        {
+          "label": "ADA会后报道（会议关联依据）",
+          "url": "https://www.adameetingnews.org/oral-small-molecule-glp-1-ra-improves-blood-glucose-and-weight-reduction/"
+        }
+      ],
+      "paper": {
+        "pmid": "42259343",
+        "doi": "10.1016/S0140-6736(26)00802-0",
+        "journal": "Lancet (London, England)",
+        "title": "Elecoglipron, an oral small molecule GLP-1 receptor agonist in adults with type 2 diabetes (SOLSTICE): a multicentre, phase 2b, randomised, placebo-controlled trial.",
+        "online_date": "2026-06-08"
+      },
+      "scope": "糖尿病研究",
+      "version_relations": [],
+      "next_evidence": "追踪更长期安全性、停药/依从性与器官结局；对照和估计口径一致后再比较。",
+      "online_date": "2026-06-08",
+      "title_cn": "SOLSTICE：另一种口服小分子GLP-1RA的T2D数据",
+      "product_relation": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "narrative": {
+        "title": "新的口服小分子GLP-1RA能否改善T2D控制？",
+        "paragraphs": [
+          "Vanita R Aroda、Melanie J Davies等研究者在SOLSTICEⅡb期试验中，评价elecoglipron用于T2D成人的效果与耐受性。",
+          "不同剂量观察到降糖信号，常见不良事件为胃肠道反应。当前结果主要支持后续开发，尚不能据探索性比较宣布头对头优势。"
+        ],
+        "focus": "口服小分子研发追踪：围绕elecoglipron的剂量、应答和耐受性整理后续Ⅲ期研究需要回答的问题。"
+      }
+    },
+    {
+      "id": "A13",
+      "code": "VISTA",
+      "title": "VISTA：Elecoglipron的无糖尿病肥胖研究",
+      "topic": "VISTA",
+      "domain_ids": [
+        "D1",
+        "D2"
+      ],
+      "thread_ids": [
+        "T10",
+        "T13"
+      ],
+      "design": "310人，无T2D的超重/肥胖成人；36周Ⅱ期，26周主要终点；NCT06579092。",
+      "result": "26周不同剂量体重下降2.6–10.5%，安慰剂0.6%；常见胃肠道事件。",
+      "limits": "排除T2D；属于邻域证据，不外推糖尿病疗效或长期维持。",
+      "why": "与SOLSTICE分别记录，避免把两种人群混为一项研究。",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42259337/",
+      "source_date": "2026-06-08",
+      "date_basis": "所读正式论文在线日期；会后报道日期另存",
+      "evidence_status": "正式论文结果已读",
+      "evidence_level": "正式论文摘要",
+      "has_results": true,
+      "team": "Melanie J Davies、Vanita R Aroda等；资助信息见原始摘要。",
+      "reading_level": "PubMed原始论文完整摘要；未全文精读",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A13",
+      "sources": [
+        {
+          "label": "原始论文摘要",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42259337/"
+        },
+        {
+          "label": "期刊原文",
+          "url": "https://doi.org/10.1016/S0140-6736(26)00748-8"
+        },
+        {
+          "label": "ADA会后报道（会议关联依据）",
+          "url": "https://www.adameetingnews.org/oral-small-molecule-glp-1-ra-improves-blood-glucose-and-weight-reduction/"
+        }
+      ],
+      "paper": {
+        "pmid": "42259337",
+        "doi": "10.1016/S0140-6736(26)00748-8",
+        "journal": "Lancet (London, England)",
+        "title": "Elecoglipron, an oral small molecule GLP-1 receptor agonist in adults with obesity or overweight (VISTA): a multicentre, phase 2, randomised, placebo-controlled clinical trial.",
+        "online_date": "2026-06-08"
+      },
+      "scope": "邻域：无糖尿病肥胖",
+      "version_relations": [],
+      "next_evidence": "追踪更长期安全性、停药/依从性与器官结局；对照和估计口径一致后再比较。；补停药后维持、严格缓解定义、体成分/功能与糖尿病亚组。",
+      "online_date": "2026-06-08",
+      "title_cn": "VISTA：Elecoglipron的无糖尿病肥胖研究",
+      "product_relation": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "narrative": {
+        "title": "无糖尿病肥胖人群的口服治疗提供了哪些邻域信息？",
+        "paragraphs": [
+          "Melanie J Davies、Vanita R Aroda等研究者在VISTA中，研究elecoglipron用于无T2D的超重或肥胖成人。",
+          "试验观察到体重下降，同时记录了胃肠道等不良反应。这是肥胖邻域的研发证据，不能直接作为糖尿病疗效或长期维持的证明。"
+        ],
+        "focus": "肥胖邻域研究：从无T2D超重或肥胖人群中梳理体重应答与耐受性指标，为后续跨人群比较选择问题。"
+      }
+    },
+    {
+      "id": "A14",
+      "code": "TRANSCEND-T2D-1",
+      "title": "TRANSCEND-T2D-1：Retatrutide三受体方案的T2D研究",
+      "topic": "TRANSCEND-T2D-1",
+      "domain_ids": [
+        "D1",
+        "D2"
+      ],
+      "thread_ids": [
+        "T13"
+      ],
+      "design": "537人，饮食运动控制不足；40周双盲Ⅲ期；NCT06354660。",
+      "result": "治疗方案估计下12mg组HbA1c下降1.94个百分点，安慰剂0.81；体重下降15.3%与2.6%；常见胃肠道事件。",
+      "limits": "早期T2D、40周；不得与其他试验跨人群/口径比较排名，不能推出长期器官获益。",
+      "why": "多受体治疗的临床效果也提出应答差异及长期获益问题。",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42250575/",
+      "source_date": "2026-06-06",
+      "date_basis": "所读正式论文在线日期；会后报道日期另存",
+      "evidence_status": "正式论文结果已读",
+      "evidence_level": "正式论文摘要",
+      "has_results": true,
+      "team": "Harpreet S Bajaj、Michelle Welch等；资助信息见原始摘要。",
+      "reading_level": "PubMed原始论文完整摘要；未全文精读",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A14",
+      "sources": [
+        {
+          "label": "原始论文摘要",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42250575/"
+        },
+        {
+          "label": "期刊原文",
+          "url": "https://doi.org/10.1016/S0140-6736(26)00967-0"
+        },
+        {
+          "label": "ADA会后报道（会议关联依据）",
+          "url": "https://www.adameetingnews.org/triple-hormone-therapy-demonstrates-efficacy-for-type-2-diabetes-and-obesity/"
+        }
+      ],
+      "paper": {
+        "pmid": "42250575",
+        "doi": "10.1016/S0140-6736(26)00967-0",
+        "journal": "Lancet (London, England)",
+        "title": "Efficacy and safety of retatrutide, a GIP, GLP-1, and glucagon receptor agonist, in people with type 2 diabetes and inadequate glycaemic control with diet and exercise (TRANSCEND-T2D-1): a double-blind, randomised, phase 3 trial.",
+        "online_date": "2026-06-06"
+      },
+      "scope": "糖尿病研究",
+      "version_relations": [],
+      "next_evidence": "追踪更长期安全性、停药/依从性与器官结局；对照和估计口径一致后再比较。；补停药后维持、严格缓解定义、体成分/功能与糖尿病亚组。",
+      "online_date": "2026-06-06",
+      "title_cn": "TRANSCEND-T2D-1：Retatrutide三受体方案的T2D研究",
+      "product_relation": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "narrative": {
+        "title": "三受体方案在早期T2D中取得了什么进展？",
+        "paragraphs": [
+          "Harpreet S Bajaj、Michelle Welch等研究者在TRANSCEND-T2D-1中，评价retatrutide用于饮食运动控制不足的T2D成人。",
+          "研究报告了血糖和体重改善，同时提示需要关注胃肠道耐受性。现有结果限于所研究的人群和随访期，长期器官获益仍需另行核实。"
+        ],
+        "focus": "多受体治疗研究：围绕早期T2D的血糖与体重应答，提出患者分层、耐受性及长期器官结局的随访问题。"
+      }
+    },
+    {
+      "id": "A15",
+      "code": "TRIUMPH-1",
+      "title": "TRIUMPH-1：Retatrutide的肥胖及相关症状结局",
+      "topic": "TRIUMPH-1",
+      "domain_ids": [
+        "D1",
+        "D2"
+      ],
+      "thread_ids": [
+        "T13"
+      ],
+      "design": "2339人，肥胖且无糖尿病；80周Ⅲ期；NCT05929066。",
+      "result": "治疗方案估计下12mg体重变化−25.0%，安慰剂−3.9%；另有膝骨关节炎和睡眠呼吸暂停亚组终点。",
+      "limits": "无糖尿病人群；会议报道的28.3%与论文ITT 25.0%口径不同，不能混写；常见胃肠道事件。",
+      "why": "邻域背景从体重拓展到功能与症状，但不作为糖尿病结局。",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42814954/",
+      "source_date": "2026-09-29",
+      "date_basis": "所读正式论文在线日期；会后报道日期另存",
+      "evidence_status": "正式论文结果已读",
+      "evidence_level": "正式论文摘要",
+      "has_results": true,
+      "team": "Ania M Jastreboff、Lee M Kaplan等；资助信息见原始摘要。",
+      "reading_level": "PubMed原始论文完整摘要；未全文精读",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A15",
+      "sources": [
+        {
+          "label": "原始论文摘要",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42814954/"
+        },
+        {
+          "label": "期刊原文",
+          "url": "https://doi.org/10.1056/NEJMoa2604169"
+        },
+        {
+          "label": "ADA会后报道（会议关联依据）",
+          "url": "https://www.adameetingnews.org/triple-hormone-therapy-demonstrates-efficacy-for-type-2-diabetes-and-obesity/"
+        }
+      ],
+      "paper": {
+        "pmid": "42814954",
+        "doi": "10.1056/NEJMoa2604169",
+        "journal": "The New England journal of medicine",
+        "title": "Retatrutide, a Triple Hormone Receptor Agonist, for Treatment of Obesity.",
+        "online_date": "2026-09-29"
+      },
+      "scope": "邻域：无糖尿病肥胖",
+      "version_relations": [],
+      "next_evidence": "追踪更长期安全性、停药/依从性与器官结局；对照和估计口径一致后再比较。；补停药后维持、严格缓解定义、体成分/功能与糖尿病亚组。",
+      "online_date": "2026-09-29",
+      "title_cn": "TRIUMPH-1：Retatrutide的肥胖及相关症状结局",
+      "product_relation": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "narrative": {
+        "title": "肥胖治疗能否从体重拓展到症状和功能？",
+        "paragraphs": [
+          "Ania M Jastreboff、Lee M Kaplan等研究者在TRIUMPH-1中，研究retatrutide用于无糖尿病的肥胖成人，并观察特定共病亚组的症状结局。",
+          "研究在体重之外还涉及膝关节疼痛和睡眠呼吸暂停指标。这提示邻域研究开始拓展评价范围，但不能将结果直接套用到糖尿病人群。"
+        ],
+        "focus": "肥胖与共病结局研究：把体重、关节症状及睡眠呼吸指标纳入问题地图，探索代谢改善与功能结局的联系。"
+      }
+    },
+    {
+      "id": "A16",
+      "code": "SYNCHRONIZE-1",
+      "title": "SYNCHRONIZE-1：Survodutide用于无糖尿病肥胖",
+      "topic": "SYNCHRONIZE-1",
+      "domain_ids": [
+        "D1",
+        "D2"
+      ],
+      "thread_ids": [
+        "T13"
+      ],
+      "design": "725人，肥胖且无糖尿病；76周双盲Ⅲ期；NCT06066515。",
+      "result": "治疗方案估计下6mg体重变化−13.0%（95%CI −14.4至−11.6），安慰剂−5.4%；胃肠道事件更多。",
+      "limits": "原始论文725人与新闻726人分开；安慰剂组使用禁用减重药及停药影响解释，不选新闻最优数代替主要口径。",
+      "why": "新机制也要记录依从性、用药污染与估计口径。",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42253238/",
+      "source_date": "2026-06-07",
+      "date_basis": "所读正式论文在线日期；会后报道日期另存",
+      "evidence_status": "正式论文结果已读",
+      "evidence_level": "正式论文摘要",
+      "has_results": true,
+      "team": "Carel W le Roux、Sean Wharton等；资助信息见原始摘要。",
+      "reading_level": "PubMed原始论文完整摘要；未全文精读",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A16",
+      "sources": [
+        {
+          "label": "原始论文摘要",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42253238/"
+        },
+        {
+          "label": "期刊原文",
+          "url": "https://doi.org/10.1056/NEJMoa2600751"
+        },
+        {
+          "label": "ADA会后报道（会议关联依据）",
+          "url": "https://www.adameetingnews.org/glucagon-glp-1-receptor-dual-agonist-demonstrates-efficacy-for-obesity-and-masld/"
+        }
+      ],
+      "paper": {
+        "pmid": "42253238",
+        "doi": "10.1056/NEJMoa2600751",
+        "journal": "The New England journal of medicine",
+        "title": "Survodutide Once Weekly for the Treatment of Adults with Obesity.",
+        "online_date": "2026-06-07"
+      },
+      "scope": "邻域：无糖尿病肥胖",
+      "version_relations": [],
+      "next_evidence": "追踪更长期安全性、停药/依从性与器官结局；对照和估计口径一致后再比较。；补停药后维持、严格缓解定义、体成分/功能与糖尿病亚组。",
+      "online_date": "2026-06-07",
+      "title_cn": "SYNCHRONIZE-1：Survodutide用于无糖尿病肥胖",
+      "product_relation": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "narrative": {
+        "title": "Survodutide的减重效果应怎样结合实际用药解释？",
+        "paragraphs": [
+          "Carel W le Roux、Sean Wharton等研究者在SYNCHRONIZE-1中，评价survodutide用于无糖尿病的肥胖成人。",
+          "试验观察到更明显的体重下降，也记录了胃肠道事件。停药和安慰剂组使用其他减重药的情况影响解释，因此需要回到预设统计口径阅读结果。"
+        ],
+        "focus": "肥胖治疗持续性研究：结合实际用药、停药与后续治疗，设计疗效维持、依从性和真实使用场景的评价问题。"
+      }
+    },
+    {
+      "id": "A17",
+      "code": "SYNCHRONIZE-MASLD",
+      "title": "SYNCHRONIZE-MASLD：Survodutide与肝脂肪结局",
+      "topic": "SYNCHRONIZE-MASLD",
+      "domain_ids": [
+        "D1",
+        "D2",
+        "D3"
+      ],
+      "thread_ids": [
+        "T13",
+        "T14"
+      ],
+      "design": "216人，肥胖与高风险MASLD；48周双盲Ⅲ期；T2D分层结果未提取。",
+      "result": "治疗方案估计下肝脂肪相对下降≥30%的比例68.5%与28.6%；体重−8.7%与−1.4%；常见胃肠道事件。",
+      "limits": "MRI肝脂肪为替代终点，不能称已证明纤维化逆转或肝硬结局；美/西两国。8月25日更正涉及作者、对照停药分母及图注，已关联。",
+      "why": "器官研究要分清影像/标志物变化与临床结局。",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42252333/",
+      "source_date": "2026-06-07",
+      "date_basis": "所读正式论文在线日期；会后报道日期另存",
+      "evidence_status": "正式论文结果已读",
+      "evidence_level": "正式论文摘要",
+      "has_results": true,
+      "team": "Lee M Kaplan、Elena Startseva等；资助信息见原始摘要。",
+      "reading_level": "PubMed原始论文完整摘要；未全文精读",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A17",
+      "sources": [
+        {
+          "label": "原始论文摘要",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42252333/"
+        },
+        {
+          "label": "期刊原文",
+          "url": "https://doi.org/10.1038/s41591-026-04479-3"
+        },
+        {
+          "label": "ADA会后报道（会议关联依据）",
+          "url": "https://www.adameetingnews.org/glucagon-glp-1-receptor-dual-agonist-demonstrates-efficacy-for-obesity-and-masld/"
+        },
+        {
+          "label": "作者更正",
+          "url": "https://www.nature.com/articles/s41591-026-04650-w"
+        }
+      ],
+      "paper": {
+        "pmid": "42252333",
+        "doi": "10.1038/s41591-026-04479-3",
+        "journal": "Nature medicine",
+        "title": "Survodutide in adults with obesity and metabolic dysfunction-associated steatotic liver disease: SYNCHRONIZE-MASLD, a randomized, double-blind, placebo-controlled phase 3 trial.",
+        "online_date": "2026-06-07"
+      },
+      "scope": "邻域：MASLD混合人群",
+      "version_relations": [],
+      "next_evidence": "追踪更长期安全性、停药/依从性与器官结局；对照和估计口径一致后再比较。；补停药后维持、严格缓解定义、体成分/功能与糖尿病亚组。；补临床硬结局、预设分析和更长期随访；不能仅用血糖或影像代替。",
+      "online_date": "2026-06-07",
+      "title_cn": "SYNCHRONIZE-MASLD：Survodutide与肝脂肪结局",
+      "product_relation": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "narrative": {
+        "title": "肝脂肪改善与真正的肝脏获益相距多远？",
+        "paragraphs": [
+          "Lee M Kaplan、Elena Startseva等研究者通过SYNCHRONIZE-MASLD，评价survodutide用于肥胖与高风险脂肪性肝病人群。",
+          "研究观察到MRI肝脂肪和体重改善，为器官相关研究提供了线索。影像变化尚不能替代纤维化或临床事件结局，论文更正也需一并核对。"
+        ],
+        "focus": "代谢与肝脏结局研究：结合肝脂肪影像、体重及后续纤维化或临床事件，规划多层次结局随访。"
+      }
+    },
+    {
+      "id": "A18",
+      "code": "AIDING",
+      "title": "AIDING：住院自动胰岛素输注主研究报道",
+      "topic": "AIDING",
+      "domain_ids": [
+        "D5",
+        "D8"
+      ],
+      "thread_ids": [
+        "T04"
+      ],
+      "design": "美国多中心开放随机研究，非ICU、需胰岛素且血糖管理困难的T1D/T2D；AID对MDI+CGM。",
+      "result": "官方报道：TIR为67.7%与40.8%，约差27个百分点；平均血糖163.7与197.6mg/dL。",
+      "limits": "仅官方会后报道层；未取得主论文/注册结果，样本数与区间缺失。与A05可能主试验/亚组，不计算独立重复验证。",
+      "why": "技术是否进入住院工作流、是否改善患者结局，需要同时追踪。",
+      "url": "https://www.adameetingnews.org/automated-insulin-delivery-demonstrates-efficacy-in-glycemic-management-in-the-hospital/",
+      "source_date": "2026-06-08",
+      "date_basis": "官方报道日2026-06-08；报道确认场次为6月7日",
+      "evidence_status": "官方报道有结果；原始研究待补",
+      "evidence_level": "官方会后报道",
+      "has_results": true,
+      "team": "Sue Brown、Georgia Davis、Rayhan Lal、Francisco Pasquel等参与报道。",
+      "reading_level": "官方会后报道，非原始摘要或论文",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A18",
+      "sources": [
+        {
+          "label": "ADA官方会后报道",
+          "url": "https://www.adameetingnews.org/automated-insulin-delivery-demonstrates-efficacy-in-glycemic-management-in-the-hospital/"
+        }
+      ],
+      "paper": null,
+      "scope": "糖尿病研究",
+      "version_relations": [
+        {
+          "related_id": "A05",
+          "type": "可能主试验/亚组，待核，不按独立重复验证计数"
+        }
+      ],
+      "next_evidence": "补真实实施成本、长期结局、设备/算法版本与亚组可复制性。；补独立特殊人群研究；避免从普通成人T2D外推。",
+      "online_date": "2026-06-08",
+      "title_cn": "AIDING：住院自动胰岛素输注主研究报道",
+      "product_relation": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "narrative": {
+        "title": "住院AID如何进入实际医疗工作流？",
+        "paragraphs": [
+          "ADA官方会后报道介绍了Sue Brown、Georgia Davis、Rayhan Lal、Francisco Pasquel等参与的AIDING研究，比较住院AID与多次注射加CGM。",
+          "报道呈现了更好的目标范围内时间表现，并讨论了护士工作流等实施条件。当前仍缺主研究原始摘要或论文，不能将报道层结果当成已完成原文核实。"
+        ],
+        "focus": "住院AID实施研究：围绕护士工作流、培训及血糖管理结果，梳理技术进入临床流程所需的研究问题。"
+      }
+    },
+    {
+      "id": "A19",
+      "code": "1020-OR",
+      "title": "T1D免疫试验：纵向C肽衰减终点",
+      "topic": "T1D免疫试验",
+      "domain_ids": [
+        "D4",
+        "D6",
+        "D7"
+      ],
+      "thread_ids": [
+        "T17"
+      ],
+      "design": "TrialNet六个双盲RCT共597人的再分析，以非线性混合模型估计C肽到预设阈值的时间。",
+      "result": "新终点重现三种有效治疗及三种无效治疗的分类；利妥昔单抗对应中位时间128与84天。",
+      "limits": "重用既有试验，不是597人新试验；阈值选择、外部复现和临床意义仍需核实。",
+      "why": "标志物价值不仅是找新分子，也包括如何利用纵向变化评价治疗。",
+      "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1020-OR/168354/1020-OR-ADA-Presidents-Select-Abstract-Time-to",
+      "source_date": "2026-06-05",
+      "date_basis": "原始会议摘要刊出日；不等于现场报告日",
+      "evidence_status": "原始摘要结果已读",
+      "evidence_level": "会议摘要",
+      "has_results": true,
+      "team": "Aidong Ding、Jeffrey Krischer、Samuel Wu等；计划报告人Samuel Wu。",
+      "reading_level": "原站索引完整结果摘要",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A19",
+      "sources": [
+        {
+          "label": "原始会议摘要",
+          "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1020-OR/168354/1020-OR-ADA-Presidents-Select-Abstract-Time-to"
+        }
+      ],
+      "paper": null,
+      "scope": "糖尿病研究",
+      "doi": "10.2337/db26-1020-OR",
+      "version_relations": [],
+      "next_evidence": "补干预与未干预对照、病期/队列、β细胞保留及长期安全。；补外部验证、校准与相对临床基础模型的增量，核共享样本。；补独立样本、机制干预及人体转化证据。",
+      "online_date": "2026-06-05",
+      "title_cn": "T1D免疫试验：纵向C肽衰减终点",
+      "product_relation": {
+        "group": "pending",
+        "reason": "纵向C肽终点重分析，与分析方法有关，尚无直接检测产品对应。",
+        "links": []
+      },
+      "narrative": {
+        "title": "纵向C肽变化能否更好评价T1D免疫干预？",
+        "paragraphs": [
+          "Aidong Ding、Jeffrey Krischer、Samuel Wu等研究者重新分析多项TrialNet试验，研究C肽下降到预设阈值的时间能否作为疗效评价终点。",
+          "这一框架重现了原分析对有效和无效治疗的区分，提供了利用纵向标志物的方法线索。它是既有试验的重分析，仍需外部复现和终点意义验证。"
+        ],
+        "focus": "纵向标志物分析：研究重复C肽测量与阈值事件终点，用于设计β细胞功能变化和免疫干预效果的评价方案。"
+      }
+    },
+    {
+      "id": "A20",
+      "code": "1021-OR",
+      "title": "T1D部分缓解与细胞外囊泡蛋白组",
+      "topic": "T1D部分缓解与细胞外囊泡蛋白组",
+      "domain_ids": [
+        "D4",
+        "D6",
+        "D7"
+      ],
+      "thread_ids": [
+        "T17"
+      ],
+      "design": "原站方法片段：12–18岁新发T1D，于基线/约3月或缓解/6月取血；健康对照基线，N=10/组。",
+      "result": "已核到研究设计与采血时点，原始结果段此轮未完整取得。",
+      "limits": "不能引用二次转载的AUC或蛋白列表作为已核结果；小样本、外部验证及预测时序待核。",
+      "why": "有望连接免疫/胰岛功能与液体样本，但先补原始检测与验证细节。",
+      "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1021-OR/167624/1021-OR-Extracellular-Vesicle-EV-Proteomics",
+      "source_date": "2026-06-05",
+      "date_basis": "原始会议摘要刊出日；不等于现场报告日",
+      "evidence_status": "方法已读；结果待核",
+      "evidence_level": "结果待核",
+      "has_results": false,
+      "team": "Anika Bilal、Yury Nunez Lopez、Anna Casu等。",
+      "reading_level": "原站摘要方法片段；结果未完整取得",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A20",
+      "sources": [
+        {
+          "label": "原始会议摘要",
+          "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1021-OR/167624/1021-OR-Extracellular-Vesicle-EV-Proteomics"
+        }
+      ],
+      "paper": null,
+      "scope": "糖尿病研究",
+      "doi": "10.2337/db26-1021-OR",
+      "version_relations": [],
+      "next_evidence": "先取得完整原始摘要结果、样本与验证细节，再决定是否升级证据状态。",
+      "online_date": "2026-06-05",
+      "title_cn": "T1D部分缓解与细胞外囊泡蛋白组",
+      "product_relation": {
+        "group": "product",
+        "reason": "已有直接或相关技术证据；公司可交付性单独待核。",
+        "links": [
+          {
+            "tech_id": "PR",
+            "relation": "direct",
+            "basis": "题目与方法指向EV蛋白组，当前原始结果段未完整取得。",
+            "research_question": "蛋白特征能否在缓解前预测，而非事后区分？",
+            "fit_status": "文献技术关联；公司当前流程/样本/交付适配待核"
+          }
+        ]
+      },
+      "narrative": {
+        "title": "细胞外囊泡蛋白能否帮助研究T1D部分缓解？",
+        "paragraphs": [
+          "Anika Bilal、Yury Nunez Lopez、Anna Casu等研究者围绕新发T1D的部分临床缓解，收集不同时点血浆并研究细胞外囊泡蛋白。",
+          "当前已读到研究设计和采样时点，完整原始结果尚未取得。它可以作为后续追踪入口，现阶段不引用二次转载的模型性能来宣布预测能力。"
+        ],
+        "focus": "EV蛋白组检测：围绕血浆EV蛋白与T1D部分缓解的关系，提出蛋白标志物筛选、采样时点及纵向验证问题。"
+      }
+    },
+    {
+      "id": "A21",
+      "code": "1024-OR",
+      "title": "T1D免疫亚群的代谢差异",
+      "topic": "T1D免疫亚群的代谢差异",
+      "domain_ids": [
+        "D4",
+        "D6",
+        "D7"
+      ],
+      "thread_ids": [
+        "T05",
+        "T17"
+      ],
+      "design": "47名新发T1D，以血浆诱导转录反应划分免疫亚群，再行非靶向LC-MS代谢组。",
+      "result": "不同免疫亚群出现次级胆汁酸及炎症/稳态相关代谢差异，提出肠肝胰关联假说。",
+      "limits": "探索性、样本小；与R13同作者/相关分群体系，样本重叠未核，不称独立验证；血浆诱导转录不是cfRNA。",
+      "why": "补充从免疫分层到代谢机制的线索，后续看能否预测干预反应。",
+      "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1024-OR/167746/1024-OR-Immunologically-Distinct-Type-1-Diabetes",
+      "source_date": "2026-06-05",
+      "date_basis": "原始会议摘要刊出日；不等于现场报告日",
+      "evidence_status": "原始摘要结果已读",
+      "evidence_level": "会议摘要",
+      "has_results": true,
+      "team": "Amina Bedrat、Martin Hessner等；队列重叠待核。",
+      "reading_level": "原站索引完整结果摘要",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A21",
+      "sources": [
+        {
+          "label": "原始会议摘要",
+          "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1024-OR/167746/1024-OR-Immunologically-Distinct-Type-1-Diabetes"
+        }
+      ],
+      "paper": null,
+      "scope": "糖尿病研究",
+      "doi": "10.2337/db26-1024-OR",
+      "version_relations": [
+        {
+          "related_id": "R13",
+          "type": "同作者及相关分群框架；样本重叠待核"
+        }
+      ],
+      "next_evidence": "补干预与未干预对照、病期/队列、β细胞保留及长期安全。；补外部验证、校准与相对临床基础模型的增量，核共享样本。；补独立样本、机制干预及人体转化证据。",
+      "online_date": "2026-06-05",
+      "title_cn": "T1D免疫亚群的代谢差异",
+      "product_relation": {
+        "group": "product",
+        "reason": "已有直接或相关技术证据；公司可交付性单独待核。",
+        "links": [
+          {
+            "tech_id": "MT",
+            "relation": "direct",
+            "basis": "明确非靶向LC-MS代谢组；免疫分群本身为血浆诱导转录反应。",
+            "research_question": "免疫亚群代谢特征是否独立复现并对应治疗反应？",
+            "fit_status": "文献技术关联；公司当前流程/样本/交付适配待核"
+          }
+        ]
+      },
+      "narrative": {
+        "title": "免疫亚群的代谢差异能否解释T1D异质性？",
+        "paragraphs": [
+          "Amina Bedrat、Martin Hessner等研究者，在既有免疫分群框架下开展非靶向代谢组分析，研究新发T1D患者的代谢差异。",
+          "团队观察到次级胆汁酸及炎症、稳态相关特征差异，提出进一步研究肠肝胰联系的线索。样本较小，与R13的样本重叠仍需核实。"
+        ],
+        "focus": "代谢组检测：比较T1D免疫亚群的代谢特征，筛选与疾病分型相关的候选代谢物，并探索治疗应答研究问题。"
+      }
+    },
+    {
+      "id": "A22",
+      "code": "1005-OR",
+      "title": "SURPASS-CVOT糖网子研究：未见组间差异",
+      "topic": "SURPASS-CVOT糖网子研究",
+      "domain_ids": [
+        "D3"
+      ],
+      "thread_ids": [
+        "T14"
+      ],
+      "design": "主试验预设子研究：替尔泊肽449人与度拉糖肽471人，12个月标准化眼底照片及ETDRS评价。",
+      "result": "尽管降糖幅度不同，12个月糖网改变未见显著组间差异；基线有/无糖网的比较均不显著。",
+      "limits": "主试验子研究而非新独立RCT；12个月未见差异不等于长期无风险，也不证明预防糖网。",
+      "why": "降糖结果与眼结局不必同步，保留没有优势的器官证据。",
+      "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1005-OR/168092/1005-OR-The-SURPASS-CVOT-Retinopathy-Substudy",
+      "source_date": "2026-06-05",
+      "date_basis": "原始会议摘要刊出日；不等于现场报告日",
+      "evidence_status": "原始摘要结果已读",
+      "evidence_level": "会议摘要",
+      "has_results": true,
+      "team": "David D’Alessio、Stephen Nicholls等；Lilly相关研究。",
+      "reading_level": "原站索引完整结果摘要",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A22",
+      "sources": [
+        {
+          "label": "原始会议摘要",
+          "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1005-OR/168092/1005-OR-The-SURPASS-CVOT-Retinopathy-Substudy"
+        }
+      ],
+      "paper": null,
+      "scope": "糖尿病研究",
+      "doi": "10.2337/db26-1005-OR",
+      "version_relations": [],
+      "next_evidence": "补临床硬结局、预设分析和更长期随访；不能仅用血糖或影像代替。",
+      "online_date": "2026-06-05",
+      "title_cn": "SURPASS-CVOT糖网子研究：未见组间差异",
+      "product_relation": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "narrative": {
+        "title": "降糖更多是否也意味着糖网结局更好？",
+        "paragraphs": [
+          "David D’Alessio、Stephen Nicholls等研究者在SURPASS-CVOT预设糖网子研究中，比较替尔泊肽与度拉糖肽的眼底变化。",
+          "尽管两组降糖幅度不同，所观察的糖网变化未见显著组间差异。该结果提醒需要独立评价眼结局，也不能以短期未见差异推断长期无风险。"
+        ],
+        "focus": "糖尿病眼部结局研究：围绕血糖变化与糖网进展的关系，选择独立的眼部评价指标和随访时间窗。"
+      }
+    },
+    {
+      "id": "A23",
+      "code": "1233-OR",
+      "title": "GDM早期风险：餐后动态葡萄糖信号",
+      "topic": "GDM早期风险",
+      "domain_ids": [
+        "D6",
+        "D8"
+      ],
+      "thread_ids": [
+        "T15"
+      ],
+      "design": "MAGIC和GLAM两队列936人，CGM餐食检测与OGTT相关分析。",
+      "result": "餐后1小时增幅指标AUC约0.78；85%敏感度时特异度53%，较部分传统CGM/HbA1c指标更高。",
+      "limits": "早期风险线索不等于替代诊断；仍需前瞻性、外部校准及临床增益验证。",
+      "why": "关注动态模式能否补充早期分层，而非只看单个均值。",
+      "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1233-OR/167115/1233-OR-Postmeal-Glucose-Patterns-as-Early",
+      "source_date": "2026-06-07",
+      "date_basis": "原始会议摘要刊出日；不等于现场报告日",
+      "evidence_status": "原始摘要结果已读",
+      "evidence_level": "会议摘要",
+      "has_results": true,
+      "team": "Azin Mousavi、Claire Scott、Helen Murphy等；Abbott相关资助/关系见原摘要。",
+      "reading_level": "原站索引完整结果摘要",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A23",
+      "sources": [
+        {
+          "label": "原始会议摘要",
+          "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1233-OR/167115/1233-OR-Postmeal-Glucose-Patterns-as-Early"
+        }
+      ],
+      "paper": null,
+      "scope": "糖尿病研究",
+      "doi": "10.2337/db26-1233-OR",
+      "version_relations": [],
+      "next_evidence": "补外部验证、校准与相对临床基础模型的增量，核共享样本。；补独立特殊人群研究；避免从普通成人T2D外推。",
+      "online_date": "2026-06-07",
+      "title_cn": "GDM早期风险：餐后动态葡萄糖信号",
+      "product_relation": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "narrative": {
+        "title": "餐后动态葡萄糖能否帮助识别GDM早期风险？",
+        "paragraphs": [
+          "Azin Mousavi、Claire Scott、Helen Murphy等研究者，结合孕期队列的CGM与OGTT资料，探索餐后葡萄糖模式中的风险信号。",
+          "部分餐后指标呈现优于某些传统指标的区分表现。它仍属于早期风险研究，需要前瞻性验证及临床增量评价，不能直接替代诊断。"
+        ],
+        "focus": "孕期动态葡萄糖研究：比较餐后指标与常规临床信息，为GDM早期风险识别选择采样时点和候选指标。"
+      }
+    },
+    {
+      "id": "A24",
+      "code": "1234-OR",
+      "title": "GDM预测：代谢与脂质指标未增加价值",
+      "topic": "GDM预测",
+      "domain_ids": [
+        "D6",
+        "D8"
+      ],
+      "thread_ids": [
+        "T15"
+      ],
+      "design": "GOMOMs 2178人，孕10–14周代谢/脂质指标与75g OGTT；按中心分训练和验证。",
+      "result": "加入所测胰岛素敏感性、β细胞功能、游离脂肪酸与甘油三酯后，未提升GDM或大于胎龄儿的预测。",
+      "limits": "针对特定时间窗、指标与基础模型；不能扩大为所有组学无效。与A25共享GOMOMs队列，非独立人群验证。",
+      "why": "新标志物必须检验相对已有临床资料的增量价值。",
+      "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1234-OR/167151/1234-OR-Do-First-Trimester-Metabolic-or-Lipid",
+      "source_date": "2026-06-07",
+      "date_basis": "原始会议摘要刊出日；不等于现场报告日",
+      "evidence_status": "原始摘要结果已读",
+      "evidence_level": "会议摘要",
+      "has_results": true,
+      "team": "详见原始会议摘要。",
+      "reading_level": "原站索引完整结果摘要",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A24",
+      "sources": [
+        {
+          "label": "原始会议摘要",
+          "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1234-OR/167151/1234-OR-Do-First-Trimester-Metabolic-or-Lipid"
+        }
+      ],
+      "paper": null,
+      "scope": "糖尿病研究",
+      "doi": "10.2337/db26-1234-OR",
+      "version_relations": [
+        {
+          "related_id": "A25",
+          "type": "GOMOMs共享队列，不同分析"
+        }
+      ],
+      "next_evidence": "补外部验证、校准与相对临床基础模型的增量，核共享样本。；补独立特殊人群研究；避免从普通成人T2D外推。",
+      "online_date": "2026-06-07",
+      "title_cn": "GDM预测：代谢与脂质指标未增加价值",
+      "product_relation": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "narrative": {
+        "title": "增加代谢和脂质测量，是否改善孕期风险预测？",
+        "paragraphs": [
+          "GOMOMs研究团队在孕早期测量代谢和脂质指标，研究这些信息能否在已有临床与OGTT资料上进一步改善预测。",
+          "所测指标未增加对GDM或大于胎龄儿的预测价值。这个结果针对特定时间窗和候选指标，不应扩大解释为所有代谢或组学研究都无效。"
+        ],
+        "focus": "代谢与脂质指标评价：结合该研究未见预测增益的结果，比较不同指标对临床模型的贡献，为孕期风险研究选择检测组合。"
+      }
+    },
+    {
+      "id": "A25",
+      "code": "1235-OR",
+      "title": "GDM诊断：CGM暂不足以替代OGTT",
+      "topic": "GDM诊断",
+      "domain_ids": [
+        "D5",
+        "D6",
+        "D8"
+      ],
+      "thread_ids": [
+        "T15"
+      ],
+      "design": "GOMOMs 2178人，孕24–28周约10天CGM与OGTT，训练/验证建模。",
+      "result": "MAGE AUC约0.73；选定阈值敏感度75.4%、特异度59.7%、阳性预测值14.5%；作者认为不足以替代OGTT。",
+      "limits": "阴性替代结果；与A24共用队列，但问题为诊断而非孕早期预测；不能合并为两个独立验证队列。",
+      "why": "技术方便并不自动等于诊断可用，需保留阈值性能。",
+      "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1235-OR/167134/1235-OR-Gestational-Diabetes-Diagnosis-Using",
+      "source_date": "2026-06-07",
+      "date_basis": "原始会议摘要刊出日；不等于现场报告日",
+      "evidence_status": "原始摘要结果已读",
+      "evidence_level": "会议摘要",
+      "has_results": true,
+      "team": "Audrey Merriam等；NIDDK、Dexcom支持信息见摘要。",
+      "reading_level": "原站索引完整结果摘要",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A25",
+      "sources": [
+        {
+          "label": "原始会议摘要",
+          "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1235-OR/167134/1235-OR-Gestational-Diabetes-Diagnosis-Using"
+        }
+      ],
+      "paper": null,
+      "scope": "糖尿病研究",
+      "doi": "10.2337/db26-1235-OR",
+      "version_relations": [
+        {
+          "related_id": "A24",
+          "type": "GOMOMs共享队列，不同分析"
+        }
+      ],
+      "next_evidence": "补真实实施成本、长期结局、设备/算法版本与亚组可复制性。；补外部验证、校准与相对临床基础模型的增量，核共享样本。；补独立特殊人群研究；避免从普通成人T2D外推。",
+      "online_date": "2026-06-07",
+      "title_cn": "GDM诊断：CGM暂不足以替代OGTT",
+      "product_relation": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "narrative": {
+        "title": "CGM是否足以替代OGTT诊断GDM？",
+        "paragraphs": [
+          "Audrey Merriam等研究者利用GOMOMs资料，比较孕中期CGM指标与OGTT诊断，探索能否建立便利的CGM诊断标准。",
+          "现有指标的整体性能仍不足以支持替代OGTT。研究为新技术的适用边界提供了直接信息，也说明便于使用与足以诊断是需要分别检验的问题。"
+        ],
+        "focus": "孕期监测方法评价：以OGTT为诊断参照，研究CGM适合承担的筛查与随访任务，并评价其额外信息。"
+      }
+    },
+    {
+      "id": "A26",
+      "code": "1249-OR",
+      "title": "FAME-D：食物获取与管理干预",
+      "topic": "FAME-D",
+      "domain_ids": [
+        "D9"
+      ],
+      "thread_ids": [
+        "T16"
+      ],
+      "design": "194人随机、178人完成6月评估；T2D且食物不安全；每周10份定制餐+电话管理，对照每月40美元补助；NCT04828785。",
+      "result": "6个月HbA1c组间差−0.42个百分点（95%CI −0.82至−0.03），收缩压亦改善；体重和舒张压未见显著差异。",
+      "limits": "餐食加行为管理的复合干预，不能归因于餐食单一成分；成本、持续性和不同体系可复制性待核。",
+      "why": "生活条件影响研究能否进入真实管理，实施类证据也应进入领域雷达。",
+      "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1249-OR/167139/1249-OR-Medically-Tailored-Meals-Lower-Hemoglobin",
+      "source_date": "2026-06-07",
+      "date_basis": "原始会议摘要刊出日；不等于现场报告日",
+      "evidence_status": "原始摘要结果已读",
+      "evidence_level": "会议摘要",
+      "has_results": true,
+      "team": "Seth Berkowitz等；NIH支持。",
+      "reading_level": "原站索引完整结果摘要",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A26",
+      "sources": [
+        {
+          "label": "原始会议摘要",
+          "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1249-OR/167139/1249-OR-Medically-Tailored-Meals-Lower-Hemoglobin"
+        }
+      ],
+      "paper": null,
+      "scope": "糖尿病研究",
+      "doi": "10.2337/db26-1249-OR",
+      "version_relations": [],
+      "next_evidence": "补管理持续性、成本和不同医疗体系下的实施效果。",
+      "online_date": "2026-06-07",
+      "title_cn": "FAME-D：食物获取与管理干预",
+      "product_relation": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "narrative": {
+        "title": "食物获取与管理支持能否改善T2D控制？",
+        "paragraphs": [
+          "Seth Berkowitz等研究者在FAME-D随机试验中，针对存在食物不安全问题的T2D患者，比较定制餐食加电话管理与补助对照。",
+          "组合干预改善了HbA1c和收缩压，体重与舒张压未见显著差异。效果属于完整管理方案，不能拆成餐食单一成分的作用。"
+        ],
+        "focus": "真实实施与管理研究：围绕食物获取、电话支持及患者需求，设计组合干预的效果、成本与持续性评价。"
+      }
+    },
+    {
+      "id": "A27",
+      "code": "1059-OR",
+      "title": "TEPLI-REAL：T1D早期免疫治疗的真实使用",
+      "topic": "TEPLI-REAL",
+      "domain_ids": [
+        "D4",
+        "D8",
+        "D9"
+      ],
+      "thread_ids": [
+        "T05",
+        "T16"
+      ],
+      "design": "27中心回顾病历110人，中位年龄13岁、中位随访14.3月；接受≥1天teplizumab，NCT06892002。",
+      "result": "94%完成14天疗程，超过70%在观察中仍处2期T1D。",
+      "limits": "无同期未治疗对照，不能将未进展比例解释为治疗效应或长期防病；筛查路径和选择偏倚需考虑。",
+      "why": "从随机试验走向筛查和输注实施，关注真实患者和治疗完成条件。",
+      "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1059-OR/167429/1059-OR-TEPLI-REAL-A-Real-World-Retrospective",
+      "source_date": "2026-06-05",
+      "date_basis": "原始会议摘要刊出日；不等于现场报告日",
+      "evidence_status": "原始摘要结果已读",
+      "evidence_level": "会议摘要",
+      "has_results": true,
+      "team": "Stephen Gitelman等；Sanofi/IQVIA相关人员关系见摘要。",
+      "reading_level": "原站索引完整结果摘要",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A27",
+      "sources": [
+        {
+          "label": "原始会议摘要",
+          "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1059-OR/167429/1059-OR-TEPLI-REAL-A-Real-World-Retrospective"
+        }
+      ],
+      "paper": null,
+      "scope": "糖尿病研究",
+      "doi": "10.2337/db26-1059-OR",
+      "version_relations": [],
+      "next_evidence": "补干预与未干预对照、病期/队列、β细胞保留及长期安全。；补独立特殊人群研究；避免从普通成人T2D外推。；补管理持续性、成本和不同医疗体系下的实施效果。",
+      "online_date": "2026-06-05",
+      "title_cn": "TEPLI-REAL：T1D早期免疫治疗的真实使用",
+      "product_relation": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "narrative": {
+        "title": "T1D早期免疫治疗在真实使用中如何完成？",
+        "paragraphs": [
+          "Stephen Gitelman等研究者通过TEPLI-REAL回顾病历，观察接受teplizumab者的诊断路径、疗程完成及后续病期变化。",
+          "研究呈现了较高的疗程完成比例，部分患者在随访中仍处于2期。由于没有同期未治疗对照，这些比例不能单独解释为治疗防病效果。"
+        ],
+        "focus": "早期免疫治疗实施研究：梳理T1D筛查、分期、疗程完成及随访路径，识别研究与真实使用之间需要补充的证据。"
+      }
+    }
+  ],
+  "collection_state": "B03补2条技术定向研究并建立产品关联；覆盖不同比较不计算升降温",
+  "product_map": {
+    "updated": "2026-11-11",
+    "batch": "B03",
+    "disease": "糖尿病（含并发症与GDM）",
+    "capability_source": "wenxin/实习实践/吉因加临床科研能力表",
+    "technologies": [
+      {
+        "id": "CF",
+        "name": "cfRNA检测",
+        "capability_ids": [
+          "T01"
+        ],
+        "status": "本地资料有线索；当前交付与参数待核",
+        "scope": "cf-mRNA/cf-lncRNA、体液来源与纵向标志物",
+        "boundary": "血浆/尿液、游离RNA/EV/细胞RNA分开；scRNA、血浆诱导细胞转录反应不算cfRNA检测。"
+      },
+      {
+        "id": "ME",
+        "name": "cfDNA甲基化 / GM-seq",
+        "capability_ids": [
+          "T02",
+          "P05"
+        ],
+        "status": "本地资料有线索；当前技术版本与病种适配待核",
+        "scope": "组织来源、器官损伤与风险分层",
+        "boundary": "本批尚未收录直接测量cfDNA甲基化的糖尿病原始研究；蛋白和肾组织单细胞不替代甲基化证据。"
+      },
+      {
+        "id": "SC",
+        "name": "单细胞 / 单核",
+        "capability_ids": [
+          "T03"
+        ],
+        "status": "官网确认组学类别；具体平台/样本适配待核",
+        "scope": "胰岛与肾脏细胞异质性、细胞互作和药物相关通路",
+        "boundary": "论文具体平台不等于公司可按同平台交付；细胞数不等于患者数。"
+      },
+      {
+        "id": "SP",
+        "name": "空间组学",
+        "capability_ids": [
+          "T04"
+        ],
+        "status": "官网确认组学类别；具体平台/样本适配待核",
+        "scope": "组织微环境与空间细胞互作",
+        "boundary": "本批尚未核实直接空间组学测量；组织单细胞有细胞类型，不自动构成空间测量。"
+      },
+      {
+        "id": "IR",
+        "name": "免疫组库 / TCR-BCR",
+        "capability_ids": [
+          "T05",
+          "T06"
+        ],
+        "status": "本地资料有线索；流程和当前交付待核",
+        "scope": "免疫克隆、谱系和治疗应答研究",
+        "boundary": "T1D免疫分群、抗体或代谢差异不等同TCR/BCR组库测序，本批未核直接组库证据。"
+      },
+      {
+        "id": "PR",
+        "name": "蛋白组 / 候选蛋白检测",
+        "capability_ids": [
+          "T14"
+        ],
+        "status": "官网确认蛋白组类别；Olink等具体服务待核",
+        "scope": "纵向发病风险、肾损伤与缓解相关蛋白",
+        "boundary": "高通量蛋白组与少量候选蛋白检测分开；EV蛋白不能算EV-RNA。"
+      },
+      {
+        "id": "MT",
+        "name": "代谢组",
+        "capability_ids": [
+          "T15"
+        ],
+        "status": "本地平台线索；当前服务目录与案例待核",
+        "scope": "免疫代谢、治疗应答及阴性风险证据",
+        "boundary": "LC-MS靶向/非靶向流程分开；常规OGTT、甘油三酯不自动算代谢组。"
+      }
+    ],
+    "classification": {
+      "R01": {
+        "group": "product",
+        "reason": "已有直接或相关技术证据；公司可交付性单独待核。",
+        "links": [
+          {
+            "tech_id": "SC",
+            "relation": "direct",
+            "basis": "研究直接测胰岛单细胞转录组，对照临床亚型。",
+            "research_question": "T2D亚型的胰岛细胞差异是否能连接可检测标志物？",
+            "fit_status": "文献技术关联；公司当前流程/样本/交付适配待核"
+          }
+        ]
+      },
+      "R02": {
+        "group": "pending",
+        "reason": "GLP1R遗传关联与应答问题相关，但未确认可匹配的公司检测流程。",
+        "links": []
+      },
+      "R03": {
+        "group": "product",
+        "reason": "已有直接或相关技术证据；公司可交付性单独待核。",
+        "links": [
+          {
+            "tech_id": "PR",
+            "relation": "direct",
+            "basis": "MESA纵向蛋白组；A01和R03是同研究版本。",
+            "research_question": "重复测量相对单次检测增加多少预测信息？",
+            "fit_status": "文献技术关联；公司当前流程/样本/交付适配待核"
+          }
+        ]
+      },
+      "R04": {
+        "group": "pending",
+        "reason": "抗体/C肽分层可提出标志物问题，当前无对应组学流程证据。",
+        "links": []
+      },
+      "R05": {
+        "group": "product",
+        "reason": "已有直接或相关技术证据；公司可交付性单独待核。",
+        "links": [
+          {
+            "tech_id": "MT",
+            "relation": "direct",
+            "basis": "基线血清LC-高分辨串联质谱代谢测量。",
+            "research_question": "免疫治疗前的代谢特征能否帮助应答分层？",
+            "fit_status": "文献技术关联；公司当前流程/样本/交付适配待核"
+          }
+        ]
+      },
+      "R06": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "R07": {
+        "group": "product",
+        "reason": "已有直接或相关技术证据；公司可交付性单独待核。",
+        "links": [
+          {
+            "tech_id": "MT",
+            "relation": "direct",
+            "basis": "粪便LC-MS靶向短链脂肪酸；研究结果阴性。",
+            "research_question": "哪些代谢指标未提供预期风险信号，是否应收窄研究主张？",
+            "fit_status": "文献技术关联；公司当前流程/样本/交付适配待核"
+          }
+        ]
+      },
+      "R08": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "R09": {
+        "group": "product",
+        "reason": "已有直接或相关技术证据；公司可交付性单独待核。",
+        "links": [
+          {
+            "tech_id": "SC",
+            "relation": "direct",
+            "basis": "原始摘要明确单细胞/细胞互作，并有组织或动物机制验证。",
+            "research_question": "微环境如何影响β细胞功能，哪些信号值得向临床样本验证？",
+            "fit_status": "文献技术关联；公司当前流程/样本/交付适配待核"
+          }
+        ]
+      },
+      "R10": {
+        "group": "product",
+        "reason": "已有直接或相关技术证据；公司可交付性单独待核。",
+        "links": [
+          {
+            "tech_id": "SC",
+            "relation": "direct",
+            "basis": "原始摘要明确单细胞/细胞互作，并有组织或动物机制验证。",
+            "research_question": "微环境如何影响β细胞功能，哪些信号值得向临床样本验证？",
+            "fit_status": "文献技术关联；公司当前流程/样本/交付适配待核"
+          }
+        ]
+      },
+      "R11": {
+        "group": "product",
+        "reason": "已有直接或相关技术证据；公司可交付性单独待核。",
+        "links": [
+          {
+            "tech_id": "PR",
+            "relation": "direct",
+            "basis": "原始研究检测候选蛋白与肾风险关联，具体平台仍待核。",
+            "research_question": "正常白蛋白尿时哪些蛋白信号提示后续肾功能下降？",
+            "fit_status": "文献技术关联；公司当前流程/样本/交付适配待核"
+          }
+        ]
+      },
+      "R12": {
+        "group": "pending",
+        "reason": "多基因评分研究；不能直接视为WES或公司现成预测产品。",
+        "links": []
+      },
+      "R13": {
+        "group": "pending",
+        "reason": "免疫分群采用血浆诱导转录反应及芯片，不是cfRNA或免疫组库；可匹配流程待评估。",
+        "links": []
+      },
+      "R14": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "R15": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "R16": {
+        "group": "product",
+        "reason": "已有直接或相关技术证据；公司可交付性单独待核。",
+        "links": [
+          {
+            "tech_id": "CF",
+            "relation": "direct",
+            "basis": "原始研究明确使用孕期血浆cf-mRNA/cf-lncRNA高通量测序。",
+            "research_question": "能否在常规诊断前识别GDM风险，是否增加临床模型的预测价值？",
+            "fit_status": "文献技术关联；公司当前流程/样本/交付适配待核"
+          }
+        ]
+      },
+      "R17": {
+        "group": "product",
+        "reason": "已有直接或相关技术证据；公司可交付性单独待核。",
+        "links": [
+          {
+            "tech_id": "CF",
+            "relation": "related",
+            "basis": "研究包含无细胞尿液lncRNA检测；最佳验证结果属于尿液细胞成分，且采用靶向PCR。",
+            "research_question": "哪些尿液成分能帮助DKD与NDKD鉴别，能否转化为匹配的cfRNA研究？",
+            "fit_status": "文献技术关联；公司当前流程/样本/交付适配待核"
+          }
+        ]
+      },
+      "A01": {
+        "group": "product",
+        "reason": "已有直接或相关技术证据；公司可交付性单独待核。",
+        "links": [
+          {
+            "tech_id": "PR",
+            "relation": "direct",
+            "basis": "MESA纵向蛋白组；A01和R03是同研究版本。",
+            "research_question": "重复测量相对单次检测增加多少预测信息？",
+            "fit_status": "文献技术关联；公司当前流程/样本/交付适配待核"
+          }
+        ]
+      },
+      "A02": {
+        "group": "product",
+        "reason": "已有直接或相关技术证据；公司可交付性单独待核。",
+        "links": [
+          {
+            "tech_id": "SC",
+            "relation": "direct",
+            "basis": "肾活检单细胞分析，比较GLP-1RA使用相关通路。",
+            "research_question": "药物相关细胞变化能否解释应答差异或残余肾风险？",
+            "fit_status": "文献技术关联；公司当前流程/样本/交付适配待核"
+          }
+        ]
+      },
+      "A03": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "A04": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "A05": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "A06": {
+        "group": "pending",
+        "reason": "工程β细胞小鼠移植，尚缺原始结果与明确公司承接环节。",
+        "links": []
+      },
+      "A07": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "A08": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "A09": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "A10": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "A11": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "A12": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "A13": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "A14": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "A15": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "A16": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "A17": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "A18": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "A19": {
+        "group": "pending",
+        "reason": "纵向C肽终点重分析，与分析方法有关，尚无直接检测产品对应。",
+        "links": []
+      },
+      "A20": {
+        "group": "product",
+        "reason": "已有直接或相关技术证据；公司可交付性单独待核。",
+        "links": [
+          {
+            "tech_id": "PR",
+            "relation": "direct",
+            "basis": "题目与方法指向EV蛋白组，当前原始结果段未完整取得。",
+            "research_question": "蛋白特征能否在缓解前预测，而非事后区分？",
+            "fit_status": "文献技术关联；公司当前流程/样本/交付适配待核"
+          }
+        ]
+      },
+      "A21": {
+        "group": "product",
+        "reason": "已有直接或相关技术证据；公司可交付性单独待核。",
+        "links": [
+          {
+            "tech_id": "MT",
+            "relation": "direct",
+            "basis": "明确非靶向LC-MS代谢组；免疫分群本身为血浆诱导转录反应。",
+            "research_question": "免疫亚群代谢特征是否独立复现并对应治疗反应？",
+            "fit_status": "文献技术关联；公司当前流程/样本/交付适配待核"
+          }
+        ]
+      },
+      "A22": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "A23": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "A24": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "A25": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "A26": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      },
+      "A27": {
+        "group": "other",
+        "reason": "当前主要反映治疗、监测、生活方式或实施背景，本轮未发现直接对应的公司技术环节；仍保留其领域价值。",
+        "links": []
+      }
+    },
+    "rule": "技术直接使用/方法相关与公司现行交付是不同判断；未对应者进入其它，尚未评估者保留待判断。"
+  },
+  "interface_revision": "2026-11-11 研究叙述、站内详情与可分享网页",
+  "source_catalog": {
+    "assembled_on": "2026-11-11",
+    "mode": "directory_template_only",
+    "new_collection_performed": false,
+    "scope": "既有来源规划及当前糖尿病试点；未执行外部检索或访问核验",
+    "groups": {
+      "conference": "会议来源",
+      "journal": "期刊文献",
+      "technology": "产品技术资料",
+      "database": "研究数据库",
+      "company": "公司资料",
+      "policy": "基金与政策背景"
+    },
+    "status_labels": {
+      "has_samples": "有历史样本",
+      "partial": "仅盘点/部分资料",
+      "planned": "规划待采集"
+    },
+    "items": [
+      {
+        "id": "CDS",
+        "name": "CDS 全国糖尿病学术会议",
+        "group": "conference",
+        "modules": [
+          "meetings"
+        ],
+        "focus": "国内核心糖尿病议题、研究问题和团队。",
+        "extract": [
+          "议程/摘要与报告日期",
+          "临床问题及研究结论",
+          "方法、技术和证据层次",
+          "作者、讲者角色与团队",
+          "摘要/论文/注册号及版本关系"
+        ],
+        "outputs": [
+          "会议议题卡",
+          "研究进展卡",
+          "主题与团队关联",
+          "来源及缺口记录"
+        ],
+        "status": "has_samples",
+        "links": [
+          {
+            "label": "已有官方入口",
+            "url": "https://cds26.tiemeeting.com/CN"
+          },
+          {
+            "label": "已存日程入口",
+            "url": "https://cds26.tiemeeting.com/CN/Program/Details"
+          }
+        ],
+        "tech_ids": [],
+        "record_ids": [],
+        "note": "已存23条重点计划议题；本次不补报告结果，也不重新核对年度安排。",
+        "basis": "既有CDS议题与来源审计",
+        "scope": "糖尿病领域（当前样板）",
+        "access_note": "本次只整理目录，未访问外站或执行检索。",
+        "last_collected_on": null
+      },
+      {
+        "id": "CSE",
+        "name": "CSE 全国内分泌学学术会议",
+        "group": "conference",
+        "modules": [
+          "meetings"
+        ],
+        "focus": "糖尿病、代谢、肥胖与相关内分泌研究，按问题选择。",
+        "extract": [
+          "议程/摘要与报告日期",
+          "临床问题及研究结论",
+          "方法、技术和证据层次",
+          "作者、讲者角色与团队",
+          "摘要/论文/注册号及版本关系"
+        ],
+        "outputs": [
+          "会议议题卡",
+          "研究进展卡",
+          "主题与团队关联",
+          "来源及缺口记录"
+        ],
+        "status": "partial",
+        "links": [
+          {
+            "label": "已存学分会公告",
+            "url": "https://xue.sciconf.cn/infomation-detail?id=918C9639-0AA7-75C5-D3D6-6A78FBB8A2B4"
+          },
+          {
+            "label": "已存移动日程",
+            "url": "https://mm.sciconf.cn/cn/web/program/35583"
+          }
+        ],
+        "tech_ids": [],
+        "record_ids": [],
+        "note": "此前作为国内补充使用，原始结果仍有缺口；未建立全会议研究池。",
+        "basis": "既有来源审计",
+        "scope": "糖尿病领域（当前样板）",
+        "access_note": "本次只整理目录，未访问外站或执行检索。",
+        "last_collected_on": null
+      },
+      {
+        "id": "ADA",
+        "name": "ADA Scientific Sessions",
+        "group": "conference",
+        "modules": [
+          "meetings"
+        ],
+        "focus": "国际核心：临床试验、分型、机制、并发症及技术。",
+        "extract": [
+          "议程/摘要与报告日期",
+          "临床问题及研究结论",
+          "方法、技术和证据层次",
+          "作者、讲者角色与团队",
+          "摘要/论文/注册号及版本关系"
+        ],
+        "outputs": [
+          "会议议题卡",
+          "研究进展卡",
+          "主题与团队关联",
+          "来源及缺口记录"
+        ],
+        "status": "has_samples",
+        "links": [
+          {
+            "label": "已存官方会议入口",
+            "url": "https://professional.diabetes.org/scientific-sessions"
+          },
+          {
+            "label": "已存官方会后报道目录",
+            "url": "https://www.adameetingnews.org/category/scientific-sessions/2026/clinical-trials-2026/"
+          }
+        ],
+        "tech_ids": [],
+        "record_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "A04",
+          "A05",
+          "A06",
+          "A07",
+          "A08",
+          "A09",
+          "A10",
+          "A11",
+          "A12",
+          "A13",
+          "A14",
+          "A15",
+          "A16",
+          "A17",
+          "A18",
+          "A19",
+          "A20",
+          "A21",
+          "A22",
+          "A23",
+          "A24",
+          "A25",
+          "A26",
+          "A27"
+        ],
+        "note": "已有27条研究记录，读取层次分别标注；本次不扩展采集。",
+        "basis": "既有ADA台账与来源审计",
+        "scope": "糖尿病领域（当前样板）",
+        "access_note": "本次只整理目录，未访问外站或执行检索。",
+        "last_collected_on": null
+      },
+      {
+        "id": "EASD",
+        "name": "EASD Annual Meeting",
+        "group": "conference",
+        "modules": [
+          "meetings"
+        ],
+        "focus": "国际核心：临床、机制、治疗与疾病异质性。",
+        "extract": [
+          "议程/摘要与报告日期",
+          "临床问题及研究结论",
+          "方法、技术和证据层次",
+          "作者、讲者角色与团队",
+          "摘要/论文/注册号及版本关系"
+        ],
+        "outputs": [
+          "会议议题卡",
+          "研究进展卡",
+          "主题与团队关联",
+          "来源及缺口记录"
+        ],
+        "status": "partial",
+        "links": [
+          {
+            "label": "已存年度入口",
+            "url": "https://www.easd.org/annual-meeting/easd-2026.html"
+          }
+        ],
+        "tech_ids": [],
+        "record_ids": [],
+        "note": "此前仅盘点会议入口，研究结果待采集；本次不核验当届更新。",
+        "basis": "既有来源审计",
+        "scope": "糖尿病领域（当前样板）",
+        "access_note": "本次只整理目录，未访问外站或执行检索。",
+        "last_collected_on": null
+      },
+      {
+        "id": "IDF",
+        "name": "IDF World Diabetes Congress",
+        "group": "conference",
+        "modules": [
+          "meetings"
+        ],
+        "focus": "全球管理、公共卫生、可及性及地区差异。",
+        "extract": [
+          "议程/摘要与报告日期",
+          "临床问题及研究结论",
+          "方法、技术和证据层次",
+          "作者、讲者角色与团队",
+          "摘要/论文/注册号及版本关系"
+        ],
+        "outputs": [
+          "会议议题卡",
+          "研究进展卡",
+          "主题与团队关联",
+          "来源及缺口记录"
+        ],
+        "status": "partial",
+        "links": [
+          {
+            "label": "已存官方届次入口",
+            "url": "https://idf.org/congress-and-events/idf2027/"
+          }
+        ],
+        "tech_ids": [],
+        "record_ids": [],
+        "note": "按实际届次纳入，不假设每年举行；此前只盘点，研究内容待采集。",
+        "basis": "既有来源审计",
+        "scope": "糖尿病领域（当前样板）",
+        "access_note": "本次只整理目录，未访问外站或执行检索。",
+        "last_collected_on": null
+      },
+      {
+        "id": "ATTD",
+        "name": "ATTD 糖尿病先进技术与治疗会议",
+        "group": "conference",
+        "modules": [
+          "meetings"
+        ],
+        "focus": "CGM、AID、数字管理与治疗技术应用。",
+        "extract": [
+          "议程/摘要与报告日期",
+          "临床问题及研究结论",
+          "方法、技术和证据层次",
+          "作者、讲者角色与团队",
+          "摘要/论文/注册号及版本关系"
+        ],
+        "outputs": [
+          "会议议题卡",
+          "研究进展卡",
+          "主题与团队关联",
+          "来源及缺口记录"
+        ],
+        "status": "partial",
+        "links": [
+          {
+            "label": "已存主办方入口",
+            "url": "https://attd.kenes.com/welcome-message/?print=pdf"
+          }
+        ],
+        "tech_ids": [],
+        "record_ids": [],
+        "note": "此前只盘点身份与入口，研究结果待采集。",
+        "basis": "既有来源审计",
+        "scope": "糖尿病领域（当前样板）",
+        "access_note": "本次只整理目录，未访问外站或执行检索。",
+        "last_collected_on": null
+      },
+      {
+        "id": "RENAL-CONF",
+        "name": "肾脏专科会议｜按问题补充",
+        "group": "conference",
+        "modules": [
+          "meetings"
+        ],
+        "focus": "糖尿病肾病、器官风险及液体活检相关专题。",
+        "extract": [
+          "议程/摘要与报告日期",
+          "临床问题及研究结论",
+          "方法、技术和证据层次",
+          "作者、讲者角色与团队",
+          "摘要/论文/注册号及版本关系"
+        ],
+        "outputs": [
+          "会议议题卡",
+          "研究进展卡",
+          "主题与团队关联",
+          "来源及缺口记录"
+        ],
+        "status": "planned",
+        "links": [],
+        "tech_ids": [],
+        "record_ids": [],
+        "note": "先保留专题来源槽位；具体会议、届次与官方入口待选。",
+        "basis": "既有设计与执行任务书",
+        "scope": "糖尿病领域（当前样板）",
+        "access_note": "本次只整理目录，未访问外站或执行检索。",
+        "last_collected_on": null
+      },
+      {
+        "id": "CV-CONF",
+        "name": "心血管专科会议｜按问题补充",
+        "group": "conference",
+        "modules": [
+          "meetings"
+        ],
+        "focus": "糖尿病相关心血管风险、临床结局与残余风险。",
+        "extract": [
+          "议程/摘要与报告日期",
+          "临床问题及研究结论",
+          "方法、技术和证据层次",
+          "作者、讲者角色与团队",
+          "摘要/论文/注册号及版本关系"
+        ],
+        "outputs": [
+          "会议议题卡",
+          "研究进展卡",
+          "主题与团队关联",
+          "来源及缺口记录"
+        ],
+        "status": "planned",
+        "links": [],
+        "tech_ids": [],
+        "record_ids": [],
+        "note": "先保留专题来源槽位；具体会议、届次与官方入口待选。",
+        "basis": "既有设计与执行任务书",
+        "scope": "糖尿病领域（当前样板）",
+        "access_note": "本次只整理目录，未访问外站或执行检索。",
+        "last_collected_on": null
+      },
+      {
+        "id": "DIABETES-CARE",
+        "name": "Diabetes Care",
+        "group": "journal",
+        "modules": [
+          "products"
+        ],
+        "focus": "临床研究、风险分层、管理与并发症。",
+        "extract": [
+          "研究问题、团队与机构",
+          "样本、人群、方法与技术",
+          "主要发现、效应量与验证",
+          "局限及与现有方法的增量",
+          "DOI/PMID/注册号与版本"
+        ],
+        "outputs": [
+          "叙述式研究卡",
+          "技术/疾病问题关联",
+          "来源与局限"
+        ],
+        "status": "has_samples",
+        "links": [
+          {
+            "label": "预设期刊检索入口（本次未执行）",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Diabetes%20Care%22%5BJournal%5D"
+          },
+          {
+            "label": "已存原文示例",
+            "url": "https://doi.org/10.2337/dc26-0662"
+          }
+        ],
+        "tech_ids": [],
+        "record_ids": [
+          "R02",
+          "R04",
+          "R07"
+        ],
+        "note": "已有定向样本，非完整期刊覆盖；本次不运行检索。",
+        "basis": "原任务书候选来源；两项专题刊物来自既有技术补检",
+        "scope": "糖尿病领域（当前样板）",
+        "access_note": "本次只整理目录，未访问外站或执行检索。",
+        "last_collected_on": null
+      },
+      {
+        "id": "DIABETOLOGIA",
+        "name": "Diabetologia",
+        "group": "journal",
+        "modules": [
+          "products"
+        ],
+        "focus": "疾病异质性、机制、转化与临床研究。",
+        "extract": [
+          "研究问题、团队与机构",
+          "样本、人群、方法与技术",
+          "主要发现、效应量与验证",
+          "局限及与现有方法的增量",
+          "DOI/PMID/注册号与版本"
+        ],
+        "outputs": [
+          "叙述式研究卡",
+          "技术/疾病问题关联",
+          "来源与局限"
+        ],
+        "status": "has_samples",
+        "links": [
+          {
+            "label": "预设期刊检索入口（本次未执行）",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Diabetologia%22%5BJournal%5D"
+          },
+          {
+            "label": "已存原文示例",
+            "url": "https://doi.org/10.1007/s00125-026-06842-y"
+          }
+        ],
+        "tech_ids": [],
+        "record_ids": [
+          "R01",
+          "R12",
+          "R13",
+          "R14",
+          "R15"
+        ],
+        "note": "已有定向样本，非完整期刊覆盖；本次不运行检索。",
+        "basis": "原任务书候选来源；两项专题刊物来自既有技术补检",
+        "scope": "糖尿病领域（当前样板）",
+        "access_note": "本次只整理目录，未访问外站或执行检索。",
+        "last_collected_on": null
+      },
+      {
+        "id": "DIABETES",
+        "name": "Diabetes",
+        "group": "journal",
+        "modules": [
+          "products"
+        ],
+        "focus": "胰岛生物学、机制、组学与候选标志物。",
+        "extract": [
+          "研究问题、团队与机构",
+          "样本、人群、方法与技术",
+          "主要发现、效应量与验证",
+          "局限及与现有方法的增量",
+          "DOI/PMID/注册号与版本"
+        ],
+        "outputs": [
+          "叙述式研究卡",
+          "技术/疾病问题关联",
+          "来源与局限"
+        ],
+        "status": "has_samples",
+        "links": [
+          {
+            "label": "预设期刊检索入口（本次未执行）",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Diabetes%22%5BJournal%5D"
+          },
+          {
+            "label": "已存原文示例",
+            "url": "https://doi.org/10.2337/db26-0148"
+          }
+        ],
+        "tech_ids": [],
+        "record_ids": [
+          "R03",
+          "R05",
+          "R09",
+          "R10",
+          "R11"
+        ],
+        "note": "已有定向样本，非完整期刊覆盖；本次不运行检索。",
+        "basis": "原任务书候选来源；两项专题刊物来自既有技术补检",
+        "scope": "糖尿病领域（当前样板）",
+        "access_note": "本次只整理目录，未访问外站或执行检索。",
+        "last_collected_on": null
+      },
+      {
+        "id": "LANCET-DE",
+        "name": "The Lancet Diabetes & Endocrinology",
+        "group": "journal",
+        "modules": [
+          "products"
+        ],
+        "focus": "关键临床试验及糖尿病/代谢相关研究。",
+        "extract": [
+          "研究问题、团队与机构",
+          "样本、人群、方法与技术",
+          "主要发现、效应量与验证",
+          "局限及与现有方法的增量",
+          "DOI/PMID/注册号与版本"
+        ],
+        "outputs": [
+          "叙述式研究卡",
+          "技术/疾病问题关联",
+          "来源与局限"
+        ],
+        "status": "has_samples",
+        "links": [
+          {
+            "label": "预设期刊检索入口（本次未执行）",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Lancet%20Diabetes%20Endocrinol%22%5BJournal%5D"
+          },
+          {
+            "label": "已存原文示例",
+            "url": "https://doi.org/10.1016/S2213-8587(26)00076-8"
+          }
+        ],
+        "tech_ids": [],
+        "record_ids": [
+          "R06",
+          "R08",
+          "A09",
+          "A10"
+        ],
+        "note": "已有定向样本，非完整期刊覆盖；本次不运行检索。",
+        "basis": "原任务书候选来源；两项专题刊物来自既有技术补检",
+        "scope": "糖尿病领域（当前样板）",
+        "access_note": "本次只整理目录，未访问外站或执行检索。",
+        "last_collected_on": null
+      },
+      {
+        "id": "NEJM",
+        "name": "NEJM",
+        "group": "journal",
+        "modules": [
+          "products"
+        ],
+        "focus": "重要临床试验及临床转化结果。",
+        "extract": [
+          "研究问题、团队与机构",
+          "样本、人群、方法与技术",
+          "主要发现、效应量与验证",
+          "局限及与现有方法的增量",
+          "DOI/PMID/注册号与版本"
+        ],
+        "outputs": [
+          "叙述式研究卡",
+          "技术/疾病问题关联",
+          "来源与局限"
+        ],
+        "status": "has_samples",
+        "links": [
+          {
+            "label": "预设期刊检索入口（本次未执行）",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22N%20Engl%20J%20Med%22%5BJournal%5D"
+          },
+          {
+            "label": "已存原文示例",
+            "url": "https://doi.org/10.1056/NEJMoa2608571"
+          }
+        ],
+        "tech_ids": [],
+        "record_ids": [
+          "A03",
+          "A15",
+          "A16"
+        ],
+        "note": "已有定向样本，非完整期刊覆盖；本次不运行检索。",
+        "basis": "原任务书候选来源；两项专题刊物来自既有技术补检",
+        "scope": "糖尿病领域（当前样板）",
+        "access_note": "本次只整理目录，未访问外站或执行检索。",
+        "last_collected_on": null
+      },
+      {
+        "id": "LANCET",
+        "name": "The Lancet",
+        "group": "journal",
+        "modules": [
+          "products"
+        ],
+        "focus": "重要临床试验和比较治疗。",
+        "extract": [
+          "研究问题、团队与机构",
+          "样本、人群、方法与技术",
+          "主要发现、效应量与验证",
+          "局限及与现有方法的增量",
+          "DOI/PMID/注册号与版本"
+        ],
+        "outputs": [
+          "叙述式研究卡",
+          "技术/疾病问题关联",
+          "来源与局限"
+        ],
+        "status": "has_samples",
+        "links": [
+          {
+            "label": "预设期刊检索入口（本次未执行）",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Lancet%22%5BJournal%5D"
+          },
+          {
+            "label": "已存原文示例",
+            "url": "https://doi.org/10.1016/S0140-6736(26)00800-7"
+          }
+        ],
+        "tech_ids": [],
+        "record_ids": [
+          "A07",
+          "A08",
+          "A11",
+          "A12",
+          "A13",
+          "A14"
+        ],
+        "note": "已有定向样本，非完整期刊覆盖；本次不运行检索。",
+        "basis": "原任务书候选来源；两项专题刊物来自既有技术补检",
+        "scope": "糖尿病领域（当前样板）",
+        "access_note": "本次只整理目录，未访问外站或执行检索。",
+        "last_collected_on": null
+      },
+      {
+        "id": "JAMA",
+        "name": "JAMA",
+        "group": "journal",
+        "modules": [
+          "products"
+        ],
+        "focus": "临床干预、诊疗和实施研究。",
+        "extract": [
+          "研究问题、团队与机构",
+          "样本、人群、方法与技术",
+          "主要发现、效应量与验证",
+          "局限及与现有方法的增量",
+          "DOI/PMID/注册号与版本"
+        ],
+        "outputs": [
+          "叙述式研究卡",
+          "技术/疾病问题关联",
+          "来源与局限"
+        ],
+        "status": "has_samples",
+        "links": [
+          {
+            "label": "预设期刊检索入口（本次未执行）",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22JAMA%22%5BJournal%5D"
+          },
+          {
+            "label": "已存原文示例",
+            "url": "https://doi.org/10.1001/jama.2026.9512"
+          }
+        ],
+        "tech_ids": [],
+        "record_ids": [
+          "A04"
+        ],
+        "note": "已有定向样本，非完整期刊覆盖；本次不运行检索。",
+        "basis": "原任务书候选来源；两项专题刊物来自既有技术补检",
+        "scope": "糖尿病领域（当前样板）",
+        "access_note": "本次只整理目录，未访问外站或执行检索。",
+        "last_collected_on": null
+      },
+      {
+        "id": "NATURE-MEDICINE",
+        "name": "Nature Medicine",
+        "group": "journal",
+        "modules": [
+          "products"
+        ],
+        "focus": "转化、临床与器官相关研究。",
+        "extract": [
+          "研究问题、团队与机构",
+          "样本、人群、方法与技术",
+          "主要发现、效应量与验证",
+          "局限及与现有方法的增量",
+          "DOI/PMID/注册号与版本"
+        ],
+        "outputs": [
+          "叙述式研究卡",
+          "技术/疾病问题关联",
+          "来源与局限"
+        ],
+        "status": "has_samples",
+        "links": [
+          {
+            "label": "预设期刊检索入口（本次未执行）",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Nat%20Med%22%5BJournal%5D"
+          },
+          {
+            "label": "已存原文示例",
+            "url": "https://doi.org/10.1038/s41591-026-04479-3"
+          }
+        ],
+        "tech_ids": [],
+        "record_ids": [
+          "A17"
+        ],
+        "note": "已有定向样本，非完整期刊覆盖；本次不运行检索。",
+        "basis": "原任务书候选来源；两项专题刊物来自既有技术补检",
+        "scope": "糖尿病领域（当前样板）",
+        "access_note": "本次只整理目录，未访问外站或执行检索。",
+        "last_collected_on": null
+      },
+      {
+        "id": "CELL-METABOLISM",
+        "name": "Cell Metabolism",
+        "group": "journal",
+        "modules": [
+          "products"
+        ],
+        "focus": "代谢机制与方法进展。",
+        "extract": [
+          "研究问题、团队与机构",
+          "样本、人群、方法与技术",
+          "主要发现、效应量与验证",
+          "局限及与现有方法的增量",
+          "DOI/PMID/注册号与版本"
+        ],
+        "outputs": [
+          "叙述式研究卡",
+          "技术/疾病问题关联",
+          "来源与局限"
+        ],
+        "status": "planned",
+        "links": [
+          {
+            "label": "预设期刊检索入口（本次未执行）",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Cell%20Metab%22%5BJournal%5D"
+          }
+        ],
+        "tech_ids": [],
+        "record_ids": [],
+        "note": "候选来源，待按糖尿病问题筛选；本次不运行检索。",
+        "basis": "原任务书候选来源；两项专题刊物来自既有技术补检",
+        "scope": "糖尿病领域（当前样板）",
+        "access_note": "本次只整理目录，未访问外站或执行检索。",
+        "last_collected_on": null
+      },
+      {
+        "id": "NATURE-METABOLISM",
+        "name": "Nature Metabolism",
+        "group": "journal",
+        "modules": [
+          "products"
+        ],
+        "focus": "代谢机制、异质性与转化方法。",
+        "extract": [
+          "研究问题、团队与机构",
+          "样本、人群、方法与技术",
+          "主要发现、效应量与验证",
+          "局限及与现有方法的增量",
+          "DOI/PMID/注册号与版本"
+        ],
+        "outputs": [
+          "叙述式研究卡",
+          "技术/疾病问题关联",
+          "来源与局限"
+        ],
+        "status": "planned",
+        "links": [
+          {
+            "label": "预设期刊检索入口（本次未执行）",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Nat%20Metab%22%5BJournal%5D"
+          }
+        ],
+        "tech_ids": [],
+        "record_ids": [],
+        "note": "候选来源，待按糖尿病问题筛选；本次不运行检索。",
+        "basis": "原任务书候选来源；两项专题刊物来自既有技术补检",
+        "scope": "糖尿病领域（当前样板）",
+        "access_note": "本次只整理目录，未访问外站或执行检索。",
+        "last_collected_on": null
+      },
+      {
+        "id": "SCI-TRANSL-MED",
+        "name": "Science Translational Medicine",
+        "group": "journal",
+        "modules": [
+          "products"
+        ],
+        "focus": "临床转化、标志物与新方法。",
+        "extract": [
+          "研究问题、团队与机构",
+          "样本、人群、方法与技术",
+          "主要发现、效应量与验证",
+          "局限及与现有方法的增量",
+          "DOI/PMID/注册号与版本"
+        ],
+        "outputs": [
+          "叙述式研究卡",
+          "技术/疾病问题关联",
+          "来源与局限"
+        ],
+        "status": "planned",
+        "links": [
+          {
+            "label": "预设期刊检索入口（本次未执行）",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Sci%20Transl%20Med%22%5BJournal%5D"
+          }
+        ],
+        "tech_ids": [],
+        "record_ids": [],
+        "note": "候选来源，待按糖尿病问题筛选；本次不运行检索。",
+        "basis": "原任务书候选来源；两项专题刊物来自既有技术补检",
+        "scope": "糖尿病领域（当前样板）",
+        "access_note": "本次只整理目录，未访问外站或执行检索。",
+        "last_collected_on": null
+      },
+      {
+        "id": "CHINESE-DIABETES",
+        "name": "中华糖尿病杂志",
+        "group": "journal",
+        "modules": [
+          "products"
+        ],
+        "focus": "国内临床研究、指南共识及诊疗背景。",
+        "extract": [
+          "研究问题、团队与机构",
+          "样本、人群、方法与技术",
+          "主要发现、效应量与验证",
+          "局限及与现有方法的增量",
+          "DOI/PMID/注册号与版本"
+        ],
+        "outputs": [
+          "叙述式研究卡",
+          "技术/疾病问题关联",
+          "来源与局限"
+        ],
+        "status": "planned",
+        "links": [],
+        "tech_ids": [],
+        "record_ids": [],
+        "note": "候选来源，待按糖尿病问题筛选；本次不运行检索。 官方期刊入口待补。",
+        "basis": "原任务书候选来源；两项专题刊物来自既有技术补检",
+        "scope": "糖尿病领域（当前样板）",
+        "access_note": "本次只整理目录，未访问外站或执行检索。",
+        "last_collected_on": null
+      },
+      {
+        "id": "CHINESE-ENDOCRINE",
+        "name": "中华内分泌代谢杂志",
+        "group": "journal",
+        "modules": [
+          "products"
+        ],
+        "focus": "国内内分泌代谢研究与临床背景。",
+        "extract": [
+          "研究问题、团队与机构",
+          "样本、人群、方法与技术",
+          "主要发现、效应量与验证",
+          "局限及与现有方法的增量",
+          "DOI/PMID/注册号与版本"
+        ],
+        "outputs": [
+          "叙述式研究卡",
+          "技术/疾病问题关联",
+          "来源与局限"
+        ],
+        "status": "planned",
+        "links": [],
+        "tech_ids": [],
+        "record_ids": [],
+        "note": "候选来源，待按糖尿病问题筛选；本次不运行检索。 官方期刊入口待补。",
+        "basis": "原任务书候选来源；两项专题刊物来自既有技术补检",
+        "scope": "糖尿病领域（当前样板）",
+        "access_note": "本次只整理目录，未访问外站或执行检索。",
+        "last_collected_on": null
+      },
+      {
+        "id": "EPIGENETICS",
+        "name": "Epigenetics",
+        "group": "journal",
+        "modules": [
+          "products"
+        ],
+        "focus": "cfRNA/表观相关的定向研究补充。",
+        "extract": [
+          "研究问题、团队与机构",
+          "样本、人群、方法与技术",
+          "主要发现、效应量与验证",
+          "局限及与现有方法的增量",
+          "DOI/PMID/注册号与版本"
+        ],
+        "outputs": [
+          "叙述式研究卡",
+          "技术/疾病问题关联",
+          "来源与局限"
+        ],
+        "status": "has_samples",
+        "links": [
+          {
+            "label": "预设期刊检索入口（本次未执行）",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Epigenetics%22%5BJournal%5D"
+          },
+          {
+            "label": "已存原文示例",
+            "url": "https://doi.org/10.1080/15592294.2025.2612399"
+          }
+        ],
+        "tech_ids": [],
+        "record_ids": [
+          "R16"
+        ],
+        "note": "已有定向样本，非完整期刊覆盖；本次不运行检索。",
+        "basis": "原任务书候选来源；两项专题刊物来自既有技术补检",
+        "scope": "糖尿病领域（当前样板）",
+        "access_note": "本次只整理目录，未访问外站或执行检索。",
+        "last_collected_on": null
+      },
+      {
+        "id": "BMJ-DRC",
+        "name": "BMJ Open Diabetes Research & Care",
+        "group": "journal",
+        "modules": [
+          "products"
+        ],
+        "focus": "糖尿病、并发症及标志物的定向补充。",
+        "extract": [
+          "研究问题、团队与机构",
+          "样本、人群、方法与技术",
+          "主要发现、效应量与验证",
+          "局限及与现有方法的增量",
+          "DOI/PMID/注册号与版本"
+        ],
+        "outputs": [
+          "叙述式研究卡",
+          "技术/疾病问题关联",
+          "来源与局限"
+        ],
+        "status": "has_samples",
+        "links": [
+          {
+            "label": "预设期刊检索入口（本次未执行）",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22BMJ%20Open%20Diabetes%20Res%20Care%22%5BJournal%5D"
+          },
+          {
+            "label": "已存原文示例",
+            "url": "https://doi.org/10.1136/bmjdrc-2026-006123"
+          }
+        ],
+        "tech_ids": [],
+        "record_ids": [
+          "R17"
+        ],
+        "note": "已有定向样本，非完整期刊覆盖；本次不运行检索。",
+        "basis": "原任务书候选来源；两项专题刊物来自既有技术补检",
+        "scope": "糖尿病领域（当前样板）",
+        "access_note": "本次只整理目录，未访问外站或执行检索。",
+        "last_collected_on": null
+      },
+      {
+        "id": "TECH-CF",
+        "name": "cfRNA检测｜外部产品与应用资料",
+        "group": "technology",
+        "modules": [
+          "products"
+        ],
+        "focus": "cf-mRNA/cf-lncRNA、体液来源与纵向标志物",
+        "extract": [
+          "产品/方法名称、厂商与版本",
+          "样本、检测对象、流程与分析输出",
+          "应用论文和独立验证",
+          "与既有方法相比的变化",
+          "发布日期与原始资料"
+        ],
+        "outputs": [
+          "技术动态卡",
+          "产品/方法对照",
+          "适配待核清单"
+        ],
+        "status": "planned",
+        "links": [],
+        "tech_ids": [
+          "CF"
+        ],
+        "record_ids": [],
+        "note": "先建立来源槽位。具体厂商、产品页、版本公告与应用资料待指定；现有论文中的技术使用不算已采集厂商资料。",
+        "basis": "已确认的产品技术入口与后续资料需求",
+        "scope": "糖尿病领域（当前样板）",
+        "access_note": "本次只整理目录，未访问外站或执行检索。",
+        "last_collected_on": null
+      },
+      {
+        "id": "TECH-ME",
+        "name": "cfDNA甲基化 / GM-seq｜外部产品与应用资料",
+        "group": "technology",
+        "modules": [
+          "products"
+        ],
+        "focus": "组织来源、器官损伤与风险分层",
+        "extract": [
+          "产品/方法名称、厂商与版本",
+          "样本、检测对象、流程与分析输出",
+          "应用论文和独立验证",
+          "与既有方法相比的变化",
+          "发布日期与原始资料"
+        ],
+        "outputs": [
+          "技术动态卡",
+          "产品/方法对照",
+          "适配待核清单"
+        ],
+        "status": "planned",
+        "links": [],
+        "tech_ids": [
+          "ME"
+        ],
+        "record_ids": [],
+        "note": "先建立来源槽位。具体厂商、产品页、版本公告与应用资料待指定；现有论文中的技术使用不算已采集厂商资料。",
+        "basis": "已确认的产品技术入口与后续资料需求",
+        "scope": "糖尿病领域（当前样板）",
+        "access_note": "本次只整理目录，未访问外站或执行检索。",
+        "last_collected_on": null
+      },
+      {
+        "id": "TECH-SC",
+        "name": "单细胞 / 单核｜外部产品与应用资料",
+        "group": "technology",
+        "modules": [
+          "products"
+        ],
+        "focus": "胰岛与肾脏细胞异质性、细胞互作和药物相关通路",
+        "extract": [
+          "产品/方法名称、厂商与版本",
+          "样本、检测对象、流程与分析输出",
+          "应用论文和独立验证",
+          "与既有方法相比的变化",
+          "发布日期与原始资料"
+        ],
+        "outputs": [
+          "技术动态卡",
+          "产品/方法对照",
+          "适配待核清单"
+        ],
+        "status": "planned",
+        "links": [],
+        "tech_ids": [
+          "SC"
+        ],
+        "record_ids": [],
+        "note": "先建立来源槽位。具体厂商、产品页、版本公告与应用资料待指定；现有论文中的技术使用不算已采集厂商资料。",
+        "basis": "已确认的产品技术入口与后续资料需求",
+        "scope": "糖尿病领域（当前样板）",
+        "access_note": "本次只整理目录，未访问外站或执行检索。",
+        "last_collected_on": null
+      },
+      {
+        "id": "TECH-SP",
+        "name": "空间组学｜外部产品与应用资料",
+        "group": "technology",
+        "modules": [
+          "products"
+        ],
+        "focus": "组织微环境与空间细胞互作",
+        "extract": [
+          "产品/方法名称、厂商与版本",
+          "样本、检测对象、流程与分析输出",
+          "应用论文和独立验证",
+          "与既有方法相比的变化",
+          "发布日期与原始资料"
+        ],
+        "outputs": [
+          "技术动态卡",
+          "产品/方法对照",
+          "适配待核清单"
+        ],
+        "status": "planned",
+        "links": [],
+        "tech_ids": [
+          "SP"
+        ],
+        "record_ids": [],
+        "note": "先建立来源槽位。具体厂商、产品页、版本公告与应用资料待指定；现有论文中的技术使用不算已采集厂商资料。",
+        "basis": "已确认的产品技术入口与后续资料需求",
+        "scope": "糖尿病领域（当前样板）",
+        "access_note": "本次只整理目录，未访问外站或执行检索。",
+        "last_collected_on": null
+      },
+      {
+        "id": "TECH-IR",
+        "name": "免疫组库 / TCR-BCR｜外部产品与应用资料",
+        "group": "technology",
+        "modules": [
+          "products"
+        ],
+        "focus": "免疫克隆、谱系和治疗应答研究",
+        "extract": [
+          "产品/方法名称、厂商与版本",
+          "样本、检测对象、流程与分析输出",
+          "应用论文和独立验证",
+          "与既有方法相比的变化",
+          "发布日期与原始资料"
+        ],
+        "outputs": [
+          "技术动态卡",
+          "产品/方法对照",
+          "适配待核清单"
+        ],
+        "status": "planned",
+        "links": [],
+        "tech_ids": [
+          "IR"
+        ],
+        "record_ids": [],
+        "note": "先建立来源槽位。具体厂商、产品页、版本公告与应用资料待指定；现有论文中的技术使用不算已采集厂商资料。",
+        "basis": "已确认的产品技术入口与后续资料需求",
+        "scope": "糖尿病领域（当前样板）",
+        "access_note": "本次只整理目录，未访问外站或执行检索。",
+        "last_collected_on": null
+      },
+      {
+        "id": "TECH-PR",
+        "name": "蛋白组 / 候选蛋白检测｜外部产品与应用资料",
+        "group": "technology",
+        "modules": [
+          "products"
+        ],
+        "focus": "纵向发病风险、肾损伤与缓解相关蛋白",
+        "extract": [
+          "产品/方法名称、厂商与版本",
+          "样本、检测对象、流程与分析输出",
+          "应用论文和独立验证",
+          "与既有方法相比的变化",
+          "发布日期与原始资料"
+        ],
+        "outputs": [
+          "技术动态卡",
+          "产品/方法对照",
+          "适配待核清单"
+        ],
+        "status": "planned",
+        "links": [],
+        "tech_ids": [
+          "PR"
+        ],
+        "record_ids": [],
+        "note": "先建立来源槽位。具体厂商、产品页、版本公告与应用资料待指定；现有论文中的技术使用不算已采集厂商资料。",
+        "basis": "已确认的产品技术入口与后续资料需求",
+        "scope": "糖尿病领域（当前样板）",
+        "access_note": "本次只整理目录，未访问外站或执行检索。",
+        "last_collected_on": null
+      },
+      {
+        "id": "TECH-MT",
+        "name": "代谢组｜外部产品与应用资料",
+        "group": "technology",
+        "modules": [
+          "products"
+        ],
+        "focus": "免疫代谢、治疗应答及阴性风险证据",
+        "extract": [
+          "产品/方法名称、厂商与版本",
+          "样本、检测对象、流程与分析输出",
+          "应用论文和独立验证",
+          "与既有方法相比的变化",
+          "发布日期与原始资料"
+        ],
+        "outputs": [
+          "技术动态卡",
+          "产品/方法对照",
+          "适配待核清单"
+        ],
+        "status": "planned",
+        "links": [],
+        "tech_ids": [
+          "MT"
+        ],
+        "record_ids": [],
+        "note": "先建立来源槽位。具体厂商、产品页、版本公告与应用资料待指定；现有论文中的技术使用不算已采集厂商资料。",
+        "basis": "已确认的产品技术入口与后续资料需求",
+        "scope": "糖尿病领域（当前样板）",
+        "access_note": "本次只整理目录，未访问外站或执行检索。",
+        "last_collected_on": null
+      },
+      {
+        "id": "PUBMED",
+        "name": "PubMed｜文献发现入口",
+        "group": "database",
+        "modules": [
+          "products"
+        ],
+        "focus": "按疾病、技术、研究设计与期刊检索原始文献。",
+        "extract": [
+          "检索式与窗口",
+          "PMID/DOI与发表时间",
+          "原始摘要和文章类型",
+          "对应期刊与版本"
+        ],
+        "outputs": [
+          "候选论文池",
+          "可复查检索记录"
+        ],
+        "status": "has_samples",
+        "links": [
+          {
+            "label": "已有数据库入口",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/"
+          }
+        ],
+        "tech_ids": [],
+        "record_ids": [],
+        "note": "过去批次已有检索资料；本次只展示入口，不执行搜索。",
+        "basis": "既有PubMed来源审计",
+        "scope": "糖尿病领域（当前样板）",
+        "access_note": "本次只整理目录，未访问外站或执行检索。",
+        "last_collected_on": null
+      },
+      {
+        "id": "TRIAL-REGISTRY",
+        "name": "临床试验注册与结果库",
+        "group": "database",
+        "modules": [
+          "products"
+        ],
+        "focus": "关联试验注册、预设终点、结果与论文版本。",
+        "extract": [
+          "注册号与方案版本",
+          "人群、干预、比较与预设终点",
+          "结果登记及相关发表",
+          "实际更新日期"
+        ],
+        "outputs": [
+          "研究身份与版本关系",
+          "缺失结果清单"
+        ],
+        "status": "planned",
+        "links": [],
+        "tech_ids": [],
+        "record_ids": [],
+        "note": "既有记录含注册号；数据库官方入口及具体注册结果的回查任务待补，不新增访问。",
+        "basis": "既有设计与执行任务书",
+        "scope": "糖尿病领域（当前样板）",
+        "access_note": "本次只整理目录，未访问外站或执行检索。",
+        "last_collected_on": null
+      },
+      {
+        "id": "GENEPLUS",
+        "name": "吉因加官方产品与临床科研资料",
+        "group": "company",
+        "modules": [
+          "products"
+        ],
+        "focus": "公司当前能力、产品版本、适配样本与交付依据。",
+        "extract": [
+          "产品/服务名称与版本",
+          "现行适配条件",
+          "技术、样本、输出与边界",
+          "官方发布日期和代表应用"
+        ],
+        "outputs": [
+          "能力底表更新候选",
+          "产品技术匹配依据"
+        ],
+        "status": "partial",
+        "links": [
+          {
+            "label": "已存官方临床科研页面",
+            "url": "https://www.geneplus.cn/solutions/clinical-research"
+          }
+        ],
+        "tech_ids": [],
+        "record_ids": [],
+        "note": "已有能力底表保留确认范围；本次不复核现行版本或升级能力状态。",
+        "basis": "已有公司能力表",
+        "scope": "糖尿病领域（当前样板）",
+        "access_note": "本次只整理目录，未访问外站或执行检索。",
+        "last_collected_on": null
+      },
+      {
+        "id": "NSFC",
+        "name": "国家自然科学基金｜指南与通知",
+        "group": "policy",
+        "modules": [
+          "products"
+        ],
+        "focus": "作为科研投入与申报窗口的背景补充。",
+        "extract": [
+          "发布单位与文件原文",
+          "支持方向及人群/技术要求",
+          "申报窗口与适用对象",
+          "与糖尿病研究问题的关系"
+        ],
+        "outputs": [
+          "政策/基金线索卡",
+          "时间窗口与方向背景"
+        ],
+        "status": "planned",
+        "links": [],
+        "tech_ids": [],
+        "record_ids": [],
+        "note": "来自营销大框架的补充来源层；不把指南方向当成研究成果，官方入口待补。",
+        "basis": "营销框架中的基金/政策来源需求",
+        "scope": "糖尿病领域（当前样板）",
+        "access_note": "本次只整理目录，未访问外站或执行检索。",
+        "last_collected_on": null
+      },
+      {
+        "id": "SCIENCE-POLICY",
+        "name": "科技与临床研究政策｜官方通知",
+        "group": "policy",
+        "modules": [
+          "products"
+        ],
+        "focus": "科研、转化与临床研究政策背景。",
+        "extract": [
+          "原文、发布机构及日期",
+          "适用范围和具体要求",
+          "对研究/转化的影响",
+          "与公司技术的关系"
+        ],
+        "outputs": [
+          "政策背景卡",
+          "适用条件清单"
+        ],
+        "status": "planned",
+        "links": [],
+        "tech_ids": [],
+        "record_ids": [],
+        "note": "先保留背景来源槽位，具体发布机构与入口待指定；不采集新通知。",
+        "basis": "营销框架中的基金/政策来源需求",
+        "scope": "糖尿病领域（当前样板）",
+        "access_note": "本次只整理目录，未访问外站或执行检索。",
+        "last_collected_on": null
+      }
+    ],
+    "sample_fields": [
+      {
+        "name": "研究标题",
+        "value": "待采集后填写具体问题"
+      },
+      {
+        "name": "团队与研究叙述",
+        "value": "待确认团队后，按“团队—问题—方法—发现—意义”撰写"
+      },
+      {
+        "name": "设计、指标与局限",
+        "value": "待原始材料核实后填写"
+      },
+      {
+        "name": "产品技术关联",
+        "value": "待判断；技术使用与公司交付分别确认"
+      },
+      {
+        "name": "日期与来源",
+        "value": "待补原始链接、发表/报告时间与读取层次"
+      }
+    ],
+    "navigation_note": "会议来源归属会议热点洞察；期刊、技术、数据库、公司及基金政策背景归属产品与技术动态。归属仅为导航主入口，不改变研究证据或限制跨模块引用。"
+  },
+  "intelligence_plan": {
+    "version": "0.1",
+    "assembled_on": "2026-11-12",
+    "as_of": "2026-11-12",
+    "pilot_field": "糖尿病",
+    "scope_note": "首轮情报框架，复用截至2026-11-11的B03资料；编辑初选待人工复核。",
+    "editorial_selection": [
+      {
+        "record_id": "R16",
+        "reason": "把孕期血浆cfRNA与GDM诊断前风险识别连接起来，可作为技术与临床问题相结合的试跑案例。",
+        "next": "核对检测流程和外部验证，评价相对临床模型的增量，再确认公司适配环节。"
+      },
+      {
+        "record_id": "R11",
+        "reason": "围绕正常白蛋白尿T2D人群的肾风险，提供候选蛋白与常规临床指标结合的研究问题。",
+        "next": "补读原始样本、检测平台和模型比较，准备讨论入组人群与随访指标。"
+      },
+      {
+        "record_id": "A20",
+        "reason": "血浆EV蛋白与T1D部分缓解形成了具体的蛋白标志物问题，适合继续追踪原始结果。",
+        "next": "先补完整原始摘要和检测平台，再判断纵向验证及团队调研的投入。"
+      }
+    ],
+    "tracked_theme_ids": [
+      "T18",
+      "T02",
+      "T17"
+    ],
+    "pending_record_ids": [
+      "A20",
+      "A06",
+      "A18"
+    ],
+    "conference_calendar": [
+      {
+        "source_id": "CDS",
+        "name": "CDS 2026 全国糖尿病学术会议",
+        "start": "2026-11-18",
+        "end": "2026-11-21",
+        "location": "厦门",
+        "route": "#/meetings?conference=cds",
+        "note": "已有23条重点计划议题，可用于会前问题与讲者准备；报告结果待补。",
+        "basis": "2026-11-11保存的官方日程"
+      },
+      {
+        "source_id": "ADA",
+        "name": "ADA 2026 Scientific Sessions",
+        "start": "2026-06-05",
+        "end": "2026-06-08",
+        "location": "新奥尔良",
+        "route": "#/meetings?conference=ada",
+        "note": "已有27条研究记录，按实际读取层次标注；继续关联原始摘要与论文。",
+        "basis": "既有ADA官方程序与研究台账"
+      }
+    ],
+    "funding_records": [],
+    "funding_note": "申报通知与政策正文尚未接入本情报台，待核对正式通知、适用范围与起止时间。",
+    "collaboration_status": "初版仅记录建议；负责人、客户意向与实际跟进等待后续反馈模块接入。"
+  },
+  "rating_criteria": {
+    "version": "0.1",
+    "source_updated": "2026-11-11",
+    "web_added": "2026-11-12",
+    "source": "14 文章相关性与热点判断标准.md",
+    "relevance_dimensions": [
+      [
+        "领域相关",
+        "涉及哪类糖尿病、人群、疾病阶段或并发症？邻域研究怎样连接糖尿病问题？",
+        "人群、病种、场景；直接领域／邻域／范围外"
+      ],
+      [
+        "问题相关",
+        "想解决什么诊断、分型、风险、应答、监测、预后或机制问题？",
+        "一句话具体问题及其业务关注理由"
+      ],
+      [
+        "技术相关",
+        "实际测了什么、从哪里测、用什么方法？",
+        "样本→组分→检测对象→平台→分析方法；未知项待核"
+      ],
+      [
+        "流程适配",
+        "与公司现有能力接近到哪一步？",
+        "能力底表编号、确认日期、匹配点和待核环节"
+      ],
+      [
+        "研究用途",
+        "可以据此设计什么研究或选择什么验证环节？",
+        "明确对象、研究问题、技术及评价终点的一句话"
+      ]
+    ],
+    "relevance_levels": [
+      [
+        "直接技术关联",
+        "原文明确实际使用所关注的技术类别，并连接具体糖尿病问题",
+        "进入对应技术动态；提取研究用途，进一步核对公司流程"
+      ],
+      [
+        "相关方法参考",
+        "问题或检测对象有关，样本、组分、平台或方法存在明显差异",
+        "保留方法参考；写明可借鉴的研究设计和需验证的转换环节"
+      ],
+      [
+        "关联待判断",
+        "问题值得关注，技术细节或公司匹配环节尚未明确",
+        "列出具体补核问题，补资料后重新归属"
+      ],
+      [
+        "领域背景",
+        "有助于理解治疗、监测、管理或临床需求，当前主要价值在问题与场景",
+        "进入其它热点或会议研究；说明可提出的后续问题"
+      ]
+    ],
+    "hotspot_dimensions": [
+      [
+        "关注信号",
+        "是否有独立研究、不同团队或连续会议与文章关注同一问题？",
+        "研究ID、团队、时间与来源；区分议题关注、结果与重复传播"
+      ],
+      [
+        "新增价值",
+        "相比已有基线，增加了新机制、新人群、新方法、外部验证或改变判断的阴性证据吗？",
+        "原有认识／参照研究＋本次具体增量"
+      ],
+      [
+        "临床科研意义",
+        "推进了什么重要问题？产生了哪些可操作的后续研究？",
+        "对诊断、分型、应答、监测、预后的意义及下一步问题"
+      ],
+      [
+        "证据成熟度",
+        "处于机制探索、候选发现、内部验证、独立验证或临床研究哪一步？",
+        "原文读取层次、研究设计、验证方式、相互支持或冲突及待核项"
+      ]
+    ],
+    "hotspot_levels": [
+      [
+        "候选线索",
+        "出现具体且有价值的研究或会议议题，独立证据、结果或来源覆盖仍有限",
+        "补原始结果、独立团队及相关研究"
+      ],
+      [
+        "新兴方向",
+        "已核出相对既有基线的新问题或新方法，并有独立研究跟进；同队列追加分析需说明",
+        "列出独立研究及各自增量，继续观察复现与发展"
+      ],
+      [
+        "持续热点",
+        "在多个独立研究、团队及连续时间节点中持续出现，能说明问题如何推进",
+        "明确时间跨度、独立性和实际覆盖范围"
+      ],
+      [
+        "重要进展",
+        "某项研究对已有认识、验证路径或实践问题产生明确增量，且现有证据支持该表述",
+        "给出参照、关键结果与复核依据；可与上述状态并存"
+      ]
+    ],
+    "examples": [
+      [
+        "R16：孕期血浆cfRNA",
+        "cfRNA直接技术关联",
+        "筛选诊断前GDM风险标志物，评价其对临床模型的增量价值并设计独立验证"
+      ],
+      [
+        "R17：尿液多组分lncRNA",
+        "尿液RNA方法参考；按细胞、无细胞、EV分别记录",
+        "为DKD／NDKD鉴别比较样本组分、选择候选靶标与验证流程"
+      ],
+      [
+        "A20：EV蛋白与T1D部分缓解",
+        "蛋白组→EV蛋白组；具体平台待核",
+        "围绕血浆EV蛋白提出标志物筛选、采样时点与纵向验证问题"
+      ],
+      [
+        "R13：免疫亚群",
+        "功能性转录反应分析；公司适配待核",
+        "利用血浆诱导的报告细胞反应研究免疫分型与治疗应答差异"
+      ],
+      [
+        "R12：GDM后遗传风险",
+        "遗传风险评分；公司适配待核",
+        "分别评价遗传信息对后续T1D和T2D风险模型的补充价值"
+      ]
+    ],
+    "fit_levels": [
+      [
+        "已确认适配范围",
+        "有现行能力材料或产品／技术复核，明确样本、检测对象、平台及交付环节。",
+        "记录能力编号、证据与确认日期。"
+      ],
+      [
+        "部分适配",
+        "部分环节已有依据。",
+        "说明可参与环节及需补充的条件。"
+      ],
+      [
+        "待核实",
+        "当前流程或交付依据仍需补充。",
+        "列出向产品／技术确认的具体问题。"
+      ]
+    ]
+  }
+}

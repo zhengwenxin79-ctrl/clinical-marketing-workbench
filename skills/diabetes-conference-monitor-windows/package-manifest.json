@@ -1,0 +1,26 @@
+{
+  "name": "diabetes-conference-monitor-windows",
+  "version": "1.1.0",
+  "format": "WorkBuddy",
+  "edition": "Windows transfer",
+  "created_on": "2026-11-13",
+  "source_collector": "monitoring/collect.py",
+  "source_collector_sha256": "0a3c94ae4ec354b4cef6c43babf5f49349c45bfabe266d96401150d1580b26ae",
+  "project_build_sha256": "5e8f81a8b5ef136e6bd0bcd3c53bb8ba59c4b31a0c413b8eafca59732f3ad0bf",
+  "sources": 8,
+  "conference_series": 6,
+  "creates_schedule": false,
+  "windows_hardware_tested": false,
+  "files": {
+    "SKILL.md": "df819c47a698fd530ecbe7594074c34c3da23ea06e6066153d1ffdeae22878d6",
+    "references/Windows使用说明.md": "f60483c1f364210c5f9ee6af3b3660287d66df9ced244efefc93b2e3d9fc13f8",
+    "references/sources.json": "f00ebf3768d5058703016a2ff4c4bfd2c212f7366c0cecf3f1530485bfd5c813",
+    "references/任务提示词.md": "8eacdf66b45ba0c652d2554c191c3e45b4edfbb71b18cba5c8a55cf1a0b94604",
+    "references/使用说明.md": "9e3563ea9513ba00aed4d50e7b1de3e82bbc2c581493ea04c33157d90c698dcd",
+    "references/输出与验收.md": "91fb762203398f94f674780eaddf5b3dc0b6912bc2f7bdef3869b011ce4ee898",
+    "scripts/collector_core.py": "0a3c94ae4ec354b4cef6c43babf5f49349c45bfabe266d96401150d1580b26ae",
+    "scripts/portable_runtime.py": "1faf9447ebeceec0793fa06f8b3a233132f576fb7d6ef2cb1a1330a49c8ba8fd",
+    "scripts/run.py": "dd1591c99f6987daa6bd440608cc2bd57e179b7af44ede3d3275f2f20d6fcc14",
+    "scripts/validate_package.py": "d18cbdbc4fb8ec6c47aed54c3f4bf0b4688e1880971139d568743e21dbe7c107"
+  }
+}

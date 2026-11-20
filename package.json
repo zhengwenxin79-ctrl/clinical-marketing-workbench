@@ -1,0 +1,15 @@
+{
+  "name": "clinical-marketing-antigravity",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Local research and market/sales workbench handoff",
+  "scripts": {
+    "test:browser": "node tools/browser_smoke.cjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "playwright": "1.65.1"
+  }
+}

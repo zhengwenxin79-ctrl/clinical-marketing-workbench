@@ -1,0 +1,43 @@
+{
+  "result": "passed",
+  "verified_on": "2026-11-17",
+  "database": "/Users/zwx/Documents/文献阅读/BrainHao-Study/wenxin/智能营销数据中心/数据库/marketing.db",
+  "database_sha256": "dcf53b0fd6111cac90930f2d4c7345169fa6013bcdbb8ecb2db52e0bbfb3382b",
+  "source_observed_on": "2026-11-16",
+  "counts": {
+    "import_batches": 1,
+    "source_materials": 436,
+    "conference_series": 1,
+    "conference_editions": 1,
+    "sessions": 148,
+    "agenda_items": 797,
+    "reports": 606,
+    "people": 663,
+    "agenda_participants": 772,
+    "session_chairs": 291,
+    "person_profiles": 230,
+    "academic_role_claims": 174,
+    "analysis_versions": 2,
+    "research_topics": 56,
+    "report_classifications": 606,
+    "report_tags": 172,
+    "biomarker_title_reviews": 606,
+    "legacy_marker_bindings": 7,
+    "studies": 0,
+    "report_study_links": 0,
+    "tier_rule_versions": 1,
+    "speaker_tier_assignments": 533,
+    "speaker_tier_evidence": 150,
+    "conference_tier_assignments": 1
+  },
+  "checks": [
+    "SQLite完整性与全部外键通过",
+    "会议1届、148专题、797日程、606学术报告、230简介读取记录与436材料齐全",
+    "797条原始JSON逐条回读一致，人员/主持关系完整，报告视图无重复增行",
+    "既有44议题/12板块复算579，标志物复核80=7已绑定+73待细分；两个分母分开",
+    "未把606报告认定为独立研究；结果留空、评分未导入；126角色来源/115入榜关联角色与3失败简介保留",
+    "436份随包材料指纹一致、数据库路径均可回溯；原机器原始文件指纹保持"
+  ],
+  "new_collection": false,
+  "published": false
+}

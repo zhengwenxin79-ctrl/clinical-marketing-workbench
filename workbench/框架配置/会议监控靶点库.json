@@ -1,0 +1,269 @@
+{
+  "version": "conference-targets:v1",
+  "updated_at": "2026-11-20T14:00:00+08:00",
+  "summary": {
+    "organizations_count": 19,
+    "core_series_count": 28,
+    "international_anchors_count": 12,
+    "common_channels_count": 6
+  },
+  "organizations": [
+    {
+      "id": "O01",
+      "field_id": "rheumatology",
+      "field_name": "风湿免疫",
+      "name": "中华医学会风湿病学分会",
+      "type": "cma_branch",
+      "official_entry": "https://cmacra2026.sciconf.cn/",
+      "wechat_channel": "C03:中华医学会风湿病学分会",
+      "description": "国内风湿免疫学科顶级学术组织"
+    },
+    {
+      "id": "O02",
+      "field_id": "rheumatology",
+      "field_name": "风湿免疫",
+      "name": "中国医师协会风湿免疫科医师分会",
+      "type": "cmda_branch",
+      "official_entry": "https://carip2026.cnconf.com/msite/main/cn",
+      "wechat_channel": "CARIP官方发布",
+      "description": "临床风湿免疫科医师全国性行业与学术大会组织"
+    },
+    {
+      "id": "O03",
+      "field_id": "diabetes",
+      "field_name": "糖尿病与代谢",
+      "name": "中华医学会内分泌学分会",
+      "type": "cma_branch",
+      "official_entry": "https://cse2026.sciconf.cn/",
+      "wechat_channel": "CMACSE",
+      "description": "全国内分泌代谢学术带头人主干学会"
+    },
+    {
+      "id": "O04",
+      "field_id": "diabetes",
+      "field_name": "糖尿病与代谢",
+      "name": "中华医学会糖尿病学分会",
+      "type": "cma_branch",
+      "official_entry": "https://cds26.tiemeeting.com/CN",
+      "wechat_channel": "CDS-TNB",
+      "description": "糖尿病全国顶级学术会议主办方"
+    },
+    {
+      "id": "O05",
+      "field_id": "diabetes",
+      "field_name": "糖尿病与代谢",
+      "name": "中国医师协会内分泌代谢科医师分会",
+      "type": "cmda_branch",
+      "official_entry": "https://www.cmda.net/",
+      "wechat_channel": "中国医师协会内分泌代谢分会",
+      "description": "内分泌代谢临床专家与医师队伍组织"
+    },
+    {
+      "id": "O06",
+      "field_id": "neurology",
+      "field_name": "神经精神",
+      "name": "中华医学会神经病学分会",
+      "type": "cma_branch",
+      "official_entry": "https://cmancn2026.sciconf.cn/",
+      "wechat_channel": "中华神经科杂志及分会发布",
+      "description": "覆盖认知障碍、脑血管病、帕金森、神经免疫等主干"
+    },
+    {
+      "id": "O07",
+      "field_id": "neurology",
+      "field_name": "神经精神",
+      "name": "中国医师协会神经内科医师分会",
+      "type": "cmda_branch",
+      "official_entry": "https://cna2026.cnconf.com/msite/main/cn",
+      "wechat_channel": "CNA官方发布",
+      "description": "神经内科全国临床医师大会组织"
+    },
+    {
+      "id": "O08",
+      "field_id": "neurology",
+      "field_name": "神经精神",
+      "name": "中华医学会精神医学分会",
+      "type": "cma_branch",
+      "official_entry": "https://csp2026.cnconf.com/msite/main/cn",
+      "wechat_channel": "CSP精神医学学会",
+      "description": "全国精神心理学学术会议主办方"
+    },
+    {
+      "id": "O09",
+      "field_id": "neurology",
+      "field_name": "神经精神",
+      "name": "中国医师协会精神科医师分会",
+      "type": "cmda_branch",
+      "official_entry": "https://www.cmda.net/",
+      "wechat_channel": "CPA精神科医师大会",
+      "description": "精神心理临床医学医师年会组织"
+    },
+    {
+      "id": "O10",
+      "field_id": "cardiovascular",
+      "field_name": "心血管健康",
+      "name": "中华医学会心血管病学分会",
+      "type": "cma_branch",
+      "official_entry": "https://csc2026.cnconf.com/msite/main/cn",
+      "wechat_channel": "中华心血管病杂志/CSC",
+      "description": "国内心血管内科顶级学术会议主办方"
+    },
+    {
+      "id": "O11",
+      "field_id": "cardiovascular",
+      "field_name": "心血管健康",
+      "name": "中国医师协会心血管内科医师分会",
+      "type": "cmda_branch",
+      "official_entry": "https://www.drvoice.cn/enroll/1771",
+      "wechat_channel": "CCCP心血管内科医师年会",
+      "description": "心血管临床医师年会主办方"
+    },
+    {
+      "id": "O12",
+      "field_id": "respiratory",
+      "field_name": "呼吸慢病",
+      "name": "中华医学会呼吸病学分会",
+      "type": "cma_branch",
+      "official_entry": "https://cts2026.sciconf.cn/",
+      "wechat_channel": "CTS呼吸病学年会",
+      "description": "慢阻肺、哮喘、肺血管及间质性肺病全国顶级学会"
+    },
+    {
+      "id": "O13",
+      "field_id": "respiratory",
+      "field_name": "呼吸慢病",
+      "name": "中国医师协会呼吸医师分会",
+      "type": "cmda_branch",
+      "official_entry": "https://cacp2026.cnconf.com/msite/main/cn",
+      "wechat_channel": "CACP中国呼吸医师大会",
+      "description": "呼吸临床医师大会组织"
+    },
+    {
+      "id": "O14",
+      "field_id": "vascular",
+      "field_name": "泛血管及器官损伤",
+      "name": "中华医学会创伤学分会",
+      "type": "cma_branch",
+      "official_entry": "https://www.cma.org.cn/col/col31/",
+      "wechat_channel": "神经创伤与脑出血大会",
+      "description": "神经创伤、脑出血及微血管破裂损伤研究"
+    },
+    {
+      "id": "O15",
+      "field_id": "vascular",
+      "field_name": "泛血管及器官损伤",
+      "name": "中华医学会神经外科学分会",
+      "type": "cma_branch",
+      "official_entry": "https://www.cma.org.cn/col/col31/",
+      "wechat_channel": "中华神经外科学术会议",
+      "description": "脑血管病手术及介入基础与转化研究"
+    },
+    {
+      "id": "O16",
+      "field_id": "vascular",
+      "field_name": "泛血管及器官损伤",
+      "name": "中国医师协会神经外科医师分会",
+      "type": "cmda_branch",
+      "official_entry": "https://ccns2026.cnconf.com/msite/main/cn",
+      "wechat_channel": "CCNS神经外科医师年会",
+      "description": "脑血管与颅脑创伤专科医师大会"
+    },
+    {
+      "id": "O17",
+      "field_id": "vascular",
+      "field_name": "泛血管及器官损伤",
+      "name": "中国医师协会高血压专业委员会",
+      "type": "cmda_committee",
+      "official_entry": "https://www.cmda.net/",
+      "wechat_channel": "中国高血压大会",
+      "description": "血管阻力、靶器官损伤与高血压机制转化研究"
+    },
+    {
+      "id": "O18",
+      "field_id": "cardiovascular",
+      "field_name": "心血管健康",
+      "name": "中国医师协会心脏重症专业委员会",
+      "type": "cmda_committee",
+      "official_entry": "https://cccmeeting2026.meetingchina.org/msite/main/cn",
+      "wechat_channel": "CCC心脏重症学术大会",
+      "description": "重症心血管、心肌损伤标志物及预后评估研究"
+    },
+    {
+      "id": "O19",
+      "field_id": "neurology",
+      "field_name": "神经精神",
+      "name": "中华医学会行为医学分会",
+      "type": "cma_branch",
+      "official_entry": "https://bmb2026.tiemeeting.com/CN",
+      "wechat_channel": "中华行为医学学术会议",
+      "description": "认知心理、精神行为机制及生物标志物研究"
+    }
+  ],
+  "core_series": [
+    { "id": "M01", "name": "中华医学会风湿病学学术会议", "field_id": "rheumatology", "aliases": ["全国风湿病学学术会议", "风湿年会", "CRA"], "org_id": "O01", "tier": "national_core" },
+    { "id": "M02", "name": "中国医师协会风湿免疫科医师分会年会暨风湿免疫科医师大会", "field_id": "rheumatology", "aliases": ["风湿免疫科医师大会", "CARIP"], "org_id": "O02", "tier": "national_core" },
+    { "id": "M03", "name": "中华医学会内分泌学学术会议", "field_id": "diabetes", "aliases": ["CSE", "全国内分泌学学术会议"], "org_id": "O03", "tier": "national_core" },
+    { "id": "M04", "name": "中华医学会糖尿病学术会议", "field_id": "diabetes", "aliases": ["糖尿病学分会学术会议", "CDS"], "org_id": "O04", "tier": "national_core" },
+    { "id": "M05", "name": "中国医师协会内分泌代谢科医师年会", "field_id": "diabetes", "aliases": ["内分泌代谢科医师年会"], "org_id": "O05", "tier": "national_core" },
+    { "id": "M06", "name": "中华医学会神经病学学术会议", "field_id": "neurology", "aliases": ["全国神经病学学术会议", "NCN"], "org_id": "O06", "tier": "national_core" },
+    { "id": "M07", "name": "中国医师协会神经内科医师年会", "field_id": "neurology", "aliases": ["CNA", "神经内科医师年会"], "org_id": "O07", "tier": "national_core" },
+    { "id": "M08", "name": "中华医学会精神医学学术会议", "field_id": "neurology", "aliases": ["CSP", "全国精神医学学术会议"], "org_id": "O08", "tier": "national_core" },
+    { "id": "M09", "name": "中国医师协会精神科医师分会年会", "field_id": "neurology", "aliases": ["精神科医师年会", "CPA"], "org_id": "O09", "tier": "national_core" },
+    { "id": "M10", "name": "中华医学会心血管年会", "field_id": "cardiovascular", "aliases": ["全国心血管年会", "CSC"], "org_id": "O10", "tier": "national_core" },
+    { "id": "M11", "name": "中国医师协会心血管内科医师年会", "field_id": "cardiovascular", "aliases": ["CCCP", "心血管内科医师年会"], "org_id": "O11", "tier": "national_core" },
+    { "id": "M12", "name": "中华医学会呼吸病学年会", "field_id": "respiratory", "aliases": ["呼吸病学学术会议", "CTS"], "org_id": "O12", "tier": "national_core" },
+    { "id": "M13", "name": "中国医师协会呼吸医师年会暨中国呼吸医师大会", "field_id": "respiratory", "aliases": ["中国呼吸医师大会", "CACP"], "org_id": "O13", "tier": "national_core" },
+    { "id": "M14", "name": "中华医学会风湿病学分会中青年风湿免疫科医师学术会议", "field_id": "rheumatology", "aliases": ["中青年风湿免疫科医师会议"], "org_id": "O01", "tier": "national_sub" },
+    { "id": "M15", "name": "中华医学会糖尿病学分会中青年糖尿病医师学术会议", "field_id": "diabetes", "aliases": ["中青年糖尿病医师学术会议"], "org_id": "O04", "tier": "national_sub" },
+    { "id": "M16", "name": "中华医学会神经病学分会痴呆与认知障碍学术会议", "field_id": "neurology", "aliases": ["痴呆与认知障碍会议", "AD学术大会"], "org_id": "O06", "tier": "national_sub" },
+    { "id": "M17", "name": "中华医学会神经病学分会帕金森病及运动障碍学术会议", "field_id": "neurology", "aliases": ["帕金森病及运动障碍会议"], "org_id": "O06", "tier": "national_sub" },
+    { "id": "M18", "name": "中华医学会脑血管病大会", "field_id": "vascular", "aliases": ["全国脑血管病大会", "CVD"], "org_id": "O06", "tier": "national_sub" },
+    { "id": "M19", "name": "中华医学会神经病学分会脑电图与癫痫诊治进展学术会议", "field_id": "neurology", "aliases": ["脑电图与癫痫诊治会议"], "org_id": "O06", "tier": "national_sub" },
+    { "id": "M20", "name": "中华医学会神经病学分会神经感染性疾病与脑脊液细胞学学术会议", "field_id": "neurology", "aliases": ["神经感染与脑脊液细胞学会议"], "org_id": "O06", "tier": "national_sub" },
+    { "id": "M21", "name": "中华医学会慢性阻塞性肺疾病学术会议", "field_id": "respiratory", "aliases": ["慢阻肺学术会议", "COPD学术大会"], "org_id": "O12", "tier": "national_sub" },
+    { "id": "M22", "name": "中华医学会肺栓塞与肺血管疾病学术会议", "field_id": "vascular", "aliases": ["肺栓塞与肺血管疾病会议"], "org_id": "O12", "tier": "national_sub" },
+    { "id": "M23", "name": "中华医学会神经创伤和脑出血大会", "field_id": "vascular", "aliases": ["神经创伤和脑出血大会"], "org_id": "O14", "tier": "national_sub" },
+    { "id": "M24", "name": "中华医学会神经外科学分会学术会议", "field_id": "vascular", "aliases": ["神经外科学术会议"], "org_id": "O15", "tier": "national_sub" },
+    { "id": "M25", "name": "中国医师协会神经外科医师年会", "field_id": "vascular", "aliases": ["CCNS", "神经外科医师年会"], "org_id": "O16", "tier": "national_sub" },
+    { "id": "M26", "name": "中国医师协会中国高血压大会", "field_id": "vascular", "aliases": ["中国高血压大会"], "org_id": "O17", "tier": "national_sub" },
+    { "id": "M27", "name": "中国医师协会心脏重症专业委员会年会", "field_id": "cardiovascular", "aliases": ["CCC", "心脏重症年会"], "org_id": "O18", "tier": "national_sub" },
+    { "id": "M28", "name": "中华医学会行为医学学术会议", "field_id": "neurology", "aliases": ["行为医学学术会议"], "org_id": "O19", "tier": "national_sub" }
+  ],
+  "international_anchors": [
+    { "id": "INT-ADA", "name": "American Diabetes Association Scientific Sessions (ADA)", "field_id": "diabetes", "abbr": "ADA", "tier": "international_top", "url": "https://diabetes.org/scientific-sessions" },
+    { "id": "INT-EASD", "name": "European Association for the Study of Diabetes Annual Meeting (EASD)", "field_id": "diabetes", "abbr": "EASD", "tier": "international_top", "url": "https://www.easd.org/" },
+    { "id": "INT-AHA", "name": "American Heart Association Scientific Sessions (AHA)", "field_id": "cardiovascular", "abbr": "AHA", "tier": "international_top", "url": "https://professional.heart.org/scientific-sessions" },
+    { "id": "INT-ACC", "name": "American College of Cardiology Annual Scientific Session (ACC)", "field_id": "cardiovascular", "abbr": "ACC", "tier": "international_top", "url": "https://accscientificsession.acc.org/" },
+    { "id": "INT-ESC", "name": "European Society of Cardiology Congress (ESC)", "field_id": "cardiovascular", "abbr": "ESC", "tier": "international_top", "url": "https://www.escardio.org/Congresses-Events/ESC-Congress" },
+    { "id": "INT-EULAR", "name": "European Alliance of Associations for Rheumatology Congress (EULAR)", "field_id": "rheumatology", "abbr": "EULAR", "tier": "international_top", "url": "https://congress.eular.org/" },
+    { "id": "INT-ACR", "name": "American College of Rheumatology Convergence (ACR Convergence)", "field_id": "rheumatology", "abbr": "ACR", "tier": "international_top", "url": "https://rheumatology.org/annual-meeting" },
+    { "id": "INT-AAN", "name": "American Academy of Neurology Annual Meeting (AAN)", "field_id": "neurology", "abbr": "AAN", "tier": "international_top", "url": "https://www.aan.com/events/annual-meeting" },
+    { "id": "INT-EAN", "name": "European Academy of Neurology Congress (EAN)", "field_id": "neurology", "abbr": "EAN", "tier": "international_top", "url": "https://www.ean.org/congress" },
+    { "id": "INT-AAIC", "name": "Alzheimer's Association International Conference (AAIC)", "field_id": "neurology", "abbr": "AAIC", "tier": "international_top", "url": "https://aaic.alz.org/" },
+    { "id": "INT-ATS", "name": "American Thoracic Society International Conference (ATS)", "field_id": "respiratory", "abbr": "ATS", "tier": "international_top", "url": "https://conference.thoracic.org/" },
+    { "id": "INT-ERS", "name": "European Respiratory Society International Congress (ERS)", "field_id": "respiratory", "abbr": "ERS", "tier": "international_top", "url": "https://www.ersnet.org/congress-and-events/congress/" }
+  ],
+  "common_channels": [
+    { "id": "C01", "name": "中华医学会组织与计划", "url": "https://www.cma.org.cn/col/col31/" },
+    { "id": "C02", "name": "中国医师协会官网公告", "url": "https://www.cmda.net/" },
+    { "id": "C03", "name": "中华医学会会务服务平台", "url": "https://www.sciconf.cn/cn/index/50" },
+    { "id": "C04", "name": "搜会网全国医学学术会议日历", "url": "https://www.meetingchina.org/site/meeting/channel/index.html" },
+    { "id": "C05", "name": "中国学术会议在线 / 医脉通会议", "url": "https://www.medlive.cn/meeting/" },
+    { "id": "C06", "name": "MedSci 梅斯医学学术会议数据库", "url": "https://www.medsci.cn/meeting/" }
+  ],
+  "discovery_matrix": {
+    "dimensions": {
+      "disease_keywords": {
+        "rheumatology": ["类风湿关节炎", "系统性红斑狼疮", "干燥综合征", "强直性脊柱炎", "血管炎", "风湿免疫"],
+        "diabetes": ["糖尿病", "肥胖", "代谢综合征", "胰岛素抵抗", "内分泌代谢", "减重与代谢手术"],
+        "neurology": ["认知障碍", "阿尔茨海默病", "帕金森病", "神经免疫", "抑郁症", "双相情感障碍", "癫痫", "脑血管病"],
+        "cardiovascular": ["冠心病", "心力衰竭", "心肌病", "心律失常", "心脏重症", "动脉粥样硬化"],
+        "respiratory": ["慢阻肺", "慢性阻塞性肺疾病", "支气管哮喘", "间质性肺疾病", "肺动脉高压", "呼吸衰竭"],
+        "vascular": ["泛血管", "动脉硬化", "脑血管病", "糖尿病肾病", "糖尿病足", "肺栓塞", "微血管病变"]
+      },
+      "translational_keywords": ["标志物", "Biomarker", "多组学", "转录组", "蛋白质组", "代谢组", "外显子测序", "临床试验", "多中心队列", "早期诊断", "分子分型", "精准医学", "科研转化"],
+      "event_suffixes": ["学术年会", "高峰论坛", "国际研讨会", "全国学术会议", "Congress", "Scientific Sessions", "Annual Meeting", "Symposium", "Summit"]
+    },
+    "sales_cities": ["北京", "上海", "广州", "深圳", "杭州", "苏州", "南京", "长沙", "成都", "重庆"]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "reading_note": "依据本轮已保存PubMed摘要及官方目录读取内容整理；人工指AI复核，待用户/mentor校准。未全文精读。",
+  "date_overrides": {
+    "PMID:42599779": {"date":"2026-08-14","basis":"publisher_online_verified","source_url":"https://diabetesjournals.org/diabetes/article/75/10/1794/172388/Human-Loss-of-Function-ZNRF3-Mutation-Impairs","evidence":"出版社文章页标注Obesity Studies | August 14 2026；十月为卷期，不计入8月17日起的新发表窗口。"}
+  },
+  "additional_directory_records": [
+    {"title":"CXCL8在1型糖尿病胰岛炎症中对巨噬细胞STAT1-IFN-Ⅰ信号轴的调控作用","journal":"中华糖尿病杂志","doi":"10.3760/cma.j.cn115791-20251216-00645","authors":"付婷 张艳 周云财 张月馨 吴梦 杨大恒 陈红兵","date":"2026-10-20","type":"original_reviewed","source_url":"https://cs.medjournals.cn/cn/zhtnbzz/current","source_locator":"本轮首次官方目录读取：2026年18卷10期，原工具记录turn155view0，第60—71行；后续页面有空壳返回","summary":"结合人群样本、公开组学数据和细胞实验研究T1D胰岛炎症相关通路；属于机制与临床样本结合的研究，诊断用途仍需进一步验证。"},
+    {"title":"糖化血红蛋白水平与美国成人脑卒中患病风险的关联","journal":"中华糖尿病杂志","doi":"10.3760/cma.j.cn115791-20260506-00208","authors":"张雪莲 柳洪宙 闫双通","date":"2026-10-20","type":"original_reviewed","source_url":"https://cs.medjournals.cn/cn/zhtnbzz/current","source_locator":"本轮首次官方目录读取：2026年18卷10期，第72—83行","summary":"基于NHANES开展横断面分析，观察糖化血红蛋白与卒中患病的关联及非线性关系；关联结果不能作为因果结论。"},
+    {"title":"C反应蛋白-甘油三酯葡萄糖指数联合25-羟基维生素D对糖尿病足严重程度的评估价值","journal":"中华糖尿病杂志","doi":"10.3760/cma.j.cn115791-20260122-000441","authors":"杨睿斐 陈雪迪 刘媛媛 权金星 李懋 张燕燕 王金羊","date":"2026-10-20","type":"type_pending","source_url":"https://cs.medjournals.cn/cn/zhtnbzz/current","source_locator":"本轮首次官方目录读取：2026年18卷10期，第84—94行；仅核题名作者DOI","summary":null},
+    {"title":"干细胞来源再生胰岛移植治疗糖尿病：临床转化策略与核心挑战","journal":"中华内分泌代谢杂志","doi":"10.3760/cma.j.cn311282-20260525-00231","authors":"凌清 李拓 殷浩 石勇铨","date":"2026-10-25","type":"review_or_guideline","source_url":"https://cs.medjournals.cn/cn/zhnfmdxzz/current","source_locator":"本轮首次官方目录读取：2026年42卷10期，第77—90行，述评","summary":"梳理再生胰岛移植的制备、免疫保护与临床实施问题，作为方向背景保存，不计原创研究数量。"},
+    {"title":"三个青少年起病的成人型糖尿病3型(MODY3)家系的临床特点及遗传学分析","journal":"中华内分泌代谢杂志","doi":"10.3760/cma.j.cn311282-20260225-00097","authors":"任文清 于永卓 徐丽丽 王韵阳 王忠超 吕文山 李树法 董冰子 薛瑜 王颜刚","date":"2026-10-25","type":"case_report","source_url":"https://cs.medjournals.cn/cn/zhnfmdxzz/current","source_locator":"本轮首次官方目录读取：2026年42卷10期，第92—105行","summary":"报告三个MODY3家系及遗传学检查，作为病例线索保存，与人群验证研究分开。"}
+  ],
+  "highlights": {
+    "PMID:42635552": {"question":"HTD1801单药治疗能否改善T2D血糖控制？","summary":"纪立农等作者参与的随机安慰剂对照三期试验，评估HTD1801单药治疗；24周降糖主要终点达到，长期疗效和安全性仍需持续跟踪。","reason":"三期随机对照证据，临床问题与主要终点明确。","limit":"首轮已读摘要；通讯作者、各中心PI及完整安全性细节待全文核对。","board":"M04"},
+    "PMID:42820639": {"question":"双受体激动剂能否改善肥胖合并T2D的体重与血糖？","summary":"多国三期随机试验纳入肥胖合并T2D成人，比较survodutide与安慰剂；报告减重及血糖改善，同时需要关注胃肠道不良事件。","reason":"多国三期随机试验，新增联合代谢治疗结果。","limit":"研究性药物，不能据此推断上市或适应证；纪立农为共同作者，未确认其为总PI。","board":"M04"},
+    "PMID:42678439": {"question":"不同T2D亚型的胰岛细胞变化有何差异？","summary":"研究者把临床分型与人胰岛单细胞转录组结合，比较不同亚型的细胞构成和分子变化，为疾病异质性的研究提供线索。","reason":"连接临床分型与细胞层面的研究设计。","limit":"样本规模与外部验证范围需结合全文核对；不等于分型已能指导临床治疗。","board":"M01"},
+    "PMID:42709505": {"question":"多时点蛋白检测比单时点增加了什么信息？","summary":"MESA队列研究比较同一人多时点与单时点蛋白测量，发现纵向分析提供不同的疾病关联和通路线索。","reason":"纵向设计提供超出单次测量的信息。","limit":"已有ADA记录可能为同研究版本，应核DOI和队列关联；本页计论文，不计独立研究数。","board":"M01"},
+    "PMID:42821458": {"question":"血液甲基化信息能否提前识别T1D肾病进展风险？","summary":"研究者结合血液甲基化、验证人群与肾细胞组学，研究糖尿病肾病的风险预测及生物学联系。","reason":"从发现走向验证，并尝试连接血液信号与器官机制。","limit":"首轮仅摘要；样本划分、增益大小和跨人群适用性待全文复核。","board":"M05"},
+    "PMID:42585298": {"question":"妊娠糖尿病亚型与产后长期代谢风险有何关联？","summary":"随访研究考察不同GDM亚型与产后10至14年的心血管代谢结局，提示分型与长期随访管理之间的研究联系。","reason":"临床分型连接长期结局。","limit":"观察性关联，分型差异不能直接解释为干预获益。","board":"M10"},
+    "PMID:42848438": {"question":"进食顺序如何影响餐后血糖的调节通路？","summary":"Daniel J. Drucker等作者参与的小鼠实验，研究葡萄糖摄入前给予橄榄油对胃排空和血糖的影响，以及相关激素和神经通路。","reason":"具有明确的生理机制问题，可连接营养干预研究。","limit":"动物证据；Drucker为共同作者，论文团队归属与通讯作者仍待核实。","board":"M09"}
+  },
+  "role_seeds": [
+    {"person_id":"LIT-PERSON:drucker","display_name":"Daniel J. Drucker","author_names":["Daniel J Drucker"],"affiliation_terms":["Sinai","Lunenfeld"],"tier":"international","academy_kind":"境外科学院/医学科学院成员","domain":"肽类激素、糖尿病与代谢转化研究","role_source_url":"https://www.sinaihealth.ca/research/researchers/daniel-drucker","role_basis":"机构官方研究者页记载其研究组、任职，以及2021年当选美国国家科学院、2023年当选美国国家医学院。","tenure":"已注明年份；其他任职按页面时点","leadership_status":"paper_leadership_pending"},
+    {"person_id":"LIT-PERSON:ji-linong","display_name":"纪立农 / Linong Ji","author_names":["Linong Ji"],"affiliation_terms":["Peking University People's Hospital","Peking University Diabetes"],"tier":"national","academy_kind":null,"domain":"糖尿病临床研究","role_source_url":"https://diab.cma.org.cn/cn/weiyuanhuiweiyuan.aspx?Oid=1423","role_basis":"学会官方简介列出中华医学会糖尿病学分会主任委员等全国性学术角色，单位为北京大学人民医院。页面任期未明确，不认定均为现任。","tenure":"历届任职/任期待核","leadership_status":"paper_leadership_pending"},
+    {"person_id":"LIT-PERSON:ning-guang","display_name":"宁光 / Guang Ning","author_names":["Guang Ning"],"affiliation_terms":["Ruijin","Shanghai Jiao Tong"],"tier":"national","academy_kind":"中国工程院院士","domain":"内分泌与代谢病临床和基础研究","role_source_url":"https://www.cae.cn/cae/html/main/colys/35045107.html","role_basis":"中国工程院官方院士页记载宁光于2015年当选院士；英文姓名及瑞金单位匹配仍按来源作者身份复核，保留人物参与线索。","tenure":"2015年当选","leadership_status":"paper_leadership_pending"}
+  ]
+}

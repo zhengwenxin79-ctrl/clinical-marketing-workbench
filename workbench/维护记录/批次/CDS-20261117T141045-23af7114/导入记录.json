@@ -1,0 +1,13 @@
+{
+  "run_id": "CDS-20261117T141045-23af7114",
+  "imported_at": "2026-11-17T06:10:45+00:00",
+  "original_filename": "CDS_全日程结构化.json",
+  "source_path": "维护记录/批次/CDS-20261117T141045-23af7114/原始资料/上传原文件.json",
+  "source_sha256": "464c15c4df860f16fb66fe72460494c304a5930c0b8d989cb5a166d363820047",
+  "byte_size": 653935,
+  "note": "按用户指示：用已有CDS资料完成导入、查看变化、确认更新、核验导出首轮试跑；未新增联网采集。",
+  "new_collection": false,
+  "status": "awaiting_confirmation",
+  "diff_sha256": "2513ac7d45c8a47f8bde590fe2814ed923f6e43df1294aac12abea4224f20c22",
+  "source_observed_on": "2026-11-16"
+}

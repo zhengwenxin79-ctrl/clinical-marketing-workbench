@@ -1,0 +1,49 @@
+{
+  "date": "2026-11-16",
+  "stage": "CDS全日程会前重点议题榜；客户机会已收起",
+  "status": "passed",
+  "scope": {
+    "total_source_rows": 797,
+    "all_academic": 606,
+    "ranked_reports": 579,
+    "excluded_counts": {
+      "培训": 16,
+      "综合题目待细分": 6,
+      "科研方法与投稿": 5
+    },
+    "all_speakers": 533,
+    "topic_count": 44,
+    "parent_count": 12,
+    "profiles_requested": 230,
+    "profiles_read": 227,
+    "profiles_with_bio": 196,
+    "recognized_leaders": 126,
+    "ranked_leaders": 115,
+    "plenary_reports": 11,
+    "all_key_reports": 270
+  },
+  "data_checks": 5949,
+  "browser_checks": [
+    "默认前12条与新版导航",
+    "全部44个具体议题可展开",
+    "姓名搜索、空结果及研究主题筛选",
+    "去专家项对照排序及角色筛选",
+    "44个议题详情、学术角色和分项来源",
+    "同名分单位、11位大会主讲、专家主题筛选",
+    "47位全国/领域角色及大会主讲人的个人深链接",
+    "评分公式、来源和27条单列报告可展开",
+    "手机390px及平板768px无整页横向溢出",
+    "file离线深链接及旧客户页路由收起"
+  ],
+  "protected_files_unchanged": true,
+  "published_to_framework": false,
+  "published_to_github": false,
+  "customer_archive": "客户资料存档_2026-11-16.html",
+  "files": {
+    "index.html": "97cd2675668b937e1f43b107d485a0a1f290ac112a316c20fa50687d589bf37e",
+    "会前重点议题数据.json": "e840b84a48f49e979a92f825f9b1b244c9cd7d26c043070270884cc44a635dd4",
+    "生成会前重点议题榜.py": "2a953c56b8bb203202384e9e3f719233cc37b2a923c6cf8c6c6c001f7cd3c480",
+    "会前重点议题模板.html": "3fcb0f2c072c8cc19d269f86786e852c61608303c8867394d3d005937c1bf1de",
+    "会前重点议题榜说明.md": "1885303d00c023764c9602569f4e70f62f8b6f67daa3d40098d9aa7cead3e69f"
+  }
+}

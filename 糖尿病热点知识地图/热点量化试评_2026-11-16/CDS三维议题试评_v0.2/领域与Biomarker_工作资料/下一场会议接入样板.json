@@ -1,0 +1,7 @@
+{
+  "status": "template_only_pending_review",
+  "auto_import": false,
+  "source": {"id": "会议缩写-年份", "name": "会议名称", "region": "国内或国际", "official_url": "", "collected_on": "YYYY-MM-DD", "coverage": "完整日程/部分日程/全摘要/定向样本", "total_eligible_records": null},
+  "record_example": {"id": "来源ID-原始编号", "original_id": "", "title": "", "field_id": "统一目录稳定ID", "field_basis": "", "team": "", "institution": "", "role_evidence_url": "", "source_url": "", "reading_level": "日程题名/摘要/全文", "has_results": false, "sample": "", "method": "", "design": "", "result": "", "gap": "", "publication_date": null, "date_basis": "", "doi": null, "trial_id": null, "cohort": null, "version_relations": [], "biomarker_bindings": [], "review_status": "pending"},
+  "review_before_integration": ["核官方来源与覆盖分母", "核原始题名和日期依据", "核团队角色来源", "核样本/方法/结果读取层次", "核主要议题和指标关联", "核版本、注册号和共享队列", "核转化阶段与技术参与环节"]
+}

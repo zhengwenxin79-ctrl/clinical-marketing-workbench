@@ -1,0 +1,57 @@
+{
+  "result": "passed",
+  "revision": "Biomarker显式量化补充",
+  "new_collection": false,
+  "published": false,
+  "counts": {
+    "fields": 45,
+    "biomarkers": 28,
+    "scored_biomarkers": 26,
+    "reference_markers": 2
+  },
+  "weights": {
+    "会议提及": 30,
+    "去重研究线索组": 30,
+    "已核学术带头人": 20,
+    "近90天更新": 20
+  },
+  "scoring": "本地资料已核关注分；待核项保留；不自动升级热点等级",
+  "data_verification": {
+    "result": "passed",
+    "checks": [
+      "26非参照词条各有四项与100分总权重；已核分/待核范围与舍入相符，参照无分值",
+      "A01/R03一组一场；已核33.9分，角色和日期两项待核",
+      "不继承H30领域专家；R16不使用12月卷期冒充近期更新",
+      "R11三指标同证据同分并列；近期日期按原记录判定",
+      "CDS所有旧字段、领域议题、统一原始记录与来源保持一致",
+      "正式站、旧资料、项目主页、交接摘要等7个保护文件哈希保持"
+    ],
+    "new_collection": false,
+    "published": false
+  },
+  "page_verification": {
+    "result": "passed",
+    "checks": [
+      "词云上方显式量化榜、四分项、前6条/26条展开",
+      "技术/优先级/热点筛选不改变分母，参照不计分",
+      "28词条分项数值、依据链接与参照处理",
+      "A01/R03同研究仅一组；待核角色/日期与已核分分开",
+      "390/768/1440px无整页横向溢出",
+      "规则页、file离线量化榜、无JS错误"
+    ],
+    "errors": [],
+    "browser": "独立Chrome for Testing；临时profile；finally关闭",
+    "new_collection": false,
+    "published": false
+  },
+  "files": {
+    "index.html": "34f4b947ffd42413fa917bf6e96ee834acd035a135bff392029572c45e54a430",
+    "构建领域与Biomarker数据.py": "594691b30f50648b8e5194c9df834d805d260d7e83df25a6168ff942f47571b6",
+    "Biomarker量化.py": "735f40b67ec523035ebdf92801cd1caa6bcd66ccbf6052a849df844258c3db1b",
+    "生成会前重点议题榜.py": "a88061a3015f88964841efdd39b01d508bb335c6cea29d1d762223683f7d9281",
+    "会前重点议题模板.html": "6a2174375c4052734708e112b09a56ed30635ccfe62863374edbb8db34fff896",
+    "领域与Biomarker框架说明.md": "158735ff7d4c1e6b7bcba9278e3159eb7262b2c2f36303e218f50a7ec1d1a400",
+    "领域与Biomarker_工作资料/扩展界面.js": "d87511ccb441f4e184ae2e804bedefdd0db2af000988869fb6ca4c316afb55e7",
+    "领域与Biomarker_工作资料/Biomarker量化指标与规则.json": "a13023a8102987113b6c6ac80a4450249a21a989b11b47f0321c93581d49e125"
+  }
+}

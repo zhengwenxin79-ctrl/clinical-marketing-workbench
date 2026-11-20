@@ -1,0 +1,24 @@
+{
+  "result": "generated",
+  "database_sha256": "645adc48a9af2eb67a9df04a0f4990fce706a5a4fcf2fe467c8e2372f0e78568",
+  "html_sha256": "f5f49a8d2aefaef1c0fd64aa3bc884b502b368269e5ca8840e58fceee9dcf9da",
+  "snapshot_sha256": "9b10717b087e17c966199782d3f8cc6f96265b674b359065c987420c3c3b950e",
+  "counts": {
+    "boards": 12,
+    "topics": 66,
+    "conference_topics": 58,
+    "paper_extensions": 8,
+    "papers": 618,
+    "primary_papers": 160,
+    "reports": 2628,
+    "talk_reports": 1256,
+    "expert_records": 2277,
+    "known_role_records": 139,
+    "biomarkers": 39,
+    "unclassified_biomarkers": 3,
+    "reference_biomarkers": 7
+  },
+  "database_unchanged": true,
+  "new_collection": false,
+  "published": false
+}

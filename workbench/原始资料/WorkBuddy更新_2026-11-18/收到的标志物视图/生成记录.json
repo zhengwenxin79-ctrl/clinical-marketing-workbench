@@ -1,0 +1,16 @@
+{
+  "result": "generated",
+  "database_sha256": "6a24c8b5cbe9b169dbe5f34f080969574e3361236ab7246c2a0356c5d88d5179",
+  "snapshot_sha256": "fc4c1d9f807426f6647db77760ed1eb84dd7ba69291c3334fb178f620b21e9ab",
+  "html_sha256": "ee1d3d3e202dc1698f983d42454c961a6992e5bd1614cf7e65ef9d5682eaea6d",
+  "counts": {
+    "biomarkers": 19,
+    "contexts": 22,
+    "evidence": 24,
+    "matches": 11,
+    "reviews": 30
+  },
+  "database_unchanged": true,
+  "new_collection": false,
+  "published": false
+}

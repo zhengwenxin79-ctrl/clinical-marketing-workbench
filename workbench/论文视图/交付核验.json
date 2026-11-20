@@ -1,0 +1,43 @@
+{
+  "result": "partial_collection_verified",
+  "window": [
+    "2026-08-17",
+    "2026-11-17"
+  ],
+  "papers": 618,
+  "in_window": 506,
+  "core_journal_records": 473,
+  "core_counted": 162,
+  "supplement_metadata_read": 114,
+  "chinese_partial_records": 31,
+  "highlights": 7,
+  "author_records": 6058,
+  "role_people": 3,
+  "verified_name_institution_people": 2,
+  "team_leadership": "均待通讯作者/课题PI证据，不升级共同署名",
+  "old_tables_preserved": 40,
+  "old_conference_view_files_preserved": 31,
+  "old_source_files_verified": 448,
+  "browser_checks": [
+    "首页12板块、主池162条、7篇重点进展及来源说明",
+    "论文详情、角色/团队区分、关闭返回原页面",
+    "作者检索、筛选、全类型和无结果状态",
+    "中文31条部分目录独立呈现，不混入主池",
+    "三位人物定向核对，宁光身份待核及窗口外记录保持",
+    "六刊与主题补漏检索式、真实覆盖和统计口径",
+    "file://论文深链和Esc返回",
+    "会议总入口到论文热点跳转",
+    "桌面/平板/手机布局，无整页横向溢出"
+  ],
+  "database_sha256": "96e84944be35e096cddf2e6cb7801b82279f635c4fdcad3177f3d3cb73f0a6c6",
+  "html_sha256": "97f2114965581d89e7b94f0fb3e7c7a5167451d6811bdd3221f531d853344243",
+  "remaining_gaps": [
+    "中文两刊近三个月完整目录和文章摘要未完全取得",
+    "出版社目录与PubMed收录差异待核",
+    "原创候选类型及板块全量人工校准",
+    "通讯作者/PI/团队归属与更多人物角色核对"
+  ],
+  "published": false,
+  "scheduled": false,
+  "biomarker_changes": false
+}

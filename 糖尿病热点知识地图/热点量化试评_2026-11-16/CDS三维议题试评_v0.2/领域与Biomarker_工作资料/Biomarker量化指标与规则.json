@@ -1,0 +1,2547 @@
+{
+  "rules": {
+    "version": "0.1",
+    "label": "本地资料关注分",
+    "weights": {
+      "会议提及": 30,
+      "去重研究线索组": 30,
+      "已核学术带头人": 20,
+      "近90天更新": 20
+    },
+    "conference_denominator": 2,
+    "maxima": {
+      "study_count": 2,
+      "leader_count": 1,
+      "recent_count": 1
+    },
+    "window": "2026-08-19—2026-11-16",
+    "normalization": "会议项＝15×已见会议数（当前登记CDS、ADA两场）。其余项＝权重×ln(1+已见量)/ln(1+本轮非参照指标最大已见量)，分项不超过其权重；总分用未舍入分项相加后保留1位小数。",
+    "missing": "缺项分值显示待核，已核关注分仅累计已有证据分，是资料内关注下限；可补分上限只表示按本轮规则仍可补的分，不是置信区间。",
+    "ranking": "按已核关注分降序，同分并列，次序按词条ID。未知角色或日期补齐可能改变排序；筛选不重算归一化分母。",
+    "cloud": "词云字号=18+12×已核关注分/100（像素，保留1位小数）；参照指标固定18px。",
+    "scope": "只计指标直接绑定的现有CDS/ADA/论文记录；不从领域话题继承专家和会议，不将参照用途计入新指标关注。分数用于当前资料池内比较，不代表领域总体热度、研究正确性或临床成熟度。",
+    "trial_status": "试行口径，待mentor校准；热点等级与验证阶段继续单独判断。"
+  },
+  "rows": [
+    {
+      "id": "rna35",
+      "label": "35基因RNA组合",
+      "conference_ids": [],
+      "conference_count": 0,
+      "study_count": 1,
+      "study_ids": [
+        "R16"
+      ],
+      "leader_count": 0,
+      "leader_ids": [],
+      "recent_count": 0,
+      "recent_ids": [],
+      "unknown_date_ids": [],
+      "unknown_role_ids": [
+        "P-R16"
+      ],
+      "pending_result_ids": [],
+      "evidence_ids": [
+        "P-R16"
+      ],
+      "record_count": 1,
+      "date_label": "2026-08-19—2026-11-16",
+      "score": 18.9,
+      "ceiling": 38.9,
+      "rank": 13,
+      "components": [
+        {
+          "key": "conference_count",
+          "name": "会议提及",
+          "weight": 30,
+          "raw": 0,
+          "maximum": 2,
+          "score": 0,
+          "observed_points": 0,
+          "pending": false,
+          "basis": "当前CDS、ADA两场，每见一场明确绑定资料记15分；同一场多条不重复加分。",
+          "gaps": [
+            "ADA为定向样本，仅反映当前资料的已见覆盖，不推断全会或全领域缺席。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "study_count",
+          "name": "去重研究线索组",
+          "weight": 30,
+          "raw": 1,
+          "maximum": 2,
+          "score": 18.93,
+          "observed_points": 18.93,
+          "pending": false,
+          "basis": "同研究会议/论文合并；疑似重叠保守计组，不等同经核独立研究。",
+          "gaps": [
+            "独立队列、团队与样本重叠仍需核实。"
+          ],
+          "evidence_ids": [
+            "P-R16"
+          ]
+        },
+        {
+          "key": "leader_count",
+          "name": "已核学术带头人",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": null,
+          "observed_points": 0.0,
+          "pending": true,
+          "basis": "仅本指标直接绑定报告中有角色依据的主讲人；不继承整个领域的专家人数。",
+          "gaps": [
+            "1条绑定记录的作者/主讲角色仍待核。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "recent_count",
+          "name": "近90天更新",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": 0.0,
+          "observed_points": 0.0,
+          "pending": false,
+          "basis": "按已读结果的可核首发日期计去重研究组；计划日、卷期日和发现日不代替首发。",
+          "gaps": [],
+          "evidence_ids": []
+        }
+      ],
+      "pending_count": 1,
+      "reference": false
+    },
+    {
+      "id": "malat1",
+      "label": "MALAT1",
+      "conference_ids": [],
+      "conference_count": 0,
+      "study_count": 1,
+      "study_ids": [
+        "R17"
+      ],
+      "leader_count": 0,
+      "leader_ids": [],
+      "recent_count": 0,
+      "recent_ids": [],
+      "unknown_date_ids": [],
+      "unknown_role_ids": [
+        "P-R17"
+      ],
+      "pending_result_ids": [],
+      "evidence_ids": [
+        "P-R17"
+      ],
+      "record_count": 1,
+      "date_label": "2026-08-19—2026-11-16",
+      "score": 18.9,
+      "ceiling": 38.9,
+      "rank": 13,
+      "components": [
+        {
+          "key": "conference_count",
+          "name": "会议提及",
+          "weight": 30,
+          "raw": 0,
+          "maximum": 2,
+          "score": 0,
+          "observed_points": 0,
+          "pending": false,
+          "basis": "当前CDS、ADA两场，每见一场明确绑定资料记15分；同一场多条不重复加分。",
+          "gaps": [
+            "ADA为定向样本，仅反映当前资料的已见覆盖，不推断全会或全领域缺席。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "study_count",
+          "name": "去重研究线索组",
+          "weight": 30,
+          "raw": 1,
+          "maximum": 2,
+          "score": 18.93,
+          "observed_points": 18.93,
+          "pending": false,
+          "basis": "同研究会议/论文合并；疑似重叠保守计组，不等同经核独立研究。",
+          "gaps": [
+            "独立队列、团队与样本重叠仍需核实。"
+          ],
+          "evidence_ids": [
+            "P-R17"
+          ]
+        },
+        {
+          "key": "leader_count",
+          "name": "已核学术带头人",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": null,
+          "observed_points": 0.0,
+          "pending": true,
+          "basis": "仅本指标直接绑定报告中有角色依据的主讲人；不继承整个领域的专家人数。",
+          "gaps": [
+            "1条绑定记录的作者/主讲角色仍待核。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "recent_count",
+          "name": "近90天更新",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": 0.0,
+          "observed_points": 0.0,
+          "pending": false,
+          "basis": "按已读结果的可核首发日期计去重研究组；计划日、卷期日和发现日不代替首发。",
+          "gaps": [],
+          "evidence_ids": []
+        }
+      ],
+      "pending_count": 1,
+      "reference": false
+    },
+    {
+      "id": "pvt1",
+      "label": "PVT1",
+      "conference_ids": [],
+      "conference_count": 0,
+      "study_count": 1,
+      "study_ids": [
+        "R17"
+      ],
+      "leader_count": 0,
+      "leader_ids": [],
+      "recent_count": 0,
+      "recent_ids": [],
+      "unknown_date_ids": [],
+      "unknown_role_ids": [
+        "P-R17"
+      ],
+      "pending_result_ids": [],
+      "evidence_ids": [
+        "P-R17"
+      ],
+      "record_count": 1,
+      "date_label": "2026-08-19—2026-11-16",
+      "score": 18.9,
+      "ceiling": 38.9,
+      "rank": 13,
+      "components": [
+        {
+          "key": "conference_count",
+          "name": "会议提及",
+          "weight": 30,
+          "raw": 0,
+          "maximum": 2,
+          "score": 0,
+          "observed_points": 0,
+          "pending": false,
+          "basis": "当前CDS、ADA两场，每见一场明确绑定资料记15分；同一场多条不重复加分。",
+          "gaps": [
+            "ADA为定向样本，仅反映当前资料的已见覆盖，不推断全会或全领域缺席。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "study_count",
+          "name": "去重研究线索组",
+          "weight": 30,
+          "raw": 1,
+          "maximum": 2,
+          "score": 18.93,
+          "observed_points": 18.93,
+          "pending": false,
+          "basis": "同研究会议/论文合并；疑似重叠保守计组，不等同经核独立研究。",
+          "gaps": [
+            "独立队列、团队与样本重叠仍需核实。"
+          ],
+          "evidence_ids": [
+            "P-R17"
+          ]
+        },
+        {
+          "key": "leader_count",
+          "name": "已核学术带头人",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": null,
+          "observed_points": 0.0,
+          "pending": true,
+          "basis": "仅本指标直接绑定报告中有角色依据的主讲人；不继承整个领域的专家人数。",
+          "gaps": [
+            "1条绑定记录的作者/主讲角色仍待核。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "recent_count",
+          "name": "近90天更新",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": 0.0,
+          "observed_points": 0.0,
+          "pending": false,
+          "basis": "按已读结果的可核首发日期计去重研究组；计划日、卷期日和发现日不代替首发。",
+          "gaps": [],
+          "evidence_ids": []
+        }
+      ],
+      "pending_count": 1,
+      "reference": false
+    },
+    {
+      "id": "tnfr",
+      "label": "TNFR1/2",
+      "conference_ids": [],
+      "conference_count": 0,
+      "study_count": 1,
+      "study_ids": [
+        "R11"
+      ],
+      "leader_count": 0,
+      "leader_ids": [],
+      "recent_count": 1,
+      "recent_ids": [
+        "P-R11"
+      ],
+      "unknown_date_ids": [],
+      "unknown_role_ids": [
+        "P-R11"
+      ],
+      "pending_result_ids": [],
+      "evidence_ids": [
+        "P-R11"
+      ],
+      "record_count": 1,
+      "date_label": "2026-08-19—2026-11-16",
+      "score": 38.9,
+      "ceiling": 58.9,
+      "rank": 3,
+      "components": [
+        {
+          "key": "conference_count",
+          "name": "会议提及",
+          "weight": 30,
+          "raw": 0,
+          "maximum": 2,
+          "score": 0,
+          "observed_points": 0,
+          "pending": false,
+          "basis": "当前CDS、ADA两场，每见一场明确绑定资料记15分；同一场多条不重复加分。",
+          "gaps": [
+            "ADA为定向样本，仅反映当前资料的已见覆盖，不推断全会或全领域缺席。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "study_count",
+          "name": "去重研究线索组",
+          "weight": 30,
+          "raw": 1,
+          "maximum": 2,
+          "score": 18.93,
+          "observed_points": 18.93,
+          "pending": false,
+          "basis": "同研究会议/论文合并；疑似重叠保守计组，不等同经核独立研究。",
+          "gaps": [
+            "独立队列、团队与样本重叠仍需核实。"
+          ],
+          "evidence_ids": [
+            "P-R11"
+          ]
+        },
+        {
+          "key": "leader_count",
+          "name": "已核学术带头人",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": null,
+          "observed_points": 0.0,
+          "pending": true,
+          "basis": "仅本指标直接绑定报告中有角色依据的主讲人；不继承整个领域的专家人数。",
+          "gaps": [
+            "1条绑定记录的作者/主讲角色仍待核。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "recent_count",
+          "name": "近90天更新",
+          "weight": 20,
+          "raw": 1,
+          "maximum": 1,
+          "score": 20.0,
+          "observed_points": 20.0,
+          "pending": false,
+          "basis": "按已读结果的可核首发日期计去重研究组；计划日、卷期日和发现日不代替首发。",
+          "gaps": [],
+          "evidence_ids": [
+            "P-R11"
+          ]
+        }
+      ],
+      "pending_count": 1,
+      "reference": false
+    },
+    {
+      "id": "kim1",
+      "label": "KIM1",
+      "conference_ids": [],
+      "conference_count": 0,
+      "study_count": 1,
+      "study_ids": [
+        "R11"
+      ],
+      "leader_count": 0,
+      "leader_ids": [],
+      "recent_count": 1,
+      "recent_ids": [
+        "P-R11"
+      ],
+      "unknown_date_ids": [],
+      "unknown_role_ids": [
+        "P-R11"
+      ],
+      "pending_result_ids": [],
+      "evidence_ids": [
+        "P-R11"
+      ],
+      "record_count": 1,
+      "date_label": "2026-08-19—2026-11-16",
+      "score": 38.9,
+      "ceiling": 58.9,
+      "rank": 3,
+      "components": [
+        {
+          "key": "conference_count",
+          "name": "会议提及",
+          "weight": 30,
+          "raw": 0,
+          "maximum": 2,
+          "score": 0,
+          "observed_points": 0,
+          "pending": false,
+          "basis": "当前CDS、ADA两场，每见一场明确绑定资料记15分；同一场多条不重复加分。",
+          "gaps": [
+            "ADA为定向样本，仅反映当前资料的已见覆盖，不推断全会或全领域缺席。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "study_count",
+          "name": "去重研究线索组",
+          "weight": 30,
+          "raw": 1,
+          "maximum": 2,
+          "score": 18.93,
+          "observed_points": 18.93,
+          "pending": false,
+          "basis": "同研究会议/论文合并；疑似重叠保守计组，不等同经核独立研究。",
+          "gaps": [
+            "独立队列、团队与样本重叠仍需核实。"
+          ],
+          "evidence_ids": [
+            "P-R11"
+          ]
+        },
+        {
+          "key": "leader_count",
+          "name": "已核学术带头人",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": null,
+          "observed_points": 0.0,
+          "pending": true,
+          "basis": "仅本指标直接绑定报告中有角色依据的主讲人；不继承整个领域的专家人数。",
+          "gaps": [
+            "1条绑定记录的作者/主讲角色仍待核。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "recent_count",
+          "name": "近90天更新",
+          "weight": 20,
+          "raw": 1,
+          "maximum": 1,
+          "score": 20.0,
+          "observed_points": 20.0,
+          "pending": false,
+          "basis": "按已读结果的可核首发日期计去重研究组；计划日、卷期日和发现日不代替首发。",
+          "gaps": [],
+          "evidence_ids": [
+            "P-R11"
+          ]
+        }
+      ],
+      "pending_count": 1,
+      "reference": false
+    },
+    {
+      "id": "mmp7",
+      "label": "MMP7",
+      "conference_ids": [],
+      "conference_count": 0,
+      "study_count": 1,
+      "study_ids": [
+        "R11"
+      ],
+      "leader_count": 0,
+      "leader_ids": [],
+      "recent_count": 1,
+      "recent_ids": [
+        "P-R11"
+      ],
+      "unknown_date_ids": [],
+      "unknown_role_ids": [
+        "P-R11"
+      ],
+      "pending_result_ids": [],
+      "evidence_ids": [
+        "P-R11"
+      ],
+      "record_count": 1,
+      "date_label": "2026-08-19—2026-11-16",
+      "score": 38.9,
+      "ceiling": 58.9,
+      "rank": 3,
+      "components": [
+        {
+          "key": "conference_count",
+          "name": "会议提及",
+          "weight": 30,
+          "raw": 0,
+          "maximum": 2,
+          "score": 0,
+          "observed_points": 0,
+          "pending": false,
+          "basis": "当前CDS、ADA两场，每见一场明确绑定资料记15分；同一场多条不重复加分。",
+          "gaps": [
+            "ADA为定向样本，仅反映当前资料的已见覆盖，不推断全会或全领域缺席。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "study_count",
+          "name": "去重研究线索组",
+          "weight": 30,
+          "raw": 1,
+          "maximum": 2,
+          "score": 18.93,
+          "observed_points": 18.93,
+          "pending": false,
+          "basis": "同研究会议/论文合并；疑似重叠保守计组，不等同经核独立研究。",
+          "gaps": [
+            "独立队列、团队与样本重叠仍需核实。"
+          ],
+          "evidence_ids": [
+            "P-R11"
+          ]
+        },
+        {
+          "key": "leader_count",
+          "name": "已核学术带头人",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": null,
+          "observed_points": 0.0,
+          "pending": true,
+          "basis": "仅本指标直接绑定报告中有角色依据的主讲人；不继承整个领域的专家人数。",
+          "gaps": [
+            "1条绑定记录的作者/主讲角色仍待核。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "recent_count",
+          "name": "近90天更新",
+          "weight": 20,
+          "raw": 1,
+          "maximum": 1,
+          "score": 20.0,
+          "observed_points": 20.0,
+          "pending": false,
+          "basis": "按已读结果的可核首发日期计去重研究组；计划日、卷期日和发现日不代替首发。",
+          "gaps": [],
+          "evidence_ids": [
+            "P-R11"
+          ]
+        }
+      ],
+      "pending_count": 1,
+      "reference": false
+    },
+    {
+      "id": "longitudinal-proteins",
+      "label": "纵向蛋白特征",
+      "conference_ids": [
+        "ADA2026"
+      ],
+      "conference_count": 1,
+      "study_count": 1,
+      "study_ids": [
+        "R03"
+      ],
+      "leader_count": 0,
+      "leader_ids": [],
+      "recent_count": 0,
+      "recent_ids": [],
+      "unknown_date_ids": [
+        "P-R03"
+      ],
+      "unknown_role_ids": [
+        "P-R03",
+        "A-A01"
+      ],
+      "pending_result_ids": [],
+      "evidence_ids": [
+        "P-R03",
+        "A-A01"
+      ],
+      "record_count": 2,
+      "date_label": "2026-08-19—2026-11-16",
+      "score": 33.9,
+      "ceiling": 73.9,
+      "rank": 7,
+      "components": [
+        {
+          "key": "conference_count",
+          "name": "会议提及",
+          "weight": 30,
+          "raw": 1,
+          "maximum": 2,
+          "score": 15,
+          "observed_points": 15,
+          "pending": false,
+          "basis": "当前CDS、ADA两场，每见一场明确绑定资料记15分；同一场多条不重复加分。",
+          "gaps": [
+            "ADA为定向样本，仅反映当前资料的已见覆盖，不推断全会或全领域缺席。"
+          ],
+          "evidence_ids": [
+            "A-A01"
+          ]
+        },
+        {
+          "key": "study_count",
+          "name": "去重研究线索组",
+          "weight": 30,
+          "raw": 1,
+          "maximum": 2,
+          "score": 18.93,
+          "observed_points": 18.93,
+          "pending": false,
+          "basis": "同研究会议/论文合并；疑似重叠保守计组，不等同经核独立研究。",
+          "gaps": [
+            "独立队列、团队与样本重叠仍需核实。"
+          ],
+          "evidence_ids": [
+            "P-R03",
+            "A-A01"
+          ]
+        },
+        {
+          "key": "leader_count",
+          "name": "已核学术带头人",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": null,
+          "observed_points": 0.0,
+          "pending": true,
+          "basis": "仅本指标直接绑定报告中有角色依据的主讲人；不继承整个领域的专家人数。",
+          "gaps": [
+            "2条绑定记录的作者/主讲角色仍待核。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "recent_count",
+          "name": "近90天更新",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": null,
+          "observed_points": 0.0,
+          "pending": true,
+          "basis": "按已读结果的可核首发日期计去重研究组；计划日、卷期日和发现日不代替首发。",
+          "gaps": [
+            "1条有结果记录的首发日期待核。"
+          ],
+          "evidence_ids": []
+        }
+      ],
+      "pending_count": 2,
+      "reference": false
+    },
+    {
+      "id": "metabolite15",
+      "label": "15项代谢物组合",
+      "conference_ids": [],
+      "conference_count": 0,
+      "study_count": 1,
+      "study_ids": [
+        "R05"
+      ],
+      "leader_count": 0,
+      "leader_ids": [],
+      "recent_count": 0,
+      "recent_ids": [],
+      "unknown_date_ids": [
+        "P-R05"
+      ],
+      "unknown_role_ids": [
+        "P-R05"
+      ],
+      "pending_result_ids": [],
+      "evidence_ids": [
+        "P-R05"
+      ],
+      "record_count": 1,
+      "date_label": "2026-08-19—2026-11-16",
+      "score": 18.9,
+      "ceiling": 58.9,
+      "rank": 13,
+      "components": [
+        {
+          "key": "conference_count",
+          "name": "会议提及",
+          "weight": 30,
+          "raw": 0,
+          "maximum": 2,
+          "score": 0,
+          "observed_points": 0,
+          "pending": false,
+          "basis": "当前CDS、ADA两场，每见一场明确绑定资料记15分；同一场多条不重复加分。",
+          "gaps": [
+            "ADA为定向样本，仅反映当前资料的已见覆盖，不推断全会或全领域缺席。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "study_count",
+          "name": "去重研究线索组",
+          "weight": 30,
+          "raw": 1,
+          "maximum": 2,
+          "score": 18.93,
+          "observed_points": 18.93,
+          "pending": false,
+          "basis": "同研究会议/论文合并；疑似重叠保守计组，不等同经核独立研究。",
+          "gaps": [
+            "独立队列、团队与样本重叠仍需核实。"
+          ],
+          "evidence_ids": [
+            "P-R05"
+          ]
+        },
+        {
+          "key": "leader_count",
+          "name": "已核学术带头人",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": null,
+          "observed_points": 0.0,
+          "pending": true,
+          "basis": "仅本指标直接绑定报告中有角色依据的主讲人；不继承整个领域的专家人数。",
+          "gaps": [
+            "1条绑定记录的作者/主讲角色仍待核。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "recent_count",
+          "name": "近90天更新",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": null,
+          "observed_points": 0.0,
+          "pending": true,
+          "basis": "按已读结果的可核首发日期计去重研究组；计划日、卷期日和发现日不代替首发。",
+          "gaps": [
+            "1条有结果记录的首发日期待核。"
+          ],
+          "evidence_ids": []
+        }
+      ],
+      "pending_count": 2,
+      "reference": false
+    },
+    {
+      "id": "bile-acids",
+      "label": "次级胆汁酸",
+      "conference_ids": [
+        "ADA2026"
+      ],
+      "conference_count": 1,
+      "study_count": 1,
+      "study_ids": [
+        "免疫分群-待核重叠"
+      ],
+      "leader_count": 0,
+      "leader_ids": [],
+      "recent_count": 0,
+      "recent_ids": [],
+      "unknown_date_ids": [],
+      "unknown_role_ids": [
+        "A-A21"
+      ],
+      "pending_result_ids": [],
+      "evidence_ids": [
+        "A-A21"
+      ],
+      "record_count": 1,
+      "date_label": "2026-08-19—2026-11-16",
+      "score": 33.9,
+      "ceiling": 53.9,
+      "rank": 7,
+      "components": [
+        {
+          "key": "conference_count",
+          "name": "会议提及",
+          "weight": 30,
+          "raw": 1,
+          "maximum": 2,
+          "score": 15,
+          "observed_points": 15,
+          "pending": false,
+          "basis": "当前CDS、ADA两场，每见一场明确绑定资料记15分；同一场多条不重复加分。",
+          "gaps": [
+            "ADA为定向样本，仅反映当前资料的已见覆盖，不推断全会或全领域缺席。"
+          ],
+          "evidence_ids": [
+            "A-A21"
+          ]
+        },
+        {
+          "key": "study_count",
+          "name": "去重研究线索组",
+          "weight": 30,
+          "raw": 1,
+          "maximum": 2,
+          "score": 18.93,
+          "observed_points": 18.93,
+          "pending": false,
+          "basis": "同研究会议/论文合并；疑似重叠保守计组，不等同经核独立研究。",
+          "gaps": [
+            "独立队列、团队与样本重叠仍需核实。"
+          ],
+          "evidence_ids": [
+            "A-A21"
+          ]
+        },
+        {
+          "key": "leader_count",
+          "name": "已核学术带头人",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": null,
+          "observed_points": 0.0,
+          "pending": true,
+          "basis": "仅本指标直接绑定报告中有角色依据的主讲人；不继承整个领域的专家人数。",
+          "gaps": [
+            "1条绑定记录的作者/主讲角色仍待核。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "recent_count",
+          "name": "近90天更新",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": 0.0,
+          "observed_points": 0.0,
+          "pending": false,
+          "basis": "按已读结果的可核首发日期计去重研究组；计划日、卷期日和发现日不代替首发。",
+          "gaps": [],
+          "evidence_ids": []
+        }
+      ],
+      "pending_count": 1,
+      "reference": false
+    },
+    {
+      "id": "scfa",
+      "label": "短链脂肪酸",
+      "conference_ids": [],
+      "conference_count": 0,
+      "study_count": 1,
+      "study_ids": [
+        "R07"
+      ],
+      "leader_count": 0,
+      "leader_ids": [],
+      "recent_count": 0,
+      "recent_ids": [],
+      "unknown_date_ids": [
+        "P-R07"
+      ],
+      "unknown_role_ids": [
+        "P-R07"
+      ],
+      "pending_result_ids": [],
+      "evidence_ids": [
+        "P-R07"
+      ],
+      "record_count": 1,
+      "date_label": "2026-08-19—2026-11-16",
+      "score": 18.9,
+      "ceiling": 58.9,
+      "rank": 13,
+      "components": [
+        {
+          "key": "conference_count",
+          "name": "会议提及",
+          "weight": 30,
+          "raw": 0,
+          "maximum": 2,
+          "score": 0,
+          "observed_points": 0,
+          "pending": false,
+          "basis": "当前CDS、ADA两场，每见一场明确绑定资料记15分；同一场多条不重复加分。",
+          "gaps": [
+            "ADA为定向样本，仅反映当前资料的已见覆盖，不推断全会或全领域缺席。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "study_count",
+          "name": "去重研究线索组",
+          "weight": 30,
+          "raw": 1,
+          "maximum": 2,
+          "score": 18.93,
+          "observed_points": 18.93,
+          "pending": false,
+          "basis": "同研究会议/论文合并；疑似重叠保守计组，不等同经核独立研究。",
+          "gaps": [
+            "独立队列、团队与样本重叠仍需核实。"
+          ],
+          "evidence_ids": [
+            "P-R07"
+          ]
+        },
+        {
+          "key": "leader_count",
+          "name": "已核学术带头人",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": null,
+          "observed_points": 0.0,
+          "pending": true,
+          "basis": "仅本指标直接绑定报告中有角色依据的主讲人；不继承整个领域的专家人数。",
+          "gaps": [
+            "1条绑定记录的作者/主讲角色仍待核。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "recent_count",
+          "name": "近90天更新",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": null,
+          "observed_points": 0.0,
+          "pending": true,
+          "basis": "按已读结果的可核首发日期计去重研究组；计划日、卷期日和发现日不代替首发。",
+          "gaps": [
+            "1条有结果记录的首发日期待核。"
+          ],
+          "evidence_ids": []
+        }
+      ],
+      "pending_count": 2,
+      "reference": false
+    },
+    {
+      "id": "glp1r-r131q",
+      "label": "GLP1R R131Q",
+      "conference_ids": [],
+      "conference_count": 0,
+      "study_count": 1,
+      "study_ids": [
+        "R02"
+      ],
+      "leader_count": 0,
+      "leader_ids": [],
+      "recent_count": 0,
+      "recent_ids": [],
+      "unknown_date_ids": [
+        "P-R02"
+      ],
+      "unknown_role_ids": [
+        "P-R02"
+      ],
+      "pending_result_ids": [],
+      "evidence_ids": [
+        "P-R02"
+      ],
+      "record_count": 1,
+      "date_label": "2026-08-19—2026-11-16",
+      "score": 18.9,
+      "ceiling": 58.9,
+      "rank": 13,
+      "components": [
+        {
+          "key": "conference_count",
+          "name": "会议提及",
+          "weight": 30,
+          "raw": 0,
+          "maximum": 2,
+          "score": 0,
+          "observed_points": 0,
+          "pending": false,
+          "basis": "当前CDS、ADA两场，每见一场明确绑定资料记15分；同一场多条不重复加分。",
+          "gaps": [
+            "ADA为定向样本，仅反映当前资料的已见覆盖，不推断全会或全领域缺席。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "study_count",
+          "name": "去重研究线索组",
+          "weight": 30,
+          "raw": 1,
+          "maximum": 2,
+          "score": 18.93,
+          "observed_points": 18.93,
+          "pending": false,
+          "basis": "同研究会议/论文合并；疑似重叠保守计组，不等同经核独立研究。",
+          "gaps": [
+            "独立队列、团队与样本重叠仍需核实。"
+          ],
+          "evidence_ids": [
+            "P-R02"
+          ]
+        },
+        {
+          "key": "leader_count",
+          "name": "已核学术带头人",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": null,
+          "observed_points": 0.0,
+          "pending": true,
+          "basis": "仅本指标直接绑定报告中有角色依据的主讲人；不继承整个领域的专家人数。",
+          "gaps": [
+            "1条绑定记录的作者/主讲角色仍待核。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "recent_count",
+          "name": "近90天更新",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": null,
+          "observed_points": 0.0,
+          "pending": true,
+          "basis": "按已读结果的可核首发日期计去重研究组；计划日、卷期日和发现日不代替首发。",
+          "gaps": [
+            "1条有结果记录的首发日期待核。"
+          ],
+          "evidence_ids": []
+        }
+      ],
+      "pending_count": 2,
+      "reference": false
+    },
+    {
+      "id": "pgs",
+      "label": "多基因风险评分",
+      "conference_ids": [],
+      "conference_count": 0,
+      "study_count": 1,
+      "study_ids": [
+        "R12"
+      ],
+      "leader_count": 0,
+      "leader_ids": [],
+      "recent_count": 0,
+      "recent_ids": [],
+      "unknown_date_ids": [],
+      "unknown_role_ids": [
+        "P-R12"
+      ],
+      "pending_result_ids": [],
+      "evidence_ids": [
+        "P-R12"
+      ],
+      "record_count": 1,
+      "date_label": "2026-08-19—2026-11-16",
+      "score": 18.9,
+      "ceiling": 38.9,
+      "rank": 13,
+      "components": [
+        {
+          "key": "conference_count",
+          "name": "会议提及",
+          "weight": 30,
+          "raw": 0,
+          "maximum": 2,
+          "score": 0,
+          "observed_points": 0,
+          "pending": false,
+          "basis": "当前CDS、ADA两场，每见一场明确绑定资料记15分；同一场多条不重复加分。",
+          "gaps": [
+            "ADA为定向样本，仅反映当前资料的已见覆盖，不推断全会或全领域缺席。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "study_count",
+          "name": "去重研究线索组",
+          "weight": 30,
+          "raw": 1,
+          "maximum": 2,
+          "score": 18.93,
+          "observed_points": 18.93,
+          "pending": false,
+          "basis": "同研究会议/论文合并；疑似重叠保守计组，不等同经核独立研究。",
+          "gaps": [
+            "独立队列、团队与样本重叠仍需核实。"
+          ],
+          "evidence_ids": [
+            "P-R12"
+          ]
+        },
+        {
+          "key": "leader_count",
+          "name": "已核学术带头人",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": null,
+          "observed_points": 0.0,
+          "pending": true,
+          "basis": "仅本指标直接绑定报告中有角色依据的主讲人；不继承整个领域的专家人数。",
+          "gaps": [
+            "1条绑定记录的作者/主讲角色仍待核。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "recent_count",
+          "name": "近90天更新",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": 0.0,
+          "observed_points": 0.0,
+          "pending": false,
+          "basis": "按已读结果的可核首发日期计去重研究组；计划日、卷期日和发现日不代替首发。",
+          "gaps": [],
+          "evidence_ids": []
+        }
+      ],
+      "pending_count": 1,
+      "reference": false
+    },
+    {
+      "id": "induced-transcript",
+      "label": "诱导转录特征",
+      "conference_ids": [],
+      "conference_count": 0,
+      "study_count": 1,
+      "study_ids": [
+        "免疫分群-待核重叠"
+      ],
+      "leader_count": 0,
+      "leader_ids": [],
+      "recent_count": 0,
+      "recent_ids": [],
+      "unknown_date_ids": [],
+      "unknown_role_ids": [
+        "P-R13"
+      ],
+      "pending_result_ids": [],
+      "evidence_ids": [
+        "P-R13"
+      ],
+      "record_count": 1,
+      "date_label": "2026-08-19—2026-11-16",
+      "score": 18.9,
+      "ceiling": 38.9,
+      "rank": 13,
+      "components": [
+        {
+          "key": "conference_count",
+          "name": "会议提及",
+          "weight": 30,
+          "raw": 0,
+          "maximum": 2,
+          "score": 0,
+          "observed_points": 0,
+          "pending": false,
+          "basis": "当前CDS、ADA两场，每见一场明确绑定资料记15分；同一场多条不重复加分。",
+          "gaps": [
+            "ADA为定向样本，仅反映当前资料的已见覆盖，不推断全会或全领域缺席。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "study_count",
+          "name": "去重研究线索组",
+          "weight": 30,
+          "raw": 1,
+          "maximum": 2,
+          "score": 18.93,
+          "observed_points": 18.93,
+          "pending": false,
+          "basis": "同研究会议/论文合并；疑似重叠保守计组，不等同经核独立研究。",
+          "gaps": [
+            "独立队列、团队与样本重叠仍需核实。"
+          ],
+          "evidence_ids": [
+            "P-R13"
+          ]
+        },
+        {
+          "key": "leader_count",
+          "name": "已核学术带头人",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": null,
+          "observed_points": 0.0,
+          "pending": true,
+          "basis": "仅本指标直接绑定报告中有角色依据的主讲人；不继承整个领域的专家人数。",
+          "gaps": [
+            "1条绑定记录的作者/主讲角色仍待核。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "recent_count",
+          "name": "近90天更新",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": 0.0,
+          "observed_points": 0.0,
+          "pending": false,
+          "basis": "按已读结果的可核首发日期计去重研究组；计划日、卷期日和发现日不代替首发。",
+          "gaps": [],
+          "evidence_ids": []
+        }
+      ],
+      "pending_count": 1,
+      "reference": false
+    },
+    {
+      "id": "c-peptide",
+      "label": "C肽",
+      "conference_ids": [
+        "ADA2026"
+      ],
+      "conference_count": 1,
+      "study_count": 2,
+      "study_ids": [
+        "A19",
+        "R04"
+      ],
+      "leader_count": 0,
+      "leader_ids": [],
+      "recent_count": 1,
+      "recent_ids": [
+        "P-R04"
+      ],
+      "unknown_date_ids": [],
+      "unknown_role_ids": [
+        "P-R04",
+        "A-A19"
+      ],
+      "pending_result_ids": [],
+      "evidence_ids": [
+        "P-R04",
+        "A-A19"
+      ],
+      "record_count": 2,
+      "date_label": "2026-08-19—2026-11-16",
+      "score": 65.0,
+      "ceiling": 85.0,
+      "rank": 2,
+      "components": [
+        {
+          "key": "conference_count",
+          "name": "会议提及",
+          "weight": 30,
+          "raw": 1,
+          "maximum": 2,
+          "score": 15,
+          "observed_points": 15,
+          "pending": false,
+          "basis": "当前CDS、ADA两场，每见一场明确绑定资料记15分；同一场多条不重复加分。",
+          "gaps": [
+            "ADA为定向样本，仅反映当前资料的已见覆盖，不推断全会或全领域缺席。"
+          ],
+          "evidence_ids": [
+            "A-A19"
+          ]
+        },
+        {
+          "key": "study_count",
+          "name": "去重研究线索组",
+          "weight": 30,
+          "raw": 2,
+          "maximum": 2,
+          "score": 30.0,
+          "observed_points": 30.0,
+          "pending": false,
+          "basis": "同研究会议/论文合并；疑似重叠保守计组，不等同经核独立研究。",
+          "gaps": [
+            "独立队列、团队与样本重叠仍需核实。"
+          ],
+          "evidence_ids": [
+            "P-R04",
+            "A-A19"
+          ]
+        },
+        {
+          "key": "leader_count",
+          "name": "已核学术带头人",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": null,
+          "observed_points": 0.0,
+          "pending": true,
+          "basis": "仅本指标直接绑定报告中有角色依据的主讲人；不继承整个领域的专家人数。",
+          "gaps": [
+            "2条绑定记录的作者/主讲角色仍待核。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "recent_count",
+          "name": "近90天更新",
+          "weight": 20,
+          "raw": 1,
+          "maximum": 1,
+          "score": 20.0,
+          "observed_points": 20.0,
+          "pending": false,
+          "basis": "按已读结果的可核首发日期计去重研究组；计划日、卷期日和发现日不代替首发。",
+          "gaps": [],
+          "evidence_ids": [
+            "P-R04"
+          ]
+        }
+      ],
+      "pending_count": 1,
+      "reference": false
+    },
+    {
+      "id": "islet-autoantibodies",
+      "label": "胰岛自身抗体",
+      "conference_ids": [
+        "CDS2026"
+      ],
+      "conference_count": 1,
+      "study_count": 1,
+      "study_ids": [
+        "R04"
+      ],
+      "leader_count": 1,
+      "leader_ids": [
+        "E035"
+      ],
+      "recent_count": 1,
+      "recent_ids": [
+        "P-R04"
+      ],
+      "unknown_date_ids": [],
+      "unknown_role_ids": [
+        "P-R04"
+      ],
+      "pending_result_ids": [
+        "C-S_029"
+      ],
+      "evidence_ids": [
+        "P-R04",
+        "C-S_029"
+      ],
+      "record_count": 2,
+      "date_label": "2026-08-19—2026-11-16",
+      "score": 73.9,
+      "ceiling": 85.0,
+      "rank": 1,
+      "components": [
+        {
+          "key": "conference_count",
+          "name": "会议提及",
+          "weight": 30,
+          "raw": 1,
+          "maximum": 2,
+          "score": 15,
+          "observed_points": 15,
+          "pending": false,
+          "basis": "当前CDS、ADA两场，每见一场明确绑定资料记15分；同一场多条不重复加分。",
+          "gaps": [
+            "ADA为定向样本，仅反映当前资料的已见覆盖，不推断全会或全领域缺席。"
+          ],
+          "evidence_ids": [
+            "C-S_029"
+          ]
+        },
+        {
+          "key": "study_count",
+          "name": "去重研究线索组",
+          "weight": 30,
+          "raw": 1,
+          "maximum": 2,
+          "score": null,
+          "observed_points": 18.93,
+          "pending": true,
+          "basis": "同研究会议/论文合并；疑似重叠保守计组，不等同经核独立研究。",
+          "gaps": [
+            "独立队列、团队与样本重叠仍需核实。",
+            "部分记录只取得题名或方法，结果待补。"
+          ],
+          "evidence_ids": [
+            "P-R04"
+          ]
+        },
+        {
+          "key": "leader_count",
+          "name": "已核学术带头人",
+          "weight": 20,
+          "raw": 1,
+          "maximum": 1,
+          "score": 20.0,
+          "observed_points": 20.0,
+          "pending": false,
+          "basis": "仅本指标直接绑定报告中有角色依据的主讲人；不继承整个领域的专家人数。",
+          "gaps": [
+            "1条绑定记录的作者/主讲角色仍待核。"
+          ],
+          "evidence_ids": [
+            "C-S_029"
+          ]
+        },
+        {
+          "key": "recent_count",
+          "name": "近90天更新",
+          "weight": 20,
+          "raw": 1,
+          "maximum": 1,
+          "score": 20.0,
+          "observed_points": 20.0,
+          "pending": false,
+          "basis": "按已读结果的可核首发日期计去重研究组；计划日、卷期日和发现日不代替首发。",
+          "gaps": [],
+          "evidence_ids": [
+            "P-R04"
+          ]
+        }
+      ],
+      "pending_count": 1,
+      "reference": false
+    },
+    {
+      "id": "postmeal-glucose",
+      "label": "餐后1小时葡萄糖增幅",
+      "conference_ids": [
+        "ADA2026"
+      ],
+      "conference_count": 1,
+      "study_count": 1,
+      "study_ids": [
+        "A23"
+      ],
+      "leader_count": 0,
+      "leader_ids": [],
+      "recent_count": 0,
+      "recent_ids": [],
+      "unknown_date_ids": [],
+      "unknown_role_ids": [
+        "A-A23"
+      ],
+      "pending_result_ids": [],
+      "evidence_ids": [
+        "A-A23"
+      ],
+      "record_count": 1,
+      "date_label": "2026-08-19—2026-11-16",
+      "score": 33.9,
+      "ceiling": 53.9,
+      "rank": 7,
+      "components": [
+        {
+          "key": "conference_count",
+          "name": "会议提及",
+          "weight": 30,
+          "raw": 1,
+          "maximum": 2,
+          "score": 15,
+          "observed_points": 15,
+          "pending": false,
+          "basis": "当前CDS、ADA两场，每见一场明确绑定资料记15分；同一场多条不重复加分。",
+          "gaps": [
+            "ADA为定向样本，仅反映当前资料的已见覆盖，不推断全会或全领域缺席。"
+          ],
+          "evidence_ids": [
+            "A-A23"
+          ]
+        },
+        {
+          "key": "study_count",
+          "name": "去重研究线索组",
+          "weight": 30,
+          "raw": 1,
+          "maximum": 2,
+          "score": 18.93,
+          "observed_points": 18.93,
+          "pending": false,
+          "basis": "同研究会议/论文合并；疑似重叠保守计组，不等同经核独立研究。",
+          "gaps": [
+            "独立队列、团队与样本重叠仍需核实。"
+          ],
+          "evidence_ids": [
+            "A-A23"
+          ]
+        },
+        {
+          "key": "leader_count",
+          "name": "已核学术带头人",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": null,
+          "observed_points": 0.0,
+          "pending": true,
+          "basis": "仅本指标直接绑定报告中有角色依据的主讲人；不继承整个领域的专家人数。",
+          "gaps": [
+            "1条绑定记录的作者/主讲角色仍待核。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "recent_count",
+          "name": "近90天更新",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": 0.0,
+          "observed_points": 0.0,
+          "pending": false,
+          "basis": "按已读结果的可核首发日期计去重研究组；计划日、卷期日和发现日不代替首发。",
+          "gaps": [],
+          "evidence_ids": []
+        }
+      ],
+      "pending_count": 1,
+      "reference": false
+    },
+    {
+      "id": "mage",
+      "label": "MAGE",
+      "conference_ids": [
+        "ADA2026"
+      ],
+      "conference_count": 1,
+      "study_count": 1,
+      "study_ids": [
+        "GDM-同队列"
+      ],
+      "leader_count": 0,
+      "leader_ids": [],
+      "recent_count": 0,
+      "recent_ids": [],
+      "unknown_date_ids": [],
+      "unknown_role_ids": [
+        "A-A25"
+      ],
+      "pending_result_ids": [],
+      "evidence_ids": [
+        "A-A25"
+      ],
+      "record_count": 1,
+      "date_label": "2026-08-19—2026-11-16",
+      "score": 33.9,
+      "ceiling": 53.9,
+      "rank": 7,
+      "components": [
+        {
+          "key": "conference_count",
+          "name": "会议提及",
+          "weight": 30,
+          "raw": 1,
+          "maximum": 2,
+          "score": 15,
+          "observed_points": 15,
+          "pending": false,
+          "basis": "当前CDS、ADA两场，每见一场明确绑定资料记15分；同一场多条不重复加分。",
+          "gaps": [
+            "ADA为定向样本，仅反映当前资料的已见覆盖，不推断全会或全领域缺席。"
+          ],
+          "evidence_ids": [
+            "A-A25"
+          ]
+        },
+        {
+          "key": "study_count",
+          "name": "去重研究线索组",
+          "weight": 30,
+          "raw": 1,
+          "maximum": 2,
+          "score": 18.93,
+          "observed_points": 18.93,
+          "pending": false,
+          "basis": "同研究会议/论文合并；疑似重叠保守计组，不等同经核独立研究。",
+          "gaps": [
+            "独立队列、团队与样本重叠仍需核实。"
+          ],
+          "evidence_ids": [
+            "A-A25"
+          ]
+        },
+        {
+          "key": "leader_count",
+          "name": "已核学术带头人",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": null,
+          "observed_points": 0.0,
+          "pending": true,
+          "basis": "仅本指标直接绑定报告中有角色依据的主讲人；不继承整个领域的专家人数。",
+          "gaps": [
+            "1条绑定记录的作者/主讲角色仍待核。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "recent_count",
+          "name": "近90天更新",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": 0.0,
+          "observed_points": 0.0,
+          "pending": false,
+          "basis": "按已读结果的可核首发日期计去重研究组；计划日、卷期日和发现日不代替首发。",
+          "gaps": [],
+          "evidence_ids": []
+        }
+      ],
+      "pending_count": 1,
+      "reference": false
+    },
+    {
+      "id": "ffa",
+      "label": "游离脂肪酸",
+      "conference_ids": [
+        "ADA2026"
+      ],
+      "conference_count": 1,
+      "study_count": 1,
+      "study_ids": [
+        "GDM-同队列"
+      ],
+      "leader_count": 0,
+      "leader_ids": [],
+      "recent_count": 0,
+      "recent_ids": [],
+      "unknown_date_ids": [],
+      "unknown_role_ids": [
+        "A-A24"
+      ],
+      "pending_result_ids": [],
+      "evidence_ids": [
+        "A-A24"
+      ],
+      "record_count": 1,
+      "date_label": "2026-08-19—2026-11-16",
+      "score": 33.9,
+      "ceiling": 53.9,
+      "rank": 7,
+      "components": [
+        {
+          "key": "conference_count",
+          "name": "会议提及",
+          "weight": 30,
+          "raw": 1,
+          "maximum": 2,
+          "score": 15,
+          "observed_points": 15,
+          "pending": false,
+          "basis": "当前CDS、ADA两场，每见一场明确绑定资料记15分；同一场多条不重复加分。",
+          "gaps": [
+            "ADA为定向样本，仅反映当前资料的已见覆盖，不推断全会或全领域缺席。"
+          ],
+          "evidence_ids": [
+            "A-A24"
+          ]
+        },
+        {
+          "key": "study_count",
+          "name": "去重研究线索组",
+          "weight": 30,
+          "raw": 1,
+          "maximum": 2,
+          "score": 18.93,
+          "observed_points": 18.93,
+          "pending": false,
+          "basis": "同研究会议/论文合并；疑似重叠保守计组，不等同经核独立研究。",
+          "gaps": [
+            "独立队列、团队与样本重叠仍需核实。"
+          ],
+          "evidence_ids": [
+            "A-A24"
+          ]
+        },
+        {
+          "key": "leader_count",
+          "name": "已核学术带头人",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": null,
+          "observed_points": 0.0,
+          "pending": true,
+          "basis": "仅本指标直接绑定报告中有角色依据的主讲人；不继承整个领域的专家人数。",
+          "gaps": [
+            "1条绑定记录的作者/主讲角色仍待核。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "recent_count",
+          "name": "近90天更新",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": 0.0,
+          "observed_points": 0.0,
+          "pending": false,
+          "basis": "按已读结果的可核首发日期计去重研究组；计划日、卷期日和发现日不代替首发。",
+          "gaps": [],
+          "evidence_ids": []
+        }
+      ],
+      "pending_count": 1,
+      "reference": false
+    },
+    {
+      "id": "triglycerides",
+      "label": "甘油三酯",
+      "conference_ids": [
+        "ADA2026"
+      ],
+      "conference_count": 1,
+      "study_count": 1,
+      "study_ids": [
+        "GDM-同队列"
+      ],
+      "leader_count": 0,
+      "leader_ids": [],
+      "recent_count": 0,
+      "recent_ids": [],
+      "unknown_date_ids": [],
+      "unknown_role_ids": [
+        "A-A24"
+      ],
+      "pending_result_ids": [],
+      "evidence_ids": [
+        "A-A24"
+      ],
+      "record_count": 1,
+      "date_label": "2026-08-19—2026-11-16",
+      "score": 33.9,
+      "ceiling": 53.9,
+      "rank": 7,
+      "components": [
+        {
+          "key": "conference_count",
+          "name": "会议提及",
+          "weight": 30,
+          "raw": 1,
+          "maximum": 2,
+          "score": 15,
+          "observed_points": 15,
+          "pending": false,
+          "basis": "当前CDS、ADA两场，每见一场明确绑定资料记15分；同一场多条不重复加分。",
+          "gaps": [
+            "ADA为定向样本，仅反映当前资料的已见覆盖，不推断全会或全领域缺席。"
+          ],
+          "evidence_ids": [
+            "A-A24"
+          ]
+        },
+        {
+          "key": "study_count",
+          "name": "去重研究线索组",
+          "weight": 30,
+          "raw": 1,
+          "maximum": 2,
+          "score": 18.93,
+          "observed_points": 18.93,
+          "pending": false,
+          "basis": "同研究会议/论文合并；疑似重叠保守计组，不等同经核独立研究。",
+          "gaps": [
+            "独立队列、团队与样本重叠仍需核实。"
+          ],
+          "evidence_ids": [
+            "A-A24"
+          ]
+        },
+        {
+          "key": "leader_count",
+          "name": "已核学术带头人",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": null,
+          "observed_points": 0.0,
+          "pending": true,
+          "basis": "仅本指标直接绑定报告中有角色依据的主讲人；不继承整个领域的专家人数。",
+          "gaps": [
+            "1条绑定记录的作者/主讲角色仍待核。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "recent_count",
+          "name": "近90天更新",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": 0.0,
+          "observed_points": 0.0,
+          "pending": false,
+          "basis": "按已读结果的可核首发日期计去重研究组；计划日、卷期日和发现日不代替首发。",
+          "gaps": [],
+          "evidence_ids": []
+        }
+      ],
+      "pending_count": 1,
+      "reference": false
+    },
+    {
+      "id": "ev-proteins",
+      "label": "EV蛋白特征",
+      "conference_ids": [
+        "ADA2026"
+      ],
+      "conference_count": 1,
+      "study_count": 0,
+      "study_ids": [],
+      "leader_count": 0,
+      "leader_ids": [],
+      "recent_count": 0,
+      "recent_ids": [],
+      "unknown_date_ids": [],
+      "unknown_role_ids": [
+        "A-A20"
+      ],
+      "pending_result_ids": [
+        "A-A20"
+      ],
+      "evidence_ids": [
+        "A-A20"
+      ],
+      "record_count": 1,
+      "date_label": "2026-08-19—2026-11-16",
+      "score": 15.0,
+      "ceiling": 65.0,
+      "rank": 23,
+      "components": [
+        {
+          "key": "conference_count",
+          "name": "会议提及",
+          "weight": 30,
+          "raw": 1,
+          "maximum": 2,
+          "score": 15,
+          "observed_points": 15,
+          "pending": false,
+          "basis": "当前CDS、ADA两场，每见一场明确绑定资料记15分；同一场多条不重复加分。",
+          "gaps": [
+            "ADA为定向样本，仅反映当前资料的已见覆盖，不推断全会或全领域缺席。"
+          ],
+          "evidence_ids": [
+            "A-A20"
+          ]
+        },
+        {
+          "key": "study_count",
+          "name": "去重研究线索组",
+          "weight": 30,
+          "raw": 0,
+          "maximum": 2,
+          "score": null,
+          "observed_points": 0.0,
+          "pending": true,
+          "basis": "同研究会议/论文合并；疑似重叠保守计组，不等同经核独立研究。",
+          "gaps": [
+            "独立队列、团队与样本重叠仍需核实。",
+            "部分记录只取得题名或方法，结果待补。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "leader_count",
+          "name": "已核学术带头人",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": null,
+          "observed_points": 0.0,
+          "pending": true,
+          "basis": "仅本指标直接绑定报告中有角色依据的主讲人；不继承整个领域的专家人数。",
+          "gaps": [
+            "1条绑定记录的作者/主讲角色仍待核。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "recent_count",
+          "name": "近90天更新",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": 0.0,
+          "observed_points": 0.0,
+          "pending": false,
+          "basis": "按已读结果的可核首发日期计去重研究组；计划日、卷期日和发现日不代替首发。",
+          "gaps": [],
+          "evidence_ids": []
+        }
+      ],
+      "pending_count": 2,
+      "reference": false
+    },
+    {
+      "id": "hgf",
+      "label": "HGF",
+      "conference_ids": [],
+      "conference_count": 0,
+      "study_count": 1,
+      "study_ids": [
+        "R10"
+      ],
+      "leader_count": 0,
+      "leader_ids": [],
+      "recent_count": 0,
+      "recent_ids": [],
+      "unknown_date_ids": [
+        "P-R10"
+      ],
+      "unknown_role_ids": [
+        "P-R10"
+      ],
+      "pending_result_ids": [],
+      "evidence_ids": [
+        "P-R10"
+      ],
+      "record_count": 1,
+      "date_label": "2026-08-19—2026-11-16",
+      "score": 18.9,
+      "ceiling": 58.9,
+      "rank": 13,
+      "components": [
+        {
+          "key": "conference_count",
+          "name": "会议提及",
+          "weight": 30,
+          "raw": 0,
+          "maximum": 2,
+          "score": 0,
+          "observed_points": 0,
+          "pending": false,
+          "basis": "当前CDS、ADA两场，每见一场明确绑定资料记15分；同一场多条不重复加分。",
+          "gaps": [
+            "ADA为定向样本，仅反映当前资料的已见覆盖，不推断全会或全领域缺席。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "study_count",
+          "name": "去重研究线索组",
+          "weight": 30,
+          "raw": 1,
+          "maximum": 2,
+          "score": 18.93,
+          "observed_points": 18.93,
+          "pending": false,
+          "basis": "同研究会议/论文合并；疑似重叠保守计组，不等同经核独立研究。",
+          "gaps": [
+            "独立队列、团队与样本重叠仍需核实。"
+          ],
+          "evidence_ids": [
+            "P-R10"
+          ]
+        },
+        {
+          "key": "leader_count",
+          "name": "已核学术带头人",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": null,
+          "observed_points": 0.0,
+          "pending": true,
+          "basis": "仅本指标直接绑定报告中有角色依据的主讲人；不继承整个领域的专家人数。",
+          "gaps": [
+            "1条绑定记录的作者/主讲角色仍待核。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "recent_count",
+          "name": "近90天更新",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": null,
+          "observed_points": 0.0,
+          "pending": true,
+          "basis": "按已读结果的可核首发日期计去重研究组；计划日、卷期日和发现日不代替首发。",
+          "gaps": [
+            "1条有结果记录的首发日期待核。"
+          ],
+          "evidence_ids": []
+        }
+      ],
+      "pending_count": 2,
+      "reference": false
+    },
+    {
+      "id": "glutamate",
+      "label": "谷氨酸",
+      "conference_ids": [],
+      "conference_count": 0,
+      "study_count": 1,
+      "study_ids": [
+        "R09"
+      ],
+      "leader_count": 0,
+      "leader_ids": [],
+      "recent_count": 0,
+      "recent_ids": [],
+      "unknown_date_ids": [
+        "P-R09"
+      ],
+      "unknown_role_ids": [
+        "P-R09"
+      ],
+      "pending_result_ids": [],
+      "evidence_ids": [
+        "P-R09"
+      ],
+      "record_count": 1,
+      "date_label": "2026-08-19—2026-11-16",
+      "score": 18.9,
+      "ceiling": 58.9,
+      "rank": 13,
+      "components": [
+        {
+          "key": "conference_count",
+          "name": "会议提及",
+          "weight": 30,
+          "raw": 0,
+          "maximum": 2,
+          "score": 0,
+          "observed_points": 0,
+          "pending": false,
+          "basis": "当前CDS、ADA两场，每见一场明确绑定资料记15分；同一场多条不重复加分。",
+          "gaps": [
+            "ADA为定向样本，仅反映当前资料的已见覆盖，不推断全会或全领域缺席。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "study_count",
+          "name": "去重研究线索组",
+          "weight": 30,
+          "raw": 1,
+          "maximum": 2,
+          "score": 18.93,
+          "observed_points": 18.93,
+          "pending": false,
+          "basis": "同研究会议/论文合并；疑似重叠保守计组，不等同经核独立研究。",
+          "gaps": [
+            "独立队列、团队与样本重叠仍需核实。"
+          ],
+          "evidence_ids": [
+            "P-R09"
+          ]
+        },
+        {
+          "key": "leader_count",
+          "name": "已核学术带头人",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": null,
+          "observed_points": 0.0,
+          "pending": true,
+          "basis": "仅本指标直接绑定报告中有角色依据的主讲人；不继承整个领域的专家人数。",
+          "gaps": [
+            "1条绑定记录的作者/主讲角色仍待核。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "recent_count",
+          "name": "近90天更新",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": null,
+          "observed_points": 0.0,
+          "pending": true,
+          "basis": "按已读结果的可核首发日期计去重研究组；计划日、卷期日和发现日不代替首发。",
+          "gaps": [
+            "1条有结果记录的首发日期待核。"
+          ],
+          "evidence_ids": []
+        }
+      ],
+      "pending_count": 2,
+      "reference": false
+    },
+    {
+      "id": "cytokines",
+      "label": "血清细胞因子特征",
+      "conference_ids": [
+        "CDS2026"
+      ],
+      "conference_count": 1,
+      "study_count": 0,
+      "study_ids": [],
+      "leader_count": 0,
+      "leader_ids": [],
+      "recent_count": 0,
+      "recent_ids": [],
+      "unknown_date_ids": [],
+      "unknown_role_ids": [
+        "C-OR_313"
+      ],
+      "pending_result_ids": [
+        "C-OR_313"
+      ],
+      "evidence_ids": [
+        "C-OR_313"
+      ],
+      "record_count": 1,
+      "date_label": "2026-08-19—2026-11-16",
+      "score": 15.0,
+      "ceiling": 65.0,
+      "rank": 23,
+      "components": [
+        {
+          "key": "conference_count",
+          "name": "会议提及",
+          "weight": 30,
+          "raw": 1,
+          "maximum": 2,
+          "score": 15,
+          "observed_points": 15,
+          "pending": false,
+          "basis": "当前CDS、ADA两场，每见一场明确绑定资料记15分；同一场多条不重复加分。",
+          "gaps": [
+            "ADA为定向样本，仅反映当前资料的已见覆盖，不推断全会或全领域缺席。"
+          ],
+          "evidence_ids": [
+            "C-OR_313"
+          ]
+        },
+        {
+          "key": "study_count",
+          "name": "去重研究线索组",
+          "weight": 30,
+          "raw": 0,
+          "maximum": 2,
+          "score": null,
+          "observed_points": 0.0,
+          "pending": true,
+          "basis": "同研究会议/论文合并；疑似重叠保守计组，不等同经核独立研究。",
+          "gaps": [
+            "独立队列、团队与样本重叠仍需核实。",
+            "部分记录只取得题名或方法，结果待补。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "leader_count",
+          "name": "已核学术带头人",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": null,
+          "observed_points": 0.0,
+          "pending": true,
+          "basis": "仅本指标直接绑定报告中有角色依据的主讲人；不继承整个领域的专家人数。",
+          "gaps": [
+            "1条绑定记录的作者/主讲角色仍待核。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "recent_count",
+          "name": "近90天更新",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": 0.0,
+          "observed_points": 0.0,
+          "pending": false,
+          "basis": "按已读结果的可核首发日期计去重研究组；计划日、卷期日和发现日不代替首发。",
+          "gaps": [],
+          "evidence_ids": []
+        }
+      ],
+      "pending_count": 2,
+      "reference": false
+    },
+    {
+      "id": "retina-panel",
+      "label": "糖网风险指标组合",
+      "conference_ids": [
+        "CDS2026"
+      ],
+      "conference_count": 1,
+      "study_count": 0,
+      "study_ids": [],
+      "leader_count": 1,
+      "leader_ids": [
+        "E144"
+      ],
+      "recent_count": 0,
+      "recent_ids": [],
+      "unknown_date_ids": [],
+      "unknown_role_ids": [],
+      "pending_result_ids": [
+        "C-S_198"
+      ],
+      "evidence_ids": [
+        "C-S_198"
+      ],
+      "record_count": 1,
+      "date_label": "2026-08-19—2026-11-16",
+      "score": 35.0,
+      "ceiling": 65.0,
+      "rank": 6,
+      "components": [
+        {
+          "key": "conference_count",
+          "name": "会议提及",
+          "weight": 30,
+          "raw": 1,
+          "maximum": 2,
+          "score": 15,
+          "observed_points": 15,
+          "pending": false,
+          "basis": "当前CDS、ADA两场，每见一场明确绑定资料记15分；同一场多条不重复加分。",
+          "gaps": [
+            "ADA为定向样本，仅反映当前资料的已见覆盖，不推断全会或全领域缺席。"
+          ],
+          "evidence_ids": [
+            "C-S_198"
+          ]
+        },
+        {
+          "key": "study_count",
+          "name": "去重研究线索组",
+          "weight": 30,
+          "raw": 0,
+          "maximum": 2,
+          "score": null,
+          "observed_points": 0.0,
+          "pending": true,
+          "basis": "同研究会议/论文合并；疑似重叠保守计组，不等同经核独立研究。",
+          "gaps": [
+            "独立队列、团队与样本重叠仍需核实。",
+            "部分记录只取得题名或方法，结果待补。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "leader_count",
+          "name": "已核学术带头人",
+          "weight": 20,
+          "raw": 1,
+          "maximum": 1,
+          "score": 20.0,
+          "observed_points": 20.0,
+          "pending": false,
+          "basis": "仅本指标直接绑定报告中有角色依据的主讲人；不继承整个领域的专家人数。",
+          "gaps": [],
+          "evidence_ids": [
+            "C-S_198"
+          ]
+        },
+        {
+          "key": "recent_count",
+          "name": "近90天更新",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": 0.0,
+          "observed_points": 0.0,
+          "pending": false,
+          "basis": "按已读结果的可核首发日期计去重研究组；计划日、卷期日和发现日不代替首发。",
+          "gaps": [],
+          "evidence_ids": []
+        }
+      ],
+      "pending_count": 1,
+      "reference": false
+    },
+    {
+      "id": "cardiometabolic-markers",
+      "label": "循环心肾代谢标志物",
+      "conference_ids": [
+        "CDS2026"
+      ],
+      "conference_count": 1,
+      "study_count": 0,
+      "study_ids": [],
+      "leader_count": 0,
+      "leader_ids": [],
+      "recent_count": 0,
+      "recent_ids": [],
+      "unknown_date_ids": [],
+      "unknown_role_ids": [
+        "C-OR_333"
+      ],
+      "pending_result_ids": [
+        "C-OR_333"
+      ],
+      "evidence_ids": [
+        "C-OR_333"
+      ],
+      "record_count": 1,
+      "date_label": "2026-08-19—2026-11-16",
+      "score": 15.0,
+      "ceiling": 65.0,
+      "rank": 23,
+      "components": [
+        {
+          "key": "conference_count",
+          "name": "会议提及",
+          "weight": 30,
+          "raw": 1,
+          "maximum": 2,
+          "score": 15,
+          "observed_points": 15,
+          "pending": false,
+          "basis": "当前CDS、ADA两场，每见一场明确绑定资料记15分；同一场多条不重复加分。",
+          "gaps": [
+            "ADA为定向样本，仅反映当前资料的已见覆盖，不推断全会或全领域缺席。"
+          ],
+          "evidence_ids": [
+            "C-OR_333"
+          ]
+        },
+        {
+          "key": "study_count",
+          "name": "去重研究线索组",
+          "weight": 30,
+          "raw": 0,
+          "maximum": 2,
+          "score": null,
+          "observed_points": 0.0,
+          "pending": true,
+          "basis": "同研究会议/论文合并；疑似重叠保守计组，不等同经核独立研究。",
+          "gaps": [
+            "独立队列、团队与样本重叠仍需核实。",
+            "部分记录只取得题名或方法，结果待补。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "leader_count",
+          "name": "已核学术带头人",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": null,
+          "observed_points": 0.0,
+          "pending": true,
+          "basis": "仅本指标直接绑定报告中有角色依据的主讲人；不继承整个领域的专家人数。",
+          "gaps": [
+            "1条绑定记录的作者/主讲角色仍待核。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "recent_count",
+          "name": "近90天更新",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": 0.0,
+          "observed_points": 0.0,
+          "pending": false,
+          "basis": "按已读结果的可核首发日期计去重研究组；计划日、卷期日和发现日不代替首发。",
+          "gaps": [],
+          "evidence_ids": []
+        }
+      ],
+      "pending_count": 2,
+      "reference": false
+    },
+    {
+      "id": "sarcopenia-metabolites",
+      "label": "肌少症代谢物特征",
+      "conference_ids": [
+        "CDS2026"
+      ],
+      "conference_count": 1,
+      "study_count": 0,
+      "study_ids": [],
+      "leader_count": 0,
+      "leader_ids": [],
+      "recent_count": 0,
+      "recent_ids": [],
+      "unknown_date_ids": [],
+      "unknown_role_ids": [
+        "C-OR_301"
+      ],
+      "pending_result_ids": [
+        "C-OR_301"
+      ],
+      "evidence_ids": [
+        "C-OR_301"
+      ],
+      "record_count": 1,
+      "date_label": "2026-08-19—2026-11-16",
+      "score": 15.0,
+      "ceiling": 65.0,
+      "rank": 23,
+      "components": [
+        {
+          "key": "conference_count",
+          "name": "会议提及",
+          "weight": 30,
+          "raw": 1,
+          "maximum": 2,
+          "score": 15,
+          "observed_points": 15,
+          "pending": false,
+          "basis": "当前CDS、ADA两场，每见一场明确绑定资料记15分；同一场多条不重复加分。",
+          "gaps": [
+            "ADA为定向样本，仅反映当前资料的已见覆盖，不推断全会或全领域缺席。"
+          ],
+          "evidence_ids": [
+            "C-OR_301"
+          ]
+        },
+        {
+          "key": "study_count",
+          "name": "去重研究线索组",
+          "weight": 30,
+          "raw": 0,
+          "maximum": 2,
+          "score": null,
+          "observed_points": 0.0,
+          "pending": true,
+          "basis": "同研究会议/论文合并；疑似重叠保守计组，不等同经核独立研究。",
+          "gaps": [
+            "独立队列、团队与样本重叠仍需核实。",
+            "部分记录只取得题名或方法，结果待补。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "leader_count",
+          "name": "已核学术带头人",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": null,
+          "observed_points": 0.0,
+          "pending": true,
+          "basis": "仅本指标直接绑定报告中有角色依据的主讲人；不继承整个领域的专家人数。",
+          "gaps": [
+            "1条绑定记录的作者/主讲角色仍待核。"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "key": "recent_count",
+          "name": "近90天更新",
+          "weight": 20,
+          "raw": 0,
+          "maximum": 1,
+          "score": 0.0,
+          "observed_points": 0.0,
+          "pending": false,
+          "basis": "按已读结果的可核首发日期计去重研究组；计划日、卷期日和发现日不代替首发。",
+          "gaps": [],
+          "evidence_ids": []
+        }
+      ],
+      "pending_count": 2,
+      "reference": false
+    },
+    {
+      "id": "hba1c",
+      "label": "HbA1c",
+      "conference_ids": [],
+      "conference_count": 0,
+      "study_count": 0,
+      "study_ids": [],
+      "leader_count": 0,
+      "leader_ids": [],
+      "recent_count": 0,
+      "recent_ids": [],
+      "unknown_date_ids": [],
+      "unknown_role_ids": [],
+      "pending_result_ids": [],
+      "evidence_ids": [],
+      "record_count": 0,
+      "date_label": "2026-08-19—2026-11-16",
+      "score": null,
+      "rank": null,
+      "components": [],
+      "pending_count": 0,
+      "ceiling": null,
+      "reference": true
+    },
+    {
+      "id": "tir",
+      "label": "TIR",
+      "conference_ids": [],
+      "conference_count": 0,
+      "study_count": 0,
+      "study_ids": [],
+      "leader_count": 0,
+      "leader_ids": [],
+      "recent_count": 0,
+      "recent_ids": [],
+      "unknown_date_ids": [],
+      "unknown_role_ids": [],
+      "pending_result_ids": [],
+      "evidence_ids": [],
+      "record_count": 0,
+      "date_label": "2026-08-19—2026-11-16",
+      "score": null,
+      "rank": null,
+      "components": [],
+      "pending_count": 0,
+      "ceiling": null,
+      "reference": true
+    }
+  ]
+}

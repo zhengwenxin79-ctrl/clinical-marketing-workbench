@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>会议更新与审核入库工作台 - 市场部专属</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --card-border: #334155;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --primary: #38bdf8;
+      --primary-hover: #0284c7;
+      --success: #34d399;
+      --success-bg: rgba(52, 211, 153, 0.15);
+      --warning: #fbbf24;
+      --warning-bg: rgba(251, 191, 36, 0.15);
+      --danger: #f87171;
+      --danger-bg: rgba(248, 113, 113, 0.15);
+      --purple: #c084fc;
+      --purple-bg: rgba(192, 132, 252, 0.15);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 24px;
+    }
+    .container { max-width: 1280px; margin: 0 auto; }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--card-border);
+      margin-bottom: 24px;
+    }
+    .brand h1 { font-size: 24px; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 10px; }
+    .brand p { font-size: 14px; color: var(--text-muted); margin-top: 4px; }
+    .user-bar { display: flex; align-items: center; gap: 12px; }
+    .user-badge {
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--primary);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+    .btn {
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: none;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-primary { background: var(--primary); color: #0f172a; }
+    .btn-primary:hover { background: var(--primary-hover); }
+    .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--card-border); }
+    .btn-outline:hover { background: var(--card-border); }
+    .btn-success { background: var(--success); color: #064e3b; }
+    .btn-danger { background: var(--danger); color: #450a0a; }
+
+    /* Stats Overview */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 16px 20px;
+    }
+    .stat-card .label { font-size: 13px; color: var(--text-muted); }
+    .stat-card .value { font-size: 28px; font-weight: 700; margin-top: 4px; color: #fff; }
+    .stat-card .desc { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+    /* Toolbar & Filter */
+    .toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 14px 20px;
+      margin-bottom: 20px;
+    }
+    .filters { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .filter-group { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+    select, input {
+      background: #0f172a;
+      border: 1px solid var(--card-border);
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      outline: none;
+    }
+    select:focus, input:focus { border-color: var(--primary); }
+
+    /* Table & Cards */
+    .queue-list { display: flex; flex-direction: column; gap: 14px; }
+    .queue-item {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: center;
+      transition: border-color 0.2s;
+    }
+    .queue-item:hover { border-color: #475569; }
+    .item-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+    .badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .badge-first_seen { background: var(--success-bg); color: var(--success); border: 1px solid rgba(52,211,153,0.3); }
+    .badge-source_update { background: rgba(56,189,248,0.15); color: var(--primary); border: 1px solid rgba(56,189,248,0.3); }
+    .badge-duplicate { background: rgba(148,163,184,0.15); color: var(--text-muted); border: 1px solid rgba(148,163,184,0.3); }
+    .badge-domain { background: var(--purple-bg); color: var(--purple); }
+    .badge-status-pending { background: var(--warning-bg); color: var(--warning); border: 1px solid rgba(251,191,36,0.3); }
+    .badge-status-approved { background: var(--success-bg); color: var(--success); border: 1px solid rgba(52,211,153,0.3); }
+    .badge-status-rejected { background: var(--danger-bg); color: var(--danger); border: 1px solid rgba(248,113,113,0.3); }
+
+    .item-title { font-size: 18px; font-weight: 600; color: #fff; margin-bottom: 6px; }
+    .item-details { font-size: 13px; color: var(--text-muted); display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 8px; }
+    .item-details span { display: flex; align-items: center; gap: 4px; }
+    .item-note { font-size: 13px; color: #cbd5e1; background: rgba(0,0,0,0.25); padding: 8px 12px; border-radius: 6px; border-left: 3px solid var(--primary); }
+
+    .item-actions { display: flex; flex-direction: column; gap: 8px; min-width: 160px; }
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      background: var(--card-bg);
+      border: 1px dashed var(--card-border);
+      border-radius: 12px;
+      color: var(--text-muted);
+    }
+    .empty-state h3 { font-size: 18px; color: #fff; margin-bottom: 8px; }
+
+    /* Modal */
+    .modal-backdrop {
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.7);
+      display: none; justify-content: center; align-items: center; z-index: 1000;
+    }
+    .modal {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 24px;
+      width: 480px;
+      max-width: 90%;
+    }
+    .modal h3 { font-size: 18px; margin-bottom: 12px; color: #fff; }
+    .modal textarea {
+      width: 100%; height: 100px;
+      background: #0f172a; border: 1px solid var(--card-border);
+      color: #fff; padding: 10px; border-radius: 8px; font-size: 13px;
+      margin-bottom: 16px; outline: none;
+    }
+    .modal-actions { display: flex; justify-content: flex-end; gap: 10px; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="brand">
+      <h1><span>🏛️</span> 会议更新与审核入库工作台</h1>
+      <p>独立会议更新库（conference_updates.db） · 市场部专属审核通道 · 自动去重与每周动态同步</p>
+    </div>
+    <div class="user-bar">
+      <span class="user-badge" id="user-badge">市场部人员 (已鉴权)</span>
+      <a href="index.html" class="btn btn-outline">返回领域工作台</a>
+      <a href="/登录工作台.html" class="btn btn-outline">切换账号</a>
+    </div>
+  </header>
+
+  <!-- Stats Grid -->
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="label">待市场部审核</div>
+      <div class="value" id="stat-pending" style="color: var(--warning);">0</div>
+      <div class="desc">新收录或日程变更待人工核查</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">已审核批准</div>
+      <div class="value" id="stat-approved" style="color: var(--success);">0</div>
+      <div class="desc">已同步发布至每周会议动态</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">自动去重 / 驳回</div>
+      <div class="value" id="stat-rejected" style="color: var(--text-muted);">0</div>
+      <div class="desc">完全同日程自动过滤或不收录</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">会议更新库连通状态</div>
+      <div class="value" id="stat-status" style="font-size: 20px; color: var(--primary);">检查中...</div>
+      <div class="desc" id="stat-status-desc">框架配置/会议更新记录.json</div>
+    </div>
+  </div>
+
+  <!-- Toolbar -->
+  <div class="toolbar">
+    <div class="filters">
+      <div class="filter-group">
+        <label>审核状态：</label>
+        <select id="filter-status" onchange="renderQueue()">
+          <option value="pending" selected>待审核 (Pending)</option>
+          <option value="approved">已批准入库 (Approved)</option>
+          <option value="rejected">已去重 / 驳回 (Rejected)</option>
+          <option value="all">全部记录 (All)</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>所属领域：</label>
+        <select id="filter-field" onchange="renderQueue()">
+          <option value="all" selected>全部六大领域</option>
+          <option value="diabetes">糖尿病与代谢</option>
+          <option value="cardiovascular">心血管健康</option>
+          <option value="rheumatology">风湿免疫</option>
+          <option value="neurology">神经疾病</option>
+          <option value="respiratory">呼吸系统</option>
+          <option value="vascular">血管与器官损伤</option>
+        </select>
+      </div>
+    </div>
+    <div style="display: flex; gap: 10px;">
+      <button class="btn btn-outline" onclick="simulateCrawlBatch()">📥 模拟抓取批次推送</button>
+      <button class="btn btn-primary" onclick="loadData()">🔄 刷新列表</button>
+    </div>
+  </div>
+
+  <!-- Queue Items List -->
+  <div class="queue-list" id="queue-container">
+    <div class="empty-state">
+      <h3>正在加载审核队列...</h3>
+      <p>请确保后端服务运行于 http://127.0.0.1:8768</p>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for Reject Note -->
+<div class="modal-backdrop" id="reject-modal">
+  <div class="modal">
+    <h3>填写驳回 / 忽略原因</h3>
+    <textarea id="reject-note" placeholder="请输入驳回说明（如：日程未最终敲定、非目标学术层级会议等）..."></textarea>
+    <div class="modal-actions">
+      <button class="btn btn-outline" onclick="closeRejectModal()">取消</button>
+      <button class="btn btn-danger" onclick="confirmReject()">确认驳回</button>
+    </div>
+  </div>
+</div>
+
+<script>
+let currentQueue = [];
+let targetQueueId = null;
+const API_BASE = "http://127.0.0.1:8768";
+let token = localStorage.getItem("auth_token") || "MARKET_DEMO_TOKEN";
+
+const DOMAIN_NAMES = {
+  "diabetes": "糖尿病与代谢",
+  "cardiovascular": "心血管健康",
+  "rheumatology": "风湿免疫",
+  "neurology": "神经疾病",
+  "respiratory": "呼吸系统",
+  "vascular": "血管与器官损伤"
+};
+
+async function checkAuth() {
+  try {
+    const res = await fetch(`${API_BASE}/api/auth/me`, {
+      headers: { "Authorization": `Bearer ${token}` }
+    });
+    if (res.ok) {
+      const data = await res.json();
+      document.getElementById("user-badge").textContent = `${data.user.name} (${data.user.role === 'market' ? '市场部权限' : '销售代表'})`;
+      if (data.user.role !== 'market') {
+        alert("提示：当前账号角色为销售代表，仅市场部人员拥有会议审核与入库权限。");
+      }
+    } else {
+      // Try login as market default for demo convenience
+      await autoLoginMarket();
+    }
+  } catch (e) {
+    console.warn("Auth server connection failed, running in offline view mode:", e);
+  }
+}
+
+async function autoLoginMarket() {
+  try {
+    const res = await fetch(`${API_BASE}/api/auth/login`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username: "market", password: "market123" })
+    });
+    if (res.ok) {
+      const data = await res.json();
+      token = data.token;
+      localStorage.setItem("auth_token", token);
+      document.getElementById("user-badge").textContent = `${data.user.name} (市场部权限)`;
+    }
+  } catch (e) {
+    console.error("Auto login failed:", e);
+  }
+}
+
+async function loadData() {
+  await checkAuth();
+  try {
+    const res = await fetch(`${API_BASE}/api/conference/queue?status=all`, {
+      headers: { "Authorization": `Bearer ${token}` }
+    });
+    if (res.ok) {
+      const data = await res.json();
+      currentQueue = data.items || [];
+      updateStats();
+      renderQueue();
+    } else {
+      showError("无法获取审核队列数据，请确认是否具备市场部权限。");
+    }
+  } catch (e) {
+    showError("连接本地认证服务失败，请先启动 tools/auth_server.py。");
+  }
+}
+
+function updateStats() {
+  const pending = currentQueue.filter(i => i.review_status === "pending").length;
+  const approved = currentQueue.filter(i => i.review_status === "approved").length;
+  const rejected = currentQueue.filter(i => i.review_status === "rejected").length;
+
+  document.getElementById("stat-pending").textContent = pending;
+  document.getElementById("stat-approved").textContent = approved;
+  document.getElementById("stat-rejected").textContent = rejected;
+
+  const statusEl = document.getElementById("stat-status");
+  const statusDesc = document.getElementById("stat-status-desc");
+  if (approved > 0) {
+    statusEl.textContent = "已接入 (connected)";
+    statusEl.style.color = "var(--success)";
+    statusDesc.textContent = `已收录 ${approved} 条经复核会议事件`;
+  } else {
+    statusEl.textContent = "待接入 (not_connected)";
+    statusEl.style.color = "var(--warning)";
+    statusDesc.textContent = "暂无经市场部批准的更新事件";
+  }
+}
+
+function renderQueue() {
+  const statusFilter = document.getElementById("filter-status").value;
+  const fieldFilter = document.getElementById("filter-field").value;
+
+  let filtered = currentQueue.slice();
+  if (statusFilter !== "all") {
+    filtered = filtered.filter(i => i.review_status === statusFilter);
+  }
+  if (fieldFilter !== "all") {
+    filtered = filtered.filter(i => i.field_id === fieldFilter);
+  }
+
+  const container = document.getElementById("queue-container");
+  if (!filtered.length) {
+    container.innerHTML = `
+      <div class="empty-state">
+        <h3>当前筛选条件下无记录</h3>
+        <p>可尝试切换审核状态或领域，或点击右上角【模拟抓取批次推送】测试入库机制。</p>
+      </div>
+    `;
+    return;
+  }
+
+  container.innerHTML = filtered.map(item => {
+    const typeLabel = item.change_type === "first_seen" ? "🆕 首次收录" : item.change_type === "source_update" ? "🔄 日程变更" : "🚫 重复日程";
+    const statusLabel = item.review_status === "pending" ? "待审核" : item.review_status === "approved" ? "已批准入库" : "已驳回/去重";
+    const domainName = DOMAIN_NAMES[item.field_id] || item.field_id;
+
+    return `
+      <div class="queue-item" data-id="${item.queue_id}">
+        <div>
+          <div class="item-meta">
+            <span class="badge badge-${item.change_type}">${typeLabel}</span>
+            <span class="badge badge-domain">${domainName}</span>
+            <span class="badge badge-status-${item.review_status}">${statusLabel}</span>
+            <span style="font-size: 12px; color: var(--text-muted);">会议编号: ${item.conference_id}</span>
+          </div>
+          <h2 class="item-title">${item.conference_name} (${item.abbreviation || 'CONF'})</h2>
+          <div class="item-details">
+            <span>📅 日期：${item.start_date || '待定'} ~ ${item.end_date || '待定'}</span>
+            <span>📍 举办地点：${item.city || '待定'}</span>
+            ${item.official_url ? `<span>🔗 <a href="${item.official_url}" target="_blank" style="color: var(--primary);">官方来源链接</a></span>` : ''}
+          </div>
+          ${item.review_note ? `<div class="item-note"><strong>审核记录/备注：</strong>${item.review_note} (审核人: ${item.reviewed_by || '系统'}, 时间: ${item.reviewed_at ? item.reviewed_at.slice(0,19).replace('T',' ') : '自动'})</div>` : ''}
+        </div>
+        <div class="item-actions">
+          ${item.review_status === 'pending' ? `
+            <button class="btn btn-success" onclick="reviewItem('${item.queue_id}', 'approve')">✅ 批准并发布</button>
+            <button class="btn btn-danger" onclick="openRejectModal('${item.queue_id}')">❌ 驳回忽略</button>
+          ` : `
+            <span style="font-size: 13px; color: var(--text-muted); text-align: right;">已完成审核处理</span>
+          `}
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+async function reviewItem(queueId, action, note = "") {
+  try {
+    const res = await fetch(`${API_BASE}/api/conference/review`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`
+      },
+      body: JSON.stringify({ queue_id: queueId, action: action, note: note })
+    });
+    const result = await res.json();
+    if (res.ok && result.success) {
+      await loadData();
+    } else {
+      alert("审核失败：" + (result.error || "未知错误"));
+    }
+  } catch (e) {
+    alert("网络请求异常：" + e.message);
+  }
+}
+
+function openRejectModal(queueId) {
+  targetQueueId = queueId;
+  document.getElementById("reject-note").value = "";
+  document.getElementById("reject-modal").style.display = "flex";
+}
+
+function closeRejectModal() {
+  targetQueueId = null;
+  document.getElementById("reject-modal").style.display = "none";
+}
+
+async function confirmReject() {
+  if (!targetQueueId) return;
+  const note = document.getElementById("reject-note").value.trim() || "市场部审核判定不符合入库标准";
+  await reviewItem(targetQueueId, "reject", note);
+  closeRejectModal();
+}
+
+async function simulateCrawlBatch() {
+  const timestamp = new Date().toISOString().slice(11, 19).replace(/:/g, '');
+  const mockItems = [
+    {
+      conference_id: `ESC-HEART-2026`,
+      conference_name: `欧洲心脏病学会年会 2026 (ESC Congress ${timestamp})`,
+      abbreviation: "ESC",
+      field_id: "cardiovascular",
+      start_date: "2026-08-28",
+      end_date: "2026-08-31",
+      city: "Madrid, Spain",
+      source_url: "https://www.escardio.org/Congresses-Events/ESC-Congress",
+      tier_level: "国际顶级学会年会"
+    },
+    {
+      conference_id: "CDS2026",
+      conference_name: "中华医学会第二十八次糖尿病学术会议 (CDS 2026)",
+      abbreviation: "CDS",
+      field_id: "diabetes",
+      start_date: "2026-11-20", // Slightly altered
+      end_date: "2026-11-23",
+      city: "厦门",
+      source_url: "https://cds2026.cma.org.cn/update-schedule",
+      tier_level: "国家重点学术年会"
+    }
+  ];
+
+  try {
+    const res = await fetch(`${API_BASE}/api/conference/ingest`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`
+      },
+      body: JSON.stringify({ items: mockItems })
+    });
+    const result = await res.json();
+    if (res.ok) {
+      alert(`模拟批次抓取推送成功！\n共提交: ${result.total} 场\n首次收录: ${result.first_seen} 场\n日程变更: ${result.source_update} 场\n自动去重: ${result.duplicate} 场`);
+      await loadData();
+    } else {
+      alert("推送失败：" + (result.error || "未知错误"));
+    }
+  } catch (e) {
+    alert("请求异常：" + e.message);
+  }
+}
+
+function showError(msg) {
+  document.getElementById("queue-container").innerHTML = `
+    <div class="empty-state">
+      <h3 style="color: var(--danger);">⚠️ 提示</h3>
+      <p>${msg}</p>
+      <div style="margin-top: 14px;">
+        <button class="btn btn-outline" onclick="loadData()">重试</button>
+      </div>
+    </div>
+  `;
+}
+
+window.onload = loadData;
+</script>
+</body>
+</html>

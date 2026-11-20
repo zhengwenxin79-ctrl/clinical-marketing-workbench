@@ -1,0 +1,254 @@
+{
+  "academic_role_claims": {
+    "count": 174,
+    "sha256": "120b75deb7c01d8b31b48d0d29411d2c3b58886d4a8c309f75f0f33b2f8a0fcb"
+  },
+  "agenda_items": {
+    "count": 3656,
+    "sha256": "7ada874945cd99df26c107d1e608582e7fedb6d3b736865f62875a3ade989947"
+  },
+  "agenda_participants": {
+    "count": 3457,
+    "sha256": "21c3389b710d85faedbf6ab2406d9d1f58c453918add0150bb1fd728ad9f5b5a"
+  },
+  "analysis_versions": {
+    "count": 4,
+    "sha256": "e8aa344f194953884e2591e7c8cc2ba310e352aea1e4ce799f8f69ace33a7798"
+  },
+  "biomarker_aliases": {
+    "count": 31,
+    "sha256": "c4b4c9aec0bbbb23cf0919dcaa1ad91c28a9774d0657f1a504f642daf621eb74"
+  },
+  "biomarker_analysis_runs": {
+    "count": 1,
+    "sha256": "6053a61e6383dbe32a4bb9c36fbb6a06776c89ca63a0fd33ff487ce4e76b454d"
+  },
+  "biomarker_capability_matches": {
+    "count": 11,
+    "sha256": "277345eaa899b1a7f12f9d9a8b24a3bc3cda970c7b7734cf37aa91843ec47b3f"
+  },
+  "biomarker_contexts": {
+    "count": 22,
+    "sha256": "f3682d1b8f086fd3dec882bff1571cb0aec14ef435857dac792f5c5c14cb81b7"
+  },
+  "biomarker_evidence": {
+    "count": 24,
+    "sha256": "fee7608b3af716543830ec0901ccb7b64188532476c9a379ae74cf78549d0498"
+  },
+  "biomarker_extraction_reviews": {
+    "count": 30,
+    "sha256": "ca1e708a69cc3ad450c7a2300a468a4be8602f7fe547e7a0e7936d939a568215"
+  },
+  "biomarker_title_reviews": {
+    "count": 606,
+    "sha256": "5c8bcfe7ed4fac9e77d24ea6c55d8582bdfdf98a7eb5574d024b900584062b5f"
+  },
+  "biomarkers": {
+    "count": 19,
+    "sha256": "3be7a297e887e59a4138ee24c164be56dc868ac01fd7be4e0cb35ed3fb34d427"
+  },
+  "conference_coverage": {
+    "count": 1,
+    "sha256": "469aad651d0ef37ec507e17a69dcde29628ba820a658577ce684e9a753dd2645"
+  },
+  "conference_editions": {
+    "count": 2,
+    "sha256": "ad397ba3201d2c48f908abb5a0de0c594f01e5214e48924df3ac97b35da71fd1"
+  },
+  "conference_page_audit": {
+    "count": 385,
+    "sha256": "1779b2d164546df3153556ccc7602b381e73972fb6d3ca44c69e1e092101f8c7"
+  },
+  "conference_program_occurrences": {
+    "count": 2621,
+    "sha256": "d03635caae516d1ef271c7a69865fe0a2e8ceb1fa80818cf34c44136cb71cccb"
+  },
+  "conference_report_notes": {
+    "count": 2539,
+    "sha256": "f8cbb97479c25ae94ce7ad2daa844003c0eac981c5f7b49f2a01b54cfc556748"
+  },
+  "conference_series": {
+    "count": 2,
+    "sha256": "5eeb4202677333de3261737b182fc66018cb6366bff73a4bc926682ad0ba4649"
+  },
+  "conference_tier_assignments": {
+    "count": 2,
+    "sha256": "ba7acfd7c13875152f719ec54a236929ee19757e28c0294b9bc0f7bc3a5af2f1"
+  },
+  "conference_topic_scope": {
+    "count": 56,
+    "sha256": "11bba913ae6a8e0ece8e6cf818838c90b8e4999f6f7fb8c03bf0cdd008c9057a"
+  },
+  "curated_report_links": {
+    "count": 28,
+    "sha256": "288724a6e6a3bb71c0a933b8d86c18bf1fc96fec98bd65358d8335742a733433"
+  },
+  "curated_research_records": {
+    "count": 27,
+    "sha256": "55077064689bf7b87b9f62cff7b11da2aa066e7b5cf14c97744c7bcf55e9714b"
+  },
+  "import_batches": {
+    "count": 2,
+    "sha256": "0d1e3467ee7a82e25a542dc337ca1e53ac1d0b2c76947a1f056df13b1a05a83d"
+  },
+  "legacy_marker_bindings": {
+    "count": 7,
+    "sha256": "e010961fc18a36918dc08a0ef3cbe6c2cc99a91b218b41fbcc6e474f4ca16a64"
+  },
+  "literature_author_links": {
+    "count": 8,
+    "sha256": "8f1b60b4e363f35223c1e511bbfa7f76610401682ae8e9c7f8763e895890f1c3"
+  },
+  "literature_authors": {
+    "count": 6058,
+    "sha256": "43d83d83431844c66685d7eb61c32b1fe8a10dfaf0c16eb60fbe959e6a0487e7"
+  },
+  "literature_classifications": {
+    "count": 618,
+    "sha256": "a107ace7cb03334f3f7222226d067941399846bb14054cd9cc67960a51887b09"
+  },
+  "literature_discovery_candidates": {
+    "count": 16034,
+    "sha256": "761e17e51011c4d33713361075fc242521590aef9bbc5ef508fecd7821d331f2"
+  },
+  "literature_highlights": {
+    "count": 7,
+    "sha256": "8e0e430b9611948af4546724701e61156d371214d7bec6730990a893b398f848"
+  },
+  "literature_issue_links": {
+    "count": 163,
+    "sha256": "4ebe2b51848c248740dd0896e46d0dd1500034acb0d9e11a8697f83d8c28599d"
+  },
+  "literature_issue_paper_reviews": {
+    "count": 163,
+    "sha256": "b3667b9047ef9ddc101b804341b1a10bc8dec8ebc99cd0e75e60c24d733bffe2"
+  },
+  "literature_issue_versions": {
+    "count": 1,
+    "sha256": "343911296965ae1cb604e5cdf10a58bb1d8e78462176182321b33728a3970538"
+  },
+  "literature_issues": {
+    "count": 51,
+    "sha256": "a8325ca66aeaedf9b094297b0dc38b44292d0a969091601493de3c97ae21f22c"
+  },
+  "literature_papers": {
+    "count": 618,
+    "sha256": "c7668c8fbe806a70fe6061ef576650df00914e5713ffe6a0356d37e5d4bf026e"
+  },
+  "literature_people": {
+    "count": 3,
+    "sha256": "dbd68807aa55b7dc2326782fda01dbbc1dd6f5dec77a3190a5133c9825b72e4b"
+  },
+  "literature_person_roles": {
+    "count": 3,
+    "sha256": "e0d0f8f48f3004d1ede11c27bddae33c9624950d6fad5a2fe8fe8b78a450776b"
+  },
+  "literature_runs": {
+    "count": 1,
+    "sha256": "4673fd790846c6dca517bfaaa22d751967a3c4ddcf4e52e90a2a286a76237057"
+  },
+  "literature_source_checks": {
+    "count": 7,
+    "sha256": "f8d56742c64f80b0e14f928f6144f1f1cef594b4ccbc47e081afb73960cfb572"
+  },
+  "literature_sources": {
+    "count": 7,
+    "sha256": "db78bfd4b59c7b54740bfdd772a46b1f028c54075f7470783841cb7c8d865e27"
+  },
+  "maintenance_changes": {
+    "count": 0,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "maintenance_events": {
+    "count": 1,
+    "sha256": "780af8e6b7ba6767833c31829c0c2aad4747e62fb62719fe9b568114eb8fa1cb"
+  },
+  "maintenance_runs": {
+    "count": 1,
+    "sha256": "f1efd151f4e6401fc8a375a5ab0aa81f9968ffe47f50aba91435c82247c6ef73"
+  },
+  "paper_study_links": {
+    "count": 0,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "people": {
+    "count": 2933,
+    "sha256": "a6d98fdbe09e10051dedbcef06fdd6d1d962a00645d8ee6b124997bf90142e26"
+  },
+  "person_profiles": {
+    "count": 232,
+    "sha256": "794fb596aefb09ea97def4cdf4a40ea9719d5a46c5cb7b3be9f6f1d1dc7d52de"
+  },
+  "quantity_rule_versions": {
+    "count": 1,
+    "sha256": "a620a759eb3619abaac48fc0d8961afe9a229fe8b039b8a963b0e298e4712dd6"
+  },
+  "related_paper_abstracts": {
+    "count": 14,
+    "sha256": "484709959e0c1b20f1d86f1b3af0bc66d801965a696006f588b808e19f6e9fef"
+  },
+  "related_paper_links": {
+    "count": 13,
+    "sha256": "2860a4464410b41b9503f862d4428f65ff3af9f9d56a4f2359a0a3ddf6fa2d65"
+  },
+  "report_classifications": {
+    "count": 3751,
+    "sha256": "092aeff6f7a5e2a7175dfd8754ee40590b7699f359afd26aee307dd7bc729d52"
+  },
+  "report_study_links": {
+    "count": 0,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "report_tags": {
+    "count": 172,
+    "sha256": "340825dfde159c349be91942ed0dedb023c8766e4bf129c40594463009e3402d"
+  },
+  "report_topic_review_notes": {
+    "count": 606,
+    "sha256": "c104cbe22c6c848da04e92b5e8750970221d4821eb67a1c8934b987213e04248"
+  },
+  "reports": {
+    "count": 3145,
+    "sha256": "9d9bac7228ab381209a84ddbe893297f9ce6b160af3ba3b97e1e663a79ae3cb9"
+  },
+  "research_topics": {
+    "count": 182,
+    "sha256": "4a816113917b4c65f4c206493ea97a0edbcb2de84701f715c27a1a98ade168f4"
+  },
+  "session_chairs": {
+    "count": 513,
+    "sha256": "6cdf1e5a47be8aa6ca603391e51159e146adb398d5d69a365781e9cf494f220b"
+  },
+  "sessions": {
+    "count": 390,
+    "sha256": "313da6e54e71f9d9adf6708870485e21c5a33a21ec595586a8144991a85ca62b"
+  },
+  "source_materials": {
+    "count": 448,
+    "sha256": "87b1b4ef503d2c1be7602c407e3c3df5e96399396bbe21a50b53229a27e0fc69"
+  },
+  "speaker_tier_assignments": {
+    "count": 2629,
+    "sha256": "bca84be23ba8388a235fa05b8754b91676cd4c8dcf7235e7f481245bce24af19"
+  },
+  "speaker_tier_evidence": {
+    "count": 152,
+    "sha256": "9a12f0fe27a084d5d22f280815753ba4fdd468574b8821d6a5a3f3d6b9019672"
+  },
+  "studies": {
+    "count": 0,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "tier_rule_versions": {
+    "count": 2,
+    "sha256": "da98ad417e7844acca183c5adfea0f0bbf17d56d6605336aa76a6472f7af5143"
+  },
+  "topic_scope_review_targets": {
+    "count": 58,
+    "sha256": "4a217bdfd856f785c585ccaae12cc13b25034cc33fa4a940da8cc3f6ae14ca00"
+  },
+  "topic_scope_reviews": {
+    "count": 44,
+    "sha256": "2db1f732a512fa8f8ad943a5d259b80ac117d7f259bc8fe4b4be3b8e2591d8ed"
+  }
+}

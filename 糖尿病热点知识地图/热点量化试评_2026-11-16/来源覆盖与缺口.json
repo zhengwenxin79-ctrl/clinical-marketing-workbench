@@ -1,0 +1,54 @@
+{
+  "as_of": "2026-11-16",
+  "CDS": {
+    "url": "https://cds26.tiemeeting.com/CN/Program/Details",
+    "raw_file": "原始材料/CDS_详细日程_2026-11-16.html",
+    "sha256": "49408ef02aa7723e3841c03476f22b2ea9c37a20ba91117bdf3cb3c56cebb780",
+    "sessions": 148,
+    "rows": 797,
+    "numbered": 699,
+    "parsed_previous_2026_11_11": {
+      "rows": 798,
+      "numbered": 700
+    },
+    "difference": "原日程OR_219本次不再出现；仅记录条目变化，不推断主办方撤稿原因",
+    "reports_result_read": 0
+  },
+  "ADA": {
+    "program_url": "https://professional.diabetes.org/sites/dpro/files/2026-04/SS26_Program_Final_Digital.pdf",
+    "program_version": "2026-04-24导出；复用11/11存档，抽样核对物理第294页",
+    "source_papers": 14,
+    "read_level": "PubMed保存的原始论文完整摘要；未全文精读",
+    "candidate_pool": 27,
+    "eligible_records": 14,
+    "unranked": 13,
+    "blocked_examples": [
+      "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1024-OR/167746/1024-OR-Immunologically-Distinct-Type-1-Diabetes",
+      "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1113-OR/168085/1113-OR-ADA-Presidents-Select-Abstract-Single-Cell"
+    ],
+    "blocked_status": "原站直访403；检索线索未替代本轮完整原始结果",
+    "correction_gaps": [
+      {
+        "pmid": "42251859",
+        "erratum_pmid": "42320507",
+        "doi": "10.1016/S2213-8587(26)00157-9",
+        "status": "勘误存在已核，内容待取"
+      },
+      {
+        "pmid": "42252333",
+        "erratum_pmid": "42642663",
+        "doi": "10.1038/s41591-026-04650-w",
+        "status": "勘误存在已核，内容待取"
+      }
+    ],
+    "publication_timing_note": "A08会议前已发表，A03/A15为会后论文更新；会议关联不代表本届首次披露。"
+  },
+  "company_fit": {
+    "basis_date": "2026-11-10",
+    "source": "吉因加临床科研能力表",
+    "status": "仅研究问题匹配，未重新核对产品目录或当前交付"
+  },
+  "ranking_version": "v0.1 AI试评，待导师人工校准",
+  "formal_website_changed": false,
+  "new_schedule_created": false
+}

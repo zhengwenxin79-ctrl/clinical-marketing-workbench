@@ -1,0 +1,16 @@
+{
+  "result": "audited",
+  "version": "BM:LOCAL-SOURCE-AUDIT:20261118:v1",
+  "records": 107,
+  "counts": {
+    "evidence": 24,
+    "entity": 19,
+    "context": 22,
+    "match": 11,
+    "extraction": 30,
+    "run": 1
+  },
+  "result_evidence": 0,
+  "new_collection": false,
+  "published": false
+}

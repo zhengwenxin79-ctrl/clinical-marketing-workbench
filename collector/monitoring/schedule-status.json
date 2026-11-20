@@ -1,0 +1,13 @@
+{
+  "automation_id": "automation-3",
+  "name": "糖尿病每周会议检查",
+  "status": "PAUSED",
+  "timezone": "Asia/Shanghai",
+  "schedule_description": "每周一09:00",
+  "mode": "draft_only",
+  "configured_on": "2026-11-13",
+  "source": "Codex automation_update create result",
+  "disabled_on": "2026-11-13",
+  "reason": "用户取消上午九点的任务；WorkBuddy/豆包可行性讨论中，未迁移或新建任务。",
+  "migration_note": "Windows副本仅供手动运行；不导入或恢复原Codex自动化。"
+}

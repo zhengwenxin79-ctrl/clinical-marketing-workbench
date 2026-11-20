@@ -1,0 +1,16 @@
+[
+  {
+    "file": "CDS_详细日程_2026-11-16.html",
+    "url": "https://cds26.tiemeeting.com/CN/Program/Details",
+    "exit_code": 0,
+    "error": "",
+    "bytes": 2943407
+  },
+  {
+    "file": "ADA_论文摘要批量.xml",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=42878622,42251769,42259339,41765029,42251860,42251859,42251856,42259343,42259337,42250575,42814954,42253238,42252333&retmode=xml",
+    "exit_code": 0,
+    "error": "",
+    "bytes": 308366
+  }
+]

@@ -1,0 +1,404 @@
+中国工程院 (https://www.cae.cn/cae/html/main/colys/35045107.html)
+citeturn162search0 [wordlim: 200] Crawled: last month; 宁光院士百科 ... 1994年毕业于上海第二医科大学，获博士学位。
+
+ 
+
+    2015年当选中国工程院院士。
+
+宁光
+
+宁光院士百科
+
+　
+
+    内分泌代谢病学专家，主要从事内分泌与代谢病临床与基础研究。1963年6月出生于山东省滨州市。1994年毕业于上海第二医科大学，获博士学位。
+
+ 
+
+    2015年当选中国工程院院士。--------------------------------------------------------------------------------
+Human Loss-of-Function ZNRF3 Mutation Impairs Adipose Thermogenesis and Drives Subcutaneous Fat Expansion. (https://pubmed.ncbi.nlm.nih.gov/42599779/)
+citeturn162search1 [wordlim: 200] Published: last month; Crawled: last month; # Human Loss-of-Function ZNRF3 Mutation Impairs Adipose Thermogenesis and Drives Subcutaneous Fat Expansion. ...   * Ningning Zhang ... Here, through whole-exome sequencing of 1,944 obese individuals and 2,161 healthy lean control individuals, we identified a rare loss-of-function mutation in human ZNRF3 (p.V228L) observed exclusively in 8 obese individuals.
+# Human Loss-of-Function ZNRF3 Mutation Impairs Adipose Thermogenesis and Drives Subcutaneous Fat Expansion.
+
+Diabetes
+
+PMID: 42599779
+
+Publication date: 2026 Oct 01
+
+Publication status: ppublish
+
+Journal abbreviation: Diabetes
+
+Journal country: United States
+
+Journal NLM unique ID: 0372763
+
+Journal linking ISSN: 0012-1797
+
+ISSN: 1939-327X
+
+Volume: 75
+
+Issue: 10
+
+Pages: 1794-1809
+
+## Identifiers
+
+  * DOI: 10.2337/db25-1108
+  * PII: 172388
+
+## Authors
+
+  * Ningning Zhang
+  * Peng Lu
+  * Yangyi Tong
+  * Zhiwen Cao
+  * Yinmeng Zhu
+  * Yujia Gong
+  * Nan Yin
+  * Ruikai Yang
+  * Muye Tong
+  * Na Chen
+  * Yuxiao Zhao
+  * Chao Wu
+  * Qian Li
+  * Zhongyun Zhang
+  * Xinyuan Zhou
+  * Dongqin Gu
+  * Yansong Liu
+  * Qianyun Cheng
+  * Zhiguo Zhang
+  * Jieli Lu
+  * Yufang Bi
+  * Yong Geng
+  * Weiqing Wang
+  * Guang Ning
+  * Jie Hong
+  * Weiqiong Gu
+  * Ruixin Liu
+
+## Affiliations
+
+  * Department of Endocrine and Metabolic Diseases, Shanghai Institute of Endocrine and Metabolic Diseases, Ruijin Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, P.R. China.
+  * Shanghai National Clinical Research Center for Metabolic Diseases, Key Laboratory for Endocrine and Metabolic Diseases of the National Health Commission of the People's Republic of China, Shanghai National Center for Translational Medicine, Shanghai, P.R. China.
+  * Key Laboratory of Endocrine Glucose & Lipids Metabolism and Brain Aging, Ministry of Education; Department of Endocrinology, Shandong Provincial Hospital Affiliated to Shandong First Medical University, Jinan, Shandong, P.R. China.
+  * School of Pharmacy, Shenzhen University of Advanced Technology, Shenzhen, Guangdong, P.R. China.
+
+## Languages
+
+  * eng
+
+## Publication types
+
+  * Journal Article
+
+## Abstract
+
+Zinc and ring finger protein 3 (ZNRF3) functions as a transmembrane E3 ubiquitin ligase. Although genome-wide association studies have implicated ZNRF3 in body fat distribution, the evidence from human genetics and animal models has been lacking. Here, through whole-exome sequencing of 1,944 obese individuals and 2,161 healthy lean control individuals, we identified a rare loss-of-function mutation in human ZNRF3 (p.V228L) observed exclusively in 8 obese individuals. These carriers exhibit increased hip circumference and subcutaneous fat area and lower fasting glucose levels compared with noncarriers. In mice, adipocyte-specific Znrf3 deletion leads to progressive adiposity, with expansion of subcutaneous white adipose tissue (sWAT) and improved glucose tolerance after a long-term high-fat diet. Furthermore, Znrf3 deficiency impairs the browning capacity of sWAT and cold-induced thermogenesis. A knock-in mouse model harboring the homologous human p.V228L mutation recapitulates key features of carriers and knockout mice, including reduced sWAT thermogenic function, altered fat distribution, and improved glucose tolerance. Mechanistically, Znrf3 loss attenuates the cAMP/cAMP-dependent protein kinase signaling pathway, suppressing UCP1 expression and mitochondrial respiration. Collectively, these findings provide genetic and biological evidence that ZNRF3 regulates thermogenic capacity and remodeling of sWAT, offering new insights into obesity heterogeneity.
+
+ARTICLE HIGHLIGHTS: A rare loss-of-function variant in ZNRF3 (p.V228L) is enriched in individuals with obesity and is associated with increased subcutaneous white adipose tissue (sWAT) accumulation and lower fasting glucose levels. Both adipocyte-specific Znrf3 knockout and global variant knock-in impair sWAT browning, increase sWAT expansion, and improve glucose tolerance in mice. These findings establish ZNRF3 as a genetic regulator of fat distribution and thermogenic capacity, informing precise phenotyping of obesity. GWAS has implicated ZNRF3 in human fat distribution, yet its role in adipose tissue biology remains unknown.
+
+## MeSH terms
+
+  * Humans
+  * Animals
+  * Mice
+  * Thermogenesis / genetics
+  * Ubiquitin-Protein Ligases / genetics
+  * Ubiquitin-Protein Ligases / metabolism
+  * Obesity / genetics
+  * Obesity / metabolism
+  * Loss of Function Mutation
+  * Subcutaneous Fat / metabolism
+  * Male
+  * Female
+  * Adipose Tissue, White / metabolism
+  * Mice, Knockout
+  * Adult
+  * Middle Aged
+
+## Substances
+
+  * Ubiquitin-Protein Ligases (Registry number: EC 2.3.2.27)
+
+## Grants
+
+  * Grant ID: 82088102; Agency: National Natural Science Foundation of China
+  * Grant ID: 82200947; Agency: National Natural Science Foundation of China
+  * Grant ID: 82250901; Agency: National Natural Science Foundation of China
+  * Grant ID: 82501057; Agency: National Natural Science Foundation of China
+  * Grant ID: 82525016; Agency: National Natural Science Foundation of China
+  * Grant ID: 92157204; Agency: National Natural Science Foundation of China
+  * Grant ID: 92457302; Agency: National Natural Science Foundation of China
+  * Grant ID: U24A20675; Agency: National Natural Science Foundation of China--------------------------------------------------------------------------------
+Human Loss-of-Function ZNRF3 Mutation Impairs Adipose Thermogenesis and Drives Subcutaneous Fat Expansion (https://diabetesjournals.org/diabetes/article/75/10/1794/172388/Human-Loss-of-Function-ZNRF3-Mutation-Impairs)
+citeturn162search2 [wordlim: 200] Published: 3 months ago; Crawled: last month; # Human Loss-of-Function ZNRF3 Mutation Impairs Adipose Thermogenesis and Drives Subcutaneous Fat Expansion Available to Purchase
+
+Ningning Zhang
+
+Article navigation
+
+Volume 75, Issue 10
+
+October 2026
+
+Obesity Studies| August 14 2026
+
+# Human Loss-of-Function ZNRF3 Mutation Impairs Adipose Thermogenesis and Drives Subcutaneous Fat Expansion Available to Purchase
+
+Ningning Zhang
+
+0000-0002-9104-7845
+
+;
+
+Close author information for Ningning Zhang
+
+Ningning Zhang
+
+1
+
+Department of Endocrine and Metabolic Diseases, Shanghai Institute of Endocrine and Metabolic Diseases, Ruijin Hospital, Shanghai Jiao Tong University School of Medicine
+
+, Shanghai, P.R. China
+
+2
+
+Shanghai National Clinical Research Center for Metabolic Diseases, Key Laboratory for Endocrine and Metabolic Diseases of the National Health Commission of the People’s Republic of China, Shanghai National Center for Translational Medicine
+
+, Shanghai, P.R. China
+
+Search for other works by this author on:
+
+This Site
+
+PubMed
+
+Google Scholar
+
+Peng Lu
+
+0000-0003-1317-0896
+--------------------------------------------------------------------------------
+院士馆-中国工程院院士-医药卫生学部-宁光 (https://ysg.ckcest.cn/html/details/4963/index.html)
+citeturn162search3 [wordlim: 200] Crawled: last month; 吉林大学评） ... #### 中国工程院院士  2015年 ...   * 中国工程院院士宁光：希望建成中国第一个真正意义上的研究型医院 2024-11-24 ... 院士馆-中国工程院院士-医药卫生学部-宁光
+
+宁光
+
+中国工程院院士
+
+宁光在内分泌代谢病的基础及临床研究方面有着突出的临床及科研成绩，为推动中国内分泌代谢病事业发展及国际地位的提升做出了积极努力。（吉林大学评）
+
+## 个人信息
+
+#### 姓名
+
+:
+
+#### 宁光
+
+#### 民族
+
+:
+
+#### 汉族
+
+#### 性别
+
+:
+
+#### 男
+
+#### 国籍
+
+:
+
+Image
+
+中国
+
+#### 籍贯
+
+:
+
+#### 山东省 滨州市
+
+#### 出生年月
+
+:
+
+#### 1963年6月
+
+Image
+
+#### 当选信息
+
+:
+
+#### 中国工程院院士  2015年
+
+#### 学部
+
+:
+
+#### 医药卫生学部 
+
+## 成就贡献
+
+1
+
+2017年 国家科学技术进步奖 二等奖
+
+2
+
+2012年 国家科学技术进步奖 二等奖
+
+3
+
+2010年 国家科学技术进步奖 二等奖
+
+4
+
+2008年 国家科学技术进步奖 二等奖
+
+5
+
+2014年 上海市科学技术进步奖 一等奖
+
+## 人生点滴
+
+[Input]
+
+### 人生点滴
+
+1963
+
+1963年6月 出生于 山东省 滨州市
+
+2004
+
+2004年 荣获 上海市医学科技奖 一等奖
+
+2005
+
+2005年 荣获 中华医学会技术发明奖 二等奖
+--------------------------------------------------------------------------------
+Volume 75 Issue 10 | Diabetes | American Diabetes Association (https://diabetesjournals.org/diabetes/issue/75/10)
+citeturn162search4 [wordlim: 200] Published: 2 months ago; Crawled: last week; ### Human Loss-of-Function ZNRF3 Mutation Impairs Adipose Thermogenesis and Drives Subcutaneous Fat Expansion Available to Purchase
+
+Ningning Zhang; Peng Lu; Yangyi Tong; Zhiwen Cao; Yinmeng Zhu; Yujia Gong; Nan Yin; Ruikai Yang; Muye Tong; Na Chen; Yuxiao Zhao; Chao Wu; Qian Li; Zhongyun Zhang; Xinyuan Zhou; Dongqin Gu; Yansong Liu; Qianyun Cheng; Zhiguo Zhang; Jieli Lu; Yufang Bi; Yong Geng; Weiqing Wang; Guang Ning; Jie Hong; Weiqiong Gu; Ruixin Liu; Jiqiu Wang
+
+Diabetes August 2026, Vol.75, 1781-1793. doi:https://doi.org/10.2337/db25-0526
+
+### Human Loss-of-Function ZNRF3 Mutation Impairs Adipose Thermogenesis and Drives Subcutaneous Fat Expansion Available to Purchase
+
+Ningning Zhang; Peng Lu; Yangyi Tong; Zhiwen Cao; Yinmeng Zhu; Yujia Gong; Nan Yin; Ruikai Yang; Muye Tong; Na Chen; Yuxiao Zhao; Chao Wu; Qian Li; Zhongyun Zhang; Xinyuan Zhou; Dongqin Gu; Yansong Liu; Qianyun Cheng; Zhiguo Zhang; Jieli Lu; Yufang Bi; Yong Geng; Weiqing Wang; Guang Ning; Jie Hong; Weiqiong Gu; Ruixin Liu; Jiqiu Wang
+
+Abstracts
+
+View article titled, Human Loss-of-Function <em>ZNRF3</em> Mutation Impairs Adipose Thermogenesis and Drives Subcutaneous Fat Expansion
+--------------------------------------------------------------------------------
+EASD 2026 - Efficacy and hypoglycaemia outcomes with once-weekly IcoSema vs glargine U100 in T2D by baseline BMI: COMBINE 4<br> (https://sciencehub.novonordisk.com/congresses/easd2026/ji.html)
+citeturn162search5 [wordlim: 200] Crawled: today; # Efficacy and hypoglycaemia outcomes with once-weekly IcoSema vs glargine U100 in T2D by baseline BMI: COMBINE 4 ... Linong Ji^{1}; Raluca Maltesen^{2}; Laura Pletsch-Borba^{3}; Cathrine Scavenius^{3}; Daisuke Yabe^{4}; Viswanathan Mohan^{5}
+
+EASD 2026 28 September - 2 October 2026
+
+# Efficacy and hypoglycaemia outcomes with once-weekly IcoSema vs glargine U100 in T2D by baseline BMI: COMBINE 4
+
+Authors:
+
+Linong Ji^{1}; Raluca Maltesen^{2}; Laura Pletsch-Borba^{3}; Cathrine Scavenius^{3}; Daisuke Yabe^{4}; Viswanathan Mohan^{5}
+
+Page 1 of 5
+
+Download .PPTDownload .PDF
+
+Download the poster (.pdf)
+
+[Input][Input]
+
+Keywords
+
+DiabetesCongress short oral presentationInsulinIcoSema (Icodec Semaglutide)Clinical--------------------------------------------------------------------------------
+Publications — Glucagon.com (https://glucagon.com/druckerpublications)
+citeturn162search6 [wordlim: 200] Crawled: today; Daniel J. ... Olive Oil Before Oral Glucose Delays Gastric Emptying and Lowers Glycemia Through Partially Redundant Glucagon and GLP-1 Signaling in Mice Diabetes 2026 https://doi.org/10.2337/db26-0531 ... Le, T.D.V., Fathi, P.,  Watters,A.B., Ellis, B.J.,Bozadjieva-Kramer, N., Perez, M.B., Sullivan, A.I., Rose, J.P., Baggio, L.L., Koehler J, Brown J.L., Bales M.B, Nwaba K.G., Campbell J.E., Drucker D.J, Potthoff MJ, Seeley RJ, Ayala JE Liver Fibroblast Growth Factor 21 (FGF21) is Required for the Full Anorectic Effect of the Glucagon-Like Peptide-1 Receptor Agonist Liraglutide in Male Mice fed High Carbohydrate Diets Molecular Metabolism 2023 https://doi.org/10.1016/j.molmet.2023.101718
+
+Daniel J. Drucker Lab
+Lunenfeld-Tanenbaum Research Institute
+Mount Sinai Hospital
+University of Toronto
+Innovating the Science of Glucagon-Like Peptides
+
+DRUCKER LAB PUBLICATIONS
+
+Drucker Lab citations  https://scholar.google.ca/citations?user=xmFOoRYAAAAJ&hl=en
+
+2026
+
+Koehler, J.A., Baggio, L.L., Cao, X., Shang, R., Yusta, B., Wong, C.-K., Matthews, D., Sandoval, D.A., Drucker, D. J. Gut-derived glucagon-like peptides attenuate T-cell induced intestinal injury Cell Reports Medicine 2026 Oct 2010.1016/j.xcrm.2026.103115 
+
+Liu,Y., Tsuchida, H., Kubota, S., Kubota-Okamoto, S., Kato, T., Horikawa, Y., Tsunekawa, S., Kuwata, Yuka Fujiwara, H., Yamazaki, Y., Yamada, Y., Fujita, H.,  Iizuka, K., Murao, N., Ueno, S., Seino, Y., Suzuki, A., Hayashi, Y., Nakanishi, T., Drucker, D. J.,  Shiina, T., Shimizu, Y., Iwasaki, Y., Yada, T., Seno, Y., Takahashi, Y., Imaizumi, T., Murakami, T., Horowitz, M., Seino, Y., Yabe, D. Olive Oil Before Oral Glucose Delays Gastric Emptying and Lowers Glycemia Through Partially Redundant Glucagon and GLP-1 Signaling in Mice Diabetes 2026 https://doi.org/10.2337/db26-0531
+
+Jastreboff, A.M., Ard, J.D., Hall, K.D., Kaplan, L.M., Krumholz, H.M., Van Name, M., Ryan, D.H., Drucker, D.J. Obesity science, research gaps, and opportunities in the new era of obesity medicines: an Endocrine Society scientific statement Endocrine Reviews 2026 https://doi.org/10.1210/endrev/bnag025
+
+Gonzalez-Rellan, M.J., Drucker, D .J. The weight loss-independent mechanisms of GLP-1 action Cell Metabolism 2026 38(8) p1535-1539
+
+--------------------------------------------------------------------------------
+国家重点实验室 年度报告 2015 (https://www.most.gov.cn/xxgk/xinxifenlei/fdzdgknr/zfwzndbb/201704/P020170407586918592314.pdf)
+citeturn162search11 [wordlim: 200] Published: 9.6 years ago; Crawled: last year; 国家重点实验室 年度报告 2015 ... <tr><td>陆建华</td><td>中国科学院院士</td><td>清华信息科学与技术国家实验室（筹）</td><td>清华大学</td></tr>
+<tr><td>宁 光</td><td>中国工程院院士</td><td>医学基因组学国家重点实验室</td><td>上海交通大学</td></tr>
+--------------------------------------------------------------------------------
+The 62nd Annual Meeting of the European Association for the Study of Diabetes (EASD 2026) (https://sciencehub.novonordisk.com/congresses/easd2026.html)
+citeturn162search7 [wordlim: 200] Crawled: today; Efficacy and hypoglycaemia outcomes with once-weekly IcoSema vs glargine U100 in T2D by baseline BMI: COMBINE 4
+
+Linong Ji^{1}; Raluca Maltesen^{2}; Laura Pletsch-Borba^{3}; Cathrine Scavenius^{3}; Daisuke Yabe^{4}; Viswanathan Mohan^{5}
+--------------------------------------------------------------------------------
+第三部分　国家重点实验室队伍建设 (https://www.most.gov.cn/kjbgz/201704/P020170407584316401535.pdf)
+citeturn162search12 [wordlim: 200] Published: 9.6 years ago; Crawled: 2 weeks ago; 上海交通大学医学院研究员，医学基因组学国家重点实验室固定人员。 ... 2015年当选为中国工程院院士。 ... - 版面布局：宁光的文字介绍位于上半部分右侧，照片位于左侧；钱锋的文字介绍位于下半部分左侧，照片位于右侧。
+--------------------------------------------------------------------------------
+贾伟平、宁光入选中国工程院2015年院士第二轮评审的候选人名单®医学论坛网-网聚医学的力量 (https://diabetes.cmt.com.cn/detail/849917.html)
+citeturn162search8 [wordlim: 200] Published: 11.4 years ago; Crawled: 5 months ago; ## 贾伟平、宁光入选中国工程院2015年院士第二轮评审的候选人名单 ...         2015年中国工程院院士增选第一轮评审工作已经结束，各学部经过候选人材料审阅、专业组评审、全学部评审和投票等程序(医药卫生学部采用通信评审、工程管理学部候选人在相关专业背景学部评审)，从521位有效候选人中产生了进入第二轮评审的候选人203位，根据《中国工程院院士增选工作实施办法》的规定，现予以公布，欢迎社会各界监督。 ...         现任上海市第六人民医院、上海交通大学附属第六人民医院院长，上海市糖尿病临床医学中心主任、上海市糖尿病重点实验室主任和上海市糖尿病研究所所长，兼任中华医学会糖尿病学会候任主任委员、中华医学会内科分会常委、上海医学会糖尿病专科委员会主任委员，第11届、第12届全国人大代表。
+--------------------------------------------------------------------------------
+山东大学三位校友新当选为两院院士-山东大学校友网 (https://www.sdu.org.cn/info/1051/2063.htm)
+citeturn162search9 [wordlim: 200] Published: 10.9 years ago; Crawled: 5 months ago; 中国工程院选举产生了70位院士，山东大学物理77级校友、北京钢铁研究总院李卫和医学82级校友、上海交通大学医学院附属瑞金医院宁光名列其中；中国科学院选举产生了61名中国科学院院士和12名中国科学院外籍院士，山东大学79级电机工程专业校友、北京航空航天大学房建成成功当选。 ... 从事新型稀土永磁材料的研究、开发工作。 ... 2015年当选为中国工程院化工、冶金与材料工程学部院士。 ... 2015年当选为中国科学院信息技术科学部院士。
+--------------------------------------------------------------------------------
+综合
+4
+2015 年12 月8 日
+星期二
+Tel押（010）62580620
+主编：肖洁编辑：张 (https://news.sciencenet.cn/dz/upload/201512881325755.pdf)
+citeturn162search13 [wordlim: 200] Published: 6 months ago; 中国科学院2015 年新当选院士名单 数学物理学部（11 人） 地学部（10 人） 王贻芳 邓小刚 朱诗尧 江 松 杜江峰 杨树锋 吴福元 沈树忠 张人禾 陈大可 张平文 陈仙辉 罗民兴 莫毅明 景益鹏 陈发虎 陈晓非 郝 芳 夏 军 高 锐 谢心澄 化学部（9 人） 信息技术科学部（8 人） 于吉红（女） 刘云圻 安立佳 孙世刚 王永良 刘明（女） 陆建华 房建成 李玉良 张锁江 席振峰 唐 勇 姜杰（女） 周志鑫 顾瑛（女） 黄如（女） 谭蔚泓 生命科学和医学学部（12 人） 技术科学部（11 人） 王福生 李蓬（女）宋微波 张 旭 陈义汉 闫楚良 何雅玲（女） 邹志刚 汪卫华 陈孝平 陈国强 邵 峰 周 琪 徐国良 陈云敏 陈维江 俞大鹏 宣益民 倪晋仁 曹晓风（女） 阎锡蕴（女） 常 青 韩杰才 中国科学院2015 年新当选外籍院士名单（12 人） 艾思本Richard Lawrence Edwards 安德森·林奎斯特Anders Lindquist 高华健Huajian Gao 保罗·纳斯Paul Nurse 马丁·格勒切尔Martin Groetschel 阿塔·拉曼Atta-ur Rahman 罗伯特·格拉布斯Robert Howard Grubbs 西蒙·怀特Simon D.M. ... Lieber 庄小威Xiaowei Zhuang | 中国工程院2015 年新当选院士名单 机械与运载工程学部（9 人） 土木、水利与建筑工程学部（8 人） 陈学东 侯 晓 李德群 李魁武 陈政清 孟建民 彭永臻 任辉启 邱志明 孙 聪 田红旗（女） 谭述森 王复明 王建国 郑健龙 王华明 杨德森 环境与轻纺工程学部（6 人） 信息与电子工程学部（8 人） 贺克斌 李家彪 吴清平 杨志峰 岳国君 张远航 陈 纯 樊邦奎 姜会林 廖湘科 农业学部（9 人） 王恩东 吴建平 吴伟仁 余少华 曹福亮 金宁一 李天来 沈建忠 化工、冶金与材料工程学部（9 人） 宋宝安 唐华俊 万建民 张洪程 张新友 陈芬儿 陈建峰 李 卫 刘中民 医药卫生学部（7 人） 毛新平 钱 锋 王迎军（女） 高长青 顾晓松 黄璐琦 李 松 王玉忠 谢建新 宁 光 孙颖浩 张志愿 能源与矿业工程学部（8 人） 工程管理学部（6 人） 邓运华 顾大钊 康红普 李根生 柴洪峰 丁烈云 金智新 凌 文 李建刚 刘吉臻 罗 安 武 强 邵安林 向巧（女） 中国工程院 2015 年新当选外籍院士名单（8 人） 牟德C.D（. ... 德福德大学的科学家开发出一种技术，通过将
+--------------------------------------------------------------------------------
+Search Results | Scholarly Articles, Journals, and E-Books | EBSCOhost (https://openurl.ebsco.com/results?bquery=AU+Chen%2C+Na&link_origin=&searchDescription=Chen%2C+Na&sid=ebsco%3Aocu%3Arecord&sortBy=date)
+citeturn162search10 [wordlim: 200] Crawled: 2 weeks ago; ### Human Loss-of-Function ZNRF3 Mutation Impairs Adipose Thermogenesis and Drives Subcutaneous Fat Expansion. ...   * Zhang, Ningning;
+--------------------------------------------------------------------------------
+科学技术部基础研究司
+科学技术部基础研究管理中心
+二○一六年十二月 (https://img1.17img.cn/17img/files/201704/ueattachment/374ce521-1d6b-47db-bdc0-24651aee062b.pdf)
+citeturn162search14 [wordlim: 200] Published: 9 months ago; 姓 名 陆建华 | 院士类别 中国科学院院士 | 实验室名称 清华信息科学与技术国家实验室（筹） | 单位 清华大学
+姓 名 宁 光 | 院士类别 中国工程院院士 | 实验室名称 医学基因组学国家重点实验室 | 单位 上海交通大学
+--------------------------------------------------------------------------------
+宁光 (https://zh.wikipedia.org/wiki/%E5%AE%81%E5%85%89)
+citeturn162search15 [wordlim: 200] Crawled: 1.6 years ago; 宁光（1963年6月22日—），山东滨州人，中国内分泌代谢病学专家，2001年6月加入中国共产党。 ... 2019年任山东第一医科大学（山东省医学科学院）首任校长（院长）。 ... *  宁光_基本信息_中国工程院院士馆. ysg.ckcest.cn.
+--------------------------------------------------------------------------------
+第三部分 国家重点实验室队伍建设 (https://csbaa.nwsuaf.edu.cn/docs/2017-04/20170413112113450611.pdf)
+citeturn162search16 [wordlim: 200] Published: 9.6 years ago; Crawled: 4 days ago; 人物照片：宁光，男性，中年，短黑发，佩戴金属框眼镜，身穿黑色西装、白色衬衫，系蓝色领带。 ... 上海交通大学医学院研究员，医学基因组学国家重点实验室固定人员。 ... 发现多发性内分泌腺瘤病1型、胰岛细胞瘤与肾上腺腺瘤综合征发病机制及致病基因，规范并优化诊疗方案，显著提升内分泌肿瘤基础研究与临床诊治整体水平；致力于通过大型队列研究创建生物样本库的研究模式，全面阐述中国代谢性疾病流行病学形势，深入探索危险因素及防治新方案。 ... 2015年当选为中国工程院院士。
+--------------------------------------------------------------------------------
+中国科学院院士列表 (https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E7%A7%91%E5%AD%A6%E9%99%A2%E9%99%A2%E5%A3%AB%E5%88%97%E8%A1%A8)
+citeturn162search17 [wordlim: 200] Crawled: 2 months ago;  迪然·阿彼林 | 外籍院士 | 2021年 | 美国国籍 | 金属材料凝固科学、铸造技术 | 加州大学欧文分校 ...  顾瑛 | 信息技术科学部 | 2015年 | 北京 | 激光医学 | 中国人民解放军总医院 ...  李四光 | 地学部 | 1955年 | 湖北黄冈 | 地质学 | 中国科学院 ...  王贻芳 | 数学物理学部 | 2015年 | 江苏南京 | 物理学 | 南京大学、佛罗伦萨大学
+--------------------------------------------------------------------------------
+中国人民解放军国防科技大学 (https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E4%BA%BA%E6%B0%91%E8%A7%A3%E6%94%BE%E5%86%9B%E5%9B%BD%E9%98%B2%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6)
+citeturn162search18 [wordlim: 200] Crawled: 2 weeks ago; 中国人民解放军国防科技大学 ... 中国科学院院士 ...  2011年 | 信息科学部 | 杨学军 ...  1995年 | 机械与运载工程学部 | 顾懋祥、杨士莪、王兴治、徐滨士、李明
+--------------------------------------------------------------------------------
+中国工程院院士 (https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E5%B7%A5%E7%A8%8B%E9%99%A2%E9%99%A2%E5%A3%AB)
+citeturn162search19 [wordlim: 200] Crawled: 3 months ago; 2003年、2005年、2007年和2009年，分别有58人、50人、33人和48人新当选为工程院院士；2015年新增70人；2015年12月累计有852人，其中资深院士322人。 ... * 外籍院士对中国工程科学技术发展和本院工作有建议权；可应邀出席本院及学部组织的有关会议和学术活动，可获得本院赠送的出版物；外籍院士不参加选举活动。
+--------------------------------------------------------------------------------
+中国科学院浙籍院士 (https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E7%A7%91%E5%AD%A6%E9%99%A2%E6%B5%99%E7%B1%8D%E9%99%A2%E5%A3%AB)
+citeturn162search20 [wordlim: 200] Crawled: 3.9 years ago; 中国科学院浙籍院士 ... 据如下不完全统计，中华人民共和国成立以来的中科院院士（学部委员）中，浙江籍人士占了近1／5，共203位，仅次于江苏省。 ...  包为民 | 信息技术科学部 | 2005年 | 宁波镇海 | 生于黑龙江哈尔滨
+--------------------------------------------------------------------------------
+张效祥 (https://zh.wikipedia.org/wiki/%E5%BC%A0%E6%95%88%E7%A5%A5)
+citeturn162search21 [wordlim: 200] Crawled: 4.0 years ago; 逝世 | 2015年10月22日（97歲） ... 母校 | 武汉大学 ... *  中国科学院学部与院士·院士信息·信息技术科学部·张效祥 互联网档案馆的存檔，存档日期2012-04-25.
+

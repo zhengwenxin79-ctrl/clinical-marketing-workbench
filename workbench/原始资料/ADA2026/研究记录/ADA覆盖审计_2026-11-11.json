@@ -1,0 +1,20 @@
+{
+  "date": "2026-11-11",
+  "activity": "ADA coverage audit and collection-scope design",
+  "new_study_results_extracted": 0,
+  "html_ada_count_unchanged": 6,
+  "sources": [
+    "https://www.adameetingnews.org/category/scientific-sessions/2026/clinical-trials-2026/",
+    "https://diabetes.org/newsroom/press-releases/achieve-trials-demonstrate-comparative-benefits-novel-small-molecule-oral",
+    "https://diabetes.org/newsroom/press-releases/once-weekly-cagrisema-amylin-semaglutide-combination-injection-more",
+    "https://www.adameetingnews.org/automated-insulin-delivery-demonstrates-efficacy-in-glycemic-management-in-the-hospital/"
+  ],
+  "local_source": "ADA2026_日程.txt",
+  "proposed_coverage_domains": 9,
+  "exclusion_notes": [
+    "Conference-programme title alone is not result verification.",
+    "Do not count canceled sessions as presented results.",
+    "Non-diabetes obesity populations are adjacent context.",
+    "Trial families must split individual trials and deduplicate their presentation versions."
+  ]
+}

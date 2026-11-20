@@ -1,0 +1,1 @@
+{"header":{"type":"esearch","version":"0.3"},"esearchresult":{"count":"3","retmax":"3","retstart":"0","idlist":["41511155","40442819","38236143"],"translationset":[],"querytranslation":"\"Wan J\"[Author] AND (\"Pingshan\"[Affiliation] OR \"Shenzhen\"[Affiliation]) AND \"diabet*\"[Title/Abstract] AND 2023/11/16:2026/11/16[Date - Publication]"}}

@@ -1,0 +1,16 @@
+{
+  "result": "generated",
+  "database_sha256": "645adc48a9af2eb67a9df04a0f4990fce706a5a4fcf2fe467c8e2372f0e78568",
+  "directory_sha256": "e0067c26616aefde59b85424f6877455fe4caf5f800927bd46071a94b43bb25f",
+  "hotspots_sha256": "ede2a54769ac5f94337824468494f7f95b78c9f00502ba1dab64e5e7ce897be5",
+  "html_sha256": "6a67723013405fa3be0ad6a231f99b064031256ba5f934b74f0b279934f6aaee",
+  "counts": {
+    "international_core": 1,
+    "national_major": 1,
+    "regional_key": 0
+  },
+  "hotspot_topics": 58,
+  "database_unchanged": true,
+  "new_collection": false,
+  "published": false
+}

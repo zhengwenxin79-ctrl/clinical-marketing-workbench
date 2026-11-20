@@ -1,0 +1,298 @@
+中华糖尿病杂志：2026年第18卷第10期 (https://cs.medjournals.cn/cn/zhtnbzz/current)
+citeturn167search0 [wordlim: 200] Published: 4 weeks ago; Crawled: today; DOI: 10.3760/cma.j.cn115791-20260308-00117 ... 采用定量PCR检测人胰岛、THP-1细胞及外周血单个核细胞（PBMC）中CXCL8及相关基因的mRNA表达，ELISA检测血清CXCL8水平，Western blotting检测THP-1细胞中STAT1总蛋白及Y701位点磷酸化水平。
+### 国家基本公共卫生服务项目管理下的2型糖尿病患者血糖、血压和LDL-C综合达标的影响因素分析
+
+胡文斌 江雨琛 范周全
+
+中华糖尿病杂志2026年 18卷 10期
+
+DOI: 10.3760/cma.j.cn115791-20260212-00084
+
+摘要
+
+HTML PDF
+
+目的 探讨县域实施国家基本公共卫生服务项目管理下的2型糖尿病（T2DM）患者血糖、血压及低密度脂蛋白胆固醇（LDL-C）综合达标率及其影响因素。 方法 该研究为横断面研究。选取江苏省昆山市2025年实施国家基本公共卫生服务项目健康管理的T2DM患者为研究对象。收集研究对象性别、血压、糖化血红蛋白（HbA1c）、LDL-C等临床资料。将血糖、血压及LDL-C共同达标定义为“三高”综合达标。采用多因素logistic回归模型分析“三高”综合达标影响因素，采用限制性立方样条分析法评估社区健康管理年限对“三高”综合达标率的关联强度变化轨迹。 结果 共纳入49 203例T2DM患者，血糖、血压及LDL-C达标率分别为47.66%（23 451/49 203）、27.49%（13 526/49 203）、42.45%（20 887/49 203）。“### CXCL8在1型糖尿病胰岛炎症中对巨噬细胞STAT1-IFN-Ⅰ信号轴的调控作用
+
+付婷 张艳 周云财 张月馨 吴梦 杨大恒 陈红兵
+
+中华糖尿病杂志2026年 18卷 10期
+
+DOI: 10.3760/cma.j.cn115791-20251216-00645
+
+摘要
+
+HTML PDF
+
+目的 探讨巨噬细胞来源的C-X-C基序趋化因子配体8（CXCL8）在1型糖尿病（T1DM）胰岛炎症中对STAT1-IFN-Ⅰ信号轴的调控作用。 方法 基于GEO数据库人胰岛转录组数据集（GSE102371、GSE108413）及PANCDB单细胞测序数据筛选T1DM免疫相关差异基因。收集南京医科大学附属儿童医院2023年10月至2026年1月57例T1DM患儿和37名健康对照儿童的外周血，以及1名健康人胰岛组织。采用定量PCR检测人胰岛、THP-1细胞及外周血单个核细胞（PBMC）中CXCL8及相关基因的mRNA表达，ELISA检测血清CXCL8水平，Western blotting检测THP-1细胞中STAT1总蛋白及Y701位点磷酸化水平。利用慢病毒过表达THP-1细胞中CXCL8并联合转录组测序分析其功能。采用线性回归模型评估血清CXCL8与空腹血糖（FPG）、糖化血红蛋白（HbA1c）、C肽（CP）和胰岛素的相关性，并校正年龄、性别和糖尿病病程，绘制受试者工作特征（ROC）曲线评估其诊断价值。 结果 57例T1DM患儿年龄（8.7±3.4）岁，男27例（47.4%），女30例（52.6%）；37名健康对照年龄（8.1±2.9）岁，男20名（54.1%），女17名（45.9%）。单细胞测序数据显示，CXCL8主要表达于胰岛巨噬细胞，T1DM患者胰岛巨噬细胞中CXCL8的表达水平高于健康对照组（P<0.01）。T1DM患儿PBMC中CXCL8 mRNA表达（10.56±2.01比1.00±0.23，P<0.001）及血清CXCL8水平（P<0.001）均高于健康对照组。体外实验显示，过表达CXCL8可增强IFN-α诱导的STAT1 Y701位点磷酸化及STAT1总蛋白表达，并上调干扰素刺激基因IFIT3、IFIT2、IFI6、MX1、IFI44L、OASL、EPSTI1和ISG15的表达（均P<0.05）；上述基因在T1DM患儿PBMC中的表达亦高于健康对照组（均P<0.05）。血清CXCL8与FPG（B=8.45，95%CI 3.78~13.12，P<0.001）及HbA1c（B=7.11，95%CI 4.97~9.25，P<0.001）呈正相关，与CP（B=-0.17，95%CI -0.32~-0.01，P=0.044）及胰岛素（B=-7.32，95%CI -13.50~-0.86，P=0.031）呈负相关。血清CXCL8诊断T1DM的ROC曲线下面积为0.925（95%CI 0.861~0.989），灵敏度100%，特异度83.3%。 结论 CXCL8可能通过激活巨噬细胞STAT1-IFN-Ⅰ信号通路参与胰岛炎症和T1DM疾病进展，并具有作为T1DM生物标志物的潜力。
+--------------------------------------------------------------------------------
+中华内分泌代谢杂志：2026年第42卷第09期 (https://cs.medjournals.cn/cn/zhnfmdxzz/current)
+citeturn167search1 [wordlim: 200] Published: last month; Crawled: 3 weeks ago; 中华内分泌代谢杂志2026年 42卷 09期 ... 本病例提示高钙危象可导致严重的心肌损伤，临床应更加重视心脏评估。 ... 本文报道1例以反复发热和多尿为主要特征的垂体脓肿病例，以期为该病的规范诊断与治疗提供参考。 ... On the occasion of the 23rd Endocrinology Academic Conference of the Chinese Medical Association, the *Chinese Journal of Endocrinology and Metabolism* andJournal of DiabetesThe enlarged meeting of the editorial board was held in Changsha on August 19, 2026. ... DOI: 10.3760/cma.j.issn.1000-6699.2026.09.101
+病例报告
+
+一例高钙危象引起的显著心肌损伤报告及文献回顾
+
+王书语 马少石 苗芳
+
+中华内分泌代谢杂志2026年 42卷 09期
+
+DOI: 10.3760/cma.j.cn311282-20260326-00154
+
+摘要
+
+HTML
+
+高钙危象是内分泌代谢急症。本文报道1例53岁女性，因原发性甲状旁腺功能亢进症致高钙危象(血钙达5.12 mmol/L)。患者伴急性肾损伤、神经精神症状，且出现高敏肌钙蛋白T及B型钠尿肽显著升高。冠状动脉造影未见明显阻塞性病变。经积极降钙治疗及甲状旁腺病灶切除后，血钙、甲状旁腺激素及心脏标志物逐渐恢复正常。本病例提示高钙危象可导致严重的心肌损伤，临床应更加重视心脏评估。
+
+以反复发热和多尿为主要表现的垂体脓肿一例并文献复习
+
+许波 陈思 张维天 周健
+
+中华内分泌代谢杂志2026年 42卷 09期
+
+DOI: 10.3760/cma.j.cn311282-20260330-00166
+
+摘要
+
+HTML
+
+垂体脓肿是一种罕见且具有较高死亡率的疾病。由于其发病率低、临床症状及影像学表现缺乏特异性，早期诊断具有一定困难。本文报道1例以反复发热和多尿为主要特征的垂体脓肿病例，以期为该病的规范诊断与治疗提供参考。
+
+综述
+
+成人继发性肥胖的发病机制、诊断策略及治疗进展
+
+王余玮 王桂侠 吕游 刘松阳 刚晓坤
+
+中华内分泌代谢杂志2026年 42卷 09期
+
+DOI: 10.3760/cma.j.cn311282-20251128-00585
+
+《中华内分泌代谢杂志》编辑部
+
+中华内分泌代谢杂志2026年 42卷 09期
+
+DOI: 10.3760/cma.j.cn311282-20260820-00375
+
+摘要
+
+HTML
+
+On the occasion of the 23rd Endocrinology Academic Conference of the Chinese Medical Association, the *Chinese Journal of Endocrinology and Metabolism* andJournal of DiabetesThe enlarged meeting of the editorial board was held in Changsha on August 19, 2026. This meeting was chaired by Professor Liu Jianmin, Director of the Editorial Department, and Academician Ning Guang, Editor-in-Chief of the Chinese Journal of Endocrinology and Metabolism,Journal of DiabetesProfessor Wang Weiqing, editor-in-chief, along with nearly 50 experts from the deputy editors-in-chief and editorial board, attended the meeting.
+
+外刊选译
+
+Journal of Diabetes中文导读
+
+J Diabetes编辑部
+
+中华内分泌代谢杂志2026年 42卷 09期
+
+DOI: 10.3760/cma.j.cn311282-20260824-00377
+
+摘要
+
+HTML
+
+Review Article
+
+更正
+
+更正
+
+中华内分泌代谢杂志2026年 42卷 09期
+
+DOI: 10.3760/cma.j.issn.1000-6699.2026.09.101
+
+摘要
+
+HTML
+
+On page 405 of the article "The Relationship between Hyperuricemia and Mild Cognitive Impairment in Non-Obese Elderly People" in Volume 36, Issue 5, 2020, the author's affiliation "Department of Health Care and Medical Services, Tianjin Medical University" should be corrected to "Department of Health Care and Medical Services, Tianjin Medical University General Hospital", which is hereby corrected.--------------------------------------------------------------------------------
+中华医学会核医学分会 当前期刊 2026年第09期 (https://chinanm.cma.org.cn/art/2026/9/29/art_1509_60756.html)
+citeturn167search2 [wordlim: 200] Published: last month; Crawled: last month; 2026年第09期 ... 临床研究 ▪ Clinical Investigation ... 格雷夫斯病患者131I治疗短期疗效的影响因素分析及模型预测  536.pdf ... 中华核医学与分子影像杂志2026,46(9):554-562 DOI: 10.3760/cma.j.cn321828-20251116-00406
+
+2026年第09期
+
+2026-09-29 11:01 浏览次数：
+
+临床研究 ▪ Clinical Investigation
+
+18F标记新型心肌灌注显像剂对稳定性冠心病的诊断效能研究  513.pdf
+
+陈聪霞 李旭 郭悦 刘甫庚 张建飞 颜东岳 姚稚明
+
+中华核医学与分子影像杂志2026,46(9):513-517 DOI: 10.3760/cma.j.cn321828-20250926-00342
+
+177Lu－DOTA－IBA治疗乳腺癌骨转移的有效性和安全性  518.pdf
+
+张春芳 刘相廷 庞尚静 游碟 邓嘉 陈跃
+
+中华核医学与分子影像杂志2026,46(9):518-522 DOI: 10.3760/cma.j.cn321828-20251030-00385
+
+基于18F－FDG PET/CT影像组学构建的机器学习模型对乳腺癌HER2表达状态的预测价值  523.pdf
+
+孙振国 高建雄 俞雯吉 袁小帅 杜鹏 江玉蓉 王举进 陶志 王跃涛 陈鹏
+
+中华核医学与分子影像杂志2026,46(9):523-529 DOI: 10.3760/cma.j.cn321828-20251014-00361
+
+建立低可能性稳定性冠心病患者CZTSPECT负荷门控心肌灌注显像左心室球形指数的临床参考值  530.pdf
+--------------------------------------------------------------------------------
+CXCL8 suppresses autophagy and promotes malignant progression in colorectal cancer through JNK/MAPK and AKT/mTOR pathways. (https://pubmed.ncbi.nlm.nih.gov/43003166/)
+citeturn167search3 [wordlim: 200] Published: last week; Crawled: today; Journal linking ISSN: 0898-6568 ...   * DOI: 10.1016/j.cellsig.2026.112982 ...   * School of Traditional Chinese Medicine, Faculty of Medicine, Yangzhou University, Yangzhou 225009, China; NATCM Key Laboratory of Syndrome Differentiation and Treatment of Gastric Cancer, Yangzhou, 225009, China. ... Electronic address: kouyu@yzu.edu.cn. ... Weighted gene co-expression network analysis (WGCNA) identified CXCL8 as a central hub gene showing weak to modest correlations with selected DNA-repair transcripts, and linked to metabolism and chemosensitivity, which was further validated in an independent GEO cohort (GSE39582), demonstrating the model's robustness and generalizability.
+# CXCL8 suppresses autophagy and promotes malignant progression in colorectal cancer through JNK/MAPK and AKT/mTOR pathways.
+
+Cellular signalling
+
+PMID: 43003166
+
+Publication date: 2026 Nov 09
+
+Article date: 2026 11 09
+
+Publication status: aheadofprint
+
+Journal abbreviation: Cell Signal
+
+Journal country: England
+
+Journal NLM unique ID: 8904683
+
+Journal linking ISSN: 0898-6568
+
+ISSN: 1873-3913
+
+Volume: 150
+
+Pages: 112982
+
+## Identifiers
+
+  * PII: S0898-6568(26)00642-X
+  * DOI: 10.1016/j.cellsig.2026.112982
+
+## Authors
+
+  * Baowei Han
+  * Yunshuai Wang
+  * Jinqiu Zhang
+  * Huizi Tang
+  * Feng Gu
+  * Chaohui Li
+  * Yu Kou
+  * Xiangming Che
+
+## Affiliations
+
+  * Department of General Surgery, The First Affiliated Hospital of Xi'an Jiaotong University, Xi'an 710061, Shanxi, China; Luoyang Maternal and Child Health Hospital, China.
+  * Department of General Surgery, Luoyang Central Hospital Affiliated of Zhengzhou University, China.
+  * School of Traditional Chinese Medicine, Faculty of Medicine, Yangzhou University, Yangzhou 225009, China; NATCM Key Laboratory of Syndrome Differentiation and Treatment of Gastric Cancer, Yangzhou, 225009, China.
+--------------------------------------------------------------------------------
+细胞与分子免疫学杂志 (https://xbfm.cbpt.cnki.net/portal/journal/portal/client/paper/206b064e7f9f853ace3dacfc6abe8084)
+citeturn167search4 [wordlim: 200] Published: 2.1 years ago; Crawled: 2 months ago; DOI: 10.13423/j.cnki.cjcmi.009855 ... 方法 使用过表达CXCL8的鼠源CRC细胞株CT26细胞建立BALB/c小鼠皮下移植瘤模型，监测肿瘤生长情况，成瘤三周后剥离肿瘤组织并取出小鼠脾脏，一方面制备肿瘤单细胞悬液，流式细胞术检测肿瘤微环境中M2型巨噬细胞及CD8^{+} T细胞的浸润情况；另一方面制备脾脏单细胞悬液，分选脾脏CD8^{+} T细胞，在体外将T细胞与过表达CXCL8的CT26细胞共培养，细胞毒性实验检测T细胞杀伤能力。结果 过表达CXCL8促进小鼠CRC移植瘤生长；过表达CXCL8的CRC组织中M2型巨噬细胞浸润增加、 CD8^{+} T细胞浸润减少；过表达CXCL8的小鼠CRC细胞并不影响CD8^{+} T细胞体外杀伤能力。 ... DOI：10.13423/j.cnki.cjcmi.009855
+
+# 细胞与分子免疫学杂志
+
+中文核心期刊
+
+首页 期刊介绍 投稿指南 编委会 广告业务 联系我们 期刊征订
+
+CXCL8通过增加M2型巨噬细胞浸润及抑制CD8~+T细胞浸润促进结直肠癌免疫抑制微环境的形成
+
+邵莹^{1} 兰燕^{2} 宋冰^{3} 孙嘉颖^{2} 杨涛^{2} Image
+
+1.山西医科大学基础医学院病理生理学教研室 2.山西医科大学基础医学院生物化学与分子生物学教研室 3.山西医科大学基础医学院药理学教研室
+
+基金项目(Foundation): 山西省科技创新人才团队专项计划(202204051002030); 山西省基础研究计划(20210302124415)
+
+邮箱(Email): yangtao056cn@sxmu.edu.cn;
+
+DOI: 10.13423/j.cnki.cjcmi.009855
+
+发布时间： 2024-09-24
+
+出版时间： 2024-09-24
+
+网络发布时间： 2024-09-24
+
+移动端阅读
+
+644  | 5  | 285
+下载次数  | 被引频次  | 阅读次数
+
+
+摘要：
+
+目的 探讨CXC趋化因子配体8(CXCL8)对结直肠癌(CRC)微环境的免疫调节作用。方法 使用过表达CXCL8的鼠源CRC细胞株CT26细胞建立BALB/c小鼠皮下移植瘤模型，监测肿瘤生长情况，成瘤三周后剥离肿瘤组织并取出小鼠脾脏，一方面制备肿瘤单细胞悬液，流式细胞术检测肿瘤微环境中M2型巨噬细胞及CD8^{+} T细胞的浸润情况；另一方面制备脾脏单细胞悬液，分选脾脏CD8^{+} T细胞，在体外将T细胞与过表达CXCL8的CT26细胞共培养，细胞毒性实验检测T细胞杀伤能力。结果 过表达CXCL8促进小鼠CRC移植瘤生长；过表达CXCL8的CRC组织中M2型巨噬细胞浸润增加、 CD8^{+} T细胞浸润减少；过表达CXCL8的小鼠CRC细胞并不影响CD8^{+} T细胞体外杀伤能力。结论 CXCL8过表达CRC细胞通过增加M2型巨噬细胞浸润及抑制CD8^{+} T细胞浸润促进CRC免疫抑制微环境的形成。
+
+--------------------------------------------------------------------------------
+中国临床药学杂志 (https://lczz.cbpt.cnki.net/portal/journal/portal/journal/api/listPrePaperBackOrNextPaperBack/last?issue=10&issueId=827a95ca-1b1e-4a49-aaee-a9e65103b423&pageNum=1&year=2026&yearId=17e7e5cb-63c1-439c-8f23-42af9d01a531)
+citeturn167search5 [wordlim: 200] Crawled: 5 days ago; 通过综述近年来纳米药物递送系统的人体药动学研究、体内释药测定方法、上市产品证据，并结合国内外监管要求，重点讨论多分析物药动学在解释体内过程、衔接质量评价与临床转化中的作用，为纳米药物研究设计、质量控制和监管评价提供参考。 ... 2026 年 09 期 v.35 ; 国家自然科学基金（编号82374296）; 上海市2024年度“科技创新行动计划”生物医药创新发展项目（编号24S11903000） ... 靶向补体治疗正从广谱阻断走向精准干预，显著改善了多种补体介导疾病的临床结局，但如何在扩大适应证的同时有效控制感染风险与个体化疗效差异，仍是当前转化医学面临的核心挑战。
+--------------------------------------------------------------------------------
+测试环境采编刊群：2026年第45卷第09期 (https://uatwk.yiigle.com/cn/toc/73602)
+citeturn167search6 [wordlim: 200] Published: 2 months ago; Crawled: today; 中华老年医学杂志2026年 45卷 09期 ... 检索2023—2024年两平台内方案注册的我国老年医学临床研究项目，分析临床研究在地域、疾病、老年综合征、研究方案设计及注册及时性等方面的情况。
+--------------------------------------------------------------------------------
+2026年26卷09期-中国现代神经疾病杂志 (https://zgxdsjjbzz.yiigle.com/CN121363202609/index.jhtml?tplReset=qikan)
+citeturn167search7 [wordlim: 200] Published: last month; Crawled: 3 weeks ago; 中国现代神经疾病杂志2026,26(9):988-995 DOI: 10.3969/j.issn.1672-6731.2026.09.008 ... 中国现代神经疾病杂志2026,26(9):996-1002 DOI: 10.3969/j.issn.1672-6731.2026.09.009 ... 临床研究 ▪ Clinical Study
+--------------------------------------------------------------------------------
+Advancing chemokine research: the molecular function of CXCL8 (https://pubmed.ncbi.nlm.nih.gov/38747289/)
+citeturn167search8 [wordlim: 200] Published: 2.5 years ago; Crawled: 2 months ago; doi: 10.1172/JCI180984.
+
+# Advancing chemokine research: the molecular function of CXCL8
+--------------------------------------------------------------------------------
+MedNexus：2026年第64卷第09期 (https://cs.medjournals.cn/cn/toc/73512)
+citeturn167search9 [wordlim: 200] Published: 2 months ago; Crawled: today; 中华儿科杂志2026年 64卷 09期 ... 本文以现代医学人文精神的核心内涵为起点，结合中国儿科肾脏病学专业的临床实践与学科发展，探讨医学人文传统如何在当代医疗环境中被传承与创新发展。 ... 临床研究方法学园地 ... 中华儿科杂志2026年第64卷第7期刊登的“儿童暴发性心肌炎质量控制管理方案应用效果分析”一文，第795页作者单位部分，“^{6}广西医科大学第一附属医院急诊科，南宁 530021”更正为“^{6}广西壮族自治区人民医院急诊科，南宁 530021”；第796页作者单位部分，“^{6}Department of Emergency，the First Affiliated Hospital of Guangxi Medical University，Nanning 530021，China”更正为“^{6}Department of Emergency，the People's Hospital of Guangxi Zhuang Autonomous Region，Nanning 530021，China”；第800页志谢部分，“刘桂良（广西医科大学第一附属医院）”更正为“刘桂良（广西壮族自治区人民医院）”。
+--------------------------------------------------------------------------------
+The impact of TLRs/NLRs signaling pathway-mediated CXCL8 regulation on macrophage polarization in oral squamous cell carcinoma. (https://pubmed.ncbi.nlm.nih.gov/43000482/)
+citeturn167search10 [wordlim: 200] Published: last week; Crawled: today; Journal linking ISSN: 1618-1247 ...   * DOI: 10.1007/s10266-026-01611-0 ...   * Department of Dental, Binzhou People's Hospital, Binzhou, 256610, Shandong, China. ... Following confirmation of transfection efficiency, the subcellular localization and expression levels of CXCL8 were analyzed in phorbol 12-myristate 13-acetate (PMA)-differentiated macrophages.
+--------------------------------------------------------------------------------
+中华心血管病杂志 - MedNexus (https://cs.medjournals.cn/cn/zhxxgbzz)
+citeturn167search11 [wordlim: 200] Crawled: 5 days ago; 中华心血管病杂志2026年54卷10期
+
+  * 临床研究冠心病患者外周血嗜酸性粒细胞计数与氯吡格雷治疗后血小板反应性及远期心原性死亡的双重关联：一项大样本队列研究柯子昊 严凯伦 袁德山 等 ...   * 临床研究基于机器学习构建STEMI患者急诊PCI术后发生院内主要不良心血管事件的预测模型郭志霞 米玉红 信满坤 等
+--------------------------------------------------------------------------------
+·
+2
+5
+8
+·
+徐州医科大学学报　　J　Xuzhou　Med　Univ　2025,45(11) (https://xb.xzhmu.edu.cn/cn/article/pdf/preview/10.12467/j.issn.2096-3882.20250632.pdf)
+citeturn167search12 [wordlim: 200] Published: 10 months ago; CXCL8 高表达对结肠癌的诊断及预后预测价值 ... 　　摘要:目的　明确趋化因子配体8(CXCL8)在结肠癌中的表达特征,系统评估其诊断价值、临床关联及预后 ... DOI:10. 12467/ j. issn. ... China;
+--------------------------------------------------------------------------------
+Hans Journal of Biomedicine 生物医学, 2025, 15(4), 780-797 (https://pdf.hanspub.org/hjbm_1530468.pdf)
+citeturn167search13 [wordlim: 200] Published: 9 months ago; IL1A 和CXCL8，表3 显示了它们的全名和相关功能。 ... CXCL8 ... DOI: 10.12677/hjbm.2025.154084
+--------------------------------------------------------------------------------
+Hans Journal of Medicinal Chemistry 药物化学, 2026, 14(2), 107-118 (https://pdf.hanspub.org/hjmce_3070309.pdf)
+citeturn167search14 [wordlim: 200] Published: 6 months ago; Hans Journal of Medicinal Chemistry 药物化学, 2026, 14(2), 107-118 ... https://doi.org/10.12677/hjmce.2026.142011 ... 白介素(Interleukin, IL)家族是一类在免疫系统中发挥关键作用的细胞因子家族，其中IL-8 (CXCL8)作为 ... 1School of Science, China Pharmaceutical University, Nanjing Jiangsu
+--------------------------------------------------------------------------------
+CXCL8 is essential for cervical cancer cell acquired (https://assets-eu.researchsquare.com/files/rs-6214198/v1/351a733a-5d64-4c32-9d8f-abce330d478c.pdf?c=1751905109)
+citeturn167search15 [wordlim: 200] Published: 9 months ago; CXCL8 is essential for cervical cancer cell acquired ... DOI: https://doi.org/10.21203/rs.3.rs-6214198/v1
+--------------------------------------------------------------------------------
+2285
+Int. J. Biol. Sci. 2026, Vol. 22 
+ 
+Ivyspring (https://www.ijbs.com/v22p2285.pdf)
+citeturn167search16 [wordlim: 200] Published: 7 months ago; International Journal of Biological Sciences 
+2026; 22(5): 2285-2301. doi: 10.7150/ijbs.115990 ... Chinese Medicine Research Center, China Medical University, Taichung 404, Taiwan. ... Results: CXCL8 expression was significantly upregulated in OSCC tissues and strongly correlated with
+--------------------------------------------------------------------------------
+TYPE Review (https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2023.1159061/pdf)
+citeturn167search17 [wordlim: 200] Published: 4 months ago; DOI 10.3389/fimmu.2023.1159061 ... 111981355@imu.edu.cn ... CXCL8 is the most representative chemokine produced autocrine or paracrine ... the original publication in this journal is ... top ﬁve cancers diagnosed in China are lung cancer, colorectal cancer, stomach cancer, liver
+--------------------------------------------------------------------------------
+白细胞介素-8 (https://zh.wikipedia.org/wiki/%E7%99%BD%E7%BB%86%E8%83%9E%E4%BB%8B%E7%B4%A0-8)
+citeturn167search18 [wordlim: 200] Crawled: 5 months ago; N Engl J Med. ... Journal of Leukocyte Biology. ... Nuclear factor-kappaB-dependent induction of CXCL8 gene expression by tumor necrosis factor alpha: evidence for an antioxidant sensitive activating pathway distinct from nuclear translocation. ... S2CID 25974629. doi:10.1182/blood.V94.6.1878.418k03_1878_1889.
+--------------------------------------------------------------------------------
+趋化因子 (https://zh.wikipedia.org/wiki/%E8%B6%8B%E5%8C%96%E5%9B%A0%E5%AD%90)
+citeturn167search19 [wordlim: 200] Crawled: last month;  CXCL8 | Scyb8 | IL-8, NAP-1, MDNCF, GCP-1 | CXCR1, CXCR2 | P10145
+--------------------------------------------------------------------------------
+Interleukin 8 (https://en.wikipedia.org/wiki/Interleukin_8)
+citeturn167search20 [wordlim: 200] Crawled: 2 weeks ago; Aliases | CXCL8, chemokine (C-X-C motif) ligand 8, GCP-1, GCP1, LECT, LUCT, LYNAP, MDNCF, MONAP, NAF, NAP-1, NAP1, IL8, C-X-C motif chemokine ligand 8, Interleukin-8, SCYB8
+--------------------------------------------------------------------------------
+糖尿病 (https://zh.wikipedia.org/wiki/%E7%B3%96%E5%B0%BF%E7%97%85)
+citeturn167search21 [wordlim: 200] Crawled: last month; PMID 38335215. doi:10.1371/journal.pone.0298457  可免费查阅 . ... 2002, 30: 1–5. doi:10.1383/medc.30.1.1.28264. ... National Institute of Diabetes and Digestive and Kidney Diseases, US National Institutes of Health. ... *  糖尿病的治疗框架--"五驾马车"--健康·生活--人民网. health.people.cn.
+--------------------------------------------------------------------------------
+Interleucina 8 (https://pt.wikipedia.org/wiki/Interleucina_8)
+citeturn167search22 [wordlim: 200] Crawled: 5 months ago; «IL-8 (CXCL8) Correlations with Psychoneuroimmunological Processes and Neuropsychiatric Conditions». Journal of Personalized Medicine. ... PMID 38793070. doi:10.3390/jpm14050488 Acessível livremente
+--------------------------------------------------------------------------------
+Интерлейкин 8 (https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%BB%D0%B5%D0%B9%D0%BA%D0%B8%D0%BD_8)
+citeturn167search23 [wordlim: 200] Crawled: 2 months ago; Nuclear factor-kappaB-dependent induction of CXCL8 gene expression by tumor necrosis factor alpha: evidence for an antioxidant sensitive activating pathway distinct from nuclear translocation. ... 94 (6): 1878—1889. doi:10.1182/blood.V94.6.1878.418k03_1878_1889.
+

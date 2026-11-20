@@ -1,0 +1,752 @@
+{
+  "version_id": "LIT-ISSUES:20261117:v1",
+  "input_sha256": "c6e51e8d43e838bb5f56676b2b5a905d64ff5339af3675ef9d108c51b67dcd79",
+  "review_scope": "162篇主池题名、摘要方法/结论摘录及疑点完整摘要复核；已有7篇摘要精读记录；AI初稿待mentor校准，未全文精读。",
+  "topics": [
+    {
+      "issue_id": "LIT20261117:L01",
+      "board_id": "CDS2026:M01",
+      "name": "糖尿病前期及T2D亚型的进展风险",
+      "boundary_text": "临床/代谢分型、体成分与进展或并发症差异；单细胞机制另列。",
+      "progress_summary": "已有队列分层与干预试验二次分析，提示亚型间风险及生活方式响应不同；儿童、不同地区人群的分型也在扩展。",
+      "limits_text": "亚型定义、人群与结局不同，不能把各篇分型当成可互换诊断工具。",
+      "paper_ids": [
+        "PMID:42736402",
+        "PMID:42886236",
+        "PMID:42892651",
+        "PMID:42606340",
+        "PMID:42633598",
+        "PMID:42574139"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L02",
+      "board_id": "CDS2026:M01",
+      "name": "T1D与非自身免疫糖尿病的遗传鉴别",
+      "boundary_text": "遗传背景、抗体阴性鉴别和成人T1D异质性。",
+      "progress_summary": "遗传评分与多祖源/HLA分层研究连接糖尿病鉴别及胰岛素分泌、抵抗差异。",
+      "limits_text": "遗传关联、临床鉴别和亚型观察回答不同问题，需核阈值与外部适用性。",
+      "paper_ids": [
+        "PMID:42612686",
+        "PMID:42962686",
+        "PMID:42635517",
+        "PMID:42671571",
+        "PMID:42771182"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L03",
+      "board_id": "CDS2026:M01",
+      "name": "多时点组学与影像的发病风险预测",
+      "boundary_text": "重复蛋白、儿童氨基酸及胰周脂肪影像的发病风险评估。",
+      "progress_summary": "已有多时点队列、儿童长期随访及影像分析，增加传统单次测量之外的风险线索。",
+      "limits_text": "关联、预测增益与实际临床决策价值需分别核对；不按同名指标合并性能。",
+      "paper_ids": [
+        "PMID:42709505",
+        "PMID:42895436",
+        "PMID:42423517"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L04",
+      "board_id": "CDS2026:M01",
+      "name": "T2D临床亚型对应哪些胰岛细胞变化",
+      "boundary_text": "临床分型到人胰岛单细胞图谱的对应关系。",
+      "progress_summary": "已有单细胞研究把临床亚型与胰岛细胞构成、功能及应激变化联系起来。",
+      "limits_text": "属于探索性图谱，不能据此认定分型已能指导临床治疗。",
+      "paper_ids": [
+        "PMID:42678439"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L05",
+      "board_id": "CDS2026:M02",
+      "name": "谁会从胰岛自身免疫进展为T1D",
+      "boundary_text": "起病前抗体、遗传、环境和胰腺功能的风险线索；药物干预另列。",
+      "progress_summary": "人群筛查与纵向随访显示进展风险存在异质性，同时保留短链脂肪酸和疫苗相关研究的阴性结果。",
+      "limits_text": "风险关联与发病机制不是同一证据；早期信号尚需核对预测和干预用途。",
+      "paper_ids": [
+        "PMID:42384070",
+        "PMID:42461847",
+        "PMID:42566298",
+        "PMID:42566303",
+        "PMID:42663626",
+        "PMID:42684379",
+        "PMID:42969688",
+        "PMID:43038378"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L06",
+      "board_id": "CDS2026:M02",
+      "name": "T1D免疫干预的应答差异与持续性",
+      "boundary_text": "免疫治疗、应答预测、停药与亚组差异。",
+      "progress_summary": "Teplizumab试验分析、GAD-alum亚组随访、baricitinib停药与低剂量IL-2结果可对照阅读。IL-2虽有靶向生物反应，未保留β细胞功能。",
+      "limits_text": "药物、人群、疾病阶段与终点不同，不横向比较疗效大小；阴性与停药后衰减同样保留。",
+      "paper_ids": [
+        "PMID:42610933",
+        "PMID:42627334",
+        "PMID:42720752",
+        "PMID:42806034",
+        "PMID:42822480"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L07",
+      "board_id": "CDS2026:M02",
+      "name": "β细胞身份、应激损伤与保护",
+      "boundary_text": "β细胞身份稳态、DNA修复、炎症应激及再生相关机制。",
+      "progress_summary": "离体细胞和动物研究从修复、身份调控及应激保护提出多条干预路径；部分涉及人胰岛。",
+      "limits_text": "人胰岛离体实验不等于患者临床验证；各靶点仅作机制线索。",
+      "paper_ids": [
+        "PMID:42455072",
+        "PMID:42474296",
+        "PMID:42536447",
+        "PMID:42766004",
+        "PMID:42829354",
+        "PMID:42860432",
+        "PMID:42873223"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L08",
+      "board_id": "CDS2026:M02",
+      "name": "胰岛微环境如何调节炎症和分泌",
+      "boundary_text": "腺苷、巨噬细胞、血管周细胞及局部分泌信号。",
+      "progress_summary": "研究连接胰岛炎症屏障、营养支持和受体依赖的分泌调控。",
+      "limits_text": "主要为机制证据；不同细胞来源与物种的作用不能互换。",
+      "paper_ids": [
+        "PMID:42378390",
+        "PMID:42536487",
+        "PMID:42616555",
+        "PMID:42821597"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L09",
+      "board_id": "CDS2026:M02",
+      "name": "胰岛移植的局部免疫保护与移植物存活",
+      "boundary_text": "移植物免疫保护、微凝胶、MSC及EV；肾脏长期安全另列。",
+      "progress_summary": "已有非随机临床免疫抑制研究，以及微凝胶、MSC/EV的临床前移植物保护证据。",
+      "limits_text": "系统免疫抑制方案与局部保护材料的证据层次不同，不能视作临床替代。",
+      "paper_ids": [
+        "PMID:42608595",
+        "PMID:42808960",
+        "PMID:42961465",
+        "PMID:43007268"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L10",
+      "board_id": "CDS2026:M02",
+      "name": "移植后免疫抑制与长期肾功能安全",
+      "boundary_text": "胰岛移植后肾功能轨迹及免疫抑制风险。",
+      "progress_summary": "长期单中心队列提示移植后肾功能下降呈阶段性，性别及基线肾功能影响风险。",
+      "limits_text": "单中心观察性资料，需区分免疫抑制、基础病及选择因素。",
+      "paper_ids": [
+        "PMID:43034240"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L11",
+      "board_id": "CDS2026:M12",
+      "name": "脂肪来源EV如何影响胰岛与代谢",
+      "boundary_text": "脂肪—胰岛细胞间通讯及EV功能，不作为检测技术研究。",
+      "progress_summary": "脂肪来源EV在不同实验条件下既可增强胰岛素分泌，也可传递脂毒性应激。",
+      "limits_text": "来源细胞、处理和货物不同；表面方向不同不等于同条件下矛盾。",
+      "paper_ids": [
+        "PMID:42546226",
+        "PMID:42829353",
+        "PMID:42418158"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L12",
+      "board_id": "CDS2026:M02",
+      "name": "MSC分泌物能否调节T1D免疫耐受",
+      "boundary_text": "MSC改造/激活后分泌物及免疫调节。",
+      "progress_summary": "PD-L1相关MSC与药理激活MSC分泌组在实验模型中显示免疫调节线索。",
+      "limits_text": "均需进一步核临床可行性、制备一致性及安全性。",
+      "paper_ids": [
+        "PMID:42913369",
+        "PMID:43034239"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L13",
+      "board_id": "CDS2026:M03",
+      "name": "AID疗效轨迹与个体化胰岛素需求",
+      "boundary_text": "自动胰岛素输注的人群疗效、行为及生理差异。",
+      "progress_summary": "AID启用后总体血糖可改善，但低血糖高风险人群、月经周期及基线行为影响个体结果。",
+      "limits_text": "T1D与T2D、单臂与观察研究不等同；不能称所有人持续同样获益。",
+      "paper_ids": [
+        "PMID:42429743",
+        "PMID:42461939",
+        "PMID:42482329",
+        "PMID:42844027"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L14",
+      "board_id": "CDS2026:M03",
+      "name": "CGM指导不同人群的日常血糖管理",
+      "boundary_text": "管理效果及特定场景，不包括早期分期诊断。",
+      "progress_summary": "从目标试验模拟、纵向CGM到数字干预RCT及透析/肠外营养场景，研究覆盖逐步扩展。",
+      "limits_text": "死亡关联属于观察性模拟；透析/肠外营养人群证据不可直接外推。",
+      "paper_ids": [
+        "PMID:42319755",
+        "PMID:42747916",
+        "PMID:42820970",
+        "PMID:42849058",
+        "PMID:42360278"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L15",
+      "board_id": "CDS2026:M03",
+      "name": "CGM能否用于早期分期及动态生理评估",
+      "boundary_text": "起病前分期、OGTT对照、β细胞功能与心代谢表型。",
+      "progress_summary": "已有CGM与动态负荷/风险指标对照的研究，提示传统血糖指标之外的信息。",
+      "limits_text": "传感器系统差异、血浆对照和功能估计需核，不直接替代诊断标准。",
+      "paper_ids": [
+        "PMID:42704479",
+        "PMID:42752803",
+        "PMID:42841917",
+        "PMID:43038379"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L16",
+      "board_id": "CDS2026:M03",
+      "name": "T1D酮症酸中毒风险如何提前识别",
+      "boundary_text": "酮体检测频率和残余分泌功能与DKA风险。",
+      "progress_summary": "试验资料二次分析提示较低负担的酮体检测和C肽信息可能帮助风险分层。",
+      "limits_text": "关联与风险模型仍需独立前瞻验证；不据此改变患者检测或用药。",
+      "paper_ids": [
+        "PMID:42663523",
+        "PMID:42423477"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L17",
+      "board_id": "CDS2026:M03",
+      "name": "低血糖风险与短期脑功能影响",
+      "boundary_text": "CGM严重低血糖风险以及认知/脑代谢影响。",
+      "progress_summary": "CGM风险分析、营养底物研究及实时认知评估分别提供风险、保护机制和时间窗口证据。",
+      "limits_text": "不同研究的低血糖定义、测试条件和认知终点需分开。",
+      "paper_ids": [
+        "PMID:42561376",
+        "PMID:42384016",
+        "PMID:43007282"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L18",
+      "board_id": "CDS2026:M04",
+      "name": "口服肠促胰素药物的跨人群证据",
+      "boundary_text": "orforglipron在T2D与肥胖人群的试验。",
+      "progress_summary": "日本T2D开放试验与肥胖安慰剂对照试验分别补充口服方案的安全和减重证据。",
+      "limits_text": "两试验人群和比较方案不同，不能直接合并效果或推断适应证。",
+      "paper_ids": [
+        "PMID:42607698",
+        "PMID:42962687"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L19",
+      "board_id": "CDS2026:M04",
+      "name": "HTD1801单药的降糖疗效与安全",
+      "boundary_text": "HTD1801单药三期试验。",
+      "progress_summary": "已有随机安慰剂对照三期结果，关注降糖主要终点和较长期安全性。",
+      "limits_text": "摘要层面已读，通讯作者、完整不良事件及临床使用条件待核。",
+      "paper_ids": [
+        "PMID:42635552"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L20",
+      "board_id": "CDS2026:M04",
+      "name": "多受体与胰淀素方案的减重证据",
+      "boundary_text": "多受体/胰淀素相关人群试验；单独保留各方案与剂量。",
+      "progress_summary": "已有mazdutide、petrelintide、acmopatide和CagriSema不同阶段试验；补充survodutide肥胖合并T2D结果及综述背景。",
+      "limits_text": "不跨药物与人群直接排序疗效；系统评价单列，不重复计其纳入试验。",
+      "paper_ids": [
+        "PMID:42628555",
+        "PMID:42810355",
+        "PMID:42949535",
+        "PMID:43033821"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L21",
+      "board_id": "CDS2026:M04",
+      "name": "治疗应答、缓解与复发能否预测",
+      "boundary_text": "药物及代谢手术的个体应答预测。",
+      "progress_summary": "GLP1R变异、手术缓解/复发与SELECT减重分析提供不同预测路径；SELECT常规基线特征未能预测峰值减重。",
+      "limits_text": "不能把所有研究都描述为已成功预测；二次分析需独立验证。",
+      "paper_ids": [
+        "PMID:42900776",
+        "PMID:42561183",
+        "PMID:42782193"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L22",
+      "board_id": "CDS2026:M04",
+      "name": "特殊糖尿病人群的药物方案",
+      "boundary_text": "输血依赖地中海贫血相关糖尿病药物比较。",
+      "progress_summary": "已有青少年特殊糖尿病人群的dulaglutide与胰岛素随机比较。",
+      "limits_text": "小范围特殊病因研究，不能代替一般T2D证据。",
+      "paper_ids": [
+        "PMID:42618811"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L23",
+      "board_id": "CDS2026:M12",
+      "name": "肠促胰素及α细胞的生理调节",
+      "boundary_text": "GIP、GLP-1、胰高血糖素分泌及微循环机制。",
+      "progress_summary": "人体生理实验与代谢物机制研究提示激素作用受血糖、氨基酸和组织背景影响。",
+      "limits_text": "急性生理实验、细胞机制与长期治疗获益分开解读。",
+      "paper_ids": [
+        "PMID:42496592",
+        "PMID:42726473",
+        "PMID:42782508",
+        "PMID:42447284"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L24",
+      "board_id": "CDS2026:M12",
+      "name": "中枢信号与脂肪产热调控",
+      "boundary_text": "PDE4、FGF19/Rsk4与产热和能量稳态。",
+      "progress_summary": "小鼠研究从中枢信号提出代谢调控路径。",
+      "limits_text": "临床前机制，不推断人体减重疗效。",
+      "paper_ids": [
+        "PMID:42743079",
+        "PMID:42301138"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L25",
+      "board_id": "CDS2026:M12",
+      "name": "脂肪脂解与减重平台的代谢变化",
+      "boundary_text": "脂质周转及减重平台/反弹时的免疫代谢。",
+      "progress_summary": "脂酶底物选择性实验与减重阶段T细胞代谢研究分别解释脂质重塑和能量适应。",
+      "limits_text": "两类研究对象不同，仅作补充机制，不能串成已验证因果链。",
+      "paper_ids": [
+        "PMID:42579480",
+        "PMID:42758035"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L26",
+      "board_id": "CDS2026:M09",
+      "name": "不同膳食模式的代谢效果",
+      "boundary_text": "DASH等饮食组成方案的干预效果。",
+      "progress_summary": "控制喂养和随机饮食比较提供体重、血糖和尿酸等不同终点证据。",
+      "limits_text": "减重并不等于各终点均有组间差异；不能把一套结果外推所有人群。",
+      "paper_ids": [
+        "PMID:42743064",
+        "PMID:42663510"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L27",
+      "board_id": "CDS2026:M09",
+      "name": "进食时序与餐后血糖调节",
+      "boundary_text": "限时进食、餐前营养顺序及进食频率。",
+      "progress_summary": "有人体限时进食试验，也有餐前橄榄油与夜间加餐的动物机制研究。",
+      "limits_text": "人体与动物、热量与时序的作用须分开，不形成直接饮食建议。",
+      "paper_ids": [
+        "PMID:42606524",
+        "PMID:42848438",
+        "PMID:42466973"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L28",
+      "board_id": "CDS2026:M10",
+      "name": "肌肉代谢与胰岛素敏感性",
+      "boundary_text": "肌肉脂质区室、生活方式及肌源信号。",
+      "progress_summary": "区室脂质研究、减重/运动比较和DPT-GDF15机制补充肌肉代谢线索。",
+      "limits_text": "不同物种与干预阶段不合并性能，需确认人体可转化环节。",
+      "paper_ids": [
+        "PMID:42610879",
+        "PMID:42610973",
+        "PMID:42873616"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L29",
+      "board_id": "CDS2026:M05",
+      "name": "肾病早期风险与动态进展评估",
+      "boundary_text": "糖基化、甲基化/衰老及正常白蛋白尿背景的肾风险。",
+      "progress_summary": "队列组学与动态轨迹研究试图补充传统肾功能/白蛋白尿信息，部分含验证样本或器官机制。",
+      "limits_text": "各研究的结局、验证和增益须逐篇区分；不把同一结论推广到全部指标。",
+      "paper_ids": [
+        "PMID:42467059",
+        "PMID:42821458",
+        "PMID:42900742",
+        "PMID:42905866"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L30",
+      "board_id": "CDS2026:M05",
+      "name": "肾细胞损伤与代谢调控",
+      "boundary_text": "足细胞/肾小管机制与疾病进展。",
+      "progress_summary": "研究从自噬、乳酸化、线粒体与肾血流调控提出不同机制；CYP1B1材料仅作类型待核背景。",
+      "limits_text": "主要为机制研究；CYP1B1摘要缺原始设计，暂不计原创数量。",
+      "paper_ids": [
+        "PMID:42484596",
+        "PMID:42892652",
+        "PMID:42937398"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L31",
+      "board_id": "CDS2026:M10",
+      "name": "糖尿病骨折风险与骨结构变化",
+      "boundary_text": "骨折风险及骨密度/微结构纵向证据。",
+      "progress_summary": "T1D/DKD骨折风险与T2D骨结构随访相互补充，后者未发现更快的外周骨丢失。",
+      "limits_text": "人群和终点不同，不能把结果称作直接矛盾或否定骨折风险。",
+      "paper_ids": [
+        "PMID:42507670",
+        "PMID:42555304"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L32",
+      "board_id": "CDS2026:M06",
+      "name": "视网膜损伤机制及保护干预",
+      "boundary_text": "炎症、线粒体DNA、脂氧合酶等视网膜机制。",
+      "progress_summary": "临床前研究提出长效局部递送及代谢炎症靶点。",
+      "limits_text": "递送、分子通路和动物保护不等于患者视力获益。",
+      "paper_ids": [
+        "PMID:42461929",
+        "PMID:42474271",
+        "PMID:42485567"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L33",
+      "board_id": "CDS2026:M06",
+      "name": "视网膜影像随访与进展预测",
+      "boundary_text": "OCTA与非增殖性视网膜病变的长期轨迹。",
+      "progress_summary": "长期随访把微血管灌注变化与病变进展联系起来。",
+      "limits_text": "观察性影像线索，需要核临床阈值、重复性及外部验证。",
+      "paper_ids": [
+        "PMID:42925124"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L34",
+      "board_id": "CDS2026:M06",
+      "name": "神经病变的中枢改变与疼痛治疗",
+      "boundary_text": "脑影像/生物能与疼痛、感觉功能干预。",
+      "progress_summary": "影像研究与脊髓刺激RCT分别增加机制及干预证据，脑龄与疼痛的关系并非单一。",
+      "limits_text": "影像关联不解释全部疼痛，短期感觉改善不能直接称为疾病修饰。",
+      "paper_ids": [
+        "PMID:42579533",
+        "PMID:42713876",
+        "PMID:42720751"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L35",
+      "board_id": "CDS2026:M06",
+      "name": "生活方式与糖尿病认知衰退风险",
+      "boundary_text": "心血管健康、遗传与认知结局。",
+      "progress_summary": "两个人群数据集观察到较好心血管健康与认知风险的关联。",
+      "limits_text": "仍是观察性证据，需考虑混杂和不同遗传风险背景。",
+      "paper_ids": [
+        "PMID:42658064"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L36",
+      "board_id": "CDS2026:M06",
+      "name": "糖尿病足依从性与截肢后结局",
+      "boundary_text": "足部治疗留存、Charcot及截肢长期结局。",
+      "progress_summary": "试验二次分析和登记队列提示管理留存及长期系统脆弱性问题。",
+      "limits_text": "治疗依从、截肢预后与系统共病是不同结局，不能简单合并风险比例。",
+      "paper_ids": [
+        "PMID:42411992",
+        "PMID:42520058",
+        "PMID:42734988"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L37",
+      "board_id": "CDS2026:M07",
+      "name": "心血管风险的多维评估",
+      "boundary_text": "风险预测及自主神经相关生理信息。",
+      "progress_summary": "预后队列、甲基化模型和胰岛素剂量的自主神经分析补充传统风险指标。",
+      "limits_text": "不同模型和人群不可互换；历史队列治疗标准与当前不同。",
+      "paper_ids": [
+        "PMID:42752966",
+        "PMID:42461785",
+        "PMID:42734486"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L38",
+      "board_id": "CDS2026:M07",
+      "name": "糖尿病心肌病的蛋白修饰机制",
+      "boundary_text": "乳酸化、蛋白互作和心肌能量代谢。",
+      "progress_summary": "细胞/动物研究连接蛋白修饰、稳定性与心肌损伤。",
+      "limits_text": "临床前机制，需补患者证据和靶点可行性。",
+      "paper_ids": [
+        "PMID:42752579"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L39",
+      "board_id": "CDS2026:M08",
+      "name": "MASLD分层与肝脂肪代谢异质性",
+      "boundary_text": "肝纤维化风险、遗传亚型及脂质来源机制。",
+      "progress_summary": "临床风险分层、遗传和小样本代谢影像共同提示MASLD与血糖风险关系存在异质性。",
+      "limits_text": "研究尺度差异大，影像方法探索和遗传保护轴不能直接作为临床分层方案。",
+      "paper_ids": [
+        "PMID:42752965",
+        "PMID:42926238",
+        "PMID:42977848",
+        "PMID:42836860"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L40",
+      "board_id": "CDS2026:M08",
+      "name": "糖肝共病的药物比较与器官效应",
+      "boundary_text": "药物的肝脏效应及比较结果。",
+      "progress_summary": "临床前双受体药物与真实世界SGLT2比较提供不同层次证据；后者未见两药肝失代偿风险差异。",
+      "limits_text": "保留无差异结果，不把小鼠肝指标改善等同人体器官结局。",
+      "paper_ids": [
+        "PMID:42758304",
+        "PMID:42814151"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L41",
+      "board_id": "CDS2026:M12",
+      "name": "肝糖代谢的非胰岛素调控",
+      "boundary_text": "irisin基因递送和肝糖代谢机制。",
+      "progress_summary": "Akita小鼠研究探索不依赖胰岛素增加的代谢调控。",
+      "limits_text": "动物模型和基因递送可行性尚不能直接转化。",
+      "paper_ids": [
+        "PMID:42627513"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L42",
+      "board_id": "CDS2026:M10",
+      "name": "GDM早期识别与妊娠风险",
+      "boundary_text": "孕早期代谢检测、PMOS及围产风险。",
+      "progress_summary": "前瞻观察研究把早期识别与围产风险相联系；改善GDM预测不等于改善LGA预测。",
+      "limits_text": "需要干预研究确认早期预测能否改善母婴结局。",
+      "paper_ids": [
+        "PMID:42251767",
+        "PMID:42747940"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L43",
+      "board_id": "CDS2026:M10",
+      "name": "GDM亚型与产后长期风险",
+      "boundary_text": "GDM分型、复发及产后代谢差异。",
+      "progress_summary": "从数据驱动分型到长期随访，研究将亚型、复发和产后激素差异连接起来。",
+      "limits_text": "分型标准、种族和随访年限不同，仍需核个体化干预用途。",
+      "paper_ids": [
+        "PMID:41842968",
+        "PMID:42579538",
+        "PMID:42585298",
+        "PMID:42886235"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L44",
+      "board_id": "CDS2026:M10",
+      "name": "妊娠期管理与母婴安全",
+      "boundary_text": "体重、营养、用药及产后喂养。",
+      "progress_summary": "孕期体重/能量研究、用药暴露队列与产后喂养观察共同补充安全问题。",
+      "limits_text": "不把观察性暴露安全、随机随访和婴儿一年生长等同长期安全结论。",
+      "paper_ids": [
+        "PMID:42207920",
+        "PMID:42658082",
+        "PMID:42809004",
+        "PMID:42900778",
+        "PMID:42918866"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L45",
+      "board_id": "CDS2026:M10",
+      "name": "母体糖尿病与胎儿及子代代谢",
+      "boundary_text": "胎盘/胎儿生长、子代风险及宫内机制。",
+      "progress_summary": "影像、儿童队列及猪模型分别研究宫内影响；母体T1D与儿童自身免疫的相对保护也被保留。",
+      "limits_text": "结局、年龄和物种不同，不能概括为所有子代风险都增加或降低。",
+      "paper_ids": [
+        "PMID:43018733",
+        "PMID:42536661",
+        "PMID:42821443",
+        "PMID:42995267"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L46",
+      "board_id": "CDS2026:M11",
+      "name": "生活方式和体成分与预防结局",
+      "boundary_text": "长期体重、肌少型肥胖、环境及饮食风险。",
+      "progress_summary": "长期队列连接生命历程体重、体成分与预防结局；存在步行环境与钠摄入等可研究因素。",
+      "limits_text": "观察性关联不直接证明生活方式改变的因果效果；社会经济和其他混杂需核。",
+      "paper_ids": [
+        "PMID:42574058",
+        "PMID:42439362",
+        "PMID:42579609",
+        "PMID:42017812",
+        "PMID:42454990"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L47",
+      "board_id": "CDS2026:M11",
+      "name": "医疗费用与胰岛素可及性",
+      "boundary_text": "政策覆盖、住房及费用相关依从性。",
+      "progress_summary": "政策估算与横断面数据揭示成本上限和经济脆弱性的覆盖缺口。",
+      "limits_text": "政策估算不等于实施效果，队列与国家情境不直接外推。",
+      "paper_ids": [
+        "PMID:42378410",
+        "PMID:42594248"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L48",
+      "board_id": "CDS2026:M11",
+      "name": "流行趋势与急诊住院负担",
+      "boundary_text": "妊娠/一般人群趋势及卫生服务负担。",
+      "progress_summary": "不同地区重复调查和住院数据显示发病及服务负担的不同走向。",
+      "limits_text": "人口构成、诊断标准和年代不同，不合成全球升降结论。",
+      "paper_ids": [
+        "PMID:42319764",
+        "PMID:42611023",
+        "PMID:42815503"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L49",
+      "board_id": "CDS2026:M11",
+      "name": "日常照护、睡眠与心理体验",
+      "boundary_text": "照护环境与患者体验，不作为生物学机制。",
+      "progress_summary": "动态感受、学校管理和睡眠研究提示CGM指标之外的照护需求。",
+      "limits_text": "血糖指标与心理感受并非一一对应，不能将关联当作干预有效证据。",
+      "paper_ids": [
+        "PMID:42411938",
+        "PMID:42809017",
+        "PMID:42844149",
+        "PMID:42406897",
+        "PMID:42766003"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L50",
+      "board_id": "CDS2026:M11",
+      "name": "T1D起病年龄与长期并发症",
+      "boundary_text": "病程、起病年龄与死亡/并发症轨迹。",
+      "progress_summary": "登记及随访研究连接起病时间、治疗年代与长期风险。",
+      "limits_text": "年龄、病程和观察时长彼此相关，不直接比较不同队列的风险方向。",
+      "paper_ids": [
+        "PMID:42418171",
+        "PMID:42594337",
+        "PMID:42873598",
+        "PMID:42765945"
+      ],
+      "width_status": "working_question"
+    },
+    {
+      "issue_id": "LIT20261117:L51",
+      "board_id": "CDS2026:M11",
+      "name": "空气污染暴露与糖代谢共病",
+      "boundary_text": "空气污染与已确诊糖尿病的代谢指标。",
+      "progress_summary": "横断面研究发现T2D中污染暴露与代谢及共病关联较一致，T1D结果较弱。",
+      "limits_text": "环境相关性需纵向和干预证据，不能认定个体因果。",
+      "paper_ids": [
+        "PMID:42988924"
+      ],
+      "width_status": "working_question"
+    }
+  ],
+  "exclusions": [
+    {
+      "paper_id": "PMID:42627353",
+      "decision": "review_background",
+      "reason": "题名与方法明确系统评价和Meta分析，改作L20背景，不计原创篇数。",
+      "related_issue_id": "LIT20261117:L20"
+    },
+    {
+      "paper_id": "PMID:42961127",
+      "decision": "primary_design_unclear",
+      "reason": "已有摘要只有机制概述，未提供原始实验/队列设计；文献类型未能确认，暂作L30背景。",
+      "related_issue_id": "LIT20261117:L30"
+    }
+  ],
+  "supporting": [
+    {
+      "paper_id": "PMID:42820639",
+      "issue_id": "LIT20261117:L20",
+      "relation": "existing_highlight_supplement",
+      "count_in_ranking": false
+    }
+  ],
+  "new_collection": false,
+  "published": false
+}

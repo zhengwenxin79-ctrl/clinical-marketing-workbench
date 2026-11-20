@@ -1,0 +1,1458 @@
+{
+  "version": "0.1",
+  "reviewed_on": "2026-11-12",
+  "research_cutoff": "2026-11-11",
+  "reviewer": "AI按已有本地资料的编辑初判",
+  "human_review": "待业务/技术复核",
+  "new_collection": false,
+  "source_files": [
+    "src/data.snapshot.json",
+    "src/biomarkers.catalog.json",
+    "吉因加临床科研能力表（2026-11-10版）"
+  ],
+  "rules": {
+    "priority": "临床用途具体、已有目标人群外部或独立验证信息、检测路径可辨，优先评估下一轮临床验证；关键缺口及公司适配仍单列。",
+    "pending": "已有临床问题，但验证、增量、稳定检测或结果信息不足；包含机制、计划议题及反向证据。",
+    "reference": "本条仅作常规参照/终点，不参与新型转化优先级筛选。"
+  },
+  "company_capability_as_of": "2026-11-10",
+  "entries": {
+    "rna35": {
+      "label": "35基因RNA组合",
+      "cases": [
+        {
+          "id": "rna35-main",
+          "status": "priority",
+          "question": "常规诊断前的GDM风险识别",
+          "categories": [
+            "early"
+          ],
+          "role": "research",
+          "record_ids": [
+            "R16"
+          ],
+          "agenda_codes": [],
+          "reason": "临床用途明确：常规诊断前识别GDM风险；已有孕期血浆测量及外部验证信息，值得优先评估下一轮临床验证。",
+          "clinical_value": "研究孕约16周的血浆RNA组合与后续GDM风险。",
+          "validation": "108人发现/建模资料；内部测试AUC 0.84、外部0.73；外部样本量尚待核。",
+          "assay_route": "已有血浆cf-mRNA/cf-lncRNA测序路径；35个成员、标准化与公司捕获流程等效性待核。",
+          "gaps": [
+            "补核外部队列规模、入组及验证细节；外部AUC较内部下降。",
+            "补充与临床基础模型比较、校准和前瞻性增量评价。",
+            "确认35基因成员、采血与前处理、RNA测量重复性、成本及公司流程适配。"
+          ],
+          "participation": {
+            "action": "评估血浆RNA候选面板的测量与分析适配，讨论独立队列、模型校准及临床增量验证设计。",
+            "capability_ids": [
+              "T01",
+              "T10"
+            ],
+            "fit_status": "cfRNA流程来自本地资料、现行样本与交付待核；建模平台有公开介绍、具体模块待核。",
+            "tech_id": "CF"
+          },
+          "evidence": [
+            {
+              "id": "R16",
+              "basis": "35基因cfRNA模型；内部测试AUC 0.84、外部验证0.73。",
+              "design": "孕约16周血浆，108人（GDM54、对照54）；高通量cf-mRNA/cf-lncRNA测序与预测模型；另有外部验证队列，规模待全文核实。",
+              "limits": "样本规模有限，外部验证性能较内部下降；外部样本量、校准和相对临床模型增益待全文核实。GDM不能直接外推普通T2D；论文流程不证明吉因加当前捕获方案等效。"
+            }
+          ]
+        }
+      ]
+    },
+    "malat1": {
+      "label": "MALAT1",
+      "cases": [
+        {
+          "id": "malat1-main",
+          "status": "priority",
+          "question": "DKD与NDKD鉴别",
+          "categories": [
+            "stratification"
+          ],
+          "role": "research",
+          "record_ids": [
+            "R17"
+          ],
+          "agenda_codes": [],
+          "reason": "DKD/NDKD鉴别用途具体，现有研究比较尿液组分并开展独立验证，可优先评估候选靶标的临床验证路径。",
+          "clinical_value": "尿液lncRNA研究，重点验证信号来自尿液细胞。",
+          "validation": "发现组四组各40人，已有独立验证记载；最终重点验证尿液细胞MALAT1。",
+          "assay_route": "已有尿液分组分取样和靶向实时PCR研究路径；不能直接换成血浆cfRNA捕获流程。",
+          "gaps": [
+            "核对独立验证人群、诊断阈值及相对现有临床指标的增量。",
+            "补跨中心、前瞻性及病理病例选择影响的评价。",
+            "分别确认尿液细胞、无细胞尿液、EV测量流程；重点性能属于尿液细胞。"
+          ],
+          "participation": {
+            "action": "围绕尿液组分比较、RNA候选靶标和鉴别模型设计验证；尿液细胞实时PCR实验环节单独确认。",
+            "capability_ids": [
+              "T01",
+              "T10"
+            ],
+            "fit_status": "尿液RNA研究设计可借鉴；尿液细胞靶向PCR不属于已确认cfRNA交付，实验流程需单独确认。",
+            "tech_id": "CF"
+          },
+          "evidence": [
+            {
+              "id": "R17",
+              "basis": "论文最终重点验证的是尿液细胞来源MALAT1。",
+              "design": "活检明确DKD/NDKD、无肾病T2D及健康人，发现组每组40；分别测尿液细胞、无细胞尿液和EV的候选lncRNA，使用实时PCR，并有独立验证。",
+              "limits": "尿液细胞、无细胞尿液、EV三种输入不能互换；尿液细胞MALAT1的性能不得归给游离RNA。候选靶向PCR不等同血浆捕获测序，病理病例选择与跨中心验证仍需考虑。"
+            }
+          ]
+        }
+      ]
+    },
+    "pvt1": {
+      "label": "PVT1",
+      "cases": [
+        {
+          "id": "pvt1-main",
+          "status": "pending",
+          "question": "肾病鉴别的候选RNA线索",
+          "categories": [
+            "stratification"
+          ],
+          "role": "research",
+          "record_ids": [
+            "R17"
+          ],
+          "agenda_codes": [],
+          "reason": "有尿液候选差异信号，值得核读；本批未核清PVT1各组分结果及独立验证表现。",
+          "clinical_value": "已有台账记录尿液多组分中PVT1等候选lncRNA差异。",
+          "validation": "以所列原研究设计、结果及局限为准；独立验证与临床增量尚待补齐。",
+          "assay_route": "先明确样本、检测对象、平台和评价终点，再评估稳定测量及验证流程。",
+          "gaps": [
+            "补具体尿液成分、效应及验证结果。",
+            "与MALAT1及现有临床指标分别比较，核清鉴别增量。"
+          ],
+          "participation": {
+            "action": "讨论尿液RNA候选靶标比较、组分选择与验证设计；具体PCR检测流程单独确认。",
+            "capability_ids": [
+              "T01",
+              "T10"
+            ],
+            "fit_status": "尿液RNA研究设计可借鉴；尿液细胞靶向PCR不属于已确认cfRNA交付，实验流程需单独确认。",
+            "tech_id": "CF"
+          },
+          "evidence": [
+            {
+              "id": "R17",
+              "basis": "不同尿液成分可见MALAT1/PVT1等差异；最终重点验证的是MALAT1。",
+              "design": "活检明确DKD/NDKD、无肾病T2D及健康人，发现组每组40；分别测尿液细胞、无细胞尿液和EV的候选lncRNA，使用实时PCR，并有独立验证。",
+              "limits": "尿液细胞、无细胞尿液、EV三种输入不能互换；尿液细胞MALAT1的性能不得归给游离RNA。候选靶向PCR不等同血浆捕获测序，病理病例选择与跨中心验证仍需考虑。"
+            }
+          ]
+        }
+      ]
+    },
+    "tnfr": {
+      "label": "TNFR1/2",
+      "cases": [
+        {
+          "id": "tnfr-main",
+          "status": "pending",
+          "question": "正常白蛋白尿T2D人群的后续肾功能风险",
+          "categories": [
+            "early",
+            "stratification"
+          ],
+          "role": "research",
+          "record_ids": [
+            "R11"
+          ],
+          "agenda_codes": [],
+          "reason": "正常白蛋白尿T2D肾风险问题明确，已有候选蛋白关联线索；现有摘要尚不足以确认完整预测与验证路径。",
+          "clinical_value": "正常白蛋白尿T2D患者肾风险研究中的候选蛋白。",
+          "validation": "以所列原研究设计、结果及局限为准；独立验证与临床增量尚待补齐。",
+          "assay_route": "先明确样本、检测对象、平台和评价终点，再评估稳定测量及验证流程。",
+          "gaps": [
+            "补完整样本、人群、检测基质及平台。",
+            "核独立验证、相对UACR/临床模型的增量与每个蛋白的动态结果。"
+          ],
+          "participation": {
+            "action": "讨论候选蛋白测量与临床随访、常规指标对照和风险模型验证；具体平台及样本适配待确认。",
+            "capability_ids": [
+              "T14",
+              "T10"
+            ],
+            "fit_status": "官网确认蛋白组类别与建模平台介绍；具体候选蛋白、平台及样本适配待核。",
+            "tech_id": "PR"
+          },
+          "evidence": [
+            {
+              "id": "R11",
+              "basis": "TNFR1/2、KIM1、MMP7等提供UACR之外的关联信息。",
+              "design": "正常白蛋白尿T2D；检测炎症、肾小管损伤及纤维化相关蛋白与复合肾结局／轨迹；摘要未列人数及完整对照模型。",
+              "limits": "不能概括为UACR无用；尚缺完整队列、独立验证、增量预测及治疗监测设计。已有代谢库E06，本轮重新核对，非新发现。"
+            }
+          ]
+        }
+      ]
+    },
+    "kim1": {
+      "label": "KIM1",
+      "cases": [
+        {
+          "id": "kim1-main",
+          "status": "pending",
+          "question": "正常白蛋白尿T2D人群的后续肾功能风险",
+          "categories": [
+            "early",
+            "stratification"
+          ],
+          "role": "research",
+          "record_ids": [
+            "R11"
+          ],
+          "agenda_codes": [],
+          "reason": "正常白蛋白尿T2D肾风险问题明确，已有候选蛋白关联线索；现有摘要尚不足以确认完整预测与验证路径。",
+          "clinical_value": "正常白蛋白尿T2D患者肾风险研究中的候选蛋白。",
+          "validation": "以所列原研究设计、结果及局限为准；独立验证与临床增量尚待补齐。",
+          "assay_route": "先明确样本、检测对象、平台和评价终点，再评估稳定测量及验证流程。",
+          "gaps": [
+            "补完整样本、人群、检测基质及平台。",
+            "核独立验证、相对UACR/临床模型的增量与每个蛋白的动态结果。"
+          ],
+          "participation": {
+            "action": "讨论候选蛋白测量与临床随访、常规指标对照和风险模型验证；具体平台及样本适配待确认。",
+            "capability_ids": [
+              "T14",
+              "T10"
+            ],
+            "fit_status": "官网确认蛋白组类别与建模平台介绍；具体候选蛋白、平台及样本适配待核。",
+            "tech_id": "PR"
+          },
+          "evidence": [
+            {
+              "id": "R11",
+              "basis": "TNFR1/2、KIM1、MMP7等提供UACR之外的关联信息。",
+              "design": "正常白蛋白尿T2D；检测炎症、肾小管损伤及纤维化相关蛋白与复合肾结局／轨迹；摘要未列人数及完整对照模型。",
+              "limits": "不能概括为UACR无用；尚缺完整队列、独立验证、增量预测及治疗监测设计。已有代谢库E06，本轮重新核对，非新发现。"
+            }
+          ]
+        }
+      ]
+    },
+    "mmp7": {
+      "label": "MMP7",
+      "cases": [
+        {
+          "id": "mmp7-main",
+          "status": "pending",
+          "question": "正常白蛋白尿T2D人群的后续肾功能风险",
+          "categories": [
+            "early",
+            "stratification"
+          ],
+          "role": "research",
+          "record_ids": [
+            "R11"
+          ],
+          "agenda_codes": [],
+          "reason": "正常白蛋白尿T2D肾风险问题明确，已有候选蛋白关联线索；现有摘要尚不足以确认完整预测与验证路径。",
+          "clinical_value": "正常白蛋白尿T2D患者肾风险研究中的候选蛋白。",
+          "validation": "以所列原研究设计、结果及局限为准；独立验证与临床增量尚待补齐。",
+          "assay_route": "先明确样本、检测对象、平台和评价终点，再评估稳定测量及验证流程。",
+          "gaps": [
+            "补完整样本、人群、检测基质及平台。",
+            "核独立验证、相对UACR/临床模型的增量与每个蛋白的动态结果。"
+          ],
+          "participation": {
+            "action": "讨论候选蛋白测量与临床随访、常规指标对照和风险模型验证；具体平台及样本适配待确认。",
+            "capability_ids": [
+              "T14",
+              "T10"
+            ],
+            "fit_status": "官网确认蛋白组类别与建模平台介绍；具体候选蛋白、平台及样本适配待核。",
+            "tech_id": "PR"
+          },
+          "evidence": [
+            {
+              "id": "R11",
+              "basis": "TNFR1/2、KIM1、MMP7等提供UACR之外的关联信息。",
+              "design": "正常白蛋白尿T2D；检测炎症、肾小管损伤及纤维化相关蛋白与复合肾结局／轨迹；摘要未列人数及完整对照模型。",
+              "limits": "不能概括为UACR无用；尚缺完整队列、独立验证、增量预测及治疗监测设计。已有代谢库E06，本轮重新核对，非新发现。"
+            }
+          ]
+        }
+      ]
+    },
+    "longitudinal-proteins": {
+      "label": "纵向蛋白特征",
+      "cases": [
+        {
+          "id": "longitudinal-proteins-main",
+          "status": "pending",
+          "question": "发病风险与纵向分子变化；重复采样与发病信号",
+          "categories": [
+            "early",
+            "monitoring"
+          ],
+          "role": "research",
+          "record_ids": [
+            "R03",
+            "A01"
+          ],
+          "agenda_codes": [],
+          "reason": "MESA大队列重复测量有纵向研究基础；目前主要是关联增量，尚不能据此认定临床预测获益。",
+          "clinical_value": "重复测量蛋白随时间变化与糖尿病发病风险的关系。",
+          "validation": "5,322人、三个采样时点；会议和论文同研究；关联发现与预测性能分别解释。",
+          "assay_route": "先明确样本、检测对象、平台和评价终点，再评估稳定测量及验证流程。",
+          "gaps": [
+            "明确可验证的具体蛋白组合、预测时点与阈值。",
+            "补相对单次测量及临床模型的预测增量、校准与外部验证。",
+            "A01/R03为同研究会议/论文版本，合并而非两次验证。"
+          ],
+          "participation": {
+            "action": "围绕蛋白重复测量、轨迹分析及独立验证设计合作，评估单次与纵向检测的附加价值。",
+            "capability_ids": [
+              "T14",
+              "T10"
+            ],
+            "fit_status": "官网确认蛋白组类别与建模平台介绍；具体候选蛋白、平台及样本适配待核。",
+            "tech_id": "PR"
+          },
+          "evidence": [
+            {
+              "id": "R03",
+              "basis": "MESA三个采样时点；重复测量发现额外关联及不同通路。",
+              "design": "MESA 5,322人；约16年跨度3个采样时点；Olink Explore 3K；时间更新Cox，并与UK Biobank单时点结果比较。",
+              "limits": "关联数增加不等于预测模型增益；会议与论文数值不同，以正式论文为准。与A01同一研究版本，不能算两次独立验证。"
+            },
+            {
+              "id": "A01",
+              "basis": "与R03同研究的会议版本，按同研究合并计数。",
+              "design": "MESA 5,322人、三个采样时点的蛋白组分析。",
+              "limits": "与R03正式论文为同研究版本，不额外增加独立研究数；版本间统计口径差异待全文核对。"
+            }
+          ]
+        }
+      ]
+    },
+    "metabolite15": {
+      "label": "15项代谢物组合",
+      "cases": [
+        {
+          "id": "metabolite15-main",
+          "status": "pending",
+          "question": "T1D免疫治疗应答分层",
+          "categories": [
+            "stratification"
+          ],
+          "role": "research",
+          "record_ids": [
+            "R05"
+          ],
+          "agenda_codes": [],
+          "reason": "治疗前应答分层有具体场景，但现有41人探索与内部测试不足以支持临床选人。",
+          "clinical_value": "免疫治疗前血清代谢物的探索性应答分类研究。",
+          "validation": "41人探索、内部测试AUC 0.881，缺外部独立队列。",
+          "assay_route": "先明确样本、检测对象、平台和评价终点，再评估稳定测量及验证流程。",
+          "gaps": [
+            "补15项成员、稳定测量及预分析流程。",
+            "在独立队列验证并比较临床模型；说明样本量与过拟合风险。"
+          ],
+          "participation": {
+            "action": "讨论治疗前代谢候选组合、临床数据整合及独立应答验证；LC-MS具体流程和交付待确认。",
+            "capability_ids": [
+              "T15",
+              "T10"
+            ],
+            "fit_status": "代谢组为本地平台线索，现行服务目录和检测流程待核；建模具体模块待核。",
+            "tech_id": "MT"
+          },
+          "evidence": [
+            {
+              "id": "R05",
+              "basis": "15项代谢物差异用于随机森林，内部测试AUC 0.881。",
+              "design": "AbATE试验41名新发T1D个体的基线血清；半靶向LC高分辨串联质谱；按2年C肽下降划分应答。NCT00129259。",
+              "limits": "这是既有试验样本的探索分析；41人且内部拆分，缺独立外部队列，不能把AUC当临床可用性能。"
+            }
+          ]
+        }
+      ]
+    },
+    "bile-acids": {
+      "label": "次级胆汁酸",
+      "cases": [
+        {
+          "id": "bile-acids-main",
+          "status": "pending",
+          "question": "免疫亚群与代谢特征",
+          "categories": [
+            "stratification"
+          ],
+          "role": "research",
+          "record_ids": [
+            "A21"
+          ],
+          "agenda_codes": [],
+          "reason": "免疫亚群的代谢差异能提出研究问题，但样本量小、具体成员及独立性仍待核。",
+          "clinical_value": "T1D免疫亚群研究中的代谢差异线索。",
+          "validation": "47名新发T1D的探索；与R13相关体系，不据此视为独立验证。",
+          "assay_route": "先明确样本、检测对象、平台和评价终点，再评估稳定测量及验证流程。",
+          "gaps": [
+            "补具体胆汁酸成员、样本基质、效应和验证。",
+            "核与R13样本是否重叠，再评价独立复现及治疗应答意义。"
+          ],
+          "participation": {
+            "action": "讨论候选代谢物、免疫亚群整合与验证设计；靶向/非靶向平台分别确认。",
+            "capability_ids": [
+              "T15",
+              "T10"
+            ],
+            "fit_status": "代谢组为本地平台线索，现行服务目录和检测流程待核；建模具体模块待核。",
+            "tech_id": "MT"
+          },
+          "evidence": [
+            {
+              "id": "A21",
+              "basis": "免疫亚群出现次级胆汁酸及炎症/稳态相关代谢差异。",
+              "design": "47名新发T1D，以血浆诱导转录反应划分免疫亚群，再行非靶向LC-MS代谢组。",
+              "limits": "探索性、样本小；与R13同作者/相关分群体系，样本重叠未核，不称独立验证；血浆诱导转录不是cfRNA。"
+            }
+          ]
+        }
+      ]
+    },
+    "scfa": {
+      "label": "短链脂肪酸",
+      "cases": [
+        {
+          "id": "scfa-main",
+          "status": "pending",
+          "question": "胰岛自身免疫发生风险",
+          "categories": [
+            "early"
+          ],
+          "role": "research",
+          "record_ids": [
+            "R07"
+          ],
+          "agenda_codes": [],
+          "reason": "已收录研究为阴性证据，当前不支持把该样本和时间窗下的SCFA直接列为优先风险标志物。",
+          "clinical_value": "母婴队列中粪便SCFA与后续胰岛自身免疫的风险研究。",
+          "validation": "母婴队列SCFA与所评估自身免疫结局未建立关联。",
+          "assay_route": "先明确样本、检测对象、平台和评价终点，再评估稳定测量及验证流程。",
+          "gaps": [
+            "明确拟研究的样本、时间窗和用途是否改变。",
+            "若继续推进，需独立证据解释与现有阴性结果的关系。"
+          ],
+          "participation": {
+            "action": "用已有阴性结果校准代谢候选和取样设计，讨论验证方案；具体测量流程待确认。",
+            "capability_ids": [
+              "T15",
+              "T10"
+            ],
+            "fit_status": "代谢组为本地平台线索，现行服务目录和检测流程待核；建模具体模块待核。",
+            "tech_id": "MT"
+          },
+          "evidence": [
+            {
+              "id": "R07",
+              "basis": "孕期及幼儿粪便SCFA水平未与自身免疫发生建立关联。",
+              "design": "ENDIA母婴出生队列嵌套病例对照：54例出现持续胰岛自身免疫／临床T1D，161名对照；1,120份粪便；LC-MS。",
+              "limits": "阴性结果约束该样本、测量和结局下的假说；不等于否定整个微生物组机制，也不证明补充SCFA有效。"
+            }
+          ]
+        }
+      ]
+    },
+    "glp1r-r131q": {
+      "label": "GLP1R R131Q",
+      "cases": [
+        {
+          "id": "glp1r-r131q-main",
+          "status": "pending",
+          "question": "药物应答分层",
+          "categories": [
+            "stratification"
+          ],
+          "role": "research",
+          "record_ids": [
+            "R02"
+          ],
+          "agenda_codes": [],
+          "reason": "遗传应答差异及功能实验提供线索，但现有用药队列尚不能支持基因指导临床选药。",
+          "clinical_value": "GLP1R变异与GLP-1RA治疗应答差异的研究。",
+          "validation": "177人用药队列及人胰岛/体外实验支持；非基因分层随机试验。",
+          "assay_route": "先明确样本、检测对象、平台和评价终点，再评估稳定测量及验证流程。",
+          "gaps": [
+            "补族群外验证、临床预测增益与前瞻决策研究。",
+            "确认分型、质量控制、报告及公司承接流程。"
+          ],
+          "participation": {
+            "action": "讨论遗传信息与临床模型整合、应答分层验证；基因分型服务需单独确认。",
+            "capability_ids": [
+              "T10"
+            ],
+            "fit_status": "官网有Biomarker建模平台介绍；本项目数据、模型和验证交付范围待核，具体检测服务另行确认。",
+            "tech_id": null
+          },
+          "evidence": [
+            {
+              "id": "R02",
+              "basis": "R131Q每个等位基因与用药6个月HbA1c额外下降0.53个百分点相关。",
+              "design": "韩国社区队列6,373人；用药队列177人；另有钳夹17人、人胰岛21份与体外实验。",
+              "limits": "药物队列非基因分层随机试验；族群外验证和临床增益待补，不能据此推荐常规基因用药检测。"
+            }
+          ]
+        }
+      ]
+    },
+    "pgs": {
+      "label": "多基因风险评分",
+      "cases": [
+        {
+          "id": "pgs-main",
+          "status": "pending",
+          "question": "GDM后T1D/T2D风险分层",
+          "categories": [
+            "early",
+            "stratification"
+          ],
+          "role": "research",
+          "record_ids": [
+            "R12"
+          ],
+          "agenda_codes": [],
+          "reason": "既往GDM女性长期风险研究有临床场景；T1D与T2D增量不同，外部校准及决策价值仍需补齐。",
+          "clinical_value": "GDM后长期随访中，分别评价T1D和T2D的遗传风险信息。",
+          "validation": "以所列原研究设计、结果及局限为准；独立验证与临床增量尚待补齐。",
+          "assay_route": "先明确样本、检测对象、平台和评价终点，再评估稳定测量及验证流程。",
+          "gaps": [
+            "按T1D、T2D分别核风险模型和事件数。",
+            "补外部族群校准、阈值及决策收益；确认评分与分型流程。"
+          ],
+          "participation": {
+            "action": "讨论遗传与临床风险模型的增量及独立验证，明确可分析的数据与评分流程。",
+            "capability_ids": [
+              "T10"
+            ],
+            "fit_status": "官网有Biomarker建模平台介绍；本项目数据、模型和验证交付范围待核，具体检测服务另行确认。",
+            "tech_id": null
+          },
+          "evidence": [
+            {
+              "id": "R12",
+              "basis": "PGS加入临床模型对T1D有补充，对T2D增益较小。",
+              "design": "370名既往GDM女性；中位30年随访；全国登记＋糖耐量；比较PGS与临床因素。",
+              "limits": "样本与事件数有限、历史妊娠队列；T1D与T2D的预测价值明显不同，外部族群校准及决策效益待补。"
+            }
+          ]
+        }
+      ]
+    },
+    "induced-transcript": {
+      "label": "诱导转录特征",
+      "cases": [
+        {
+          "id": "induced-transcript-main",
+          "status": "pending",
+          "question": "T1D免疫分型与治疗反应",
+          "categories": [
+            "stratification"
+          ],
+          "role": "research",
+          "record_ids": [
+            "R13"
+          ],
+          "agenda_codes": [],
+          "reason": "有验证队列分群基础，但部分表型关联未复现，暂需先明确可重复的分型和应答用途。",
+          "clinical_value": "利用患者血浆刺激报告细胞后的转录反应进行免疫分群。",
+          "validation": "560人主资料及61人验证队列；验证可分群，但未复现部分表型关联。",
+          "assay_route": "患者血浆诱导标准报告细胞后测细胞转录反应；与直接测血浆cfRNA分开。",
+          "gaps": [
+            "补前瞻性治疗分配或应答验证及未复现原因。",
+            "明确报告细胞、诱导流程与转录测量的重复性及可承接环节。"
+          ],
+          "participation": {
+            "action": "讨论免疫分层与临床数据建模、验证设计；报告细胞实验和芯片流程单独确认。",
+            "capability_ids": [
+              "T10"
+            ],
+            "fit_status": "官网有Biomarker建模平台介绍；本项目数据、模型和验证交付范围待核，具体检测服务另行确认。",
+            "tech_id": null
+          },
+          "evidence": [
+            {
+              "id": "R13",
+              "basis": "血浆诱导报告细胞转录反应＋芯片，发现两个免疫亚群及治疗应答线索。",
+              "design": "六项TrialNet免疫试验560人，另有61人验证队列；血浆诱导标准报告细胞转录反应＋芯片，辅以流式／miRNA。GSE302205。",
+              "limits": "回顾性分层，尚需前瞻性治疗分配验证；这是血浆作用于细胞后的转录检测，不是直接测血浆cfRNA。"
+            }
+          ]
+        }
+      ]
+    },
+    "c-peptide": {
+      "label": "C肽",
+      "cases": [
+        {
+          "id": "c-peptide-R04",
+          "status": "pending",
+          "question": "T1D进展风险分层",
+          "categories": [
+            "early",
+            "stratification"
+          ],
+          "role": "research",
+          "record_ids": [
+            "R04"
+          ],
+          "agenda_codes": [],
+          "reason": "风险分层已有研究线索，但阈值的前瞻验证和人群外推仍需补齐。",
+          "clinical_value": "既用于β细胞功能分层，也用于免疫治疗纵向终点评价。",
+          "validation": "以所列原研究设计、结果及局限为准；独立验证与临床增量尚待补齐。",
+          "assay_route": "先明确样本、检测对象、平台和评价终点，再评估稳定测量及验证流程。",
+          "gaps": [
+            "明确本条是风险分层、纵向终点还是治疗应答参照。",
+            "补拟采用阈值的外部复现和具体临床用途；检测服务另行确认。"
+          ],
+          "participation": {
+            "action": "可将C肽作为临床指标接入分层与纵向研究，讨论统计终点及验证设计；不据代谢组论文赋予C肽代谢组检测匹配。",
+            "capability_ids": [
+              "T10"
+            ],
+            "fit_status": "官网有Biomarker建模平台介绍；本项目数据、模型和验证交付范围待核，具体检测服务另行确认。",
+            "tech_id": null
+          },
+          "evidence": [
+            {
+              "id": "R04",
+              "basis": "OGTT葡萄糖＋C肽联合β细胞功能指标区分进展风险组。",
+              "design": "TrialNet自然史中T1D患者亲属；单一自身抗体阳性；OGTT葡萄糖＋C肽、Cox及随机森林；摘要未给总样本量。",
+              "limits": "亲属筛查人群的结果不能直接推到普通人群；阈值需要前瞻性验证。与R13共享TrialNet网络，但研究人群及分析不同。"
+            }
+          ]
+        },
+        {
+          "id": "c-peptide-A19",
+          "status": "pending",
+          "question": "β细胞功能变化与免疫干预评价",
+          "categories": [
+            "monitoring"
+          ],
+          "role": "research",
+          "record_ids": [
+            "A19"
+          ],
+          "agenda_codes": [],
+          "reason": "纵向终点再分析有方法价值，临床意义及外部复现仍需核实。",
+          "clinical_value": "既用于β细胞功能分层，也用于免疫治疗纵向终点评价。",
+          "validation": "以所列原研究设计、结果及局限为准；独立验证与临床增量尚待补齐。",
+          "assay_route": "先明确样本、检测对象、平台和评价终点，再评估稳定测量及验证流程。",
+          "gaps": [
+            "明确本条是风险分层、纵向终点还是治疗应答参照。",
+            "补拟采用阈值的外部复现和具体临床用途；检测服务另行确认。"
+          ],
+          "participation": {
+            "action": "可将C肽作为临床指标接入分层与纵向研究，讨论统计终点及验证设计；不据代谢组论文赋予C肽代谢组检测匹配。",
+            "capability_ids": [
+              "T10"
+            ],
+            "fit_status": "官网有Biomarker建模平台介绍；本项目数据、模型和验证交付范围待核，具体检测服务另行确认。",
+            "tech_id": null
+          },
+          "evidence": [
+            {
+              "id": "A19",
+              "basis": "利用C肽下降到预设阈值的时间评价免疫治疗。",
+              "design": "TrialNet六个双盲RCT共597人的再分析，以非线性混合模型估计C肽到预设阈值的时间。",
+              "limits": "重用既有试验，不是597人新试验；阈值选择、外部复现和临床意义仍需核实。"
+            }
+          ]
+        },
+        {
+          "id": "c-peptide-R05",
+          "status": "reference",
+          "question": "治疗应答终点",
+          "categories": [
+            "monitoring"
+          ],
+          "role": "reference",
+          "record_ids": [
+            "R05"
+          ],
+          "agenda_codes": [],
+          "reason": "本条中作为既有研究的应答终点，保留作参照，不据此产生新的标志物转化优先级。",
+          "clinical_value": "既用于β细胞功能分层，也用于免疫治疗纵向终点评价。",
+          "validation": "以所列原研究设计、结果及局限为准；独立验证与临床增量尚待补齐。",
+          "assay_route": "先明确样本、检测对象、平台和评价终点，再评估稳定测量及验证流程。",
+          "gaps": [
+            "明确本条是风险分层、纵向终点还是治疗应答参照。",
+            "补拟采用阈值的外部复现和具体临床用途；检测服务另行确认。"
+          ],
+          "participation": {
+            "action": "可将C肽作为临床指标接入分层与纵向研究，讨论统计终点及验证设计；不据代谢组论文赋予C肽代谢组检测匹配。",
+            "capability_ids": [
+              "T10"
+            ],
+            "fit_status": "官网有Biomarker建模平台介绍；本项目数据、模型和验证交付范围待核，具体检测服务另行确认。",
+            "tech_id": null
+          },
+          "evidence": [
+            {
+              "id": "R05",
+              "basis": "按两年C肽下降划分治疗应答，C肽是应答终点。",
+              "design": "AbATE试验41名新发T1D个体的基线血清；半靶向LC高分辨串联质谱；按2年C肽下降划分应答。NCT00129259。",
+              "limits": "这是既有试验样本的探索分析；41人且内部拆分，缺独立外部队列，不能把AUC当临床可用性能。"
+            }
+          ]
+        }
+      ]
+    },
+    "islet-autoantibodies": {
+      "label": "胰岛自身抗体",
+      "cases": [
+        {
+          "id": "islet-autoantibodies-study",
+          "status": "pending",
+          "question": "进展风险与亚群识别",
+          "categories": [
+            "early",
+            "stratification"
+          ],
+          "role": "research",
+          "record_ids": [
+            "R04"
+          ],
+          "agenda_codes": [],
+          "reason": "抗体状态连接T1D风险人群，但本批主要为人群筛选条件；具体抗体及用途验证仍需补齐。",
+          "clinical_value": "早期T1D风险人群研究中的抗体状态。",
+          "validation": "以所列原研究设计、结果及局限为准；独立验证与临床增量尚待补齐。",
+          "assay_route": "先明确样本、检测对象、平台和评价终点，再评估稳定测量及验证流程。",
+          "gaps": [
+            "补抗体成员、测量平台与标准化。",
+            "在目标人群核抗体及代谢联合模型的阈值与前瞻增量。"
+          ],
+          "participation": {
+            "action": "讨论抗体状态、临床及组学信息联合分层；抗体检测平台另行确认，不等同免疫组库测序。",
+            "capability_ids": [
+              "T10"
+            ],
+            "fit_status": "官网有Biomarker建模平台介绍；本项目数据、模型和验证交付范围待核，具体检测服务另行确认。",
+            "tech_id": null
+          },
+          "evidence": [
+            {
+              "id": "R04",
+              "basis": "研究对象为单一胰岛自身抗体阳性亲属，结合代谢表型分层。",
+              "design": "TrialNet自然史中T1D患者亲属；单一自身抗体阳性；OGTT葡萄糖＋C肽、Cox及随机森林；摘要未给总样本量。",
+              "limits": "亲属筛查人群的结果不能直接推到普通人群；阈值需要前瞻性验证。与R13共享TrialNet网络，但研究人群及分析不同。"
+            }
+          ]
+        },
+        {
+          "id": "islet-autoantibodies-agenda",
+          "status": "pending",
+          "question": "早期T1D风险人群研究中的抗体状态。",
+          "categories": [
+            "stratification"
+          ],
+          "role": "research",
+          "record_ids": [],
+          "agenda_codes": [
+            "S_029"
+          ],
+          "reason": "已有相关抗体检测计划议题，具体分子及结果未取得，先作为追踪线索。",
+          "clinical_value": "早期T1D风险人群研究中的抗体状态。",
+          "validation": "以所列原研究设计、结果及局限为准；独立验证与临床增量尚待补齐。",
+          "assay_route": "先明确样本、检测对象、平台和评价终点，再评估稳定测量及验证流程。",
+          "gaps": [
+            "补报告摘要、具体抗体成员、设计和结果。",
+            "核相对现有分型方法的增量。"
+          ],
+          "participation": {
+            "action": "围绕临床异质性整理分层问题，结果补齐后再评估检测和建模合作环节。",
+            "capability_ids": [
+              "T10"
+            ],
+            "fit_status": "官网有Biomarker建模平台介绍；本项目数据、模型和验证交付范围待核，具体检测服务另行确认。",
+            "tech_id": null
+          },
+          "evidence": [
+            {
+              "id": "S_029",
+              "basis": "相关议题为中国T1D异质性与抗体检测；议题未明确具体抗体成员。",
+              "title": "中国1型糖尿病的异质性与抗体检测",
+              "limits": "仅有计划议题，尚无报告结果。"
+            }
+          ]
+        }
+      ]
+    },
+    "postmeal-glucose": {
+      "label": "餐后1小时葡萄糖增幅",
+      "cases": [
+        {
+          "id": "postmeal-glucose-main",
+          "status": "pending",
+          "question": "GDM早期风险识别",
+          "categories": [
+            "early"
+          ],
+          "role": "research",
+          "record_ids": [
+            "A23"
+          ],
+          "agenda_codes": [],
+          "reason": "有孕期CGM早期风险信号，但现有性能与临床增量仍不足以直接作为优先临床应用。",
+          "clinical_value": "孕期动态葡萄糖中用于早期GDM风险研究的特征。",
+          "validation": "两队列936人，AUC约0.78；85%敏感度时特异度53%，增量用途待验证。",
+          "assay_route": "先明确样本、检测对象、平台和评价终点，再评估稳定测量及验证流程。",
+          "gaps": [
+            "补前瞻性、外部校准与相对常规流程的增量。",
+            "说明敏感度/特异度取舍及误报影响，确认实际使用场景。"
+          ],
+          "participation": {
+            "action": "讨论临床监测数据与组学风险因素联合分析、模型增量验证；CGM检测不作为公司组学交付。",
+            "capability_ids": [
+              "T10"
+            ],
+            "fit_status": "官网有Biomarker建模平台介绍；本项目数据、模型和验证交付范围待核，具体检测服务另行确认。",
+            "tech_id": null
+          },
+          "evidence": [
+            {
+              "id": "A23",
+              "basis": "餐后1小时增幅指标AUC约0.78；仍需前瞻性与增量评价。",
+              "design": "MAGIC和GLAM两队列936人，CGM餐食检测与OGTT相关分析。",
+              "limits": "早期风险线索不等于替代诊断；仍需前瞻性、外部校准及临床增益验证。"
+            }
+          ]
+        }
+      ]
+    },
+    "mage": {
+      "label": "MAGE",
+      "cases": [
+        {
+          "id": "mage-main",
+          "status": "pending",
+          "question": "GDM诊断方法评价",
+          "categories": [
+            "early"
+          ],
+          "role": "research",
+          "record_ids": [
+            "A25"
+          ],
+          "agenda_codes": [],
+          "reason": "现有研究未支持替代OGTT，暂不列入优先诊断转化线索。",
+          "clinical_value": "孕中期CGM特征与OGTT诊断比较中的指标。",
+          "validation": "既有队列的CGM诊断评价，现有阈值性能不足以替代OGTT。",
+          "assay_route": "先明确样本、检测对象、平台和评价终点，再评估稳定测量及验证流程。",
+          "gaps": [
+            "明确拟采用用途是否仍为替代OGTT。",
+            "若为新用途，补相应验证和临床参照；保留原阴性结果。"
+          ],
+          "participation": {
+            "action": "围绕监测指标和临床参照讨论研究设计与分析；不把CGM指标归为公司组学检测。",
+            "capability_ids": [
+              "T10"
+            ],
+            "fit_status": "官网有Biomarker建模平台介绍；本项目数据、模型和验证交付范围待核，具体检测服务另行确认。",
+            "tech_id": null
+          },
+          "evidence": [
+            {
+              "id": "A25",
+              "basis": "MAGE AUC约0.73，现有指标性能不足以支持替代OGTT。",
+              "design": "GOMOMs 2178人，孕24–28周约10天CGM与OGTT，训练/验证建模。",
+              "limits": "阴性替代结果；与A24共用队列，但问题为诊断而非孕早期预测；不能合并为两个独立验证队列。"
+            }
+          ]
+        }
+      ]
+    },
+    "ffa": {
+      "label": "游离脂肪酸",
+      "cases": [
+        {
+          "id": "ffa-main",
+          "status": "pending",
+          "question": "孕期风险模型的增量评价",
+          "categories": [
+            "early"
+          ],
+          "role": "research",
+          "record_ids": [
+            "A24"
+          ],
+          "agenda_codes": [],
+          "reason": "所评估孕早期模型未见预测增益，当前场景不支持升级为优先线索。",
+          "clinical_value": "GOMOMs孕早期风险模型中的候选指标。",
+          "validation": "以所列原研究设计、结果及局限为准；独立验证与临床增量尚待补齐。",
+          "assay_route": "先明确样本、检测对象、平台和评价终点，再评估稳定测量及验证流程。",
+          "gaps": [
+            "保留特定样本、孕周和模型条件下的无增益结果。",
+            "若提出其他用途，补对应验证与检测平台证据。"
+          ],
+          "participation": {
+            "action": "以常规代谢指标为临床参照设计增量分析；检测平台及公司可参与部分单独确认。",
+            "capability_ids": [
+              "T10"
+            ],
+            "fit_status": "官网有Biomarker建模平台介绍；本项目数据、模型和验证交付范围待核，具体检测服务另行确认。",
+            "tech_id": null
+          },
+          "evidence": [
+            {
+              "id": "A24",
+              "basis": "加入所测游离脂肪酸、甘油三酯及其他代谢指标后，未提升GDM或大于胎龄儿的预测。",
+              "design": "GOMOMs 2178人，孕10–14周代谢/脂质指标与75g OGTT；按中心分训练和验证。",
+              "limits": "针对特定时间窗、指标与基础模型；不能扩大为所有组学无效。与A25共享GOMOMs队列，非独立人群验证。"
+            }
+          ]
+        }
+      ]
+    },
+    "triglycerides": {
+      "label": "甘油三酯",
+      "cases": [
+        {
+          "id": "triglycerides-main",
+          "status": "pending",
+          "question": "孕期风险模型的增量评价",
+          "categories": [
+            "early"
+          ],
+          "role": "research",
+          "record_ids": [
+            "A24"
+          ],
+          "agenda_codes": [],
+          "reason": "所评估孕早期模型未见预测增益，当前场景不支持升级为优先线索。",
+          "clinical_value": "GOMOMs孕早期风险模型中的候选指标。",
+          "validation": "以所列原研究设计、结果及局限为准；独立验证与临床增量尚待补齐。",
+          "assay_route": "先明确样本、检测对象、平台和评价终点，再评估稳定测量及验证流程。",
+          "gaps": [
+            "保留特定样本、孕周和模型条件下的无增益结果。",
+            "若提出其他用途，补对应验证与检测平台证据。"
+          ],
+          "participation": {
+            "action": "以常规代谢指标为临床参照设计增量分析；检测平台及公司可参与部分单独确认。",
+            "capability_ids": [
+              "T10"
+            ],
+            "fit_status": "官网有Biomarker建模平台介绍；本项目数据、模型和验证交付范围待核，具体检测服务另行确认。",
+            "tech_id": null
+          },
+          "evidence": [
+            {
+              "id": "A24",
+              "basis": "加入所测游离脂肪酸、甘油三酯及其他代谢指标后，未提升GDM或大于胎龄儿的预测。",
+              "design": "GOMOMs 2178人，孕10–14周代谢/脂质指标与75g OGTT；按中心分训练和验证。",
+              "limits": "针对特定时间窗、指标与基础模型；不能扩大为所有组学无效。与A25共享GOMOMs队列，非独立人群验证。"
+            }
+          ]
+        }
+      ]
+    },
+    "ev-proteins": {
+      "label": "EV蛋白特征",
+      "cases": [
+        {
+          "id": "ev-proteins-main",
+          "status": "pending",
+          "question": "部分缓解与病程变化",
+          "categories": [
+            "monitoring"
+          ],
+          "role": "research",
+          "record_ids": [
+            "A20"
+          ],
+          "agenda_codes": [],
+          "reason": "病程动态研究问题明确，但仅取得设计和取样时点，尚缺完整结果及具体蛋白名单。",
+          "clinical_value": "探索血浆细胞外囊泡蛋白与T1D部分缓解的关系。",
+          "validation": "仅已核设计，原始结果段不完整；N=10/组方法线索。",
+          "assay_route": "先明确样本、检测对象、平台和评价终点，再评估稳定测量及验证流程。",
+          "gaps": [
+            "补原始结果和蛋白名单；不引用未核性能。",
+            "补样本规模、预测时序及独立验证。",
+            "确认EV分离、蛋白测量及纵向样本流程。"
+          ],
+          "participation": {
+            "action": "讨论EV蛋白候选筛选、取样时点和纵向验证；EV分离及具体蛋白平台适配待确认。",
+            "capability_ids": [
+              "T14",
+              "T10"
+            ],
+            "fit_status": "官网确认蛋白组类别与建模平台介绍；具体候选蛋白、平台及样本适配待核。",
+            "tech_id": "PR"
+          },
+          "evidence": [
+            {
+              "id": "A20",
+              "basis": "已读采血时点和研究设计，原始结果段未完整取得。",
+              "design": "原站方法片段：12–18岁新发T1D，于基线/约3月或缓解/6月取血；健康对照基线，N=10/组。",
+              "limits": "不能引用二次转载的AUC或蛋白列表作为已核结果；小样本、外部验证及预测时序待核。"
+            }
+          ]
+        }
+      ]
+    },
+    "hgf": {
+      "label": "HGF",
+      "cases": [
+        {
+          "id": "hgf-main",
+          "status": "pending",
+          "question": "标志物发现的细胞来源与功能线索",
+          "categories": [
+            "other"
+          ],
+          "role": "mechanism",
+          "record_ids": [
+            "R10"
+          ],
+          "agenda_codes": [],
+          "reason": "当前为组织/细胞机制线索，尚未在现有资料中建立人体液体检测的临床标志物用途。",
+          "clinical_value": "胰岛周细胞来源HGF与β细胞功能的机制线索。",
+          "validation": "组织、细胞及动物机制支持；不据此认定液体临床检测性能。",
+          "assay_route": "先明确样本、检测对象、平台和评价终点，再评估稳定测量及验证流程。",
+          "gaps": [
+            "先明确拟转化的人群、样本和临床用途。",
+            "补体液可测性、临床人群与独立验证证据。"
+          ],
+          "participation": {
+            "action": "讨论单细胞来源定位、细胞互作及候选选择，为后续可测指标提供机制依据；功能实验流程另行确认。",
+            "capability_ids": [
+              "T03",
+              "T10"
+            ],
+            "fit_status": "官网确认单细胞组学类别与建模平台介绍；组织、平台及功能验证交付分别待核。",
+            "tech_id": "SC"
+          },
+          "evidence": [
+            {
+              "id": "R10",
+              "basis": "周细胞HGF来源与β细胞功能有关，主要功能证据来自小鼠。",
+              "design": "人胰岛单细胞转录组、小鼠细胞谱、转基因与培养体系；实验样本量待全文。",
+              "limits": "主要功能证据来自小鼠；不等于人血HGF能预测疾病，或补充HGF已具临床疗效。"
+            }
+          ]
+        }
+      ]
+    },
+    "glutamate": {
+      "label": "谷氨酸",
+      "cases": [
+        {
+          "id": "glutamate-main",
+          "status": "pending",
+          "question": "标志物发现的机制与细胞互作线索",
+          "categories": [
+            "other"
+          ],
+          "role": "mechanism",
+          "record_ids": [
+            "R09"
+          ],
+          "agenda_codes": [],
+          "reason": "当前为组织/细胞机制线索，尚未在现有资料中建立人体液体检测的临床标志物用途。",
+          "clinical_value": "胰岛成纤维细胞与β细胞互作中的机制信号。",
+          "validation": "组织、细胞及动物机制支持；不据此认定液体临床检测性能。",
+          "assay_route": "先明确样本、检测对象、平台和评价终点，再评估稳定测量及验证流程。",
+          "gaps": [
+            "先明确拟转化的人群、样本和临床用途。",
+            "补体液可测性、临床人群与独立验证证据。"
+          ],
+          "participation": {
+            "action": "讨论单细胞来源定位、细胞互作及候选选择，为后续可测指标提供机制依据；功能实验流程另行确认。",
+            "capability_ids": [
+              "T03",
+              "T10"
+            ],
+            "fit_status": "官网确认单细胞组学类别与建模平台介绍；组织、平台及功能验证交付分别待核。",
+            "tech_id": "SC"
+          },
+          "evidence": [
+            {
+              "id": "R09",
+              "basis": "成纤维细胞谷氨酸—β细胞NMDAR通路与损伤相关。",
+              "design": "单细胞分析、共培养、人胰腺样本与啮齿动物干预；各实验样本量摘要未列。",
+              "limits": "人组织线索与动物机制尚不等于人体治疗有效；属于转化观察，不作为现成临床检测或成熟治疗。"
+            }
+          ]
+        }
+      ]
+    },
+    "cytokines": {
+      "label": "血清细胞因子特征",
+      "cases": [
+        {
+          "id": "cytokines-main",
+          "status": "pending",
+          "question": "会议计划研究不同糖代谢人群的细胞因子表达与干预后转归。",
+          "categories": [
+            "stratification"
+          ],
+          "role": "research",
+          "record_ids": [],
+          "agenda_codes": [
+            "OR_313"
+          ],
+          "reason": "仅有明确研究问题的会议计划，检测对象成员和原始结果尚未取得。",
+          "clinical_value": "会议计划研究不同糖代谢人群的细胞因子表达与干预后转归。",
+          "validation": "计划议题层，尚无报告结果。",
+          "assay_route": "先明确样本、检测对象、平台和评价终点，再评估稳定测量及验证流程。",
+          "gaps": [
+            "补具体候选成员、样本及检测平台。",
+            "补原始结果、临床参照和独立验证；先核用途再评估转化。"
+          ],
+          "participation": {
+            "action": "先围绕已有议题明确人群、终点及数据分析，取得具体靶标后再与相应检测能力逐项匹配。",
+            "capability_ids": [
+              "T10"
+            ],
+            "fit_status": "官网有Biomarker建模平台介绍；本项目数据、模型和验证交付范围待核，具体检测服务另行确认。",
+            "tech_id": null
+          },
+          "evidence": [
+            {
+              "id": "OR_313",
+              "basis": "原始题目提及血清细胞因子表达特征及对生活方式干预下血糖转归的预测。",
+              "title": "不同糖代谢人群血清细胞因子表达特征及其对生活方式干预下血糖转归的预测价值",
+              "limits": "仅有计划议题，尚无报告结果。"
+            }
+          ]
+        }
+      ]
+    },
+    "retina-panel": {
+      "label": "糖网风险指标组合",
+      "cases": [
+        {
+          "id": "retina-panel-main",
+          "status": "pending",
+          "question": "会议计划用多维度标志物构建糖网风险预警模型。",
+          "categories": [
+            "stratification"
+          ],
+          "role": "research",
+          "record_ids": [],
+          "agenda_codes": [
+            "S_198"
+          ],
+          "reason": "仅有明确研究问题的会议计划，检测对象成员和原始结果尚未取得。",
+          "clinical_value": "会议计划用多维度标志物构建糖网风险预警模型。",
+          "validation": "计划议题层，尚无报告结果。",
+          "assay_route": "先明确样本、检测对象、平台和评价终点，再评估稳定测量及验证流程。",
+          "gaps": [
+            "补具体候选成员、样本及检测平台。",
+            "补原始结果、临床参照和独立验证；先核用途再评估转化。"
+          ],
+          "participation": {
+            "action": "先围绕已有议题明确人群、终点及数据分析，取得具体靶标后再与相应检测能力逐项匹配。",
+            "capability_ids": [
+              "T10"
+            ],
+            "fit_status": "官网有Biomarker建模平台介绍；本项目数据、模型和验证交付范围待核，具体检测服务另行确认。",
+            "tech_id": null
+          },
+          "evidence": [
+            {
+              "id": "S_198",
+              "basis": "原始题目为多维度标志物联合构建糖网风险预警模型。",
+              "title": "多维度标志物联合构建糖网风险预警模型",
+              "limits": "仅有计划议题，尚无报告结果。"
+            }
+          ]
+        }
+      ]
+    },
+    "cardiometabolic-markers": {
+      "label": "循环心肾代谢标志物",
+      "cases": [
+        {
+          "id": "cardiometabolic-markers-main",
+          "status": "pending",
+          "question": "会议计划以循环标志物研究早期心肾代谢结局风险。",
+          "categories": [
+            "stratification"
+          ],
+          "role": "research",
+          "record_ids": [],
+          "agenda_codes": [
+            "OR_333"
+          ],
+          "reason": "仅有明确研究问题的会议计划，检测对象成员和原始结果尚未取得。",
+          "clinical_value": "会议计划以循环标志物研究早期心肾代谢结局风险。",
+          "validation": "计划议题层，尚无报告结果。",
+          "assay_route": "先明确样本、检测对象、平台和评价终点，再评估稳定测量及验证流程。",
+          "gaps": [
+            "补具体候选成员、样本及检测平台。",
+            "补原始结果、临床参照和独立验证；先核用途再评估转化。"
+          ],
+          "participation": {
+            "action": "先围绕已有议题明确人群、终点及数据分析，取得具体靶标后再与相应检测能力逐项匹配。",
+            "capability_ids": [
+              "T10"
+            ],
+            "fit_status": "官网有Biomarker建模平台介绍；本项目数据、模型和验证交付范围待核，具体检测服务另行确认。",
+            "tech_id": null
+          },
+          "evidence": [
+            {
+              "id": "OR_333",
+              "basis": "原始题目提及循环生物标志物预测早期心血管-肾脏-代谢综合征结局。",
+              "title": "循环生物标志物预测早期心血管 - 肾脏 - 代谢综合征 0–2 期心肾代谢结局风险：一项前瞻性队列研究",
+              "limits": "仅有计划议题，尚无报告结果。"
+            }
+          ]
+        }
+      ]
+    },
+    "sarcopenia-metabolites": {
+      "label": "肌少症代谢物特征",
+      "cases": [
+        {
+          "id": "sarcopenia-metabolites-main",
+          "status": "pending",
+          "question": "会议计划筛选糖尿病肌少症相关的血清代谢特征。",
+          "categories": [
+            "other"
+          ],
+          "role": "research",
+          "record_ids": [],
+          "agenda_codes": [
+            "OR_301"
+          ],
+          "reason": "仅有明确研究问题的会议计划，检测对象成员和原始结果尚未取得。",
+          "clinical_value": "会议计划筛选糖尿病肌少症相关的血清代谢特征。",
+          "validation": "计划议题层，尚无报告结果。",
+          "assay_route": "先明确样本、检测对象、平台和评价终点，再评估稳定测量及验证流程。",
+          "gaps": [
+            "补具体候选成员、样本及检测平台。",
+            "补原始结果、临床参照和独立验证；先核用途再评估转化。"
+          ],
+          "participation": {
+            "action": "先围绕已有议题明确人群、终点及数据分析，取得具体靶标后再与相应检测能力逐项匹配。",
+            "capability_ids": [
+              "T10"
+            ],
+            "fit_status": "官网有Biomarker建模平台介绍；本项目数据、模型和验证交付范围待核，具体检测服务另行确认。",
+            "tech_id": null
+          },
+          "evidence": [
+            {
+              "id": "OR_301",
+              "basis": "原始题目为糖尿病肌少症患者的血清代谢组学特征及关键代谢物筛选。",
+              "title": "糖尿病肌少症患者的血清代谢组学特征及关键代谢物筛选：一项前瞻性观察性研究",
+              "limits": "仅有计划议题，尚无报告结果。"
+            }
+          ]
+        }
+      ]
+    },
+    "hba1c": {
+      "label": "HbA1c",
+      "cases": [
+        {
+          "id": "hba1c-main",
+          "status": "reference",
+          "question": "临床分层、监测或疗效终点",
+          "categories": [
+            "stratification",
+            "monitoring",
+            "other"
+          ],
+          "role": "reference",
+          "record_ids": [
+            "R02",
+            "R06",
+            "R08",
+            "R14",
+            "R15",
+            "A03",
+            "A04",
+            "A07",
+            "A08",
+            "A09",
+            "A10",
+            "A11",
+            "A12",
+            "A14",
+            "A23",
+            "A26"
+          ],
+          "agenda_codes": [],
+          "reason": "在当前台账中主要作为常规参照或疗效终点，保留作临床基线，不按出现次数评为新型转化机会。",
+          "clinical_value": "现有干预与临床研究中的常规血糖控制指标。",
+          "validation": "仅评价本台账中的角色，不重新认定该指标在其他场景的成熟度。",
+          "assay_route": "先明确样本、检测对象、平台和评价终点，再评估稳定测量及验证流程。",
+          "gaps": [
+            "如提出新的用途或算法，需单列该用途的独立证据。"
+          ],
+          "participation": {
+            "action": "作为临床参照或终点接入组学/干预研究分析，帮助评价新候选指标的附加价值。",
+            "capability_ids": [
+              "T10"
+            ],
+            "fit_status": "官网有Biomarker建模平台介绍；本项目数据、模型和验证交付范围待核，具体检测服务另行确认。",
+            "tech_id": null
+          },
+          "evidence": [
+            {
+              "id": "R02",
+              "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+              "design": "韩国社区队列6,373人；用药队列177人；另有钳夹17人、人胰岛21份与体外实验。",
+              "limits": "药物队列非基因分层随机试验；族群外验证和临床增益待补，不能据此推荐常规基因用药检测。"
+            },
+            {
+              "id": "R06",
+              "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+              "design": "FreeDM2：英国24中心，303人随机（198 CGM、105自测血糖）；基础胰岛素＋现代降糖药；随访32周。NCT05944432。",
+              "limits": "开放设计；只支持所纳入治疗人群和随访期，不证明所有T2D或长期并发症获益。Abbott资助。"
+            },
+            {
+              "id": "R08",
+              "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+              "design": "瑞典、丹麦、挪威注册数据；282,282名T2D患者、322,597次治疗段；队列＋嵌套病例对照。",
+              "limits": "观察研究；部分伴发事件可能登记偏倚；缺未用药直接因果比较，不可据此否定心肾获益或自行改变治疗。"
+            },
+            {
+              "id": "R14",
+              "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+              "design": "德国24中心，非胰岛素T2D；327人随机、320人进入ITT分析；两组均间歇使用CGM，对比glucura与对照App，6个月。DRKS00032537。",
+              "limits": "两组都有CGM，不能归因为CGM单独效果；开放设计、长期持续性待核。资助方为Perfood。"
+            },
+            {
+              "id": "R15",
+              "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+              "design": "澳大利亚247名T2D高风险、尚未诊断T2D成人，随机124人9小时限时进食、123人个体饮食指导；两组均有远程辅导。NCT04762251。",
+              "limits": "不能把非劣效写成更有效，不能外推为治疗确诊T2D或实现缓解的证据。"
+            },
+            {
+              "id": "A03",
+              "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+              "design": "CONNECT，非胰岛素治疗T2D成人，145人CGM、138人常规管理；美国22家基层机构；26周RCT，NCT06601166。",
+              "limits": "此前会议基线摘要写21家机构，正式论文为22家，保留版本差异；Dexcom资助；26周血糖结果不能推成长程并发症获益。"
+            },
+            {
+              "id": "A04",
+              "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+              "design": "ACHIEVE-5，72中心双盲Ⅲ期，基础甘精胰岛素±二甲双胍/SGLT2i；40周；NCT06109311。",
+              "limits": "未全文核读；疗效不等于心肾结局。JAMA卷期2026-08-04，首发在线日此轮未独立核清；不混用会议报道与论文不同估计口径。"
+            },
+            {
+              "id": "A07",
+              "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+              "design": "962人，二甲双胍控制不足；40周开放Ⅲ期RCT；NCT06192108。",
+              "limits": "开放设计；不能以降糖优效推出心肾保护优效；Lilly资助。"
+            },
+            {
+              "id": "A08",
+              "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+              "design": "1698人，二甲双胍控制不足；52周开放Ⅲ期RCT；NCT06045221。",
+              "limits": "原始论文2月已在线；6月报道不算新独立研究。对照人群为二甲双胍控制不足，非已经口服司美格鲁肽治疗失败。"
+            },
+            {
+              "id": "A09",
+              "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+              "design": "189人，饮食运动控制不足；40周双盲Ⅲ期RCT；NCT06323174。",
+              "limits": "摘要所读为40周治疗；未核停药后缓解的严格定义和持续性，不能称治愈。"
+            },
+            {
+              "id": "A10",
+              "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+              "design": "2713人，二甲双胍±SGLT2i、超重/肥胖；68周Ⅲ期RCT；NCT06065540。",
+              "limits": "正式论文随机人数2713，ADA新闻写2728；此处采论文。统计显著之外仍需评价绝对增益、耐受性和成本。"
+            },
+            {
+              "id": "A11",
+              "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+              "design": "274人，基础胰岛素±二甲双胍；40周双盲Ⅲ期RCT；NCT06323161。",
+              "limits": "40周替代终点；不能与ACHIEVE-5跨试验数字直接排名，也未证明长期器官结局。"
+            },
+            {
+              "id": "A12",
+              "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+              "design": "406人随机、404人用药；26周Ⅱb期；NCT06579105。",
+              "limits": "Ⅱ期探索；口服司美格鲁肽为开放探索组，不能据摘要称严格头对头优效。406随机与404用药分母分开。"
+            },
+            {
+              "id": "A14",
+              "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+              "design": "537人，饮食运动控制不足；40周双盲Ⅲ期；NCT06354660。",
+              "limits": "早期T2D、40周；不得与其他试验跨人群/口径比较排名，不能推出长期器官获益。"
+            },
+            {
+              "id": "A23",
+              "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+              "design": "MAGIC和GLAM两队列936人，CGM餐食检测与OGTT相关分析。",
+              "limits": "早期风险线索不等于替代诊断；仍需前瞻性、外部校准及临床增益验证。"
+            },
+            {
+              "id": "A26",
+              "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+              "design": "194人随机、178人完成6月评估；T2D且食物不安全；每周10份定制餐+电话管理，对照每月40美元补助；NCT04828785。",
+              "limits": "餐食加行为管理的复合干预，不能归因于餐食单一成分；成本、持续性和不同体系可复制性待核。"
+            }
+          ]
+        }
+      ]
+    },
+    "tir": {
+      "label": "TIR",
+      "cases": [
+        {
+          "id": "tir-main",
+          "status": "reference",
+          "question": "血糖管理与干预评价",
+          "categories": [
+            "monitoring"
+          ],
+          "role": "reference",
+          "record_ids": [
+            "A03",
+            "A05",
+            "A18"
+          ],
+          "agenda_codes": [],
+          "reason": "在当前台账中主要作为常规参照或疗效终点，保留作临床基线，不按出现次数评为新型转化机会。",
+          "clinical_value": "CGM/AID研究中的目标范围内时间。",
+          "validation": "仅评价本台账中的角色，不重新认定该指标在其他场景的成熟度。",
+          "assay_route": "先明确样本、检测对象、平台和评价终点，再评估稳定测量及验证流程。",
+          "gaps": [
+            "如提出新的用途或算法，需单列该用途的独立证据。"
+          ],
+          "participation": {
+            "action": "作为临床参照或终点接入组学/干预研究分析，帮助评价新候选指标的附加价值。",
+            "capability_ids": [
+              "T10"
+            ],
+            "fit_status": "官网有Biomarker建模平台介绍；本项目数据、模型和验证交付范围待核，具体检测服务另行确认。",
+            "tech_id": null
+          },
+          "evidence": [
+            {
+              "id": "A03",
+              "basis": "研究结果以目标血糖范围内时间（TIR）评价血糖管理。",
+              "design": "CONNECT，非胰岛素治疗T2D成人，145人CGM、138人常规管理；美国22家基层机构；26周RCT，NCT06601166。",
+              "limits": "此前会议基线摘要写21家机构，正式论文为22家，保留版本差异；Dexcom资助；26周血糖结果不能推成长程并发症获益。"
+            },
+            {
+              "id": "A05",
+              "basis": "研究结果以目标血糖范围内时间（TIR）评价血糖管理。",
+              "design": "住院糖尿病且eGFR<30，27人随机分配AID 14人或MDI+CGM 13人。",
+              "limits": "小样本、住院场景；与A18 AIDING人员和场景高度相关，主试验/亚组关系仍待注册号或原文确认，不作为独立重复验证；不与澳丹40人门诊交叉试验混同。"
+            },
+            {
+              "id": "A18",
+              "basis": "研究结果以目标血糖范围内时间（TIR）评价血糖管理。",
+              "design": "美国多中心开放随机研究，非ICU、需胰岛素且血糖管理困难的T1D/T2D；AID对MDI+CGM。",
+              "limits": "仅官方会后报道层；未取得主论文/注册结果，样本数与区间缺失。与A05可能主试验/亚组，不计算独立重复验证。"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

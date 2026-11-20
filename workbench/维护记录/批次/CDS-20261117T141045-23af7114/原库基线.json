@@ -1,0 +1,33 @@
+{
+  "database_sha256": "4f16bd5b161785ec9be493bc0c0503b8b5a60064f9a8342078381e11378d1bef",
+  "table_fingerprints": {
+    "academic_role_claims": "120b75deb7c01d8b31b48d0d29411d2c3b58886d4a8c309f75f0f33b2f8a0fcb",
+    "agenda_items": "89a26c823bc53a5faaa6bdedd40ecf0d63fcbe7820e61a7abaad68e4bca6b68b",
+    "agenda_participants": "1158ed097d83886d3611ffe841fe2cb42dfeb069ac3c6ff8efbd1999a0ca0692",
+    "analysis_versions": "e313716f0f0a853429bbb96e03ae09a6f62142b9d6a89482df02dc392d8e6704",
+    "biomarker_title_reviews": "5c8bcfe7ed4fac9e77d24ea6c55d8582bdfdf98a7eb5574d024b900584062b5f",
+    "conference_editions": "9b157dc2697f166dda8df6b615822c32e2435659c4dcdd1e5dc1bf27fa917557",
+    "conference_series": "5ba2685a946450e89116a65525a7990878759c8fbe6970528c99f217fe91f491",
+    "conference_tier_assignments": "876dc8c523f78e1f2b1cadea37c3cf55c444f29f6439f153462eef8fe0fc3f34",
+    "import_batches": "6c66271f12e3908226a69179aee443b517e84618a510ace4f548882a3f5d2019",
+    "legacy_marker_bindings": "e010961fc18a36918dc08a0ef3cbe6c2cc99a91b218b41fbcc6e474f4ca16a64",
+    "people": "89e588c359deb93797c675fd1d3762813580f88c82c729635c1f4eb8370b85dc",
+    "person_profiles": "dd9eda679ab1cae4b657b1dab121fabefce58a654bf1647e9d1fb8328b0917ef",
+    "quantity_rule_versions": "a620a759eb3619abaac48fc0d8961afe9a229fe8b039b8a963b0e298e4712dd6",
+    "report_classifications": "9de6eaaec1bd7080f52aa3fba666eda00f17a9eb571a20fdd57dfe9875ed00e3",
+    "report_study_links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "report_tags": "340825dfde159c349be91942ed0dedb023c8766e4bf129c40594463009e3402d",
+    "report_topic_review_notes": "c104cbe22c6c848da04e92b5e8750970221d4821eb67a1c8934b987213e04248",
+    "reports": "a54cebcabc35db441411d527f96954e343625bd6bb7fc7ee5399b00cafbec6c8",
+    "research_topics": "173d38f3472aceda5a080eee654488b8835a52a938b3c92ebd33b1c725c24442",
+    "session_chairs": "4bbadea3e0c0c2d8fe73fe99aa2455d5433e28c74be71db20123c5f55e2ee35a",
+    "sessions": "6d3273bc710314cd62fd67a8e46a6ad753e1ee2121e831c52cff0755238718b0",
+    "source_materials": "a3fb024648366d09b64f344812ac5c8f4ba6badd80cb96599717b380ef76ae8c",
+    "speaker_tier_assignments": "7b20049a618887d9e90655e5f51b5755fc0be9dade0ff3fb625c8a64dcc58f2f",
+    "speaker_tier_evidence": "a9fa8e63fa412da9fd8ddee9b8fa230d3c9a02b19488539f9caacd9bb63c95fd",
+    "studies": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "tier_rule_versions": "1c343347f25cb580d1ebd39cb6057a840c3da8640c3879439c3f4a1564fd87a2",
+    "topic_scope_review_targets": "4a217bdfd856f785c585ccaae12cc13b25034cc33fa4a940da8cc3f6ae14ca00",
+    "topic_scope_reviews": "2db1f732a512fa8f8ad943a5d259b80ac117d7f259bc8fe4b4be3b8e2591d8ed"
+  }
+}

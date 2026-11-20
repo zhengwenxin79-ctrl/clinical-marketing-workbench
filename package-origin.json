@@ -1,0 +1,17 @@
+{
+  "packaged_at": "2026-11-19T17:46:37+08:00",
+  "current_source": "/Users/zwx/Documents/文献阅读/BrainHao-Study/wenxin/智能营销数据中心",
+  "database_sha256": "645adc48a9af2eb67a9df04a0f4990fce706a5a4fcf2fe467c8e2372f0e78568",
+  "current_entry": "workbench/领域工作台/index.html",
+  "browser_storage_export_included": false,
+  "excluded": [
+    "重复历史备份目录",
+    "更新前快照",
+    "缓存/依赖目录",
+    "本机凭证和临时锁"
+  ],
+  "reference_rule": "reference与糖尿病热点知识地图为历史材料，不是当前开发入口",
+  "collector_rule": "旧Windows八入口采集工作区，尚未接当前数据库；不代表Windows最新回传结果",
+  "new_collection": false,
+  "published": false
+}

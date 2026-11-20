@@ -1,0 +1,393 @@
+Frontiers in Endocrinology (https://www.frontiersin.org/journals/endocrinology)
+citeturn132view0 [wordlim: 200] Crawled: today; Content type: text/html; Source: open({"ref_id":"https://www.frontiersin.org/journals/endocrinology","lineno":null}); Total lines: 315
+L0: 【0†Skip to main content】 【1†iframe†tag-manager.frontiersin.org】
+L1: 
+L2: 【2†Frontiers in Endocrinology】
+L3: 
+L4: About us
+L5: 
+L6: [Button: About us ]
+L7: 
+L8:   * Who we are
+L9:   * 【3†Mission and values】
+L10:   * 【4†History】
+L11:   * 【5†Leadership】
+L12:   * 【6†Awards】
+L13: 
+L14:   * Impact and progress
+L15:   * 【7†Frontiers' impact】
+L16:   * 【8†Our annual reports】
+L17:   * 【9†Thought leadership】
+L18:   * 【10†Researcher perspectives】
+L19:   * Publishing model
+L20:   * 【11†How we publish】
+L21:   * 【12†Open access】
+L22:   * 【13†Quality and research integrity】
+L23:   * 【14†Peer review】
+L24:   * 【15†Technology and platforms】
+L25:   * 【16†Research Topics】
+L26:   * 【17†Publish your data with FAIR²】
+L27:   * 【18†Fee policy】
+L28: 
+L29:   * Services
+L30:   * 【19†Societies†publishingpartnerships.frontiersin.org】
+L31:   * 【20†National consortia】
+L32:   * 【21†Institutional partnerships】
+L33:   * 【22†Collaboration and indexation】
+L34:   * More from Frontiers
+L35:   * 【23†Frontiers Forum†forum.frontiersin.org】
+L36:   * 【24†Frontiers Planet Prize】
+L37:   * 【25†Press office†pressoffice.frontiersin.org】
+L38:   * 【26†Sustainability】
+L39:   * 【27†Career opportunities†careers.frontiersin.org】
+L40:   * 【28†Contact us】
+L41: 
+L42: 【29†All journals】【30†All articles】
+L43: 
+L44: 【31†Submit manuscript】
+L45: 
+L46: 【32†Search】
+L47: 
+L48: 【2†Frontiers in Endocrinology】
+L49: 
+L50: Sections
+L51: 
+L52: [Button: Sections ]
+L53:   * 【33†Adrenal Endocrinology】
+L54:   * 【34†Bone Research】
+L55:   * 【35†Cancer Endocrinology】
+L56:   * 【36†Cardiovascular Endocrinology】
+L57:   * 【37†Cellular Endocrinology】
+L58:   * 【38†Clinical Diabetes】
+L59:   * 【39†Developmental Endocrinology】
+L60:   * 【40†Diabetes: Molecular Mechanisms】
+L61:   * 【41†Endocrinology of Aging】
+L62:   * 【42†Experimental Endocrinology】
+L63:   * 【43†Gut Endocrinology】
+L64:   * 【44†Metabolic Endocrinology】
+L65:   * 【45†Molecular and Structural Endocrinology】
+L66:   * 【46†Neuroendocrine Science】
+L67:   * 【47†Obesity】
+L68:   * 【48†Pediatric Endocrinology】
+L69:   * 【49†Pituitary Endocrinology】
+L70:   * 【50†Renal Endocrinology】
+L71:   * 【51†Reproduction】
+L72:   * 【52†Systems Endocrinology】
+L73:   * 【53†Thyroid Endocrinology】
+L74:   * 【54†Translational and Clinical Endocrinology】
+L75: 【55†Articles】【56†Research Topics】【57†Editorial board】
+L76: 
+L77: About journal
+L78: 
+L79: [Button: About journal ]
+L80: 
+L81:   * Scope
+L82:   * 【58†Field chief editor】
+L83:   * 【59†Mission and scope】
+L84:   * 【60†Facts】
+L85:   * 【61†Journal sections】
+L86:   * 【62†Open access statement】
+L87:   * 【63†Copyright statement】
+L88:   * 【64†Quality】
+L89: 
+L90:   * For authors
+L91:   * 【65†Why submit?】
+L92:   * 【66†Article types】
+L93:   * 【67†Author guidelines】
+L94:   * 【68†Editor guidelines】
+L95:   * 【69†Publishing fees】
+L96:   * 【70†Submission checklist】
+L97:   * 【71†Contact editorial office】
+L98: 
+L99: About us
+L100: [Button: About us ]
+L101: 
+L102:   * Who we are
+L103:   * 【3†Mission and values】
+L104:   * 【4†History】
+L105:   * 【5†Leadership】
+L106:   * 【6†Awards】
+L107: 
+L108:   * Impact and progress
+L109:   * 【7†Frontiers' impact】
+L110:   * 【8†Our annual reports】
+L111:   * 【9†Thought leadership】
+L112:   * 【10†Researcher perspectives】
+L113: 
+L114:   * Publishing model
+L115:   * 【11†How we publish】
+L116:   * 【12†Open access】
+L117:   * 【13†Quality and research integrity】
+L118:   * 【14†Peer review】
+L119:   * 【15†Technology and platforms】
+L120:   * 【16†Research Topics】
+L121:   * 【17†Publish your data with FAIR²】
+L122:   * 【18†Fee policy】
+L123:   * Services
+L124:   * 【19†Societies†publishingpartnerships.frontiersin.org】
+L125:   * 【20†National consortia】
+L126:   * 【21†Institutional partnerships】
+L127:   * 【22†Collaboration and indexation】
+L128: 
+L129:   * More from Frontiers
+L130:   * 【23†Frontiers Forum†forum.frontiersin.org】
+L131:   * 【24†Frontiers Planet Prize】
+L132:   * 【25†Press office†pressoffice.frontiersin.org】
+L133:   * 【26†Sustainability】
+L134:   * 【27†Career opportunities†careers.frontiersin.org】
+L135:   * 【28†Contact us】
+L136: 
+L137: 【29†All journals】【30†All articles】
+L138: 
+L139: 【31†Submit manuscript】
+L140: 【2†Frontiers in Endocrinology】
+L141: 
+L142: Sections
+L143: 
+L144: [Button: Sections ]
+L145:   * 【33†Adrenal Endocrinology】
+L146:   * 【34†Bone Research】
+L147:   * 【35†Cancer Endocrinology】
+L148:   * 【36†Cardiovascular Endocrinology】
+L149:   * 【37†Cellular Endocrinology】
+L150:   * 【38†Clinical Diabetes】
+L151:   * 【39†Developmental Endocrinology】
+L152:   * 【40†Diabetes: Molecular Mechanisms】
+L153:   * 【41†Endocrinology of Aging】
+L154:   * 【42†Experimental Endocrinology】
+L155:   * 【43†Gut Endocrinology】
+L156:   * 【44†Metabolic Endocrinology】
+L157:   * 【45†Molecular and Structural Endocrinology】
+L158:   * 【46†Neuroendocrine Science】
+L159:   * 【47†Obesity】
+L160:   * 【48†Pediatric Endocrinology】
+L161:   * 【49†Pituitary Endocrinology】
+L162:   * 【50†Renal Endocrinology】
+L163:   * 【51†Reproduction】
+L164:   * 【52†Systems Endocrinology】
+L165:   * 【53†Thyroid Endocrinology】
+L166:   * 【54†Translational and Clinical Endocrinology】
+L167: 【55†Articles】【56†Research Topics】【57†Editorial board】
+L168: 
+L169: About journal
+L170: 
+L171: [Button: About journal ]
+L172: 
+L173:   * Scope
+L174:   * 【58†Field chief editor】
+L175:   * 【59†Mission and scope】
+L176:   * 【60†Facts】
+L177:   * 【61†Journal sections】
+L178:   * 【62†Open access statement】
+L179:   * 【63†Copyright statement】
+L180:   * 【64†Quality】
+L181: 
+L182:   * For authors
+L183:   * 【65†Why submit?】
+L184:   * 【66†Article types】
+L185:   * 【67†Author guidelines】
+L186:   * 【68†Editor guidelines】
+L187:   * 【69†Publishing fees】
+L188:   * 【70†Submission checklist】
+L189:   * 【71†Contact editorial office】
+L190: 【2†Frontiers in Endocrinology】
+L191: 
+L192: Sections
+L193: 
+L194: [Button: Sections ]
+L195:   * 【33†Adrenal Endocrinology】
+L196:   * 【34†Bone Research】
+L197:   * 【35†Cancer Endocrinology】
+L198:   * 【36†Cardiovascular Endocrinology】
+L199:   * 【37†Cellular Endocrinology】
+L200:   * 【38†Clinical Diabetes】
+L201:   * 【39†Developmental Endocrinology】
+L202:   * 【40†Diabetes: Molecular Mechanisms】
+L203:   * 【41†Endocrinology of Aging】
+L204:   * 【42†Experimental Endocrinology】
+L205:   * 【43†Gut Endocrinology】
+L206:   * 【44†Metabolic Endocrinology】
+L207:   * 【45†Molecular and Structural Endocrinology】
+L208:   * 【46†Neuroendocrine Science】
+L209:   * 【47†Obesity】
+L210:   * 【48†Pediatric Endocrinology】
+L211:   * 【49†Pituitary Endocrinology】
+L212:   * 【50†Renal Endocrinology】
+L213:   * 【51†Reproduction】
+L214:   * 【52†Systems Endocrinology】
+L215:   * 【53†Thyroid Endocrinology】
+L216:   * 【54†Translational and Clinical Endocrinology】
+L217: 【55†Articles】【56†Research Topics】【57†Editorial board】
+L218: 
+L219: About journal
+L220: 
+L221: [Button: About journal ]
+L222: 
+L223:   * Scope
+L224:   * 【58†Field chief editor】
+L225:   * 【59†Mission and scope】
+L226:   * 【60†Facts】
+L227:   * 【61†Journal sections】
+L228:   * 【62†Open access statement】
+L229:   * 【63†Copyright statement】
+L230:   * 【64†Quality】
+L231: 
+L232:   * For authors
+L233:   * 【65†Why submit?】
+L234:   * 【66†Article types】
+L235:   * 【67†Author guidelines】
+L236:   * 【68†Editor guidelines】
+L237:   * 【69†Publishing fees】
+L238:   * 【70†Submission checklist】
+L239:   * 【71†Contact editorial office】
+L240: 
+L241: 【31†Submit manuscript】
+--------------------------------------------------------------------------------
+Internal Error ()
+citeturn132view1 [wordlim: 200] Source: open({"ref_id":"https://www.genetics.ac.cn/zp/tzgg/202412/P020241203772988830512.pdf","lineno":null}); 
+Failed to fetch https://www.genetics.ac.cn/zp/tzgg/202412/P020241203772988830512.pdf: (400) Timeout fetching--------------------------------------------------------------------------------
+沪科（2025）238号 (https://stcsm.sh.gov.cn/cmsres/44/4480172e58ac434b94ace53c09eaf4ad/ff7a13eff6e543718f9b36c8f0991f1b.pdf)
+citeturn132view2 [wordlim: 200] Crawled: today; Content type: application/pdf; Number of pages: 67; Source: open({"ref_id":"https://stcsm.sh.gov.cn/cmsres/44/4480172e58ac434b94ace53c09eaf4ad/ff7a13eff6e543718f9b36c8f0991f1b.pdf","lineno":null}); Total lines: 2184
+L0@P0: — 1 —
+L1@P0: 上海市科学技术委员会
+L2@P0: 沪科〔2025〕238 号
+L3@P0: 
+L4@P0: 
+L5@P0: 关于上海市 2025 年度基础研究计划
+L6@P0: “自然科学基金”项目立项的通知
+L7@P0: 各有关单位：
+L8@P0: 根据《上海市科学技术委员会关于发布 2025 年度基础研究
+L9@P0: 计划“自然科学基金”项目申报指南的通知》（沪科指南〔2025〕
+L10@P0: 1 号）要求，经申报推荐、形式审查、专家评审、立项公示等程
+L11@P0: 序，现对《太赫兹 XL-MIMO 通信系统稀疏信道估计及联合传输
+L12@P0: 优化技术的研究》等 1006 个项目予以立项，市科委资助 23105
+L13@P0-1: 万元，其中 2025 年拨款 22913 万元。请各项目承担单位做好项— 2 —
+L14@P1: 目组织实施和管理工作，确保按期完成项目研究任务目标。
+L15@P1: 特此通知。
+L16@P1: 附件：上海市 2025 年度基础研究计划“自然科学基金”
+L17@P1: 项目立项清单
+L18@P1: 上海市科学技术委员会
+L19@P1: 2025 年 6 月 30 日
+L20@P1: （此件主动公开）
+L21@P1-2: 上海市科委办公室 2025 年 6 月 30 日印发 — 3 —
+L22@P2: 附件
+L23@P2: 上海市 2025 年度基础研究计划“自然科学基金”项目立项清单
+L24@P2: 序号 项目编号 项目名称 项目承担单位 项目
+L25@P2: 负责人 项目实施周期
+L26@P2: 1 25ZR1401002 太赫兹 XL-MIMO 通信系统稀疏信道估计及联合传输优化技术
+L27@P2: 的研究 东华大学 戴继生 2025.07.01-2028.06.30
+L28@P2: 2 25ZR1401003 脉冲交替变换电场耦合载铁生物炭颗粒电极强化污泥脱水机制
+L29@P2: 及污染物迁移转化机理 东华大学 邓文义 2025.07.01-2028.06.30
+L30@P2: 3 25ZR1401004 超净铸造可控涡流吹吸气刨细颗粒迁移模型及循环风有害气净
+L31@P2: 化机制 东华大学 刁永发 2025.07.01-2028.06.30
+L32@P2: 4 25ZR1401005 基于水调控顺次缩合的生物基交替聚酯酰胺的制备及结构演化研究 东华大学 何勇 2025.07.01-2028.06.30
+L33@P2: 5 25ZR1401006 水致硬化离子液体凝胶的可控构筑 东华大学 侯磊 2025.07.01-2028.06.30
+L34@P2: 6 25ZR1401007 增阻离轨柔性织物一体成形及结构稳定性调控 东华大学 蒋金华 2025.07.01-2028.06.30
+L35@P2: 7 25ZR1401008 面向组织修复的微型高活性电化学致动器及其在低浓度生物电
+L36@P2: 解质环境下的致动行为研究 东华大学 李耀刚 2025.07.01-2028.06.30
+L37@P2: 8 25ZR1401009 纳米纤维素水凝胶敷料自愈合与粘附结构协同调控机制研究 东华大学 刘丽芳 2025.07.01-2028.06.30
+L38@P2: 9 25ZR1401010 内嵌声黑洞-超结构的 CFRP 定位隔振一体平台耦合抑振机理及
+L39@P2: 协同控制研究 东华大学 孙小庆 2025.07.01-2028.06.30
+L40@P2: 10 25ZR1401011 基于扭转态/平铺态转换算法的三维机织复合材料数字化设计方
+L41@P2: 法研究 东华大学 郗欣甫 2025.07.01-2028.06.30
+L42@P2: 11 25ZR1401012 聚酰亚胺分子结构设计及其气凝胶的形状记忆与隔热性能协同
+L43@P2: 调控机制研究 东华大学 张礼颖 2025.07.01-2028.06.30
+L44@P2: 12 25ZR1401013 基于具身智能的辅助护理人形机器人研发 复旦大学 JIE CHEN 2025.07.01-2028.06.30
+L45@P2: 13 25ZR1401014 基于低维结构材料的异质结光突触器件构筑及其光电性能研究 复旦大学 边历峰 2025.07.01-2028.06.30
+L46@P2-3: 14 25ZR1401015 选择性 SET7/9 抑制剂的设计优化及缺血性脑损伤保护机制 复旦大学 昌军 2025.07.01-2028.06.30— 4 —
+L47@P3: 序号 项目编号 项目名称 项目承担单位 项目
+L48@P3: 负责人 项目实施周期
+L49@P3: 15 25ZR1401016 基于检索增强生成的低轨卫星网络星地大小协同推理理论研究 复旦大学 陈哲 2025.07.01-2028.06.30
+L50@P3: 16 25ZR1401017 基于风云卫星数据的长三角地区台风降水智能反演和临近预报 复旦大学 蒋耿明 2025.07.01-2028.06.30
+L51@P3: 17 25ZR1401018 限域微环境调控细胞迁移及原位测量新方法 复旦大学 刘宝红 2025.07.01-2028.06.30
+L52@P3: 18 25ZR1401019 新型网络环境中的隐写理论与关键技术研究 复旦大学 钱振兴 2025.07.01-2028.06.30
+L53@P3: 19 25ZR1401020 雷达呼吸体征全息监测与生物医学关联性探索 复旦大学 谭恺 2025.07.01-2028.06.30
+L54@P3: 20 25ZR1401021 无界随机系数的线性二次随机最优控制 复旦大学 汤善健 2025.07.01-2028.06.30
+L55@P3: 21 25ZR1401022 级联信号激酶 OsMAPKKK5 平衡调控水稻产量和抗病的机制研究 复旦大学 王莹 2025.07.01-2028.06.30
+L56@P3: 22 25ZR1401023 不可压两相混合流体相场模型的定性理论 复旦大学 吴昊 2025.07.01-2028.06.30
+L57@P3: 23 25ZR1401024 碳点构造的新材料用于全面提高水系锌离子电池的寿命与性能 复旦大学 熊焕明 2025.07.01-2028.06.30
+L58@P3: 24 25ZR1401025 PV-CFD/VTM 混合算法创新：旋翼复杂涡流场数值模拟的新途
+L59@P3: 径
+L60@P3: 复旦大学 杨爱明 2025.07.01-2028.06.30
+L61@P3: 25 25ZR1401026 长波长光学编码的稀土纳米探针合成及多通道成像应用研究 复旦大学 袁薇 2025.07.01-2028.06.30
+L62@P3: 26 25ZR1401027 等离子体改性电解水催化剂表界面及其机理研究 复旦大学 张树宇 2025.07.01-2028.06.30
+L63@P3: 27 25ZR1401028 基于视觉-语言模型的医学影像序列分析与智能诊断关键技术研究 复旦大学 张玥杰 2025.07.01-2028.06.30
+L64@P3: 28 25ZR1401029 本征空位诱导氧变价的高容量钠离子电池正极材料设计与储钠
+L65@P3: 机制 复旦大学 周永宁 2025.07.01-2028.06.30
+L66@P3: 29 25ZR1401030 基于 Notch/ITGB1/PDGFRβ 通路研究红景天苷改善阿尔茨海默
+L67@P3: 病模型鼠血脑屏障损伤的机制 复旦大学附属儿科医院 李维维 2025.07.01-2028.06.30
+L68@P3: 30 25ZR1401031 PTX3/STX17 轴调控的巨噬细胞稳态平衡在儿童哮喘疾病中的
+L69@P3: 作用机制研究 复旦大学附属儿科医院 刘丽娟 2025.07.01-2028.06.30
+L70@P3: 31 25ZR1401032 儿童重症肺炎致病菌来源脂肪酸调节肺泡巨噬细胞脂代谢重编
+L71@P3: 程的机制研究 复旦大学附属儿科医院 闫钢风 2025.07.01-2028.06.30
+L72@P3: 32 25ZR1401033 丝氨酸合成途径限速酶 PHGDH 在葡萄胎恶变中的机制研究 复旦大学附属妇产科医
+L73@P3: 院
+L74@P3: 杜琰 2025.07.01-2028.06.30
+L75@P3: 33 25ZR1401034 滋养细胞支链氨基酸缺乏通过 JAG1-Notch3-HES1 信号轴诱导
+L76@P3: 子痫前期发生的机制研究
+L77@P3: 复旦大学附属妇产科医
+L78@P3: 院
+L79@P3-4: 胡蓉 2025.07.01-2028.06.30— 5 —
+L80@P4: 序号 项目编号 项目名称 项目承担单位 项目
+L81@P4: 负责人 项目实施周期
+L82@P4: 34 25ZR1401035 特定环境致癌物所致肝癌的分子机制研究 复旦大学附属妇产科医院 路兆宁 2025.07.01-2028.06.30
+L83@P4: 35 25ZR1401036 基于 MRI-组织学多维度机器学习构建子宫内膜癌微环境高危因
+L84@P4: 素预测模型及其验证研究 复旦大学附属妇产科医院 张鹤 2025.07.01-2028.06.30
+L85@P4: 36 25ZR1401037 L-肉碱代谢重塑 NK 细胞免疫促进结直肠癌肝转移的机制研究 复旦大学附属华山医院 杜尊国 2025.07.01-2028.06.30
+L86@P4: 37 25ZR1401038 肾阳虚病理基础驱动重症哮喘肺神经内分泌-气道重塑轴的机制
+L87@P4: 及温阳补肾方药的靶向干预研究 复旦大学附属华山医院 段晓虹 2025.07.01-2028.06.30
+L88@P4: 38 25ZR1401039 足底表观应力在糖尿病足足底软组织中的跨尺度传导机制研究 复旦大学附属华山医院 耿翔 2025.07.01-2028.06.30
+L89@P4: 39 25ZR1401040 IS 元件介导高毒力质粒与高耐药质粒高效融合并转移促进高毒高耐肺炎克雷伯菌形成及流行的分子机制研究 复旦大学附属华山医院 江建平 2025.07.01-2028.06.30
+L90@P4: 40 25ZR1401041 基于血脑屏障微渗漏的多发性硬化进展机制研究及个体化脑萎
+L91@P4: 缩预测 复旦大学附属华山医院 李郁欣 2025.07.01-2028.06.30
+L92@P4: 41 25ZR1401042 PMC 脑区深部电刺激促醒的疗效及跨物种机制研究 复旦大学附属华山医院 齐曾鑫 2025.07.01-2028.06.30
+L93@P4: 42 25ZR1401043 利用全脑超声功能成像及神经调控研究弥漫性轴索损伤致意识
+L94@P4: 障碍的神经网络机制 复旦大学附属华山医院 徐宏治 2025.07.01-2028.06.30
+L95@P4: 43 25ZR1401044 定制靶向 TRPV1 的工程化细胞外囊泡治疗脑出血后继发性损伤
+L96@P4: 的机制研究 复旦大学附属华山医院 朱侗明 2025.07.01-2028.06.30
+L97@P4: 44 25ZR1401045 NAT10/Mybbp1a/p53 轴的反馈环路调控 B 细胞铁死亡在 SLE 发
+L98@P4: 病中的作用和机制研究 复旦大学附属华山医院 朱小华 2025.07.01-2028.06.30
+L99@P4: 45 25ZR1401046 TTfields 在胶质母细胞瘤治疗中重塑小胶质细胞糖代谢激活抗
+L100@P4: 肿瘤免疫反应的机制研究 复旦大学附属华山医院 庄冬晓 2025.07.01-2028.06.30
+L101@P4: 46 25ZR1401047 新型水凝胶呈递内源性细胞外基质沉积关键分子 S100A6 促进
+L102@P4: 软骨原位再生
+L103@P4: 复旦大学附属眼耳鼻喉
+L104@P4: 科医院 傅窈窈 2025.07.01-2028.06.30
+L105@P4: 47 25ZR1401048 TET2 通过调控 Fabp4+巨噬细胞代谢重编程参与新生血管性年
+L106@P4: 龄相关性黄斑变性的机制研究
+L107@P4: 复旦大学附属眼耳鼻喉
+L108@P4: 科医院 刘畅 2025.07.01-2028.06.30
+L109@P4: 48 25ZR1401049 新型水凝胶-中耳鼓膜支架复合给药系统用于突发性聋的药物递
+L110@P4: 送与疗效研究
+L111@P4: 复旦大学附属眼耳鼻喉
+L112@P4-5: 科医院 于慧前 2025.07.01-2028.06.30— 6 —
+L113@P5: 序号 项目编号 项目名称 项目承担单位 项目
+L114@P5: 负责人 项目实施周期
+L115@P5: 49 25ZR1401050 HBV 利用表面抗原挟持自免蛋白 SSB/LA 调节病毒特性 B 细胞
+L116@P5: 分化的机制研究 复旦大学附属中山医院 方钟 2025.07.01-2028.06.30
+L117@P5: 50 25ZR1401051 基于内皮细胞铁死亡探讨SDF-1/CXCR7轴在年龄相关性黄斑变
+L118@P5: 性中的作用及机制研究 复旦大学附属中山医院 冯一帆 2025.07.01-2028.06.30
+L119@P5: 51 25ZR1401052 图注意力引导的急性呼吸窘迫综合征多模态肺病灶特征互补网
+L120@P5: 络与时空演化建模研究 复旦大学附属中山医院 侯东妮 2025.07.01-2028.06.30
+L121@P5: 52 25ZR1401053 Tra2b 通过调控 Sirt3 可变剪接抑制心肌缺血再灌注损伤的机制
+L122@P5: 研究 复旦大学附属中山医院 马雷雷 2025.07.01-2028.06.30
+L123@P5: 53 25ZR1401054 OX40/OX40L 信号在胃肠间质瘤免疫微环境中作用机制及免疫
+L124@P5: 策略研究 复旦大学附属中山医院 沈坤堂 2025.07.01-2028.06.30
+L125@P5: 54 25ZR1401055 应用多模态深度融合技术构建喉癌、下咽癌自动分期系统的应
+L126@P5: 用研究 复旦大学附属中山医院 沈纳 2025.07.01-2028.06.30
+L127@P5: 55 25ZR1401056 基于 TASK-2/HK2-糖酵解-MRS2 轴解析急性肾损伤线粒体功能
+L128@P5: 障碍机制及靶向干预研究 复旦大学附属中山医院 宋娜娜 2025.07.01-2028.06.30
+L129@P5: 56 25ZR1401057 TWEAKR 调控组蛋白 H3K9 乳酸化修饰促进STEAP2 介导的肾小
+L130@P5: 管上皮细胞铁死亡在缺血再灌注肾损伤中的作用及其机制研究 复旦大学附属中山医院 苏迎 2025.07.01-2028.06.30
+L131@P5: 57 25ZR1401058 从白果内酯诱导星胶细胞外泌体调控脑微血管内皮细胞铜死亡
+L132@P5: 探讨其“活血通络”减轻脑缺血损伤的机制 复旦大学附属中山医院 向军 2025.07.01-2028.06.30
+L133@P5: 58 25ZR1401059 动脉粥样硬化炎症中 CD4+CD28+/CD28null T 细胞表型转化的
+L134@P5: 关键分子机制 复旦大学附属中山医院 徐仁德 2025.07.01-2028.06.30
+L135@P5: 59 25ZR1401060 Gal9+TAMs经旁分泌塑造新型Gal9-Met互作轴驱动肝癌免疫逃
+L136@P5: 逸的分子机制及干预策略 复旦大学附属中山医院 杨文静 2025.07.01-2028.06.30
+L137@P5: 60 25ZR1401061 UFL1 介导的类泛素化修饰通过调控中性粒细胞极化影响肝癌
+L138@P5: 抗肿瘤免疫反应的机制研究 复旦大学附属中山医院 易勇 2025.07.01-2028.06.30
+--------------------------------------------------------------------------------
+Internal Error ()
+citeturn132view3 [wordlim: 200] Source: open({"ref_id":"https://www.sdrmyy.com/v-7-18546.aspx","lineno":null}); 
+Failed to fetch https://www.sdrmyy.com/v-7-18546.aspx: (420) Unknown Status Code

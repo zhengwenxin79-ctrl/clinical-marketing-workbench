@@ -1,0 +1,44 @@
+{
+  "domain": {
+    "id": "diabetes",
+    "label": "糖尿病",
+    "basis": "本次已入库糖尿病试点的入口业务配置；非新增外部采集"
+  },
+  "tiers": [
+    {
+      "id": "international_core",
+      "label": "国际核心会议",
+      "description": "查看国际会议的议程、研究议题与主讲团队。"
+    },
+    {
+      "id": "national_major",
+      "label": "国内全国性大型会议",
+      "description": "查看全国大会重点安排、学术带头人与具体讲题。"
+    },
+    {
+      "id": "regional_key",
+      "label": "区域重点会议",
+      "description": "保留区域会议入口，后续接入相应届次和资料。"
+    }
+  ],
+  "routes": {
+    "ADA2026": {
+      "path": "../会议视图/ada.html",
+      "manifest": "会议视图/ADA生成记录.json"
+    },
+    "CDS2026": {
+      "path": "../会议视图/index.html",
+      "manifest": "会议视图/生成记录.json"
+    }
+  },
+  "hotspot_admission": {
+    "CDS2026": {
+      "status": "trial",
+      "basis": "已有完整日程、报告ID去重及58议题映射；27条培训/方法/综合内容另列，题名归类与角色仍待人工校准。"
+    },
+    "ADA2026": {
+      "status": "trial",
+      "basis": "已有385页会前程序、同摘要场次去重及统一议题映射；仍有待归类内容，未核最终现场日程和缺失分布，按既有资料试算。"
+    }
+  }
+}

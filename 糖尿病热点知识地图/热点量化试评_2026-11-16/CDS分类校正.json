@@ -1,0 +1,23 @@
+{
+ "as_of":"2026-11-16",
+ "reviewer":"AI编辑校正；待业务/专业复核",
+ "overrides":{
+  "S_020":{"theme_id":"C04","reason":"AI医疗服务，按数字技术归类"},
+  "S_113":{"theme_id":"C11","reason":"骨代谢与共病，暂归其他并发症；具体内容待报告"},
+  "S_118":{"theme_id":"C11","reason":"创面愈合，按足病/溃疡问题归类"},
+  "OR_135":{"theme_id":"C07","reason":"乳酸化与细胞信号机制"},
+  "OR_117":{"theme_id":"C08","reason":"重症患者血糖与死亡，特殊人群"},
+  "OR_148":{"theme_id":"C05","reason":"遗传代谢共病病例，诊断/分型线索"},
+  "OR_182":{"theme_id":"C07","reason":"禁食后的细胞器机制，不当作临床干预结果"},
+  "OR_212":{"theme_id":"C07","reason":"代谢途径与摄食机制"},
+  "OR_229":{"theme_id":"C08","reason":"青春期男性人群"},
+  "OR_278":{"theme_id":"C05","reason":"特殊病因的诊断病例"},
+  "OR_281":{"theme_id":"C05","reason":"糖尿病风险预测模型"},
+  "OR_287":{"theme_id":"C05","reason":"风险相关性研究"},
+  "S_244":{"theme_id":"C07","reason":"米色脂肪研究机制"},
+  "S_255":{"theme_id":"C06","reason":"受体激动剂的药理与代谢影响"},
+  "OR_339":{"theme_id":"C10","reason":"脉搏波速度与死亡风险，血管问题"}
+ },
+ "excluded_education":["S_256","S_258","S_259"],
+ "left_unclassified":["PL_04","S_156","S_235"]
+}

@@ -1,0 +1,2799 @@
+{
+  "as_of": "2026-11-16",
+  "meeting": "CDS 2026",
+  "view": "会前关注度",
+  "weights": {
+    "PI会内角色代理": 40,
+    "重点报告覆盖": 25,
+    "口头摘要候选量": 20,
+    "专题覆盖": 15
+  },
+  "scope": {
+    "sessions": 148,
+    "rows": 797,
+    "numbered_rows": 699,
+    "academic_rows": 606,
+    "classified_rows": 600,
+    "unclassified": 3,
+    "education_excluded": 3,
+    "other_format_numbered_excluded": 93,
+    "independent_study_count": null
+  },
+  "rows": [
+    {
+      "id": "C07",
+      "name": "机制、组学与胰岛生物学",
+      "pattern": "机制|通路|代谢性炎症|脂毒性|蛋白|转录|甲基化|单细胞|组学|表观|染色质|胰岛|β细胞|α细胞|Beta|细胞|脂肪组织|抵抗|线粒体|自噬|微生物|菌群|代谢物|RNA|DNA|免疫代谢|稳态|分泌|骨骼肌|分子|免疫|肠-胰|内分泌",
+      "participation": "用于发现候选标志物与细胞来源，优先筛选有临床样本、临床问题和独立验证路径的研究。",
+      "capability_ids": [
+        "D05",
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05"
+      ],
+      "fit_status": "发现研究入口；尚不能由机制题目推定临床可用",
+      "report_count": 77,
+      "kinds": {
+        "大会报告": 4,
+        "专题报告": 32,
+        "论文发言": 41
+      },
+      "unique_or_count": 41,
+      "unique_speakers": 73,
+      "key_weighted_count": 44,
+      "session_count": 44,
+      "top_people": [
+        {
+          "name": "Minna Woo",
+          "institution": "Banting & Best Diabetes Centre, University of Toronto",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=ar5rX",
+          "role_basis": {
+            "tier": 3,
+            "code": "PL_05",
+            "kind": "大会报告",
+            "url": "https://cds26.tiemeeting.com/CN/Program/Details#session40535"
+          }
+        },
+        {
+          "name": "林圣彩",
+          "institution": "厦门大学生命科学学院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=rg456",
+          "role_basis": {
+            "tier": 3,
+            "code": "PL_11",
+            "kind": "大会报告",
+            "url": "https://cds26.tiemeeting.com/CN/Program/Details#session41230"
+          }
+        },
+        {
+          "name": "洪天配",
+          "institution": "北京大学第三医院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=ejDAy",
+          "role_basis": {
+            "tier": 3,
+            "code": "PL_06",
+            "kind": "大会报告",
+            "url": "https://cds26.tiemeeting.com/CN/Program/Details#session40535"
+          }
+        }
+      ],
+      "components_raw": [
+        1.0,
+        1.0,
+        0.9414092715765496,
+        0.9942593456940286
+      ],
+      "report_codes": [
+        "PL_05",
+        "PL_06",
+        "S_037",
+        "S_039",
+        "S_040",
+        "S_041",
+        "S_044",
+        "S_057",
+        "S_073",
+        "S_108",
+        "S_109",
+        "PL_09",
+        "PL_11",
+        "S_150",
+        "S_153",
+        "S_155",
+        "S_169",
+        "S_174",
+        "S_175",
+        "S_176",
+        "S_177",
+        "S_181",
+        "S_184",
+        "S_185",
+        "S_186",
+        "S_196",
+        "OR_022",
+        "OR_024",
+        "OR_025",
+        "OR_026",
+        "OR_027",
+        "OR_028",
+        "OR_011",
+        "OR_012",
+        "OR_014",
+        "OR_017",
+        "OR_018",
+        "OR_076",
+        "OR_034",
+        "OR_036",
+        "OR_060",
+        "OR_135",
+        "OR_137",
+        "OR_099",
+        "OR_151",
+        "OR_182",
+        "OR_202",
+        "OR_211",
+        "OR_212",
+        "OR_220",
+        "OR_225",
+        "OR_234",
+        "OR_238",
+        "OR_240",
+        "OR_250",
+        "OR_252",
+        "OR_257",
+        "OR_261",
+        "OR_268",
+        "OR_272",
+        "OR_274",
+        "OR_290",
+        "OR_297",
+        "OR_308",
+        "OR_311",
+        "OR_317",
+        "OR_320",
+        "S_231",
+        "S_233",
+        "S_237",
+        "S_241",
+        "S_242",
+        "S_244",
+        "S_245",
+        "S_249",
+        "S_251",
+        "S_252"
+      ],
+      "examples": [
+        {
+          "code": "PL_05",
+          "time": "10:30-10:58",
+          "kind": "大会报告",
+          "title": "A deep dive into T2D: from Beta to Autonomic cells",
+          "people": [
+            {
+              "name": "Minna Woo",
+              "institution": "Banting & Best Diabetes Centre, University of Toronto",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=ar5rX"
+            }
+          ],
+          "date": "2026年11月19日",
+          "room": "主会场-海峡大剧院",
+          "session": "全体大会 3",
+          "session_id": "session40535",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40535",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C07",
+          "secondary_theme_ids": [],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        },
+        {
+          "code": "PL_06",
+          "time": "11:00-11:28",
+          "kind": "大会报告",
+          "title": "胰岛α-β细胞对话与血糖稳态调控",
+          "people": [
+            {
+              "name": "洪天配",
+              "institution": "北京大学第三医院",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=ejDAy"
+            }
+          ],
+          "date": "2026年11月19日",
+          "room": "主会场-海峡大剧院",
+          "session": "全体大会 3",
+          "session_id": "session40535",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40535",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C07",
+          "secondary_theme_ids": [],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        },
+        {
+          "code": "PL_09",
+          "time": "09:00-09:28",
+          "kind": "大会报告",
+          "title": "泛脂毒性与代谢疾病研究进展",
+          "people": [
+            {
+              "name": "赵家军",
+              "institution": "山东第一医科大学附属省立医院",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=rg4ZV"
+            }
+          ],
+          "date": "2026年11月20日",
+          "room": "主会场-海峡大剧院",
+          "session": "全体大会 5",
+          "session_id": "session40874",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40874",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C07",
+          "secondary_theme_ids": [],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        },
+        {
+          "code": "PL_11",
+          "time": "10:00-10:28",
+          "kind": "大会报告",
+          "title": "代谢性炎症的思与考",
+          "people": [
+            {
+              "name": "林圣彩",
+              "institution": "厦门大学生命科学学院",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=rg456"
+            }
+          ],
+          "date": "2026年11月20日",
+          "room": "主会场-海峡大剧院",
+          "session": "全体大会 6",
+          "session_id": "session41230",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session41230",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C07",
+          "secondary_theme_ids": [],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        }
+      ],
+      "components": {
+        "PI会内角色代理": 40.0,
+        "重点报告覆盖": 25.0,
+        "口头摘要候选量": 18.8,
+        "专题覆盖": 14.9
+      },
+      "score": 98.7,
+      "status": "会前关注度；PI角色代理，待导师校准",
+      "gaps": [
+        "仅有标题和日程，暂无本届报告结果。",
+        "PI以本届报告角色代理；学术影响、基金、客户意向尚未核验。",
+        "口头摘要编号去重不等于确认独立研究，跨题同队列待核。"
+      ],
+      "rank": 1,
+      "scenario_ranks": {
+        "默认": 1,
+        "等权": 1,
+        "PI较低": 1,
+        "PI较高": 1
+      }
+    },
+    {
+      "id": "C10",
+      "name": "心脑血管、血脂与临床结局",
+      "pattern": "心血管|心衰|心力衰竭|心肌|血管|卒中|脑健康|认知|痴呆|血脂|胆固醇|动脉|甘油三酯|CKM",
+      "participation": "可讨论残余风险、器官损伤与治疗应答分层，需核实相对常规临床指标的增量。",
+      "capability_ids": [
+        "D03",
+        "D04",
+        "T01",
+        "T02",
+        "T03"
+      ],
+      "fit_status": "研究问题与能力方向相关；样本、版本及现行交付待核",
+      "report_count": 80,
+      "kinds": {
+        "大会报告": 3,
+        "专题报告": 25,
+        "论文发言": 52
+      },
+      "unique_or_count": 52,
+      "unique_speakers": 74,
+      "key_weighted_count": 34,
+      "session_count": 41,
+      "top_people": [
+        {
+          "name": "Alicia Jenkins",
+          "institution": "国际糖尿病联盟 西太平洋地区(IDF WPR)主席",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=ymVmp",
+          "role_basis": {
+            "tier": 3,
+            "code": "PL_10",
+            "kind": "大会报告",
+            "url": "https://cds26.tiemeeting.com/CN/Program/Details#session40874"
+          }
+        },
+        {
+          "name": "洪天配",
+          "institution": "北京大学第三医院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=ejDAy",
+          "role_basis": {
+            "tier": 3,
+            "code": "PL_06",
+            "kind": "大会报告",
+            "url": "https://cds26.tiemeeting.com/CN/Program/Details#session40535"
+          }
+        },
+        {
+          "name": "王拥军",
+          "institution": "首都医科大学附属北京天坛医院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=lmoAz",
+          "role_basis": {
+            "tier": 3,
+            "code": "PL_08",
+            "kind": "大会报告",
+            "url": "https://cds26.tiemeeting.com/CN/Program/Details#session41230"
+          }
+        }
+      ],
+      "components_raw": [
+        1.0,
+        0.9339803754716196,
+        1.0,
+        0.9762391488821207
+      ],
+      "report_codes": [
+        "PL_01",
+        "S_018",
+        "S_025",
+        "S_026",
+        "S_027",
+        "S_083",
+        "S_084",
+        "S_085",
+        "S_086",
+        "S_088",
+        "S_114",
+        "S_116",
+        "S_117",
+        "S_128",
+        "PL_10",
+        "PL_08",
+        "S_152",
+        "S_204",
+        "S_206",
+        "S_207",
+        "S_208",
+        "S_209",
+        "S_221",
+        "OR_090",
+        "OR_091",
+        "OR_010",
+        "OR_015",
+        "OR_001",
+        "OR_004",
+        "OR_009",
+        "OR_080",
+        "OR_085",
+        "OR_038",
+        "OR_056",
+        "OR_044",
+        "OR_045",
+        "OR_046",
+        "OR_124",
+        "OR_125",
+        "OR_133",
+        "OR_141",
+        "OR_109",
+        "OR_146",
+        "OR_150",
+        "OR_154",
+        "OR_157",
+        "OR_159",
+        "OR_161",
+        "OR_167",
+        "OR_168",
+        "OR_177",
+        "OR_178",
+        "OR_179",
+        "OR_221",
+        "OR_223",
+        "OR_224",
+        "OR_232",
+        "OR_242",
+        "OR_247",
+        "OR_264",
+        "OR_267",
+        "OR_273",
+        "OR_276",
+        "OR_285",
+        "S_223",
+        "S_224",
+        "OR_310",
+        "OR_315",
+        "S_229",
+        "S_230",
+        "S_238",
+        "OR_322",
+        "OR_324",
+        "OR_326",
+        "OR_327",
+        "OR_330",
+        "OR_336",
+        "OR_338",
+        "OR_339",
+        "OR_340"
+      ],
+      "examples": [
+        {
+          "code": "PL_01",
+          "time": "08:30-08:58",
+          "kind": "大会报告",
+          "title": "数智赋能精准运动与代谢性疾病脑健康",
+          "people": [
+            {
+              "name": "贾伟平",
+              "institution": "上海交通大学医学院附属第六人民医院",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=qDJA8"
+            }
+          ],
+          "date": "2026年11月19日",
+          "room": "主会场-海峡大剧院",
+          "session": "全体大会 1",
+          "session_id": "session40534",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40534",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C10",
+          "secondary_theme_ids": [
+            "C04",
+            "C09"
+          ],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        },
+        {
+          "code": "PL_08",
+          "time": "09:30-09:58",
+          "kind": "大会报告",
+          "title": "糖代谢异常与卒中二级预防",
+          "people": [
+            {
+              "name": "王拥军",
+              "institution": "首都医科大学附属北京天坛医院",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=lmoAz"
+            }
+          ],
+          "date": "2026年11月20日",
+          "room": "主会场-海峡大剧院",
+          "session": "全体大会 6",
+          "session_id": "session41230",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session41230",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C10",
+          "secondary_theme_ids": [
+            "C09"
+          ],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        },
+        {
+          "code": "PL_10",
+          "time": "08:30-08:58",
+          "kind": "大会报告",
+          "title": "循证，致远——糖尿病血脂管理，助力改善临床结局",
+          "people": [
+            {
+              "name": "Alicia Jenkins",
+              "institution": "国际糖尿病联盟 西太平洋地区(IDF WPR)主席",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=ymVmp"
+            }
+          ],
+          "date": "2026年11月20日",
+          "room": "主会场-海峡大剧院",
+          "session": "全体大会 5",
+          "session_id": "session40874",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40874",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C10",
+          "secondary_theme_ids": [
+            "C09"
+          ],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        },
+        {
+          "code": "S_018",
+          "time": "16:20-16:38",
+          "kind": "专题报告",
+          "title": "从CKM命名缺陷解析MLCK命名体系核心优势",
+          "people": [
+            {
+              "name": "肖新华",
+              "institution": "中国医学科学院北京协和医院",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=J0OZ4"
+            }
+          ],
+          "date": "2026年11月19日",
+          "room": "会场1-多功能厅A1",
+          "session": "热点问题辩论与讨论",
+          "session_id": "session40537",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40537",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C10",
+          "secondary_theme_ids": [],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        }
+      ],
+      "components": {
+        "PI会内角色代理": 40.0,
+        "重点报告覆盖": 23.3,
+        "口头摘要候选量": 20.0,
+        "专题覆盖": 14.6
+      },
+      "score": 98.0,
+      "status": "会前关注度；PI角色代理，待导师校准",
+      "gaps": [
+        "仅有标题和日程，暂无本届报告结果。",
+        "PI以本届报告角色代理；学术影响、基金、客户意向尚未核验。",
+        "口头摘要编号去重不等于确认独立研究，跨题同队列待核。"
+      ],
+      "rank": 2,
+      "scenario_ranks": {
+        "默认": 2,
+        "等权": 2,
+        "PI较低": 2,
+        "PI较高": 2
+      }
+    },
+    {
+      "id": "C01",
+      "name": "肾脏损伤与糖尿病肾病",
+      "pattern": "肾|DKD|CKD|eGFR|UACR|白蛋白尿",
+      "participation": "可讨论肾损伤与进展风险的队列验证，按血浆、尿液与组织分别核对cfRNA、甲基化或单细胞研究路径。",
+      "capability_ids": [
+        "D03",
+        "D04",
+        "T01",
+        "T02",
+        "T03"
+      ],
+      "fit_status": "研究问题与能力方向相关；样本、版本及现行交付待核",
+      "report_count": 70,
+      "kinds": {
+        "专题报告": 20,
+        "论文发言": 50
+      },
+      "unique_or_count": 50,
+      "unique_speakers": 67,
+      "key_weighted_count": 20,
+      "session_count": 37,
+      "top_people": [
+        {
+          "name": "陈莉明",
+          "institution": "天津医科大学朱宪彝纪念医院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=ejDbj",
+          "role_basis": {
+            "tier": 3,
+            "code": "PL_07",
+            "kind": "大会报告",
+            "url": "https://cds26.tiemeeting.com/CN/Program/Details#session41229"
+          }
+        },
+        {
+          "name": "Janaka Karalliedde",
+          "institution": "King's College London, Guy's and St Thomas Hospital London",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=9pkPG",
+          "role_basis": {
+            "tier": 2,
+            "code": "S_151",
+            "kind": "专题报告",
+            "url": "https://cds26.tiemeeting.com/CN/Program/Details#session40908"
+          }
+        },
+        {
+          "name": "丁小强",
+          "institution": "复旦大学附属中山医院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=g7bzY",
+          "role_basis": {
+            "tier": 2,
+            "code": "S_112",
+            "kind": "专题报告",
+            "url": "https://cds26.tiemeeting.com/CN/Program/Details#session40570"
+          }
+        }
+      ],
+      "components_raw": [
+        0.7777777777777778,
+        0.7997878577113147,
+        0.9903114728928379,
+        0.950098424747246
+      ],
+      "report_codes": [
+        "S_013",
+        "S_014",
+        "S_015",
+        "S_016",
+        "S_028",
+        "S_090",
+        "S_105",
+        "S_112",
+        "S_122",
+        "S_123",
+        "S_124",
+        "S_125",
+        "S_126",
+        "S_127",
+        "S_129",
+        "S_130",
+        "S_139",
+        "S_151",
+        "S_189",
+        "OR_093",
+        "OR_094",
+        "OR_013",
+        "OR_002",
+        "OR_003",
+        "OR_005",
+        "OR_006",
+        "OR_007",
+        "OR_008",
+        "OR_084",
+        "OR_040",
+        "OR_054",
+        "OR_048",
+        "OR_128",
+        "OR_130",
+        "OR_138",
+        "OR_140",
+        "OR_142",
+        "OR_143",
+        "OR_144",
+        "OR_098",
+        "OR_101",
+        "OR_105",
+        "OR_107",
+        "OR_108",
+        "OR_112",
+        "OR_147",
+        "OR_153",
+        "OR_160",
+        "OR_162",
+        "OR_164",
+        "OR_169",
+        "OR_170",
+        "OR_171",
+        "OR_172",
+        "OR_173",
+        "OR_186",
+        "OR_193",
+        "OR_201",
+        "OR_228",
+        "OR_254",
+        "OR_269",
+        "OR_271",
+        "OR_295",
+        "OR_299",
+        "OR_303",
+        "OR_316",
+        "S_243",
+        "OR_331",
+        "OR_333",
+        "OR_334"
+      ],
+      "examples": [
+        {
+          "code": "S_013",
+          "time": "14:00-14:18",
+          "kind": "专题报告",
+          "title": "糖尿病肾病的治疗",
+          "people": [
+            {
+              "name": "刘礼斌",
+              "institution": "福建医科大学附属协和医院",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=Z8Dqa"
+            }
+          ],
+          "date": "2026年11月18日",
+          "room": "会场6-多功能厅B4",
+          "session": "国家基层糖尿病肾脏病防治技术指南培训",
+          "session_id": "session40532",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40532",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C01",
+          "secondary_theme_ids": [
+            "C09"
+          ],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        },
+        {
+          "code": "S_014",
+          "time": "14:20-14:38",
+          "kind": "专题报告",
+          "title": "糖尿病肾病的生活方式干预",
+          "people": [
+            {
+              "name": "林明珠",
+              "institution": "厦门大学附属第一医院",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=YGDRY"
+            }
+          ],
+          "date": "2026年11月18日",
+          "room": "会场6-多功能厅B4",
+          "session": "国家基层糖尿病肾脏病防治技术指南培训",
+          "session_id": "session40532",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40532",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C01",
+          "secondary_theme_ids": [
+            "C09"
+          ],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        },
+        {
+          "code": "S_015",
+          "time": "14:40-14:58",
+          "kind": "专题报告",
+          "title": "肾感油虑：脂肪代谢在糖尿病肾脏病的作用机制探索",
+          "people": [
+            {
+              "name": "关美萍",
+              "institution": "南方医科大学南方医院",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=50Wlv"
+            }
+          ],
+          "date": "2026年11月18日",
+          "room": "会场6-多功能厅B4",
+          "session": "国家基层糖尿病肾脏病防治技术指南培训",
+          "session_id": "session40532",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40532",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C01",
+          "secondary_theme_ids": [
+            "C07"
+          ],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        },
+        {
+          "code": "S_016",
+          "time": "15:00-15:18",
+          "kind": "专题报告",
+          "title": "糖尿病合并慢性肾脏病的诊治思考",
+          "people": [
+            {
+              "name": "郭 丰",
+              "institution": "郑州大学第一附属医院",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=AZXlO"
+            }
+          ],
+          "date": "2026年11月18日",
+          "room": "会场6-多功能厅B4",
+          "session": "国家基层糖尿病肾脏病防治技术指南培训",
+          "session_id": "session40532",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40532",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C01",
+          "secondary_theme_ids": [],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        }
+      ],
+      "components": {
+        "PI会内角色代理": 31.1,
+        "重点报告覆盖": 20.0,
+        "口头摘要候选量": 19.8,
+        "专题覆盖": 14.3
+      },
+      "score": 85.2,
+      "status": "会前关注度；PI角色代理，待导师校准",
+      "gaps": [
+        "仅有标题和日程，暂无本届报告结果。",
+        "PI以本届报告角色代理；学术影响、基金、客户意向尚未核验。",
+        "口头摘要编号去重不等于确认独立研究，跨题同队列待核。"
+      ],
+      "rank": 3,
+      "scenario_ranks": {
+        "默认": 3,
+        "等权": 4,
+        "PI较低": 3,
+        "PI较高": 4
+      }
+    },
+    {
+      "id": "C09",
+      "name": "公共卫生、生活方式与实施研究",
+      "pattern": "流行|队列|发病|患病|负担|年度报告|运动|营养|饮食|生活方式|管理|基层|预防|教育|心理|健康|指南|共识|筛防|干预|达标|缓解|逆转|依从|行为|科普|照护|护理|防治|中医|治疗|健康",
+      "participation": "可支持临床问题界定、队列建设、风险因素与验证终点选择。",
+      "capability_ids": [
+        "D05"
+      ],
+      "fit_status": "研究场景连接，检测增量价值待具体问题确认",
+      "report_count": 38,
+      "kinds": {
+        "专题报告": 23,
+        "大会报告": 2,
+        "论文发言": 13
+      },
+      "unique_or_count": 13,
+      "unique_speakers": 37,
+      "key_weighted_count": 29,
+      "session_count": 26,
+      "top_people": [
+        {
+          "name": "郭立新",
+          "institution": "北京医院 国家老年医学中心",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=1RvzM",
+          "role_basis": {
+            "tier": 3,
+            "code": "PL_03",
+            "kind": "大会报告",
+            "url": "https://cds26.tiemeeting.com/CN/Program/Details#session41228"
+          }
+        },
+        {
+          "name": "陈莉明",
+          "institution": "天津医科大学朱宪彝纪念医院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=ejDbj",
+          "role_basis": {
+            "tier": 3,
+            "code": "PL_07",
+            "kind": "大会报告",
+            "url": "https://cds26.tiemeeting.com/CN/Program/Details#session41229"
+          }
+        },
+        {
+          "name": "任 艳",
+          "institution": "四川大学华西医院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=VRDpE",
+          "role_basis": {
+            "tier": 2,
+            "code": "S_110",
+            "kind": "专题报告",
+            "url": "https://cds26.tiemeeting.com/CN/Program/Details#session40584"
+          }
+        }
+      ],
+      "components_raw": [
+        0.8888888888888888,
+        0.89348540639004,
+        0.6647010817031233,
+        0.8608371807886335
+      ],
+      "report_codes": [
+        "S_001",
+        "S_005",
+        "PL_03",
+        "PL_07",
+        "S_019",
+        "S_021",
+        "S_023",
+        "S_063",
+        "S_064",
+        "S_103",
+        "S_110",
+        "S_111",
+        "S_158",
+        "S_159",
+        "S_160",
+        "S_162",
+        "S_165",
+        "S_191",
+        "S_215",
+        "S_216",
+        "OR_078",
+        "OR_055",
+        "OR_065",
+        "OR_067",
+        "OR_068",
+        "OR_069",
+        "OR_070",
+        "OR_073",
+        "OR_049",
+        "OR_051",
+        "OR_097",
+        "OR_123",
+        "S_222",
+        "OR_319",
+        "S_227",
+        "S_232",
+        "S_248",
+        "S_257"
+      ],
+      "examples": [
+        {
+          "code": "PL_03",
+          "time": "09:30-09:58",
+          "kind": "大会报告",
+          "title": "中国糖尿病年度报告（2026）",
+          "people": [
+            {
+              "name": "郭立新",
+              "institution": "北京医院 国家老年医学中心",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=1RvzM"
+            }
+          ],
+          "date": "2026年11月19日",
+          "room": "主会场-海峡大剧院",
+          "session": "全体大会 2",
+          "session_id": "session41228",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session41228",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C09",
+          "secondary_theme_ids": [],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        },
+        {
+          "code": "PL_07",
+          "time": "11:30-11:58",
+          "kind": "大会报告",
+          "title": "中国糖尿病诊疗指南解读（2026）",
+          "people": [
+            {
+              "name": "陈莉明",
+              "institution": "天津医科大学朱宪彝纪念医院",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=ejDbj"
+            }
+          ],
+          "date": "2026年11月19日",
+          "room": "主会场-海峡大剧院",
+          "session": "全体大会 4",
+          "session_id": "session41229",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session41229",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C09",
+          "secondary_theme_ids": [],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        },
+        {
+          "code": "S_001",
+          "time": "14:00-14:18",
+          "kind": "专题报告",
+          "title": "基层糖尿病管理基本要求及健康管理流程",
+          "people": [
+            {
+              "name": "蔡 淳",
+              "institution": "上海交通大学医学院附属第六人民医院",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=7p3a3"
+            }
+          ],
+          "date": "2026年11月18日",
+          "room": "会场3-多功能厅B1",
+          "session": "国家基层糖尿病防治管理指南培训1",
+          "session_id": "session40529",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40529",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C09",
+          "secondary_theme_ids": [],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        },
+        {
+          "code": "S_005",
+          "time": "14:00-14:18",
+          "kind": "专题报告",
+          "title": "糖尿病的治疗原则、目标及综合干预管理",
+          "people": [
+            {
+              "name": "李学军",
+              "institution": "厦门大学附属第一医院",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=bJDEz"
+            }
+          ],
+          "date": "2026年11月18日",
+          "room": "会场4-多功能厅B2",
+          "session": "国家基层糖尿病防治管理指南培训2",
+          "session_id": "session40530",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40530",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C09",
+          "secondary_theme_ids": [],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        }
+      ],
+      "components": {
+        "PI会内角色代理": 35.6,
+        "重点报告覆盖": 22.3,
+        "口头摘要候选量": 13.3,
+        "专题覆盖": 12.9
+      },
+      "score": 84.1,
+      "status": "会前关注度；PI角色代理，待导师校准",
+      "gaps": [
+        "仅有标题和日程，暂无本届报告结果。",
+        "PI以本届报告角色代理；学术影响、基金、客户意向尚未核验。",
+        "口头摘要编号去重不等于确认独立研究，跨题同队列待核。"
+      ],
+      "rank": 4,
+      "scenario_ranks": {
+        "默认": 4,
+        "等权": 5,
+        "PI较低": 5,
+        "PI较高": 3
+      }
+    },
+    {
+      "id": "C03",
+      "name": "肥胖与体重管理",
+      "pattern": "肥胖|减重|体重|obesity|BMI|减脂|体成分|肌少|代谢手术|减重手术",
+      "participation": "可讨论减重异质性、治疗应答及伴随疾病的标志物研究。",
+      "capability_ids": [
+        "D05",
+        "T01",
+        "T03"
+      ],
+      "fit_status": "GLP-1应答预测仍为待验证设想，不当作现成产品",
+      "report_count": 75,
+      "kinds": {
+        "专题报告": 36,
+        "论文发言": 39
+      },
+      "unique_or_count": 39,
+      "unique_speakers": 72,
+      "key_weighted_count": 36,
+      "session_count": 45,
+      "top_people": [
+        {
+          "name": "Richard Donnelly",
+          "institution": "School of Medicine and Surgical Sciences, University of Nottingham, UK",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=YGlGr",
+          "role_basis": {
+            "tier": 2,
+            "code": "S_254",
+            "kind": "专题报告",
+            "url": "https://cds26.tiemeeting.com/CN/Program/Details#session40875"
+          }
+        },
+        {
+          "name": "于 淼",
+          "institution": "中国医学科学院北京协和医院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=qDJV7",
+          "role_basis": {
+            "tier": 2,
+            "code": "S_084",
+            "kind": "专题报告",
+            "url": "https://cds26.tiemeeting.com/CN/Program/Details#session40559"
+          }
+        },
+        {
+          "name": "刘建萍",
+          "institution": "南昌大学第二附属医院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=vzdXA",
+          "role_basis": {
+            "tier": 2,
+            "code": "S_168",
+            "kind": "专题报告",
+            "url": "https://cds26.tiemeeting.com/CN/Program/Details#session40569"
+          }
+        }
+      ],
+      "components_raw": [
+        0.6666666666666666,
+        0.948578425943429,
+        0.9291204612744928,
+        1.0
+      ],
+      "report_codes": [
+        "S_009",
+        "S_010",
+        "S_011",
+        "S_012",
+        "S_017",
+        "S_022",
+        "S_043",
+        "S_058",
+        "S_059",
+        "S_060",
+        "S_061",
+        "S_080",
+        "S_087",
+        "S_091",
+        "S_092",
+        "S_093",
+        "S_094",
+        "S_096",
+        "S_097",
+        "S_101",
+        "S_102",
+        "S_107",
+        "S_148",
+        "S_149",
+        "S_167",
+        "S_168",
+        "S_193",
+        "S_214",
+        "OR_089",
+        "OR_032",
+        "OR_077",
+        "OR_035",
+        "OR_043",
+        "OR_127",
+        "OR_096",
+        "OR_121",
+        "OR_122",
+        "OR_165",
+        "OR_176",
+        "OR_184",
+        "OR_185",
+        "OR_187",
+        "OR_195",
+        "OR_196",
+        "OR_206",
+        "OR_207",
+        "OR_208",
+        "OR_210",
+        "OR_213",
+        "OR_215",
+        "OR_217",
+        "OR_222",
+        "OR_227",
+        "OR_230",
+        "OR_231",
+        "OR_235",
+        "OR_236",
+        "OR_245",
+        "OR_253",
+        "OR_266",
+        "OR_282",
+        "OR_283",
+        "OR_286",
+        "OR_293",
+        "OR_301",
+        "OR_302",
+        "S_225",
+        "S_226",
+        "S_240",
+        "S_246",
+        "S_247",
+        "S_250",
+        "S_253",
+        "S_254",
+        "OR_335"
+      ],
+      "examples": [
+        {
+          "code": "S_009",
+          "time": "14:00-14:18",
+          "kind": "专题报告",
+          "title": "肥胖症的长期管理的挑战",
+          "people": [
+            {
+              "name": "秦映芬",
+              "institution": "广西医科大学第一附属医院",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=WnDzb"
+            }
+          ],
+          "date": "2026年11月18日",
+          "room": "会场5-多功能厅B3",
+          "session": "国家基层肥胖症综合管理技术指南培训",
+          "session_id": "session40531",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40531",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C03",
+          "secondary_theme_ids": [
+            "C09"
+          ],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        },
+        {
+          "code": "S_010",
+          "time": "14:20-14:38",
+          "kind": "专题报告",
+          "title": "理性看待2型糖尿病患者体重管理",
+          "people": [
+            {
+              "name": "赵艳艳",
+              "institution": "郑州大学第一附属医院",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=nzYZ3"
+            }
+          ],
+          "date": "2026年11月18日",
+          "room": "会场5-多功能厅B3",
+          "session": "国家基层肥胖症综合管理技术指南培训",
+          "session_id": "session40531",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40531",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C03",
+          "secondary_theme_ids": [
+            "C09"
+          ],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        },
+        {
+          "code": "S_011",
+          "time": "14:40-14:58",
+          "kind": "专题报告",
+          "title": "肥胖症的药物治疗",
+          "people": [
+            {
+              "name": "陈 频",
+              "institution": "中国人民解放军联勤保障部队第九〇〇医院",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=1Rvp3"
+            }
+          ],
+          "date": "2026年11月18日",
+          "room": "会场5-多功能厅B3",
+          "session": "国家基层肥胖症综合管理技术指南培训",
+          "session_id": "session40531",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40531",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C03",
+          "secondary_theme_ids": [
+            "C06",
+            "C09"
+          ],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        },
+        {
+          "code": "S_012",
+          "time": "15:00-15:18",
+          "kind": "专题报告",
+          "title": "肥胖症的诊断和评估",
+          "people": [
+            {
+              "name": "陈 宁",
+              "institution": "复旦大学附属中山医院厦门医院",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=ejDpw"
+            }
+          ],
+          "date": "2026年11月18日",
+          "room": "会场5-多功能厅B3",
+          "session": "国家基层肥胖症综合管理技术指南培训",
+          "session_id": "session40531",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40531",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C03",
+          "secondary_theme_ids": [
+            "C05"
+          ],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        }
+      ],
+      "components": {
+        "PI会内角色代理": 26.7,
+        "重点报告覆盖": 23.7,
+        "口头摘要候选量": 18.6,
+        "专题覆盖": 15.0
+      },
+      "score": 84.0,
+      "status": "会前关注度；PI角色代理，待导师校准",
+      "gaps": [
+        "仅有标题和日程，暂无本届报告结果。",
+        "PI以本届报告角色代理；学术影响、基金、客户意向尚未核验。",
+        "口头摘要编号去重不等于确认独立研究，跨题同队列待核。"
+      ],
+      "rank": 5,
+      "scenario_ranks": {
+        "默认": 5,
+        "等权": 3,
+        "PI较低": 4,
+        "PI较高": 6
+      }
+    },
+    {
+      "id": "C06",
+      "name": "新药与联合用药策略",
+      "pattern": "GLP|GIP|SGLT|DPP|降糖药|药物|用药|治疗策略|联合治疗|胰岛素治疗|治疗新|治疗进展|司美|替尔|格列|二甲双胍|Cagri|Retatrutide|胰淀素|Amylin|受体激动|固定复方|注射制剂|中医|中药|CD3单抗|治疗新",
+      "participation": "围绕疗效差异、耐受性或药物应答提出临床科研问题，必要时评价组学可带来的增量。",
+      "capability_ids": [
+        "D05",
+        "T01",
+        "T03"
+      ],
+      "fit_status": "药物进展不直接转成检测产品；应答方案须另行验证",
+      "report_count": 31,
+      "kinds": {
+        "专题报告": 17,
+        "论文发言": 14
+      },
+      "unique_or_count": 14,
+      "unique_speakers": 29,
+      "key_weighted_count": 17,
+      "session_count": 20,
+      "top_people": [
+        {
+          "name": "洪天配",
+          "institution": "北京大学第三医院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=ejDAy",
+          "role_basis": {
+            "tier": 3,
+            "code": "PL_06",
+            "kind": "大会报告",
+            "url": "https://cds26.tiemeeting.com/CN/Program/Details#session40535"
+          }
+        },
+        {
+          "name": "陈莉明",
+          "institution": "天津医科大学朱宪彝纪念医院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=ejDbj",
+          "role_basis": {
+            "tier": 3,
+            "code": "PL_07",
+            "kind": "大会报告",
+            "url": "https://cds26.tiemeeting.com/CN/Program/Details#session41229"
+          }
+        },
+        {
+          "name": "Zhenqi Liu",
+          "institution": "Division of Endocrinology and Metabolism University of Virginia Health System",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=50502",
+          "role_basis": {
+            "tier": 2,
+            "code": "S_255",
+            "kind": "专题报告",
+            "url": "https://cds26.tiemeeting.com/CN/Program/Details#session40875"
+          }
+        }
+      ],
+      "components_raw": [
+        0.8888888888888888,
+        0.7592928886297349,
+        0.6820783610037844,
+        0.7951965521020805
+      ],
+      "report_codes": [
+        "S_006",
+        "S_007",
+        "S_008",
+        "S_071",
+        "S_077",
+        "S_078",
+        "S_079",
+        "S_081",
+        "S_082",
+        "S_104",
+        "S_154",
+        "S_171",
+        "S_192",
+        "S_211",
+        "S_212",
+        "S_213",
+        "OR_037",
+        "OR_039",
+        "OR_041",
+        "OR_066",
+        "OR_131",
+        "OR_100",
+        "OR_102",
+        "OR_166",
+        "OR_226",
+        "OR_288",
+        "OR_300",
+        "OR_307",
+        "OR_309",
+        "OR_312",
+        "S_255"
+      ],
+      "examples": [
+        {
+          "code": "S_006",
+          "time": "14:20-14:38",
+          "kind": "专题报告",
+          "title": "糖尿病治疗之口服降糖药物",
+          "people": [
+            {
+              "name": "黄敬泽",
+              "institution": "福建医科大学附属协和医院",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=VRDJj"
+            }
+          ],
+          "date": "2026年11月18日",
+          "room": "会场4-多功能厅B2",
+          "session": "国家基层糖尿病防治管理指南培训2",
+          "session_id": "session40530",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40530",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C06",
+          "secondary_theme_ids": [
+            "C09"
+          ],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        },
+        {
+          "code": "S_007",
+          "time": "14:40-14:58",
+          "kind": "专题报告",
+          "title": "糖尿病治疗之注射制剂",
+          "people": [
+            {
+              "name": "刘长勤",
+              "institution": "厦门大学附属第一医院",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=2PvxD"
+            }
+          ],
+          "date": "2026年11月18日",
+          "room": "会场4-多功能厅B2",
+          "session": "国家基层糖尿病防治管理指南培训2",
+          "session_id": "session40530",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40530",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C06",
+          "secondary_theme_ids": [
+            "C09"
+          ],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        },
+        {
+          "code": "S_008",
+          "time": "15:00-15:18",
+          "kind": "专题报告",
+          "title": "糖尿病的中医治疗",
+          "people": [
+            {
+              "name": "杨叔禹",
+              "institution": "厦门大学附属第一医院",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=Pa712"
+            }
+          ],
+          "date": "2026年11月18日",
+          "room": "会场4-多功能厅B2",
+          "session": "国家基层糖尿病防治管理指南培训2",
+          "session_id": "session40530",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40530",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C06",
+          "secondary_theme_ids": [
+            "C09"
+          ],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        },
+        {
+          "code": "S_071",
+          "time": "15:10-15:28",
+          "kind": "专题报告",
+          "title": "妊娠期高血糖药物治疗的新争议新证据",
+          "people": [
+            {
+              "name": "王海宁",
+              "institution": "北京大学第三医院",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=1Rv9Z"
+            }
+          ],
+          "date": "2026年11月19日",
+          "room": "会场8-多功能厅C2",
+          "session": "妊娠期高血糖的全周期管理",
+          "session_id": "session40585",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40585",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C06",
+          "secondary_theme_ids": [
+            "C08",
+            "C09"
+          ],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        }
+      ],
+      "components": {
+        "PI会内角色代理": 35.6,
+        "重点报告覆盖": 19.0,
+        "口头摘要候选量": 13.6,
+        "专题覆盖": 11.9
+      },
+      "score": 80.1,
+      "status": "会前关注度；PI角色代理，待导师校准",
+      "gaps": [
+        "仅有标题和日程，暂无本届报告结果。",
+        "PI以本届报告角色代理；学术影响、基金、客户意向尚未核验。",
+        "口头摘要编号去重不等于确认独立研究，跨题同队列待核。"
+      ],
+      "rank": 6,
+      "scenario_ranks": {
+        "默认": 6,
+        "等权": 8,
+        "PI较低": 7,
+        "PI较高": 5
+      }
+    },
+    {
+      "id": "C12",
+      "name": "脂肪肝与MASLD相关研究",
+      "pattern": "肝|MASLD|MASH|NAFLD|MAFLD",
+      "participation": "可讨论代谢性肝病的分层、治疗应答和伴随标志物验证，需区分肝脂肪替代终点与临床结局。",
+      "capability_ids": [
+        "D03",
+        "D04",
+        "T01",
+        "T02",
+        "T03"
+      ],
+      "fit_status": "研究问题与能力方向相关；样本、版本及现行交付待核",
+      "report_count": 66,
+      "kinds": {
+        "专题报告": 14,
+        "论文发言": 52
+      },
+      "unique_or_count": 52,
+      "unique_speakers": 60,
+      "key_weighted_count": 14,
+      "session_count": 25,
+      "top_people": [
+        {
+          "name": "刘 超",
+          "institution": "南京中医药大学附属中西医结合医院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=arw44",
+          "role_basis": {
+            "tier": 2,
+            "code": "S_095",
+            "kind": "专题报告",
+            "url": "https://cds26.tiemeeting.com/CN/Program/Details#session40583"
+          }
+        },
+        {
+          "name": "常永生",
+          "institution": "天津医科大学基础医学院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=zdoX9",
+          "role_basis": {
+            "tier": 2,
+            "code": "S_145",
+            "kind": "专题报告",
+            "url": "https://cds26.tiemeeting.com/CN/Program/Details#session40556"
+          }
+        },
+        {
+          "name": "张惠杰",
+          "institution": "复旦大学附属中山医院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=J0Onp",
+          "role_basis": {
+            "tier": 2,
+            "code": "S_146",
+            "kind": "专题报告",
+            "url": "https://cds26.tiemeeting.com/CN/Program/Details#session40556"
+          }
+        }
+      ],
+      "components_raw": [
+        0.6666666666666666,
+        0.7113975059201018,
+        1.0,
+        0.8509798125803036
+      ],
+      "report_codes": [
+        "S_038",
+        "S_095",
+        "S_140",
+        "S_141",
+        "S_142",
+        "S_143",
+        "S_144",
+        "S_145",
+        "S_146",
+        "S_183",
+        "S_187",
+        "S_188",
+        "OR_020",
+        "OR_021",
+        "OR_030",
+        "OR_075",
+        "OR_079",
+        "OR_033",
+        "OR_047",
+        "OR_118",
+        "OR_155",
+        "OR_180",
+        "OR_181",
+        "OR_183",
+        "OR_188",
+        "OR_189",
+        "OR_190",
+        "OR_191",
+        "OR_192",
+        "OR_194",
+        "OR_197",
+        "OR_198",
+        "OR_200",
+        "OR_203",
+        "OR_204",
+        "OR_205",
+        "OR_209",
+        "OR_214",
+        "OR_216",
+        "OR_233",
+        "OR_237",
+        "OR_239",
+        "OR_241",
+        "OR_243",
+        "OR_244",
+        "OR_248",
+        "OR_249",
+        "OR_251",
+        "OR_255",
+        "OR_256",
+        "OR_258",
+        "OR_259",
+        "OR_260",
+        "OR_263",
+        "OR_265",
+        "OR_270",
+        "OR_280",
+        "OR_284",
+        "OR_289",
+        "OR_291",
+        "OR_292",
+        "OR_294",
+        "OR_298",
+        "OR_306",
+        "S_234",
+        "S_236"
+      ],
+      "examples": [
+        {
+          "code": "S_038",
+          "time": "14:50-15:08",
+          "kind": "专题报告",
+          "title": "组织蛋白酶L在肝脏胰岛素抵抗与MASH中的作用及新药发现",
+          "people": [
+            {
+              "name": "杨金奎",
+              "institution": "首都医科大学附属北京同仁医院",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=Z8Dmo"
+            }
+          ],
+          "date": "2026年11月19日",
+          "room": "会场4-多功能厅B2",
+          "session": "胰岛素抵抗的机制与评估",
+          "session_id": "session40547",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40547",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C12",
+          "secondary_theme_ids": [
+            "C07"
+          ],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        },
+        {
+          "code": "S_095",
+          "time": "16:00-16:18",
+          "kind": "专题报告",
+          "title": "内分泌激素−肝脏轴：关联与意义",
+          "people": [
+            {
+              "name": "刘 超",
+              "institution": "南京中医药大学附属中西医结合医院",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=arw44"
+            }
+          ],
+          "date": "2026年11月19日",
+          "room": "会场11-多功能厅D1",
+          "session": "减重治疗的长期维持",
+          "session_id": "session40583",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40583",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C12",
+          "secondary_theme_ids": [
+            "C07"
+          ],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        },
+        {
+          "code": "S_140",
+          "time": "14:50-15:08",
+          "kind": "专题报告",
+          "title": "MASLD与糖尿病共管年度进展",
+          "people": [
+            {
+              "name": "武晓泓",
+              "institution": "浙江省人民医院",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=AZXgg"
+            }
+          ],
+          "date": "2026年11月19日",
+          "room": "会场17-多功能厅E3",
+          "session": "MASLD与糖尿病共管",
+          "session_id": "session40555",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40555",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C12",
+          "secondary_theme_ids": [],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        },
+        {
+          "code": "S_141",
+          "time": "15:10-15:28",
+          "kind": "专题报告",
+          "title": "肝铁死亡-连接胰岛素抵抗-脂肪肝和糖尿病进展的全新靶点",
+          "people": [
+            {
+              "name": "肖新华",
+              "institution": "中国医学科学院北京协和医院",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=J0OZ4"
+            }
+          ],
+          "date": "2026年11月19日",
+          "room": "会场17-多功能厅E3",
+          "session": "MASLD与糖尿病共管",
+          "session_id": "session40555",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40555",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C12",
+          "secondary_theme_ids": [
+            "C07"
+          ],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        }
+      ],
+      "components": {
+        "PI会内角色代理": 26.7,
+        "重点报告覆盖": 17.8,
+        "口头摘要候选量": 20.0,
+        "专题覆盖": 12.8
+      },
+      "score": 77.2,
+      "status": "会前关注度；PI角色代理，待导师校准",
+      "gaps": [
+        "仅有标题和日程，暂无本届报告结果。",
+        "PI以本届报告角色代理；学术影响、基金、客户意向尚未核验。",
+        "口头摘要编号去重不等于确认独立研究，跨题同队列待核。"
+      ],
+      "rank": 7,
+      "scenario_ranks": {
+        "默认": 7,
+        "等权": 6,
+        "PI较低": 6,
+        "PI较高": 8
+      }
+    },
+    {
+      "id": "C11",
+      "name": "眼、足、神经与其他并发症",
+      "pattern": "糖尿病足|足病|溃疡|视网膜|糖网|神经病变|周围神经|神经病理|并发症|微循环",
+      "participation": "可从组织损伤与进展问题选择临床队列，先明确可改变管理的具体用途。",
+      "capability_ids": [
+        "D03",
+        "D04",
+        "T01",
+        "T02",
+        "T03"
+      ],
+      "fit_status": "研究问题与能力方向相关；样本、版本及现行交付待核",
+      "report_count": 49,
+      "kinds": {
+        "专题报告": 27,
+        "论文发言": 22
+      },
+      "unique_or_count": 22,
+      "unique_speakers": 49,
+      "key_weighted_count": 27,
+      "session_count": 24,
+      "top_people": [
+        {
+          "name": "于 宁",
+          "institution": "上海交大医学院附属仁济医院浦南分院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=bJDaP",
+          "role_basis": {
+            "tier": 2,
+            "code": "S_137",
+            "kind": "专题报告",
+            "url": "https://cds26.tiemeeting.com/CN/Program/Details#session40554"
+          }
+        },
+        {
+          "name": "冉兴无",
+          "institution": "四川大学华西医院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=O5Omw",
+          "role_basis": {
+            "tier": 2,
+            "code": "S_115",
+            "kind": "专题报告",
+            "url": "https://cds26.tiemeeting.com/CN/Program/Details#session40557"
+          }
+        },
+        {
+          "name": "刘东方",
+          "institution": "重庆医科大学附属第二医院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=kX1dZ",
+          "role_basis": {
+            "tier": 2,
+            "code": "S_205",
+            "kind": "专题报告",
+            "url": "https://cds26.tiemeeting.com/CN/Program/Details#session40564"
+          }
+        }
+      ],
+      "components_raw": [
+        0.6666666666666666,
+        0.8753611645712928,
+        0.7897389623232768,
+        0.8407357836698793
+      ],
+      "report_codes": [
+        "S_003",
+        "S_004",
+        "S_069",
+        "S_099",
+        "S_106",
+        "S_113",
+        "S_115",
+        "S_118",
+        "S_119",
+        "S_121",
+        "S_131",
+        "S_132",
+        "S_133",
+        "S_134",
+        "S_135",
+        "S_136",
+        "S_137",
+        "S_138",
+        "S_194",
+        "S_198",
+        "S_199",
+        "S_200",
+        "S_201",
+        "S_202",
+        "S_203",
+        "S_205",
+        "OR_058",
+        "OR_126",
+        "OR_129",
+        "OR_132",
+        "OR_134",
+        "OR_136",
+        "OR_139",
+        "OR_145",
+        "OR_111",
+        "OR_116",
+        "OR_120",
+        "OR_149",
+        "OR_152",
+        "OR_156",
+        "OR_163",
+        "OR_174",
+        "OR_175",
+        "OR_199",
+        "OR_314",
+        "OR_318",
+        "S_228",
+        "OR_332",
+        "OR_337"
+      ],
+      "examples": [
+        {
+          "code": "S_003",
+          "time": "14:40-14:58",
+          "kind": "专题报告",
+          "title": "糖尿病慢性并发症的诊治要点",
+          "people": [
+            {
+              "name": "温俊平",
+              "institution": "福州大学附属福建省立医院",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=D0OZk"
+            }
+          ],
+          "date": "2026年11月18日",
+          "room": "会场3-多功能厅B1",
+          "session": "国家基层糖尿病防治管理指南培训1",
+          "session_id": "session40529",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40529",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C11",
+          "secondary_theme_ids": [],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        },
+        {
+          "code": "S_004",
+          "time": "15:00-15:18",
+          "kind": "专题报告",
+          "title": "糖尿病急性并发症的识别与处理",
+          "people": [
+            {
+              "name": "吴佩文",
+              "institution": "福建医科大学附属第一医院",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=GGOA9"
+            }
+          ],
+          "date": "2026年11月18日",
+          "room": "会场3-多功能厅B1",
+          "session": "国家基层糖尿病防治管理指南培训1",
+          "session_id": "session40529",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40529",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C11",
+          "secondary_theme_ids": [],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        },
+        {
+          "code": "S_069",
+          "time": "14:30-14:48",
+          "kind": "专题报告",
+          "title": "妊娠期糖尿病的远期并发症及干预策略",
+          "people": [
+            {
+              "name": "马青云",
+              "institution": "香港中文大学",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=WnDp4"
+            }
+          ],
+          "date": "2026年11月19日",
+          "room": "会场8-多功能厅C2",
+          "session": "妊娠期高血糖的全周期管理",
+          "session_id": "session40585",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40585",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C11",
+          "secondary_theme_ids": [
+            "C08",
+            "C09"
+          ],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        },
+        {
+          "code": "S_099",
+          "time": "14:30-14:48",
+          "kind": "专题报告",
+          "title": "2型糖尿病并发症人群的运动干预与实施要点",
+          "people": [
+            {
+              "name": "孙子林",
+              "institution": "东南大学附属中大医院",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=j7DaM"
+            }
+          ],
+          "date": "2026年11月19日",
+          "room": "会场12-多功能厅D2",
+          "session": "运动治疗与糖尿病管理",
+          "session_id": "session40580",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40580",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C11",
+          "secondary_theme_ids": [
+            "C09"
+          ],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        }
+      ],
+      "components": {
+        "PI会内角色代理": 26.7,
+        "重点报告覆盖": 21.9,
+        "口头摘要候选量": 15.8,
+        "专题覆盖": 12.6
+      },
+      "score": 77.0,
+      "status": "会前关注度；PI角色代理，待导师校准",
+      "gaps": [
+        "仅有标题和日程，暂无本届报告结果。",
+        "PI以本届报告角色代理；学术影响、基金、客户意向尚未核验。",
+        "口头摘要编号去重不等于确认独立研究，跨题同队列待核。"
+      ],
+      "rank": 8,
+      "scenario_ranks": {
+        "默认": 8,
+        "等权": 7,
+        "PI较低": 8,
+        "PI较高": 9
+      }
+    },
+    {
+      "id": "C04",
+      "name": "CGM、AID与数字管理",
+      "pattern": "CGM|AID|动态血糖|连续葡萄糖|持续葡萄糖|人工胰腺|闭环|自动胰岛素|数字|智能|智慧|人工智能|AI辅助|数智|大模型|远程|穿戴|\\bAI\\b|血糖检测|血糖监测|传感|初筛|光声|无创血糖|DSMES",
+      "participation": "可把动态表型用于采样时点设计和应答分层，再讨论组学联合研究。",
+      "capability_ids": [
+        "D05",
+        "T01",
+        "T03"
+      ],
+      "fit_status": "属于研究设计连接；公司是否提供CGM设备不在本试评认定范围",
+      "report_count": 36,
+      "kinds": {
+        "专题报告": 25,
+        "大会报告": 1,
+        "论文发言": 10
+      },
+      "unique_or_count": 10,
+      "unique_speakers": 34,
+      "key_weighted_count": 28,
+      "session_count": 18,
+      "top_people": [
+        {
+          "name": "宁 光",
+          "institution": "上海交通大学医学院附属瑞金医院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=MZJwR",
+          "role_basis": {
+            "tier": 3,
+            "code": "PL_02",
+            "kind": "大会报告",
+            "url": "https://cds26.tiemeeting.com/CN/Program/Details#session40534"
+          }
+        },
+        {
+          "name": "于 霞",
+          "institution": "东北大学",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=kX1xg",
+          "role_basis": {
+            "tier": 2,
+            "code": "S_056",
+            "kind": "专题报告",
+            "url": "https://cds26.tiemeeting.com/CN/Program/Details#session40574"
+          }
+        },
+        {
+          "name": "周 健",
+          "institution": "上海交大医学院附属第六人民医院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=XxD2q",
+          "role_basis": {
+            "tier": 2,
+            "code": "S_053",
+            "kind": "专题报告",
+            "url": "https://cds26.tiemeeting.com/CN/Program/Details#session40574"
+          }
+        }
+      ],
+      "components_raw": [
+        0.7777777777777778,
+        0.884579559925641,
+        0.6039594379983595,
+        0.7690558279672058
+      ],
+      "report_codes": [
+        "S_002",
+        "PL_02",
+        "S_020",
+        "S_046",
+        "S_047",
+        "S_048",
+        "S_049",
+        "S_050",
+        "S_051",
+        "S_052",
+        "S_053",
+        "S_054",
+        "S_055",
+        "S_056",
+        "S_065",
+        "S_066",
+        "S_067",
+        "S_068",
+        "S_075",
+        "S_120",
+        "S_161",
+        "S_163",
+        "S_164",
+        "S_190",
+        "S_217",
+        "S_218",
+        "OR_061",
+        "OR_062",
+        "OR_063",
+        "OR_071",
+        "OR_072",
+        "OR_050",
+        "OR_113",
+        "OR_114",
+        "OR_115",
+        "OR_119"
+      ],
+      "examples": [
+        {
+          "code": "PL_02",
+          "time": "09:00-09:28",
+          "kind": "大会报告",
+          "title": "智慧医学下的糖尿病管理",
+          "people": [
+            {
+              "name": "宁 光",
+              "institution": "上海交通大学医学院附属瑞金医院",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=MZJwR"
+            }
+          ],
+          "date": "2026年11月19日",
+          "room": "主会场-海峡大剧院",
+          "session": "全体大会 1",
+          "session_id": "session40534",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40534",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C04",
+          "secondary_theme_ids": [
+            "C09"
+          ],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        },
+        {
+          "code": "S_002",
+          "time": "14:20-14:38",
+          "kind": "专题报告",
+          "title": "糖尿病筛查、诊断、分型、及血糖监测",
+          "people": [
+            {
+              "name": "徐向进",
+              "institution": "中国人民解放军联勤保障部队第九〇〇医院",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=mLZej"
+            }
+          ],
+          "date": "2026年11月18日",
+          "room": "会场3-多功能厅B1",
+          "session": "国家基层糖尿病防治管理指南培训1",
+          "session_id": "session40529",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40529",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C04",
+          "secondary_theme_ids": [
+            "C05"
+          ],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        },
+        {
+          "code": "S_020",
+          "time": "17:00-17:18",
+          "kind": "专题报告",
+          "title": "AI在医疗服务中的机遇与风险",
+          "people": [
+            {
+              "name": "张化冰",
+              "institution": "中国医学科学院北京协和医院",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=AZXkV"
+            }
+          ],
+          "date": "2026年11月19日",
+          "room": "会场1-多功能厅A1",
+          "session": "热点问题辩论与讨论",
+          "session_id": "session40537",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40537",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C04",
+          "secondary_theme_ids": [],
+          "classification_basis": "AI编辑校正：AI医疗服务，按数字技术归类"
+        },
+        {
+          "code": "S_046",
+          "time": "14:30-14:48",
+          "kind": "专题报告",
+          "title": "CGM应用于院内血糖管理",
+          "people": [
+            {
+              "name": "陆静毅",
+              "institution": "上海交通大学医学院附属第六人民医院",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=bJD34"
+            }
+          ],
+          "date": "2026年11月19日",
+          "room": "会场5-多功能厅B3",
+          "session": "持续葡萄糖监测的应用拓展",
+          "session_id": "session40571",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40571",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C04",
+          "secondary_theme_ids": [
+            "C09"
+          ],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        }
+      ],
+      "components": {
+        "PI会内角色代理": 31.1,
+        "重点报告覆盖": 22.1,
+        "口头摘要候选量": 12.1,
+        "专题覆盖": 11.5
+      },
+      "score": 76.8,
+      "status": "会前关注度；PI角色代理，待导师校准",
+      "gaps": [
+        "仅有标题和日程，暂无本届报告结果。",
+        "PI以本届报告角色代理；学术影响、基金、客户意向尚未核验。",
+        "口头摘要编号去重不等于确认独立研究，跨题同队列待核。"
+      ],
+      "rank": 9,
+      "scenario_ranks": {
+        "默认": 9,
+        "等权": 9,
+        "PI较低": 9,
+        "PI较高": 7
+      }
+    },
+    {
+      "id": "C05",
+      "name": "早期识别、分型与风险预测",
+      "pattern": "标志物|生物标记|biomarker|早期识别|早诊|早筛|筛查|筛选|诊断|分型|亚型|亚群|风险预测|风险评估|风险分层|预测|遗传|MODY|单基因|基因诊断|基因检测|抗体检测|异质性|基因|抗体|IA-2A|ZnT8|临床表型|危险因素",
+      "participation": "优先形成可验证的临床用途：早识别、分型与进展预测；再核对基因、cfRNA或甲基化候选路径。",
+      "capability_ids": [
+        "D05",
+        "T01",
+        "T02",
+        "T03"
+      ],
+      "fit_status": "用途优先线索；成熟度与具体公司流程仍需独立核对",
+      "report_count": 37,
+      "kinds": {
+        "专题报告": 10,
+        "论文发言": 27
+      },
+      "unique_or_count": 27,
+      "unique_speakers": 37,
+      "key_weighted_count": 10,
+      "session_count": 23,
+      "top_people": [
+        {
+          "name": "丁国莲",
+          "institution": "复旦大学附属妇产科医院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=YGDp7",
+          "role_basis": {
+            "tier": 2,
+            "code": "S_076",
+            "kind": "专题报告",
+            "url": "https://cds26.tiemeeting.com/CN/Program/Details#session40586"
+          }
+        },
+        {
+          "name": "侯新国",
+          "institution": "山东大学齐鲁医院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=1RvwM",
+          "role_basis": {
+            "tier": 2,
+            "code": "S_166",
+            "kind": "专题报告",
+            "url": "https://cds26.tiemeeting.com/CN/Program/Details#session40569"
+          }
+        },
+        {
+          "name": "厉 平",
+          "institution": "中国医科大学附属盛京医院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=Pa7lv",
+          "role_basis": {
+            "tier": 2,
+            "code": "S_072",
+            "kind": "专题报告",
+            "url": "https://cds26.tiemeeting.com/CN/Program/Details#session40585"
+          }
+        }
+      ],
+      "components_raw": [
+        0.6666666666666666,
+        0.6299206402569856,
+        0.8392845117511681,
+        0.8300735172696652
+      ],
+      "report_codes": [
+        "S_042",
+        "S_072",
+        "S_074",
+        "S_076",
+        "S_089",
+        "S_147",
+        "S_157",
+        "S_178",
+        "S_180",
+        "S_182",
+        "OR_087",
+        "OR_092",
+        "OR_023",
+        "OR_029",
+        "OR_031",
+        "OR_019",
+        "OR_081",
+        "OR_082",
+        "OR_083",
+        "OR_086",
+        "OR_057",
+        "OR_103",
+        "OR_104",
+        "OR_106",
+        "OR_148",
+        "OR_218",
+        "OR_246",
+        "OR_277",
+        "OR_278",
+        "OR_281",
+        "OR_287",
+        "OR_304",
+        "OR_305",
+        "OR_313",
+        "OR_321",
+        "OR_323",
+        "OR_325"
+      ],
+      "examples": [
+        {
+          "code": "S_042",
+          "time": "16:20-16:38",
+          "kind": "专题报告",
+          "title": "从病例解析胰岛素抵抗综合征的诊断与个体化管理",
+          "people": [
+            {
+              "name": "袁 涛",
+              "institution": "中国医学科学院北京协和医院",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=kX12Z"
+            }
+          ],
+          "date": "2026年11月19日",
+          "room": "会场4-多功能厅B2",
+          "session": "改善胰岛素抵抗的干预策略",
+          "session_id": "session40548",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40548",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C05",
+          "secondary_theme_ids": [
+            "C07",
+            "C09"
+          ],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        },
+        {
+          "code": "S_072",
+          "time": "15:30-15:48",
+          "kind": "专题报告",
+          "title": "妊娠期糖尿病中的特殊面孔——数据解锁隐匿亚型",
+          "people": [
+            {
+              "name": "厉 平",
+              "institution": "中国医科大学附属盛京医院",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=Pa7lv"
+            }
+          ],
+          "date": "2026年11月19日",
+          "room": "会场8-多功能厅C2",
+          "session": "妊娠期高血糖的全周期管理",
+          "session_id": "session40585",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40585",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C05",
+          "secondary_theme_ids": [
+            "C08"
+          ],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        },
+        {
+          "code": "S_074",
+          "time": "16:20-16:38",
+          "kind": "专题报告",
+          "title": "孕早期妊娠糖尿病预测研究进展",
+          "people": [
+            {
+              "name": "沈 洁",
+              "institution": "南方医科大学第八附属医院",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=Z8D2q"
+            }
+          ],
+          "date": "2026年11月19日",
+          "room": "会场8-多功能厅C2",
+          "session": "妊娠期内分泌疾病管理的新技术应用",
+          "session_id": "session40586",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40586",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C05",
+          "secondary_theme_ids": [
+            "C08"
+          ],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        },
+        {
+          "code": "S_076",
+          "time": "17:00-17:18",
+          "kind": "专题报告",
+          "title": "GDM子代胰岛发育及功能异常的表观遗传调控机制",
+          "people": [
+            {
+              "name": "丁国莲",
+              "institution": "复旦大学附属妇产科医院",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=YGDp7"
+            }
+          ],
+          "date": "2026年11月19日",
+          "room": "会场8-多功能厅C2",
+          "session": "妊娠期内分泌疾病管理的新技术应用",
+          "session_id": "session40586",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40586",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C05",
+          "secondary_theme_ids": [
+            "C07",
+            "C08"
+          ],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        }
+      ],
+      "components": {
+        "PI会内角色代理": 26.7,
+        "重点报告覆盖": 15.7,
+        "口头摘要候选量": 16.8,
+        "专题覆盖": 12.5
+      },
+      "score": 71.7,
+      "status": "会前关注度；PI角色代理，待导师校准",
+      "gaps": [
+        "仅有标题和日程，暂无本届报告结果。",
+        "PI以本届报告角色代理；学术影响、基金、客户意向尚未核验。",
+        "口头摘要编号去重不等于确认独立研究，跨题同队列待核。"
+      ],
+      "rank": 10,
+      "scenario_ranks": {
+        "默认": 10,
+        "等权": 10,
+        "PI较低": 10,
+        "PI较高": 11
+      }
+    },
+    {
+      "id": "C02",
+      "name": "T1D免疫、细胞替代与β细胞保护",
+      "pattern": "1型|１型|T1D|自身免疫|免疫治疗|免疫干预|移植|干细胞|细胞治疗|CAR-|胰岛再生|β细胞保护",
+      "participation": "可讨论免疫分层、β细胞功能变化与细胞治疗监测的研究设计；按需要核对单细胞及免疫组库路径。",
+      "capability_ids": [
+        "D02",
+        "D05",
+        "T03",
+        "T05",
+        "T06"
+      ],
+      "fit_status": "候选合作场景，不能推定已有糖尿病免疫检测产品",
+      "report_count": 32,
+      "kinds": {
+        "专题报告": 22,
+        "论文发言": 10
+      },
+      "unique_or_count": 10,
+      "unique_speakers": 28,
+      "key_weighted_count": 22,
+      "session_count": 22,
+      "top_people": [
+        {
+          "name": "侯新国",
+          "institution": "山东大学齐鲁医院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=1RvwM",
+          "role_basis": {
+            "tier": 2,
+            "code": "S_166",
+            "kind": "专题报告",
+            "url": "https://cds26.tiemeeting.com/CN/Program/Details#session40569"
+          }
+        },
+        {
+          "name": "傅君芬",
+          "institution": "浙江大学医学院附属儿童医院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=0OvJm",
+          "role_basis": {
+            "tier": 2,
+            "code": "S_034",
+            "kind": "专题报告",
+            "url": "https://cds26.tiemeeting.com/CN/Program/Details#session40543"
+          }
+        },
+        {
+          "name": "关海霞",
+          "institution": "广东省人民医院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=XxDpq",
+          "role_basis": {
+            "tier": 2,
+            "code": "S_033",
+            "kind": "专题报告",
+            "url": "https://cds26.tiemeeting.com/CN/Program/Details#session40543"
+          }
+        }
+      ],
+      "components_raw": [
+        0.6666666666666666,
+        0.8236858992241085,
+        0.6039594379983595,
+        0.8189574032199598
+      ],
+      "report_codes": [
+        "S_024",
+        "S_029",
+        "S_030",
+        "S_031",
+        "S_032",
+        "S_033",
+        "S_034",
+        "S_035",
+        "S_036",
+        "S_045",
+        "S_062",
+        "S_098",
+        "S_166",
+        "S_170",
+        "S_172",
+        "S_173",
+        "S_179",
+        "S_195",
+        "S_197",
+        "S_210",
+        "S_219",
+        "OR_095",
+        "OR_016",
+        "OR_074",
+        "OR_064",
+        "OR_110",
+        "OR_262",
+        "OR_275",
+        "OR_279",
+        "OR_296",
+        "S_239",
+        "OR_329"
+      ],
+      "examples": [
+        {
+          "code": "S_024",
+          "time": "15:30-15:48",
+          "kind": "专题报告",
+          "title": "1型糖尿病的人群地图与环境印记",
+          "people": [
+            {
+              "name": "郑雪瑛",
+              "institution": "中国科学技术大学附属第一医院（安徽省立医院）",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=R1OqG"
+            }
+          ],
+          "date": "2026年11月19日",
+          "room": "会场2-多功能厅A2",
+          "session": "中国糖尿病流行新趋势",
+          "session_id": "session40538",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40538",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C02",
+          "secondary_theme_ids": [],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        },
+        {
+          "code": "S_029",
+          "time": "14:30-14:48",
+          "kind": "专题报告",
+          "title": "中国1型糖尿病的异质性与抗体检测",
+          "people": [
+            {
+              "name": "周智广",
+              "institution": "中南大学湘雅二医院",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=g7bev"
+            }
+          ],
+          "date": "2026年11月19日",
+          "room": "会场3-多功能厅B1",
+          "session": "1型糖尿病的早期识别与干预",
+          "session_id": "session40542",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40542",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C02",
+          "secondary_theme_ids": [
+            "C05"
+          ],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        },
+        {
+          "code": "S_030",
+          "time": "14:50-15:08",
+          "kind": "专题报告",
+          "title": "1型糖尿病异质性：从临床表型到分子边界",
+          "people": [
+            {
+              "name": "郑雪瑛",
+              "institution": "中国科学技术大学附属第一医院（安徽省立医院）",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=R1OqG"
+            }
+          ],
+          "date": "2026年11月19日",
+          "room": "会场3-多功能厅B1",
+          "session": "1型糖尿病的早期识别与干预",
+          "session_id": "session40542",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40542",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C02",
+          "secondary_theme_ids": [
+            "C05",
+            "C07"
+          ],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        },
+        {
+          "code": "S_031",
+          "time": "15:10-15:28",
+          "kind": "专题报告",
+          "title": "成年期1型糖尿病的病因和预后影响因素识别",
+          "people": [
+            {
+              "name": "魏玉虾",
+              "institution": "华中科技大学",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=vzdOg"
+            }
+          ],
+          "date": "2026年11月19日",
+          "room": "会场3-多功能厅B1",
+          "session": "1型糖尿病的早期识别与干预",
+          "session_id": "session40542",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40542",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C02",
+          "secondary_theme_ids": [],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        }
+      ],
+      "components": {
+        "PI会内角色代理": 26.7,
+        "重点报告覆盖": 20.6,
+        "口头摘要候选量": 12.1,
+        "专题覆盖": 12.3
+      },
+      "score": 71.6,
+      "status": "会前关注度；PI角色代理，待导师校准",
+      "gaps": [
+        "仅有标题和日程，暂无本届报告结果。",
+        "PI以本届报告角色代理；学术影响、基金、客户意向尚未核验。",
+        "口头摘要编号去重不等于确认独立研究，跨题同队列待核。"
+      ],
+      "rank": 11,
+      "scenario_ranks": {
+        "默认": 11,
+        "等权": 11,
+        "PI较低": 11,
+        "PI较高": 10
+      }
+    },
+    {
+      "id": "C08",
+      "name": "妊娠、儿童与老年等人群",
+      "pattern": "妊娠|孕|GDM|儿童|青少年|老年|高龄|生殖|女性|围术|住院|危重|ICU|围绝经|特殊人群",
+      "participation": "按人群设置采样窗口、终点和验证队列，再核对妊娠、衰老或复杂住院场景的检测路径。",
+      "capability_ids": [
+        "D05",
+        "D07",
+        "T01",
+        "T03"
+      ],
+      "fit_status": "需人群和用途专门验证",
+      "report_count": 9,
+      "kinds": {
+        "专题报告": 3,
+        "论文发言": 6
+      },
+      "unique_or_count": 6,
+      "unique_speakers": 9,
+      "key_weighted_count": 3,
+      "session_count": 8,
+      "top_people": [
+        {
+          "name": "石文惠",
+          "institution": "中国疾病预防中心",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=D0y1v",
+          "role_basis": {
+            "tier": 2,
+            "code": "S_100",
+            "kind": "专题报告",
+            "url": "https://cds26.tiemeeting.com/CN/Program/Details#session40580"
+          }
+        },
+        {
+          "name": "郭 佳",
+          "institution": "中南大学护理学院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=lmnaq",
+          "role_basis": {
+            "tier": 2,
+            "code": "S_220",
+            "kind": "专题报告",
+            "url": "https://cds26.tiemeeting.com/CN/Program/Details#session40579"
+          }
+        },
+        {
+          "name": "黄 锟",
+          "institution": "安徽医科大学公共卫生学院",
+          "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=nzYGo",
+          "role_basis": {
+            "tier": 2,
+            "code": "S_070",
+            "kind": "专题报告",
+            "url": "https://cds26.tiemeeting.com/CN/Program/Details#session40585"
+          }
+        }
+      ],
+      "components_raw": [
+        0.6666666666666666,
+        0.3641758009398765,
+        0.4901176516550783,
+        0.573891453859089
+      ],
+      "report_codes": [
+        "S_070",
+        "S_100",
+        "S_220",
+        "OR_053",
+        "OR_059",
+        "OR_052",
+        "OR_117",
+        "OR_229",
+        "OR_328"
+      ],
+      "examples": [
+        {
+          "code": "S_070",
+          "time": "14:50-15:08",
+          "kind": "专题报告",
+          "title": "妊娠期高血糖对母婴产后代谢健康的影响——马鞍山队列研究",
+          "people": [
+            {
+              "name": "黄 锟",
+              "institution": "安徽医科大学公共卫生学院",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=nzYGo"
+            }
+          ],
+          "date": "2026年11月19日",
+          "room": "会场8-多功能厅C2",
+          "session": "妊娠期高血糖的全周期管理",
+          "session_id": "session40585",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40585",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C08",
+          "secondary_theme_ids": [
+            "C09"
+          ],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        },
+        {
+          "code": "S_100",
+          "time": "14:50-15:08",
+          "kind": "专题报告",
+          "title": "运动干预对老年糖尿病复元力的作用",
+          "people": [
+            {
+              "name": "石文惠",
+              "institution": "中国疾病预防中心",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=D0y1v"
+            }
+          ],
+          "date": "2026年11月19日",
+          "room": "会场12-多功能厅D2",
+          "session": "运动治疗与糖尿病管理",
+          "session_id": "session40580",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40580",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C08",
+          "secondary_theme_ids": [
+            "C09"
+          ],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        },
+        {
+          "code": "S_220",
+          "time": "11:20-11:38",
+          "kind": "专题报告",
+          "title": "妊娠期糖尿病“诊-治-护”一体化临床辅助决策系统的研发",
+          "people": [
+            {
+              "name": "郭 佳",
+              "institution": "中南大学护理学院",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=lmnaq"
+            }
+          ],
+          "date": "2026年11月20日",
+          "room": "会场7-多功能厅C1",
+          "session": "特殊人群的教育管理实践",
+          "session_id": "session40579",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40579",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C08",
+          "secondary_theme_ids": [],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        },
+        {
+          "code": "OR_052",
+          "time": "12:10-12:18",
+          "kind": "论文发言",
+          "title": "妊娠期糖尿病孕妇每周运动≥150分钟与新生儿低血糖风险相关研究",
+          "people": [
+            {
+              "name": "王玉寒",
+              "institution": "首都医科大学附属北京友谊医院",
+              "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=Z8DDv"
+            }
+          ],
+          "date": "2026年11月20日",
+          "room": "会场10-多功能厅C4",
+          "session": "论文交流：糖尿病与运动",
+          "session_id": "session40607",
+          "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40607",
+          "evidence": "planned agenda; no results",
+          "theme_id": "C08",
+          "secondary_theme_ids": [
+            "C09"
+          ],
+          "classification_basis": "标题关键词；按主题配置顺序给出主归属，重叠主题另列"
+        }
+      ],
+      "components": {
+        "PI会内角色代理": 26.7,
+        "重点报告覆盖": 9.1,
+        "口头摘要候选量": 9.8,
+        "专题覆盖": 8.6
+      },
+      "score": 54.2,
+      "status": "会前关注度；PI角色代理，待导师校准",
+      "gaps": [
+        "仅有标题和日程，暂无本届报告结果。",
+        "PI以本届报告角色代理；学术影响、基金、客户意向尚未核验。",
+        "口头摘要编号去重不等于确认独立研究，跨题同队列待核。"
+      ],
+      "rank": 12,
+      "scenario_ranks": {
+        "默认": 12,
+        "等权": 12,
+        "PI较低": 12,
+        "PI较高": 12
+      }
+    }
+  ],
+  "expert_review": "pending"
+}

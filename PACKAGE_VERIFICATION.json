@@ -1,0 +1,15 @@
+{
+  "version": "antigravity-handoff:20261119",
+  "result": "passed",
+  "validation_host": "macOS isolated copy; target Antigravity/Windows environment remains P00",
+  "offline_checks": 26,
+  "browser_flows": 7,
+  "source_materials": 453,
+  "runtime_local_links": 5712,
+  "independent_build": true,
+  "research_database_unchanged": true,
+  "new_collection": false,
+  "live_model_connected": false,
+  "user_browser_data_included": false,
+  "published": false
+}

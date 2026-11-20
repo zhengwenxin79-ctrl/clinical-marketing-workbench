@@ -1,0 +1,26 @@
+{
+  "result": "passed",
+  "checked_on": "2026-11-17",
+  "counts": {
+    "international": 6,
+    "national": 96,
+    "regional": 43,
+    "undetermined": 388
+  },
+  "assessed_speaker_identities": 533,
+  "evidence_rows": 150,
+  "database_sha256": "4f16bd5b161785ec9be493bc0c0503b8b5a60064f9a8342078381e11378d1bef",
+  "new_collection": false,
+  "published": false,
+  "scoring_enabled": false,
+  "checks": [
+    "版本≥2完整性/外键通过；原始20表旧记录完整保留，新分析版本允许追加",
+    "533条讲者分层唯一且完备；145条有原文/领域/缺口，388条待定均有不足原因",
+    "150条证据逐字符回读一致；人物、简介、来源及相邻原文关系正确",
+    "分层规则及选择记录指纹与数据库一致",
+    "讲者×报告无证据引起的重复增行；579条议题报告计数不变",
+    "436份来源快照及原位置文件不变；CDS层级有用户确认依据，原地点未改",
+    "旧研究台及原项目主页等受保护文件不变"
+  ],
+  "original_20_tables_old_records_preserved": true
+}

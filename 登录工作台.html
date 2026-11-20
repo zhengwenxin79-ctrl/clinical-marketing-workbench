@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>系统登录 - 临床科研智能营销工作台</title>
+  <style>
+    :root {
+      --primary: #1e40af;
+      --primary-light: #3b82f6;
+      --primary-dark: #1e3a8a;
+      --secondary: #0d9488;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+    }
+    .login-container {
+      width: 100%;
+      max-width: 960px;
+      background: var(--card-bg);
+      border-radius: 16px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: 768px) {
+      .login-container { grid-template-columns: 1fr; }
+    }
+    .brand-side {
+      background: linear-gradient(145deg, #1e3a8a, #0f172a);
+      color: #ffffff;
+      padding: 48px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    .brand-badge {
+      display: inline-block;
+      background: rgba(13, 148, 136, 0.3);
+      color: #5eead4;
+      border: 1px solid rgba(94, 234, 212, 0.3);
+      font-size: 12px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-top: 14px;
+      font-weight: 500;
+    }
+    .brand-desc {
+      margin-top: 32px;
+      font-size: 15px;
+      line-height: 1.7;
+      color: #cbd5e1;
+    }
+    .role-features {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13.5px;
+      color: #e2e8f0;
+      line-height: 1.5;
+    }
+    .feature-item svg {
+      flex-shrink: 0;
+      margin-top: 3px;
+      color: #38bdf8;
+    }
+    .brand-footer {
+      margin-top: 36px;
+      font-size: 12px;
+      color: #94a3b8;
+    }
+    .form-side {
+      padding: 44px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .role-tabs {
+      display: flex;
+      background: #f1f5f9;
+      border-radius: 10px;
+      padding: 4px;
+      margin-bottom: 28px;
+    }
+    .role-tab {
+      flex: 1;
+      padding: 10px 16px;
+      text-align: center;
+      border-radius: 8px;
+      font-size: 14.5px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      transition: all 0.2s;
+    }
+    .role-tab.active {
+      background: #ffffff;
+      color: var(--primary);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    }
+    .form-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .form-subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 22px;
+    }
+    .input-group {
+      margin-bottom: 16px;
+    }
+    .input-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #334155;
+      margin-bottom: 6px;
+    }
+    .input-field, .select-field {
+      width: 100%;
+      padding: 11px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      font-size: 14px;
+      color: var(--text);
+      background: #ffffff;
+      transition: all 0.2s;
+      outline: none;
+    }
+    .input-field:focus, .select-field:focus {
+      border-color: var(--primary-light);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    }
+    .quick-banner {
+      background: #eff6ff;
+      border-left: 3px solid #3b82f6;
+      padding: 10px 14px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 20px;
+      font-size: 12.5px;
+      color: #1e40af;
+      line-height: 1.6;
+    }
+    .btn-login {
+      width: 100%;
+      padding: 13px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow: 0 4px 12px rgba(30, 64, 175, 0.25);
+    }
+    .btn-login:hover {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(30, 64, 175, 0.35);
+    }
+    .direct-links {
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px dashed var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12.5px;
+    }
+    .direct-links a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .direct-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <!-- Brand side -->
+    <div class="brand-side">
+      <div>
+        <div class="brand-logo">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+          临床科研智能营销
+        </div>
+        <div class="brand-badge">P03 阶段就绪 · 权限隔离生效</div>
+        <p class="brand-desc">
+          打通“学术会议/文献证据 → PI合作推荐画像 → 市场分配 → 销售个人跟进与双向反馈”的闭环业务系统。
+        </p>
+
+        <div class="role-features">
+          <div class="feature-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><strong>市场部人员</strong>：拥有全局最高权限，可查看所有界面（学术事实、全量PI池、全员分配线索、全团队反馈复盘）。</div>
+          </div>
+          <div class="feature-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><strong>销售代表</strong>：不同销售登录各自专属账号，严格隔离线索，仅可见分配给自己的推荐并提交真实跟进。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="brand-footer">
+        底座版本：2026-11-20 · 66表25视图学术事实库安全隔离
+      </div>
+    </div>
+
+    <!-- Form side -->
+    <div class="form-side">
+      <!-- Role Tabs -->
+      <div class="role-tabs">
+        <button class="role-tab active" id="tab-market" onclick="switchRole('market')">市场部人员</button>
+        <button class="role-tab" id="tab-sales" onclick="switchRole('sales')">一线销售代表</button>
+      </div>
+
+      <!-- Market Form -->
+      <div id="panel-market">
+        <h2 class="form-title">市场部登录</h2>
+        <p class="form-subtitle">查看所有界面，整理PI合作推荐，向销售团队分配线索</p>
+        
+        <div class="quick-banner">
+          <b>当前身份特性</b>：拥有全局最高权限，进入后可查看学术会议、论文、专家库全部6大模块及市场/销售全量数据。
+        </div>
+
+        <div class="input-group">
+          <label class="input-label">账号名称</label>
+          <input type="text" class="input-field" id="market-user" value="market_admin" readonly>
+        </div>
+        <div class="input-group">
+          <label class="input-label">登录密码</label>
+          <input type="password" class="input-field" id="market-pwd" value="••••••••" readonly>
+        </div>
+
+        <div style="display: flex; gap: 8px; margin-top: 10px;">
+          <button class="btn-login" style="flex: 1;" onclick="loginMarket()">进入六大领域全景工作台</button>
+          <a href="workbench/领域工作台/会议审核入库.html" class="btn-login" style="flex: 1; text-align: center; text-decoration: none; background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);">🏛️ 会议审核入库</a>
+        </div>
+      </div>
+
+      <!-- Sales Form -->
+      <div id="panel-sales" style="display: none;">
+        <h2 class="form-title">销售代表登录</h2>
+        <p class="form-subtitle">登录各自专属账号，查看分配给自己的推荐并记录客户跟进</p>
+
+        <div class="quick-banner">
+          <b>权限隔离说明</b>：不同销售登录自己的账号，严格只能看到分配给自己的推荐，不能查看市场部草稿或其他销售的客户记录。
+        </div>
+
+        <div class="input-group">
+          <label class="input-label">选择销售代表账号</label>
+          <select class="select-field" id="sales-rep-select" onchange="updateSalesInfo()">
+            <option value="demo-sales-a" data-name="张强" data-area="华北区">销售代表 - 张强 (华北区)</option>
+            <option value="demo-sales-b" data-name="陈丽" data-area="华南区">销售代表 - 陈丽 (华南区)</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label class="input-label">登录密码</label>
+          <input type="password" class="input-field" value="••••••••" readonly>
+        </div>
+
+        <button class="btn-login" onclick="loginSales()">以该销售代表身份进入（个人线索隔离）</button>
+      </div>
+
+      <!-- Direct links -->
+      <div class="direct-links" style="flex-direction: column; align-items: flex-start; gap: 8px;">
+        <span style="font-weight: 600; color: #475569;">🔬 六大临床前沿领域直达看板：</span>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px; width: 100%;">
+          <a href="workbench/领域工作台/index.html#topics?field=diabetes" style="background: #f1f5f9; padding: 3px 8px; border-radius: 4px;">糖尿病</a>
+          <a href="workbench/领域工作台/index.html#topics?field=cardiovascular" style="background: #eff6ff; color: #1d4ed8; padding: 3px 8px; border-radius: 4px; font-weight: 600;">心血管</a>
+          <a href="workbench/领域工作台/index.html#topics?field=rheumatology" style="background: #f0fdf4; color: #15803d; padding: 3px 8px; border-radius: 4px; font-weight: 600;">风湿免疫</a>
+          <a href="workbench/领域工作台/index.html#topics?field=neurology" style="background: #faf5ff; color: #7e22ce; padding: 3px 8px; border-radius: 4px; font-weight: 600;">神经精神</a>
+          <a href="workbench/领域工作台/index.html#topics?field=respiratory" style="background: #fef2f2; color: #b91c1c; padding: 3px 8px; border-radius: 4px; font-weight: 600;">呼吸慢病</a>
+          <a href="workbench/领域工作台/index.html#topics?field=vascular" style="background: #fffbeb; color: #b45309; padding: 3px 8px; border-radius: 4px; font-weight: 600;">泛血管及器官损伤</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let currentRole = 'market';
+
+    function switchRole(role) {
+      currentRole = role;
+      document.getElementById('tab-market').classList.toggle('active', role === 'market');
+      document.getElementById('tab-sales').classList.toggle('active', role === 'sales');
+      document.getElementById('panel-market').style.display = role === 'market' ? 'block' : 'none';
+      document.getElementById('panel-sales').style.display = role === 'sales' ? 'block' : 'none';
+    }
+
+    function updateSalesInfo() {
+      // reserved for dynamic info
+    }
+
+    function loginMarket() {
+      // 市场部登录：进入市场工作台，拥有全局查看权限
+      localStorage.setItem('clinical-auth:current-user', JSON.stringify({
+        id: 'market_admin',
+        name: '市场部专员',
+        role: 'market'
+      }));
+      window.location.href = 'workbench/领域工作台/index.html#market';
+    }
+
+    function loginSales() {
+      const select = document.getElementById('sales-rep-select');
+      const salesId = select.value;
+      const opt = select.options[select.selectedIndex];
+      const salesName = opt.getAttribute('data-name');
+      
+      // 销售代表登录：进入销售工作台，且锁定为当前销售账号
+      localStorage.setItem('clinical-auth:current-user', JSON.stringify({
+        id: salesId,
+        name: salesName,
+        role: 'sales'
+      }));
+      window.location.href = `workbench/领域工作台/index.html#sales?sales=${salesId}`;
+    }
+  </script>
+</body>
+</html>

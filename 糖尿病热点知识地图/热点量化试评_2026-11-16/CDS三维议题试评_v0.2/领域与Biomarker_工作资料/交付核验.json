@@ -1,0 +1,40 @@
+{
+  "result": "passed",
+  "revision": "研究线索计数单位改为项，名称与去重说明统一",
+  "new_collection": false,
+  "published": false,
+  "scoring_enabled": false,
+  "counts": {
+    "biomarker_entries": 28,
+    "reviewed_cds_titles": 606,
+    "related_titles": 80,
+    "bound_titles": 7,
+    "unbound_related_titles": 73,
+    "translation_priority": 6,
+    "validation_followup": 11,
+    "observation": 9,
+    "reference": 2
+  },
+  "protected_files_unchanged": true,
+  "cds_original_data_equal": true,
+  "field_original_data_equal": true,
+  "checks": [
+    "三视角数据核验.json",
+    "三视角页面核验.json"
+  ],
+  "files": {
+    "index.html": "b4ed9e8c20731f552d0e42ac78296000d5ee1fb41ea572aeaa2bc2469ee021da",
+    "Biomarker三视角.py": "014ce96fc0d37059bfd63ad2c1cfbeb687c9cf5de23c66187fb46b97b01bf391",
+    "构建领域与Biomarker数据.py": "b64d26e606a628f9fba9b1e5dc00622dae8cea1d65ab7c661b07002cd34547b6",
+    "生成会前重点议题榜.py": "a88061a3015f88964841efdd39b01d508bb335c6cea29d1d762223683f7d9281",
+    "会前重点议题模板.html": "5e2c811fb26e35b42470975b42101c467e7bf80d05e57bcf226bdb73289691ed",
+    "Biomarker三视角说明.md": "ae47d64a5568d62f42f6cfbed231ff6da1874fdc3282090b57dc33782acd0cbe",
+    "领域与Biomarker框架说明.md": "6d8f3dfc636e5b9c4b8c6601a6cc3368e3aa50652b5c07cfabdae04e0bb0b005",
+    "领域与Biomarker_工作资料/扩展界面.js": "4bc99bd3bf9e3d828295bd2c07e8851e43f7801f0122a64d5ed1f5e62054cd90",
+    "领域与Biomarker_工作资料/CDS标志物题名复核.json": "7484c97263756d25c7c3c59bca00170cac7baebe8939134e29d6dede4eb258e2",
+    "领域与Biomarker_工作资料/Biomarker三视角复核.json": "804f2e28e302f755bc5a2f5817f3b586975e31a264a83024d2e08a5502b0d23b"
+  },
+  "chart_checks": "柱状图页面核验.json",
+  "data_unchanged": true,
+  "count_wording_check": "离线验证名称、三种图表单位和详情计数通过；底层数据完全一致"
+}

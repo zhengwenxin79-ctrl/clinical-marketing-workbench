@@ -1,0 +1,145 @@
+{
+  "result": "passed",
+  "checks": [
+    {
+      "name": "Python 3.11+",
+      "passed": true,
+      "detail": "3.12.10"
+    },
+    {
+      "name": "baseline 数据库/marketing.db",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "baseline 会议总入口/index.html",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "baseline 会议视图/index.html",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "baseline 会议视图/ada.html",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "baseline 论文视图/index.html",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "baseline 标志物视图/index.html",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "baseline 框架配置/PI已有评级.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "SQLite integrity",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "foreign keys",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "66 tables / 25 views",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "all registered source materials",
+      "passed": true,
+      "detail": {
+        "count": 453,
+        "bad": []
+      }
+    },
+    {
+      "name": "independent studies not invented",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "research data conservation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "six entries",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "six domains one connected",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "unique primary report/paper counts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "existing ratings only",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "truthful prototype status",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "runtime local source links",
+      "passed": true,
+      "detail": {
+        "checked": 5712,
+        "missing": []
+      }
+    },
+    {
+      "name": "export 领域工作台/index.html",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "export 会议总入口/index.html",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "export 会议视图/index.html",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "export 会议视图/ada.html",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "export 论文视图/index.html",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "export 标志物视图/index.html",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "errors": [],
+  "database_unchanged": true,
+  "new_collection": false,
+  "published": false
+}

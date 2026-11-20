@@ -1,0 +1,327 @@
+{
+  "result": "passed",
+  "delivered_on": "2026-11-17",
+  "database_sha256": "f1fd660c1349ac4701a78db189ea097c5a1ffd3952297220ea555ee423185c22",
+  "database_version": 5,
+  "table_view_counts": {
+    "table": 40,
+    "view": 18
+  },
+  "revision": "既有ADA程序与研究材料入库；新增ADA本地视图并支持会议切换",
+  "new_collection": false,
+  "published": false,
+  "scoring_enabled": false,
+  "old_31_table_records_preserved": true,
+  "cds_materials_and_old_workbenches_preserved": true,
+  "cds_summary": {
+    "topics": 58,
+    "classified_reports": 579,
+    "reports": 606
+  },
+  "ada_summary": {
+    "programme_physical_pages": 385,
+    "sessions": 242,
+    "raw_agenda_items": 2859,
+    "academic_occurrences": 2621,
+    "distinct_reports": 2539,
+    "duplicate_occurrences": 82,
+    "classified_reports": 2049,
+    "unclassified_reports": 490,
+    "nonacademic_agenda_items": 238,
+    "coded_reports": 2102,
+    "topics": 56,
+    "formats": {
+      "大会报告": 10,
+      "论文发言": 338,
+      "专题报告": 427,
+      "海报报告": 1340,
+      "晚期突破海报": 424
+    },
+    "classification_methods": {
+      "unclassified": 490,
+      "title_rule": 1907,
+      "session_context_rule": 140,
+      "manual_title_review": 2
+    },
+    "page_statuses": {
+      "cover_or_other": 2,
+      "numbered_session": 242,
+      "unparsed_satellite_or_metadata": 12,
+      "programme_continuation": 129
+    }
+  },
+  "ada_speaker_tiers": {
+    "national": 2,
+    "undetermined": 2094
+  },
+  "checks": [
+    "../规则与说明/ADA入库_2026-11-17/ADA入库核验.json",
+    "ADA浏览器核验.json",
+    "浏览器核验.json",
+    "../规则与说明/ADA入库_2026-11-17/CDS回归核验.json",
+    "../规则与说明/ADA入库_2026-11-17/维护核验回归.json"
+  ],
+  "backup": "备份/ADA入库前_2026-11-17.db",
+  "files": [
+    {
+      "path": "会议视图/ADA会议数据快照.json",
+      "bytes": 21106069,
+      "sha256": "a1483d7d4e9269fb1a349ad2b5ce9ee1f5809eaea943e776bc1848ae9e34254c"
+    },
+    {
+      "path": "会议视图/ADA浏览器核验.json",
+      "bytes": 1293,
+      "sha256": "c746294aaf7a372a58b8a9b88e169d2abd3b9df7a0515b86be302b25e1997df0"
+    },
+    {
+      "path": "会议视图/ADA生成记录.json",
+      "bytes": 757,
+      "sha256": "fa10e2faa770d3c78b56e54a0c77ed85cbd046a70f555bd2fa0eb81ac2a7f19c"
+    },
+    {
+      "path": "会议视图/ADA验收脚本.cjs",
+      "bytes": 7690,
+      "sha256": "b506e6ff35abbe81b686c8a4681cf5958781c10032c9ee8cfeb44cb4efe0cd05"
+    },
+    {
+      "path": "会议视图/ada.html",
+      "bytes": 16229013,
+      "sha256": "9a2008dbf0d4f081056f9d9c0cdae8356b34f837bd2ed5bcb81323400c99ea47"
+    },
+    {
+      "path": "会议视图/index.html",
+      "bytes": 4553188,
+      "sha256": "62cfb1b56dbc1452045c441ea06833dd0fd72cab9872b7230878e32fc37a4281"
+    },
+    {
+      "path": "会议视图/src/ada-app.js",
+      "bytes": 25965,
+      "sha256": "64d24fc2f4fd707c440baa6b97bb458dd5573d9dc0c7ed28b76a309314372776"
+    },
+    {
+      "path": "会议视图/src/app.js",
+      "bytes": 42195,
+      "sha256": "282d8188532ea642174ae540e36b50fc935f61dde31b5362e057f8548dca7cd3"
+    },
+    {
+      "path": "会议视图/src/style.css",
+      "bytes": 11306,
+      "sha256": "5302853388fb8953a2345abda5d284efcd0b749115432dbfe3d646c8849cec3c"
+    },
+    {
+      "path": "会议视图/src/template.html",
+      "bytes": 1582,
+      "sha256": "70f61e694aa616bd285f079200f38eef3c4cd2e99e5e674ed0fd25825ce5e88b"
+    },
+    {
+      "path": "会议视图/会议数据快照.json",
+      "bytes": 5534803,
+      "sha256": "2109cfb93616a197e3cf57d66cbea8ce5c0cfd9a9542dc4d6348e23cc3b9a60e"
+    },
+    {
+      "path": "会议视图/使用说明.md",
+      "bytes": 6125,
+      "sha256": "1be93c5f4e9c522fd4bfac7b27d43afb38f126e1926749e27435a2657c446818"
+    },
+    {
+      "path": "会议视图/核验截图/01-会议总览.png",
+      "bytes": 373107,
+      "sha256": "7eb8aa9ca60a759a6bceb5d5b915c5a7cedbc3e11ca78476c6ca10db97263234"
+    },
+    {
+      "path": "会议视图/核验截图/02-议题数量.png",
+      "bytes": 754923,
+      "sha256": "f8eac66c5677910bc5243c8c6b75e0153b7c2270379074c73ae57d89d5718baf"
+    },
+    {
+      "path": "会议视图/核验截图/03-议题详情.png",
+      "bytes": 1517529,
+      "sha256": "c88800c9a37dd0fe61f9de14342e29b450b9427627efb16a280e0b7fe5e39840"
+    },
+    {
+      "path": "会议视图/核验截图/04-报告详情.png",
+      "bytes": 200660,
+      "sha256": "4f7c771c46236d2df740d78eec333908332dbebb098af4fef327098ba89b1620"
+    },
+    {
+      "path": "会议视图/核验截图/05-手机总览.png",
+      "bytes": 338124,
+      "sha256": "57717abf30a1f3a77bd670ac4ed4eb565e75bf1a6907043d030f824d34f10eea"
+    },
+    {
+      "path": "会议视图/核验截图/06-讲者分层.png",
+      "bytes": 232574,
+      "sha256": "045eef6042482d1f550794813efe93d8e4e78a7d81853cde0788d691cddaecf5"
+    },
+    {
+      "path": "会议视图/核验截图/07-讲者分层依据.png",
+      "bytes": 198826,
+      "sha256": "20c152af4d5c2dd86a04220f75011f2e6e3d4f0b14ff2878f49dee61bc4b8c23"
+    },
+    {
+      "path": "会议视图/核验截图/08-带头人讲题.png",
+      "bytes": 296658,
+      "sha256": "aa26dbc65fdf131ad1ca0225edc8e326585bc16d163b4acb351064e113a3c0dc"
+    },
+    {
+      "path": "会议视图/核验截图/09-手机数量榜.png",
+      "bytes": 663816,
+      "sha256": "e484417d79a4580395bb6206cd94c0e4c6d3382bd36c6601f66ad433ad2fa4aa"
+    },
+    {
+      "path": "会议视图/核验截图/10-数量榜首屏.png",
+      "bytes": 188111,
+      "sha256": "c4f3f2aadfc8539a0447b6d453fbe1bddb9c4cb9d24eda657af0a12371631ba9"
+    },
+    {
+      "path": "会议视图/核验截图/ADA01-总览.png",
+      "bytes": 282278,
+      "sha256": "58525624fed144ac6acbaefeae4b25a3415fac2be214ffd5b7ef46179ca2ed41"
+    },
+    {
+      "path": "会议视图/核验截图/ADA02-数量榜首屏.png",
+      "bytes": 184861,
+      "sha256": "6a4240451677e7beffaa5cd4d3ca55f2ee1f40b72eed2334fab7cbb668a997ab"
+    },
+    {
+      "path": "会议视图/核验截图/ADA03-带头人讲题.png",
+      "bytes": 202949,
+      "sha256": "5479e710f41ebc326bf791e211c29d11f3dee1a98d4c343cd3c04815cd6f49b2"
+    },
+    {
+      "path": "会议视图/核验截图/ADA04-手机来源.png",
+      "bytes": 147951,
+      "sha256": "3a302e0eaefbee9d70bec234685cd604c7915ff293a122fb657fc2eccf60a44c"
+    },
+    {
+      "path": "会议视图/浏览器核验.json",
+      "bytes": 1521,
+      "sha256": "a1b344047d18ea7e9e2de89e9575d148e25d5961e65e26858defb8f2422ca029"
+    },
+    {
+      "path": "会议视图/生成记录.json",
+      "bytes": 670,
+      "sha256": "0c8119fe43572f4215c05c2fa06bf7429da18600b3906d61dbfdc66dbe1aa26e"
+    },
+    {
+      "path": "会议视图/验收脚本.cjs",
+      "bytes": 10307,
+      "sha256": "d7c81d35898744c3189de78cceb13737a808ad4a48ddb5e168b62efa13fdf52b"
+    },
+    {
+      "path": "规则与说明/ADA入库_2026-11-17/ADA入库方案.json",
+      "bytes": 2000843,
+      "sha256": "ba08ecfceb7051c67a7df8c600bfd8f6cac58512a065acc8c1c49984fd1f0832"
+    },
+    {
+      "path": "规则与说明/ADA入库_2026-11-17/ADA入库核验.json",
+      "bytes": 2111,
+      "sha256": "b5cb3f94257d82439a42fe4721a8a7c404a0fe6275dba6444817a30c46a120d6"
+    },
+    {
+      "path": "规则与说明/ADA入库_2026-11-17/ADA入库结果.json",
+      "bytes": 1198,
+      "sha256": "34dca8bf94b324419ab14a3ae722603f0b8d525d0bf68e7ff48b124908ef7464"
+    },
+    {
+      "path": "规则与说明/ADA入库_2026-11-17/ADA数量榜口径.md",
+      "bytes": 4055,
+      "sha256": "5e9500222b83889689d166dce48ced5d67d66a338d13b11412f82aa1a8dfafc5"
+    },
+    {
+      "path": "规则与说明/ADA入库_2026-11-17/ADA议题初分明细.md",
+      "bytes": 5145,
+      "sha256": "79b0a8c79ee9782f240e4ba45775552ccad7e4ebf074f0536e7390953fc1a02c"
+    },
+    {
+      "path": "规则与说明/ADA入库_2026-11-17/ADA资料覆盖与入库说明.md",
+      "bytes": 7006,
+      "sha256": "511dbb94f0f093a42b166f2fcd02874445d5c4869cca10b5200408e20e6a7863"
+    },
+    {
+      "path": "规则与说明/ADA入库_2026-11-17/CDS回归核验.json",
+      "bytes": 1387,
+      "sha256": "4556a99e167415a1c584a17f42e3e3cf3edf2d8b2a66c6cbf45d5ee8bc3c40b5"
+    },
+    {
+      "path": "规则与说明/ADA入库_2026-11-17/变更前基线.json",
+      "bytes": 1145,
+      "sha256": "a977134322b42767a8429cf6d207bf88a21fb4aec23901577e14b184e21c1078"
+    },
+    {
+      "path": "规则与说明/ADA入库_2026-11-17/完整来源清单.json",
+      "bytes": 9029,
+      "sha256": "d8c2e1a3c0a27739819498ad74a1302aab5249557505150f882506a53a5d6c6e"
+    },
+    {
+      "path": "规则与说明/ADA入库_2026-11-17/本地来源清单.json",
+      "bytes": 3897,
+      "sha256": "061826743aa05c620ac63591f0df2d699f927bd0db9f41f2c01b302cb1710954"
+    },
+    {
+      "path": "规则与说明/ADA入库_2026-11-17/维护核验回归.json",
+      "bytes": 626,
+      "sha256": "0fe52f6d305a688ed8edae07fbb4cc371f5a487b7ceded86b341f75dec721e16"
+    },
+    {
+      "path": "脚本/解析ADA本地程序.py",
+      "bytes": 5020,
+      "sha256": "6cd90bc0794951b0b353861567371557d4065bdc1a369cf307425f7779347051"
+    },
+    {
+      "path": "脚本/准备ADA入库.py",
+      "bytes": 11615,
+      "sha256": "0b81c1d480ea932f4d673ff9fd525e5db73a9ef6bb3622032e5481bb9fed9c70"
+    },
+    {
+      "path": "脚本/导入ADA.py",
+      "bytes": 19605,
+      "sha256": "a7f8139a8aa5e6b1cfcc73126646609551179b8d73df0339f3f02c318dbabede"
+    },
+    {
+      "path": "脚本/生成ADA会议视图.py",
+      "bytes": 8073,
+      "sha256": "ed57615eb18d5a05d26836d5e2b91e4a435e787e0be6b3d20be764a427378bfa"
+    },
+    {
+      "path": "脚本/核验ADA资料.py",
+      "bytes": 8851,
+      "sha256": "8cb0763bc7394f7cb8978f23ad932c2691d8239ccf800043b48cdf35130c62f3"
+    },
+    {
+      "path": "脚本/生成会议视图.py",
+      "bytes": 9697,
+      "sha256": "689f7021f043b45033c721493a3fa28e6f9b87cc88f38b762b6cb8d6d56836c3"
+    },
+    {
+      "path": "脚本/核验CDS议题量化.py",
+      "bytes": 7026,
+      "sha256": "e6bc66b8303406952002758c37afaa5e9bc2412bff03bbbd32655d83a2bcef05"
+    },
+    {
+      "path": "脚本/维护数据库.py",
+      "bytes": 35289,
+      "sha256": "c42536ea749423d70d4d2c4830efa3be9aa1434d0e272affb6ff7c4ebc8c9bfa"
+    },
+    {
+      "path": "脚本/查看数据库.py",
+      "bytes": 1134,
+      "sha256": "c72dae64d2a0a81775eb734fffedc7ba0577b5fbdb35573013d0e71babbd9250"
+    },
+    {
+      "path": "规则与说明/005_ADA入库.sql",
+      "bytes": 7833,
+      "sha256": "dcf5ed516f55fcc6f75a5bf2cfa53698c192e78c28ea86e299f54552b5884bd0"
+    },
+    {
+      "path": "规则与说明/字段与表关系说明.md",
+      "bytes": 24548,
+      "sha256": "11d22597b5768fd84901222c72d3301dc190532c8aa0a094125eca92074e480d"
+    },
+    {
+      "path": "00 数据中心说明.md",
+      "bytes": 5765,
+      "sha256": "3bfba70479ce67d30d348ef779089364a64942268c362b9c3ba21c94f119b8d9"
+    }
+  ]
+}

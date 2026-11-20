@@ -1,0 +1,945 @@
+{
+  "version": "0.1",
+  "curated_on": "2026-11-12",
+  "source": "src/data.snapshot.json",
+  "new_collection": false,
+  "count_definition": "按词条及当前分类所关联的去重研究记录数；A01/R03合并；计划议题另列；不表示领域总体热度或独立验证数。",
+  "categories": [
+    {
+      "id": "early",
+      "name": "早期识别",
+      "description": "发病风险、常规诊断前信号与早期识别研究。"
+    },
+    {
+      "id": "stratification",
+      "name": "分型与预测",
+      "description": "患者分型、并发症预后与治疗应答预测。"
+    },
+    {
+      "id": "monitoring",
+      "name": "动态监测",
+      "description": "重复采样、病程变化与治疗反应的指标研究。"
+    },
+    {
+      "id": "other",
+      "name": "其他",
+      "description": "机制发现线索及尚待明确用途的标志物研究。"
+    }
+  ],
+  "entries": [
+    {
+      "id": "rna35",
+      "label": "35基因RNA组合",
+      "kind": "分子组合",
+      "summary": "研究孕约16周的血浆RNA组合与后续GDM风险。",
+      "bindings": [
+        {
+          "record_id": "R16",
+          "categories": [
+            "early"
+          ],
+          "role": "research",
+          "basis": "35基因cfRNA模型；内部测试AUC 0.84、外部验证0.73。",
+          "sample": "孕期血浆cf-mRNA/cf-lncRNA",
+          "use": "常规诊断前的GDM风险识别",
+          "signal": "研究线索"
+        }
+      ],
+      "agendas": [],
+      "matches": [
+        {
+          "tech_id": "CF",
+          "relation": "direct",
+          "purpose": "围绕血浆RNA组合开展候选筛选、独立验证与临床模型增益评价。"
+        }
+      ],
+      "notes": "现有台账未列出全部35个基因，使用原研究组合描述，不补写成员。"
+    },
+    {
+      "id": "malat1",
+      "label": "MALAT1",
+      "kind": "具体分子",
+      "summary": "尿液lncRNA研究，重点验证信号来自尿液细胞。",
+      "bindings": [
+        {
+          "record_id": "R17",
+          "categories": [
+            "stratification"
+          ],
+          "role": "research",
+          "basis": "论文最终重点验证的是尿液细胞来源MALAT1。",
+          "sample": "尿液多组分；重点验证尿液细胞",
+          "use": "DKD与NDKD鉴别",
+          "signal": "研究线索"
+        }
+      ],
+      "agendas": [],
+      "matches": [
+        {
+          "tech_id": "CF",
+          "relation": "related",
+          "purpose": "可借鉴尿液RNA靶标选择、组分比较和靶向验证设计，具体样本与PCR流程需分别适配。"
+        }
+      ],
+      "notes": "单项尿液RNA研究；尿液细胞、无细胞尿液、EV和血浆测序的性能分别解释。"
+    },
+    {
+      "id": "pvt1",
+      "label": "PVT1",
+      "kind": "具体分子",
+      "summary": "已有台账记录尿液多组分中PVT1等候选lncRNA差异。",
+      "bindings": [
+        {
+          "record_id": "R17",
+          "categories": [
+            "stratification"
+          ],
+          "role": "research",
+          "basis": "不同尿液成分可见MALAT1/PVT1等差异；最终重点验证的是MALAT1。",
+          "sample": "尿液多组分；PVT1具体成分结果待核",
+          "use": "肾病鉴别的候选RNA线索",
+          "signal": "候选差异"
+        }
+      ],
+      "agendas": [],
+      "matches": [
+        {
+          "tech_id": "CF",
+          "relation": "related",
+          "purpose": "用于比较尿液RNA候选靶标和输入组分，继续补齐PVT1的具体检测与验证结果。"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "tnfr",
+      "label": "TNFR1/2",
+      "kind": "具体分子",
+      "summary": "正常白蛋白尿T2D患者肾风险研究中的候选蛋白。",
+      "bindings": [
+        {
+          "record_id": "R11",
+          "categories": [
+            "early",
+            "stratification"
+          ],
+          "role": "research",
+          "basis": "TNFR1/2、KIM1、MMP7等提供UACR之外的关联信息。",
+          "sample": "具体样本与平台待原文细化；现有记录含尿液相关指标",
+          "use": "正常白蛋白尿T2D人群的后续肾功能风险",
+          "signal": "研究线索"
+        }
+      ],
+      "agendas": [],
+      "matches": [
+        {
+          "tech_id": "PR",
+          "relation": "direct",
+          "purpose": "围绕候选蛋白与肾风险开展检测、纵向随访及相对常规指标的增量评价。"
+        }
+      ],
+      "notes": "现有记录说明部分动态轨迹相关，尚未逐蛋白核清纵向结果，因此不据此将每个蛋白单独归为已验证的动态监测指标。"
+    },
+    {
+      "id": "kim1",
+      "label": "KIM1",
+      "kind": "具体分子",
+      "summary": "正常白蛋白尿T2D患者肾风险研究中的候选蛋白。",
+      "bindings": [
+        {
+          "record_id": "R11",
+          "categories": [
+            "early",
+            "stratification"
+          ],
+          "role": "research",
+          "basis": "TNFR1/2、KIM1、MMP7等提供UACR之外的关联信息。",
+          "sample": "具体样本与平台待原文细化；现有记录含尿液相关指标",
+          "use": "正常白蛋白尿T2D人群的后续肾功能风险",
+          "signal": "研究线索"
+        }
+      ],
+      "agendas": [],
+      "matches": [
+        {
+          "tech_id": "PR",
+          "relation": "direct",
+          "purpose": "围绕候选蛋白与肾风险开展检测、纵向随访及相对常规指标的增量评价。"
+        }
+      ],
+      "notes": "现有记录说明部分动态轨迹相关，尚未逐蛋白核清纵向结果，因此不据此将每个蛋白单独归为已验证的动态监测指标。"
+    },
+    {
+      "id": "mmp7",
+      "label": "MMP7",
+      "kind": "具体分子",
+      "summary": "正常白蛋白尿T2D患者肾风险研究中的候选蛋白。",
+      "bindings": [
+        {
+          "record_id": "R11",
+          "categories": [
+            "early",
+            "stratification"
+          ],
+          "role": "research",
+          "basis": "TNFR1/2、KIM1、MMP7等提供UACR之外的关联信息。",
+          "sample": "具体样本与平台待原文细化；现有记录含尿液相关指标",
+          "use": "正常白蛋白尿T2D人群的后续肾功能风险",
+          "signal": "研究线索"
+        }
+      ],
+      "agendas": [],
+      "matches": [
+        {
+          "tech_id": "PR",
+          "relation": "direct",
+          "purpose": "围绕候选蛋白与肾风险开展检测、纵向随访及相对常规指标的增量评价。"
+        }
+      ],
+      "notes": "现有记录说明部分动态轨迹相关，尚未逐蛋白核清纵向结果，因此不据此将每个蛋白单独归为已验证的动态监测指标。"
+    },
+    {
+      "id": "longitudinal-proteins",
+      "label": "纵向蛋白特征",
+      "kind": "特征集合",
+      "summary": "重复测量蛋白随时间变化与糖尿病发病风险的关系。",
+      "bindings": [
+        {
+          "record_id": "R03",
+          "categories": [
+            "early",
+            "monitoring"
+          ],
+          "role": "research",
+          "basis": "MESA三个采样时点；重复测量发现额外关联及不同通路。",
+          "sample": "血浆；Olink Explore 3K",
+          "use": "发病风险与纵向分子变化",
+          "signal": "研究线索"
+        },
+        {
+          "record_id": "A01",
+          "categories": [
+            "early",
+            "monitoring"
+          ],
+          "role": "research",
+          "basis": "与R03同研究的会议版本，按同研究合并计数。",
+          "sample": "MESA纵向蛋白组",
+          "use": "重复采样与发病信号",
+          "signal": "研究线索"
+        }
+      ],
+      "agendas": [],
+      "matches": [
+        {
+          "tech_id": "PR",
+          "relation": "direct",
+          "purpose": "设计重复采样与蛋白轨迹研究，评价其相对单次测量的附加信息。"
+        }
+      ],
+      "notes": "成员在现有台账中未逐一列出，保留为特征集合；A01/R03计为1项去重研究。"
+    },
+    {
+      "id": "metabolite15",
+      "label": "15项代谢物组合",
+      "kind": "分子组合",
+      "summary": "免疫治疗前血清代谢物的探索性应答分类研究。",
+      "bindings": [
+        {
+          "record_id": "R05",
+          "categories": [
+            "stratification"
+          ],
+          "role": "research",
+          "basis": "15项代谢物差异用于随机森林，内部测试AUC 0.881。",
+          "sample": "AbATE受试者基线血清",
+          "use": "T1D免疫治疗应答分层",
+          "signal": "研究线索"
+        }
+      ],
+      "agendas": [],
+      "matches": [
+        {
+          "tech_id": "MT",
+          "relation": "direct",
+          "purpose": "围绕治疗前代谢组合开展应答分层与独立人群验证。"
+        }
+      ],
+      "notes": "具体15个代谢物名单未在现有台账列全；41人探索分析及内部测试状态保留。"
+    },
+    {
+      "id": "bile-acids",
+      "label": "次级胆汁酸",
+      "kind": "分子类别",
+      "summary": "T1D免疫亚群研究中的代谢差异线索。",
+      "bindings": [
+        {
+          "record_id": "A21",
+          "categories": [
+            "stratification"
+          ],
+          "role": "research",
+          "basis": "免疫亚群出现次级胆汁酸及炎症/稳态相关代谢差异。",
+          "sample": "新发T1D样本，非靶向LC-MS；具体样本类型待细化",
+          "use": "免疫亚群与代谢特征",
+          "signal": "研究线索"
+        }
+      ],
+      "agendas": [],
+      "matches": [
+        {
+          "tech_id": "MT",
+          "relation": "direct",
+          "purpose": "比较免疫亚群的代谢特征，筛选可进一步验证的候选代谢物。"
+        }
+      ],
+      "notes": "具体胆汁酸成员未列全；与R13的样本重叠关系待核，不作为已独立复现。"
+    },
+    {
+      "id": "scfa",
+      "label": "短链脂肪酸",
+      "kind": "分子类别",
+      "summary": "母婴队列中粪便SCFA与后续胰岛自身免疫的风险研究。",
+      "bindings": [
+        {
+          "record_id": "R07",
+          "categories": [
+            "early"
+          ],
+          "role": "research",
+          "basis": "孕期及幼儿粪便SCFA水平未与自身免疫发生建立关联。",
+          "sample": "孕期及幼儿粪便；LC-MS",
+          "use": "胰岛自身免疫发生风险",
+          "signal": "阴性结果"
+        }
+      ],
+      "agendas": [],
+      "matches": [
+        {
+          "tech_id": "MT",
+          "relation": "direct",
+          "purpose": "利用阴性证据明确样本、时间窗和候选指标选择，设计后续靶向代谢研究。"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "glp1r-r131q",
+      "label": "GLP1R R131Q",
+      "kind": "遗传变异",
+      "summary": "GLP1R变异与GLP-1RA治疗应答差异的研究。",
+      "bindings": [
+        {
+          "record_id": "R02",
+          "categories": [
+            "stratification"
+          ],
+          "role": "research",
+          "basis": "R131Q每个等位基因与用药6个月HbA1c额外下降0.53个百分点相关。",
+          "sample": "遗传分型、用药队列及功能实验",
+          "use": "药物应答分层",
+          "signal": "研究线索"
+        }
+      ],
+      "agendas": [],
+      "matches": [],
+      "notes": "现有技术关联为待判断；具体基因分型服务及公司流程未确认。"
+    },
+    {
+      "id": "pgs",
+      "label": "多基因风险评分",
+      "kind": "指标组合",
+      "summary": "GDM后长期随访中，分别评价T1D和T2D的遗传风险信息。",
+      "bindings": [
+        {
+          "record_id": "R12",
+          "categories": [
+            "early",
+            "stratification"
+          ],
+          "role": "research",
+          "basis": "PGS加入临床模型对T1D有补充，对T2D增益较小。",
+          "sample": "既往GDM女性遗传与长期随访资料",
+          "use": "GDM后T1D/T2D风险分层",
+          "signal": "研究线索"
+        }
+      ],
+      "agendas": [],
+      "matches": [],
+      "notes": "保留疾病类型间增量差异；评分所需分型和分析流程尚待公司适配确认。"
+    },
+    {
+      "id": "induced-transcript",
+      "label": "诱导转录特征",
+      "kind": "特征集合",
+      "summary": "利用患者血浆刺激报告细胞后的转录反应进行免疫分群。",
+      "bindings": [
+        {
+          "record_id": "R13",
+          "categories": [
+            "stratification"
+          ],
+          "role": "research",
+          "basis": "血浆诱导报告细胞转录反应＋芯片，发现两个免疫亚群及治疗应答线索。",
+          "sample": "患者血浆刺激标准报告细胞，再检测细胞转录反应",
+          "use": "T1D免疫分型与治疗反应",
+          "signal": "研究线索"
+        }
+      ],
+      "agendas": [],
+      "matches": [],
+      "notes": "测量对象是报告细胞转录反应；公司承接流程待确认，部分表型关联未在验证队列复现。"
+    },
+    {
+      "id": "c-peptide",
+      "label": "C肽",
+      "kind": "临床指标",
+      "summary": "既用于β细胞功能分层，也用于免疫治疗纵向终点评价。",
+      "bindings": [
+        {
+          "record_id": "R04",
+          "categories": [
+            "early",
+            "stratification"
+          ],
+          "role": "research",
+          "basis": "OGTT葡萄糖＋C肽联合β细胞功能指标区分进展风险组。",
+          "sample": "TrialNet单一自身抗体阳性亲属",
+          "use": "T1D进展风险分层",
+          "signal": "研究线索"
+        },
+        {
+          "record_id": "A19",
+          "categories": [
+            "monitoring"
+          ],
+          "role": "research",
+          "basis": "利用C肽下降到预设阈值的时间评价免疫治疗。",
+          "sample": "六项既有TrialNet试验的纵向C肽",
+          "use": "β细胞功能变化与免疫干预评价",
+          "signal": "终点方法研究"
+        },
+        {
+          "record_id": "R05",
+          "categories": [
+            "monitoring"
+          ],
+          "role": "reference",
+          "basis": "按两年C肽下降划分治疗应答，C肽是应答终点。",
+          "sample": "免疫治疗随访",
+          "use": "治疗应答终点",
+          "signal": "常规参照/终点"
+        }
+      ],
+      "agendas": [],
+      "matches": [],
+      "notes": "C肽在不同记录中的用途分别说明；具体检测服务匹配待确认。"
+    },
+    {
+      "id": "islet-autoantibodies",
+      "label": "胰岛自身抗体",
+      "kind": "指标类别",
+      "summary": "早期T1D风险人群研究中的抗体状态。",
+      "bindings": [
+        {
+          "record_id": "R04",
+          "categories": [
+            "early",
+            "stratification"
+          ],
+          "role": "research",
+          "basis": "研究对象为单一胰岛自身抗体阳性亲属，结合代谢表型分层。",
+          "sample": "T1D亲属筛查人群",
+          "use": "进展风险与亚群识别",
+          "signal": "研究线索"
+        }
+      ],
+      "agendas": [
+        {
+          "code": "S_029",
+          "categories": [
+            "stratification"
+          ],
+          "basis": "相关议题为中国T1D异质性与抗体检测；议题未明确具体抗体成员。"
+        }
+      ],
+      "matches": [],
+      "notes": "现有研究未在台账中列出具体抗体名称，保留为指标类别；计划议题不计入研究数量。"
+    },
+    {
+      "id": "postmeal-glucose",
+      "label": "餐后1小时葡萄糖增幅",
+      "kind": "生理指标",
+      "summary": "孕期动态葡萄糖中用于早期GDM风险研究的特征。",
+      "bindings": [
+        {
+          "record_id": "A23",
+          "categories": [
+            "early"
+          ],
+          "role": "research",
+          "basis": "餐后1小时增幅指标AUC约0.78；仍需前瞻性与增量评价。",
+          "sample": "孕期CGM与OGTT相关资料",
+          "use": "GDM早期风险识别",
+          "signal": "研究线索"
+        }
+      ],
+      "agendas": [],
+      "matches": [],
+      "notes": "CGM是测量技术；词条表示实际研究的葡萄糖特征，公司组学技术匹配尚待讨论。"
+    },
+    {
+      "id": "mage",
+      "label": "MAGE",
+      "kind": "生理指标",
+      "summary": "孕中期CGM特征与OGTT诊断比较中的指标。",
+      "bindings": [
+        {
+          "record_id": "A25",
+          "categories": [
+            "early"
+          ],
+          "role": "research",
+          "basis": "MAGE AUC约0.73，现有指标性能不足以支持替代OGTT。",
+          "sample": "孕24–28周CGM；GOMOMs队列",
+          "use": "GDM诊断方法评价",
+          "signal": "替代诊断未获支持"
+        }
+      ],
+      "agendas": [],
+      "matches": [],
+      "notes": "与A24共享队列，但研究问题不同；临床监测技术与公司组学能力分开匹配。"
+    },
+    {
+      "id": "ffa",
+      "label": "游离脂肪酸",
+      "kind": "代谢指标",
+      "summary": "GOMOMs孕早期风险模型中的候选指标。",
+      "bindings": [
+        {
+          "record_id": "A24",
+          "categories": [
+            "early"
+          ],
+          "role": "research",
+          "basis": "加入所测游离脂肪酸、甘油三酯及其他代谢指标后，未提升GDM或大于胎龄儿的预测。",
+          "sample": "孕10–14周代谢/脂质测量",
+          "use": "孕期风险模型的增量评价",
+          "signal": "未见预测增益"
+        }
+      ],
+      "agendas": [],
+      "matches": [],
+      "notes": "原记录未明确该指标的具体检测平台及公司承接流程，保留为研究指标。"
+    },
+    {
+      "id": "triglycerides",
+      "label": "甘油三酯",
+      "kind": "代谢指标",
+      "summary": "GOMOMs孕早期风险模型中的候选指标。",
+      "bindings": [
+        {
+          "record_id": "A24",
+          "categories": [
+            "early"
+          ],
+          "role": "research",
+          "basis": "加入所测游离脂肪酸、甘油三酯及其他代谢指标后，未提升GDM或大于胎龄儿的预测。",
+          "sample": "孕10–14周代谢/脂质测量",
+          "use": "孕期风险模型的增量评价",
+          "signal": "未见预测增益"
+        }
+      ],
+      "agendas": [],
+      "matches": [],
+      "notes": "原记录未明确该指标的具体检测平台及公司承接流程，保留为研究指标。"
+    },
+    {
+      "id": "ev-proteins",
+      "label": "EV蛋白特征",
+      "kind": "特征集合",
+      "summary": "探索血浆细胞外囊泡蛋白与T1D部分缓解的关系。",
+      "bindings": [
+        {
+          "record_id": "A20",
+          "categories": [
+            "monitoring"
+          ],
+          "role": "research",
+          "basis": "已读采血时点和研究设计，原始结果段未完整取得。",
+          "sample": "新发T1D青少年不同时点血浆EV",
+          "use": "部分缓解与病程变化",
+          "signal": "结果待核"
+        }
+      ],
+      "agendas": [],
+      "matches": [
+        {
+          "tech_id": "PR",
+          "relation": "direct",
+          "purpose": "围绕EV蛋白特征开展候选筛选、采样时点与纵向验证设计。"
+        }
+      ],
+      "notes": "已有资料未核清具体蛋白名单，不补写分子名称或模型性能；EV分离与检测平台适配待确认。"
+    },
+    {
+      "id": "hgf",
+      "label": "HGF",
+      "kind": "机制分子",
+      "summary": "胰岛周细胞来源HGF与β细胞功能的机制线索。",
+      "bindings": [
+        {
+          "record_id": "R10",
+          "categories": [
+            "other"
+          ],
+          "role": "mechanism",
+          "basis": "周细胞HGF来源与β细胞功能有关，主要功能证据来自小鼠。",
+          "sample": "人胰岛单细胞资料及小鼠实验",
+          "use": "标志物发现的细胞来源与功能线索",
+          "signal": "机制线索"
+        }
+      ],
+      "agendas": [],
+      "matches": [
+        {
+          "tech_id": "SC",
+          "relation": "direct",
+          "purpose": "利用单细胞分析定位来源细胞和微环境，为候选信号选择提供机制依据。"
+        }
+      ],
+      "notes": "本条是组织/细胞机制分子，尚未在现有研究中建立人体液体样本的标志物用途。"
+    },
+    {
+      "id": "glutamate",
+      "label": "谷氨酸",
+      "kind": "机制分子",
+      "summary": "胰岛成纤维细胞与β细胞互作中的机制信号。",
+      "bindings": [
+        {
+          "record_id": "R09",
+          "categories": [
+            "other"
+          ],
+          "role": "mechanism",
+          "basis": "成纤维细胞谷氨酸—β细胞NMDAR通路与损伤相关。",
+          "sample": "组织、细胞共培养及动物模型",
+          "use": "标志物发现的机制与细胞互作线索",
+          "signal": "机制线索"
+        }
+      ],
+      "agendas": [],
+      "matches": [
+        {
+          "tech_id": "SC",
+          "relation": "direct",
+          "purpose": "结合单细胞与细胞互作分析筛选来源信号，再设计具体候选物的验证。"
+        }
+      ],
+      "notes": "作为候选来源的机制线索展示，不标为已验证临床标志物。"
+    },
+    {
+      "id": "cytokines",
+      "label": "血清细胞因子特征",
+      "kind": "指标类别",
+      "summary": "会议计划研究不同糖代谢人群的细胞因子表达与干预后转归。",
+      "bindings": [],
+      "agendas": [
+        {
+          "code": "OR_313",
+          "categories": [
+            "stratification"
+          ],
+          "basis": "原始题目提及血清细胞因子表达特征及对生活方式干预下血糖转归的预测。"
+        }
+      ],
+      "matches": [],
+      "notes": "仅有计划议题；具体因子名称、样本量与结果待采集。"
+    },
+    {
+      "id": "retina-panel",
+      "label": "糖网风险指标组合",
+      "kind": "指标组合",
+      "summary": "会议计划用多维度标志物构建糖网风险预警模型。",
+      "bindings": [],
+      "agendas": [
+        {
+          "code": "S_198",
+          "categories": [
+            "stratification"
+          ],
+          "basis": "原始题目为多维度标志物联合构建糖网风险预警模型。"
+        }
+      ],
+      "matches": [],
+      "notes": "计划议题未给出组合成员及检测平台，保留组合描述。"
+    },
+    {
+      "id": "cardiometabolic-markers",
+      "label": "循环心肾代谢标志物",
+      "kind": "指标类别",
+      "summary": "会议计划以循环标志物研究早期心肾代谢结局风险。",
+      "bindings": [],
+      "agendas": [
+        {
+          "code": "OR_333",
+          "categories": [
+            "stratification"
+          ],
+          "basis": "原始题目提及循环生物标志物预测早期心血管-肾脏-代谢综合征结局。"
+        }
+      ],
+      "matches": [],
+      "notes": "具体成员和结果未在已存议题列明。"
+    },
+    {
+      "id": "sarcopenia-metabolites",
+      "label": "肌少症代谢物特征",
+      "kind": "特征集合",
+      "summary": "会议计划筛选糖尿病肌少症相关的血清代谢特征。",
+      "bindings": [],
+      "agendas": [
+        {
+          "code": "OR_301",
+          "categories": [
+            "other"
+          ],
+          "basis": "原始题目为糖尿病肌少症患者的血清代谢组学特征及关键代谢物筛选。"
+        }
+      ],
+      "matches": [],
+      "notes": "仅有议题，尚无具体代谢物名单与结果；技术关联待摘要补核。"
+    },
+    {
+      "id": "hba1c",
+      "label": "HbA1c",
+      "kind": "常规指标",
+      "summary": "现有干预与临床研究中的常规血糖控制指标。",
+      "bindings": [
+        {
+          "record_id": "R02",
+          "categories": [
+            "stratification"
+          ],
+          "role": "reference",
+          "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+          "sample": "具体测量按原研究",
+          "use": "临床分层、监测或疗效终点",
+          "signal": "常规参照/终点"
+        },
+        {
+          "record_id": "R06",
+          "categories": [
+            "monitoring"
+          ],
+          "role": "reference",
+          "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+          "sample": "具体测量按原研究",
+          "use": "临床分层、监测或疗效终点",
+          "signal": "常规参照/终点"
+        },
+        {
+          "record_id": "R08",
+          "categories": [
+            "other"
+          ],
+          "role": "reference",
+          "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+          "sample": "具体测量按原研究",
+          "use": "临床分层、监测或疗效终点",
+          "signal": "常规参照/终点"
+        },
+        {
+          "record_id": "R14",
+          "categories": [
+            "monitoring"
+          ],
+          "role": "reference",
+          "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+          "sample": "具体测量按原研究",
+          "use": "临床分层、监测或疗效终点",
+          "signal": "常规参照/终点"
+        },
+        {
+          "record_id": "R15",
+          "categories": [
+            "monitoring"
+          ],
+          "role": "reference",
+          "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+          "sample": "具体测量按原研究",
+          "use": "临床分层、监测或疗效终点",
+          "signal": "常规参照/终点"
+        },
+        {
+          "record_id": "A03",
+          "categories": [
+            "monitoring"
+          ],
+          "role": "reference",
+          "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+          "sample": "具体测量按原研究",
+          "use": "临床分层、监测或疗效终点",
+          "signal": "常规参照/终点"
+        },
+        {
+          "record_id": "A04",
+          "categories": [
+            "monitoring"
+          ],
+          "role": "reference",
+          "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+          "sample": "具体测量按原研究",
+          "use": "临床分层、监测或疗效终点",
+          "signal": "常规参照/终点"
+        },
+        {
+          "record_id": "A07",
+          "categories": [
+            "monitoring"
+          ],
+          "role": "reference",
+          "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+          "sample": "具体测量按原研究",
+          "use": "临床分层、监测或疗效终点",
+          "signal": "常规参照/终点"
+        },
+        {
+          "record_id": "A08",
+          "categories": [
+            "monitoring"
+          ],
+          "role": "reference",
+          "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+          "sample": "具体测量按原研究",
+          "use": "临床分层、监测或疗效终点",
+          "signal": "常规参照/终点"
+        },
+        {
+          "record_id": "A09",
+          "categories": [
+            "monitoring"
+          ],
+          "role": "reference",
+          "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+          "sample": "具体测量按原研究",
+          "use": "临床分层、监测或疗效终点",
+          "signal": "常规参照/终点"
+        },
+        {
+          "record_id": "A10",
+          "categories": [
+            "monitoring"
+          ],
+          "role": "reference",
+          "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+          "sample": "具体测量按原研究",
+          "use": "临床分层、监测或疗效终点",
+          "signal": "常规参照/终点"
+        },
+        {
+          "record_id": "A11",
+          "categories": [
+            "monitoring"
+          ],
+          "role": "reference",
+          "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+          "sample": "具体测量按原研究",
+          "use": "临床分层、监测或疗效终点",
+          "signal": "常规参照/终点"
+        },
+        {
+          "record_id": "A12",
+          "categories": [
+            "monitoring"
+          ],
+          "role": "reference",
+          "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+          "sample": "具体测量按原研究",
+          "use": "临床分层、监测或疗效终点",
+          "signal": "常规参照/终点"
+        },
+        {
+          "record_id": "A14",
+          "categories": [
+            "monitoring"
+          ],
+          "role": "reference",
+          "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+          "sample": "具体测量按原研究",
+          "use": "临床分层、监测或疗效终点",
+          "signal": "常规参照/终点"
+        },
+        {
+          "record_id": "A23",
+          "categories": [
+            "monitoring"
+          ],
+          "role": "reference",
+          "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+          "sample": "具体测量按原研究",
+          "use": "临床分层、监测或疗效终点",
+          "signal": "常规参照/终点"
+        },
+        {
+          "record_id": "A26",
+          "categories": [
+            "monitoring"
+          ],
+          "role": "reference",
+          "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+          "sample": "具体测量按原研究",
+          "use": "临床分层、监测或疗效终点",
+          "signal": "常规参照/终点"
+        }
+      ],
+      "agendas": [],
+      "matches": [],
+      "notes": "在“含常规参照”范围中显示，计数不表示新型标志物发现数量。"
+    },
+    {
+      "id": "tir",
+      "label": "TIR",
+      "kind": "常规指标",
+      "summary": "CGM/AID研究中的目标范围内时间。",
+      "bindings": [
+        {
+          "record_id": "A03",
+          "categories": [
+            "monitoring"
+          ],
+          "role": "reference",
+          "basis": "研究结果以目标血糖范围内时间（TIR）评价血糖管理。",
+          "sample": "CGM资料",
+          "use": "血糖管理与干预评价",
+          "signal": "常规参照/终点"
+        },
+        {
+          "record_id": "A05",
+          "categories": [
+            "monitoring"
+          ],
+          "role": "reference",
+          "basis": "研究结果以目标血糖范围内时间（TIR）评价血糖管理。",
+          "sample": "CGM资料",
+          "use": "血糖管理与干预评价",
+          "signal": "常规参照/终点"
+        },
+        {
+          "record_id": "A18",
+          "categories": [
+            "monitoring"
+          ],
+          "role": "reference",
+          "basis": "研究结果以目标血糖范围内时间（TIR）评价血糖管理。",
+          "sample": "CGM资料",
+          "use": "血糖管理与干预评价",
+          "signal": "常规参照/终点"
+        }
+      ],
+      "agendas": [],
+      "matches": [],
+      "notes": "A05/A18可能存在主研究或亚组关系，尚未确认；去重研究记录数按已核版本合并，不代表独立队列数。"
+    }
+  ]
+}

@@ -1,0 +1,375 @@
+MedNexus：2026年第18卷第08期 (https://cs.medjournals.cn/cn/toc/73365)
+citeturn160search0 [wordlim: 200] Published: 2 months ago; Crawled: today; MedNexus
+
+# 2026年 · 第18卷第08期 ... 购买后可在线阅读和下载本期全部文章，不含纸质期刊。 ... 中华糖尿病杂志2026年 18卷 08期 ... 方法 计算机检索PubMed、Embase、Web of Science、Cochrane Library、中国知网、万方、维普、中国生物医学共8个数据库建库至2025年5月的相关原始研究；依据PRISMA-DTA声明、CHAR清单完成文献筛选与数据提取，采用PROBAST量表评价纳入研究偏倚风险；运用Stata MP 18.0软件合并曲线下面积（AUC），同时开展亚组、敏感性分析。 ... 该文回顾了增强MSC治疗功能的基因工程策略，包括扩增细胞来源、提高移植后存活率、增强靶向归巢能力、优化抗炎与免疫调节功能、促进血管新生，并探讨其安全性问题。
+
+MedNexus
+
+# 2026年 · 第18卷第08期
+
+出版日期：2026-08-20本期价格：¥20.00 元¥40.00 元
+
+购买后可在线阅读和下载本期全部文章，不含纸质期刊。
+
+### MedNexus
+
+全部
+
+专题笔谈
+
+开放阅读
+
+### 全球视野下的糖肝共管：中国、美国、法国与印度2型糖尿病合并代谢相关脂肪性肝病多学科管理共识比较
+
+周希乔 曹雨恬 祁小龙
+
+中华糖尿病杂志2026年 18卷 08期
+
+DOI: 10.3760/cma.j.cn115791-20260206-00074
+
+摘要
+
+HTML PDF
+
+2型糖尿病（T2DM）与代谢相关脂肪性肝病（MASLD）共病显著增加肝脏及肝外不良结局风险，实施多学科规范化管理已成为全球共识。该文系统梳理并比较了中国、美国、法国及印度四国最新发布的T2DM合并MASLD多学科管理共识，从流行病学背景、肝内筛查与风险评估、肝外风险评估，以及治疗与管理路径4个维度，阐述了四国共识的共性与差异。结果显示，四国在强调早期肝纤维化无创筛查、以生活方式干预为基石、优先选用兼具多重代谢获益的新型降糖药物、倡导多学科协作模式等核心原则上高度一致；同时，各国共识呈现出鲜明的“本土化”策略：中国共识引入本土“糖肝评分”并整合中医药治疗，印度共识基于南亚人群“低体重高体脂”特征突出肌少症评估，美国和法国共识则注重将肝病风险筛查嵌入初级保健体系。### 中国10省成人膳食模式与2型糖尿病发生风险的队列研究
+
+程璐 毛凡 张润 孙成浩 梅钰舒 单亦文 李剑虹
+
+中华糖尿病杂志2026年 18卷 08期
+
+DOI: 10.3760/cma.j.cn115791-20251105-00583
+
+摘要
+
+HTML PDF
+
+目的 探讨中国成人膳食模式与2型糖尿病（T2DM）发病的关联。 方法 该研究为队列研究，使用多阶段分层整群抽样方法抽取2010年中国成人慢性病风险评估体系研究队列中10个省（河北、吉林、黑龙江、浙江、江西、河南、湖南、四川、贵州和陕西）18个监测点基线血糖正常的成人为研究对象，收集研究对象基线年龄、膳食情况，2016—2017年对研究对象进行随访，随访结局为T2DM。采用因子分析获取膳食模式，计算研究对象在每种膳食模式下的因子得分，并按照因子得分四分位数将研究对象分为Q1、Q2、Q3、Q4组。采用多因素有序logistic回归模型分析膳食模式与T2DM发病风险的关联，并根据年龄等基线特征进行亚组分析。 结果 最终共4 764名成人完成随访且信息完整。随访期间，15.2%（723/4 764）的研究对象进展为糖尿病前期，5.2%（248/4 764）进展为T2DM。因子分析共获得8种膳食模式，分别为调味品模式、动物性食物模式、现代膳食模式、含糖饮料模式、动物油-猪肉-泡菜模式、植物性食物模式、高油盐低薯类模式和豆制品-油炸食品模式。多因素有序logistic回归模型分析结果显示，调整混杂因素后，与Q1组相比，动物性食物模式（OR=1.38，95%CI 1.12~1.70）和含糖饮料模式（OR=1.38，95%CI 1.12~1.69）的Q4组研究对象T2DM发病风险均增加38%。亚组分析结果显示，在动物性食物模式下，与Q1组相比，Q4组18~44岁人群发生T2DM风险升高1.02倍（OR=2.02，95%CI 1.47~2.79）。 结论 中国居民膳食不均衡，含糖饮料和动物性食物可能是T2DM的主要膳食风险因素，年龄对膳食模式和T2DM发病风险存在效应修饰作用。
+
+### 基于机器学习模型预测妊娠期糖尿病发病风险的系统评价与Meta分析
+
+魏子怡 肖玉萍 陈方尧 申帆 杨佳瑶 王珍珍
+
+中华糖尿病杂志2026年 18卷 08期
+
+DOI: 10.3760/cma.j.cn115791-20251110-00598
+
+摘要
+
+HTML PDF
+
+目的 系统评价各类机器学习（ML）模型对妊娠期糖尿病（GDM）的预测效能，并筛选核心预测指标。 方法 计算机检索PubMed、Embase、Web of Science、Cochrane Library、中国知网、万方、维普、中国生物医学共8个数据库建库至2025年5月的相关原始研究；依据PRISMA-DTA声明、CHAR清单完成文献筛选与数据提取，采用PROBAST量表评价纳入研究偏倚风险；运用Stata MP 18.0软件合并曲线下面积（AUC），同时开展亚组、敏感性分析。 结果 共纳入16项原始研究，包含193 496例研究对象，涵盖22种机器学习算法、141个预测模型。全部模型合并AUC为0.845（95%CI 0.841~0.849，I²=99.5%）；极端梯度提升（XGBoost）、随机森林（RF）合并AUC均>0.9。### 胰淀素类似物在糖尿病与肥胖症中的研究进展
+
+薛金宇 卢庆苗 鲁一兵
+
+中华糖尿病杂志2026年 18卷 08期
+
+DOI: 10.3760/cma.j.cn115791-20260115-00023
+
+摘要
+
+HTML PDF
+
+糖尿病和肥胖症患病率高、共患率高，减重、降糖是这两类人群治疗的核心目标。胰淀素作为胰岛β细胞分泌的另一类降糖激素，兼具降低食欲、延长饱腹感、调节脂肪代谢等作用，为新型抗糖尿病和抗肥胖药物研发提供了重要方向。该文围绕胰淀素的生物学特征及其类似物的开发展开，重点总结短效、长效及超长效胰淀素类似物、联合制剂、选择性胰淀素受体激动剂及单分子双受体激动剂在糖尿病和肥胖症中的研究进展，并比较各类药物在减重、降糖、耐受性及肌肉保留等方面的差异化特征。
+
+### 基因工程化间充质干细胞促进糖尿病足创面愈合的研究进展
+
+李可盈 周昕睿 霍媛媛 白姣 李亚
+
+中华糖尿病杂志2026年 18卷 08期
+
+DOI: 10.3760/cma.j.cn115791-20260119-00036
+
+摘要
+
+HTML PDF
+
+间充质干细胞（MSC）因其来源广泛、多向分化潜能及免疫调节特性，在再生医学领域备受关注。然而，天然MSC在促进糖尿病足创面愈合方面的疗效仍有提升空间。基因工程化MSC是通过病毒或非病毒载体将外源基因导入MSC，使其稳定过表达特定功能分子或沉默抑制性基因，从而增强治疗潜能的改造策略。该文回顾了增强MSC治疗功能的基因工程策略，包括扩增细胞来源、提高移植后存活率、增强靶向归巢能力、优化抗炎与免疫调节功能、促进血管新生，并探讨其安全性问题。该文重点阐述了上述策略的最新研究进展，并展望其在细胞疗法中的应用前景。
+
+--------------------------------------------------------------------------------
+中华内分泌代谢杂志：2026年第42卷第09期 (https://cs.medjournals.cn/cn/zhnfmdxzz/current)
+citeturn160search1 [wordlim: 200] Published: last month; Crawled: 3 weeks ago; DOI: 10.3760/cma.j.cn311282-20260326-00154 ... On the occasion of the 23rd Endocrinology Academic Conference of the Chinese Medical Association, the *Chinese Journal of Endocrinology and Metabolism* andJournal of DiabetesThe enlarged meeting of the editorial board was held in Changsha on August 19, 2026. ... DOI: 10.3760/cma.j.issn.1000-6699.2026.09.101
+病例报告
+
+一例高钙危象引起的显著心肌损伤报告及文献回顾
+
+王书语 马少石 苗芳
+
+中华内分泌代谢杂志2026年 42卷 09期
+
+DOI: 10.3760/cma.j.cn311282-20260326-00154
+
+摘要
+
+HTML
+
+高钙危象是内分泌代谢急症。本文报道1例53岁女性，因原发性甲状旁腺功能亢进症致高钙危象(血钙达5.12 mmol/L)。患者伴急性肾损伤、神经精神症状，且出现高敏肌钙蛋白T及B型钠尿肽显著升高。冠状动脉造影未见明显阻塞性病变。经积极降钙治疗及甲状旁腺病灶切除后，血钙、甲状旁腺激素及心脏标志物逐渐恢复正常。本病例提示高钙危象可导致严重的心肌损伤，临床应更加重视心脏评估。
+
+以反复发热和多尿为主要表现的垂体脓肿一例并文献复习
+
+许波 陈思 张维天 周健
+
+中华内分泌代谢杂志2026年 42卷 09期
+
+DOI: 10.3760/cma.j.cn311282-20260330-00166
+
+摘要
+
+HTML
+
+垂体脓肿是一种罕见且具有较高死亡率的疾病。由于其发病率低、临床症状及影像学表现缺乏特异性，早期诊断具有一定困难。本文报道1例以反复发热和多尿为主要特征的垂体脓肿病例，以期为该病的规范诊断与治疗提供参考。
+
+综述
+
+成人继发性肥胖的发病机制、诊断策略及治疗进展
+
+王余玮 王桂侠 吕游 刘松阳 刚晓坤
+
+中华内分泌代谢杂志2026年 42卷 09期
+
+DOI: 10.3760/cma.j.cn311282-20251128-00585
+
+《中华内分泌代谢杂志》编辑部
+
+中华内分泌代谢杂志2026年 42卷 09期
+
+DOI: 10.3760/cma.j.cn311282-20260820-00375
+
+摘要
+
+HTML
+
+On the occasion of the 23rd Endocrinology Academic Conference of the Chinese Medical Association, the *Chinese Journal of Endocrinology and Metabolism* andJournal of DiabetesThe enlarged meeting of the editorial board was held in Changsha on August 19, 2026. This meeting was chaired by Professor Liu Jianmin, Director of the Editorial Department, and Academician Ning Guang, Editor-in-Chief of the Chinese Journal of Endocrinology and Metabolism,Journal of DiabetesProfessor Wang Weiqing, editor-in-chief, along with nearly 50 experts from the deputy editors-in-chief and editorial board, attended the meeting.
+
+外刊选译
+
+Journal of Diabetes中文导读
+
+J Diabetes编辑部
+
+中华内分泌代谢杂志2026年 42卷 09期
+
+DOI: 10.3760/cma.j.cn311282-20260824-00377
+
+摘要
+
+HTML
+
+Review Article
+
+更正
+
+更正
+
+中华内分泌代谢杂志2026年 42卷 09期
+
+DOI: 10.3760/cma.j.issn.1000-6699.2026.09.101
+
+摘要
+
+HTML
+
+On page 405 of the article "The Relationship between Hyperuricemia and Mild Cognitive Impairment in Non-Obese Elderly People" in Volume 36, Issue 5, 2020, the author's affiliation "Department of Health Care and Medical Services, Tianjin Medical University" should be corrected to "Department of Health Care and Medical Services, Tianjin Medical University General Hospital", which is hereby corrected.--------------------------------------------------------------------------------
+中华糖尿病杂志：2026年第18卷第08期 (https://uatwk.yiigle.com/cn/zhtnbzz/toc/73365)
+citeturn160search2 [wordlim: 200] Published: 2 months ago; Crawled: today; 中华糖尿病杂志2026年 18卷 08期 ... 中华糖尿病杂志2026年 18卷 08期
+### 国产司美格鲁肽注射液治疗2型糖尿病的有效性及安全性：多中心、随机、开放、阳性对照Ⅲ期临床研究
+
+曹楚晴 颜湘 柳德学 王海芳 孙皎 符文燕 叶山东 陈晓文 周迪军 张丽丽 等
+
+中华糖尿病杂志2026年 18卷 08期
+
+DOI: 10.3760/cma.j.cn115791-20251216-00649
+
+摘要
+
+HTML PDF
+
+目的 研究国产司美格鲁肽注射液对比原研司美格鲁肽注射液治疗成人2型糖尿病（T2DM）的有效性及安全性。 方法 该研究为多中心、随机、开放、平行、阳性对照的Ⅲ期等效性临床研究。纳入2023年4月28日至2024年4月3日全国46家研究中心，应用二甲双胍单药或联合磺脲类治疗血糖控制不佳的T2DM受试者为研究对象；根据其口服降糖药分层，按照1∶1比例随机分配至国产司美格鲁肽注射液组（治疗组）和原研司美格鲁肽注射液组（对照组），主要终点为治疗32周后糖化血红蛋白（HbA1c）较基线的变化，等效界值为±0.4%。### 糖尿病足溃疡发生或复发的外科预防进展
+
+安文宇 简扬 魏在荣
+
+中华糖尿病杂志2026年 18卷 08期
+
+DOI: 10.3760/cma.j.cn115791-20251219-00657
+
+摘要
+
+HTML PDF
+
+随着我国糖尿病患病率的持续上升，糖尿病足溃疡（DFU）的预防越来越重要。目前临床普遍通过严格的血糖控制、足部护理及感染管理等内科方式来预防DFU，而外科技术在DFU预防中的作用仍待进一步明确。近年来，随着多学科糖尿病足诊疗模式的建立，部分外科手段逐渐由“治疗”向“预防”转变，在DFU人群中显示出潜在价值。该文从血运重建术、神经减压术、外科减压术3个方面总结外科技术预防DFU的作用机制、适应证及临床应用。血运重建术通过恢复患肢血流灌注改善组织氧合，适用于缺血型或神经缺血型高危足；神经减压术通过解除周围神经卡压改善感觉及运动功能，适用于存在明确局灶性神经卡压的糖尿病周围神经病变患者；外科减压术（包括跖骨头切除术、跟腱延长术、关节成形术、屈肌腱切断术）通过矫正足部结构异常和异常压力分布，降低局部应力性损伤风险。三类技术互为补充，共同构成DFU外科预防体系，旨在为DFU的综合预防提供参考与指导。--------------------------------------------------------------------------------
+中华内分泌代谢杂志 - MedNexus (https://cs.medjournals.cn/cn/zhnfmdxzz)
+citeturn160search3 [wordlim: 200] Crawled: 3 weeks ago; 2108《中华内分泌代谢杂志》及《Journal of Diabetes 》2026年编委扩大会议纪要1308《中华内分泌代谢杂志》2024年编委会会议纪要1312《中华内分泌代谢杂志》2023年编委会会议纪要2906关于启用中华医学会杂志社学术期刊出版服务平台的通知1406关于在知网中如何检索中华医学会系列杂志文章的说明 ... 662 2019-09-27中华医学期刊APP宣传片 801 2019-08-26
+--------------------------------------------------------------------------------
+优先出版 - 中华内分泌代谢杂志 (https://cs.medjournals.cn/cn/zhnfmdxzz/just-published)
+citeturn160search4 [wordlim: 200] Crawled: 3 weeks ago; Image: 2026年42卷09期
+--------------------------------------------------------------------------------
+中华医学期刊网 - 传播医学新知， 守护人类健康 (https://cs.medjournals.cn/cn)
+citeturn160search5 [wordlim: 200] Crawled: today; 智能医疗：技术创新、临床转化与治理整理者中华医学会杂志社 810 2026-09-22 CAR-T细胞治疗：技术进展、临床应用与挑战整理者中华医学会杂志社 188 2026-11-08积极应对人口老龄化：健康促进、疾病防治与功能维护整理者中华医学会杂志社 261 2026-11-01烧伤整形领域指南类文献集锦（2011~2015）整理者蒋文富 6.3K 2026-04-27
+--------------------------------------------------------------------------------
+专题笔谈 - 中华医学杂志 (https://cs.medjournals.cn/cn/zhyxzz/Collections/6304)
+citeturn160search6 [wordlim: 200] Crawled: 5 days ago; 2026-09-15 96
+--------------------------------------------------------------------------------
+中华医学杂志：2026年第106卷第34期 (https://cs.medjournals.cn/cn/zhyxzz/toc/73594)
+citeturn160search7 [wordlim: 200] Published: 2 months ago; Crawled: today; 出版日期：2026-09-15
+--------------------------------------------------------------------------------
+MedNexus - MedNexus (https://cs.medjournals.cn/cn/doi)
+citeturn160search8 [wordlim: 200] Crawled: last week; 中华医学杂志 2026/09/15
+--------------------------------------------------------------------------------
+中华医学杂志 - MedNexus (https://cs.medjournals.cn/cn/zhyxzz/)
+citeturn160search9 [wordlim: 200] Crawled: today; National Medical Journal of China
+
+CN  11-2137/R pISSN  0376-2491 eISSN  2098-1082 ... 中华医学杂志2026年106卷42期
+--------------------------------------------------------------------------------
+MedNexus：2026年第64卷第09期 (https://cs.medjournals.cn/cn/toc/73512)
+citeturn160search10 [wordlim: 200] Published: 2 months ago; Crawled: today; 中华儿科杂志2026年 64卷 09期 ... 中华儿科杂志2026年第64卷第7期刊登的“儿童暴发性心肌炎质量控制管理方案应用效果分析”一文，第795页作者单位部分，“^{6}广西医科大学第一附属医院急诊科，南宁 530021”更正为“^{6}广西壮族自治区人民医院急诊科，南宁 530021”；第796页作者单位部分，“^{6}Department of Emergency，the First Affiliated Hospital of Guangxi Medical University，Nanning 530021，China”更正为“^{6}Department of Emergency，the People's Hospital of Guangxi Zhuang Autonomous Region，Nanning 530021，China”；第800页志谢部分，“刘桂良（广西医科大学第一附属医院）”更正为“刘桂良（广西壮族自治区人民医院）”。
+--------------------------------------------------------------------------------
+中华医学杂志：2026年第106卷第36期 (https://cs.medjournals.cn/cn/zhyxzz/toc/73662)
+citeturn160search11 [wordlim: 200] Published: last month; Crawled: yesterday; 出版日期：2026-09-29 ... DOI: 10.3760/cma.j.cn112137-20260703-01676
+--------------------------------------------------------------------------------
+医学信息学杂志 2026 年第 47 卷第 10 期 (https://www.yxxxx.ac.cn/yxxxx/article/pdf/20261009)
+citeturn160search12 [wordlim: 200] Published: 6 days ago; Crawled: today; JOURNAL OF MEDICAL INFORMATICS 2026, Vol. ... ¹The Affiliated Traditional Chinese Medicine Hospital, Guangzhou Medical University, Guangzhou 510130, China; ... **cite修回日期 ** 2026-09-10
+--------------------------------------------------------------------------------
+检 索 证 明 (https://zzsetyy.cn/upload_files/file/2026-09/20260915161159656.pdf)
+citeturn160search13 [wordlim: 200] Published: 2 months ago; Crawled: yesterday; 教育部科技查新工作站 Z12 检索证明　　　　　　　　　编号：ZZUA2026-09-1058 ... 经检索《Science Citation Index Expanded》（SCI-EXPANDED）数据库和《Journal Citation Reports》（JCR）数据库和《中国科学引文情报中心期刊分区表升级版》，以下 2 篇文献的基本信息、期刊的影响因子及分区如下： ... 来源出版物：FRONTIERS IN MEDICINE　卷:13　DOI:10.3389/fmed.2026.1815375　出版时间:APR 10 2026　提前访问日期:APR 2026 ... 地址：郑州市科学大道 100 号郑州大学图书馆　电话 0371-67780900　检索邮箱: jiansuo@zzu.edu.cn
+--------------------------------------------------------------------------------
+标题 (https://wsyj.cbpt.cnki.net/portal/journal/portal//client/paper/preview?cache=false&filePath=files%2Fwsyj%2Fhtmlfulltext%2Fpdf%2F2026%2F05%2F2024%E5%B9%B4%E6%B5%99%E6%B1%9F%E7%9C%81%E4%B8%AD%E8%80%81%E5%B9%B4%E9%AB%98%E8%A1%80%E5%8E%8B%E5%89%8D%E6%9C%9F%E4%BA%BA%E7%BE%A4%E6%A4%8D%E7%89%A9%E6%80%A7%E9%A5%AE%E9%A3%9F%E6%A8%A1%E5%BC%8F%E4%B8%8E10%E5%B9%B4%E5%8A%A8%E8%84%89%E7%B2%A5%E6%A0%B7%E7%A1%AC%E5%8C%96%E6%80%A7%E5%BF%83%E8%A1%80%E7%AE%A1%E7%96%BE%E7%97%85%E5%8F%91%E7%97%85%E9%A3%8E%E9%99%A9%E7%9A%84%E7%9B%B8%E5%85%B3%E6%80%A7.pdf)
+citeturn160search14 [wordlim: 200] Published: last week; Crawled: 2 days ago; 2026年9月　JOURNAL OF HYGIENE RESEARCH　Sep. ... 文章编号：1000-8020（2026）05-0754-09　•调查研究• ... DOI：10.19813/j.cnki.weishengyanjiu.2026.05.008
+--------------------------------------------------------------------------------
+# 《中草药》（ZHONGCAOYAO） (https://www.tiprpress.com/zcy/article/pdf/20260800)
+citeturn160search15 [wordlim: 200] Published: 6 months ago; Crawled: 3 days ago; CN 12-1108/R * 1970 * sm * A4 * 240 * zh * P * ¥ 60.00 * 3000 * 34 * 2026-08
+--------------------------------------------------------------------------------
+<table id="e1"> (https://www.cma.org.cn/attach/0/db49456f21e04bf39fe44e4b81746132.pdf)
+citeturn160search16 [wordlim: 200] Published: 7 months ago; Crawled: 6 months ago; <td>http://cmeonline.cma-cmc.com.cn</td> ... <td>2026-04-08-005(国)</td>
+--------------------------------------------------------------------------------
+实验动物与比较医学 Laboratory Animal and Comparative Medicine (https://www.sciengine.com/doi/pdfView/37EDA25357064836800448B2F17692C6)
+citeturn160search17 [wordlim: 200] Published: 7 months ago; DOI:10.3389/fnut.2024.1393673. ... （收稿日期：2025-03-20 修回日期：2025-09-10 ） ... Lab Anim Comp Med, 2026, 46(1): 46-54. ... 《实验动物与比较医学》（CN 31-1954/Q，ISSN 1674-5817）由上海科学院主管，上海市实验动物学会和上海实验动物研究 ... Health、波兰ICI World of Journals和ICI Master List、WHO西太平洋地区医学索引（WPRIM）和美国EBSCO数据库，以及中
+--------------------------------------------------------------------------------
+中华糖尿病杂志：2026年第18卷第10期 (https://cs.medjournals.cn/cn/zhtnbzz/current)
+citeturn160view0 [wordlim: 200] Crawled: today; Content type: text/html; Source: open({"ref_id":"turn155view0","lineno":55}); Total lines: 102
+L0:   * 全部
+L1: 
+L2: 本刊
+L3: 
+L4: [Input: 请输入关键词]
+L5: 
+L6: [Button: 高级检索]
+L7: 
+L8: 【0†Email Alert】English登录IP登录注册
+L9: 
+L10: 中华糖尿病杂志
+L11: 
+L12: # 2026年 · 第18卷第10期
+L13: 
+L14: 出版日期：2026-10-20
+L15: 
+L16: 收藏本期
+L17: 
+L18: ### 中华糖尿病杂志
+L19: 
+L20: 【1†期刊首页】
+L21: 
+L22: 【2†当期目录】
+L23: 
+L24: 【3†过刊浏览】
+L25: 
+L26: 【4†优先出版】
+L27: 
+L28: 【5†专题集锦】
+L29: 
+L30: 作者/专家服务
+L31: 
+L32: 【6†作者须知】【7†期刊投稿†medpress.yiigle.com】
+L33: 
+L34: 关于本刊
+L35: 
+L36: 【8†期刊简介】【9†编委会】【10†联系我们】
+L37: 
+L38: 当期目录
+L39: 
+L40:   * 【1†期刊首页】
+L41:   * 【2†当期目录】
+L42:   * 【3†过刊浏览】
+L43:   * 【4†优先出版】
+L44:   * 【5†专题集锦】
+L45:   * 作者/专家服务
+L46: 
+L47: 【6†作者须知】【7†期刊投稿†medpress.yiigle.com】
+L48: 
+L49:   * 关于本刊
+L50: 
+L51: 【8†期刊简介】【9†编委会】【10†联系我们】
+L52: 
+L53: 全部
+L54: 
+L55: 【11†上一期】
+--------------------------------------------------------------------------------
+中华内分泌代谢杂志：2026年第42卷第10期 (https://cs.medjournals.cn/cn/zhnfmdxzz/current)
+citeturn160view1 [wordlim: 200] Crawled: today; Content type: text/html; Source: open({"ref_id":"turn155view1","lineno":60}); Total lines: 102
+L56: ### 本期目次
+L57: 
+L58: 【13†Image: 2026年42卷10期†zhnfmdxzz.yiigle.com】
+L59: 
+L60: 2026年 42卷 10期
+L61: 
+L62: 下载本期封面 下载本期目录
+L63: 
+L64: 【14†Image: rankBgIcon】
+L65: 
+L66: 【15†Image: CMAPH】
+L67: 
+L68: 中华医学会杂志社主办和技术支持
+L69: 
+L70: 关于我们
+L71: 
+L72: 【16†关于中华医学会杂志社】 【17†关于中华医学会】 【18†帮助中心】 【19†广告服务】
+L73: 
+L74: 信息中心
+L75: 
+L76: 【20†会员协议】 【21†用户协议】 【22†隐私政策】 【23†版权声明】
+L77: 
+L78: 联系方式
+L79: 
+L80: 【24†Image】86-010-51322392/2386
+L81: 
+L82: 【25†Image】club.ph@cma.org.cn
+L83: 
+L84: 【26†Image】北京市西城区东河沿街69号100052
+L85: 
+L86: 扫描关注
+L87: 
+L88: 中华医学期刊网公众号
+L89: 
+L90: 【27†Image: 中华医学期刊网公众号】
+L91: 
+L92: 扫描关注
+L93: 
+L94: 中华医学期刊网公众号
+L95: 
+L96: © 2026 《中华医学杂志》社有限责任公司版权所有
+L97: 
+L98: 【28†京ICP备09064830号-19†beian.miit.gov.cn】
+--------------------------------------------------------------------------------
+中华糖尿病杂志：2026年第18卷第09期 (https://cs.medjournals.cn/cn/zhtnbzz/toc/73634)
+citeturn160view2 [wordlim: 200] Crawled: last week; Content type: text/html; Source: open({"ref_id":"https://cs.medjournals.cn/cn/zhtnbzz/toc/73634","lineno":null}); Total lines: 289
+L0:   * 全部
+L1:   * 专题笔谈
+L2:   * 争鸣
+L3:   * 论著
+L4:   * 病例报告
+L5:   * 综述
+L6: 
+L7: 本刊
+L8: 
+L9: [Input: 请输入关键词]
+L10: 
+L11: [Button: 高级检索]
+L12: 
+L13: 【0†Email Alert】English登录IP登录注册
+L14: 
+L15: 中华糖尿病杂志
+L16: 
+L17: # 2026年 · 第18卷第09期
+L18: 
+L19: 出版日期 2026-09-20电子版 ￥20.00元￥40.00元
+L20: 
+L21: 收藏本期
+

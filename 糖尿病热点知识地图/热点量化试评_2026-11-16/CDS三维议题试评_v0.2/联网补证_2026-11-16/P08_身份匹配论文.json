@@ -1,0 +1,50 @@
+[
+  {
+    "pmid": "42289383",
+    "journal": "Renal failure",
+    "dates": [
+      {
+        "Year": "2026",
+        "Month": "Dec",
+        "Day": null,
+        "MedlineDate": null
+      },
+      {
+        "Year": "2026",
+        "Month": "06",
+        "Day": "14",
+        "MedlineDate": null
+      }
+    ],
+    "position": "1/10",
+    "title": "AMD1-mediated polyamine metabolism governs tubular repair fate by restraining senescence after kidney injury.",
+    "aff": [
+      "Department of Nephrology, Shanghai General Hospital, Shanghai Jiaotong University School of Medicine, Shanghai, China.",
+      "Laboratory of Nephropathy, Translational Medicine Center, Shanghai General Hospital, Shanghai Jiaotong University School of Medicine, Shanghai, China.",
+      "Institute of Translational Medicine, Shanghai General Hospital, Shanghai Jiaotong University School of Medicine, Shanghai, China."
+    ]
+  },
+  {
+    "pmid": "42569254",
+    "journal": "Materials today. Bio",
+    "dates": [
+      {
+        "Year": "2026",
+        "Month": "Aug",
+        "Day": null,
+        "MedlineDate": null
+      },
+      {
+        "Year": "2026",
+        "Month": "07",
+        "Day": "22",
+        "MedlineDate": null
+      }
+    ],
+    "position": "6/10",
+    "title": "Rewiring the mitochondrial NAD+-CoQ axis using metabolic nanomedicine for acute kidney injury therapy.",
+    "aff": [
+      "Department of Nephrology, Shanghai General Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, 200080, China."
+    ]
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "result": "passed",
+  "checked_on": "2026-11-17",
+  "checks": [
+    "三个层级入口：国际1届、全国1届、区域0届；仅两个真实系列/届次",
+    "分类筛选和区域空入口可独立打开，未创建示例会议",
+    "按会议名称和地点搜索、无结果状态正确",
+    "ADA/CDS会议首页、议题、来源均正确跳转，并能返回总入口；会议数据计数保持",
+    "1440/768/390宽度下总入口和会议回链无整页横向溢出",
+    "离线file://打开、区域深链刷新、会议往返均可用",
+    "浏览器无脚本错误；测试期间不访问外部网站"
+  ],
+  "page_errors": [],
+  "new_collection": false,
+  "published": false,
+  "browser_identity": "automation-chrome with isolated temporary profile"
+}

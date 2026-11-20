@@ -1,0 +1,1136 @@
+{
+  "batch_id": "P03-EXISTING-ABSTRACTS-002",
+  "scope": "十篇已有英文摘要；仅摘要层结果，无新采集",
+  "new_collection": false,
+  "published": false,
+  "papers": [
+    {
+      "paper_id": "PMID:42905866",
+      "pmid": "42905866",
+      "doi": "10.2337/db26-0626",
+      "title": "Novel Protein Biomarkers to Monitor Kidney Function Decline and Treatment Response in Individuals With Normoalbuminuria and Type 2 Diabetes.",
+      "journal": "Diabetes",
+      "publication_date": "2026-10-21",
+      "raw_path": "原始资料/论文首轮_2026-11-17/PubMed核心_3.xml",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/42905866/",
+      "source_locator": "PubmedArticle[MedlineCitation/PMID=\"42905866\"]/MedlineCitation/Article/Abstract",
+      "raw_sha256": "ef25ee87db3a0cd1b0cc47caa2e8ab861a54937231c9130676fb4dabf3888955",
+      "abstract_segments": [
+        {
+          "label": "",
+          "text": "Kidney function can decline in individuals with type 2 diabetes despite normal albuminuria, yet current risk stratification relies heavily on urinary albumin-to-creatinine ratio (UACR), which may inadequately capture this process. We investigated whether biomarkers reflecting inflammation, tubular injury, regenerative capacity, and fibrosis improve risk prediction and treatment monitoring beyond UACR in these individuals. Baseline UACR did not predict the composite kidney outcome, whereas TNFR-1, TNFR-2, KIM-1, and MMP-7 were independently associated. In those who developed the outcome, these biomarkers and uEGF/Cr showed divergent trajectories, unlike UACR. Biomarkers capturing pathways beyond glomerular injury may improve risk stratification and treatment monitoring in these normoalbuminuric patients."
+        }
+      ],
+      "normalized_abstract_sha256": "c4de814faa4cd3c7b65aa48ce5cefd422214414dc6c5c05816d41c164c3c71cc",
+      "reading_level": "abstract_only",
+      "records": [
+        {
+          "biomarker_id": "BM2:TNFR1",
+          "name_zh": "TNFR-1",
+          "standard_name": "TNFR-1",
+          "biomarker_type": "single",
+          "is_member_defined": 1,
+          "reference_endpoint": false,
+          "category": "分型与预测",
+          "disease_or_complication": "糖尿病肾脏病",
+          "target_population": "正常白蛋白尿T2D患者",
+          "sample_or_fraction": "具体基质未在本摘要说明",
+          "clinical_use": "复合肾结局风险研究",
+          "result_text": "TNFR-1与复合肾结局独立关联；摘要未给关联方向、效应量或独立外部验证。",
+          "original_excerpt": "Baseline UACR did not predict the composite kidney outcome, whereas TNFR-1, TNFR-2, KIM-1, and MMP-7 were independently associated.",
+          "excerpt_segment": 1,
+          "excerpt_label": "",
+          "direction": "inconclusive",
+          "metrics": [],
+          "method": "比较UACR及炎症、肾小管损伤、再生和纤维化相关标志物；检测平台未说明",
+          "method_excerpt": "",
+          "components": [],
+          "entity_note": "摘要已核对名称和研究用途；检测标准化及临床使用范围仍需原文与独立验证。"
+        },
+        {
+          "biomarker_id": "BM2:TNFR2",
+          "name_zh": "TNFR-2",
+          "standard_name": "TNFR-2",
+          "biomarker_type": "single",
+          "is_member_defined": 1,
+          "reference_endpoint": false,
+          "category": "分型与预测",
+          "disease_or_complication": "糖尿病肾脏病",
+          "target_population": "正常白蛋白尿T2D患者",
+          "sample_or_fraction": "具体基质未在本摘要说明",
+          "clinical_use": "复合肾结局风险研究",
+          "result_text": "TNFR-2与复合肾结局独立关联；摘要未给关联方向、效应量或独立外部验证。",
+          "original_excerpt": "Baseline UACR did not predict the composite kidney outcome, whereas TNFR-1, TNFR-2, KIM-1, and MMP-7 were independently associated.",
+          "excerpt_segment": 1,
+          "excerpt_label": "",
+          "direction": "inconclusive",
+          "metrics": [],
+          "method": "比较UACR及炎症、肾小管损伤、再生和纤维化相关标志物；检测平台未说明",
+          "method_excerpt": "",
+          "components": [],
+          "entity_note": "摘要已核对名称和研究用途；检测标准化及临床使用范围仍需原文与独立验证。"
+        },
+        {
+          "biomarker_id": "BM2:KIM1",
+          "name_zh": "KIM-1",
+          "standard_name": "KIM-1",
+          "biomarker_type": "single",
+          "is_member_defined": 1,
+          "reference_endpoint": false,
+          "category": "分型与预测",
+          "disease_or_complication": "糖尿病肾脏病",
+          "target_population": "正常白蛋白尿T2D患者",
+          "sample_or_fraction": "具体基质未在本摘要说明",
+          "clinical_use": "复合肾结局风险研究",
+          "result_text": "KIM-1与复合肾结局独立关联；摘要未给关联方向、效应量或独立外部验证。",
+          "original_excerpt": "Baseline UACR did not predict the composite kidney outcome, whereas TNFR-1, TNFR-2, KIM-1, and MMP-7 were independently associated.",
+          "excerpt_segment": 1,
+          "excerpt_label": "",
+          "direction": "inconclusive",
+          "metrics": [],
+          "method": "比较UACR及炎症、肾小管损伤、再生和纤维化相关标志物；检测平台未说明",
+          "method_excerpt": "",
+          "components": [],
+          "entity_note": "摘要已核对名称和研究用途；检测标准化及临床使用范围仍需原文与独立验证。"
+        },
+        {
+          "biomarker_id": "BM2:MMP7",
+          "name_zh": "MMP-7",
+          "standard_name": "MMP-7",
+          "biomarker_type": "single",
+          "is_member_defined": 1,
+          "reference_endpoint": false,
+          "category": "分型与预测",
+          "disease_or_complication": "糖尿病肾脏病",
+          "target_population": "正常白蛋白尿T2D患者",
+          "sample_or_fraction": "具体基质未在本摘要说明",
+          "clinical_use": "复合肾结局风险研究",
+          "result_text": "MMP-7与复合肾结局独立关联；摘要未给关联方向、效应量或独立外部验证。",
+          "original_excerpt": "Baseline UACR did not predict the composite kidney outcome, whereas TNFR-1, TNFR-2, KIM-1, and MMP-7 were independently associated.",
+          "excerpt_segment": 1,
+          "excerpt_label": "",
+          "direction": "inconclusive",
+          "metrics": [],
+          "method": "比较UACR及炎症、肾小管损伤、再生和纤维化相关标志物；检测平台未说明",
+          "method_excerpt": "",
+          "components": [],
+          "entity_note": "摘要已核对名称和研究用途；检测标准化及临床使用范围仍需原文与独立验证。"
+        },
+        {
+          "biomarker_id": "BM2:UEGF_CR",
+          "name_zh": "uEGF/Cr",
+          "standard_name": "uEGF/Cr",
+          "biomarker_type": "single",
+          "is_member_defined": 1,
+          "reference_endpoint": false,
+          "category": "动态监测",
+          "disease_or_complication": "糖尿病肾脏病",
+          "target_population": "正常白蛋白尿T2D患者",
+          "sample_or_fraction": "uEGF/Cr；采样与测定细节待核",
+          "clinical_use": "肾结局相关纵向轨迹",
+          "result_text": "发生肾结局者中uEGF/Cr与其他指标呈差异轨迹；不据此认定其基线独立预测能力。",
+          "original_excerpt": "In those who developed the outcome, these biomarkers and uEGF/Cr showed divergent trajectories, unlike UACR.",
+          "excerpt_segment": 1,
+          "excerpt_label": "",
+          "direction": "inconclusive",
+          "metrics": [],
+          "method": "比较UACR及炎症、肾小管损伤、再生和纤维化相关标志物；检测平台未说明",
+          "method_excerpt": "",
+          "components": [],
+          "entity_note": "摘要已核对名称和研究用途；检测标准化及临床使用范围仍需原文与独立验证。"
+        }
+      ],
+      "study_design": "正常白蛋白尿T2D肾结局关联及随访轨迹研究；摘要未给出完整设计",
+      "sample_size": "已存摘要未报告样本量",
+      "cohort_name": "正常白蛋白尿2型糖尿病人群",
+      "method": "比较UACR及炎症、肾小管损伤、再生和纤维化相关标志物；检测平台未说明",
+      "validation_type": "discovery",
+      "validation_kind": "association_and_trajectory",
+      "validation_label": "关联与轨迹结果；外部验证未说明",
+      "validation_detail": "独立关联和轨迹比较不等于独立外部队列验证；治疗效应的具体数值未给出。",
+      "external_validation_status": "not_reported",
+      "clinical_increment": "摘要称可能超越UACR补充风险/监测；未给AUC、校准或净获益",
+      "summary": "基线UACR未预测复合肾结局；TNFR-1、TNFR-2、KIM-1和MMP-7与结局独立关联。uEGF/Cr及这些指标在发生结局者中呈差异轨迹。",
+      "limitations": [
+        "样本量、检测平台、效应方向和效应量未在已存摘要给出",
+        "未说明独立外部验证或实际临床决策增益"
+      ],
+      "translation_status": "validation_followup",
+      "priority_reason": "临床问题明确：正常白蛋白尿仍可能发生肾功能下降。优先补队列、效应量和外部验证。"
+    },
+    {
+      "paper_id": "PMID:42821458",
+      "pmid": "42821458",
+      "doi": "10.2337/db26-0015",
+      "title": "Blood-Derived DNA Methylation Biomarkers Predict Diabetic Kidney Disease and Map to Epigenomic Remodeling in Renal Cells.",
+      "journal": "Diabetes",
+      "publication_date": "2026-10-01",
+      "raw_path": "原始资料/论文首轮_2026-11-17/PubMed核心_3.xml",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/42821458/",
+      "source_locator": "PubmedArticle[MedlineCitation/PMID=\"42821458\"]/MedlineCitation/Article/Abstract",
+      "raw_sha256": "ef25ee87db3a0cd1b0cc47caa2e8ab861a54937231c9130676fb4dabf3888955",
+      "abstract_segments": [
+        {
+          "label": "",
+          "text": "We undertook this study because albuminuria and estimated glomerular filtration rate often identify diabetic kidney disease risk only after substantial kidney injury in type 1 diabetes. We asked whether blood DNA methylation patterns could predict future DKD progression and improve clinical risk stratification. Genome-wide leukocyte methylation sequencing identified hypomethylated regions and a four-locus methylation risk score (SLC4A4, FSTL4, ICA1, and PTK2) that improved prediction beyond clinical risk models and was validated in 330 participants. Podocyte multiomics showed concordant hyperglycemia-induced hypomethylation and gene activation, supporting the biological plausibility of the blood-derived risk score."
+        }
+      ],
+      "normalized_abstract_sha256": "c0a0961b58119961c284241cf363233fb0a5ffe8a9896cdda6e6066751fed519",
+      "reading_level": "abstract_only",
+      "records": [
+        {
+          "biomarker_id": "BM2:DKD_METH4",
+          "name_zh": "DKD四位点甲基化风险评分",
+          "standard_name": "DKD four-locus methylation risk score",
+          "biomarker_type": "panel",
+          "is_member_defined": 0,
+          "reference_endpoint": false,
+          "category": "分型与预测",
+          "disease_or_complication": "糖尿病肾脏病",
+          "target_population": "1型糖尿病人群",
+          "sample_or_fraction": "白细胞DNA（非cfDNA）",
+          "clinical_use": "未来DKD进展风险预测",
+          "result_text": "四位点评分改善临床模型预测并报告330人验证；摘要未明确验证队列独立性。",
+          "original_excerpt": "Genome-wide leukocyte methylation sequencing identified hypomethylated regions and a four-locus methylation risk score (SLC4A4, FSTL4, ICA1, and PTK2) that improved prediction beyond clinical risk models and was validated in 330 participants.",
+          "excerpt_segment": 1,
+          "excerpt_label": "",
+          "direction": "inconclusive",
+          "metrics": [],
+          "method": "全基因组白细胞甲基化测序及四位点评分；另有足细胞多组学",
+          "method_excerpt": "",
+          "components": [
+            "SLC4A4",
+            "FSTL4",
+            "ICA1",
+            "PTK2"
+          ],
+          "entity_note": "四个基因对应位点的名称已给；CpG坐标、计算权重及阈值未给，尚不能复原检测面板。"
+        }
+      ],
+      "study_design": "血液甲基化预测DKD进展，辅以足细胞多组学",
+      "sample_size": "报告330名参与者验证；发现集人数未在已存摘要说明",
+      "cohort_name": "1型糖尿病；验证人群与发现集的独立性待核",
+      "method": "全基因组白细胞甲基化测序及四位点评分；另有足细胞多组学",
+      "validation_type": "unspecified",
+      "validation_kind": "validation_reported_unspecified",
+      "validation_label": "报告330人验证；是否独立外部队列待核",
+      "validation_detail": "摘要写validated in 330 participants，但未明确发现/验证人群划分或外部来源；足细胞结果支持生物学合理性，不代替外部预测验证。",
+      "external_validation_status": "unclear",
+      "clinical_increment": "摘要报告超越临床风险模型改善预测，但未给具体增益数值",
+      "summary": "SLC4A4、FSTL4、ICA1、PTK2四位点甲基化风险评分改善DKD进展预测；报告330人验证。",
+      "limitations": [
+        "具体CpG坐标、评分系数与阈值未列出",
+        "330人验证是否独立外部验证不明确",
+        "白细胞DNA不能直接当作cfDNA检测证据"
+      ],
+      "translation_status": "validation_followup",
+      "priority_reason": "已有评分和330人验证表述；优先核实验证独立性、位点定义及相对临床模型的增益。"
+    },
+    {
+      "paper_id": "PMID:42709505",
+      "pmid": "42709505",
+      "doi": "10.2337/db26-0148",
+      "title": "Longitudinal Repeated Protein Measurements in a Multiethnic Cohort Identify Novel Diabetes Biomarkers That Reveal Unique Disease Pathways.",
+      "journal": "Diabetes",
+      "publication_date": "2026-11-01",
+      "raw_path": "原始资料/论文首轮_2026-11-17/PubMed核心_2.xml",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/42709505/",
+      "source_locator": "PubmedArticle[MedlineCitation/PMID=\"42709505\"]/MedlineCitation/Article/Abstract",
+      "raw_sha256": "0ac91be89d0ef027d8ea71788d826d6ff53020b16f7cb58ab99c7fb762b3d8b5",
+      "abstract_segments": [
+        {
+          "label": "UNLABELLED",
+          "text": "Circulating diabetes biomarkers have been identified with proteomics measured at a single time point, but what is additionally provided by longitudinal repeated measurements in the same individuals, over many years, is unknown. We studied participants in the Multi-Ethnic Study of Atherosclerosis (MESA; n = 5,322; mean baseline age, 61.7 years) at exams 1 (2000-2002), 5 (2010-2012), and 6 (2016-2018) profiled with the Olink Explore (3 K) platform. Associations with incident diabetes, mostly of type 2, were modeled using Cox proportional hazards with exam 1 proteins (i.e., single time point) and time-updating Cox with proteins from all three exams (i.e., longitudinal repeated) adjusted for clinical risk factors. We identified 27 novel single time point associations and up to a fourfold increase in longitudinal associations (false discovery rate < 0.05), with a proportional increase in the number consistent with causality via cis-Mendelian randomization (∼5%) and a smaller overlap in MESA longitudinal versus single associations with UK Biobank single time point findings (42% vs. 87%, respectively). Compared with small-molecule metabolism pathway enrichment among the shared proteins, proteins unique to the longitudinal analyses enriched for protein and cellular processing pathways. We conclude that longitudinal repeated measurements identify a number of distinct disease biomarkers, in part by revealing the progression of relevant biological processes within an individual closer to a clinical diabetes diagnosis versus single measurements."
+        },
+        {
+          "label": "ARTICLE HIGHLIGHTS",
+          "text": "There is up to a fourfold increase in diabetes biomarkers identified with longitudinal repeated versus single time point proteomic measurements. The increase in biomarkers identified with longitudinal repeated measurements is supported by a similar proportion being nominated as causal for type 2 diabetes with Mendelian randomization. Proteins unique to the longitudinal repeated analyses highlighted biological pathways (e.g., posttranslational protein modification and cellular structure and cycle regulation) that were distinct from pathways enriched among the shared proteins (e.g., small-molecule metabolic and catabolic processes). Longitudinal protein measurements identify additional novel disease biomarkers and disparate biological pathways compared with single measurement analyses."
+        }
+      ],
+      "normalized_abstract_sha256": "2751cd7582c5f94e64c71bc943b6dc95f6748b0bc82c901d311e5c18a12a9141",
+      "reading_level": "abstract_only",
+      "records": [
+        {
+          "biomarker_id": "BM2:MESA_PROTEINS",
+          "name_zh": "MESA纵向蛋白特征（名单待补）",
+          "standard_name": "MESA longitudinal protein associations",
+          "biomarker_type": "signature",
+          "is_member_defined": 0,
+          "reference_endpoint": false,
+          "category": "动态监测",
+          "disease_or_complication": "糖尿病发生",
+          "target_population": "MESA多族裔队列5,322人",
+          "sample_or_fraction": "循环蛋白；血浆/血清基质未在摘要明示",
+          "clinical_use": "重复测量与糖尿病发生关联",
+          "result_text": "识别27个新的单时点关联；纵向关联数最多增加至4倍，不是模型性能提高4倍。",
+          "original_excerpt": "We identified 27 novel single time point associations and up to a fourfold increase in longitudinal associations (false discovery rate < 0.05), with a proportional increase in the number consistent with causality via cis-Mendelian randomization (∼5%) and a smaller overlap in MESA longitudinal versus single associations with UK Biobank single time point findings (42% vs. 87%, respectively).",
+          "excerpt_segment": 1,
+          "excerpt_label": "UNLABELLED",
+          "direction": "inconclusive",
+          "metrics": [
+            {
+              "name": "MESA样本量",
+              "value": "5,322",
+              "unit": "人"
+            },
+            {
+              "name": "关联发现数量增幅上限",
+              "value": "4",
+              "unit": "倍；不是预测性能"
+            }
+          ],
+          "method": "Olink Explore 3K；基线Cox与时间更新Cox；cis-Mendelian randomization",
+          "method_excerpt": "",
+          "components": [],
+          "entity_note": "摘要已核对名称和研究用途；检测标准化及临床使用范围仍需原文与独立验证。"
+        }
+      ],
+      "study_design": "MESA纵向重复蛋白组与新发糖尿病关联，比较单次检测及UK Biobank发现",
+      "sample_size": "MESA 5,322人；基线平均61.7岁",
+      "cohort_name": "MESA：exam1、5、6三次访视",
+      "method": "Olink Explore 3K；基线Cox与时间更新Cox；cis-Mendelian randomization",
+      "validation_type": "discovery",
+      "validation_kind": "longitudinal_discovery_cross_cohort_comparison",
+      "validation_label": "纵向发现及跨队列结果比较；非外部模型验证",
+      "validation_detail": "与UK Biobank单时点发现重叠42%/87%，未展示一个固定预测面板在独立队列的性能；MR约5%的提名不等于临床验证。",
+      "external_validation_status": "not_established",
+      "clinical_increment": "未给临床预测AUC/净获益；4倍指关联发现数量，不是预测性能提高4倍",
+      "summary": "纵向重复测量的关联发现数量最多为单次测量的4倍，并涉及不同生物学通路；摘要未给具体蛋白名单。",
+      "limitations": [
+        "未列具体蛋白名单，暂保留特征方向",
+        "未给固定预测面板、阈值或临床增益",
+        "UKB重叠比较与MR不能作为外部预测验证"
+      ],
+      "translation_status": "exploratory",
+      "priority_reason": "适合纵向采样与通路发现设计；需先取得具体蛋白清单，再讨论检测与验证。"
+    },
+    {
+      "paper_id": "PMID:42612686",
+      "pmid": "42612686",
+      "doi": "10.2337/dc26-1081",
+      "title": "Clinical Utility of a Type 1 Diabetes Genetic Risk Score Measured as Part of MODY Genetic Testing.",
+      "journal": "Diabetes care",
+      "publication_date": "2026-10-01",
+      "raw_path": "原始资料/论文首轮_2026-11-17/PubMed核心_2.xml",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/42612686/",
+      "source_locator": "PubmedArticle[MedlineCitation/PMID=\"42612686\"]/MedlineCitation/Article/Abstract",
+      "raw_sha256": "0ac91be89d0ef027d8ea71788d826d6ff53020b16f7cb58ab99c7fb762b3d8b5",
+      "abstract_segments": [
+        {
+          "label": "OBJECTIVE",
+          "text": "To evaluate the clinical utility of incorporating a type 1 diabetes genetic risk score (T1DGRS) into monogenic diabetes gene panel testing for individuals referred for suspected maturity-onset diabetes of the young (MODY) from routine clinical practice."
+        },
+        {
+          "label": "RESEARCH DESIGN AND METHODS",
+          "text": "We studied 1,129 individuals treated with insulin referred for MODY genetic testing. All underwent gene panel testing that included 10 variants to calculate T1DGRS. We compared T1DGRS distributions with reference populations to estimate the type 1 diabetes (T1D) prevalence within referred individuals. We defined age-specific T1DGRS thresholds to identify probable T1D (positive predictive value ≥80%) and applied them in individuals genetically unsolved MODY to assess its utility as a pregenetic testing triage tool."
+        },
+        {
+          "label": "RESULTS",
+          "text": "T1DGRS in MODY referral individuals was intermediate between reference populations with and without T1D, consistent with an estimated 20% (95% CI 14.9-25.2%) T1D in this real-world setting. After genetic testing, no excess T1DGRS was observed in individuals with genetically solved MODY, whereas those with unsolved MODY showed enrichment consistent with 26.0% T1D, with highest values in children (76.2%) and lowest in adults (16.8%). Age-specific T1DGRS thresholds identified 16.1% (95% CI 13.8-18.5%) of genetically unsolved MODY as probable T1D. As a pretesting tool, T1DGRS showed limited discrimination overall (area under the curve [AUC] 0.60) but performed well in children aged <10 years (AUC 0.83), where >50% of tests could be avoided without missing MODY."
+        },
+        {
+          "label": "CONCLUSIONS",
+          "text": "Incorporating a T1DGRS into routine MODY gene panel testing is feasible and clinically valuable. This approach broadens genomic diagnostics beyond monogenic disease by identifying T1D in individuals with genetically unsolved MODY. Pregenetic testing utility is age dependent and may reduce unnecessary testing in pediatric patients."
+        }
+      ],
+      "normalized_abstract_sha256": "af5a85e2b9fe92884a70b0819e9873c542fc3473f7f8863535600dc90fb84491",
+      "reading_level": "abstract_only",
+      "records": [
+        {
+          "biomarker_id": "BM2:T1DGRS10",
+          "name_zh": "T1D遗传风险评分（10变异）",
+          "standard_name": "T1DGRS (10 variants)",
+          "biomarker_type": "panel",
+          "is_member_defined": 0,
+          "reference_endpoint": false,
+          "category": "分型与预测",
+          "disease_or_complication": "T1D与疑似MODY鉴别",
+          "target_population": "胰岛素治疗的MODY转诊人群；重点<10岁儿童",
+          "sample_or_fraction": "基因panel；具体采样基质未注明",
+          "clinical_use": "遗传检测前分流与未解MODY的T1D识别",
+          "result_text": "总体分流AUC0.60；<10岁儿童AUC0.83，摘要称该亚组可减少>50%检测且未漏MODY。",
+          "original_excerpt": "As a pretesting tool, T1DGRS showed limited discrimination overall (area under the curve [AUC] 0.60) but performed well in children aged <10 years (AUC 0.83), where >50% of tests could be avoided without missing MODY.",
+          "excerpt_segment": 3,
+          "excerpt_label": "RESULTS",
+          "direction": "inconclusive",
+          "metrics": [
+            {
+              "name": "整体分流AUC",
+              "value": "0.60",
+              "population": "全部转诊者"
+            },
+            {
+              "name": "儿童分流AUC",
+              "value": "0.83",
+              "population": "<10岁儿童"
+            }
+          ],
+          "method": "基因panel中的10个变异计算T1DGRS；与参考人群比较并评估年龄分层阈值",
+          "method_excerpt": "",
+          "components": [],
+          "entity_note": "摘要已核对名称和研究用途；检测标准化及临床使用范围仍需原文与独立验证。"
+        }
+      ],
+      "study_design": "疑似MODY临床转诊队列的遗传风险评分评估",
+      "sample_size": "1,129名接受胰岛素治疗的MODY转诊受检者",
+      "cohort_name": "日常临床MODY遗传检测转诊人群",
+      "method": "基因panel中的10个变异计算T1DGRS；与参考人群比较并评估年龄分层阈值",
+      "validation_type": "internal_validation",
+      "validation_kind": "same_referral_cohort_assessment",
+      "validation_label": "同一临床转诊队列评估；非独立外部验证",
+      "validation_detail": "临床实用性在该转诊队列评估；参考人群用于分布对照，不自动算独立的临床分流验证。",
+      "external_validation_status": "not_reported",
+      "clinical_increment": "整体分流AUC0.60；<10岁儿童AUC0.83，年龄适用范围必须保留",
+      "summary": "10变异T1DGRS用于疑似MODY分流；整体AUC0.60，<10岁儿童AUC0.83，未证实适用于所有年龄人群。",
+      "limitations": [
+        "10个变异清单与完整阈值未在摘要给出",
+        "整体表现有限，儿童亚组结果不能外推成人",
+        "未说明独立外部临床队列验证"
+      ],
+      "translation_status": "validation_followup",
+      "priority_reason": "明确诊断分流用途；优先评估<10岁转诊人群，并核对独立验证与10变异定义。"
+    },
+    {
+      "paper_id": "PMID:42461785",
+      "pmid": "42461785",
+      "doi": "10.2337/dc26-0738",
+      "title": "Blood-Based DNA Methylation Models Improve Short-term Cardiovascular Risk Stratification in Individuals With Type 2 Diabetes.",
+      "journal": "Diabetes care",
+      "publication_date": "2026-09-01",
+      "raw_path": "原始资料/论文首轮_2026-11-17/PubMed核心_1.xml",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/42461785/",
+      "source_locator": "PubmedArticle[MedlineCitation/PMID=\"42461785\"]/MedlineCitation/Article/Abstract",
+      "raw_sha256": "9cf1237098a0d59c203b424eff9460cfcebc72802b4969d829b1bcdda33fbe9f",
+      "abstract_segments": [
+        {
+          "label": "OBJECTIVE",
+          "text": "Cardiovascular complications are the leading cause of death in type 2 diabetes mellitus (T2DM). We investigated whether blood-based DNA methylation (DNAm) biomarkers could improve risk stratification for major adverse cardiovascular events (MACE) in individuals with T2DM."
+        },
+        {
+          "label": "RESEARCH DESIGN AND METHODS",
+          "text": "Epigenome-wide DNAm was profiled in peripheral blood mononuclear cells obtained at baseline from 305 T2DM participants of the Thiazolidinediones Or Sulphonylureas and Cardiovascular Accidents. Intervention Trial (TOSCA.IT) study, including 81 who experienced MACE within 5 years (T2DMACE) and 224 who did not (T2D). The population was randomly divided into training and internal test sets for model development and evaluation. Differential DNAm analyses were performed under five frameworks differing by covariate adjustment. Binomial least absolute shrinkage and selection operator (LASSO) logistic regression with stability selection was used to generate DNAm-based models to stratify individuals at higher risk of incident MACE over 5 years."
+        },
+        {
+          "label": "RESULTS",
+          "text": "Differential DNAm analysis identified 23,839, 21,529, 21,500, 12,114, and 7,101 differentially methylated CpG sites across the five analytical frameworks. LASSO logistic regression was used to develop five DNAm-based models. Stability selection retained 22-26 CpG predictors per model. When evaluated in the internal test cohort, the five models showed high discriminative performance, with receiver operating characteristic area under the curve values ranging from 0.915 to 0.937 and area under the precision-recall curve values from 0.866 to 0.940. Several CpGs were independently associated with either increased or decreased risk of MACE, including 12 CpGs identified across all of the models."
+        },
+        {
+          "label": "CONCLUSIONS",
+          "text": "The DNAm-based models we have generated may improve risk stratification for short-term cardiovascular events in individuals with T2DM, providing a promising approach to refine identification of those at increased risk of MACE."
+        }
+      ],
+      "normalized_abstract_sha256": "c440b47c061fc8829b1d1b8c013dfa7d8e6cd171026185eb1f2435114b8a3745",
+      "reading_level": "abstract_only",
+      "records": [
+        {
+          "biomarker_id": "BM2:MACE_DNAM",
+          "name_zh": "MACE甲基化模型（5模型）",
+          "standard_name": "PBMC DNAm MACE models (five models)",
+          "biomarker_type": "signature",
+          "is_member_defined": 0,
+          "reference_endpoint": false,
+          "category": "分型与预测",
+          "disease_or_complication": "T2D心血管事件",
+          "target_population": "TOSCA.IT 2型糖尿病人群",
+          "sample_or_fraction": "PBMC DNA（非cfDNA）",
+          "clinical_use": "5年MACE风险分层",
+          "result_text": "每模型22–26 CpG；内部测试AUROC0.915–0.937、AUPRC0.866–0.940，未报告外部验证。",
+          "original_excerpt": "When evaluated in the internal test cohort, the five models showed high discriminative performance, with receiver operating characteristic area under the curve values ranging from 0.915 to 0.937 and area under the precision-recall curve values from 0.866 to 0.940.",
+          "excerpt_segment": 3,
+          "excerpt_label": "RESULTS",
+          "direction": "inconclusive",
+          "metrics": [
+            {
+              "name": "内部测试AUROC",
+              "value": "0.915–0.937",
+              "cohort": "internal test"
+            },
+            {
+              "name": "内部测试AUPRC",
+              "value": "0.866–0.940",
+              "cohort": "internal test"
+            }
+          ],
+          "method": "PBMC全表观组DNAm；随机分训练/内部测试；LASSO+稳定性选择；5个调整框架",
+          "method_excerpt": "",
+          "components": [],
+          "entity_note": "摘要已核对名称和研究用途；检测标准化及临床使用范围仍需原文与独立验证。"
+        }
+      ],
+      "study_design": "TOSCA.IT基线PBMC甲基化与5年MACE的模型开发和内部测试",
+      "sample_size": "305人：81例5年内MACE，224例未发生；训练/测试具体人数摘要未给",
+      "cohort_name": "TOSCA.IT 2型糖尿病参与者",
+      "method": "PBMC全表观组DNAm；随机分训练/内部测试；LASSO+稳定性选择；5个调整框架",
+      "validation_type": "internal_validation",
+      "validation_kind": "random_holdout_internal_test",
+      "validation_label": "随机划分内部测试；外部验证未报告",
+      "validation_detail": "测试集来自同一305人研究群体，不称外部独立验证。每个模型保留22–26 CpG；5模型不合成一个固定panel。",
+      "external_validation_status": "not_reported",
+      "clinical_increment": "内部AUROC0.915–0.937；相对现有临床模型的增益数值、校准和净获益未给",
+      "summary": "5个DNAm模型各保留22–26个CpG，内部测试AUROC0.915–0.937、AUPRC0.866–0.940。",
+      "limitations": [
+        "摘要未列各模型CpG清单与系数",
+        "只报告内部测试",
+        "需要临床基线模型比较、外部验证和测量标准化"
+      ],
+      "translation_status": "validation_followup",
+      "priority_reason": "有明确内部测试结果；下一步优先外部验证和临床模型增益，不因高内部AUC认定成熟。"
+    },
+    {
+      "paper_id": "PMID:42574139",
+      "pmid": "42574139",
+      "doi": "10.2337/db26-0218",
+      "title": "Metabolomics-Defined Subtypes of Prediabetes and Risk of Cardiovascular-Kidney-Metabolic Outcomes.",
+      "journal": "Diabetes",
+      "publication_date": "2026-10-01",
+      "raw_path": "原始资料/论文首轮_2026-11-17/PubMed核心_2.xml",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/42574139/",
+      "source_locator": "PubmedArticle[MedlineCitation/PMID=\"42574139\"]/MedlineCitation/Article/Abstract",
+      "raw_sha256": "0ac91be89d0ef027d8ea71788d826d6ff53020b16f7cb58ab99c7fb762b3d8b5",
+      "abstract_segments": [
+        {
+          "label": "UNLABELLED",
+          "text": "Prediabetes is highly prevalent and biologically heterogeneous, yet current glycemic definitions do not adequately capture differences in cardiometabolic and kidney risk. We aimed to identify metabolically defined subtypes of prediabetes using circulating metabolites and to examine their associations with cardiovascular-kidney-metabolic outcomes. We analyzed 24,638 participants with prediabetes from the UK Biobank who had metabolomics data available. Metabolomic biomarkers related to type 2 diabetes, cardiovascular disease, and chronic kidney disease were identified using machine learning-based feature selection methods, and unsupervised clustering was applied to derive metabolic subtypes. Associations between subtypes and cardiometabolic outcomes were evaluated, and interactions between dietary patterns and metabolic subtypes were explored. Mendelian randomization analyses were conducted to investigate potential causal roles of key metabolomic biomarkers. Three metabolically distinct subtypes of prediabetes were identified, representing low-, intermediate-, and high-risk metabolic profiles. These subtypes showed progressively higher risks of developing type 2 diabetes, cardiovascular disease, and chronic kidney disease during follow-up, and the associations between diet quality and disease outcomes differed across subtypes. Several metabolomic biomarkers demonstrated potential causal links with cardiometabolic outcomes. These findings highlight the metabolic heterogeneity of prediabetes and suggest that metabolomics-based subtypes may improve risk stratification and support precision prevention strategies."
+        },
+        {
+          "label": "ARTICLE HIGHLIGHTS",
+          "text": "Previous studies have identified heterogeneity among prediabetes subgroups using clinical characteristics; however, biological and metabolic heterogeneity remains insufficiently captured. This study examined whether data-driven clustering based on metabolomic biomarkers could define distinct prediabetes subtypes with differential type 2 diabetes, cardiovascular disease, and chronic kidney disease risk. Using 16 metabolomic biomarkers, we identify three metabolically distinct clusters showing progressively higher risks of incident type 2 diabetes, cardiovascular disease, and chronic kidney disease. Differential diet-cluster associations across clusters were obtained, and Mendelian randomization supported potential causal roles for several metabolomic biomarkers. Metabolomics-based stratification may improve risk prevention and enable cluster-specific dietary interventions in prediabetes."
+        }
+      ],
+      "normalized_abstract_sha256": "61d9df3ed53207041b6dbf4b44c9d50519339f3f7c645795509a9e0d40a278e3",
+      "reading_level": "abstract_only",
+      "records": [
+        {
+          "biomarker_id": "BM2:PRED_METAB16",
+          "name_zh": "糖尿病前期16代谢指标分型",
+          "standard_name": "UKB prediabetes 16-metabolite subtypes",
+          "biomarker_type": "signature",
+          "is_member_defined": 0,
+          "reference_endpoint": false,
+          "category": "分型与预测",
+          "disease_or_complication": "糖尿病前期",
+          "target_population": "UKB 24,638名糖尿病前期参与者",
+          "sample_or_fraction": "循环代谢物；具体平台/基质未注明",
+          "clinical_use": "3亚型与T2D/CVD/CKD结局关联",
+          "result_text": "16代谢指标得到3个亚型，相关结局风险递增；摘要无各指标名单和具体效应量。",
+          "original_excerpt": "Using 16 metabolomic biomarkers, we identify three metabolically distinct clusters showing progressively higher risks of incident type 2 diabetes, cardiovascular disease, and chronic kidney disease.",
+          "excerpt_segment": 2,
+          "excerpt_label": "ARTICLE HIGHLIGHTS",
+          "direction": "inconclusive",
+          "metrics": [
+            {
+              "name": "聚类输入",
+              "value": "16",
+              "unit": "代谢指标；名单待核"
+            },
+            {
+              "name": "分型",
+              "value": "3",
+              "unit": "亚型"
+            }
+          ],
+          "method": "机器学习特征筛选、16代谢指标无监督聚类、结局关联及MR",
+          "method_excerpt": "",
+          "components": [],
+          "entity_note": "摘要已核对名称和研究用途；检测标准化及临床使用范围仍需原文与独立验证。"
+        }
+      ],
+      "study_design": "UK Biobank糖尿病前期代谢分型与随访结局关联",
+      "sample_size": "24,638名糖尿病前期参与者",
+      "cohort_name": "UK Biobank",
+      "method": "机器学习特征筛选、16代谢指标无监督聚类、结局关联及MR",
+      "validation_type": "discovery",
+      "validation_kind": "cohort_clustering_association",
+      "validation_label": "单一队列分型与结局关联；外部验证未说明",
+      "validation_detail": "MR支持部分潜在因果线索，不替代分型可复现性或外部临床预测验证。",
+      "external_validation_status": "not_reported",
+      "clinical_increment": "3亚型风险递增，但摘要未给HR、AUC及临床净增益",
+      "summary": "用16个代谢标志物得到3个风险递增亚型，随访中T2D、CVD和CKD风险不同；成员名单未在摘要给出。",
+      "limitations": [
+        "16个指标清单、平台、算法参数未列",
+        "不与旧中文目录聚类模型强并",
+        "缺少独立外部可复现性和具体效应量"
+      ],
+      "translation_status": "exploratory",
+      "priority_reason": "适合代谢分层研究；先取得16指标及模型定义，再判断可重复检测与外部验证。"
+    },
+    {
+      "paper_id": "PMID:42423517",
+      "pmid": "42423517",
+      "doi": "10.2337/db25-1140",
+      "title": "Utility of Pancreatic Perivascular Adipose Tissue as a CT Imaging Biomarker for Diagnosing Type 2 Diabetes.",
+      "journal": "Diabetes",
+      "publication_date": "2026-11-01",
+      "raw_path": "原始资料/论文首轮_2026-11-17/PubMed核心_1.xml",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/42423517/",
+      "source_locator": "PubmedArticle[MedlineCitation/PMID=\"42423517\"]/MedlineCitation/Article/Abstract",
+      "raw_sha256": "9cf1237098a0d59c203b424eff9460cfcebc72802b4969d829b1bcdda33fbe9f",
+      "abstract_segments": [
+        {
+          "label": "UNLABELLED",
+          "text": "Intrapancreatic fat deposition is a well-established biomarker for type 2 diabetes mellitus (T2DM), but little is known about the role of pancreatic perivascular adipose tissue (PVAT), fat surrounding blood vessels supplying the pancreas. The objectives of this study were to develop a fully automated pipeline to derive imaging biomarkers of pancreatic PVAT from abdominal computed tomography (CT) scans and evaluate their utility for diagnosing T2DM. Contrast-enhanced CT (CECT) scans (n = 1,350) from the public PANORAMA data set were used to train a three-dimensional deep neural network to segment pancreatic anatomy (parenchyma, vasculature, ducts) and extrapancreatic structures. The model was applied to an internal data set containing 615 CECT scans. Intrapancreatic, extrapancreatic, and PVAT biomarkers were derived from these segmentations. Logistic regression with feature selection identified optimal biomarker subsets for classifying T2DM. All PVAT biomarkers differed significantly between individuals with diabetes and those without. The best multivariate model for T2DM achieved an area under the curve (AUC) of 0.93, sensitivity of 0.73, and specificity of 0.91. Exploratory analyses for incident diabetes (developed within the following 4 years) showed similarly high discrimination (AUC 0.93). Automated CT-derived PVAT biomarkers are associated with existing and future T2DM and may enable opportunistic identification of undiagnosed or high-risk individuals undergoing routine abdominal CT."
+        },
+        {
+          "label": "ARTICLE HIGHLIGHTS",
+          "text": "Pancreatic perivascular adipose tissue (PVAT) is a potentially important but understudied fat depot surrounding vessels supplying the pancreas, and its role in type 2 diabetes mellitus (T2DM) remains unclear. We aimed to quantify pancreatic PVAT automatically on routine abdominal computed tomography (CT) scans and assess whether PVAT-derived imaging biomarkers are associated with T2DM and future T2DM risk. PVAT biomarkers were associated with T2DM and were informative predictors in multivariable models. Exploratory analyses showed similar findings for incident T2DM (disease onset within 4 years of follow-up). PVAT may represent a novel CT-based biomarker for early metabolic dysfunction and T2DM risk stratification."
+        }
+      ],
+      "normalized_abstract_sha256": "a154aa1c27110a3245a7d6ffa083c4f151876f0832a125ecc5d88ed3f99f86ab",
+      "reading_level": "abstract_only",
+      "records": [
+        {
+          "biomarker_id": "BM2:PANCREATIC_PVAT",
+          "name_zh": "胰腺PVAT影像特征",
+          "standard_name": "Pancreatic PVAT CT imaging features",
+          "biomarker_type": "signature",
+          "is_member_defined": 0,
+          "reference_endpoint": false,
+          "category": "早期识别",
+          "disease_or_complication": "2型糖尿病",
+          "target_population": "接受腹部增强CT的人群",
+          "sample_or_fraction": "腹部增强CT影像",
+          "clinical_use": "现患T2D分类与4年新发探索",
+          "result_text": "内部分析最优分类AUC0.93、敏感度0.73、特异度0.91；4年新发AUC0.93为探索性，不能当独立外部验证。",
+          "original_excerpt": "The best multivariate model for T2DM achieved an area under the curve (AUC) of 0.93, sensitivity of 0.73, and specificity of 0.91.",
+          "excerpt_segment": 1,
+          "excerpt_label": "UNLABELLED",
+          "direction": "inconclusive",
+          "metrics": [
+            {
+              "name": "现患T2D AUC",
+              "value": "0.93"
+            },
+            {
+              "name": "敏感度",
+              "value": "0.73"
+            },
+            {
+              "name": "特异度",
+              "value": "0.91"
+            },
+            {
+              "name": "4年新发AUC",
+              "value": "0.93",
+              "qualifier": "探索性"
+            }
+          ],
+          "method": "3D深度网络分割胰腺解剖；提取PVAT等影像特征；特征选择逻辑回归",
+          "method_excerpt": "",
+          "components": [],
+          "entity_note": "摘要已核对名称和研究用途；检测标准化及临床使用范围仍需原文与独立验证。"
+        }
+      ],
+      "study_design": "CT分割训练及内部T2D分类/探索性4年新发糖尿病分析",
+      "sample_size": "1,350例PANORAMA CECT用于解剖分割训练；615例内部CECT用于后续分析",
+      "cohort_name": "PANORAMA分割训练数据和内部CT人群；用途不同不合并样本量",
+      "method": "3D深度网络分割胰腺解剖；提取PVAT等影像特征；特征选择逻辑回归",
+      "validation_type": "internal_validation",
+      "validation_kind": "internal_imaging_assessment",
+      "validation_label": "内部分类评估；公开分割训练不等于诊断外部验证",
+      "validation_detail": "PANORAMA用于解剖分割训练，内部615例评估糖尿病分类。摘要未清楚说明分类模型独立测试拆分。",
+      "external_validation_status": "not_reported",
+      "clinical_increment": "T2D分类AUC0.93、敏感度0.73、特异度0.91；4年新发分析为探索性",
+      "summary": "PVAT影像特征与现患和新发T2D相关；最优分类AUC0.93，敏感度0.73、特异度0.91；4年新发分析AUC0.93但属探索性。",
+      "limitations": [
+        "分类模型训练/测试拆分和独立外部验证未说明",
+        "不能将公开分割数据当临床模型验证集",
+        "CT模型不是体液检测或现成分子产品"
+      ],
+      "translation_status": "validation_followup",
+      "priority_reason": "有诊断性能结果，适合补核分类模型测试设计和外部泛化；作为影像线索单列。"
+    },
+    {
+      "paper_id": "PMID:42969688",
+      "pmid": "42969688",
+      "doi": "10.2337/dc26-1627",
+      "title": "Longitudinal Changes in Exocrine Biomarkers in Children at Risk of Type 1 Diabetes in the ENDIA Study.",
+      "journal": "Diabetes care",
+      "publication_date": "2026-11-02",
+      "raw_path": "原始资料/论文首轮_2026-11-17/PubMed核心_4.xml",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/42969688/",
+      "source_locator": "PubmedArticle[MedlineCitation/PMID=\"42969688\"]/MedlineCitation/Article/Abstract",
+      "raw_sha256": "099ac38483a4318849c727dd5557641241dcc9a0c0030fbb7ec452dc5070e69f",
+      "abstract_segments": [
+        {
+          "label": "OBJECTIVE",
+          "text": "The exocrine pancreas is increasingly implicated in type 1 diabetes. Noninvasive biomarkers of exocrine function, fecal elastase-1 (FE-1) and serum immunoreactive trypsin (IRT), may provide early insight into disease pathogenesis. We investigated the temporal relationship between exocrine biomarkers and type 1 diabetes development in children."
+        },
+        {
+          "label": "RESEARCH DESIGN AND METHODS",
+          "text": "FE-1 and IRT concentrations were measured prospectively in 301 at-risk children followed in the Environmental Determinants of Islet Autoimmunity (ENDIA) cohort from birth. A total of 216 children provided 1,679 stool samples; 242 provided 1,014 serum samples. Biomarker trajectories were compared between children who developed islet autoimmunity or type 1 diabetes and age- and sex-matched control children negative for autoantibodies in a nested case-control design. Adjusted linear mixed models were used."
+        },
+        {
+          "label": "RESULTS",
+          "text": "Two biomarker patterns were observed. FE-1 concentrations were lower during the first 6 months of life in children who subsequently developed multiple islet autoantibodies or type 1 diabetes (β-coefficient at birth -0.61 [95% CI -1.04, -0.17]; P = 0.006; β-coefficient at 3 months -0.39 [95% CI -0.69, -0.09]; P = 0.010); IRT concentrations were lower in children who developed type 1 diabetes 12 months (β = -0.30 [95% CI -0.58, -0.02]; P = 0.034) and 18 months (β = -0.40 [95% CI -0.71, -0.10]; P = 0.008) before type 1 diabetes diagnosis."
+        },
+        {
+          "label": "CONCLUSIONS",
+          "text": "Changes in exocrine biomarkers were detectable early in the natural history of type 1 diabetes, with a delayed rise of FE-1 in infants who later progressed to multiple islet autoantibodies or type 1 diabetes and a decrease in IRT following islet autoantibody seroconversion."
+        }
+      ],
+      "normalized_abstract_sha256": "ee3bdb6cc22ec33f07593ae627bbc19b3b8be5317a8e6df1b49cf32285fd622a",
+      "reading_level": "abstract_only",
+      "records": [
+        {
+          "biomarker_id": "BM2:FE1",
+          "name_zh": "粪便弹性蛋白酶-1（FE-1）",
+          "standard_name": "Fecal elastase-1 (FE-1)",
+          "biomarker_type": "single",
+          "is_member_defined": 1,
+          "reference_endpoint": false,
+          "category": "早期识别",
+          "disease_or_complication": "胰岛自身免疫与1型糖尿病",
+          "target_population": "ENDIA高危儿童；FE-1样本216人",
+          "sample_or_fraction": "粪便；1,679份样本",
+          "clinical_use": "生后早期外分泌变化与后续多抗体/T1D",
+          "result_text": "后续多抗体或T1D儿童生后前6个月FE-1较低；出生β=-0.61，3个月β=-0.39，均为模型系数而非绝对浓度差。",
+          "original_excerpt": "FE-1 concentrations were lower during the first 6 months of life in children who subsequently developed multiple islet autoantibodies or type 1 diabetes (β-coefficient at birth -0.61 [95% CI -1.04, -0.17]; P = 0.006; β-coefficient at 3 months -0.39 [95% CI -0.69, -0.09]; P = 0.010);",
+          "excerpt_segment": 3,
+          "excerpt_label": "RESULTS",
+          "direction": "negative_association",
+          "metrics": [
+            {
+              "name": "出生时β",
+              "value": "-0.61",
+              "ci": "-1.04, -0.17",
+              "p": "0.006"
+            },
+            {
+              "name": "3个月β",
+              "value": "-0.39",
+              "ci": "-0.69, -0.09",
+              "p": "0.010"
+            }
+          ],
+          "method": "前瞻测FE-1/IRT；年龄性别匹配对照；调整线性混合模型",
+          "method_excerpt": "",
+          "components": [],
+          "entity_note": "摘要已核对名称和研究用途；检测标准化及临床使用范围仍需原文与独立验证。"
+        },
+        {
+          "biomarker_id": "BM2:IRT",
+          "name_zh": "血清免疫反应性胰蛋白酶（IRT）",
+          "standard_name": "Serum immunoreactive trypsin (IRT)",
+          "biomarker_type": "single",
+          "is_member_defined": 1,
+          "reference_endpoint": false,
+          "category": "动态监测",
+          "disease_or_complication": "1型糖尿病",
+          "target_population": "ENDIA高危儿童；IRT样本242人",
+          "sample_or_fraction": "血清；1,014份样本",
+          "clinical_use": "诊断前12与18个月的外分泌变化",
+          "result_text": "T1D诊断前12个月β=-0.30、18个月β=-0.40，均为调整模型系数；不等于已建立筛查阈值。",
+          "original_excerpt": "IRT concentrations were lower in children who developed type 1 diabetes 12 months (β = -0.30 [95% CI -0.58, -0.02]; P = 0.034) and 18 months (β = -0.40 [95% CI -0.71, -0.10]; P = 0.008) before type 1 diabetes diagnosis.",
+          "excerpt_segment": 3,
+          "excerpt_label": "RESULTS",
+          "direction": "negative_association",
+          "metrics": [
+            {
+              "name": "诊断前12个月β",
+              "value": "-0.30",
+              "ci": "-0.58, -0.02",
+              "p": "0.034"
+            },
+            {
+              "name": "诊断前18个月β",
+              "value": "-0.40",
+              "ci": "-0.71, -0.10",
+              "p": "0.008"
+            }
+          ],
+          "method": "前瞻测FE-1/IRT；年龄性别匹配对照；调整线性混合模型",
+          "method_excerpt": "",
+          "components": [],
+          "entity_note": "摘要已核对名称和研究用途；检测标准化及临床使用范围仍需原文与独立验证。"
+        }
+      ],
+      "study_design": "ENDIA出生随访中的嵌套病例对照及纵向轨迹",
+      "sample_size": "301名高危儿童；216人1,679份粪样，242人1,014份血清样本",
+      "cohort_name": "ENDIA",
+      "method": "前瞻测FE-1/IRT；年龄性别匹配对照；调整线性混合模型",
+      "validation_type": "discovery",
+      "validation_kind": "prospective_nested_case_control",
+      "validation_label": "前瞻轨迹/嵌套病例对照；外部验证未报告",
+      "validation_detail": "纵向观察发现早期差异，但摘要未给诊断阈值、AUC或独立验证。",
+      "external_validation_status": "not_reported",
+      "clinical_increment": "早期变化线索；尚无具体阈值或相对抗体筛查的增益",
+      "summary": "FE-1在后续多抗体/T1D儿童生后早期偏低；IRT在T1D诊断前12和18个月较低，样本与时间窗不同。",
+      "limitations": [
+        "无诊断阈值或预测AUC",
+        "不把粪便FE-1和血清IRT当相同样本检测",
+        "外部验证及相对抗体的增益待核"
+      ],
+      "translation_status": "validation_followup",
+      "priority_reason": "具体指标、样本和时间窗清楚；适合核实与自身抗体/临床风险联合的增益和独立验证。"
+    },
+    {
+      "paper_id": "PMID:42663510",
+      "pmid": "42663510",
+      "doi": "10.2337/dc26-1062",
+      "title": "Effects of the DASH4D Diet on Biomarkers of Glycemia in Adults With Type 2 Diabetes: A Secondary Analysis of the DASH4D Randomized Clinical Trial.",
+      "journal": "Diabetes care",
+      "publication_date": "2026-08-28",
+      "raw_path": "原始资料/论文首轮_2026-11-17/PubMed核心_2.xml",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/42663510/",
+      "source_locator": "PubmedArticle[MedlineCitation/PMID=\"42663510\"]/MedlineCitation/Article/Abstract",
+      "raw_sha256": "0ac91be89d0ef027d8ea71788d826d6ff53020b16f7cb58ab99c7fb762b3d8b5",
+      "abstract_segments": [
+        {
+          "label": "OBJECTIVE",
+          "text": "To examine the effect of the Dietary Approaches to Stop Hypertension for Diabetes (DASH4D) diet (a DASH-style diet tailored for diabetes) on biomarkers of glycemia."
+        },
+        {
+          "label": "RESEARCH DESIGN AND METHODS",
+          "text": "In this controlled feeding trial, adults with type 2 diabetes were fed four diets in a random order: DASH4D diet and comparison diet (representative of a typical American diet), each with higher and lower sodium. Each feeding period lasted 5 weeks. Using a modified intention-to-treat approach, we estimated the effect of the DASH4D (versus comparison) diet on fructosamine, fasting glucose, and HbA1c with linear mixed-effects models."
+        },
+        {
+          "label": "RESULTS",
+          "text": "Among 101 participants (mean age 67 years, 65% female, 87% Black adults), compared with the comparison diet, the DASH4D diet significantly reduced end-of-period fructosamine (adjusted difference: -5.6 μmol/L, P = 0.002), fasting glucose (adjusted difference: -4.5 mg/dL; P = 0.02), and HbA1c (adjusted difference: -0.09 percentage points; P = 0.04)."
+        },
+        {
+          "label": "CONCLUSIONS",
+          "text": "Our results support recommending the DASH4D diet for glycemic management in type 2 diabetes."
+        }
+      ],
+      "normalized_abstract_sha256": "b5a9c05bab064ac9cb5e286409c9b47bf9e721656efe5698a6299b4dc4dd3f4b",
+      "reading_level": "abstract_only",
+      "records": [
+        {
+          "biomarker_id": "BM2:FRUCTOSAMINE",
+          "name_zh": "果糖胺",
+          "standard_name": "Fructosamine",
+          "biomarker_type": "single",
+          "is_member_defined": 1,
+          "reference_endpoint": true,
+          "category": "动态监测",
+          "disease_or_complication": "2型糖尿病",
+          "target_population": "DASH4D的101名T2D参与者",
+          "sample_or_fraction": "具体检测基质与平台未在摘要说明",
+          "clinical_use": "饮食干预后常规糖代谢终点响应",
+          "result_text": "果糖胺相对对照的调整差为-5.6 μmol/L，P=0.002；这是饮食干预终点变化。",
+          "original_excerpt": "Among 101 participants (mean age 67 years, 65% female, 87% Black adults), compared with the comparison diet, the DASH4D diet significantly reduced end-of-period fructosamine (adjusted difference: -5.6 μmol/L, P = 0.002), fasting glucose (adjusted difference: -4.5 mg/dL; P = 0.02), and HbA1c (adjusted difference: -0.09 percentage points; P = 0.04).",
+          "excerpt_segment": 3,
+          "excerpt_label": "RESULTS",
+          "direction": "negative_association",
+          "metrics": [
+            {
+              "name": "调整组间差",
+              "value": "-5.6",
+              "unit": "μmol/L",
+              "p": "0.002",
+              "comparison": "DASH4D vs comparison diet"
+            }
+          ],
+          "method": "四种饮食随机顺序，每期5周；线性混合模型比较DASH4D与对照",
+          "method_excerpt": "",
+          "components": [],
+          "entity_note": "常规测量指标/研究终点；本批不当作新发现指标。"
+        },
+        {
+          "biomarker_id": "BM2:FASTING_GLUCOSE",
+          "name_zh": "空腹血糖",
+          "standard_name": "Fasting glucose",
+          "biomarker_type": "single",
+          "is_member_defined": 1,
+          "reference_endpoint": true,
+          "category": "动态监测",
+          "disease_or_complication": "2型糖尿病",
+          "target_population": "DASH4D的101名T2D参与者",
+          "sample_or_fraction": "具体检测基质与平台未在摘要说明",
+          "clinical_use": "饮食干预后常规糖代谢终点响应",
+          "result_text": "空腹血糖相对对照的调整差为-4.5 mg/dL，P=0.02；这是饮食干预终点变化。",
+          "original_excerpt": "Among 101 participants (mean age 67 years, 65% female, 87% Black adults), compared with the comparison diet, the DASH4D diet significantly reduced end-of-period fructosamine (adjusted difference: -5.6 μmol/L, P = 0.002), fasting glucose (adjusted difference: -4.5 mg/dL; P = 0.02), and HbA1c (adjusted difference: -0.09 percentage points; P = 0.04).",
+          "excerpt_segment": 3,
+          "excerpt_label": "RESULTS",
+          "direction": "negative_association",
+          "metrics": [
+            {
+              "name": "调整组间差",
+              "value": "-4.5",
+              "unit": "mg/dL",
+              "p": "0.02",
+              "comparison": "DASH4D vs comparison diet"
+            }
+          ],
+          "method": "四种饮食随机顺序，每期5周；线性混合模型比较DASH4D与对照",
+          "method_excerpt": "",
+          "components": [],
+          "entity_note": "常规测量指标/研究终点；本批不当作新发现指标。"
+        },
+        {
+          "biomarker_id": "BM2:HBA1C",
+          "name_zh": "HbA1c",
+          "standard_name": "HbA1c",
+          "biomarker_type": "single",
+          "is_member_defined": 1,
+          "reference_endpoint": true,
+          "category": "动态监测",
+          "disease_or_complication": "2型糖尿病",
+          "target_population": "DASH4D的101名T2D参与者",
+          "sample_or_fraction": "具体检测基质与平台未在摘要说明",
+          "clinical_use": "饮食干预后常规糖代谢终点响应",
+          "result_text": "HbA1c相对对照的调整差为-0.09 个百分点，P=0.04；这是饮食干预终点变化。",
+          "original_excerpt": "Among 101 participants (mean age 67 years, 65% female, 87% Black adults), compared with the comparison diet, the DASH4D diet significantly reduced end-of-period fructosamine (adjusted difference: -5.6 μmol/L, P = 0.002), fasting glucose (adjusted difference: -4.5 mg/dL; P = 0.02), and HbA1c (adjusted difference: -0.09 percentage points; P = 0.04).",
+          "excerpt_segment": 3,
+          "excerpt_label": "RESULTS",
+          "direction": "negative_association",
+          "metrics": [
+            {
+              "name": "调整组间差",
+              "value": "-0.09",
+              "unit": "个百分点",
+              "p": "0.04",
+              "comparison": "DASH4D vs comparison diet"
+            }
+          ],
+          "method": "四种饮食随机顺序，每期5周；线性混合模型比较DASH4D与对照",
+          "method_excerpt": "",
+          "components": [],
+          "entity_note": "常规测量指标/研究终点；本批不当作新发现指标。"
+        }
+      ],
+      "study_design": "DASH4D随机顺序4饮食控制喂养试验的二次分析",
+      "sample_size": "101人；平均67岁，65%女性，87%黑人",
+      "cohort_name": "DASH4D T2D试验",
+      "method": "四种饮食随机顺序，每期5周；线性混合模型比较DASH4D与对照",
+      "validation_type": "unspecified",
+      "validation_kind": "randomized_intervention_endpoints",
+      "validation_label": "RCT二次分析的指标响应；不是检测/预测模型验证",
+      "validation_detail": "观察常规糖代谢终点在饮食干预后的变化，不据此认定新型Biomarker或诊断工具成熟。",
+      "external_validation_status": "not_applicable",
+      "clinical_increment": "提供短期饮食干预的终点变化，不评价诊断/预测增益",
+      "summary": "DASH4D相对对照降低果糖胺5.6 μmol/L、空腹血糖4.5 mg/dL、HbA1c 0.09个百分点。",
+      "limitations": [
+        "短期干预指标变化，不是新指标发现或试剂性能验证",
+        "HbA1c变化单位为百分点，不是相对百分比"
+      ],
+      "translation_status": "reference_endpoint",
+      "priority_reason": "作为干预研究的常规参照/终点，不进入新发现指标排序。"
+    },
+    {
+      "paper_id": "PMID:42988924",
+      "pmid": "42988924",
+      "doi": "10.1007/s00125-026-06908-x",
+      "title": "Associations of long-term exposure to air pollution with glucose homeostasis biomarkers and diabetes-related comorbidities in people with recent-onset type 1 and type 2 diabetes.",
+      "journal": "Diabetologia",
+      "publication_date": "2026-11-05",
+      "raw_path": "原始资料/论文首轮_2026-11-17/PubMed核心_4.xml",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/42988924/",
+      "source_locator": "PubmedArticle[MedlineCitation/PMID=\"42988924\"]/MedlineCitation/Article/Abstract",
+      "raw_sha256": "099ac38483a4318849c727dd5557641241dcc9a0c0030fbb7ec452dc5070e69f",
+      "abstract_segments": [
+        {
+          "label": "AIMS/HYPOTHESIS",
+          "text": "Air pollution (AP) contributes to diabetes progression and comorbidities, but underlying mechanisms remain unclear, as no observational studies have applied gold-standard phenotyping or distinguished between the effects of type 1 diabetes, type 2 diabetes and diabetes subtypes. We examined whether AP exposure was associated with glucose homeostasis biomarkers and diabetes-related comorbidities in people with recent-onset type 1 diabetes, type 2 diabetes and diabetes subtypes."
+        },
+        {
+          "label": "METHODS",
+          "text": "This cross-sectional analysis is based on data from 1120 participants in the German Diabetes Study (417 with type 1 diabetes and 703 with type 2 diabetes). The glucose homeostasis biomarkers used were HbA1c, insulin sensitivity (clamp-derived M value), insulin secretion (glucagon-stimulated C-peptide6min) and insulin clearance (clamp derived). Diabetes-related comorbidities included CVD risk (SCORE2-Diabetes),  V ˙ O 2 max    as an indicator of cardiorespiratory fitness, albuminuria as a marker of kidney function and the presence of distal sensorimotor polyneuropathy (DSPN). Five-year means of exposure to AP (particulate matter [PM] with diameters of <2.5 μm [PM2.5] and <10 μm [PM10] and nitrogen dioxide [NO2] before baseline at individual residential addresses were examined. Associations between each exposure-outcome pair were estimated per 1 IQR increase in air pollutants using multivariable linear and logistic regression. Two-pollutant analysis, cumulative risk index (CRI) analysis and insulin-treated type 1 diabetes model analysis were performed as sensitivity analyses."
+        },
+        {
+          "label": "RESULTS",
+          "text": "Among those with type 1 diabetes, higher PM2.5 was associated with higher HbA1c (exp[β]=1.07 [95% CI 1.03, 1.11]), insulin secretion (exp[β]=1.19 [95% CI 1.03, 1.36]), lower  V ˙ O 2 max    (exp[β]=0.94 [95% CI 0.89, 0.99]) and higher albuminuria (exp[β]=1.72 [95% CI 1.34, 2.20]). Among type 2 diabetes, higher PM2.5 was associated with higher HbA1c (exp[β]=1.04 [95% CI 1.01, 1.06]), lower insulin sensitivity (β=-0.42 [95% CI -0.82, -0.03]), lower insulin secretion (exp[β]=0.94 [95% CI 0.89, 0.99]), lower insulin clearance (exp[β]=0.92 [95% CI 0.87, 0.98]), higher CVD risk (exp[β]=1.07 [95% CI 0.99, 1.16]), lower  V ˙ O 2 max    (exp[β]=0.91 [95% CI 0.88, 0.95]), higher albuminuria (exp[β]=1.71 [95% CI 1.41, 2.08]) and higher odds of DSPN (OR 1.53 [95% CI 1.02, 2.32]). Similar associations were observed for PM10 and NO2. Associations were directionally attenuated in two-pollutant models but remained consistent in CRI and insulin-treated type 1 diabetes analyses. Differences were observed in associations between diabetes subtypes."
+        },
+        {
+          "label": "CONCLUSIONS/INTERPRETATION",
+          "text": "Long-term AP exposure was consistently associated with higher HbA1c; reduced whole-body insulin sensitivity, secretion and clearance; and an increased burden of diabetes-related comorbidities in type 2 diabetes. Associations were less consistent in type 1 diabetes. Trial registration ClinicalTrials.gov NCT01055093."
+        }
+      ],
+      "normalized_abstract_sha256": "c4b494fcde36ad2d00d7abde597e31caec62a9ad7daf79cd9571c6a5a51cf426",
+      "reading_level": "abstract_only",
+      "records": [
+        {
+          "biomarker_id": "BM2:HBA1C",
+          "name_zh": "HbA1c",
+          "standard_name": "HbA1c",
+          "biomarker_type": "single",
+          "is_member_defined": 1,
+          "reference_endpoint": true,
+          "category": "其他",
+          "disease_or_complication": "空气污染与近期糖尿病",
+          "target_population": "417名T1D与703名T2D参与者",
+          "sample_or_fraction": "HbA1c；本摘要未列测定平台",
+          "clinical_use": "污染暴露关联的糖代谢参照",
+          "result_text": "每IQR较高PM2.5关联较高HbA1c：T1D expβ1.07（1.03–1.11）；T2D expβ1.04（1.01–1.06）。",
+          "original_excerpt": "Among those with type 1 diabetes, higher PM2.5 was associated with higher HbA1c (exp[β]=1.07 [95% CI 1.03, 1.11])",
+          "excerpt_segment": 3,
+          "excerpt_label": "RESULTS",
+          "direction": "positive_association",
+          "metrics": [
+            {
+              "population": "T1D",
+              "name": "HbA1c expβ",
+              "value": "1.07",
+              "ci": "1.03, 1.11"
+            },
+            {
+              "population": "T2D",
+              "name": "HbA1c expβ",
+              "value": "1.04",
+              "ci": "1.01, 1.06"
+            }
+          ],
+          "method": "钳夹及胰高血糖素刺激表型；每IQR污染暴露的多变量线性/逻辑回归及敏感性分析",
+          "method_excerpt": "",
+          "components": [],
+          "entity_note": "常规测量指标/研究终点；本批不当作新发现指标。"
+        },
+        {
+          "biomarker_id": "BM2:CLAMP_M",
+          "name_zh": "钳夹M值",
+          "standard_name": "Clamp-derived M value",
+          "biomarker_type": "single",
+          "is_member_defined": 1,
+          "reference_endpoint": true,
+          "category": "其他",
+          "disease_or_complication": "空气污染与近期糖尿病",
+          "target_population": "近期T2D人群；研究共703名T2D",
+          "sample_or_fraction": "钳夹试验；具体操作参数待全文",
+          "clinical_use": "胰岛素敏感性参照",
+          "result_text": "T2D每IQR较高PM2.5与较低胰岛素敏感性关联：β=-0.42，95%CI -0.82至-0.03。",
+          "original_excerpt": "lower insulin sensitivity (β=-0.42 [95% CI -0.82, -0.03])",
+          "excerpt_segment": 3,
+          "excerpt_label": "RESULTS",
+          "direction": "negative_association",
+          "metrics": [
+            {
+              "population": "T2D",
+              "name": "M值关联β",
+              "value": "-0.42",
+              "ci": "-0.82, -0.03"
+            }
+          ],
+          "method": "钳夹及胰高血糖素刺激表型；每IQR污染暴露的多变量线性/逻辑回归及敏感性分析",
+          "method_excerpt": "",
+          "components": [],
+          "entity_note": "常规测量指标/研究终点；本批不当作新发现指标。"
+        },
+        {
+          "biomarker_id": "BM2:CPEPTIDE6",
+          "name_zh": "胰高血糖素刺激6分钟C肽",
+          "standard_name": "Glucagon-stimulated C-peptide at 6 min",
+          "biomarker_type": "single",
+          "is_member_defined": 1,
+          "reference_endpoint": true,
+          "category": "其他",
+          "disease_or_complication": "空气污染与近期糖尿病",
+          "target_population": "近期T1D与T2D分层人群",
+          "sample_or_fraction": "胰高血糖素刺激后6分钟；采样细节待核",
+          "clinical_use": "胰岛素分泌参照",
+          "result_text": "PM2.5与T1D较高分泌指标相关（expβ1.19），而T2D为较低（expβ0.94），不能合并成单方向。",
+          "original_excerpt": "lower insulin secretion (exp[β]=0.94 [95% CI 0.89, 0.99])",
+          "excerpt_segment": 3,
+          "excerpt_label": "RESULTS",
+          "direction": "inconclusive",
+          "metrics": [
+            {
+              "population": "T1D",
+              "name": "分泌指标expβ",
+              "value": "1.19",
+              "ci": "1.03, 1.36"
+            },
+            {
+              "population": "T2D",
+              "name": "分泌指标expβ",
+              "value": "0.94",
+              "ci": "0.89, 0.99"
+            }
+          ],
+          "method": "钳夹及胰高血糖素刺激表型；每IQR污染暴露的多变量线性/逻辑回归及敏感性分析",
+          "method_excerpt": "",
+          "components": [],
+          "entity_note": "常规测量指标/研究终点；本批不当作新发现指标。"
+        },
+        {
+          "biomarker_id": "BM2:INSULIN_CLEARANCE",
+          "name_zh": "钳夹来源胰岛素清除率",
+          "standard_name": "Clamp-derived insulin clearance",
+          "biomarker_type": "single",
+          "is_member_defined": 1,
+          "reference_endpoint": true,
+          "category": "其他",
+          "disease_or_complication": "空气污染与近期糖尿病",
+          "target_population": "近期T2D人群",
+          "sample_or_fraction": "钳夹来源；具体算法待全文",
+          "clinical_use": "胰岛素清除参照",
+          "result_text": "T2D每IQR较高PM2.5与较低胰岛素清除率相关：expβ0.92（0.87–0.98）。",
+          "original_excerpt": "lower insulin clearance (exp[β]=0.92 [95% CI 0.87, 0.98])",
+          "excerpt_segment": 3,
+          "excerpt_label": "RESULTS",
+          "direction": "negative_association",
+          "metrics": [
+            {
+              "population": "T2D",
+              "name": "清除率expβ",
+              "value": "0.92",
+              "ci": "0.87, 0.98"
+            }
+          ],
+          "method": "钳夹及胰高血糖素刺激表型；每IQR污染暴露的多变量线性/逻辑回归及敏感性分析",
+          "method_excerpt": "",
+          "components": [],
+          "entity_note": "常规测量指标/研究终点；本批不当作新发现指标。"
+        },
+        {
+          "biomarker_id": "BM2:ALBUMINURIA",
+          "name_zh": "白蛋白尿指标",
+          "standard_name": "Albuminuria",
+          "biomarker_type": "single",
+          "is_member_defined": 1,
+          "reference_endpoint": true,
+          "category": "其他",
+          "disease_or_complication": "空气污染与近期糖尿病",
+          "target_population": "近期T1D与T2D分层人群",
+          "sample_or_fraction": "尿白蛋白；摘要未指定UACR或检测流程",
+          "clinical_use": "肾功能相关参照结局",
+          "result_text": "每IQR较高PM2.5关联较高白蛋白尿：T1D expβ1.72（1.34–2.20），T2D expβ1.71（1.41–2.08）。",
+          "original_excerpt": "higher albuminuria (exp[β]=1.71 [95% CI 1.41, 2.08])",
+          "excerpt_segment": 3,
+          "excerpt_label": "RESULTS",
+          "direction": "positive_association",
+          "metrics": [
+            {
+              "population": "T1D",
+              "name": "白蛋白尿expβ",
+              "value": "1.72",
+              "ci": "1.34, 2.20"
+            },
+            {
+              "population": "T2D",
+              "name": "白蛋白尿expβ",
+              "value": "1.71",
+              "ci": "1.41, 2.08"
+            }
+          ],
+          "method": "钳夹及胰高血糖素刺激表型；每IQR污染暴露的多变量线性/逻辑回归及敏感性分析",
+          "method_excerpt": "",
+          "components": [],
+          "entity_note": "常规测量指标/研究终点；本批不当作新发现指标。"
+        }
+      ],
+      "study_design": "German Diabetes Study的横断面分析；暴露为居住地基线前5年均值",
+      "sample_size": "1,120人：417名近期T1D、703名近期T2D",
+      "cohort_name": "German Diabetes Study；NCT01055093",
+      "method": "钳夹及胰高血糖素刺激表型；每IQR污染暴露的多变量线性/逻辑回归及敏感性分析",
+      "validation_type": "unspecified",
+      "validation_kind": "cross_sectional_association",
+      "validation_label": "横断面关联和敏感性分析；非预测工具验证",
+      "validation_detail": "暴露回顾5年不使本分析成为前瞻性预测验证；未报告外部模型验证。",
+      "external_validation_status": "not_applicable",
+      "clinical_increment": "不评价检测或临床预测增益；CVD风险区间0.99–1.16跨1，不能称显著升高",
+      "summary": "PM2.5与较高HbA1c、T2D较低胰岛素敏感性/分泌/清除及较高白蛋白尿相关；T1D和T2D的C肽关联方向不同。",
+      "limitations": [
+        "横断面关联，不推断因果或未来预测性能",
+        "T1D/T2D分层差异不能合并成单一方向",
+        "SCORE2-Diabetes的区间包含1，不作显著风险升高结论"
+      ],
+      "translation_status": "reference_endpoint",
+      "priority_reason": "作为常规生理表型/肾结局参照，支持研究设计背景，不当作新型标志物发现。",
+      "other_outcomes": {
+        "cvd": "SCORE2-Diabetes: exp[β]=1.07, 95% CI 0.99–1.16；未达常用显著性判定",
+        "fitness": "VO2max作为心肺适能结局",
+        "neuropathy": "DSPN作为并发症结局"
+      }
+    }
+  ]
+}

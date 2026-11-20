@@ -1,0 +1,1401 @@
+{
+  "conference": "ADA 2026",
+  "batch": "B02",
+  "cutoff": "2026-11-11",
+  "domains": {
+    "D1": "新药与联合治疗",
+    "D2": "肥胖、缓解与长期维持",
+    "D3": "心肾肝眼等结局",
+    "D4": "T1D疾病修饰与细胞替代",
+    "D5": "CGM、AID与数字技术",
+    "D6": "分型、标志物与风险",
+    "D7": "机制与转化方法",
+    "D8": "特殊与高风险人群",
+    "D9": "预防、生活方式与实施"
+  },
+  "items": [
+    {
+      "id": "A01",
+      "code": "2319-P",
+      "title": "重复蛋白测量寻找新的糖尿病发病信号",
+      "topic": "纵向蛋白组与发病风险",
+      "source_date": "2026-06-05",
+      "date_basis": "摘要刊出日期，非现场报告核实",
+      "evidence_status": "已读结果；关联论文",
+      "has_results": true,
+      "merged_paper": "R03",
+      "unique_study_id": "R03",
+      "thread_ids": [
+        "T03"
+      ],
+      "design": "MESA 5,322人、三个采样时点的蛋白组分析。",
+      "result": "纵向分析提供单时点之外的糖尿病相关蛋白与通路线索。",
+      "limits": "与R03正式论文为同研究版本，不额外增加独立研究数；版本间统计口径差异待全文核对。",
+      "why": "提示动态采样可能补充基线测量，值得追踪新增信息能否改善预测。",
+      "team": "Zsu-Zsu Chen等；计划报告人见官方程序第114物理页。",
+      "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/2319-P/168859/2319-P-Longitudinal-vs-Single-Timepoint-Proteomics",
+      "doi": "10.2337/db26-2319-P",
+      "reading_level": "原站索引完整结果摘要＋程序核对",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "reading_scope": "首轮定向读取；非大会全部热点",
+      "entity_kind": "ada",
+      "first_seen_batch": "B01",
+      "last_checked_on": "2026-11-11",
+      "conference_abstract_date": "2026-06-05",
+      "evidence_level": "会议摘要",
+      "scope": "糖尿病研究",
+      "domain_ids": [
+        "D6"
+      ],
+      "sources": [
+        {
+          "label": "原会议来源",
+          "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/2319-P/168859/2319-P-Longitudinal-vs-Single-Timepoint-Proteomics"
+        }
+      ],
+      "paper": null,
+      "version_relations": [
+        {
+          "related_id": "R03",
+          "type": "同研究会议/论文版本，已合并展示"
+        }
+      ],
+      "next_evidence": "补外部验证、校准与相对临床基础模型的增量，核共享样本。"
+    },
+    {
+      "id": "A02",
+      "code": "1113-OR",
+      "title": "GLP-1RA使用者的肾内细胞通路差异",
+      "topic": "GLP-1RA与肾内细胞通路",
+      "source_date": "2026-06-05",
+      "date_basis": "摘要刊出日期，非现场报告核实",
+      "evidence_status": "已读结果；小样本观察",
+      "has_results": true,
+      "merged_paper": null,
+      "unique_study_id": "A02",
+      "thread_ids": [
+        "T09"
+      ],
+      "design": "11名肾病受试者肾活检的单细胞分析，比较GLP-1RA使用者与非使用者；约11.8万细胞。",
+      "result": "观察到血管、免疫和肾小管相关通路信号差异，提供用药相关肾内机制线索。",
+      "limits": "患者数为11，细胞数不是独立患者数；观察关联不能证明药物因果效应，也不能推出体液标志物性能。",
+      "why": "将药物使用与肾内细胞层次联系起来，可继续追踪机制与临床结局如何连接。",
+      "team": "Ye Ji Choi为程序列出的计划报告人；作者含Kretzler、Bjornstad等，逐人机构待核。",
+      "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1113-OR/168085/1113-OR-ADA-Presidents-Select-Abstract-Single-Cell",
+      "doi": "10.2337/db26-1113-OR",
+      "reading_level": "原站索引完整结果摘要＋程序核对",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "reading_scope": "首轮定向读取；非大会全部热点",
+      "entity_kind": "ada",
+      "first_seen_batch": "B01",
+      "last_checked_on": "2026-11-11",
+      "conference_abstract_date": "2026-06-05",
+      "evidence_level": "会议摘要",
+      "scope": "糖尿病研究",
+      "domain_ids": [
+        "D3",
+        "D7"
+      ],
+      "sources": [
+        {
+          "label": "原会议来源",
+          "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1113-OR/168085/1113-OR-ADA-Presidents-Select-Abstract-Single-Cell"
+        }
+      ],
+      "paper": null,
+      "version_relations": [],
+      "next_evidence": "补临床硬结局、预设分析和更长期随访；不能仅用血糖或影像代替。；补独立样本、机制干预及人体转化证据。"
+    },
+    {
+      "id": "A03",
+      "code": "1170-OR",
+      "title": "CONNECT：非胰岛素T2D人群使用CGM",
+      "topic": "CGM应用人群扩展",
+      "source_date": "2026-10-14",
+      "date_basis": "所读正式论文的在线日期；会议原摘要日期另存",
+      "evidence_status": "正式论文结果已读",
+      "has_results": true,
+      "merged_paper": null,
+      "unique_study_id": "A03",
+      "thread_ids": [
+        "T04"
+      ],
+      "design": "CONNECT，非胰岛素治疗T2D成人，145人CGM、138人常规管理；美国22家基层机构；26周RCT，NCT06601166。",
+      "result": "283人随机研究：26周CGM组HbA1c较常规管理多下降0.9个百分点（95%CI −1.1至−0.6），TIR多21个百分点；未报告严重低血糖。",
+      "limits": "此前会议基线摘要写21家机构，正式论文为22家，保留版本差异；Dexcom资助；26周血糖结果不能推成长程并发症获益。",
+      "why": "从基线线索升级为有结果的随机试验，补充CGM用于非胰岛素T2D基层管理的证据。",
+      "team": "Tamara K Oser、Thomas Martens等；第一作者不自动等于会议报告人。",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42878622/",
+      "doi": "10.2337/db26-1170-OR",
+      "reading_level": "PubMed原始论文完整摘要；未全文精读",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "reading_scope": "首轮定向读取；非大会全部热点",
+      "entity_kind": "ada",
+      "first_seen_batch": "B01",
+      "last_checked_on": "2026-11-11",
+      "conference_abstract_date": "2026-06-06",
+      "evidence_level": "正式论文摘要",
+      "scope": "糖尿病研究",
+      "domain_ids": [
+        "D5"
+      ],
+      "sources": [
+        {
+          "label": "原会议来源",
+          "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1170-OR/167182"
+        },
+        {
+          "label": "原始论文摘要",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42878622/"
+        },
+        {
+          "label": "期刊原文",
+          "url": "https://doi.org/10.1056/NEJMoa2608571"
+        }
+      ],
+      "paper": {
+        "pmid": "42878622",
+        "doi": "10.1056/NEJMoa2608571",
+        "journal": "The New England journal of medicine",
+        "title": "Continuous Glucose Monitoring in Non-Insulin-Treated Type 2 Diabetes.",
+        "online_date": "2026-10-14"
+      },
+      "upgraded_in": "B02",
+      "version_relations": [],
+      "next_evidence": "补真实实施成本、长期结局、设备/算法版本与亚组可复制性。"
+    },
+    {
+      "id": "A04",
+      "code": "1253-OR",
+      "title": "ACHIEVE-5：口服GLP-1RA加入基础胰岛素方案",
+      "topic": "口服GLP-1RA治疗策略",
+      "source_date": "2026-08-04",
+      "date_basis": "JAMA卷期日期2026-08-04；首发在线日待核；不把PubMed入库日当发表日",
+      "evidence_status": "正式论文结果已读",
+      "has_results": true,
+      "merged_paper": null,
+      "unique_study_id": "A04",
+      "thread_ids": [
+        "T10"
+      ],
+      "design": "ACHIEVE-5，72中心双盲Ⅲ期，基础甘精胰岛素±二甲双胍/SGLT2i；40周；NCT06109311。",
+      "result": "546人RCT：40周orforglipron 3/12/36mg的HbA1c变化为−1.58/−1.88/−1.82个百分点，安慰剂−0.79；体重下降更多，常见胃肠道不良反应。",
+      "limits": "未全文核读；疗效不等于心肾结局。JAMA卷期2026-08-04，首发在线日此轮未独立核清；不混用会议报道与论文不同估计口径。",
+      "why": "补全口服治疗加入基础胰岛素后的效果与耐受性。",
+      "team": "Francesco Giorgino、Sherwin D'Souza等；第一作者不自动等于会议报告人。",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42251769/",
+      "doi": "10.2337/db26-1253-OR",
+      "reading_level": "PubMed原始论文完整摘要；未全文精读",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "reading_scope": "首轮定向读取；非大会全部热点",
+      "entity_kind": "ada",
+      "first_seen_batch": "B01",
+      "last_checked_on": "2026-11-11",
+      "conference_abstract_date": "2026-06-07",
+      "evidence_level": "正式论文摘要",
+      "scope": "糖尿病研究",
+      "domain_ids": [
+        "D1"
+      ],
+      "sources": [
+        {
+          "label": "原会议来源",
+          "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1253-OR/167106/1253-OR-ADA-Presidents-Select-Abstract-Efficacy"
+        },
+        {
+          "label": "原始论文摘要",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42251769/"
+        },
+        {
+          "label": "期刊原文",
+          "url": "https://doi.org/10.1001/jama.2026.9512"
+        }
+      ],
+      "paper": {
+        "pmid": "42251769",
+        "doi": "10.1001/jama.2026.9512",
+        "journal": "JAMA",
+        "title": "Orforglipron Added to Titrated Insulin Glargine in Type 2 Diabetes: The ACHIEVE-5 Randomized Clinical Trial.",
+        "online_date": null
+      },
+      "upgraded_in": "B02",
+      "version_relations": [],
+      "next_evidence": "追踪更长期安全性、停药/依从性与器官结局；对照和估计口径一致后再比较。"
+    },
+    {
+      "id": "A05",
+      "code": "1063-OR",
+      "title": "晚期肾病住院人群的自动胰岛素输注",
+      "topic": "监测与自动输注的特殊场景",
+      "source_date": "2026-06-05",
+      "date_basis": "摘要刊出日期；完整结果未核",
+      "evidence_status": "原始摘要结果已读",
+      "has_results": true,
+      "merged_paper": null,
+      "unique_study_id": "A05",
+      "thread_ids": [
+        "T04"
+      ],
+      "design": "住院糖尿病且eGFR<30，27人随机分配AID 14人或MDI+CGM 13人。",
+      "result": "AID组TIR为69%±18%，对照36%±19%；差33个百分点（95%CI 21至47）；低血糖时间未见组间差异。",
+      "limits": "小样本、住院场景；与A18 AIDING人员和场景高度相关，主试验/亚组关系仍待注册号或原文确认，不作为独立重复验证；不与澳丹40人门诊交叉试验混同。",
+      "why": "提示技术应用从普通门诊扩展到复杂住院场景，需补完整证据。",
+      "team": "Tugce Akcan为计划报告人；作者Rayhan Lal、Sue Brown等，机构待核。",
+      "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1063-OR/167932/1063-OR-ADA-Presidents-Select-Abstract-Automated",
+      "doi": "10.2337/db26-1063-OR",
+      "reading_level": "原站索引完整结果摘要",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "reading_scope": "首轮定向读取；非大会全部热点",
+      "entity_kind": "ada",
+      "first_seen_batch": "B01",
+      "last_checked_on": "2026-11-11",
+      "conference_abstract_date": "2026-06-05",
+      "evidence_level": "会议摘要",
+      "scope": "糖尿病研究",
+      "domain_ids": [
+        "D5",
+        "D8"
+      ],
+      "sources": [
+        {
+          "label": "原始会议摘要",
+          "url": "https://doi.org/10.2337/db26-1063-OR"
+        }
+      ],
+      "paper": null,
+      "upgraded_in": "B02",
+      "version_relations": [
+        {
+          "related_id": "A18",
+          "type": "可能主试验/亚组，待核，不按独立重复验证计数"
+        }
+      ],
+      "next_evidence": "补真实实施成本、长期结局、设备/算法版本与亚组可复制性。；补独立特殊人群研究；避免从普通成人T2D外推。"
+    },
+    {
+      "id": "A06",
+      "code": "1315-OR",
+      "title": "工程化β细胞与移植免疫排斥",
+      "topic": "工程化β细胞替代",
+      "source_date": "2026-06-08",
+      "date_basis": "原站摘要刊出日2026-06-08；实际现场报告未独立核实",
+      "evidence_status": "小鼠场景已核；结果待核",
+      "has_results": false,
+      "merged_paper": null,
+      "unique_study_id": "A06",
+      "thread_ids": [
+        "T11"
+      ],
+      "design": "原站摘要方法片段确认使用NOD及STZ相关小鼠移植模型，非人体试验。",
+      "result": "本轮核清其为小鼠概念验证方向；原站结果段未完整取得，仍不转写疗效。",
+      "limits": "未取得完整原始结果和样本/存活时长；不得称人体治愈或已验证临床移植方案。",
+      "why": "可作为细胞替代与免疫保护方向的观察入口，需要原始摘要建立证据边界。",
+      "team": "Lifu Ruan等；会前程序物理第367页列Lifu Ruan为计划报告人。",
+      "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1315-OR/167070",
+      "doi": "10.2337/db26-1315-OR",
+      "reading_level": "原站索引题目与方法片段＋官方程序；结果未完整取得",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "reading_scope": "首轮定向读取；非大会全部热点",
+      "entity_kind": "ada",
+      "first_seen_batch": "B01",
+      "last_checked_on": "2026-11-11",
+      "conference_abstract_date": "2026-06-08",
+      "evidence_level": "结果待核",
+      "scope": "糖尿病研究",
+      "domain_ids": [
+        "D4",
+        "D7"
+      ],
+      "sources": [
+        {
+          "label": "原始摘要入口",
+          "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1315-OR/167070"
+        }
+      ],
+      "paper": null,
+      "upgraded_in": "B02",
+      "version_relations": [],
+      "next_evidence": "先取得完整原始摘要结果、样本与验证细节，再决定是否升级证据状态。"
+    },
+    {
+      "id": "A07",
+      "code": "ACHIEVE-2",
+      "title": "ACHIEVE-2：口服orforglipron与达格列净比较",
+      "topic": "ACHIEVE-2",
+      "domain_ids": [
+        "D1"
+      ],
+      "thread_ids": [
+        "T10"
+      ],
+      "design": "962人，二甲双胍控制不足；40周开放Ⅲ期RCT；NCT06192108。",
+      "result": "治疗方案估计下，HbA1c下降1.23–1.56个百分点，对照0.81；胃肠道事件与停药更多。",
+      "limits": "开放设计；不能以降糖优效推出心肾保护优效；Lilly资助。",
+      "why": "头对头比较需同时看耐受性和退出治疗。",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42259339/",
+      "source_date": "2026-06-08",
+      "date_basis": "所读正式论文在线日期；会后报道日期另存",
+      "evidence_status": "正式论文结果已读",
+      "evidence_level": "正式论文摘要",
+      "has_results": true,
+      "team": "Michelle Welch、Thomas Forst等；资助信息见原始摘要。",
+      "reading_level": "PubMed原始论文完整摘要；未全文精读",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A07",
+      "sources": [
+        {
+          "label": "原始论文摘要",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42259339/"
+        },
+        {
+          "label": "期刊原文",
+          "url": "https://doi.org/10.1016/S0140-6736(26)00800-7"
+        },
+        {
+          "label": "ADA会后报道（会议关联依据）",
+          "url": "https://diabetes.org/newsroom/press-releases/achieve-trials-demonstrate-comparative-benefits-novel-small-molecule-oral"
+        }
+      ],
+      "paper": {
+        "pmid": "42259339",
+        "doi": "10.1016/S0140-6736(26)00800-7",
+        "journal": "Lancet (London, England)",
+        "title": "Orforglipron compared with dapagliflozin in adults with type 2 diabetes and inadequate glycaemic control with metformin (ACHIEVE-2): a multicentre, randomised, non-inferiority, open-label, phase 3 trial.",
+        "online_date": "2026-06-08"
+      },
+      "scope": "糖尿病研究",
+      "version_relations": [],
+      "next_evidence": "追踪更长期安全性、停药/依从性与器官结局；对照和估计口径一致后再比较。"
+    },
+    {
+      "id": "A08",
+      "code": "ACHIEVE-3",
+      "title": "ACHIEVE-3：两种口服GLP-1RA头对头比较",
+      "topic": "ACHIEVE-3",
+      "domain_ids": [
+        "D1"
+      ],
+      "thread_ids": [
+        "T10"
+      ],
+      "design": "1698人，二甲双胍控制不足；52周开放Ⅲ期RCT；NCT06045221。",
+      "result": "治疗方案估计下36mg orforglipron与14mg口服司美格鲁肽的HbA1c差−0.44个百分点（95%CI −0.62至−0.26）；前者胃肠道事件及因不良事件停药更多。",
+      "limits": "原始论文2月已在线；6月报道不算新独立研究。对照人群为二甲双胍控制不足，非已经口服司美格鲁肽治疗失败。",
+      "why": "从新闻中的效果比较回到真实背景治疗和代价。",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41765029/",
+      "source_date": "2026-02-26",
+      "date_basis": "所读正式论文在线日期；会后报道日期另存",
+      "evidence_status": "正式论文结果已读",
+      "evidence_level": "正式论文摘要",
+      "has_results": true,
+      "team": "Julio Rosenstock、Daisuke Yabe等；资助信息见原始摘要。",
+      "reading_level": "PubMed原始论文完整摘要；未全文精读",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A08",
+      "sources": [
+        {
+          "label": "原始论文摘要",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41765029/"
+        },
+        {
+          "label": "期刊原文",
+          "url": "https://doi.org/10.1016/S0140-6736(26)00202-3"
+        },
+        {
+          "label": "ADA会后报道（会议关联依据）",
+          "url": "https://diabetes.org/newsroom/press-releases/achieve-trials-demonstrate-comparative-benefits-novel-small-molecule-oral"
+        }
+      ],
+      "paper": {
+        "pmid": "41765029",
+        "doi": "10.1016/S0140-6736(26)00202-3",
+        "journal": "Lancet (London, England)",
+        "title": "Efficacy and safety of once-daily oral orforglipron compared with oral semaglutide in adults with type 2 diabetes (ACHIEVE-3): a multinational, multicentre, non-inferiority, open-label, randomised, phase 3 trial.",
+        "online_date": "2026-02-26"
+      },
+      "scope": "糖尿病研究",
+      "version_relations": [],
+      "next_evidence": "追踪更长期安全性、停药/依从性与器官结局；对照和估计口径一致后再比较。"
+    },
+    {
+      "id": "A09",
+      "code": "REIMAGINE 1",
+      "title": "REIMAGINE 1：CagriSema用于早期T2D",
+      "topic": "REIMAGINE 1",
+      "domain_ids": [
+        "D1",
+        "D2"
+      ],
+      "thread_ids": [
+        "T12"
+      ],
+      "design": "189人，饮食运动控制不足；40周双盲Ⅲ期RCT；NCT06323174。",
+      "result": "疗效估计下高剂量组合HbA1c较安慰剂多降1.7个百分点（95%CI −2.0至−1.3），体重下降13.8%与1.4%；常见胃肠道事件。",
+      "limits": "摘要所读为40周治疗；未核停药后缓解的严格定义和持续性，不能称治愈。",
+      "why": "联合机制能否带来增益，以及早期治疗后能否持久，是不同问题。",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42251860/",
+      "source_date": "2026-06-07",
+      "date_basis": "所读正式论文在线日期；会后报道日期另存",
+      "evidence_status": "正式论文结果已读",
+      "evidence_level": "正式论文摘要",
+      "has_results": true,
+      "team": "Vanita R Aroda、Raffaella Buzzetti等；资助信息见原始摘要。",
+      "reading_level": "PubMed原始论文完整摘要；未全文精读",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A09",
+      "sources": [
+        {
+          "label": "原始论文摘要",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42251860/"
+        },
+        {
+          "label": "期刊原文",
+          "url": "https://doi.org/10.1016/S2213-8587(26)00126-9"
+        },
+        {
+          "label": "ADA会后报道（会议关联依据）",
+          "url": "https://diabetes.org/newsroom/press-releases/once-weekly-cagrisema-amylin-semaglutide-combination-injection-more"
+        }
+      ],
+      "paper": {
+        "pmid": "42251860",
+        "doi": "10.1016/S2213-8587(26)00126-9",
+        "journal": "The lancet. Diabetes & endocrinology",
+        "title": "Efficacy and safety of once-weekly cagrilintide-semaglutide (CagriSema) in adults with type 2 diabetes inadequately controlled on diet and exercise (REIMAGINE 1): a randomised, double-blind, placebo-controlled, phase 3a study.",
+        "online_date": "2026-06-07"
+      },
+      "scope": "糖尿病研究",
+      "version_relations": [],
+      "next_evidence": "追踪更长期安全性、停药/依从性与器官结局；对照和估计口径一致后再比较。；补停药后维持、严格缓解定义、体成分/功能与糖尿病亚组。"
+    },
+    {
+      "id": "A10",
+      "code": "REIMAGINE 2",
+      "title": "REIMAGINE 2：CagriSema与单组分治疗比较",
+      "topic": "REIMAGINE 2",
+      "domain_ids": [
+        "D1",
+        "D2"
+      ],
+      "thread_ids": [
+        "T12"
+      ],
+      "design": "2713人，二甲双胍±SGLT2i、超重/肥胖；68周Ⅲ期RCT；NCT06065540。",
+      "result": "疗效估计下高剂量组合与司美格鲁肽2.4mg的HbA1c差−0.16个百分点（95%CI −0.27至−0.05）；常见胃肠道事件。",
+      "limits": "正式论文随机人数2713，ADA新闻写2728；此处采论文。统计显著之外仍需评价绝对增益、耐受性和成本。",
+      "why": "关注组合相对已有效治疗的增量，而非只与安慰剂比。",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42251859/",
+      "source_date": "2026-06-07",
+      "date_basis": "所读正式论文在线日期；会后报道日期另存",
+      "evidence_status": "正式论文结果已读",
+      "evidence_level": "正式论文摘要",
+      "has_results": true,
+      "team": "John B Buse、Harpreet S Bajaj等；资助信息见原始摘要。",
+      "reading_level": "PubMed原始论文完整摘要；未全文精读",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A10",
+      "sources": [
+        {
+          "label": "原始论文摘要",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42251859/"
+        },
+        {
+          "label": "期刊原文",
+          "url": "https://doi.org/10.1016/S2213-8587(26)00125-7"
+        },
+        {
+          "label": "ADA会后报道（会议关联依据）",
+          "url": "https://diabetes.org/newsroom/press-releases/once-weekly-cagrisema-amylin-semaglutide-combination-injection-more"
+        }
+      ],
+      "paper": {
+        "pmid": "42251859",
+        "doi": "10.1016/S2213-8587(26)00125-7",
+        "journal": "The lancet. Diabetes & endocrinology",
+        "title": "Cagrilintide-semaglutide (CagriSema) versus semaglutide or cagrilintide in people with type 2 diabetes (REIMAGINE 2): a double-blind, randomised, controlled, phase 3 study.",
+        "online_date": "2026-06-07"
+      },
+      "scope": "糖尿病研究",
+      "version_relations": [],
+      "next_evidence": "追踪更长期安全性、停药/依从性与器官结局；对照和估计口径一致后再比较。；补停药后维持、严格缓解定义、体成分/功能与糖尿病亚组。"
+    },
+    {
+      "id": "A11",
+      "code": "REIMAGINE 3",
+      "title": "REIMAGINE 3：CagriSema加入基础胰岛素",
+      "topic": "REIMAGINE 3",
+      "domain_ids": [
+        "D1",
+        "D2"
+      ],
+      "thread_ids": [
+        "T12"
+      ],
+      "design": "274人，基础胰岛素±二甲双胍；40周双盲Ⅲ期RCT；NCT06323161。",
+      "result": "疗效估计下高剂量组合HbA1c较安慰剂多降1.68个百分点（95%CI −1.95至−1.41）；组合体重下降10–12%；未报告严重低血糖。",
+      "limits": "40周替代终点；不能与ACHIEVE-5跨试验数字直接排名，也未证明长期器官结局。",
+      "why": "在胰岛素背景下追踪降糖、体重和低血糖之间的平衡。",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42251856/",
+      "source_date": "2026-06-07",
+      "date_basis": "所读正式论文在线日期；会后报道日期另存",
+      "evidence_status": "正式论文结果已读",
+      "evidence_level": "正式论文摘要",
+      "has_results": true,
+      "team": "Julio Rosenstock、Liana K Billings等；资助信息见原始摘要。",
+      "reading_level": "PubMed原始论文完整摘要；未全文精读",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A11",
+      "sources": [
+        {
+          "label": "原始论文摘要",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42251856/"
+        },
+        {
+          "label": "期刊原文",
+          "url": "https://doi.org/10.1016/S0140-6736(26)01022-6"
+        },
+        {
+          "label": "ADA会后报道（会议关联依据）",
+          "url": "https://diabetes.org/newsroom/press-releases/once-weekly-cagrisema-amylin-semaglutide-combination-injection-more"
+        }
+      ],
+      "paper": {
+        "pmid": "42251856",
+        "doi": "10.1016/S0140-6736(26)01022-6",
+        "journal": "Lancet (London, England)",
+        "title": "Cagrilintide-semaglutide (CagriSema) as an add-on to basal insulin in adults with type 2 diabetes (REIMAGINE 3): a randomised, double-blind, placebo-controlled, multicentre, phase 3 study.",
+        "online_date": "2026-06-07"
+      },
+      "scope": "糖尿病研究",
+      "version_relations": [],
+      "next_evidence": "追踪更长期安全性、停药/依从性与器官结局；对照和估计口径一致后再比较。；补停药后维持、严格缓解定义、体成分/功能与糖尿病亚组。"
+    },
+    {
+      "id": "A12",
+      "code": "SOLSTICE",
+      "title": "SOLSTICE：另一种口服小分子GLP-1RA的T2D数据",
+      "topic": "SOLSTICE",
+      "domain_ids": [
+        "D1"
+      ],
+      "thread_ids": [
+        "T10"
+      ],
+      "design": "406人随机、404人用药；26周Ⅱb期；NCT06579105。",
+      "result": "不同elecoglipron剂量HbA1c下降0.91–1.88个百分点，安慰剂0.15；常见胃肠道事件。",
+      "limits": "Ⅱ期探索；口服司美格鲁肽为开放探索组，不能据摘要称严格头对头优效。406随机与404用药分母分开。",
+      "why": "补充不同研发分子，继续追Ⅲ期效果与耐受性。",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42259343/",
+      "source_date": "2026-06-08",
+      "date_basis": "所读正式论文在线日期；会后报道日期另存",
+      "evidence_status": "正式论文结果已读",
+      "evidence_level": "正式论文摘要",
+      "has_results": true,
+      "team": "Vanita R Aroda、Melanie J Davies等；资助信息见原始摘要。",
+      "reading_level": "PubMed原始论文完整摘要；未全文精读",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A12",
+      "sources": [
+        {
+          "label": "原始论文摘要",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42259343/"
+        },
+        {
+          "label": "期刊原文",
+          "url": "https://doi.org/10.1016/S0140-6736(26)00802-0"
+        },
+        {
+          "label": "ADA会后报道（会议关联依据）",
+          "url": "https://www.adameetingnews.org/oral-small-molecule-glp-1-ra-improves-blood-glucose-and-weight-reduction/"
+        }
+      ],
+      "paper": {
+        "pmid": "42259343",
+        "doi": "10.1016/S0140-6736(26)00802-0",
+        "journal": "Lancet (London, England)",
+        "title": "Elecoglipron, an oral small molecule GLP-1 receptor agonist in adults with type 2 diabetes (SOLSTICE): a multicentre, phase 2b, randomised, placebo-controlled trial.",
+        "online_date": "2026-06-08"
+      },
+      "scope": "糖尿病研究",
+      "version_relations": [],
+      "next_evidence": "追踪更长期安全性、停药/依从性与器官结局；对照和估计口径一致后再比较。"
+    },
+    {
+      "id": "A13",
+      "code": "VISTA",
+      "title": "VISTA：Elecoglipron的无糖尿病肥胖研究",
+      "topic": "VISTA",
+      "domain_ids": [
+        "D1",
+        "D2"
+      ],
+      "thread_ids": [
+        "T10",
+        "T13"
+      ],
+      "design": "310人，无T2D的超重/肥胖成人；36周Ⅱ期，26周主要终点；NCT06579092。",
+      "result": "26周不同剂量体重下降2.6–10.5%，安慰剂0.6%；常见胃肠道事件。",
+      "limits": "排除T2D；属于邻域证据，不外推糖尿病疗效或长期维持。",
+      "why": "与SOLSTICE分别记录，避免把两种人群混为一项研究。",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42259337/",
+      "source_date": "2026-06-08",
+      "date_basis": "所读正式论文在线日期；会后报道日期另存",
+      "evidence_status": "正式论文结果已读",
+      "evidence_level": "正式论文摘要",
+      "has_results": true,
+      "team": "Melanie J Davies、Vanita R Aroda等；资助信息见原始摘要。",
+      "reading_level": "PubMed原始论文完整摘要；未全文精读",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A13",
+      "sources": [
+        {
+          "label": "原始论文摘要",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42259337/"
+        },
+        {
+          "label": "期刊原文",
+          "url": "https://doi.org/10.1016/S0140-6736(26)00748-8"
+        },
+        {
+          "label": "ADA会后报道（会议关联依据）",
+          "url": "https://www.adameetingnews.org/oral-small-molecule-glp-1-ra-improves-blood-glucose-and-weight-reduction/"
+        }
+      ],
+      "paper": {
+        "pmid": "42259337",
+        "doi": "10.1016/S0140-6736(26)00748-8",
+        "journal": "Lancet (London, England)",
+        "title": "Elecoglipron, an oral small molecule GLP-1 receptor agonist in adults with obesity or overweight (VISTA): a multicentre, phase 2, randomised, placebo-controlled clinical trial.",
+        "online_date": "2026-06-08"
+      },
+      "scope": "邻域：无糖尿病肥胖",
+      "version_relations": [],
+      "next_evidence": "追踪更长期安全性、停药/依从性与器官结局；对照和估计口径一致后再比较。；补停药后维持、严格缓解定义、体成分/功能与糖尿病亚组。"
+    },
+    {
+      "id": "A14",
+      "code": "TRANSCEND-T2D-1",
+      "title": "TRANSCEND-T2D-1：Retatrutide三受体方案的T2D研究",
+      "topic": "TRANSCEND-T2D-1",
+      "domain_ids": [
+        "D1",
+        "D2"
+      ],
+      "thread_ids": [
+        "T13"
+      ],
+      "design": "537人，饮食运动控制不足；40周双盲Ⅲ期；NCT06354660。",
+      "result": "治疗方案估计下12mg组HbA1c下降1.94个百分点，安慰剂0.81；体重下降15.3%与2.6%；常见胃肠道事件。",
+      "limits": "早期T2D、40周；不得与其他试验跨人群/口径比较排名，不能推出长期器官获益。",
+      "why": "多受体治疗的临床效果也提出应答差异及长期获益问题。",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42250575/",
+      "source_date": "2026-06-06",
+      "date_basis": "所读正式论文在线日期；会后报道日期另存",
+      "evidence_status": "正式论文结果已读",
+      "evidence_level": "正式论文摘要",
+      "has_results": true,
+      "team": "Harpreet S Bajaj、Michelle Welch等；资助信息见原始摘要。",
+      "reading_level": "PubMed原始论文完整摘要；未全文精读",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A14",
+      "sources": [
+        {
+          "label": "原始论文摘要",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42250575/"
+        },
+        {
+          "label": "期刊原文",
+          "url": "https://doi.org/10.1016/S0140-6736(26)00967-0"
+        },
+        {
+          "label": "ADA会后报道（会议关联依据）",
+          "url": "https://www.adameetingnews.org/triple-hormone-therapy-demonstrates-efficacy-for-type-2-diabetes-and-obesity/"
+        }
+      ],
+      "paper": {
+        "pmid": "42250575",
+        "doi": "10.1016/S0140-6736(26)00967-0",
+        "journal": "Lancet (London, England)",
+        "title": "Efficacy and safety of retatrutide, a GIP, GLP-1, and glucagon receptor agonist, in people with type 2 diabetes and inadequate glycaemic control with diet and exercise (TRANSCEND-T2D-1): a double-blind, randomised, phase 3 trial.",
+        "online_date": "2026-06-06"
+      },
+      "scope": "糖尿病研究",
+      "version_relations": [],
+      "next_evidence": "追踪更长期安全性、停药/依从性与器官结局；对照和估计口径一致后再比较。；补停药后维持、严格缓解定义、体成分/功能与糖尿病亚组。"
+    },
+    {
+      "id": "A15",
+      "code": "TRIUMPH-1",
+      "title": "TRIUMPH-1：Retatrutide的肥胖及相关症状结局",
+      "topic": "TRIUMPH-1",
+      "domain_ids": [
+        "D1",
+        "D2"
+      ],
+      "thread_ids": [
+        "T13"
+      ],
+      "design": "2339人，肥胖且无糖尿病；80周Ⅲ期；NCT05929066。",
+      "result": "治疗方案估计下12mg体重变化−25.0%，安慰剂−3.9%；另有膝骨关节炎和睡眠呼吸暂停亚组终点。",
+      "limits": "无糖尿病人群；会议报道的28.3%与论文ITT 25.0%口径不同，不能混写；常见胃肠道事件。",
+      "why": "邻域背景从体重拓展到功能与症状，但不作为糖尿病结局。",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42814954/",
+      "source_date": "2026-09-29",
+      "date_basis": "所读正式论文在线日期；会后报道日期另存",
+      "evidence_status": "正式论文结果已读",
+      "evidence_level": "正式论文摘要",
+      "has_results": true,
+      "team": "Ania M Jastreboff、Lee M Kaplan等；资助信息见原始摘要。",
+      "reading_level": "PubMed原始论文完整摘要；未全文精读",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A15",
+      "sources": [
+        {
+          "label": "原始论文摘要",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42814954/"
+        },
+        {
+          "label": "期刊原文",
+          "url": "https://doi.org/10.1056/NEJMoa2604169"
+        },
+        {
+          "label": "ADA会后报道（会议关联依据）",
+          "url": "https://www.adameetingnews.org/triple-hormone-therapy-demonstrates-efficacy-for-type-2-diabetes-and-obesity/"
+        }
+      ],
+      "paper": {
+        "pmid": "42814954",
+        "doi": "10.1056/NEJMoa2604169",
+        "journal": "The New England journal of medicine",
+        "title": "Retatrutide, a Triple Hormone Receptor Agonist, for Treatment of Obesity.",
+        "online_date": "2026-09-29"
+      },
+      "scope": "邻域：无糖尿病肥胖",
+      "version_relations": [],
+      "next_evidence": "追踪更长期安全性、停药/依从性与器官结局；对照和估计口径一致后再比较。；补停药后维持、严格缓解定义、体成分/功能与糖尿病亚组。"
+    },
+    {
+      "id": "A16",
+      "code": "SYNCHRONIZE-1",
+      "title": "SYNCHRONIZE-1：Survodutide用于无糖尿病肥胖",
+      "topic": "SYNCHRONIZE-1",
+      "domain_ids": [
+        "D1",
+        "D2"
+      ],
+      "thread_ids": [
+        "T13"
+      ],
+      "design": "725人，肥胖且无糖尿病；76周双盲Ⅲ期；NCT06066515。",
+      "result": "治疗方案估计下6mg体重变化−13.0%（95%CI −14.4至−11.6），安慰剂−5.4%；胃肠道事件更多。",
+      "limits": "原始论文725人与新闻726人分开；安慰剂组使用禁用减重药及停药影响解释，不选新闻最优数代替主要口径。",
+      "why": "新机制也要记录依从性、用药污染与估计口径。",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42253238/",
+      "source_date": "2026-06-07",
+      "date_basis": "所读正式论文在线日期；会后报道日期另存",
+      "evidence_status": "正式论文结果已读",
+      "evidence_level": "正式论文摘要",
+      "has_results": true,
+      "team": "Carel W le Roux、Sean Wharton等；资助信息见原始摘要。",
+      "reading_level": "PubMed原始论文完整摘要；未全文精读",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A16",
+      "sources": [
+        {
+          "label": "原始论文摘要",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42253238/"
+        },
+        {
+          "label": "期刊原文",
+          "url": "https://doi.org/10.1056/NEJMoa2600751"
+        },
+        {
+          "label": "ADA会后报道（会议关联依据）",
+          "url": "https://www.adameetingnews.org/glucagon-glp-1-receptor-dual-agonist-demonstrates-efficacy-for-obesity-and-masld/"
+        }
+      ],
+      "paper": {
+        "pmid": "42253238",
+        "doi": "10.1056/NEJMoa2600751",
+        "journal": "The New England journal of medicine",
+        "title": "Survodutide Once Weekly for the Treatment of Adults with Obesity.",
+        "online_date": "2026-06-07"
+      },
+      "scope": "邻域：无糖尿病肥胖",
+      "version_relations": [],
+      "next_evidence": "追踪更长期安全性、停药/依从性与器官结局；对照和估计口径一致后再比较。；补停药后维持、严格缓解定义、体成分/功能与糖尿病亚组。"
+    },
+    {
+      "id": "A17",
+      "code": "SYNCHRONIZE-MASLD",
+      "title": "SYNCHRONIZE-MASLD：Survodutide与肝脂肪结局",
+      "topic": "SYNCHRONIZE-MASLD",
+      "domain_ids": [
+        "D1",
+        "D2",
+        "D3"
+      ],
+      "thread_ids": [
+        "T13",
+        "T14"
+      ],
+      "design": "216人，肥胖与高风险MASLD；48周双盲Ⅲ期；T2D分层结果未提取。",
+      "result": "治疗方案估计下肝脂肪相对下降≥30%的比例68.5%与28.6%；体重−8.7%与−1.4%；常见胃肠道事件。",
+      "limits": "MRI肝脂肪为替代终点，不能称已证明纤维化逆转或肝硬结局；美/西两国。8月25日更正涉及作者、对照停药分母及图注，已关联。",
+      "why": "器官研究要分清影像/标志物变化与临床结局。",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42252333/",
+      "source_date": "2026-06-07",
+      "date_basis": "所读正式论文在线日期；会后报道日期另存",
+      "evidence_status": "正式论文结果已读",
+      "evidence_level": "正式论文摘要",
+      "has_results": true,
+      "team": "Lee M Kaplan、Elena Startseva等；资助信息见原始摘要。",
+      "reading_level": "PubMed原始论文完整摘要；未全文精读",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A17",
+      "sources": [
+        {
+          "label": "原始论文摘要",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42252333/"
+        },
+        {
+          "label": "期刊原文",
+          "url": "https://doi.org/10.1038/s41591-026-04479-3"
+        },
+        {
+          "label": "ADA会后报道（会议关联依据）",
+          "url": "https://www.adameetingnews.org/glucagon-glp-1-receptor-dual-agonist-demonstrates-efficacy-for-obesity-and-masld/"
+        },
+        {
+          "label": "作者更正",
+          "url": "https://www.nature.com/articles/s41591-026-04650-w"
+        }
+      ],
+      "paper": {
+        "pmid": "42252333",
+        "doi": "10.1038/s41591-026-04479-3",
+        "journal": "Nature medicine",
+        "title": "Survodutide in adults with obesity and metabolic dysfunction-associated steatotic liver disease: SYNCHRONIZE-MASLD, a randomized, double-blind, placebo-controlled phase 3 trial.",
+        "online_date": "2026-06-07"
+      },
+      "scope": "邻域：MASLD混合人群",
+      "version_relations": [],
+      "next_evidence": "追踪更长期安全性、停药/依从性与器官结局；对照和估计口径一致后再比较。；补停药后维持、严格缓解定义、体成分/功能与糖尿病亚组。；补临床硬结局、预设分析和更长期随访；不能仅用血糖或影像代替。"
+    },
+    {
+      "id": "A18",
+      "code": "AIDING",
+      "title": "AIDING：住院自动胰岛素输注主研究报道",
+      "topic": "AIDING",
+      "domain_ids": [
+        "D5",
+        "D8"
+      ],
+      "thread_ids": [
+        "T04"
+      ],
+      "design": "美国多中心开放随机研究，非ICU、需胰岛素且血糖管理困难的T1D/T2D；AID对MDI+CGM。",
+      "result": "官方报道：TIR为67.7%与40.8%，约差27个百分点；平均血糖163.7与197.6mg/dL。",
+      "limits": "仅官方会后报道层；未取得主论文/注册结果，样本数与区间缺失。与A05可能主试验/亚组，不计算独立重复验证。",
+      "why": "技术是否进入住院工作流、是否改善患者结局，需要同时追踪。",
+      "url": "https://www.adameetingnews.org/automated-insulin-delivery-demonstrates-efficacy-in-glycemic-management-in-the-hospital/",
+      "source_date": "2026-06-08",
+      "date_basis": "官方报道日2026-06-08；报道确认场次为6月7日",
+      "evidence_status": "官方报道有结果；原始研究待补",
+      "evidence_level": "官方会后报道",
+      "has_results": true,
+      "team": "Sue Brown、Georgia Davis、Rayhan Lal、Francisco Pasquel等参与报道。",
+      "reading_level": "官方会后报道，非原始摘要或论文",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A18",
+      "sources": [
+        {
+          "label": "ADA官方会后报道",
+          "url": "https://www.adameetingnews.org/automated-insulin-delivery-demonstrates-efficacy-in-glycemic-management-in-the-hospital/"
+        }
+      ],
+      "paper": null,
+      "scope": "糖尿病研究",
+      "version_relations": [
+        {
+          "related_id": "A05",
+          "type": "可能主试验/亚组，待核，不按独立重复验证计数"
+        }
+      ],
+      "next_evidence": "补真实实施成本、长期结局、设备/算法版本与亚组可复制性。；补独立特殊人群研究；避免从普通成人T2D外推。"
+    },
+    {
+      "id": "A19",
+      "code": "1020-OR",
+      "title": "T1D免疫试验：纵向C肽衰减终点",
+      "topic": "T1D免疫试验",
+      "domain_ids": [
+        "D4",
+        "D6",
+        "D7"
+      ],
+      "thread_ids": [
+        "T17"
+      ],
+      "design": "TrialNet六个双盲RCT共597人的再分析，以非线性混合模型估计C肽到预设阈值的时间。",
+      "result": "新终点重现三种有效治疗及三种无效治疗的分类；利妥昔单抗对应中位时间128与84天。",
+      "limits": "重用既有试验，不是597人新试验；阈值选择、外部复现和临床意义仍需核实。",
+      "why": "标志物价值不仅是找新分子，也包括如何利用纵向变化评价治疗。",
+      "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1020-OR/168354/1020-OR-ADA-Presidents-Select-Abstract-Time-to",
+      "source_date": "2026-06-05",
+      "date_basis": "原始会议摘要刊出日；不等于现场报告日",
+      "evidence_status": "原始摘要结果已读",
+      "evidence_level": "会议摘要",
+      "has_results": true,
+      "team": "Aidong Ding、Jeffrey Krischer、Samuel Wu等；计划报告人Samuel Wu。",
+      "reading_level": "原站索引完整结果摘要",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A19",
+      "sources": [
+        {
+          "label": "原始会议摘要",
+          "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1020-OR/168354/1020-OR-ADA-Presidents-Select-Abstract-Time-to"
+        }
+      ],
+      "paper": null,
+      "scope": "糖尿病研究",
+      "doi": "10.2337/db26-1020-OR",
+      "version_relations": [],
+      "next_evidence": "补干预与未干预对照、病期/队列、β细胞保留及长期安全。；补外部验证、校准与相对临床基础模型的增量，核共享样本。；补独立样本、机制干预及人体转化证据。"
+    },
+    {
+      "id": "A20",
+      "code": "1021-OR",
+      "title": "T1D部分缓解与细胞外囊泡蛋白组",
+      "topic": "T1D部分缓解与细胞外囊泡蛋白组",
+      "domain_ids": [
+        "D4",
+        "D6",
+        "D7"
+      ],
+      "thread_ids": [
+        "T17"
+      ],
+      "design": "原站方法片段：12–18岁新发T1D，于基线/约3月或缓解/6月取血；健康对照基线，N=10/组。",
+      "result": "已核到研究设计与采血时点，原始结果段此轮未完整取得。",
+      "limits": "不能引用二次转载的AUC或蛋白列表作为已核结果；小样本、外部验证及预测时序待核。",
+      "why": "有望连接免疫/胰岛功能与液体样本，但先补原始检测与验证细节。",
+      "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1021-OR/167624/1021-OR-Extracellular-Vesicle-EV-Proteomics",
+      "source_date": "2026-06-05",
+      "date_basis": "原始会议摘要刊出日；不等于现场报告日",
+      "evidence_status": "方法已读；结果待核",
+      "evidence_level": "结果待核",
+      "has_results": false,
+      "team": "Anika Bilal、Yury Nunez Lopez、Anna Casu等。",
+      "reading_level": "原站摘要方法片段；结果未完整取得",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A20",
+      "sources": [
+        {
+          "label": "原始会议摘要",
+          "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1021-OR/167624/1021-OR-Extracellular-Vesicle-EV-Proteomics"
+        }
+      ],
+      "paper": null,
+      "scope": "糖尿病研究",
+      "doi": "10.2337/db26-1021-OR",
+      "version_relations": [],
+      "next_evidence": "先取得完整原始摘要结果、样本与验证细节，再决定是否升级证据状态。"
+    },
+    {
+      "id": "A21",
+      "code": "1024-OR",
+      "title": "T1D免疫亚群的代谢差异",
+      "topic": "T1D免疫亚群的代谢差异",
+      "domain_ids": [
+        "D4",
+        "D6",
+        "D7"
+      ],
+      "thread_ids": [
+        "T05",
+        "T17"
+      ],
+      "design": "47名新发T1D，以血浆诱导转录反应划分免疫亚群，再行非靶向LC-MS代谢组。",
+      "result": "不同免疫亚群出现次级胆汁酸及炎症/稳态相关代谢差异，提出肠肝胰关联假说。",
+      "limits": "探索性、样本小；与R13同作者/相关分群体系，样本重叠未核，不称独立验证；血浆诱导转录不是cfRNA。",
+      "why": "补充从免疫分层到代谢机制的线索，后续看能否预测干预反应。",
+      "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1024-OR/167746/1024-OR-Immunologically-Distinct-Type-1-Diabetes",
+      "source_date": "2026-06-05",
+      "date_basis": "原始会议摘要刊出日；不等于现场报告日",
+      "evidence_status": "原始摘要结果已读",
+      "evidence_level": "会议摘要",
+      "has_results": true,
+      "team": "Amina Bedrat、Martin Hessner等；队列重叠待核。",
+      "reading_level": "原站索引完整结果摘要",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A21",
+      "sources": [
+        {
+          "label": "原始会议摘要",
+          "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1024-OR/167746/1024-OR-Immunologically-Distinct-Type-1-Diabetes"
+        }
+      ],
+      "paper": null,
+      "scope": "糖尿病研究",
+      "doi": "10.2337/db26-1024-OR",
+      "version_relations": [
+        {
+          "related_id": "R13",
+          "type": "同作者及相关分群框架；样本重叠待核"
+        }
+      ],
+      "next_evidence": "补干预与未干预对照、病期/队列、β细胞保留及长期安全。；补外部验证、校准与相对临床基础模型的增量，核共享样本。；补独立样本、机制干预及人体转化证据。"
+    },
+    {
+      "id": "A22",
+      "code": "1005-OR",
+      "title": "SURPASS-CVOT糖网子研究：未见组间差异",
+      "topic": "SURPASS-CVOT糖网子研究",
+      "domain_ids": [
+        "D3"
+      ],
+      "thread_ids": [
+        "T14"
+      ],
+      "design": "主试验预设子研究：替尔泊肽449人与度拉糖肽471人，12个月标准化眼底照片及ETDRS评价。",
+      "result": "尽管降糖幅度不同，12个月糖网改变未见显著组间差异；基线有/无糖网的比较均不显著。",
+      "limits": "主试验子研究而非新独立RCT；12个月未见差异不等于长期无风险，也不证明预防糖网。",
+      "why": "降糖结果与眼结局不必同步，保留没有优势的器官证据。",
+      "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1005-OR/168092/1005-OR-The-SURPASS-CVOT-Retinopathy-Substudy",
+      "source_date": "2026-06-05",
+      "date_basis": "原始会议摘要刊出日；不等于现场报告日",
+      "evidence_status": "原始摘要结果已读",
+      "evidence_level": "会议摘要",
+      "has_results": true,
+      "team": "David D’Alessio、Stephen Nicholls等；Lilly相关研究。",
+      "reading_level": "原站索引完整结果摘要",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A22",
+      "sources": [
+        {
+          "label": "原始会议摘要",
+          "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1005-OR/168092/1005-OR-The-SURPASS-CVOT-Retinopathy-Substudy"
+        }
+      ],
+      "paper": null,
+      "scope": "糖尿病研究",
+      "doi": "10.2337/db26-1005-OR",
+      "version_relations": [],
+      "next_evidence": "补临床硬结局、预设分析和更长期随访；不能仅用血糖或影像代替。"
+    },
+    {
+      "id": "A23",
+      "code": "1233-OR",
+      "title": "GDM早期风险：餐后动态葡萄糖信号",
+      "topic": "GDM早期风险",
+      "domain_ids": [
+        "D6",
+        "D8"
+      ],
+      "thread_ids": [
+        "T15"
+      ],
+      "design": "MAGIC和GLAM两队列936人，CGM餐食检测与OGTT相关分析。",
+      "result": "餐后1小时增幅指标AUC约0.78；85%敏感度时特异度53%，较部分传统CGM/HbA1c指标更高。",
+      "limits": "早期风险线索不等于替代诊断；仍需前瞻性、外部校准及临床增益验证。",
+      "why": "关注动态模式能否补充早期分层，而非只看单个均值。",
+      "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1233-OR/167115/1233-OR-Postmeal-Glucose-Patterns-as-Early",
+      "source_date": "2026-06-07",
+      "date_basis": "原始会议摘要刊出日；不等于现场报告日",
+      "evidence_status": "原始摘要结果已读",
+      "evidence_level": "会议摘要",
+      "has_results": true,
+      "team": "Azin Mousavi、Claire Scott、Helen Murphy等；Abbott相关资助/关系见原摘要。",
+      "reading_level": "原站索引完整结果摘要",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A23",
+      "sources": [
+        {
+          "label": "原始会议摘要",
+          "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1233-OR/167115/1233-OR-Postmeal-Glucose-Patterns-as-Early"
+        }
+      ],
+      "paper": null,
+      "scope": "糖尿病研究",
+      "doi": "10.2337/db26-1233-OR",
+      "version_relations": [],
+      "next_evidence": "补外部验证、校准与相对临床基础模型的增量，核共享样本。；补独立特殊人群研究；避免从普通成人T2D外推。"
+    },
+    {
+      "id": "A24",
+      "code": "1234-OR",
+      "title": "GDM预测：代谢与脂质指标未增加价值",
+      "topic": "GDM预测",
+      "domain_ids": [
+        "D6",
+        "D8"
+      ],
+      "thread_ids": [
+        "T15"
+      ],
+      "design": "GOMOMs 2178人，孕10–14周代谢/脂质指标与75g OGTT；按中心分训练和验证。",
+      "result": "加入所测胰岛素敏感性、β细胞功能、游离脂肪酸与甘油三酯后，未提升GDM或大于胎龄儿的预测。",
+      "limits": "针对特定时间窗、指标与基础模型；不能扩大为所有组学无效。与A25共享GOMOMs队列，非独立人群验证。",
+      "why": "新标志物必须检验相对已有临床资料的增量价值。",
+      "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1234-OR/167151/1234-OR-Do-First-Trimester-Metabolic-or-Lipid",
+      "source_date": "2026-06-07",
+      "date_basis": "原始会议摘要刊出日；不等于现场报告日",
+      "evidence_status": "原始摘要结果已读",
+      "evidence_level": "会议摘要",
+      "has_results": true,
+      "team": "详见原始会议摘要。",
+      "reading_level": "原站索引完整结果摘要",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A24",
+      "sources": [
+        {
+          "label": "原始会议摘要",
+          "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1234-OR/167151/1234-OR-Do-First-Trimester-Metabolic-or-Lipid"
+        }
+      ],
+      "paper": null,
+      "scope": "糖尿病研究",
+      "doi": "10.2337/db26-1234-OR",
+      "version_relations": [
+        {
+          "related_id": "A25",
+          "type": "GOMOMs共享队列，不同分析"
+        }
+      ],
+      "next_evidence": "补外部验证、校准与相对临床基础模型的增量，核共享样本。；补独立特殊人群研究；避免从普通成人T2D外推。"
+    },
+    {
+      "id": "A25",
+      "code": "1235-OR",
+      "title": "GDM诊断：CGM暂不足以替代OGTT",
+      "topic": "GDM诊断",
+      "domain_ids": [
+        "D5",
+        "D6",
+        "D8"
+      ],
+      "thread_ids": [
+        "T15"
+      ],
+      "design": "GOMOMs 2178人，孕24–28周约10天CGM与OGTT，训练/验证建模。",
+      "result": "MAGE AUC约0.73；选定阈值敏感度75.4%、特异度59.7%、阳性预测值14.5%；作者认为不足以替代OGTT。",
+      "limits": "阴性替代结果；与A24共用队列，但问题为诊断而非孕早期预测；不能合并为两个独立验证队列。",
+      "why": "技术方便并不自动等于诊断可用，需保留阈值性能。",
+      "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1235-OR/167134/1235-OR-Gestational-Diabetes-Diagnosis-Using",
+      "source_date": "2026-06-07",
+      "date_basis": "原始会议摘要刊出日；不等于现场报告日",
+      "evidence_status": "原始摘要结果已读",
+      "evidence_level": "会议摘要",
+      "has_results": true,
+      "team": "Audrey Merriam等；NIDDK、Dexcom支持信息见摘要。",
+      "reading_level": "原站索引完整结果摘要",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A25",
+      "sources": [
+        {
+          "label": "原始会议摘要",
+          "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1235-OR/167134/1235-OR-Gestational-Diabetes-Diagnosis-Using"
+        }
+      ],
+      "paper": null,
+      "scope": "糖尿病研究",
+      "doi": "10.2337/db26-1235-OR",
+      "version_relations": [
+        {
+          "related_id": "A24",
+          "type": "GOMOMs共享队列，不同分析"
+        }
+      ],
+      "next_evidence": "补真实实施成本、长期结局、设备/算法版本与亚组可复制性。；补外部验证、校准与相对临床基础模型的增量，核共享样本。；补独立特殊人群研究；避免从普通成人T2D外推。"
+    },
+    {
+      "id": "A26",
+      "code": "1249-OR",
+      "title": "FAME-D：食物获取与管理干预",
+      "topic": "FAME-D",
+      "domain_ids": [
+        "D9"
+      ],
+      "thread_ids": [
+        "T16"
+      ],
+      "design": "194人随机、178人完成6月评估；T2D且食物不安全；每周10份定制餐+电话管理，对照每月40美元补助；NCT04828785。",
+      "result": "6个月HbA1c组间差−0.42个百分点（95%CI −0.82至−0.03），收缩压亦改善；体重和舒张压未见显著差异。",
+      "limits": "餐食加行为管理的复合干预，不能归因于餐食单一成分；成本、持续性和不同体系可复制性待核。",
+      "why": "生活条件影响研究能否进入真实管理，实施类证据也应进入领域雷达。",
+      "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1249-OR/167139/1249-OR-Medically-Tailored-Meals-Lower-Hemoglobin",
+      "source_date": "2026-06-07",
+      "date_basis": "原始会议摘要刊出日；不等于现场报告日",
+      "evidence_status": "原始摘要结果已读",
+      "evidence_level": "会议摘要",
+      "has_results": true,
+      "team": "Seth Berkowitz等；NIH支持。",
+      "reading_level": "原站索引完整结果摘要",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A26",
+      "sources": [
+        {
+          "label": "原始会议摘要",
+          "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1249-OR/167139/1249-OR-Medically-Tailored-Meals-Lower-Hemoglobin"
+        }
+      ],
+      "paper": null,
+      "scope": "糖尿病研究",
+      "doi": "10.2337/db26-1249-OR",
+      "version_relations": [],
+      "next_evidence": "补管理持续性、成本和不同医疗体系下的实施效果。"
+    },
+    {
+      "id": "A27",
+      "code": "1059-OR",
+      "title": "TEPLI-REAL：T1D早期免疫治疗的真实使用",
+      "topic": "TEPLI-REAL",
+      "domain_ids": [
+        "D4",
+        "D8",
+        "D9"
+      ],
+      "thread_ids": [
+        "T05",
+        "T16"
+      ],
+      "design": "27中心回顾病历110人，中位年龄13岁、中位随访14.3月；接受≥1天teplizumab，NCT06892002。",
+      "result": "94%完成14天疗程，超过70%在观察中仍处2期T1D。",
+      "limits": "无同期未治疗对照，不能将未进展比例解释为治疗效应或长期防病；筛查路径和选择偏倚需考虑。",
+      "why": "从随机试验走向筛查和输注实施，关注真实患者和治疗完成条件。",
+      "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1059-OR/167429/1059-OR-TEPLI-REAL-A-Real-World-Retrospective",
+      "source_date": "2026-06-05",
+      "date_basis": "原始会议摘要刊出日；不等于现场报告日",
+      "evidence_status": "原始摘要结果已读",
+      "evidence_level": "会议摘要",
+      "has_results": true,
+      "team": "Stephen Gitelman等；Sanofi/IQVIA相关人员关系见摘要。",
+      "reading_level": "原站索引完整结果摘要",
+      "entity_kind": "ada",
+      "conference": "ADA 2026",
+      "first_seen_on": "2026-11-11",
+      "first_seen_batch": "B02",
+      "last_checked_on": "2026-11-11",
+      "merged_paper": null,
+      "unique_study_id": "A27",
+      "sources": [
+        {
+          "label": "原始会议摘要",
+          "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/1059-OR/167429/1059-OR-TEPLI-REAL-A-Real-World-Retrospective"
+        }
+      ],
+      "paper": null,
+      "scope": "糖尿病研究",
+      "doi": "10.2337/db26-1059-OR",
+      "version_relations": [],
+      "next_evidence": "补干预与未干预对照、病期/队列、β细胞保留及长期安全。；补独立特殊人群研究；避免从普通成人T2D外推。；补管理持续性、成本和不同医疗体系下的实施效果。"
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "result": "passed",
+  "delivered_on": "2026-11-17",
+  "database_sha256": "f1fd660c1349ac4701a78db189ea097c5a1ffd3952297220ea555ee423185c22",
+  "database_unchanged": true,
+  "new_tables": 0,
+  "conference_counts": {
+    "international_core": 1,
+    "national_major": 1,
+    "regional_key": 0
+  },
+  "series_count": 2,
+  "edition_count": 2,
+  "preserved_files": [
+    "数据库/marketing.db",
+    "会议视图/会议数据快照.json",
+    "会议视图/ADA会议数据快照.json",
+    "会议视图/src/app.js",
+    "会议视图/src/ada-app.js",
+    "会议视图/src/style.css"
+  ],
+  "business_snapshots_and_scripts_unchanged": true,
+  "old_research_workbenches_unchanged": true,
+  "new_collection": false,
+  "published": false,
+  "checks": [
+    "三级分组与数据库会议层级一致",
+    "系列与届次分开，区域仅空入口",
+    "卡片日期地点/数量/覆盖匹配只读查询",
+    "会议首页、议题、来源、回链及离线访问通过",
+    "桌面/平板/手机无整页横向溢出",
+    "数据库、两会数据快照、业务脚本和原研究台指纹保持"
+  ],
+  "browser_check": "浏览器核验.json",
+  "backup": "备份/会议总入口接入前_2026-11-17",
+  "files": [
+    {
+      "path": "会议总入口/index.html",
+      "bytes": 27264,
+      "sha256": "089e72186012992792c74f0b93c45165367d88a8386eb77c37fffa7c5c8cfae2"
+    },
+    {
+      "path": "会议总入口/src/app.js",
+      "bytes": 4704,
+      "sha256": "b763576f9e0532bb7c7cce22fa889f68a0d01b83843c9b9a6373976f21dc27ef"
+    },
+    {
+      "path": "会议总入口/src/style.css",
+      "bytes": 6410,
+      "sha256": "efa91d815a612480c72f091ed11a6935c44a951f8fc18f58c1520a75f84a8633"
+    },
+    {
+      "path": "会议总入口/src/template.html",
+      "bytes": 1680,
+      "sha256": "b72c396f3bc0d26d924e0bd684df51b9f98f55cf5b311f162ee68b99e08f013f"
+    },
+    {
+      "path": "会议总入口/会议目录快照.json",
+      "bytes": 20567,
+      "sha256": "1fea1f0dd821202441924dc16bb82f9f9250ab90123920d7210828f607f55cf7"
+    },
+    {
+      "path": "会议总入口/使用说明.md",
+      "bytes": 3753,
+      "sha256": "28b4bc31cf283a5799a36d7a65ea814bfd21d8a924004bdee9722a8fac9ee6c6"
+    },
+    {
+      "path": "会议总入口/入口配置.json",
+      "bytes": 947,
+      "sha256": "517778729d7c111c5b296d892941f8f364c59e14101677bb2342a1601e1efc43"
+    },
+    {
+      "path": "会议总入口/变更前基线.json",
+      "bytes": 1922,
+      "sha256": "2ed19464833f6214adcf861749d50b927d4b8dced51fe577fd1c687951f361ea"
+    },
+    {
+      "path": "会议总入口/核验截图/01-会议总入口.png",
+      "bytes": 250794,
+      "sha256": "05f7b7f2dfaa00fa5cb0e7f6582e3aeff319075acb5cc3a7e285b2897b7560f2"
+    },
+    {
+      "path": "会议总入口/核验截图/02-区域空入口.png",
+      "bytes": 112548,
+      "sha256": "1704722c529e7dda3fab79d19943e83a648df1471529ef70ae5872f8a2f97736"
+    },
+    {
+      "path": "会议总入口/核验截图/03-手机总入口.png",
+      "bytes": 217881,
+      "sha256": "d369b392ec2d68087e079567b97d6515908891f03d7ffee62e002d00a9f233e7"
+    },
+    {
+      "path": "会议总入口/浏览器核验.json",
+      "bytes": 778,
+      "sha256": "9766b6a89ad9081a373def3728ca380950864d9545d0f2ef41889a339e2f3ed1"
+    },
+    {
+      "path": "会议总入口/生成记录.json",
+      "bytes": 466,
+      "sha256": "6271ceb5226a3ebe268253a36853e51f94287c9c627a89bad68ba4e181b3600a"
+    },
+    {
+      "path": "会议总入口/验收脚本.cjs",
+      "bytes": 6695,
+      "sha256": "dbd3b9481142dcda9eb7c62f9109502e99a5705c8bec0f401acd49ed3dede29b"
+    },
+    {
+      "path": "脚本/生成会议总入口.py",
+      "bytes": 5883,
+      "sha256": "3aad7eb10a3ec864ce7a1a0e8abff78ce0f878636478991d6dc36601fd579e34"
+    },
+    {
+      "path": "会议视图/src/template.html",
+      "bytes": 1667,
+      "sha256": "8a6521f6527beac5f1ff023b72d04d3fa587a393f64b8b04efc8579812f6af0f"
+    },
+    {
+      "path": "会议视图/index.html",
+      "bytes": 4553273,
+      "sha256": "e532bccb1bc268d51324327e7591063afb12d617aa9b991c791819f08c93472f"
+    },
+    {
+      "path": "会议视图/ada.html",
+      "bytes": 16229098,
+      "sha256": "1203ad031ae3a45c9bb0037d433ed8f1c600aa9a30981866cb85ae857a76c1dd"
+    },
+    {
+      "path": "会议视图/生成记录.json",
+      "bytes": 670,
+      "sha256": "3e8cf07d000a03fdf4f56a628a24b7dd1664f0a91b3560a4ef11a9ee104937fb"
+    },
+    {
+      "path": "会议视图/ADA生成记录.json",
+      "bytes": 757,
+      "sha256": "5a6422a45bd2dd0db8fc2fb5392ec1bb470d4c51a375b358e9d3930986005394"
+    },
+    {
+      "path": "会议视图/使用说明.md",
+      "bytes": 6393,
+      "sha256": "fc90c77eb3b84b379b10994936f71919f18de4bc7c86682349a92721d9586ea7"
+    },
+    {
+      "path": "00 数据中心说明.md",
+      "bytes": 6506,
+      "sha256": "db495f46bc76cc694942ed95dc49e6596a59f41ad784c2eae5d5750059a909a0"
+    }
+  ]
+}

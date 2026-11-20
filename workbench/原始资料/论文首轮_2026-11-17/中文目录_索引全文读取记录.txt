@@ -1,0 +1,426 @@
+MedNexus - MedNexus (https://cs.medjournals.cn/cn/doi)
+citeturn165search0 [wordlim: 200] Crawled: last week; [Input: 文题/关键词/摘要/作者/DOI] ... 中华医学期刊集群高质量发展研讨会在京召开中华医学会杂志社 2026-08-13国际出版伦理委员会（COPE）主席Nancy Chescheir一行应邀访问中华医学会杂志社中华医学会杂志社 2026-06-25 01 2026-07重磅官宣｜中华医学会杂志社知识服务平台MedPaper®正式上线！ ... 13 2026-08中华医学期刊集群高质量发展研讨会在京召开中华医学会杂志社25 2026-06国际出版伦理委员会（COPE）主席Nancy Chescheir一行应邀访问中华医学会杂志社中华医学会杂志社01 2026-07重磅官宣｜中华医学会杂志社知识服务平台MedPaper®正式上线！
+
+论文
+
+  * 论文
+  * 期刊
+  * 指南
+  * 病例
+  * 图表
+
+[Input: 文题/关键词/摘要/作者/DOI]
+
+317种收录期刊102种英文期刊153.5万论文总量169.9万张图表总量220+个智能体
+
+## 编辑推荐
+
+Featured Articles
+
+胃癌生物标志物检测临床应用指南（2026版）
+
+生物标志物检测是实现胃癌精准诊疗的关键环节。为规范胃癌的生物标志物检测临床实践，胃癌相关领域多学科专家联合制定本指南，通过系统检索国内外循证证据，采用GRADE法进行证据分级，并经德尔菲法达成专家共识。指南系统梳理了HER2、CLDN18.2等分子靶向治疗，以及微卫星不稳定/错配修复、PD-L1等免疫治疗相关核心标志物的检测要点与推荐意见，明确界定了检测的适用人群、检测时机，同时规范了检测方法、检测顺序等关键临床操作。
+
+中华病理学杂志 2026/09/08
+
+成人住院患者静脉转口服用药临床应用指南（2026版）
+中华医学杂志 2026/09/22
+
+手术创伤患者精神心理障碍早期识别与干预的中国专家共识
+
+本共识旨在为手术创伤患者精神心理障碍的早期识别与干预提供科学、规范且实用的指导。由多学科专家团队基于循证医学证据，遵循相关指南制订规范，围绕手术创伤患者精神心理障碍的常见类型与表现、影响因素、对患者的影响、早期识别方法、干预策略、特殊情况的应对、干预效果评估以及医护人员培训与教育等关键环节进行深入探讨。共识强调早期识别与干预的重要性，以期提升手术创伤患者精神心理障碍的管理水平，改善患者预后。
+
+中国医师杂志 2026/07/20
+
+抗血小板药物消化道黏膜损伤防治多学科专家共识
+
+抗血小板药物是心脑血管疾病防治的基石，但长期服用显著增加全消化道黏膜损伤风险，严重者可发生消化道溃疡、出血甚至穿孔。为系统应对这一临床挑战，本共识围绕抗血小板药物消化道黏膜损伤的发生机制、临床表现、危险因素、诊断、预防与治疗6大核心内容，形成22条推荐意见，旨在建立一套综合管理路径，提升临床认知，最终降低患者消化道损伤及并发症的发生风险。
+
+中华消化内镜杂志 2026/07/20
+
+碘对比剂超敏反应临床诊疗及长期管理专家共识（2026版）
+
+为进一步规范碘对比剂的临床诊疗、评估流程及长期管理，本共识基于国内外碘对比剂诊疗指南、共识、实践参数及相关文献，组织相关领域专家，采用德尔菲法，针对临床实践中常见问题进行详细阐述。共32位专家参与，很同意及同意的比例>75%表示达成共识推荐。本共识为规范急性期诊疗及后续评估、长期管理提供了建议。
+
+中华医学杂志 2026/09/15
+
+查看更多
+
+
+中华实验外科杂志 2022/02/08
+
+  * 6
+
+Effect of COVID-19 pandemic on blood transfusion service: an experience from a regional blood transfusion center
+
+血液科学（英文） 2023/07/30
+
+### 下载排行
+
+Most Downloaded
+
+  * 1
+
+中国糖尿病防治指南（2024版）
+
+中华糖尿病杂志 2025/01/20
+
+  * 2
+
+中国心力衰竭诊断和治疗指南2024
+
+中华心血管病杂志 2024/03/24
+
+  * 3
+
+中国老年2型糖尿病防治临床指南（2026年版）
+
+中华内科杂志 2026/03/01
+
+  * 4
+
+中国膀胱癌流行现状与趋势分析
+
+中华肿瘤杂志 2021/03/23
+
+  * 5
+
+中国急性缺血性卒中诊治指南2023
+
+中华神经科杂志 2024/06/08
+
+  * 6
+
+急性肺栓塞诊断和治疗指南2025
+
+中华心血管病杂志 2025/06/24
+
+### 被引排行
+
+Most Cited
+
+  * 1
+
+中国2型糖尿病防治指南（2020年版）
+
+中华糖尿病杂志 2021/04/27
+
+  * 2
+
+2015年中国恶性肿瘤流行情况分析
+
+中华肿瘤杂志 2019/01/23
+
+  * 3
+
+稳定性冠心病诊断与治疗指南
+
+中华心血管病杂志 2018/09/24
+
+  * 4
+
+急性心肌梗死诊断和治疗指南
+
+中华心血管病杂志
+
+  * 5
+
+中国心力衰竭诊断和治疗指南2018
+
+中华心血管病杂志 2018/10/24
+
+  * 6
+
+慢性阻塞性肺疾病诊治指南（2021年修订版）
+
+中华结核和呼吸杂志 2021/03/12
+
+查看更多
+
+## 文献集锦
+
+Collections
+
+血液病学领域指南集锦整理者中华医学会杂志社 515 2026-08-25儿科学领域指南集锦（2020-2022）整理者刘红霞 762 2026-06-12智能医疗整理者沈锡宾 537 2026-09-22妇科学领域指南类文献集锦（2011~2015）整理者王红剑 418 2018-08-22
+
+血液病学领域指南集锦整理者中华医学会杂志社 515
+
+儿科学领域指南集锦（2020-2022）整理者刘红霞 762
+
+智能医疗整理者沈锡宾 537
+
+查看更多
+
+## 多媒体
+
+Multimedia
+
+欢迎使用知识服务平台MedPaper 11 2026-08-14
+
+卓越行动计划集群示范单位五年工作成果汇报 47 2026-06-25
+
+从文献到知识，从知识到创新 30 2026-06-25
+
+中国临床案例成果数据库 55 2026-06-25
+
+查看更多
+
+## 总编风采
+
+Editors-in-Chief
+
+钟南山中华生物医学工程杂志（中英文） 总编辑中国工程院院士; 教授;“共和国勋章”获得者呼吸病学专家，中国工程院院士，曾任广州医学院（现广州医科大学）党委书记、院长及第一附属医院院长，中华医学会会长，呼吸疾病国家重点实验室主任等职务，现任国家呼吸系统疾病临床医学研究中心主任。国家呼吸系统疾病临床医学研究中心
+
+赵玉沛中华外科杂志,胰腺病学杂志（英文） 总编辑中国科学院院士;教授;主任医师;博士生导师北京协和医院院长，中国科学院院士，外科学教授，博士生导师，享受国务院特殊津贴，中国科协副主席、中华医学会常务副会长、外科学分会主任委员、北京医师协会副会长、国务院学位委员会学科评议组成员。北京协和医院
+
+韩雅玲中华心血管病杂志,心血管病探索（英文） 总编辑中国工程院院士;主任医师中国工程院院士，北部战区总医院全军心血管病研究所所长，北部战区总医院心血管内科主任，中华医学会心血管病学分会主任委员，辽宁省医师协会会长，全军心血管急重症救治重点实验室主任。北部战区总医院心内科
+
+--------------------------------------------------------------------------------
+中华全科医师杂志：2026年第25卷第11期 (https://cs.medjournals.cn/cn/zhqkyszz/current)
+citeturn165search1 [wordlim: 200] Published: last week; Crawled: today; DOI: 10.3760/cma.j.cn114798-20260521-00489
+### 慢性心力衰竭患者易损期信息需求偏好的纵向质性研究
+
+唐荣欣 张岩 任蕾元 刘艳萍 唐应丽 梁闪 刘新灿
+
+中华全科医师杂志2026年 25卷 11期
+
+DOI: 10.3760/cma.j.cn114798-20260521-00489
+
+摘要
+
+HTML PDF
+
+目的 探讨慢性心力衰竭患者在易损期内不同阶段的信息需求偏好及动态变化，为制定分阶段健康信息支持策略提供依据。 方法 该研究为质性访谈。采用目的抽样法，选取2025年9月至2026年2月于河南省某三级甲等医院心血管内科随访的18例慢性心力衰竭患者作为研究对象。基于时机理论框架与易损期阶段划分，在出院前、出院后1个月、出院后3个月3个时间点对每例患者进行3次纵向半结构式访谈。访谈围绕各阶段信息需求的核心内容、获取途径与体验、形式偏好及影响因素等方向展开。采用解释现象学分析法整理、分析资料。 结果 18例患者中，年龄48~78岁，男性10例、女性8例；纽约心脏病协会（NYHA）心功能分级Ⅱ级10例、Ⅲ级8例。共提炼出3个主题、9个亚主题：①极早期：安全过渡性信息需求（风险识别信息、用药安全信息、自我监测技能信息）；②早期：生活化信息整合需求（具体生活环境相匹配的个性化指导信息需求、对权威、可靠决策信息需求、对形式适宜、易于理解的信息呈现方式的需求）；③晚期：发展性与支持性信息需求（疾病远期预后与个人社会功能重建的信息关注、连续性专业信息支持可及性需求、同伴经验与情感性信息需求）。 结论 慢性心力衰竭患者在易损期不同阶段的信息需求偏好呈现动态、递进的演变特征。
+
+### 2015—2025年我国全科医学教育研究热点和趋势的可视化分析
+
+虞莹 邱潆潆 郑雅杰 杨华
+
+中华全科医师杂志2026年 25卷 11期
+
+DOI: 10.3760/cma.j.cn114798-20260614-00561
+
+摘要
+
+HTML PDF
+
+目的 分析我国近10年全科医学教育研究热点及其变化趋势。 方法 采用可视化文献分析方法，检索2015—2025年在中国知网、万方数据库、维普数据库、中华医学期刊全文数据库发表的全科医学教育相关中文文献，利用CiteSpace从发文量、发文作者与研究机构分布、研究热点分布与演进趋势进行可视化分析。 结果 研究共纳入文献828篇。发文量呈现随年份“先升后降再回升”的趋势。核心作者集中于北京、浙江、上海、广东等发达地区大学及其附属医院，作者合作网络密度与机构合作网络密度较低，分别为0.003 1、0.002 5。高频、高中心性关键词包括“全科医师”“人才培养”“住院医师规范化培训”“教学改革”等。早期研究主要集中在“启示”“农村”“助理全科医师”等方面，而“课程思政”“新医科”“互联网+”“临床能力”成为当前该领域的研究热点。 结论 我国全科医学教育研究主体呈现“发达地区集聚、院校主导”现象，且作者与机构间合作网络松散。研究热点的变化表明该领域已从初期的规模扩张逐步转向高质量的内涵式提升。
+
+短篇论著
+
+### C5单克隆抗体治疗重症狼疮性肾炎合并血栓性微血管病6例临床分析
+
+何伟莹 田芬 李靖 韩润鸿 邢广群
+
+中华全科医师杂志2026年 25卷 11期
+
+DOI: 10.3760/cma.j.cn114798-20260501-00392
+
+摘要
+
+HTML PDF
+
+分析2023年12月至2024年10月青岛大学附属医院肾脏内科诊治的6例重症狼疮性肾炎（LN）合并血栓性微血管病（TMA）患者的临床资料，包括临床表现、常规实验室检查、血管性血友病因子裂解酶（ADAMTS13）活性、H因子及抗体、血浆可溶性C5b-9（sC5b-9）水平、治疗方式及效果等。提示对于LN合并TMA的重症患者，利妥昔单抗联合依库珠单抗可抑制补体终末激活，对部分重症患者有效；系统性红斑狼疮（SLE）及LN患者本身补体易激活，需积极去除感染等诱因，同时治疗原发病；对于存在补体旁路途径成分或调节因子异常者，应关注持续补体激活，并及时应用抗C5人源化单克隆抗体。
+
+经验交流
+
+### 以大量腹水为首发症状的嗜酸性粒细胞性胃肠炎1例
+
+刘璐 汪胜林 张雪梅 贺奇彬 余艳秋
+
+中华全科医师杂志2026年 25卷 11期
+
+DOI: 10.3760/cma.j.cn114798-20260602-00525
+
+摘要
+
+HTML PDF
+
+报道1例以大量腹水为首发症状，外周血及腹水嗜酸性粒细胞比例升高，经糖皮质激素诊断性治疗后腹水消退、随访1年无复发的浆膜型嗜酸性粒细胞性胃肠炎病例，结合临床诊疗经过分析其诊断难点与鉴别思路，为临床不明原因腹水的鉴别及浆膜型嗜酸性粒细胞性胃肠炎的早期识别提供参考。
+
+综述
+
+### 视网膜微循环在缺血性卒中病因分型预测与风险评估中的研究进展
+
+包姝沄 郑若怡 刘凤至 龚涛 陈玉辉
+
+中华全科医师杂志2026年 25卷 11期
+
+DOI: 10.3760/cma.j.cn114798-20260721-00663
+
+摘要
+
+HTML PDF
+
+缺血性卒中是全球范围内致残率、致死率最高的主要疾病之一，在早期精准预测疾病发生风险及病因分型，可帮助制定更有效的临床干预策略，从而改善患者预后。视网膜微循环与颅内微血管系统具有相似的胚胎起源，在解剖及生理特性等方面具有一定的同源性，因此常被认为是反映颅内微血管病变的“窗口”。既往大量研究已证实视网膜微循环血管的形态与功能改变与缺血性卒中的发生发展密切相关。文章将对近年来国内外的相关研究进行回顾总结，从视网膜微循环对缺血性卒中病因分型的鉴别、对首发风险的预测以及对复发风险的评估3个方面阐述当前的研究进展，进而为缺血性卒中的早期筛查、病因鉴别及预后评估提供新的思路与理论依据。
+
+### 老年高血压患者体位性低血压的全科规范化管理研究进展
+
+李凌新 肖雪
+
+中华全科医师杂志2026年 25卷 11期
+
+DOI: 10.3760/cma.j.cn114798-20260514-00456
+
+摘要
+
+HTML PDF
+
+我国老年高血压合并体位性低血压具有高患病率、高隐匿性、高危害性的流行病学特征，易诱发心脑血管事件、跌倒及死亡。文章系统综述老年高血压合并体位性低血压的流行病学、病理生理机制、临床危害、诊断分型、诊断难点与改良策略、全科综合评估、非药物干预、个体化药物管理及闭环管理模式，提出以评估为先、分层干预、全程连续为核心的全科规范化管理思路，旨在为基层全科医师提供循证依据，规范早期识别与全周期管理，降低风险并改善患者预后。
+--------------------------------------------------------------------------------
+中华糖尿病杂志：2026年第139卷第13期 (https://cs.medjournals.cn/cn/zhtnbzz/toc/73084)
+citeturn165search2 [wordlim: 200] Published: 4 months ago; Crawled: 3 weeks ago; DOI: 10.1097/CM9.0000000000003868 ... In China, the age distribution of patients with esophageal cancer remains unclear, and comprehensive large-scale studies on its prognostic impact are lacking.
+
+Original Article
+
+Secular trends in society-, school-, and individual-level factors related to physical activity and their associations with elevated blood pressure among 0.6 million children and adolescents
+
+Jieyu Liu, Xinli Song, Qi Ma, Jianuo Jiang, Yi Zhang, Ruolin Wang, Ziqi Dong, Li Chen, Yang Qin, Wen Yuan 等
+
+中华医学杂志英文版2026年 139卷 13期
+
+DOI: 10.1097/CM9.0000000000003868
+
+摘要
+
+HTML
+
+Background: Physical activity (PA) is a key modifiable factor for elevated blood pressure (EBP). We aimed to clarify the evolving relationships between PA and EBP in childhood or adolescence by examining multilevel factors within an ecological model. Methods: National data were extracted from 2010, 2014, and 2019 cycles of the Chinese National Survey on Students’ Constitution and Health, using a multistage stratified cluster sampling design. We defined EBP by the updated Chinese reference standards and obesity by sex- and age-specific body mass index (BMI) cutoffs. Inadequate PA was defined as <1 h/day; ecological factors at society-, school-, and individual-level were collected through a questionnaire. Conclusions: A rise in EBP burdens during 2010–2019 contrasted with an increase in PA. PA-related ecological factors across society-, school-, and individual-level exhibited complex interactions on EBP. Although the impact of individual-level lifestyles on EBP was waning and obesity remained a primary concern, there was increased recognition of societal- and school-level’s ecological factors related to PA during 2010–2019. Promoting PA requires a comprehensive approach that addresses both facilitating and inhibiting factors, which is crucial for healthy blood pressure (BP).
+
+Age of onset by temporal and spatial changes and prognostic value for esophageal cancer
+
+Kan Zhong, Xin Song, Xueke Zhao, Xianlu Meng, Ran Wang, Mengxia Wei, Lei Ma, Quanxiao Xu, Jianwei Ku, Dongyun Zhang 等
+
+中华医学杂志英文版2026年 139卷 13期
+
+DOI: 10.1097/CM9.0000000000003856
+
+摘要
+
+HTML
+
+Background: Age plays a crucial role in the incidence and prognosis of esophageal cancer. In China, the age distribution of patients with esophageal cancer remains unclear, and comprehensive large-scale studies on its prognostic impact are lacking. 
+Fei Huang, Tixian Xiao, Kexuan Li, Ran Wei, Shiwen Mei, Wei Zhao, Fangze Wei, Maiyue He, Zhaoxu Zheng, Qian Liu
+
+中华医学杂志英文版2026年 139卷 13期
+
+DOI: 10.1097/CM9.0000000000003813
+
+摘要
+
+HTML
+
+Background: Adjuvant chemotherapy is the standard management approach for patients with stage II/III colon cancer; however, the effectiveness in older patients is still unclear. This study aimed to explore the efficacy of adjuvant chemotherapy and whether oxaliplatin-based chemotherapy has better oncological outcomes than capecitabine monotherapy in older patients with stage III or high-risk stage II colon cancer. Methods: We analyzed and compared oxaliplatin-based adjuvant chemotherapy with capecitabine monotherapy and non-adjuvant chemotherapy in 468 patients aged ≥70 years with stage III and high-risk stage II colon cancer, and a propensity score-matched analysis was conducted. The endpoints were overall survival (OS), cancer-specific survival (CSS), local recurrence-free survival (LRFS), and distant metastasis-free survival (DMFS). Results: Multivariate analysis shows that adjuvant-treated stage III or high-risk stage II patients experienced a highly significant increase in OS (hazard ratio [HR]: 0.34, 95% confidence interval [CI]: 0.20–0.59, P <0.001) and CSS (HR: 0.39, 95% CI: 0.20–0.75, P = 0.005) compared with the control group without adjuvant chemotherapy. By contrast, no statistically significant difference was observed in either LRFS or DMFS (all P >0.05). The subgroup analysis suggested that no statistically significant benefits were observed between oxaliplatin-based adjuvant chemotherapy and capecitabine monotherapy, and no significant differences in oncological outcomes were detected with ≥6 months of therapy compared with 3–6 months (excluding 6 months) of therapy. Conclusion: Older patients with stage III or high-risk stage II colon cancer can benefit from adjuvant chemotherapy, and capecitabine monotherapy has non-inferior oncological outcomes compared with oxaliplatin-based regimens.
+--------------------------------------------------------------------------------
+For Authors - National Medical Journal of China (https://cs.medjournals.cn/en/zhyxzz/authors/for-authors)
+citeturn165search3 [wordlim: 200] Crawled: today; Journal Name, Year, Volume (update date)[cited date]. ... DOI (DOI may be omitted if already included in the access path). [published online ahead of print].
+
+14. References: Follow GB/T 7714—2015 Information and documentation — Rules for bibliographic references and citations to information resources with sequential numbering, marked by Arabic numerals in the order of first citation in text. The DOI must be included for articles with a DOI at the end of each entry. For electronic documents, document type and carrier identifiers shall be marked according to GB/T 7714—2015. List up to the first three authors, followed by “et al.” for additional authors. Foreign journal titles are abbreviated per Index Medicus; Chinese journal titles are written in full. Each reference must include the start and end page numbers. Authors are responsible for verifying all references against original sources. For articles published online ahead of print, the format is: Primary author(s). Title[Document type/Carrier identifier]. Journal Name, Year, Volume (update date)[cited date]. Access path. DOI (DOI may be omitted if already included in the access path). [published online ahead of print].
+
+Examples:
+
+[1] Cappa C, Gregson K, Wardlaw T, et al. Birth registration: a child′s passport to protection[J]. Lancet Glob Health, 2014, 2(2): e67-e68. DOI: 10.1016/S2214-109X(13)70180-3.
+
+[2] Li JZ. Hematuria//Wang HY. Nephrology[M]. 2nd ed. Beijing: People’s Medical Publishing House, 1996:282-287.
+
+[3] Ockner RK. Acute viral hepatitis//Wyngaarden JB, Smith Jr LH, Bennett JC, eds. Cecil Textbook of Medicine[M]. 19th ed. Philadelphia: Saunders, 1992:763-770.
+
+[4] Dahl J, Gulseth HL, Forsén L, et al. Risk of hip and forearm fracture in subjects with type 2 diabetes mellitus and latent autoimmune diabetes of adults. The HUNT Study, Norway[J/OL]. Bone, 2021, 153(2021-07-09) [2021-09-08]. https://www.sciencedirect.com/science/article/pii/S8756328221002751?via%3Dihub. DOI: 10.1016/j.bone.2021.116110. [published online ahead of print].--------------------------------------------------------------------------------
+中华医学杂志：2026年第106卷第36期 (https://cs.medjournals.cn/cn/zhyxzz/toc/73662)
+citeturn165search4 [wordlim: 200] Published: last month; Crawled: yesterday; DOI: 10.3760/cma.j.cn112137-20260703-01676
+
+开放获取
+
+### 1型糖尿病免疫药物临床应用专家指导建议（2026版）
+
+中华医学会儿科学分会内分泌遗传代谢学组 中国医师协会青春期健康与医学专业委员会 国家代谢性疾病临床医学研究中心（长沙）
+
+中华医学杂志2026年 106卷 36期
+
+DOI: 10.3760/cma.j.cn112137-20260617-01569
+
+摘要
+
+HTML
+
+1型糖尿病（T1DM）是由自身免疫介导的胰岛β细胞进行性破坏所致的慢性疾病。随着T1DM三期分期体系的确立和早期筛查的推进，以免疫治疗为代表的疾病修饰疗法（DMT）正推动临床诊疗从“胰岛素替代”向“病因干预”转变。为了给临床医师提供规范化的T1DM免疫治疗应用参考，推动精准诊疗和改善患者预后，中华医学会儿科学分会内分泌遗传代谢学组、中国医师协会青春期健康与医学专业委员会和国家代谢性疾病临床医学研究中心（长沙）联合发起，组织成人及儿童内分泌专家共同制订了该指导建议。系统介绍T1DM免疫发病机制、疾病分期及5类免疫治疗药物的作用机制与研发进展，详细阐述替利珠单抗在2期T1DM患者中的适用人群、治疗前评估、给药方案、不良反应管理及随访策略。
+--------------------------------------------------------------------------------
+MedNexus：2026年第32卷第30期 (https://cs.medjournals.cn/cn/toc/73842)
+citeturn165search5 [wordlim: 200] Published: 3 weeks ago; Crawled: today; MedNexus ... DOI: 10.3760/cma.j.cn115682-20251223-06862
+
+MedNexus
+
+# 2026年 · 第32卷第30期
+
+出版日期：2026-10-26本期价格：¥14.00 元¥27.00 元
+
+购买后可在线阅读和下载本期全部文章，不含纸质期刊。
+
+全部
+
+述评
+
+### 慢性心力衰竭患者社会衰弱的研究进展
+
+李庆霞 楚蛟鳞 陈思妤 游佳淳 李姝霖 黄延锦
+
+中华现代护理杂志2026年 32卷 30期
+
+DOI: 10.3760/cma.j.cn115682-20251223-06862
+
+摘要
+
+HTML PDF
+
+慢性心力衰竭患者社会衰弱普遍存在，且社会衰弱与其再住院、抑郁、认知功能下降及死亡等不良结局密切相关，严重危害其身心健康。本文对社会衰弱的概念，慢性心力衰竭患者社会衰弱的现状、评估工具、影响因素及干预策略进行综述，以期为临床制订个体化管理策略以及改善心力衰竭患者的长期结局提供参考。
+
+专题策划：心力衰竭患者护理
+
+### 基于网络分析的心力衰竭患者抑郁、焦虑、认知关系研究
+
+苗亚敏 庄海峰 刘文娟 郝敬荣 王平 韩冰
+--------------------------------------------------------------------------------
+MedNexus：2025年第105卷第27期 (https://cs.medjournals.cn/cn/toc/66466)
+citeturn165search6 [wordlim: 200] Published: 1.3 years ago; Crawled: 2 weeks ago; DOI: 10.3760/cma.j.cn112137-20250325-00728
+开放获取
+
+细菌性脑膜炎患者血清和脑脊液可溶性免疫分子和炎症因子水平的动态分析
+
+吴晓勤 朱亚茹 张学光 刘博 陈向军
+
+中华医学杂志2025年 105卷 27期
+
+DOI: 10.3760/cma.j.cn112137-20250325-00728
+
+摘要
+
+HTML
+
+回顾性选择复旦大学附属华山医院2023年10月至2024年6月收治的明确诊断为细菌性脑膜炎（BM）的患者，在入院第1、7、14、30天留取脑脊液（CSF）和静脉血，检测免疫分子可溶性白细胞分化抗原14（sCD14）、可溶性B7同源物3（sB7-H3）和炎症因子基质金属蛋白酶-9（MMP-9）、白细胞介素-6（IL-6）水平，并结合其临床资料分析其动态变化。共纳入4例患者，女1例，男3例，年龄50（46，56）岁，经抗感染治疗后，临床症状均明显好转。4例患者CSF的 sCD14、sB7-H3、MMP-9和IL-6水平经治疗后均较前明显下降。其中，CSF免疫因子sCD14和sB7-H3水平在治疗后呈逐步下降的趋势，而CSF的炎性因子MMP-9，尤其是IL-6的水平一经治疗即快速下降。此外，血清中sCD14和sB7-H3水平在治疗前后无显著变化。相较于MMP-9和IL-6，开展CSF中sCD14和 sB7-H3的动态监测对BM的疗效评估可能更有参考价值。
+
+开放获取
+
+错配修复缺陷结直肠癌患者临床特征及其林奇综合征患病率分析
+
+陈昌江 杨春康 庄咏 简锦亮
+
+中华医学杂志2025年 105卷 27期
+
+DOI: 10.3760/cma.j.cn112137-20250209-00287
+
+--------------------------------------------------------------------------------
+MedNexus：2026年第34卷第08期 (https://cs.medjournals.cn/cn/toc/73133)
+citeturn165search7 [wordlim: 200] Published: 2 months ago; Crawled: today; DOI: 10.12114/j.issn.1008-5971.2026.00.167
+--------------------------------------------------------------------------------
+MedNexus：2026年第35卷第06期 (https://cs.medjournals.cn/cn/toc/73148)
+citeturn165search8 [wordlim: 200] Published: 5 months ago; Crawled: last week; DOI: 10.3760/cma.j.cn114656-20241226-00907
+--------------------------------------------------------------------------------
+MedNexus：2026年第32卷第32期 (https://cs.medjournals.cn/cn/toc/73985)
+citeturn165search9 [wordlim: 200] Published: yesterday; Crawled: today; MedNexus ... DOI: 10.3760/cma.j.cn115682-20260525-02578
+--------------------------------------------------------------------------------
+中华医学杂志：2026年第106卷第37期 (https://cs.medjournals.cn/cn/zhyxzz/toc/73762)
+citeturn165search10 [wordlim: 200] Published: last month; Crawled: today; DOI: 10.3760/cma.j.cn112137-20250416-01034
+--------------------------------------------------------------------------------
+MedNexus：2026年第29卷第35期 (https://cs.medjournals.cn/cn/toc/73828)
+citeturn165search11 [wordlim: 200] Crawled: today; DOI: 10.12114/j.issn.1007-9572.2026.0151
+

@@ -1,0 +1,17 @@
+{
+  "result": "passed",
+  "preserved_files": {
+    "数据库/marketing.db": "645adc48a9af2eb67a9df04a0f4990fce706a5a4fcf2fe467c8e2372f0e78568",
+    "会议总入口/index.html": "6a67723013405fa3be0ad6a231f99b064031256ba5f934b74f0b279934f6aaee",
+    "论文视图/index.html": "ec8d73c83aa2a40285a97ee9469dcfc2209ae44cfc51cc00be4cf470fbc70bcd",
+    "标志物视图/index.html": "bb94a1680016a9b6f3b10a198a95ac0dfdba93af1f1d3df883e434fdf4cdd78c",
+    "会议视图/index.html": "884812d21857fd5fb64bcde306a410a17ad27ba6a3cded57d4fc31f3d798517d",
+    "会议视图/ada.html": "7e5667a97830b1ff26d7ba6ef27c1befd10d935347ff29de2700822404fda4c7"
+  },
+  "ratings_projection": 14,
+  "complete_provisional_ratings": 5,
+  "new_scores": 0,
+  "database_unchanged": true,
+  "new_collection": false,
+  "published": false
+}

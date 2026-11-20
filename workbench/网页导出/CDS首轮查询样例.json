@@ -1,0 +1,685 @@
+{
+  "status": "local_query_sample_not_applied_to_website",
+  "source_observed_on": "2026-11-16",
+  "exported_on": "2026-11-17",
+  "scoring_enabled": false,
+  "conference": [
+    {
+      "conference_id": "CDS2026",
+      "series_id": "CDS",
+      "year": 2026,
+      "edition_label": "第二十八次",
+      "name_original": "中华医学会第二十八次糖尿病学术会议",
+      "organizer": null,
+      "region": "domestic",
+      "country": null,
+      "city": "厦门",
+      "format": null,
+      "start_date": "2026-11-18",
+      "end_date": "2026-11-21",
+      "local_timezone": "Asia/Shanghai",
+      "timezone_basis": "按既有地点厦门解释本地日程；原始日程未显式标时区",
+      "official_url": "https://cds26.tiemeeting.com/CN",
+      "metadata_status": "existing_source_snapshot_not_rechecked",
+      "metadata_material_id": "MAT:6ff9ffd572377435f2f2",
+      "source_locator": "$.conference_calendar_record；官方标题另见官方日程HTML<title>",
+      "metadata_gaps": "主办方/举办国/具体场馆/形式未在本包元数据中独立核清；日期地点沿用既有CDS日历依据，不代表本次联网核验。",
+      "session_count": 148,
+      "agenda_item_count": 797,
+      "academic_report_count": 606,
+      "result_coverage": "agenda_only"
+    }
+  ],
+  "boards": [
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:M06",
+      "legacy_topic_id": "M06",
+      "name": "眼、足与神经并发症",
+      "report_count": 69,
+      "denominator": 579,
+      "report_share_percent": 11.92
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:M10",
+      "legacy_topic_id": "M10",
+      "name": "妊娠、肌骨与内分泌共病",
+      "report_count": 64,
+      "denominator": 579,
+      "report_share_percent": 11.05
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:M07",
+      "legacy_topic_id": "M07",
+      "name": "心血管风险与多器官共病",
+      "report_count": 61,
+      "denominator": 579,
+      "report_share_percent": 10.54
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:M02",
+      "legacy_topic_id": "M02",
+      "name": "T1D、胰岛功能与细胞治疗",
+      "report_count": 59,
+      "denominator": 579,
+      "report_share_percent": 10.19
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:M08",
+      "legacy_topic_id": "M08",
+      "name": "脂肪肝与MASH",
+      "report_count": 53,
+      "denominator": 579,
+      "report_share_percent": 9.15
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:M04",
+      "legacy_topic_id": "M04",
+      "name": "降糖与体重管理",
+      "report_count": 49,
+      "denominator": 579,
+      "report_share_percent": 8.46
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:M05",
+      "legacy_topic_id": "M05",
+      "name": "糖尿病肾脏病",
+      "report_count": 48,
+      "denominator": 579,
+      "report_share_percent": 8.29
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:M11",
+      "legacy_topic_id": "M11",
+      "name": "人群防控与照护",
+      "report_count": 47,
+      "denominator": 579,
+      "report_share_percent": 8.12
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:M12",
+      "legacy_topic_id": "M12",
+      "name": "代谢调控基础研究",
+      "report_count": 38,
+      "denominator": 579,
+      "report_share_percent": 6.56
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:M01",
+      "legacy_topic_id": "M01",
+      "name": "早期识别与精准分型",
+      "report_count": 34,
+      "denominator": 579,
+      "report_share_percent": 5.87
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:M03",
+      "legacy_topic_id": "M03",
+      "name": "血糖监测与人工智能",
+      "report_count": 29,
+      "denominator": 579,
+      "report_share_percent": 5.01
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:M09",
+      "legacy_topic_id": "M09",
+      "name": "营养、运动与肠道环境",
+      "report_count": 28,
+      "denominator": 579,
+      "report_share_percent": 4.84
+    }
+  ],
+  "topics": [
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H22",
+      "legacy_topic_id": "H22",
+      "name": "糖尿病足、皮肤损伤修复与感染",
+      "parent_topic_id": "CDS2026:M06",
+      "report_count": 27,
+      "denominator": 579,
+      "report_share_percent": 4.66
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H37",
+      "legacy_topic_id": "H37",
+      "name": "基层、区域与数字化共同照护",
+      "parent_topic_id": "CDS2026:M11",
+      "report_count": 26,
+      "denominator": 579,
+      "report_share_percent": 4.49
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H05",
+      "legacy_topic_id": "H05",
+      "name": "胰岛与胰腺功能失代偿及保护",
+      "parent_topic_id": "CDS2026:M02",
+      "report_count": 25,
+      "denominator": 579,
+      "report_share_percent": 4.32
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H33",
+      "legacy_topic_id": "H33",
+      "name": "肌少症、骨代谢与减重质量",
+      "parent_topic_id": "CDS2026:M10",
+      "report_count": 25,
+      "denominator": 579,
+      "report_share_percent": 4.32
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H42",
+      "legacy_topic_id": "H42",
+      "name": "肝脂毒性、代谢重编程与细胞器稳态",
+      "parent_topic_id": "CDS2026:M08",
+      "report_count": 25,
+      "denominator": 579,
+      "report_share_percent": 4.32
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H11",
+      "legacy_topic_id": "H11",
+      "name": "肠促胰素、多受体药物与应答差异",
+      "parent_topic_id": "CDS2026:M04",
+      "report_count": 24,
+      "denominator": 579,
+      "report_share_percent": 4.15
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H25",
+      "legacy_topic_id": "H25",
+      "name": "ASCVD、卒中与血管残余风险",
+      "parent_topic_id": "CDS2026:M07",
+      "report_count": 24,
+      "denominator": 579,
+      "report_share_percent": 4.15
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H18",
+      "legacy_topic_id": "H18",
+      "name": "DKD细胞图谱、肾小管损伤与纤维化",
+      "parent_topic_id": "CDS2026:M05",
+      "report_count": 23,
+      "denominator": 579,
+      "report_share_percent": 3.97
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H32",
+      "legacy_topic_id": "H32",
+      "name": "甲状腺、肾上腺与生殖内分泌共病",
+      "parent_topic_id": "CDS2026:M10",
+      "report_count": 22,
+      "denominator": 579,
+      "report_share_percent": 3.8
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H01",
+      "legacy_topic_id": "H01",
+      "name": "T2D早期风险识别与数据驱动分型",
+      "parent_topic_id": "CDS2026:M01",
+      "report_count": 20,
+      "denominator": 579,
+      "report_share_percent": 3.45
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H13",
+      "legacy_topic_id": "H13",
+      "name": "体重维持、减重反弹与代谢手术",
+      "parent_topic_id": "CDS2026:M04",
+      "report_count": 19,
+      "denominator": 579,
+      "report_share_percent": 3.28
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H03",
+      "legacy_topic_id": "H03",
+      "name": "T1D早期筛查、异质性与长期管理",
+      "parent_topic_id": "CDS2026:M02",
+      "report_count": 15,
+      "denominator": 579,
+      "report_share_percent": 2.59
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H14",
+      "legacy_topic_id": "H14",
+      "name": "脂肪产热、细胞状态与能量稳态",
+      "parent_topic_id": "CDS2026:M12",
+      "report_count": 15,
+      "denominator": 579,
+      "report_share_percent": 2.59
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H23",
+      "legacy_topic_id": "H23",
+      "name": "周围、自主神经病变与疼痛干预",
+      "parent_topic_id": "CDS2026:M06",
+      "report_count": 15,
+      "denominator": 579,
+      "report_share_percent": 2.59
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H24",
+      "legacy_topic_id": "H24",
+      "name": "糖尿病心肌损伤与心力衰竭",
+      "parent_topic_id": "CDS2026:M07",
+      "report_count": 15,
+      "denominator": 579,
+      "report_share_percent": 2.59
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H02",
+      "legacy_topic_id": "H02",
+      "name": "单基因、罕见病与特殊病因诊断",
+      "parent_topic_id": "CDS2026:M01",
+      "report_count": 14,
+      "denominator": 579,
+      "report_share_percent": 2.42
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H19",
+      "legacy_topic_id": "H19",
+      "name": "DKD药物获益、联合治疗与非应答",
+      "parent_topic_id": "CDS2026:M05",
+      "report_count": 14,
+      "denominator": 579,
+      "report_share_percent": 2.42
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H27",
+      "legacy_topic_id": "H27",
+      "name": "CKM/M-LCK共病与多器官风险",
+      "parent_topic_id": "CDS2026:M07",
+      "report_count": 14,
+      "denominator": 579,
+      "report_share_percent": 2.42
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H29",
+      "legacy_topic_id": "H29",
+      "name": "MASH炎症纤维化、细胞状态与靶向治疗",
+      "parent_topic_id": "CDS2026:M08",
+      "report_count": 14,
+      "denominator": 579,
+      "report_share_percent": 2.42
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H44",
+      "legacy_topic_id": "H44",
+      "name": "认知障碍、低血糖脑效应与脑健康",
+      "parent_topic_id": "CDS2026:M06",
+      "report_count": 14,
+      "denominator": 579,
+      "report_share_percent": 2.42
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H35",
+      "legacy_topic_id": "H35",
+      "name": "运动处方、体医融合与代谢获益",
+      "parent_topic_id": "CDS2026:M09",
+      "report_count": 13,
+      "denominator": 579,
+      "report_share_percent": 2.25
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H07",
+      "legacy_topic_id": "H07",
+      "name": "CGM动态表型、监测指标与临床应用",
+      "parent_topic_id": "CDS2026:M03",
+      "report_count": 12,
+      "denominator": 579,
+      "report_share_percent": 2.07
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H38",
+      "legacy_topic_id": "H38",
+      "name": "心理、护理与特殊人群照护",
+      "parent_topic_id": "CDS2026:M11",
+      "report_count": 12,
+      "denominator": 579,
+      "report_share_percent": 2.07
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H06",
+      "legacy_topic_id": "H06",
+      "name": "胰岛再生、移植与干细胞替代",
+      "parent_topic_id": "CDS2026:M02",
+      "report_count": 11,
+      "denominator": 579,
+      "report_share_percent": 1.9
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H09",
+      "legacy_topic_id": "H09",
+      "name": "AI与多模态数据辅助诊疗",
+      "parent_topic_id": "CDS2026:M03",
+      "report_count": 11,
+      "denominator": 579,
+      "report_share_percent": 1.9
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H16",
+      "legacy_topic_id": "H16",
+      "name": "代谢性炎症、脂毒性与胰岛素抵抗",
+      "parent_topic_id": "CDS2026:M12",
+      "report_count": 11,
+      "denominator": 579,
+      "report_share_percent": 1.9
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H17",
+      "legacy_topic_id": "H17",
+      "name": "肾损伤早期识别、表型与进展预测",
+      "parent_topic_id": "CDS2026:M05",
+      "report_count": 11,
+      "denominator": 579,
+      "report_share_percent": 1.9
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H30",
+      "legacy_topic_id": "H30",
+      "name": "孕早期GDM预测、分型与临床管理",
+      "parent_topic_id": "CDS2026:M10",
+      "report_count": 10,
+      "denominator": 579,
+      "report_share_percent": 1.73
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H36",
+      "legacy_topic_id": "H36",
+      "name": "肠道微生态及微生物—代谢物信号",
+      "parent_topic_id": "CDS2026:M09",
+      "report_count": 9,
+      "denominator": 579,
+      "report_share_percent": 1.55
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H04",
+      "legacy_topic_id": "H04",
+      "name": "T1D免疫耐受与免疫干预",
+      "parent_topic_id": "CDS2026:M02",
+      "report_count": 8,
+      "denominator": 579,
+      "report_share_percent": 1.38
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H21",
+      "legacy_topic_id": "H21",
+      "name": "糖网病理机制、微生态与新型治疗",
+      "parent_topic_id": "CDS2026:M06",
+      "report_count": 8,
+      "denominator": 579,
+      "report_share_percent": 1.38
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H26",
+      "legacy_topic_id": "H26",
+      "name": "血脂、脂蛋白与降脂管理",
+      "parent_topic_id": "CDS2026:M07",
+      "report_count": 8,
+      "denominator": 579,
+      "report_share_percent": 1.38
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H28",
+      "legacy_topic_id": "H28",
+      "name": "MASLD分型、肝纤维化评估与共管",
+      "parent_topic_id": "CDS2026:M08",
+      "report_count": 8,
+      "denominator": 579,
+      "report_share_percent": 1.38
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H15",
+      "legacy_topic_id": "H15",
+      "name": "脑—脂肪与器官间代谢通讯",
+      "parent_topic_id": "CDS2026:M12",
+      "report_count": 7,
+      "denominator": 579,
+      "report_share_percent": 1.21
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H31",
+      "legacy_topic_id": "H31",
+      "name": "母婴代谢编程与子代远期风险",
+      "parent_topic_id": "CDS2026:M10",
+      "report_count": 7,
+      "denominator": 579,
+      "report_share_percent": 1.21
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H39",
+      "legacy_topic_id": "H39",
+      "name": "糖尿病流行趋势、环境与疾病负担",
+      "parent_topic_id": "CDS2026:M11",
+      "report_count": 7,
+      "denominator": 579,
+      "report_share_percent": 1.21
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H12",
+      "legacy_topic_id": "H12",
+      "name": "固定复方、胰岛素与其他降糖方案",
+      "parent_topic_id": "CDS2026:M04",
+      "report_count": 6,
+      "denominator": 579,
+      "report_share_percent": 1.04
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H34",
+      "legacy_topic_id": "H34",
+      "name": "精准营养、限时进食与生活方式干预",
+      "parent_topic_id": "CDS2026:M09",
+      "report_count": 6,
+      "denominator": 579,
+      "report_share_percent": 1.04
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H43",
+      "legacy_topic_id": "H43",
+      "name": "肠—肝微生态与饮食、运动干预",
+      "parent_topic_id": "CDS2026:M08",
+      "report_count": 6,
+      "denominator": 579,
+      "report_share_percent": 1.04
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H20",
+      "legacy_topic_id": "H20",
+      "name": "糖网早期预警、筛查与异质性分层",
+      "parent_topic_id": "CDS2026:M06",
+      "report_count": 5,
+      "denominator": 579,
+      "report_share_percent": 0.86
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H41",
+      "legacy_topic_id": "H41",
+      "name": "多组学、遗传调控与跨疾病机制线索",
+      "parent_topic_id": "CDS2026:M12",
+      "report_count": 5,
+      "denominator": 579,
+      "report_share_percent": 0.86
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H08",
+      "legacy_topic_id": "H08",
+      "name": "胰岛素泵、人工胰腺与自动闭环",
+      "parent_topic_id": "CDS2026:M03",
+      "report_count": 3,
+      "denominator": 579,
+      "report_share_percent": 0.52
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H10",
+      "legacy_topic_id": "H10",
+      "name": "无创传感与新型代谢检测",
+      "parent_topic_id": "CDS2026:M03",
+      "report_count": 3,
+      "denominator": 579,
+      "report_share_percent": 0.52
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:TOPICS:20261116",
+      "topic_id": "CDS2026:H40",
+      "legacy_topic_id": "H40",
+      "name": "中西医结合糖尿病防治",
+      "parent_topic_id": "CDS2026:M11",
+      "report_count": 2,
+      "denominator": 579,
+      "report_share_percent": 0.35
+    }
+  ],
+  "biomarker_scope": [
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:BIOMARKER-TITLES:20261116",
+      "review_status": "其他研究/临床背景",
+      "in_denominator": 0,
+      "report_count": 478
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:BIOMARKER-TITLES:20261116",
+      "review_status": "培训/方法/综合背景",
+      "in_denominator": 0,
+      "report_count": 27
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:BIOMARKER-TITLES:20261116",
+      "review_status": "常规指标/方法背景",
+      "in_denominator": 0,
+      "report_count": 2
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:BIOMARKER-TITLES:20261116",
+      "review_status": "机制/来源参考",
+      "in_denominator": 0,
+      "report_count": 5
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:BIOMARKER-TITLES:20261116",
+      "review_status": "标志物相关题名",
+      "in_denominator": 1,
+      "report_count": 80
+    },
+    {
+      "conference_id": "CDS2026",
+      "analysis_version_id": "CDS2026:BIOMARKER-TITLES:20261116",
+      "review_status": "输入或指标待明确",
+      "in_denominator": 0,
+      "report_count": 14
+    }
+  ]
+}

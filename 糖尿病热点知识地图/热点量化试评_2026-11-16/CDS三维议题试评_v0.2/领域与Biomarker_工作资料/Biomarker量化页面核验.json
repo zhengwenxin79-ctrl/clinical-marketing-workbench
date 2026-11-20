@@ -1,0 +1,15 @@
+{
+  "result": "passed",
+  "checks": [
+    "词云上方显式量化榜、四分项、前6条/26条展开",
+    "技术/优先级/热点筛选不改变分母，参照不计分",
+    "28词条分项数值、依据链接与参照处理",
+    "A01/R03同研究仅一组；待核角色/日期与已核分分开",
+    "390/768/1440px无整页横向溢出",
+    "规则页、file离线量化榜、无JS错误"
+  ],
+  "errors": [],
+  "browser": "独立Chrome for Testing；临时profile；finally关闭",
+  "new_collection": false,
+  "published": false
+}

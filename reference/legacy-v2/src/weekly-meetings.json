@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "seeded_on": "2026-11-13",
+  "source_cutoff": "2026-11-11",
+  "timezone": "Asia/Shanghai",
+  "monitoring": {
+    "status": "not_started",
+    "last_checked_at": null
+  },
+  "provenance": "仅转接既有B03快照中的会议日历；未访问外站，接入日期不作为会议发布或更新日期。",
+  "meetings": [
+    {
+      "id": "cds-2026",
+      "source_id": "CDS",
+      "name": "CDS 2026 全国糖尿病学术会议",
+      "fields": [
+        "diabetes"
+      ],
+      "region": "domestic",
+      "start": "2026-11-18",
+      "end": "2026-11-21",
+      "location": "厦门",
+      "date_basis": "2026-11-11保存的官方日程",
+      "basis_ref": "B03 intelligence_plan.conference_calendar / CDS",
+      "links": [
+        {
+          "label": "已有官方入口",
+          "url": "https://cds26.tiemeeting.com/CN"
+        },
+        {
+          "label": "已存日程入口",
+          "url": "https://cds26.tiemeeting.com/CN/Program/Details"
+        }
+      ],
+      "material": "已有23条重点计划议题，可用于会前问题与讲者准备；报告结果待补。",
+      "priority": "优先准备",
+      "priority_reason": "已有23条计划议题，可用于会前研究问题和讲者准备。",
+      "priority_basis": "基于已有资料的编辑建议，待业务复核",
+      "gaps": [
+        "本轮未复查官方安排，日期和地点沿用已有资料。",
+        "报告结果与会后研究尚待接入。"
+      ]
+    },
+    {
+      "id": "ada-2026",
+      "source_id": "ADA",
+      "name": "ADA 2026 Scientific Sessions",
+      "fields": [
+        "diabetes"
+      ],
+      "region": "international",
+      "start": "2026-06-05",
+      "end": "2026-06-08",
+      "location": "新奥尔良",
+      "date_basis": "既有ADA官方程序与研究台账",
+      "basis_ref": "B03 intelligence_plan.conference_calendar / ADA",
+      "links": [
+        {
+          "label": "已存官方会议入口",
+          "url": "https://professional.diabetes.org/scientific-sessions"
+        },
+        {
+          "label": "已存官方会后报道目录",
+          "url": "https://www.adameetingnews.org/category/scientific-sessions/2026/clinical-trials-2026/"
+        }
+      ],
+      "material": "已有27条研究记录，按实际读取层次标注；继续关联原始摘要与论文。",
+      "priority": "重点回顾",
+      "priority_reason": "已有27条关联记录，可继续核对原始结果与论文版本。",
+      "priority_basis": "基于已有资料的编辑建议，待业务复核",
+      "gaps": [
+        "本轮未复查官方安排，日期和地点沿用已有资料。",
+        "定向样本未覆盖大会全部研究；各记录实际读取层次分别标注。"
+      ]
+    }
+  ],
+  "update_events": []
+}

@@ -1,0 +1,31 @@
+{
+  "result": "passed",
+  "run_id": "CDS-20261117T141045-23af7114",
+  "completed_at": "2026-11-17T06:10:46+00:00",
+  "input": "已有CDS2026结构化日程快照，资料日期2026-11-16",
+  "changed_business_fields": 0,
+  "original_tables_unchanged": true,
+  "original_table_count": 28,
+  "raw_materials_unchanged": 436,
+  "counts": {
+    "agenda_items": 797,
+    "sessions": 148,
+    "reports": 606,
+    "classified_reports": 579,
+    "topics": 58,
+    "boards": 12,
+    "source_materials": 436
+  },
+  "schema": {
+    "user_version": 4,
+    "tables": 31,
+    "views": 14
+  },
+  "backup": "备份/维护台/CDS-20261117T141045-23af7114-确认前.db",
+  "run_directory": "维护记录/批次/CDS-20261117T141045-23af7114",
+  "verification": "维护记录/批次/CDS-20261117T141045-23af7114/核验与导出/20261117T141046-db9ff2",
+  "published": false,
+  "new_collection": false,
+  "backend_tests_passed": 10,
+  "browser_checks_passed": 15
+}

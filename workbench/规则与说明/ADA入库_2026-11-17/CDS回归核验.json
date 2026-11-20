@@ -1,0 +1,32 @@
+{
+  "result": "passed",
+  "checked_on": "2026-11-17",
+  "version": "CDS2026:TOPIC-QUANTITY:20261117:v1",
+  "database_sha256": "f1fd660c1349ac4701a78db189ea097c5a1ffd3952297220ea555ee423185c22",
+  "summary": {
+    "topics": 58,
+    "old_topics_reviewed": 44,
+    "split_old_topics": 9,
+    "focused_topics": 39,
+    "broad_topics": 19,
+    "reassigned_reports": 13,
+    "reports": 606,
+    "classified_reports": 579,
+    "excluded_reports": 27,
+    "boards": 12,
+    "speaker_talk_rows": 579
+  },
+  "checks": [
+    "SQLite版本≥3完整性/外键通过；原24表旧记录全部保留，新会议追加独立记录",
+    "44个旧议题全部有复核，9个拆分为23个；新版58议题=39集中+19较宽；13条调整归属均有理由和缺口",
+    "58议题逐项独立回算：报告唯一、占比、同量并列、报告类型、跨Session、人物三级+待定分布一致",
+    "主讲关系未因多个职务或多条证据增行；12板块合计579，旧44议题视图仍可回读",
+    "新数量视图无得分/权重列；评分均关闭，未把会前题名变成研究结果",
+    "436份随包来源与原文件、旧研究台及项目主页等受保护文件保持",
+    "页面快照来自当前数据库新视图，数量及分项逐条匹配SQL"
+  ],
+  "new_collection": false,
+  "published": false,
+  "scoring_enabled": false,
+  "old_records_preserved": true
+}

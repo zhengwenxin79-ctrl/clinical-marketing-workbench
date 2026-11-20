@@ -1,0 +1,8 @@
+{
+  "run_id": "CDS-20261117T141045-23af7114",
+  "at": "2026-11-17T06:10:46+00:00",
+  "backup": "备份/维护台/CDS-20261117T141045-23af7114-确认前.db",
+  "backup_sha256": "bbef55c9254e19d85a15c99dbcfa1e3909e4e4060eb79fc309169639c6612bbb",
+  "baseline_sha256": "4f16bd5b161785ec9be493bc0c0503b8b5a60064f9a8342078381e11378d1bef",
+  "diff_sha256": "2513ac7d45c8a47f8bde590fe2814ed923f6e43df1294aac12abea4224f20c22"
+}

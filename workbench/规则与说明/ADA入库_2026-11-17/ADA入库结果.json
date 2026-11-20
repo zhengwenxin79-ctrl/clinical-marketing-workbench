@@ -1,0 +1,46 @@
+{
+  "result": "imported",
+  "conference": "ADA2026",
+  "summary": {
+    "programme_physical_pages": 385,
+    "sessions": 242,
+    "raw_agenda_items": 2859,
+    "academic_occurrences": 2621,
+    "distinct_reports": 2539,
+    "duplicate_occurrences": 82,
+    "classified_reports": 2049,
+    "unclassified_reports": 490,
+    "nonacademic_agenda_items": 238,
+    "coded_reports": 2102,
+    "topics": 56,
+    "formats": {
+      "大会报告": 10,
+      "论文发言": 338,
+      "专题报告": 427,
+      "海报报告": 1340,
+      "晚期突破海报": 424
+    },
+    "classification_methods": {
+      "unclassified": 490,
+      "title_rule": 1907,
+      "session_context_rule": 140,
+      "manual_title_review": 2
+    },
+    "page_statuses": {
+      "cover_or_other": 2,
+      "numbered_session": 242,
+      "unparsed_satellite_or_metadata": 12,
+      "programme_continuation": 129
+    }
+  },
+  "speaker_identities": 2096,
+  "speaker_tier_counts": {
+    "national": 2,
+    "undetermined": 2094
+  },
+  "source_materials": 12,
+  "old_records_preserved": true,
+  "new_collection": false,
+  "published": false,
+  "database_sha256": "a457386a73cc8cb4090c6ead9ceb83be473d4d9cb3d862186ec694ead227047d"
+}

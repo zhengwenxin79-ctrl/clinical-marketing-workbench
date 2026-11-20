@@ -1,0 +1,24 @@
+{
+  "result": "passed",
+  "local_only": true,
+  "new_collection": false,
+  "published": false,
+  "cds_original_fields_equal": true,
+  "protected_files_unchanged": true,
+  "counts": {
+    "fields": 45,
+    "biomarkers": 28,
+    "cross_meeting_fields": 12,
+    "priority_review_markers": 6
+  },
+  "partial_scoring": "ADA覆盖分母不全，领域总热度不出分；分项缺失不填0",
+  "evidence_checks": "领域与Biomarker_工作资料/数据核验.json",
+  "ui_checks": "领域与Biomarker_工作资料/页面验证.json",
+  "files": {
+    "index.html": "5da2dbf7d31b87f63d9fe22fcdac07a97d0c7e7f868d6a750bff7459c9b372c5",
+    "构建领域与Biomarker数据.py": "bb6db1b3ed70796e289e411ffd16293af29791511e9ad39217a52b94de41d85d",
+    "生成会前重点议题榜.py": "a88061a3015f88964841efdd39b01d508bb335c6cea29d1d762223683f7d9281",
+    "会前重点议题模板.html": "340250f7e399ea2439053da1cda80e509ed00756e60a807bea5e4681811b7d83",
+    "领域与Biomarker框架说明.md": "ce3f1bcbf52104b557c7b3f7a15bc2c1ed103c602d24d73c4765bf74bf93e2dd"
+  }
+}

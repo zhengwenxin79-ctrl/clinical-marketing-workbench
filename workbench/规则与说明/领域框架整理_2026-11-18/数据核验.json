@@ -1,0 +1,17 @@
+{
+  "result": "passed",
+  "database_unchanged": true,
+  "boards": 12,
+  "domain_topics": 66,
+  "paper_extensions": 8,
+  "mappings": 109,
+  "conference_reports_preserved": 2628,
+  "primary_papers_preserved": 160,
+  "article_pool": 618,
+  "biomarkers_preserved": 39,
+  "source_identity_records": 2277,
+  "known_role_records": 139,
+  "roles_not_scored": true,
+  "new_collection": false,
+  "published": false
+}

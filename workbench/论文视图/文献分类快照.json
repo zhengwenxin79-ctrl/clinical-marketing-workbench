@@ -1,0 +1,6362 @@
+{
+  "categories": {
+    "review": "综述",
+    "research": "研究类",
+    "conference": "会议类",
+    "other": "其他／待确认"
+  },
+  "counts": {
+    "review": 71,
+    "research": 310,
+    "conference": 3,
+    "other": 234
+  },
+  "records": [
+    {
+      "paper_id": "PMID:43038378",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:43038379",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:43035098",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:43033821",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:43033822",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:43033965",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "case_report",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:43034237",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:43034238",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:43034239",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:43034240",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:43024232",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:43025431",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Editorial"
+      ]
+    },
+    {
+      "paper_id": "PMID:43018733",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:43018734",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:43012423",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:43014444",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42886478",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:43007268",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:43007282",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:43001755",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42998244",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:43001746",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42995267",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42986362",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42986405",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42988924",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42853582",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42975645",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42976769",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42976894",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42977848",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42969688",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42971196",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "更正、撤稿或关注声明，保留其证据角色，不归入研究成果",
+      "detailed_type": "correction_or_retraction",
+      "publication_types": [
+        "Published Erratum"
+      ]
+    },
+    {
+      "paper_id": "PMID:42008105",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42207920",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42319764",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42378410",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42423517",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42466973",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42525822",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42561183",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42561376",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42566298",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42610933",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42610973",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article",
+        "Comparative Study"
+      ]
+    },
+    {
+      "paper_id": "PMID:42616555",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42635517",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42635563",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42640178",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42663523",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42663524",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42684335",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42684671",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42690152",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42709505",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42713876",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial",
+        "Multicenter Study"
+      ]
+    },
+    {
+      "paper_id": "PMID:42726473",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42734486",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article",
+        "Observational Study"
+      ]
+    },
+    {
+      "paper_id": "PMID:42734988",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42743063",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42743064",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Comparative Study",
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42743078",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42747916",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article",
+        "Multicenter Study"
+      ]
+    },
+    {
+      "paper_id": "PMID:42747940",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article",
+        "Multicenter Study",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42747941",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Journal Article",
+        "Multicenter Study",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42752579",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42752803",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42765945",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42900804",
+      "category": "conference",
+      "label": "会议类",
+      "basis": "明确会议报告/会议摘要/讲座文章依据；不因会议曾报告同研究而改变完整论文类型",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Lecture"
+      ]
+    },
+    {
+      "paper_id": "PMID:42900805",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42900806",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42900807",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Editorial",
+        "Comment"
+      ]
+    },
+    {
+      "paper_id": "PMID:42900808",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Editorial",
+        "Comment"
+      ]
+    },
+    {
+      "paper_id": "PMID:42900809",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42900810",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Editorial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42900811",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42900812",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42900813",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42900814",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42900815",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42900816",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42900817",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42900818",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42900819",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42900820",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42900821",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Editorial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42900822",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42900823",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Editorial",
+        "Comment"
+      ]
+    },
+    {
+      "paper_id": "PMID:42900824",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Editorial",
+        "Comment"
+      ]
+    },
+    {
+      "paper_id": "PMID:42900825",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Editorial",
+        "Comment"
+      ]
+    },
+    {
+      "paper_id": "PMID:42900826",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Editorial",
+        "Comment"
+      ]
+    },
+    {
+      "paper_id": "PMID:42900827",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Editorial",
+        "Comment"
+      ]
+    },
+    {
+      "paper_id": "PMID:42900828",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Editorial",
+        "Comment"
+      ]
+    },
+    {
+      "paper_id": "PMID:42525136",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42776166",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "News"
+      ]
+    },
+    {
+      "paper_id": "PMID:42869029",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42869030",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42869031",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42901692",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "case_report",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:43018511",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42961127",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42961465",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42962685",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42962686",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42962687",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42962688",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42954775",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42955026",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42949535",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42955083",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "更正、撤稿或关注声明，保留其证据角色，不归入研究成果",
+      "detailed_type": "correction_or_retraction",
+      "publication_types": [
+        "Published Erratum"
+      ]
+    },
+    {
+      "paper_id": "PMID:42937357",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42937398",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42937517",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42937520",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42944903",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Editorial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42946879",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42930457",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42931747",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42931748",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42933400",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "DOI:10.3760/cma.j.cn311282-20260225-00097",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "case_report",
+      "publication_types": []
+    },
+    {
+      "paper_id": "DOI:10.3760/cma.j.cn311282-20260525-00231",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": []
+    },
+    {
+      "paper_id": "PMID:42925557",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42925875",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42926238",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42912403",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42913369",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42914996",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42925124",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42918866",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42904878",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42905688",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42905866",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "DOI:10.3760/cma.j.cn115791-20251216-00645",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_reviewed",
+      "publication_types": []
+    },
+    {
+      "paper_id": "DOI:10.3760/cma.j.cn115791-20260122-000441",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": []
+    },
+    {
+      "paper_id": "DOI:10.3760/cma.j.cn115791-20260506-00208",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_reviewed",
+      "publication_types": []
+    },
+    {
+      "paper_id": "PMID:42747829",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42747850",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42899965",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42899966",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42899967",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42900014",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42900236",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42900742",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42900744",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42900750",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42900776",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42900778",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42900851",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42901323",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42901325",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42895436",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42895792",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42896097",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42896098",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42896561",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42880294",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42892651",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42892652",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42885939",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42886235",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42886236",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42886728",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "更正、撤稿或关注声明，保留其证据角色，不归入研究成果",
+      "detailed_type": "correction_or_retraction",
+      "publication_types": [
+        "Published Erratum"
+      ]
+    },
+    {
+      "paper_id": "PMID:42886737",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "更正、撤稿或关注声明，保留其证据角色，不归入研究成果",
+      "detailed_type": "correction_or_retraction",
+      "publication_types": [
+        "Published Erratum"
+      ]
+    },
+    {
+      "paper_id": "PMID:42888249",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Journal Article",
+        "Observational Study"
+      ]
+    },
+    {
+      "paper_id": "PMID:42874105",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42878733",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42880325",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "更正、撤稿或关注声明，保留其证据角色，不归入研究成果",
+      "detailed_type": "correction_or_retraction",
+      "publication_types": [
+        "Published Erratum"
+      ]
+    },
+    {
+      "paper_id": "PMID:42873223",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42873598",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42873616",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42873906",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "更正、撤稿或关注声明，保留其证据角色，不归入研究成果",
+      "detailed_type": "correction_or_retraction",
+      "publication_types": [
+        "Published Erratum"
+      ]
+    },
+    {
+      "paper_id": "PMID:42875599",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Editorial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42875600",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42878622",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Equivalence Trial",
+        "Journal Article",
+        "Multicenter Study",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42872756",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Editorial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42862082",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42860432",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42849462",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42853097",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42853196",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42853204",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42853381",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "更正、撤稿或关注声明，保留其证据角色，不归入研究成果",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Expression of Concern"
+      ]
+    },
+    {
+      "paper_id": "PMID:42853614",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42854710",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42843337",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42848212",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42848438",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42849058",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42841917",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42843400",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42844027",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42844149",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42836511",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Editorial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42836512",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Editorial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42836860",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42837167",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42853875",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Editorial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42831899",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42832327",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42834229",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial",
+        "Clinical Trial, Phase III",
+        "Multicenter Study"
+      ]
+    },
+    {
+      "paper_id": "PMID:42829352",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42829353",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42829354",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42825450",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "指南/共识单独保留；不将其直接当作综述或原创研究",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42825923",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "指南/共识单独保留；不将其直接当作综述或原创研究",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:41940793",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42008285",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42060373",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42251767",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article",
+        "Observational Study"
+      ]
+    },
+    {
+      "paper_id": "PMID:42474296",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42496592",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42507670",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42519974",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42520060",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "case_report",
+      "publication_types": [
+        "Journal Article",
+        "Case Reports"
+      ]
+    },
+    {
+      "paper_id": "PMID:42525838",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Comparative Study",
+        "Journal Article",
+        "Multicenter Study"
+      ]
+    },
+    {
+      "paper_id": "PMID:42536447",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42536450",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42536487",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42536661",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42546221",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42546226",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42555304",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42561161",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42566297",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42566303",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42574058",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42574071",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42574077",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42574139",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42579480",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42579533",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42579538",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42579565",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42579609",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42585298",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42594248",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42594337",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42606340",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42606498",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Journal Article",
+        "Observational Study"
+      ]
+    },
+    {
+      "paper_id": "PMID:42610879",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42611023",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42612686",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42627513",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42766760",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Editorial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42766761",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Editorial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42766762",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42766763",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42766764",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42766765",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42766766",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Editorial",
+        "Comment"
+      ]
+    },
+    {
+      "paper_id": "PMID:42766767",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Editorial",
+        "Comment"
+      ]
+    },
+    {
+      "paper_id": "PMID:42766770",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42766771",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42766772",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42766773",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42766774",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42766775",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42766776",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42766777",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42766778",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42766779",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42820639",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42820969",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42820970",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42821443",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42821458",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42821597",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42821652",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42822480",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42822481",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42822482",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42823485",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42823536",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42886083",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "DOI:10.3760/cma.j.cn115791-20260212-00084",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": []
+    },
+    {
+      "paper_id": "PMID:42642499",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "News"
+      ]
+    },
+    {
+      "paper_id": "PMID:42744913",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "更正、撤稿或关注声明，保留其证据角色，不归入研究成果",
+      "detailed_type": "correction_or_retraction",
+      "publication_types": [
+        "Published Erratum"
+      ]
+    },
+    {
+      "paper_id": "PMID:42760007",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42760008",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42760014",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "更正、撤稿或关注声明，保留其证据角色，不归入研究成果",
+      "detailed_type": "correction_or_retraction",
+      "publication_types": [
+        "Published Erratum"
+      ]
+    },
+    {
+      "paper_id": "PMID:42814074",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42814151",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42814152",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "更正、撤稿或关注声明，保留其证据角色，不归入研究成果",
+      "detailed_type": "correction_or_retraction",
+      "publication_types": [
+        "Published Erratum"
+      ]
+    },
+    {
+      "paper_id": "PMID:42814439",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42815501",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42815502",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Editorial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42815503",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42815506",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial",
+        "Clinical Trial, Phase III",
+        "Multicenter Study",
+        "Equivalence Trial",
+        "Comparative Study"
+      ]
+    },
+    {
+      "paper_id": "PMID:42820967",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42820968",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42823462",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42808960",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42808984",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42809004",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42809017",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42810351",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42810353",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42810354",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42810355",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial",
+        "Clinical Trial, Phase II",
+        "Multicenter Study"
+      ]
+    },
+    {
+      "paper_id": "PMID:42810372",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial",
+        "Clinical Trial, Phase III",
+        "Multicenter Study"
+      ]
+    },
+    {
+      "paper_id": "PMID:42811187",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial",
+        "Multicenter Study",
+        "Clinical Trial, Phase III"
+      ]
+    },
+    {
+      "paper_id": "PMID:42814954",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial",
+        "Clinical Trial, Phase III",
+        "Multicenter Study"
+      ]
+    },
+    {
+      "paper_id": "PMID:42803375",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42803380",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42803383",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42803398",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42803654",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42803808",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42803809",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42805334",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42806034",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42799754",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42789098",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42790436",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "更正、撤稿或关注声明，保留其证据角色，不归入研究成果",
+      "detailed_type": "correction_or_retraction",
+      "publication_types": [
+        "Published Erratum"
+      ]
+    },
+    {
+      "paper_id": "PMID:42790437",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42782193",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42782208",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42782508",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42785711",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42776165",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42776184",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42777712",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42778148",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42770563",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42770987",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42771181",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "指南/共识单独保留；不将其直接当作综述或原创研究",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Consensus Statement"
+      ]
+    },
+    {
+      "paper_id": "PMID:42771182",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42887555",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42765971",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42765974",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42766003",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42766004",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42768105",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42758035",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42758304",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42758305",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42749053",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42752535",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42752808",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42752965",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42752966",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42752967",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42747447",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Editorial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42747448",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42747449",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42747450",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "指南/共识单独保留；不将其直接当作综述或原创研究",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42747945",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42627652",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42741845",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42742157",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "指南/共识单独保留；不将其直接当作综述或原创研究",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42743079",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42743087",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42744908",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42744915",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "指南/共识单独保留；不将其直接当作综述或原创研究",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Practice Guideline"
+      ]
+    },
+    {
+      "paper_id": "PMID:42734244",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "指南/共识单独保留；不将其直接当作综述或原创研究",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42734653",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "指南/共识单独保留；不将其直接当作综述或原创研究",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Consensus Statement"
+      ]
+    },
+    {
+      "paper_id": "PMID:42735028",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42736402",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42726276",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Systematic Review",
+        "Meta-Analysis"
+      ]
+    },
+    {
+      "paper_id": "PMID:42720751",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42720752",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Clinical Trial, Phase III",
+        "Journal Article",
+        "Multicenter Study",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42720753",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "指南/共识单独保留；不将其直接当作综述或原创研究",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Consensus Statement"
+      ]
+    },
+    {
+      "paper_id": "PMID:42714564",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42716080",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "更正、撤稿或关注声明，保留其证据角色，不归入研究成果",
+      "detailed_type": "correction_or_retraction",
+      "publication_types": [
+        "Published Erratum"
+      ]
+    },
+    {
+      "paper_id": "PMID:42704479",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42705258",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42690158",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42684379",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42684404",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "指南/共识单独保留；不将其直接当作综述或原创研究",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Practice Guideline"
+      ]
+    },
+    {
+      "paper_id": "PMID:42686887",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "更正、撤稿或关注声明，保留其证据角色，不归入研究成果",
+      "detailed_type": "correction_or_retraction",
+      "publication_types": [
+        "Published Erratum"
+      ]
+    },
+    {
+      "paper_id": "PMID:41842968",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:41915459",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42017812",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42127320",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42227951",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42301138",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42319755",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42335186",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "更正、撤稿或关注声明，保留其证据角色，不归入研究成果",
+      "detailed_type": "correction_or_retraction",
+      "publication_types": [
+        "Published Erratum"
+      ]
+    },
+    {
+      "paper_id": "PMID:42360278",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42360321",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42371657",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42371749",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42378390",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42384016",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42384047",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "case_report",
+      "publication_types": [
+        "Journal Article",
+        "Case Reports"
+      ]
+    },
+    {
+      "paper_id": "PMID:42384070",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42390988",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42406897",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42411938",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42411992",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42411999",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "case_report",
+      "publication_types": [
+        "Journal Article",
+        "Case Reports"
+      ]
+    },
+    {
+      "paper_id": "PMID:42417985",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42418158",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42418171",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42423477",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article",
+        "Observational Study"
+      ]
+    },
+    {
+      "paper_id": "PMID:42429743",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42439362",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42439827",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42447284",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42454990",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42455072",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42461785",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42461847",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42461929",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42461939",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42467059",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42467557",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42474271",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42482329",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article",
+        "Observational Study"
+      ]
+    },
+    {
+      "paper_id": "PMID:42484596",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42485567",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42520058",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42623528",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42623529",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Editorial",
+        "Comment"
+      ]
+    },
+    {
+      "paper_id": "PMID:42623530",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42623531",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42623532",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42623533",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42623534",
+      "category": "conference",
+      "label": "会议类",
+      "basis": "明确会议报告/会议摘要/讲座文章依据；不因会议曾报告同研究而改变完整论文类型",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Lecture"
+      ]
+    },
+    {
+      "paper_id": "PMID:42623535",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42623536",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42623537",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42623538",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42623539",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42623540",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42623541",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42623543",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42623544",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Editorial",
+        "Comment"
+      ]
+    },
+    {
+      "paper_id": "PMID:42623545",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Editorial",
+        "Comment"
+      ]
+    },
+    {
+      "paper_id": "PMID:42623546",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Editorial",
+        "Comment"
+      ]
+    },
+    {
+      "paper_id": "PMID:42678439",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42679792",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Journal Article",
+        "Comment"
+      ]
+    },
+    {
+      "paper_id": "PMID:42679839",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "CN:0b2789639e8b6a6b2b25",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": []
+    },
+    {
+      "paper_id": "CN:157d5d5a240cf8cb452b",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "case_report",
+      "publication_types": []
+    },
+    {
+      "paper_id": "CN:3cabd6bc5334d8b13399",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": []
+    },
+    {
+      "paper_id": "CN:3f51e394ea992ed3bfeb",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": []
+    },
+    {
+      "paper_id": "CN:460b07fa37cb7e6d228a",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "case_report",
+      "publication_types": []
+    },
+    {
+      "paper_id": "CN:808dcf711cf0c80e00ca",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": []
+    },
+    {
+      "paper_id": "CN:9a8728fe9432753a03d4",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": []
+    },
+    {
+      "paper_id": "CN:a64c02c4de85079450a8",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": []
+    },
+    {
+      "paper_id": "CN:c28d610ebf38bc081625",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": []
+    },
+    {
+      "paper_id": "CN:d5cd4f9dfedc9d1f4668",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": []
+    },
+    {
+      "paper_id": "CN:e2e0adaa326103c144ea",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": []
+    },
+    {
+      "paper_id": "DOI:10.3760/cma.j.cn112137-20260127-00059",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": []
+    },
+    {
+      "paper_id": "DOI:10.3760/cma.j.cn115791-20260311-00123",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": []
+    },
+    {
+      "paper_id": "DOI:10.3760/cma.j.cn115791-20260428-00201",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": []
+    },
+    {
+      "paper_id": "DOI:10.3760/cma.j.cn311282-20251128-00585",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": []
+    },
+    {
+      "paper_id": "DOI:10.3760/cma.j.cn311282-20260326-00154",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "case_report",
+      "publication_types": []
+    },
+    {
+      "paper_id": "DOI:10.3760/cma.j.cn311282-20260330-00166",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "case_report",
+      "publication_types": []
+    },
+    {
+      "paper_id": "DOI:10.3760/cma.j.cn311282-20260824-00377",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": []
+    },
+    {
+      "paper_id": "PMID:42390556",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "更正、撤稿或关注声明，保留其证据角色，不归入研究成果",
+      "detailed_type": "correction_or_retraction",
+      "publication_types": [
+        "Published Erratum"
+      ]
+    },
+    {
+      "paper_id": "PMID:42502134",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "News"
+      ]
+    },
+    {
+      "paper_id": "PMID:42575988",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42580352",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42670293",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42671571",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42675218",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42669304",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review",
+        "Research Support, Non-U.S. Gov't"
+      ]
+    },
+    {
+      "paper_id": "PMID:42660153",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42667390",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Meta-Analysis",
+        "Systematic Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42667391",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42670961",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42663360",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42663510",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42663626",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42658064",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42658082",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42658577",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42660161",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42660227",
+      "category": "conference",
+      "label": "会议类",
+      "basis": "明确会议报告/会议摘要/讲座文章依据；不因会议曾报告同研究而改变完整论文类型",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42644887",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42648299",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Editorial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42648400",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42490076",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42490087",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42490090",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42639673",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Journal Article",
+        "Observational Study"
+      ]
+    },
+    {
+      "paper_id": "PMID:42641605",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42644550",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Editorial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42635552",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42633598",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42627334",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42627353",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42627354",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42627374",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42628555",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial",
+        "Multicenter Study",
+        "Clinical Trial, Phase II"
+      ]
+    },
+    {
+      "paper_id": "PMID:42628556",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "DOI:10.3760/cma.j.cn115791-20251022-00551",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": []
+    },
+    {
+      "paper_id": "DOI:10.3760/cma.j.cn115791-20251105-00583",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": []
+    },
+    {
+      "paper_id": "DOI:10.3760/cma.j.cn115791-20251106-00588",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": []
+    },
+    {
+      "paper_id": "DOI:10.3760/cma.j.cn115791-20251110-00598",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": []
+    },
+    {
+      "paper_id": "DOI:10.3760/cma.j.cn115791-20260119-00036",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": []
+    },
+    {
+      "paper_id": "DOI:10.3760/cma.j.cn115791-20260127-00058",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": []
+    },
+    {
+      "paper_id": "DOI:10.3760/cma.j.cn115791-20260206-00074",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": []
+    },
+    {
+      "paper_id": "PMID:42615958",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Journal Article",
+        "Multicenter Study",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42617623",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42618811",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Clinical Trial, Phase II",
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42295750",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Journal Article",
+        "Comment"
+      ]
+    },
+    {
+      "paper_id": "PMID:42295772",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Journal Article",
+        "Multicenter Study",
+        "Observational Study",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42475062",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Comparative Study",
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42485161",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42496971",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42610271",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Clinical Trial, Phase III",
+        "Journal Article",
+        "Multicenter Study",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42610570",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42606524",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42607120",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "News"
+      ]
+    },
+    {
+      "paper_id": "PMID:42607128",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42607698",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial",
+        "Multicenter Study",
+        "Clinical Trial, Phase III",
+        "Research Support, Non-U.S. Gov't"
+      ]
+    },
+    {
+      "paper_id": "PMID:42607699",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42608595",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_abstract_reviewed",
+      "publication_types": [
+        "Journal Article",
+        "Multicenter Study",
+        "Clinical Trial, Phase II"
+      ]
+    },
+    {
+      "paper_id": "PMID:42603840",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42599779",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42600625",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42594928",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial",
+        "Multicenter Study",
+        "Clinical Trial, Phase III",
+        "Research Support, Non-U.S. Gov't"
+      ]
+    },
+    {
+      "paper_id": "PMID:42594929",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42586061",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42575111",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial",
+        "Multicenter Study",
+        "Clinical Trial, Phase III",
+        "Research Support, Non-U.S. Gov't"
+      ]
+    },
+    {
+      "paper_id": "PMID:42575112",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42576031",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42570940",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42565824",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42567173",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial",
+        "Research Support, Non-U.S. Gov't"
+      ]
+    },
+    {
+      "paper_id": "PMID:42562881",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42557446",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42550202",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Journal Article",
+        "Observational Study"
+      ]
+    },
+    {
+      "paper_id": "PMID:42546728",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42547585",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42547586",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42542457",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42542458",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42532083",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42525137",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Systematic Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42525138",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42526474",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Editorial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42526475",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Editorial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42521017",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42507108",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Systematic Review",
+        "Journal Article",
+        "Meta-Analysis"
+      ]
+    },
+    {
+      "paper_id": "PMID:42502135",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Systematic Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42502136",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42502137",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42502138",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42492856",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42498061",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42486926",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42478360",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42480542",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42473796",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42474505",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42467084",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42467085",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42467086",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42467087",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Clinical Trial, Phase II",
+        "Journal Article",
+        "Multicenter Study",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42467088",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42461275",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42455102",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ]
+    },
+    {
+      "paper_id": "PMID:42440082",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42432282",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42432283",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42424117",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42426419",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42419342",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42419343",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "指南/共识单独保留；不将其直接当作综述或原创研究",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Consensus Statement",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42413529",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Journal Article",
+        "Multicenter Study",
+        "Observational Study",
+        "Research Support, Non-U.S. Gov't"
+      ]
+    },
+    {
+      "paper_id": "PMID:42409044",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42409045",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Clinical Trial, Phase IV",
+        "Comparative Study",
+        "Journal Article",
+        "Multicenter Study",
+        "Randomized Controlled Trial",
+        "Research Support, Non-U.S. Gov't"
+      ]
+    },
+    {
+      "paper_id": "PMID:42399494",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42392129",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "评论、来信或其他非研究正文，保留具体类型",
+      "detailed_type": "commentary_or_letter",
+      "publication_types": [
+        "Letter"
+      ]
+    },
+    {
+      "paper_id": "PMID:42393405",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42393406",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42383943",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial",
+        "Multicenter Study",
+        "Comparative Study",
+        "Equivalence Trial",
+        "Research Support, Non-U.S. Gov't"
+      ]
+    },
+    {
+      "paper_id": "PMID:42379212",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42380650",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42380651",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42380652",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42372727",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42362969",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42362970",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42360463",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42361830",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42347980",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42350669",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article",
+        "Multicenter Study"
+      ]
+    },
+    {
+      "paper_id": "PMID:42350670",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42341802",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ]
+    },
+    {
+      "paper_id": "PMID:42341803",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "现有元数据不足以稳定确认类型，不仅凭Journal Article认定研究类",
+      "detailed_type": "type_pending",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42334557",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42337176",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42322375",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Journal Article",
+        "Observational Study"
+      ]
+    },
+    {
+      "paper_id": "PMID:42322376",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42322377",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42302933",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42277400",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Journal Article",
+        "Observational Study"
+      ]
+    },
+    {
+      "paper_id": "PMID:42277401",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42262529",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42265456",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42257871",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42253238",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial",
+        "Multicenter Study",
+        "Clinical Trial, Phase III"
+      ]
+    },
+    {
+      "paper_id": "PMID:42251202",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial",
+        "Multicenter Study",
+        "Equivalence Trial"
+      ]
+    },
+    {
+      "paper_id": "PMID:42251203",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42251204",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42247169",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42247170",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42249186",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42201768",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Systematic Review",
+        "Meta-Analysis"
+      ]
+    },
+    {
+      "paper_id": "PMID:42187339",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial",
+        "Clinical Trial, Phase I"
+      ]
+    },
+    {
+      "paper_id": "PMID:42189612",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42191113",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42176776",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42168648",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:42126373",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42113583",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "paper_id": "PMID:42053472",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_candidate",
+      "publication_types": [
+        "Journal Article",
+        "Validation Study"
+      ]
+    },
+    {
+      "paper_id": "PMID:41973196",
+      "category": "review",
+      "label": "综述",
+      "basis": "综述、系统评价或Meta分析，采用原始类型或已有摘要复核",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ]
+    },
+    {
+      "paper_id": "PMID:41926219",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Journal Article",
+        "Multicenter Study",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "paper_id": "PMID:41905767",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Clinical Trial, Phase II",
+        "Journal Article",
+        "Multicenter Study",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "paper_id": "PMID:41817629",
+      "category": "research",
+      "label": "研究类",
+      "basis": "原创研究、研究候选或病例研究；具体设计、复核状态在详情保留",
+      "detailed_type": "original_indexed",
+      "publication_types": [
+        "Journal Article",
+        "Comparative Study"
+      ]
+    },
+    {
+      "paper_id": "PMID:41405527",
+      "category": "other",
+      "label": "其他／待确认",
+      "basis": "指南/共识单独保留；不将其直接当作综述或原创研究",
+      "detailed_type": "review_or_guideline",
+      "publication_types": [
+        "Journal Article",
+        "Review",
+        "Practice Guideline"
+      ]
+    }
+  ]
+}

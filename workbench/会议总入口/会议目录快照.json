@@ -1,0 +1,493 @@
+{
+  "meta": {
+    "title": "临床科研会议总入口",
+    "generated_on": "2026-11-18T17:30:51+08:00",
+    "source_database": "数据库/marketing.db",
+    "database_sha256": "645adc48a9af2eb67a9df04a0f4990fce706a5a4fcf2fe467c8e2372f0e78568",
+    "read_only": true,
+    "new_collection": false,
+    "published": false
+  },
+  "domain": {
+    "id": "diabetes",
+    "label": "糖尿病",
+    "basis": "本次已入库糖尿病试点的入口业务配置；非新增外部采集"
+  },
+  "tiers": [
+    {
+      "id": "international_core",
+      "label": "国际核心会议",
+      "description": "查看国际会议的议程、研究议题与主讲团队。",
+      "series_count": 1,
+      "edition_count": 1,
+      "series": [
+        {
+          "series_id": "ADA",
+          "abbreviation": "ADA",
+          "name": "American Diabetes Association Scientific Sessions",
+          "editions": [
+            {
+              "conference_id": "ADA2026",
+              "series_id": "ADA",
+              "year": 2026,
+              "edition_label": null,
+              "name_original": "ADA 2026 Scientific Sessions",
+              "organizer": "American Diabetes Association",
+              "region": "international",
+              "country": null,
+              "city": "New Orleans, LA",
+              "format": null,
+              "start_date": "2026-06-05",
+              "end_date": "2026-06-08",
+              "local_timezone": "America/Chicago",
+              "timezone_basis": "按程序封面New Orleans, LA理解当地时区；原程序未显式标注",
+              "official_url": "https://www.abstractsonline.com/SR/Diabetes/FinalProgram.asp",
+              "metadata_status": "existing_programme_snapshot_not_rechecked",
+              "metadata_material_id": "MAT:3e661466692d8450e281",
+              "source_locator": "PDF物理第1—2页；页眉2026-04-24",
+              "metadata_gaps": "仅会前程序版本，未核最终日程/现场报告；举办国/具体场馆未从本包单独核实，城市按封面保留。",
+              "session_count": 242,
+              "agenda_item_count": 2859,
+              "academic_report_count": 2539,
+              "result_coverage": "agenda_only",
+              "abbreviation": "ADA",
+              "series_name": "American Diabetes Association Scientific Sessions",
+              "tier_code": "international_core",
+              "tier_label": "国际核心会议",
+              "tier_status": "provisional",
+              "tier_basis": "原程序物理第2页记载Scientific Sessions为大型糖尿病会议，来自115多个国家的参与者；按业务规则暂列国际核心会议。",
+              "tier_gaps": "基于已有程序定位，不是本次新联网核验；不把会议国际层级传递给所有讲者。",
+              "view_url": "../%E4%BC%9A%E8%AE%AE%E8%A7%86%E5%9B%BE/ada.html",
+              "topic_url": "../%E4%BC%9A%E8%AE%AE%E8%A7%86%E5%9B%BE/ada.html#topics",
+              "coverage_url": "../%E4%BC%9A%E8%AE%AE%E8%A7%86%E5%9B%BE/ada.html#sources",
+              "domain_id": "diabetes",
+              "domain_label": "糖尿病",
+              "analysis_version": {
+                "analysis_version_id": "ADA2026:TOPIC-QUANTITY:20261117:v1",
+                "analysis_kind": "ada_topic_quantity",
+                "review_status": "rule_assisted_title_review_pending"
+              },
+              "classified_report_count": 2049,
+              "topic_count": 56,
+              "outside_topic_count": 490,
+              "report_formats": [
+                {
+                  "report_format": "专题报告",
+                  "count": 427
+                },
+                {
+                  "report_format": "大会报告",
+                  "count": 10
+                },
+                {
+                  "report_format": "晚期突破海报",
+                  "count": 424
+                },
+                {
+                  "report_format": "海报报告",
+                  "count": 1340
+                },
+                {
+                  "report_format": "论文发言",
+                  "count": 338
+                }
+              ],
+              "poster_report_count": 1764,
+              "speaker_tiers": [
+                {
+                  "tier_code": "national",
+                  "tier_label": "全国学术带头人",
+                  "identity_count": 2
+                },
+                {
+                  "tier_code": "undetermined",
+                  "tier_label": "层级待定",
+                  "identity_count": 2094
+                }
+              ],
+              "coverage_summary": {
+                "programme_physical_pages": 385,
+                "sessions": 242,
+                "raw_agenda_items": 2859,
+                "academic_occurrences": 2621,
+                "distinct_reports": 2539,
+                "duplicate_occurrences": 82,
+                "classified_reports": 2049,
+                "unclassified_reports": 490,
+                "nonacademic_agenda_items": 238,
+                "coded_reports": 2102,
+                "topics": 56,
+                "formats": {
+                  "大会报告": 10,
+                  "论文发言": 338,
+                  "专题报告": 427,
+                  "海报报告": 1340,
+                  "晚期突破海报": 424
+                },
+                "classification_methods": {
+                  "unclassified": 490,
+                  "title_rule": 1907,
+                  "session_context_rule": 140,
+                  "manual_title_review": 2
+                },
+                "page_statuses": {
+                  "cover_or_other": 2,
+                  "numbered_session": 242,
+                  "unparsed_satellite_or_metadata": 12,
+                  "programme_continuation": 129
+                }
+              },
+              "source_snapshot_label": "页眉2026-04-24的会前程序；PDF物理385页",
+              "coverage_note": "不是最终实际报告清单；12页无编号卫星会/活动未逐报告解析，490条待归类，140条依赖专题背景。程序未含完整简介与研究结果；14篇为论文摘要。",
+              "classification_label": "规则辅助初分",
+              "scope_label": "会前程序已入库",
+              "outside_topic_label": "待归类",
+              "programme_pages": 385,
+              "view_matches_database": true,
+              "view_manifest_path": "会议视图/ADA生成记录.json",
+              "date_label": "2026-06-05 — 2026-06-08",
+              "location_label": "New Orleans, LA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "national_major",
+      "label": "国内全国性大型会议",
+      "description": "查看全国大会重点安排、学术带头人与具体讲题。",
+      "series_count": 1,
+      "edition_count": 1,
+      "series": [
+        {
+          "series_id": "CDS",
+          "abbreviation": "CDS",
+          "name": "中华医学会糖尿病学术会议",
+          "editions": [
+            {
+              "conference_id": "CDS2026",
+              "series_id": "CDS",
+              "year": 2026,
+              "edition_label": "第二十八次",
+              "name_original": "中华医学会第二十八次糖尿病学术会议",
+              "organizer": null,
+              "region": "domestic",
+              "country": null,
+              "city": "厦门",
+              "format": null,
+              "start_date": "2026-11-18",
+              "end_date": "2026-11-21",
+              "local_timezone": "Asia/Shanghai",
+              "timezone_basis": "按既有地点厦门解释本地日程；原始日程未显式标时区",
+              "official_url": "https://cds26.tiemeeting.com/CN",
+              "metadata_status": "existing_source_snapshot_not_rechecked",
+              "metadata_material_id": "MAT:6ff9ffd572377435f2f2",
+              "source_locator": "$.conference_calendar_record；官方标题另见官方日程HTML<title>",
+              "metadata_gaps": "主办方/举办国/具体场馆/形式未在本包元数据中独立核清；日期地点沿用既有CDS日历依据，不代表本次联网核验。",
+              "session_count": 148,
+              "agenda_item_count": 797,
+              "academic_report_count": 606,
+              "result_coverage": "agenda_only",
+              "abbreviation": "CDS",
+              "series_name": "中华医学会糖尿病学术会议",
+              "tier_code": "national_major",
+              "tier_label": "国内全国性大型会议",
+              "tier_status": "user_confirmed",
+              "tier_basis": "用户于2026-11-17在本轮对话明确确认：CDS属于国内全国性大型会议。既有官方日程保留大会全称，作为资料参考；不是本次新联网核验。",
+              "tier_gaps": "会议层级已按用户业务口径确认；主办方、举办国与具体场馆等原有元数据缺口继续保留，不从层级反填地点。",
+              "view_url": "../%E4%BC%9A%E8%AE%AE%E8%A7%86%E5%9B%BE/index.html",
+              "topic_url": "../%E4%BC%9A%E8%AE%AE%E8%A7%86%E5%9B%BE/index.html#topics",
+              "coverage_url": "../%E4%BC%9A%E8%AE%AE%E8%A7%86%E5%9B%BE/index.html#sources",
+              "domain_id": "diabetes",
+              "domain_label": "糖尿病",
+              "analysis_version": {
+                "analysis_version_id": "CDS2026:TOPIC-QUANTITY:20261117:v1",
+                "analysis_kind": "topic_quantity",
+                "review_status": "ai_title_review_pending_mentor"
+              },
+              "classified_report_count": 579,
+              "topic_count": 58,
+              "outside_topic_count": 27,
+              "report_formats": [
+                {
+                  "report_format": "专题报告",
+                  "count": 259
+                },
+                {
+                  "report_format": "大会报告",
+                  "count": 11
+                },
+                {
+                  "report_format": "论文发言",
+                  "count": 336
+                }
+              ],
+              "poster_report_count": 0,
+              "speaker_tiers": [
+                {
+                  "tier_code": "international",
+                  "tier_label": "国际学术带头人",
+                  "identity_count": 6
+                },
+                {
+                  "tier_code": "national",
+                  "tier_label": "全国学术带头人",
+                  "identity_count": 96
+                },
+                {
+                  "tier_code": "regional",
+                  "tier_label": "区域／专科学术带头人",
+                  "identity_count": 43
+                },
+                {
+                  "tier_code": "undetermined",
+                  "tier_label": "层级待定",
+                  "identity_count": 388
+                }
+              ],
+              "source_snapshot_label": "日程资料快照 2026-11-16",
+              "coverage_note": "完整日程已入库，579条按题名复核归类；27条培训、方法与综合内容另列。尚未录入报告结果，归类与人物角色仍待校准。",
+              "classification_label": "题名复核归类",
+              "scope_label": "完整日程已入库",
+              "outside_topic_label": "另列内容",
+              "programme_pages": null,
+              "view_matches_database": true,
+              "view_manifest_path": "会议视图/生成记录.json",
+              "date_label": "2026-11-18 — 2026-11-21",
+              "location_label": "厦门"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "regional_key",
+      "label": "区域重点会议",
+      "description": "保留区域会议入口，后续接入相应届次和资料。",
+      "series_count": 0,
+      "edition_count": 0,
+      "series": []
+    }
+  ],
+  "summary": {
+    "series_count": 2,
+    "edition_count": 2,
+    "tier_count": 3
+  },
+  "entries": [
+    {
+      "conference_id": "ADA2026",
+      "series_id": "ADA",
+      "year": 2026,
+      "edition_label": null,
+      "name_original": "ADA 2026 Scientific Sessions",
+      "organizer": "American Diabetes Association",
+      "region": "international",
+      "country": null,
+      "city": "New Orleans, LA",
+      "format": null,
+      "start_date": "2026-06-05",
+      "end_date": "2026-06-08",
+      "local_timezone": "America/Chicago",
+      "timezone_basis": "按程序封面New Orleans, LA理解当地时区；原程序未显式标注",
+      "official_url": "https://www.abstractsonline.com/SR/Diabetes/FinalProgram.asp",
+      "metadata_status": "existing_programme_snapshot_not_rechecked",
+      "metadata_material_id": "MAT:3e661466692d8450e281",
+      "source_locator": "PDF物理第1—2页；页眉2026-04-24",
+      "metadata_gaps": "仅会前程序版本，未核最终日程/现场报告；举办国/具体场馆未从本包单独核实，城市按封面保留。",
+      "session_count": 242,
+      "agenda_item_count": 2859,
+      "academic_report_count": 2539,
+      "result_coverage": "agenda_only",
+      "abbreviation": "ADA",
+      "series_name": "American Diabetes Association Scientific Sessions",
+      "tier_code": "international_core",
+      "tier_label": "国际核心会议",
+      "tier_status": "provisional",
+      "tier_basis": "原程序物理第2页记载Scientific Sessions为大型糖尿病会议，来自115多个国家的参与者；按业务规则暂列国际核心会议。",
+      "tier_gaps": "基于已有程序定位，不是本次新联网核验；不把会议国际层级传递给所有讲者。",
+      "view_url": "../%E4%BC%9A%E8%AE%AE%E8%A7%86%E5%9B%BE/ada.html",
+      "topic_url": "../%E4%BC%9A%E8%AE%AE%E8%A7%86%E5%9B%BE/ada.html#topics",
+      "coverage_url": "../%E4%BC%9A%E8%AE%AE%E8%A7%86%E5%9B%BE/ada.html#sources",
+      "domain_id": "diabetes",
+      "domain_label": "糖尿病",
+      "analysis_version": {
+        "analysis_version_id": "ADA2026:TOPIC-QUANTITY:20261117:v1",
+        "analysis_kind": "ada_topic_quantity",
+        "review_status": "rule_assisted_title_review_pending"
+      },
+      "classified_report_count": 2049,
+      "topic_count": 56,
+      "outside_topic_count": 490,
+      "report_formats": [
+        {
+          "report_format": "专题报告",
+          "count": 427
+        },
+        {
+          "report_format": "大会报告",
+          "count": 10
+        },
+        {
+          "report_format": "晚期突破海报",
+          "count": 424
+        },
+        {
+          "report_format": "海报报告",
+          "count": 1340
+        },
+        {
+          "report_format": "论文发言",
+          "count": 338
+        }
+      ],
+      "poster_report_count": 1764,
+      "speaker_tiers": [
+        {
+          "tier_code": "national",
+          "tier_label": "全国学术带头人",
+          "identity_count": 2
+        },
+        {
+          "tier_code": "undetermined",
+          "tier_label": "层级待定",
+          "identity_count": 2094
+        }
+      ],
+      "coverage_summary": {
+        "programme_physical_pages": 385,
+        "sessions": 242,
+        "raw_agenda_items": 2859,
+        "academic_occurrences": 2621,
+        "distinct_reports": 2539,
+        "duplicate_occurrences": 82,
+        "classified_reports": 2049,
+        "unclassified_reports": 490,
+        "nonacademic_agenda_items": 238,
+        "coded_reports": 2102,
+        "topics": 56,
+        "formats": {
+          "大会报告": 10,
+          "论文发言": 338,
+          "专题报告": 427,
+          "海报报告": 1340,
+          "晚期突破海报": 424
+        },
+        "classification_methods": {
+          "unclassified": 490,
+          "title_rule": 1907,
+          "session_context_rule": 140,
+          "manual_title_review": 2
+        },
+        "page_statuses": {
+          "cover_or_other": 2,
+          "numbered_session": 242,
+          "unparsed_satellite_or_metadata": 12,
+          "programme_continuation": 129
+        }
+      },
+      "source_snapshot_label": "页眉2026-04-24的会前程序；PDF物理385页",
+      "coverage_note": "不是最终实际报告清单；12页无编号卫星会/活动未逐报告解析，490条待归类，140条依赖专题背景。程序未含完整简介与研究结果；14篇为论文摘要。",
+      "classification_label": "规则辅助初分",
+      "scope_label": "会前程序已入库",
+      "outside_topic_label": "待归类",
+      "programme_pages": 385,
+      "view_matches_database": true,
+      "view_manifest_path": "会议视图/ADA生成记录.json",
+      "date_label": "2026-06-05 — 2026-06-08",
+      "location_label": "New Orleans, LA"
+    },
+    {
+      "conference_id": "CDS2026",
+      "series_id": "CDS",
+      "year": 2026,
+      "edition_label": "第二十八次",
+      "name_original": "中华医学会第二十八次糖尿病学术会议",
+      "organizer": null,
+      "region": "domestic",
+      "country": null,
+      "city": "厦门",
+      "format": null,
+      "start_date": "2026-11-18",
+      "end_date": "2026-11-21",
+      "local_timezone": "Asia/Shanghai",
+      "timezone_basis": "按既有地点厦门解释本地日程；原始日程未显式标时区",
+      "official_url": "https://cds26.tiemeeting.com/CN",
+      "metadata_status": "existing_source_snapshot_not_rechecked",
+      "metadata_material_id": "MAT:6ff9ffd572377435f2f2",
+      "source_locator": "$.conference_calendar_record；官方标题另见官方日程HTML<title>",
+      "metadata_gaps": "主办方/举办国/具体场馆/形式未在本包元数据中独立核清；日期地点沿用既有CDS日历依据，不代表本次联网核验。",
+      "session_count": 148,
+      "agenda_item_count": 797,
+      "academic_report_count": 606,
+      "result_coverage": "agenda_only",
+      "abbreviation": "CDS",
+      "series_name": "中华医学会糖尿病学术会议",
+      "tier_code": "national_major",
+      "tier_label": "国内全国性大型会议",
+      "tier_status": "user_confirmed",
+      "tier_basis": "用户于2026-11-17在本轮对话明确确认：CDS属于国内全国性大型会议。既有官方日程保留大会全称，作为资料参考；不是本次新联网核验。",
+      "tier_gaps": "会议层级已按用户业务口径确认；主办方、举办国与具体场馆等原有元数据缺口继续保留，不从层级反填地点。",
+      "view_url": "../%E4%BC%9A%E8%AE%AE%E8%A7%86%E5%9B%BE/index.html",
+      "topic_url": "../%E4%BC%9A%E8%AE%AE%E8%A7%86%E5%9B%BE/index.html#topics",
+      "coverage_url": "../%E4%BC%9A%E8%AE%AE%E8%A7%86%E5%9B%BE/index.html#sources",
+      "domain_id": "diabetes",
+      "domain_label": "糖尿病",
+      "analysis_version": {
+        "analysis_version_id": "CDS2026:TOPIC-QUANTITY:20261117:v1",
+        "analysis_kind": "topic_quantity",
+        "review_status": "ai_title_review_pending_mentor"
+      },
+      "classified_report_count": 579,
+      "topic_count": 58,
+      "outside_topic_count": 27,
+      "report_formats": [
+        {
+          "report_format": "专题报告",
+          "count": 259
+        },
+        {
+          "report_format": "大会报告",
+          "count": 11
+        },
+        {
+          "report_format": "论文发言",
+          "count": 336
+        }
+      ],
+      "poster_report_count": 0,
+      "speaker_tiers": [
+        {
+          "tier_code": "international",
+          "tier_label": "国际学术带头人",
+          "identity_count": 6
+        },
+        {
+          "tier_code": "national",
+          "tier_label": "全国学术带头人",
+          "identity_count": 96
+        },
+        {
+          "tier_code": "regional",
+          "tier_label": "区域／专科学术带头人",
+          "identity_count": 43
+        },
+        {
+          "tier_code": "undetermined",
+          "tier_label": "层级待定",
+          "identity_count": 388
+        }
+      ],
+      "source_snapshot_label": "日程资料快照 2026-11-16",
+      "coverage_note": "完整日程已入库，579条按题名复核归类；27条培训、方法与综合内容另列。尚未录入报告结果，归类与人物角色仍待校准。",
+      "classification_label": "题名复核归类",
+      "scope_label": "完整日程已入库",
+      "outside_topic_label": "另列内容",
+      "programme_pages": null,
+      "view_matches_database": true,
+      "view_manifest_path": "会议视图/生成记录.json",
+      "date_label": "2026-11-18 — 2026-11-21",
+      "location_label": "厦门"
+    }
+  ]
+}

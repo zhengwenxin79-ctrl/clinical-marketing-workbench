@@ -1,0 +1,58 @@
+{
+  "version": "1.0",
+  "reviewed_on": "2026-11-05",
+  "note": "种子登记表，不是完整名录。入口健康度仅是该日该工具的观察，不代表长期可用性；运行中继续发现和核实。",
+  "lookahead_days": 42,
+  "domains": [
+    {"id":"immune","name":"自免","topics":["风湿免疫","自身免疫"],"aliases":["风湿病学","红斑狼疮","类风湿关节炎","免疫机制"]},
+    {"id":"endocrine","name":"内分泌","topics":["内分泌代谢","糖尿病"],"aliases":["代谢性疾病","甲状腺","脂肪肝","肥胖"]},
+    {"id":"neuropsych","name":"神经精神","topics":["神经内科","精神医学","痴呆与认知障碍"],"aliases":["神经病学","抑郁","双相情感障碍","阿尔茨海默病","AD","帕金森病","神经免疫"]},
+    {"id":"cardiovascular","name":"心血管","topics":["心血管内科","心血管病学"],"aliases":["冠心病","心肌病","心力衰竭","心血管代谢"]},
+    {"id":"respiratory","name":"慢阻肺","topics":["呼吸病学","慢阻肺"],"aliases":["呼吸医师","慢性气道疾病","哮喘","间质性肺疾病","PCCM","COPD"]},
+    {"id":"vascular","name":"泛血管","topics":["泛血管","脑血管病"],"aliases":["卒中","高血压","动脉粥样硬化","心肾代谢","CKM"]}
+  ],
+  "national_families": [
+    {"id":"CMA","name":"中华医学会","aliases":["CMA"],"discovery_note":"年度计划覆盖全部相关章节与图片页；主站、分会站、独立大会域名都查，不把计划月份当最终日期。"},
+    {"id":"CMDA","name":"中国医师协会","aliases":["CMDA"],"noncanonical_mentions":["中华医师协会","中华医师学会"],"discovery_note":"单独查医师分会、专业委员会、医师年会和医师大会；主站失败时转分会、承办医院、cnconf或meetingchina的本届大会站。"}
+  ],
+  "covered_cities": ["北京","上海","杭州","苏州","南京","长沙","广州","深圳","成都","重庆"],
+  "regional_scopes": [
+    {"id":"beijing","name":"北京","cities":["北京"]},
+    {"id":"shanghai","name":"上海","cities":["上海"]},
+    {"id":"zhejiang","name":"浙江","cities":["杭州"]},
+    {"id":"jiangsu","name":"江苏","cities":["苏州","南京"]},
+    {"id":"hunan","name":"湖南","cities":["长沙"]},
+    {"id":"guangdong","name":"广东","cities":["广州","深圳"]},
+    {"id":"sichuan","name":"四川","cities":["成都"]},
+    {"id":"chongqing","name":"重庆","cities":["重庆"]}
+  ],
+  "source_entries": [
+    {"id":"cma-plan","label":"中华医学会年度计划入口","url":"https://cma.org.cn/art/2026/1/8/art_31_60405.html","role_hint":"annual_plan","observed":"搜索可见，网页直开超时；下一年度重新查入口，不复用旧年URL"},
+    {"id":"cmda-root","label":"中国医师协会主站","url":"https://www.cmda.net/","role_hint":"organizer_directory","observed":"直开超时；不能据此判定该协会没有会议"},
+    {"id":"mcsp","label":"MCSP医学会议服务平台","url":"https://nmcsp.caics.com.cn/nmcsp/portal/page/index.jsp","role_hint":"platform_directory","observed":"检索可见，列表为动态内容；空HTML不等于无会议"},
+    {"id":"cnconf-index","label":"cnconf会议资讯入口","url":"https://m.cnconf.com/site/main/index2","role_hint":"platform_directory","observed":"搜索可见；按本届主办关系核实每个微站"},
+    {"id":"meetingchina","label":"meetingchina会议信息入口","url":"https://www.meetingchina.org/site/meeting/channel/index.html","role_hint":"platform_directory","observed":"搜索可见，直开502；有同源微站，不能把两域当独立证据"},
+    {"id":"sciconf-cma","label":"美迪康中华医学会会议目录","url":"https://www.sciconf.cn/cn/index/50","role_hint":"platform_directory","observed":"检索可见；也查平台内其他主办组织，不能只读医学会目录"},
+    {"id":"cna-2026","label":"中国医师协会神经内科医师年会本届微站","url":"https://cna2026.cnconf.com/msite/main/cn","role_hint":"official_conference_site","observed":"直开可读，页内写明本届主办方和会议通知；只证明该届页面，不担保全平台"},
+    {"id":"cacp-2026","label":"中国医师协会呼吸医师年会本届微站","url":"https://cacp2026.cnconf.com/msite/main/cn","role_hint":"official_conference_site","observed":"直开可读，页内有本届会议通知和主办信息"},
+    {"id":"cmda-cardiac-critical-2026","label":"中国医师协会心脏重症年会改期案例","url":"https://cccmeeting2026.meetingchina.org/msite/main/cn","role_hint":"official_conference_site","observed":"搜索正文有改期说明，直开502；本次未将搜索摘要视作最终核实"},
+    {"id":"cognition-2026","label":"用户报告的认知障碍大会独立域名","url":"https://cdc26.caics.com.cn/","role_hint":"candidate_conference_site","observed":"来自用户改进说明，本工具直开失败；保留为待核实入口，不把失败当无会议"},
+    {"id":"365-discovery","label":"365会议早知道","url":"https://365yixue.com/","role_hint":"aggregator","observed":"用户说明提供的新入口，本次未验证可用性；仅作发现线索"},
+    {"id":"365-heart","label":"365心血管会议线索","url":"https://jsp.365heart.com/","role_hint":"aggregator","observed":"与365会议早知道分开登记；不得把转载次数当独立来源数"}
+  ],
+  "platform_groups": [
+    {"id":"mcsp-caics","name":"MCSP与独立caics大会站","topics":["目录完整范围","相关独立大会站"],"entry_ids":["mcsp","cognition-2026"]},
+    {"id":"cnconf-meetingchina","name":"cnconf与meetingchina医师协会会务链","topics":["会议目录","本届大会通知"],"entry_ids":["cnconf-index","meetingchina","cna-2026","cacp-2026"]},
+    {"id":"other-platforms","name":"其他平台与聚合交叉发现","topics":["sciconf或hoohui","独立聚合线索"],"entry_ids":["sciconf-cma","365-discovery","365-heart"]}
+  ],
+  "core_series_seeds": [
+    {"id":"cma-cognition","name":"中华医学会痴呆与认知障碍专题会议","domain":"neuropsych","family":"CMA","aliases":["中华医学会神经病学分会第十一次痴呆与认知障碍学术会议"],"entry_ids":["cognition-2026","cma-plan"],"note":"用户报告的已知漏会案例；必须交代本届去向，具体日期以最新通知核实"},
+    {"id":"cmda-neurology","name":"中国医师协会神经内科医师年会","domain":"neuropsych","family":"CMDA","aliases":["CNA","神经内科医师大会"],"entry_ids":["cna-2026"]},
+    {"id":"cmda-psychiatry","name":"中国医师协会精神科医师分会年会","domain":"neuropsych","family":"CMDA","aliases":["CPA","精神科医师大会"],"entry_ids":[]},
+    {"id":"cmda-respiratory","name":"中国医师协会呼吸医师年会","domain":"respiratory","family":"CMDA","aliases":["CACP","中国呼吸医师大会"],"entry_ids":["cacp-2026"]},
+    {"id":"cmda-rheumatology","name":"中国医师协会风湿免疫科医师分会年会","domain":"immune","family":"CMDA","aliases":["CARIP","风湿免疫科医师大会"],"entry_ids":["meetingchina"]},
+    {"id":"cmda-endocrinology","name":"中国医师协会内分泌代谢科医师年会","domain":"endocrine","family":"CMDA","aliases":["CEAAC","内分泌代谢科医师分会年会"],"entry_ids":["cnconf-index"]},
+    {"id":"cmda-cardiovascular","name":"中国医师协会心血管内科医师年会","domain":"cardiovascular","family":"CMDA","aliases":["CCCP"],"entry_ids":["cnconf-index"],"note":"用户报告聚合日期与后续安排冲突；计划和采购线索均需再核本届正式通知"},
+    {"id":"cmda-cardiac-critical","name":"中国医师协会心脏重症专业委员会年会","domain":"cardiovascular","family":"CMDA","aliases":["心脏重症年会"],"entry_ids":["cmda-cardiac-critical-2026"],"note":"用于检查改期信息是否被带回储备；不能永久绑定某月举办"}
+  ]
+}

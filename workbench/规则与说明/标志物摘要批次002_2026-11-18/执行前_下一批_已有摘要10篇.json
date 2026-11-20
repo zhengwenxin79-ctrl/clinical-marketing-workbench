@@ -1,0 +1,116 @@
+{
+  "batch_id": "P03-EXISTING-ABSTRACTS-002",
+  "new_collection": false,
+  "records": [
+    {
+      "paper_id": "PMID:42905866",
+      "title": "Novel Protein Biomarkers to Monitor Kidney Function Decline and Treatment Response in Individuals With Normoalbuminuria and Type 2 Diabetes.",
+      "journal": "Diabetes",
+      "publication_date": "2026-10-21",
+      "reading_level": "indexed_abstract",
+      "raw_path": "原始资料/论文首轮_2026-11-17/PubMed核心_3.xml",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/42905866/",
+      "status": "pending",
+      "reason": "既有原始摘要可读；具体指标、结果和验证需逐篇核实"
+    },
+    {
+      "paper_id": "PMID:42821458",
+      "title": "Blood-Derived DNA Methylation Biomarkers Predict Diabetic Kidney Disease and Map to Epigenomic Remodeling in Renal Cells.",
+      "journal": "Diabetes",
+      "publication_date": "2026-10-01",
+      "reading_level": "indexed_abstract",
+      "raw_path": "原始资料/论文首轮_2026-11-17/PubMed核心_3.xml",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/42821458/",
+      "status": "pending",
+      "reason": "既有原始摘要可读；具体指标、结果和验证需逐篇核实"
+    },
+    {
+      "paper_id": "PMID:42709505",
+      "title": "Longitudinal Repeated Protein Measurements in a Multiethnic Cohort Identify Novel Diabetes Biomarkers That Reveal Unique Disease Pathways.",
+      "journal": "Diabetes",
+      "publication_date": "2026-11-01",
+      "reading_level": "indexed_abstract",
+      "raw_path": "原始资料/论文首轮_2026-11-17/PubMed核心_2.xml",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/42709505/",
+      "status": "pending",
+      "reason": "既有原始摘要可读；具体指标、结果和验证需逐篇核实"
+    },
+    {
+      "paper_id": "PMID:42612686",
+      "title": "Clinical Utility of a Type 1 Diabetes Genetic Risk Score Measured as Part of MODY Genetic Testing.",
+      "journal": "Diabetes care",
+      "publication_date": "2026-10-01",
+      "reading_level": "indexed_abstract",
+      "raw_path": "原始资料/论文首轮_2026-11-17/PubMed核心_2.xml",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/42612686/",
+      "status": "pending",
+      "reason": "既有原始摘要可读；具体指标、结果和验证需逐篇核实"
+    },
+    {
+      "paper_id": "PMID:42461785",
+      "title": "Blood-Based DNA Methylation Models Improve Short-term Cardiovascular Risk Stratification in Individuals With Type 2 Diabetes.",
+      "journal": "Diabetes care",
+      "publication_date": "2026-09-01",
+      "reading_level": "indexed_abstract",
+      "raw_path": "原始资料/论文首轮_2026-11-17/PubMed核心_1.xml",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/42461785/",
+      "status": "pending",
+      "reason": "既有原始摘要可读；具体指标、结果和验证需逐篇核实"
+    },
+    {
+      "paper_id": "PMID:42574139",
+      "title": "Metabolomics-Defined Subtypes of Prediabetes and Risk of Cardiovascular-Kidney-Metabolic Outcomes.",
+      "journal": "Diabetes",
+      "publication_date": "2026-10-01",
+      "reading_level": "indexed_abstract",
+      "raw_path": "原始资料/论文首轮_2026-11-17/PubMed核心_2.xml",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/42574139/",
+      "status": "pending",
+      "reason": "既有原始摘要可读；具体指标、结果和验证需逐篇核实"
+    },
+    {
+      "paper_id": "PMID:42423517",
+      "title": "Utility of Pancreatic Perivascular Adipose Tissue as a CT Imaging Biomarker for Diagnosing Type 2 Diabetes.",
+      "journal": "Diabetes",
+      "publication_date": "2026-11-01",
+      "reading_level": "indexed_abstract",
+      "raw_path": "原始资料/论文首轮_2026-11-17/PubMed核心_1.xml",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/42423517/",
+      "status": "pending",
+      "reason": "既有原始摘要可读；具体指标、结果和验证需逐篇核实"
+    },
+    {
+      "paper_id": "PMID:42969688",
+      "title": "Longitudinal Changes in Exocrine Biomarkers in Children at Risk of Type 1 Diabetes in the ENDIA Study.",
+      "journal": "Diabetes care",
+      "publication_date": "2026-11-02",
+      "reading_level": "indexed_abstract",
+      "raw_path": "原始资料/论文首轮_2026-11-17/PubMed核心_4.xml",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/42969688/",
+      "status": "pending",
+      "reason": "既有原始摘要可读；具体指标、结果和验证需逐篇核实"
+    },
+    {
+      "paper_id": "PMID:42663510",
+      "title": "Effects of the DASH4D Diet on Biomarkers of Glycemia in Adults With Type 2 Diabetes: A Secondary Analysis of the DASH4D Randomized Clinical Trial.",
+      "journal": "Diabetes care",
+      "publication_date": "2026-08-28",
+      "reading_level": "indexed_abstract",
+      "raw_path": "原始资料/论文首轮_2026-11-17/PubMed核心_2.xml",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/42663510/",
+      "status": "pending",
+      "reason": "既有原始摘要可读；具体指标、结果和验证需逐篇核实"
+    },
+    {
+      "paper_id": "PMID:42988924",
+      "title": "Associations of long-term exposure to air pollution with glucose homeostasis biomarkers and diabetes-related comorbidities in people with recent-onset type 1 and type 2 diabetes.",
+      "journal": "Diabetologia",
+      "publication_date": "2026-11-05",
+      "reading_level": "indexed_abstract",
+      "raw_path": "原始资料/论文首轮_2026-11-17/PubMed核心_4.xml",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/42988924/",
+      "status": "pending",
+      "reason": "既有原始摘要可读；具体指标、结果和验证需逐篇核实"
+    }
+  ]
+}

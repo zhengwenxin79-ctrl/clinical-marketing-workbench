@@ -1,0 +1,120 @@
+{
+  "result": "passed",
+  "delivered_on": "2026-11-17",
+  "new_collection": false,
+  "published": false,
+  "existing_websites_unchanged": true,
+  "files": [
+    {
+      "path": "00 数据中心说明.md",
+      "bytes": 2241,
+      "sha256": "629e3e6a9377da0db66a94013968a18eb8bdd62b2b228de8e9cab14fa23899e3"
+    },
+    {
+      "path": "备份/CDS首轮_2026-11-17.db",
+      "bytes": 3264512,
+      "sha256": "ca8c989982b2e4bd88bc4776b65dcb6bd65aac4b91cef486df70663a15db4460"
+    },
+    {
+      "path": "数据库/marketing.db",
+      "bytes": 3264512,
+      "sha256": "5630b3f68c19484363fa90569829e7d4890492f6d37620351d7a1bbfbce8397b"
+    },
+    {
+      "path": "网页导出/CDS首轮查询样例.json",
+      "bytes": 21814,
+      "sha256": "0976d6daa7e056a0db5a722db8089adc47b01e5539928b13fb20f0574e1bb527"
+    },
+    {
+      "path": "脚本/准备CDS本地资料.py",
+      "bytes": 4447,
+      "sha256": "2f7ba505ea6883040ad512d6019a1db7fb6eb207c6b69e86979128d9b829c3b4"
+    },
+    {
+      "path": "脚本/导入CDS.py",
+      "bytes": 13168,
+      "sha256": "18542c2545b39e06d8feafacb6632fda9ac62f911b855915f32057ee49404df2"
+    },
+    {
+      "path": "脚本/查看数据库.py",
+      "bytes": 808,
+      "sha256": "51323e1e0ce121cd85982eb376ba905665ef11058bb7ed874c3a87f1053f3dcc"
+    },
+    {
+      "path": "脚本/核验数据库.py",
+      "bytes": 5852,
+      "sha256": "4defe8e8074b55667c72e4a83f975783bfb143aeb66b0ffbc9b05e1f1caa65e2"
+    },
+    {
+      "path": "规则与说明/schema.sql",
+      "bytes": 12580,
+      "sha256": "504d31bd90442563eb9b46b09ee9a0012acd70204ea6fd0dac28b6914f6dcc0a"
+    },
+    {
+      "path": "规则与说明/字段与表关系说明.md",
+      "bytes": 23969,
+      "sha256": "2f54bd9fc30f5aedec761573cfcd81be6cc911f9161f6011837e44db5849cf40"
+    },
+    {
+      "path": "规则与说明/示例查询.sql",
+      "bytes": 1543,
+      "sha256": "f3cc9e24890e15e1bda268d4c9a4e24f806bd3e88320cc2789dd8221f30b9b37"
+    },
+    {
+      "path": "规则与说明/首轮导入核验.json",
+      "bytes": 2560,
+      "sha256": "544e9083c034a85a0d058998d5f0cfe7fcfb759b89c51da166e50e2343f1230e"
+    },
+    {
+      "path": "规则与说明/首轮导入核验报告.md",
+      "bytes": 2653,
+      "sha256": "495934c22f26f37d6cc268e5c76201563eddbf1b4e890171d199db487d2f551c"
+    }
+  ],
+  "protected_files": [
+    {
+      "path": "/Users/zwx/Documents/文献阅读/BrainHao-Study/wenxin/糖尿病热点知识地图/热点量化试评_2026-11-16/CDS三维议题试评_v0.2/index.html",
+      "sha256": "b4ed9e8c20731f552d0e42ac78296000d5ee1fb41ea572aeaa2bc2469ee021da"
+    },
+    {
+      "path": "/Users/zwx/Documents/文献阅读/BrainHao-Study/wenxin/糖尿病热点知识地图/热点量化试评_2026-11-16/CDS三维议题试评_v0.2/生成会前重点议题榜.py",
+      "sha256": "a88061a3015f88964841efdd39b01d508bb335c6cea29d1d762223683f7d9281"
+    },
+    {
+      "path": "/Users/zwx/Documents/文献阅读/BrainHao-Study/wenxin/糖尿病热点知识地图/热点量化试评_2026-11-16/CDS三维议题试评_v0.2/会前重点议题模板.html",
+      "sha256": "5e2c811fb26e35b42470975b42101c467e7bf80d05e57bcf226bdb73289691ed"
+    },
+    {
+      "path": "/Users/zwx/Documents/文献阅读/BrainHao-Study/wenxin/糖尿病热点知识地图/热点量化试评_2026-11-16/CDS三维议题试评_v0.2/领域与Biomarker_工作资料/扩展界面.js",
+      "sha256": "4bc99bd3bf9e3d828295bd2c07e8851e43f7801f0122a64d5ed1f5e62054cd90"
+    },
+    {
+      "path": "/Users/zwx/Documents/文献阅读/BrainHao-Study/wenxin/糖尿病热点知识地图/会议与论文研究台_v2/index.html",
+      "sha256": "bc8c010b470f2fab2f640bda497e1690d656f07acd3214fbae2e3a13ca6e35a3"
+    },
+    {
+      "path": "/Users/zwx/Documents/文献阅读/BrainHao-Study/wenxin/糖尿病热点知识地图/会议与论文研究台_v2/src/data.snapshot.json",
+      "sha256": "255f188e8ebf449b622f63f458fdaf19b234b94857647e6fea03aa27921878c0"
+    },
+    {
+      "path": "/Users/zwx/Documents/文献阅读/BrainHao-Study/wenxin/糖尿病热点知识地图/会议与论文研究台_v2/src/biomarkers.catalog.json",
+      "sha256": "31cce5fdbaff33b4d4bb379ee0d89daa7854a44ed58e5545fb15220ab632022f"
+    },
+    {
+      "path": "/Users/zwx/Documents/文献阅读/BrainHao-Study/wenxin/糖尿病热点知识地图/00 项目主页.md",
+      "sha256": "a86c4ed90d52018e066d38a5b445c307c092406bf0470444058bb351cdcc4b71"
+    },
+    {
+      "path": "/Users/zwx/Documents/文献阅读/BrainHao-Study/wenxin/项目交接摘要.md",
+      "sha256": "91f4ecc5afe4d4c959e1950b6cc9be075edd4e3517d70d46c917d593e07d3f3e"
+    },
+    {
+      "path": "/Users/zwx/Documents/文献阅读/BrainHao-Study/wenxin/糖尿病热点知识地图/热点量化试评_2026-11-16/重点议题榜_待复核.html",
+      "sha256": "f267b9ae2131f7389c15aaf93c1040f73af3a30d1add6f7bc42f9fb179897ee6"
+    },
+    {
+      "path": "/Users/zwx/Documents/文献阅读/BrainHao-Study/wenxin/糖尿病热点知识地图/热点量化试评_2026-11-16/CDS三维议题试评_v0.2/客户资料存档_2026-11-16.html",
+      "sha256": "33dd5b2260d39847fe70fc7537622562727fb47a5d9a99e263094a96f0cb4e5c"
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "as_of": "2026-11-16",
+  "version": "v0.2 · PI联网补证",
+  "status": "AI试评；待导师校准",
+  "external_collection": true,
+  "input_files": [
+    {
+      "path": "/Users/zwx/Documents/文献阅读/BrainHao-Study/wenxin/糖尿病热点知识地图/热点量化试评_2026-11-16/原始材料/CDS_全日程结构化.json",
+      "sha256": "464c15c4df860f16fb66fe72460494c304a5930c0b8d989cb5a166d363820047"
+    },
+    {
+      "path": "/Users/zwx/Documents/文献阅读/BrainHao-Study/wenxin/糖尿病热点知识地图/热点量化试评_2026-11-16/原始材料/CDS_详细日程_2026-11-16.html",
+      "sha256": "49408ef02aa7723e3841c03476f22b2ea9c37a20ba91117bdf3cb3c56cebb780"
+    },
+    {
+      "path": "/Users/zwx/Downloads/营销智能体/clinical-research-v3/SKILL.md",
+      "sha256": "8da9f0ffa585d283e5e50b4d46f4bd8cf25b77d80b7d46598f6d8f5279ccfa2f"
+    },
+    {
+      "path": "/Users/zwx/Downloads/营销智能体/outputs/20261102_market_intel_template/_work/客户池_v10.json",
+      "sha256": "d46ddc4759870b450006f9879f2f714d9b47d0ec7a820d306d085ae2b0de27f2"
+    },
+    {
+      "path": "/Users/zwx/Documents/文献阅读/BrainHao-Study/wenxin/实习实践/吉因加临床科研能力表.md",
+      "sha256": "b5531e37504a972a7dd1b512ab3875eddb6597434635242b5c9df4370f49e934"
+    },
+    {
+      "path": "/Users/zwx/Documents/文献阅读/BrainHao-Study/wenxin/糖尿病热点知识地图/热点量化试评_2026-11-16/CDS三维议题试评_v0.2/PI联网评级.json",
+      "sha256": "b5850a3044b70dce9d0c617b1d3d88a03a9a616891ef1fb207118c4510ebe914"
+    }
+  ],
+  "source_scope": {
+    "total_sessions": 148,
+    "total_rows": 797,
+    "numbered_reports": 699,
+    "academic_reports": 606,
+    "selected_reports": 14,
+    "selected_topics": 10,
+    "unselected_academic_reports": 592,
+    "speakers": 14,
+    "complete_v3_ratings": 5,
+    "customer_pool_name_matches": 0,
+    "original_results_read": 0
+  },
+  "scope_note": "在已存完整日程中选择10个临床问题做颗粒度试评；不是全会重分类。未选条目不等于无关或低热。",
+  "rating_rule": {
+    "source": "/Users/zwx/Downloads/营销智能体/clinical-research-v3/SKILL.md",
+    "version": "V3.2",
+    "dimensions": [
+      [
+        "研究方向契合度",
+        30
+      ],
+      [
+        "学术产出质量",
+        25
+      ],
+      [
+        "科研转化潜力",
+        25
+      ],
+      [
+        "平台资源禀赋",
+        20
+      ]
+    ],
+    "grades": {
+      "A": "90–100",
+      "B": "75–89",
+      "C": "60–74",
+      "D": "<60"
+    },
+    "adaptation": "仅将契合度示例的病种换为糖尿病，分项满分与等级阈值保留；无足够证据不生成总分。 官方省级教育科研项目仅在8—13档作同层级参照，需导师确认；本人官方简介支持保守基金档，但未核个人国自然项目号仍列缺口。",
+    "customer_aggregation": "同议题按人员去重，Σ等级权重×总分/100（A3/B2/C1/D0）。D另列；资料缺失不计0。只有全员完成四维暂评才给议题完整分，否则只列已评级贡献小计与覆盖率。不是百分制、没有强/弱阈值。",
+    "head_pi": "客户综合高分不是独立学术头部结论；还需相关方向的代表工作、牵头角色和任职证据。",
+    "confidence_labels": "使用“日程记录/本地资料/待核”；不将证据核实ABC混同客户ABC。"
+  },
+  "method": {
+    "weights": {
+      "相关报告量": 40,
+      "重点报告覆盖": 25,
+      "报告机构覆盖": 20,
+      "专题覆盖": 15
+    },
+    "maxima": {
+      "n_reports": 3,
+      "key_report_units": 2,
+      "n_institutions": 3,
+      "n_sessions": 3
+    },
+    "variants": {
+      "默认": [
+        40,
+        25,
+        20,
+        15
+      ],
+      "等权": [
+        25,
+        25,
+        25,
+        25
+      ],
+      "偏报告量": [
+        50,
+        20,
+        15,
+        15
+      ]
+    },
+    "normalization": "分项=权重×log(1+原始量)/log(1+本轮10题最大量)；总分取未舍入分项之和后保留1位小数。重点报告量=3×大会报告+2×专题报告，论文发言在报告总量中计数。",
+    "assumptions": [
+      "原始报告编号去重；不同编号尚不能视为独立研究。",
+      "机构按日程原名去空白计数，未当作独立团队或外部验证。",
+      "多个相关性分项共同反映覆盖，存在相关性；权重和议题边界仍需导师校准。",
+      "不计PI会内角色代理分，避免替代V3客户评级。",
+      "背景报告不参与计数；一条报告本轮仅有一个主议题。",
+      "无跨年对照和已读结果，本轮不判断升温、持续热点或临床可用。",
+      "公司参与建议为研究环节初判，不纳入关注度分。"
+    ]
+  },
+  "source_review": [
+    {
+      "source": "/Users/zwx/Downloads/营销智能体/outputs/20261102_market_intel_template/_work/客户池_v10.json",
+      "result": "客户池按可动性分档，不是V3四维评级；仅做姓名精确匹配，所选报告人未命中。"
+    },
+    {
+      "source": "/Users/zwx/Documents/文献阅读/BrainHao-Study/wenxin/实习实践/代谢领域知识库/04 研究团队与客户画像地图.md",
+      "result": "研究入口地图，不含所选14位报告人的完整V3评分；既有团队线索未改写为客户需求。"
+    },
+    {
+      "source": "/Users/zwx/Downloads/营销智能体/outputs/20261104_customer_rating/医学科研情报工作台_客户评级版.html",
+      "result": "资金/机构联动工作台，不含所选报告人的完整四维评级。"
+    },
+    {
+      "source": "/Users/zwx/Downloads/营销智能体/clinical-research-v3/examples/peng_linyi_example.html",
+      "result": "示例报告，不是本届CDS所选报告人的评级证据；不导入示例分数。"
+    },
+    {
+      "source": "/Users/zwx/Documents/文献阅读/BrainHao-Study/wenxin/糖尿病热点知识地图/热点量化试评_2026-11-16/CDS三维议题试评_v0.2/PI联网评级.json",
+      "result": "本轮14人联网补证、35篇代表作逐篇PubMed核实、官方讲者/机构/省级基金与期刊指标；全评分5人，部分评分9人。"
+    }
+  ],
+  "next_review": [
+    "确认10个议题的范围与背景报告边界，特别是不同人群是否还需拆分。",
+    "校准关注度权重；单报告问题保留为候选，不因临床问题明确即称热点。",
+    "优先补肖新华、匡洪宇等人的本人基金原始负责记录，并核实青年报告人对应的实际PI；补齐后重算客户机会。",
+    "取得原始摘要/报告结果后评价Biomarker验证成熟度与临床增量。",
+    "公司技术人员确认样本、当前版本和可交付范围；确认后再决定Skill封装。"
+  ],
+  "unchanged_scope": [
+    "正式网站、正式源数据和GitHub",
+    "既有v0.1榜单与ADA内容",
+    "采集配置与定时任务",
+    "未创建热点量化Skill包"
+  ],
+  "pi_review": {
+    "date": "2026-11-16",
+    "version": "v0.2-PI联网补证",
+    "rating_skill": "clinical-research-v3 V3.2",
+    "complete": 5,
+    "partial": 9,
+    "grade_counts": {
+      "A": 0,
+      "B": 1,
+      "C": 3,
+      "D": 1
+    },
+    "selected_pubmed_papers": 35,
+    "speaker_profiles_read": 14,
+    "window": "2023-11-16至2026-11-16滚动三年；PubMed日期检索后逐篇核对正式年与Epub。已在线但卷期未来的论文标明两类日期，不把未来卷期当今天正式出版。",
+    "score_policy": "保留30/25/25/20及A90/B75/C60/D<60；证据支持的档内AI暂评，缺证不填0、不归一化成100分。单篇期刊IF用于Skill档位，不等于个人质量；合作作者不计为论文PI。",
+    "grant_policy": "官方本人简介可支持保守档位；国家基金未取得NSFC原始详情者不填写未核个人项目号，并列待补。省级基金负责人由政府/高校原始清单核对。研究参与与主持分开。",
+    "author_policy": "按原Skill有高IF论文的规则暂评分，作者排位单独展示；原Skill未要求仅第一/通讯作者计分，本轮没有擅自新增该门槛。",
+    "source_confidence": "官方单源事实标出来源与局限；未把同域复刻页或同一新闻转载视为两个独立证据。客户等级ABC/D与证据等级分开。",
+    "search_limits": [
+      "P07初检176条仅取60，扩展检索后已取全176条XML；按全名和本人机构筛入27条身份匹配候选。",
+      "P10初检62条取60，后按顺德/第八附院扩展70条；不是完整学术履历审计。",
+      "P02初检无命中；P08/P09/P14已用全名扩大检索，P08匹配2条、P09匹配1条，P14仍未唯一定位。",
+      "未新采集会议结果或其他会议；补采仅用于14人评级。CDS本届报告仍是日程题名级，科学转化成熟度未重评。",
+      "未登录NSFC项目库或向PI求证；官方简介不足以明确个人项目时，科研转化维度保留缺失。",
+      "Nature Medicine官方缓存52.3与第三方52.5存在数值差异，采用官方来源并保留缺口；均>15，不改变本轮档位。"
+    ],
+    "excluded_identity_cases": [
+      {
+        "person": "沈洁",
+        "reason": "Washington University骨科及上海六院病案/数据同名作者排除，不能用其他作者南医大地址归人。"
+      },
+      {
+        "person": "肖新华",
+        "reason": "南华大学同名专家和协和张茜导师页页首的基金不计入。"
+      },
+      {
+        "person": "毛百微",
+        "reason": "光学领域同名作者排除；保留本人上海一院肾脏研究机构文章。"
+      },
+      {
+        "person": "张静宜/万杰",
+        "reason": "同名且本人作者机构不匹配的Kailuan/海外/中医/肿瘤论文不计入。"
+      }
+    ]
+  }
+}

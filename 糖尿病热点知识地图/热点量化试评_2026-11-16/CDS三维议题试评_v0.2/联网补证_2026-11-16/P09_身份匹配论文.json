@@ -1,0 +1,26 @@
+[
+  {
+    "pmid": "42723850",
+    "journal": "Frontiers in endocrinology",
+    "dates": [
+      {
+        "Year": "2026",
+        "Month": null,
+        "Day": null,
+        "MedlineDate": null
+      },
+      {
+        "Year": "2026",
+        "Month": "08",
+        "Day": "27",
+        "MedlineDate": null
+      }
+    ],
+    "position": "1/8",
+    "title": "Extreme phenotype-derived machine learning reveals susceptibility and resilience signatures for severe diabetic retinopathy.",
+    "aff": [
+      "Department of Endocrinology, Beijing Diabetes Institute, Beijing Tongren Hospital, Capital Medical University, Beijing, China.",
+      "Beijing Diabetes Institute,Beijing Tongren Hospital, Capital Medical University, Beijing, China."
+    ]
+  }
+]

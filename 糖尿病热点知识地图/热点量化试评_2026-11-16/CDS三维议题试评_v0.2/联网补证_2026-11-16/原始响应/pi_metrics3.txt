@@ -1,0 +1,484 @@
+Impact and Information | Clinical Science | Portland Press (https://portlandpress.com/clinsci/pages/impact_and_information)
+citeturn119search0 [wordlim: 200] Crawled: yesterday; Impact Factor: 7.3 2025 Impact Factor, Journal Citation Reports (Web of Science Group, 2026) ... 5-year Impact Factor: 7.5 2025 Impact Factor, Journal Citation Reports (Web of Science Group, 2026)
+
+# Impact and information
+
+* * *
+
+Frequency: continuous article publication, bi-weekly issue publication, online only
+
+* * *
+
+Total article views in 2025: 688K
+
+* * *
+
+Impact Factor: 7.3 2025 Impact Factor, Journal Citation Reports (Web of Science Group, 2026)
+
+The Impact Factor is a measure of the average number of citations an article in the journal will receive within the first 2 years of publication. It is calculated by dividing the number of times articles were cited by the total number of articles that are citable.
+
+5-year Impact Factor: 7.5 2025 Impact Factor, Journal Citation Reports (Web of Science Group, 2026)
+
+Calculated as the number of times articles published in the past 5 years have been cited in the stated year divided by the number of articles which are citable.
+
+* * *
+
+Journal Citation Indicator: 1.19 2025 Impact Factor, Journal Citation Reports (Web of Science Group, 2026)
+
+The Journal Citation Indicator is a category-normalised metric. A Journal Citation Indicator of 1.0 means that published papers, across the journal, received citations equal to the average (mean) for the category.
+
+* * *
+
+Journal Ranking: 32/191 2025 (first quartile) in Medicine, Research & Experimental category, Journal Citation Reports (Web of Science Group, 2026) 
+
+* * *
+
+Cited half-life: 8.6 years
+
+The Cited Half-Life is the median age of the items in Clinical Science that were cited in the Journal Citation Reports year.
+
+Immediacy index: 1.1
+
+The Immediacy Index is the average number of times an article is cited in the year it is published.
+
+* * *
+
+Article Influence Score: 1.702
+
+The Article Influence Score aims to measure the influence of a journal's articles over the first 5 years following publication. It considers where articles are cited as well as how often, with a citation in a ‘higher influence’ journal weighted more than those in ‘lower influence’ journals.
+An article influence score over 1.00 indicates articles published in the journal have an above-average influence.
+
+* * *
+
+Median time from acceptance to online Version of Record publication in 2025: 30 days
+
+Clinical Science is abstracted/indexed in:
+
+  * BIOBASE
+  * CAB International
+  * Chemical Abstracts Service
+  * CNKI
+  * EBSCO
+  * Google Scholar
+  * MEDLINE
+  * NSTL
+  * PubMed Central (open access content)
+  * Scopus 
+  * Scimago
+  * Web of Science core collection: Science Citation Index Expanded
+    * Biological Abstracts
+    * BIOSIS Previews
+    * Current Contents Life Sciences
+    * Essential Science Indicators
+
+Clinical Science is digitally archived in:
+
+  * CLOCKSS
+  * Portico--------------------------------------------------------------------------------
+Journal Metrics | Nature Portfolio (https://www.nature.com/nature-portfolio/about-journals/journal-metrics)
+citeturn119search1 [wordlim: 200] Crawled: yesterday; ## 2025 Journal Metrics ... Nature Research Journals  | Journal Impact Factor  | 5-year Journal Impact Factor  | Immediacy index  | Eigenfactor® score  | Article Influence Score
+
+# Journal Metrics
+
+This page provides information on peer-review performance and citation metrics for the Nature Portfolio journals. Data are collected annually for full calendar years.
+
+Nature Portfolio is a signatory of San Francisco Declaration on Research Assessment (see here for more information about our endorsement). We believe that Impact Factor is just one of a number of metrics that can be used to evaluate a journal, and a small number of highly cited papers can have a disproportionate effect on the mean number of citations per paper.
+
+## 2025 Peer Review Metrics
+
+Submission to first editorial decision: the median time (in days) from when a submission is received to when a first editorial decision about whether the paper was sent out for formal review or not is sent to the authors.
+
+Submission to Accept: the median time (in days) from the published submission date to the final editorial acceptance date.
+
+Multidiscipliary Journals  | Submission to First Editorial Decision (median, days)  |  Submission to Accept (median, days)
+Nature  | 8  | 321
+Nature Communications  | 9  | 242
+Scientific Reports  | 12  | 138
+Scientific Data  | 11  | 162
+
+Nature Research Journals  | Submission to First Editorial Decision (median, days)  |  Submission to Accept (median, days)
+Nature Aging  | 9  | 220
+Nature Astronomy  | 13  | 176
+Nature Biomedical Engineering  | 9  | 444
+Nature Biotechnology  | 4  | 185
+Nature Cancer  | 8  | 242
+Nature Cardiovascular Research  | 5  | 232
+Nature Catalysis  | 25  | 273
+Nature Cell Biology  | 8  | 260
+Nature Chemical Biology  | 11  | 258
+Nature Chemical Engineering  | 7  | 54
+Nature Chemistry  | 6  | 234
+Nature Cities  | 9  | 203
+Nature Climate Change  | 6  | 175
+Nature Computational Science  | 13  | 193
+Nature Ecology & Evolution  | 5  | 173
+Nature Electronics  | 10  | 268
+Nature Energy  | 4  | 149
+Nature Food  | 12  | 227
+Nature Genetics  | 11  | 322
+Nature Geoscience  | 9  | 247
+Nature Health  | 5  | 97
+Nature Human Behaviour  | 6  | 252
+Nature Immunology  | 5  | 180
+Nature Machine Intelligence  | 10  | 231
+Nature Materials  | 9  | 204
+Nature Medicine  | 4  | 117
+Nature Metabolism  | 7  | 204
+Nature Methods  | 10  | 276
+Nature Mental Health  | 20  | 232
+Nature Microbiology  | 7  | 241
+Nature Nanotechnology  | 11  | 222
+Nature Neuroscience  | 9  | 399
+Nature Photonics  | 18  | 208
+Nature Physics  | 11  | 195
+Nature Plants  | 10  | 192
+Nature Sensors  | 22  | 163
+Nature Structural & Molecular Biology  | 8  | 198
+Nature Sustainability  | 14  | 241
+Nature Synthesis  | 6  | 189
+Nature Water  | 6  | 141
+
+Nature Reviews Microbiology  | 3  | 155
+Nature Reviews Molecular Cell Biology  | 4  | 133
+Nature Reviews Nephrology  | 16  | 156
+Nature Reviews Neurology  | 14  | 186
+Nature Reviews Neuroscience  | 17  | 152
+Nature Reviews Physics  | 4  | 120
+Nature Protocols  | 13  | 227
+Nature Reviews Psychology  | 6  | 137
+Nature Reviews Rheumatology  | 12  | 93
+Nature Reviews Urology  | 10  | 138
+
+Communications Journals  | Submission to First Editorial Decision (median, days)  |  Submission to Accept (median, days)
+Communications Biology  | 6  | 217
+Communications Chemistry  | 7  | 140
+Communications Earth & Environment  | 8  | 184
+Communications Engineering  | 7  | 211
+Communications Materials  | 4  | 146
+Communications Medicine  | 9  | 288
+Communications Physics  | 8  | 170
+Communications Psychology  | 7  | 200
+Communications Sustainability  | 8  | 158
+
+
+## 2025 Journal Metrics
+
+On this page you will find a suite of citation-based metrics for Nature Portfolio journals, produced by Clarivate Analytics. Brief definitions for each of the metrics used to measure the influence of our journals are included below the tables. Article-level metrics are also available on each article page, allowing readers to track the reach of individual papers.
+
+Commentaries on Impact Factors and their use and misuse can be found in our editorials and other content, going back for many years, links to a sample of which are provided at the end of the page.
+
+For recently launched journals, metrics are calculated from available citation data. If a metric uses multiple years of data, new journals may have partial metrics.
+
+While the metrics presented here are not intended to be a definitive list, we hope that they will prove to be informative. The page is updated on an annual basis.
+
+Multidisciplinary journals  | Journal Impact Factor  | 5-year Journal Impact Factor  | Immediacy index  | Eigenfactor® score  | Article Influence Score
+Nature  | 56.1  | 56.7  | 13.1  | 0.97604  | 22.693
+Nature Communications  | 18.1  | 18.9  | 3.8  | 1.64368  | 5.600
+Scientific Reports  | 4.9  | 4.8  | 1.2  | 0.91149  | 1.006
+Scientific Data  | 7.2  | 9.3  | 1.1  | 0.07285  | 2.562
+
+Nature Research Journals  | Journal Impact Factor  | 5-year Journal Impact Factor  | Immediacy index  | Eigenfactor® score  | Article Influence Score
+Nature Aging  | 25.0  | 26.0  | 5.1  |  0.03018  | 10.221
+Nature Astronomy  | 15.2  | 14.9  | 4.2  | 0.0309  | 5.724
+Nature Biomedical Engineering  | 26.3  | 32.6  | 4.2  | 0.04101  | 9.920
+Nature Biotechnology  | 44.5  | 50.9  | 5.6  | 0.14165  | 24.679
+Nature Cancer  | 28.0  | 31.2  | 7.0  | 0.04433  | 13.041
+Nature Cardiovascular Research  | 12.6  | 13.5  | 2.8  | 0.01066  | 5.916
+Nature Catalysis  | 48.3  | 51.7  | 8.7  | 0.05822  | 14.591
+Nature Cell Biology  | 22.7  | 23.0  | 4.1  | 0.04829  | 9.934
+Nature Chemical Biology  | 15.8  | 16.2  | 4.2  | 0.03811  | 6.446
+Nature Chemical Engineering  | 29.7  | 29.7  | 6.2  | 0.00351  | 8.437
+Nature Chemistry  | 24.5  | 24.0  | 7.3  | 0.04848  | 7.614
+Nature Cities  | 15.3  | 15.3  | 3.1  | 0.00236  | 3.857
+Nature Climate Change  | 26.9  | 35.6  | 5.8  | 0.06288  | 12.071
+Nature Computational Science  | 20.3  | 21.9  | 2.9  | 0.01581  | 7.178
+Nature Ecology & Evolution  | 17.1  | 18.5  | 3.0  | 0.04493  | 6.973
+Nature Electronics  | 42.3  | 46.4  | 6.8  | 0.04226  | 12.891
+Nature Energy  | 70.1  | 66.6  | 15.2  | 0.08175  | 19.007
+Nature Food  | 24.7  | 31.7  | 6.6  | 0.02799  | 8.578
+Nature Genetics  | 25.5  | 35.3  | 5.3  | 0.11710  | 17.396
+Nature Geoscience  | 20.6  | 21.7  | 3.4  | 0.04395  | 8.130
+Nature Human Behaviour  | 18.8  | 21.2  | 4.0  | 0.04882  | 8.701
+Nature Immunology  | 26.5  | 29.1  | 5.1  | 0.06551  | 12.203
+Nature Machine Intelligence  | 29.8  | 36.0  | 6.0  | 0.04475  | 11.026
+Nature Materials  | 38.0  | 44.6  | 14.9  | 0.08839  | 13.088
+Nature Medicine  | 52.3  | 52.4  | 16.7  | 0.21143  | 21.969
+Nature Metabolism  | 27.5  | 28.5  | 6.6  | 0.04762  | 10.518
+Nature Methods  | 28.2  | 52.4  | 5.5  | 0.15503  | 24.403
+Nature Mental Health  | 9.3  | 9.3  | 1.8  | 0.00527  | 3.365
+Nature Microbiology  | 18.7  | 20.8  | 5.1  | 0.05134  | 8.063
+Nature Nanotechnology  | 37.7  | 42.6  | 7.8  | 0.07925  | 12.327
+Nature Neuroscience  | 20.3  | 24.9  | 3.8  | 0.07588  | 11.916
+Nature Photonics  | 38.1  | 39.5  | 7.2  | 0.05710  | 12.028
+Nature Physics  | 18.0  | 21.5  | 6.0  | 0.06564  | 8.312
+Nature Plants  | 15.0  | 18.2  | 4.2  | 0.03279  | 6.213
+Nature Structural and Molecular Biology  | 10.1  | 11.3  | 2.6  | 0.03408  | 6.140
+Nature Sustainability  | 32.1  | 35.4  | 6.8  | 0.05023  | 9.842
+Nature Synthesis  | 22.7  | 23.7  | 6.6  | 0.01781  | 6.838
+Nature Water  | 30.7  | 30.7  | 9.2  | 0.01069  | 8.024
+
+Communications Journals  | Journal Impact Factor  | 5-year Impact Factor  | Immediacy index  | Eigenfactor® score  | Article Influence Score
+Communications Biology  | 5.8  | 6.3  | 1.2  | 0.09439  | 1.998
+Communications Chemistry  | 6.9  | 7.1  | 1.4  | 0.01214  | 1.616
+Communications Earth & Environment  | 9.3  | 10.4  | 1.9  | 0.04660  | 3.416
+Communications Engineering  | 7.0  | 7.1  | 1.4  | 0.00364  | 1.625
+Communications Materials  | 9.1  | 9.7  | 1.6  | 0.01098  | 2.120
+Communications Medicine  | 7.4  | 7.5  | 1.2  | 0.01090  | 2.337
+Communications Physics  | 5.5  | 6.2  | 1.5  | 0.02171  | 1.835
+Communications Psychology  |  6.4   | 6.4  | 1.0  | 0.00264  |  2.494 
+
+npj Series  | Journal Impact Factor  | 5-year Journal Impact Factor  | Immediacy index  | Eigenfactor® score  | Article Influence Score
+npj 2D Materials and Applications  | 9.2  | 11.6  | 2.1  | 0.00667  | 2.334
+npj Aging  | 13.0  | 12.2  | 1.1  | 0.00245  | 3.244
+npj Antimicrobials and Resistance  | 13.6  | 13.6  | 2.6  |  0.00151  | 3.036
+npj Biodiversity  | 10.7  | 10.5  | 1.4  | 0.00125  | 3.020
+npj Biofilms & Microbiomes  | 11.4  | 11.7  | 2.3  | 0.00980  | 2.606
+npj Breast Cancer  | 8.4  | 8.4  | 1.3  | 0.01155  | 2.874
+npj Clean Water  | 11.0  | 13.0  | 3.7  | 0.00552  | 2.048
+npj Climate Action  | 5.8  |    | 1.5  | 0.00205  |  
+npj Climate and Atmospheric Science  | 9.6  | 10.5  | 2.3  | 0.01800  | 3.244
+npj Computational Materials  | 13.1  | 13.7  | 2.7  | 0.02682  | 3.064
+npj Digital Medicine  | 18.0  | 19.7  | 2.9  | 0.04123  | 5.375
+npj Flexible Electronics  | 15.4  | 17.0  | 3.3  | 0.00708  | 3.117
+npj Genomic Medicine  | 5.3  | 5.5  | 0.9  | 0.00541  | 2.149
+npj Materials Degradation  | 7.5  | 8.9  | 1.6  | 0.00457  | 1.474
+npj Mental Health Research  | 9.1  | 8.3  | 0.6  |  0.00177  | 2.410
+npj Microgravity  | 4.9  | 5.5  | 0.7  | 0.00323  | 1.230
+npj Ocean Sustainability  | 8.8  | 10.1  | 1.4  | 0.00161  | 3.181
+npj Parkinson's Disease  | 8.5  | 9.3  | 1.5  | 0.01349  | 2.557
+npj Precision Oncology  | 9.9  | 9.6  | 1.9  | 0.01434  | 2.964
+npj Primary Care Respiratory Medicine  | 4.7  | 4.0  | 1.0  | 0.00177  | 1.032
+npj Quantum Information  | 9.0  | 9.1  | 1.9  | 0.01424  | 2.828
+npj Quantum Materials  | 6.6  | 6.0  | 1.9  | 0.00668  | 1.813
+npj Regenerative Medicine  | 7.0  | 8.1  | 1.6  | 0.00425  | 1.979
+npj Science of Food  | 9.7  | 9.6  | 1.5  | 0.00325  | 1.580
+npj Science of Learning  | 4.3  | 5.0  | 1.3  | 0.00288  | 1.748
+npj Systems Biology and Applications  | 4.4  | 4.2  | 0.9  | 0.00317  | 1.230
+npj Urban Sustainability  | 10.9  | 12.5  | 1.4  | 0.00357  | 2.858
+npj Vaccines  | 7.2  | 6.6  | 1.4  | 0.01222  | 1.964
+npj Viruses  | 3.5  | 3.5  | 1.5  | 0.00055  | 0.957
+
+## Definitions
+
+### Journal Impact Factor
+
+The Journal Impact Factor is defined as all citations to the journal in the current JCR year to items published in the previous two years, divided by the total number of scholarly items (these comprise articles, reviews, and proceedings papers) published in the journal in the previous two years. Though not a strict mathematical average, the Journal Impact Factor of 1.0 means that, on average, the articles published one or two years ago have been cited one time. A Journal Impact Factor of 2.5 means that, on average, the articles published one or two years ago have been cited two and a half times. The citing works may be articles published in the same journal. However, most citing works are from different journals, proceedings, or books indexed in Web of Science Core Collection. (Source: Clarivate)
+
+### 5-year Journal Impact Factor
+
+The 5-year journal Impact Factor, available from 2007 onward, is the average number of times articles from the journal published in the past five years have been cited in the JCR year. --------------------------------------------------------------------------------
+Impact and metrics | Transition to open | Portland Press (https://portlandpress.com/transition-to-open/pages/impact_and_metrics)
+citeturn119search2 [wordlim: 200] Crawled: 2 days ago; 5-year Impact Factor: 3.9 ... Clinical Science ... In 2022 our articles were downloaded almost 5.5 million times and received over 21,000 Altmetric mentions.
+
+Biochemical Society Transactions
+
+Impact Factor: 4.3
+5-year Impact Factor: 4.4
+Immediacy index: 0.7
+Cited half-life: 9.5 years
+SNIP: 0.972
+Full-text downloads: 1 million
+Bioscience Reports
+
+Impact Factor: 4.7
+5-year Impact Factor: 3.4
+Immediacy index: 1.0
+Cited half-life: 5.4 years
+SNIP: 0.872
+Full-text downloads: 1.6 million
+
+Clinical Science
+
+Impact Factor: 7.7
+5-year Impact Factor: 6.4
+Immediacy index: 1.3
+Cited half-life: 8.3 years
+SNIP: 1.298
+Full-text downloads: 602k
+Essays in Biochemistry
+
+Impact Factor: 5.7
+5-year Impact Factor: N/A
+Immediacy index: 1.3
+Cited half-life: 5.9 years
+SNIP: 1.308
+Full-text downloads: 513k
+
+## Article views and mentions
+
+ 
+
+The Biochemical Society’s journals are widely read across the globe. All published articles display individual download and citation metrics, and we are partnered with Altmetric to measure attention and engagement of published research. Altmetric compiles metrics and qualitative data to complement traditional, citation-based metrics. Sourced from across the web, altmetrics indicate how often articles are discussed and used around the world.
+
+In 2022 our articles were downloaded almost 5.5 million times and received over 21,000 Altmetric mentions.--------------------------------------------------------------------------------
+Browse Calls for Papers | ScienceDirect.com (https://www.sciencedirect.com/browse/calls-for-papers?subject=%24)
+citeturn119search3 [wordlim: 200] Crawled: last month; Journal of Pharmaceutical Analysis • Impact Factor 11.2 • CiteScore 12.0
+
+Guest editors: Ferran Albajar, Laurie Porte, Franco Gandini
+
+Fusion Engineering and Design • Impact Factor 1.9 • CiteScore 3.2
+
+Submission deadline: 22 September 2026
+
+  * AI in Pharmaceutical Analysis and Drug Development
+
+Guest editors: Feng Zhu and Caisheng Wu
+
+Journal of Pharmaceutical Analysis • Impact Factor 11.2 • CiteScore 12.0
+
+Submission deadline: 30 June 2027
+
+  * Medicinal Chemistry Approaches to Antiviral Discovery and Resistance
+
+Guest editors: Jun Wang and Subhash Vasudevan
+
+Antiviral Research • Impact Factor 4.3 • CiteScore 7.8
+
+Submission deadline: 31 December 2026
+
+  * Omics approaches to regulatory processes in nut crops: From stress responses to quality traits
+
+Guest editors: Dr. Aljaž Medič, Dr. Nataša Štajner, Dr. Pedro Martinez-Gómez
+
+Scientia Horticulturae • Impact Factor 4.6 • CiteScore 9.1
+
+Submission deadline: 02 September 2027
+
+  * Special Issue on Rare Earth Ions Doped Scintillator for X-ray Imaging
+--------------------------------------------------------------------------------
+Landscape and research trends of triglyceride-glucose index with health: a bibliometric analysis (https://link.springer.com/article/10.1007/s44337-025-00311-y)
+citeturn119search4 [wordlim: 200] Published: 1.1 years ago; Crawled: 2 months ago; Cardiovascular Diabetology (n = 202) was the leading journal in terms of both publication count and impact factor (IF = 8.5), followed by Frontiers in Endocrinology (n = 104) and Lipids in Health and Disease (n = 72), accounting for 7.39% and 5.11% of the total research output, respectively.
+### 3.5 Published journal analysis
+
+The relevant research in this field has been disseminated across 360 distinct journals. Table 4 illustrated the top ten journals based on publication frequency. These leading journals collectively published 597 articles, representing 42.26% of the total publications. Subsequently, a threshold of at least three publications per journal was established to generate a density map (Fig. 6A), where darker shades indicate a higher number of publications.
+
+Table 4 Top 10 outstanding journals contributing to publications on TyG index
+
+Fig. 6
+
+Image: Fig. 6
+
+Full size image
+
+A Journal publication density map. B The dual-map overlay of journals research
+
+Cardiovascular Diabetology (n = 202) was the leading journal in terms of both publication count and impact factor (IF = 8.5), followed by Frontiers in Endocrinology (n = 104) and Lipids in Health and Disease (n = 72), accounting for 7.39% and 5.11% of the total research output, respectively. --------------------------------------------------------------------------------
+Journal of Pharmaceutical Analysis | Vol 13, Issue 3, Pages 223-322 (March 2023) | ScienceDirect.com by Elsevier (https://www.sciencedirect.com/journal/journal-of-pharmaceutical-analysis/vol/13/issue/3)
+citeturn119search5 [wordlim: 200] Crawled: 5 months ago; # Journal of Pharmaceutical Analysis ... 8.9 Impact Factor
+
+# Journal of Pharmaceutical Analysis
+
+Open access
+
+12.0 CiteScore
+
+8.9 Impact Factor
+
+Submit your articleGuide for authors
+
+## Volume 13, Issue 3
+
+Pages 223-322 (March 2023)
+
+Download full issue
+
+### Contents
+
+  * Review papers
+  * Original articles
+
+Receive an update when the latest issues in this journal are published
+
+Sign in to set up alerts
+
+  1.     1. [Input]select article Editorial Board
+
+https://doi.org/10.1016/S2095-1779(23)00028-X
+
+Editorial board Open access
+
+Editorial Board
+
+    
+    Page ii
+    View PDF
+  2. ### Review papers
+
+    1. [Input]select article Personal glucose meters coupled with signal amplification technologies for quantitative detection of non-glucose targets: Recent progress and challenges in food safety hazards analysis
+
+https://doi.org/10.1016/j.jpha.2023.02.005
+
+Review article Open access
+
+Personal glucose meters coupled with signal amplification technologies for quantitative detection of non-glucose targets: Recent progress and challenges in food safety hazards analysis
+--------------------------------------------------------------------------------
+LC/MS-based untargeted lipidomics reveals lipid signatures of nonpuerperal mastitis (https://link.springer.com/article/10.1186/s12944-023-01887-z)
+citeturn119search6 [wordlim: 200] Published: 3.3 years ago; Crawled: 2 months ago; Recent advancements in lipidomics analysis have facilitated the identification and quantification of lipid species in both healthy and diseased states [15], thereby enabling the discovery of disease biomarkers. ... Existing evidence suggests that saturated LPC increases proinflammatory cytokines, exacerbates inflammation and has been implicated in inflammatory diseases [31, 32]. ... The work was supported by a research grant from The Science and Technology Commission of Shanghai Municipality to Hua Wan (19401934000). ... Exact p values, impact factor values and proportion of altered lipids for each pathway ... Lipids Health Dis 22, 122 (2023). https://doi.org/10.1186/s12944-023-01887-z
+Clearance No for Ethical approval: 2019-702-57.
+
+### Consent for publication
+
+All the participants signed the consent for publication in the informed consent in our institutional consent form.
+
+### Competing interests
+
+The authors declare no competing interests.
+
+## Electronic supplementary material
+
+Below is the link to the electronic supplementary material.
+
+### Additional file 1 (download DOCX )
+
+: Fig S1. PCA according to HDL
+
+### Additional file 2 (download DOCX )
+
+: Supplementary Table S1. Thirty-five differential metabolites between NPM patients and controls
+
+### Additional file 3 (download DOCX )
+
+: Supplementary Table S2. Exact p values, impact factor values and proportion of altered lipids for each pathway
+
+### Additional file 4 (download PDF )
+
+: Fig S2. PCA score plots of the 35 identified lipids in 3D mode
+
+## About this article
+
+### Cite this article
+
+Chen, X., Shao, S., Wu, X. et al. LC/MS-based untargeted lipidomics reveals lipid signatures of nonpuerperal mastitis. Lipids Health Dis 22, 122 (2023). https://doi.org/10.1186/s12944-023-01887-z
+
+  * Received: 10 April 2023
+
+  * Accepted: 28 July 2023
+
+  * Published: 08 August 2023
+
+  * Version of record: 08 August 2023
+
+  * DOI (Digital Object Identifier): https://doi.org/10.1186/s12944-023-01887-z
+
+### Keywords
+
+  * Nonpuerperal mastitis
+  * Inflammatory disease
+  * Lipidomics
+  * Triacylglycerol
+  * Arachidonic acid--------------------------------------------------------------------------------
+Analysis of global research trends in essential oils: A bibliometric study of the top 100 most cited articles in the scopus database (https://www.sciencedirect.com/science/article/abs/pii/S2950199726000017)
+citeturn119search7 [wordlim: 200] Published: 8 months ago; Crawled: 2 months ago; 46  | JOURNAL OF PHARMACEUTICAL ANALYSIS  | 6.1  | 1  | 4831 ... 48  | JOURNAL OF STORED PRODUCTS RESEARCH  | 2.7  | 1  | 689
+--------------------------------------------------------------------------------
+ISSN exercise & sport nutrition review: research & recommendations (https://link.springer.com/article/10.1186/1550-2783-7-7?trk=article-ssr-frontend-pulse_little-text-block)
+citeturn119search8 [wordlim: 200] Published: 16.8 years ago; Crawled: today; Two ways to determine a journal's reputation is either identifying the publisher or the "impact factor" of the journal. ...   * Have the research findings been replicated at several different labs?
+--------------------------------------------------------------------------------
+Journal of Pharmaceutical Analysis | Spectroscopic/chromatographic technology | ScienceDirect.com by Elsevier (https://www.sciencedirect.com/special-issue/100MX03HMFN)
+citeturn119search9 [wordlim: 200] Published: 3.6 years ago; Crawled: 5 months ago; Research article Open access ... Quantitative analysis of 3-isopropylamino-1,2-propanediol as a degradation product of metoprolol in pharmaceutical dosage forms by HILIC-CAD
+--------------------------------------------------------------------------------
+Opportunities and challenges in social pharmacy and pharmacy practice research (https://www.sciencedirect.com/science/article/abs/pii/S1551741113000533)
+citeturn119search10 [wordlim: 200] Published: 12.9 years ago; Crawled: 3 months ago; A total of 285 journals comprising 316,089 articles (median 70.4 articles [IQR 34.0–141.0] per journal per year) were included for the analyses. The journals were indexed in Scopus (90.2%) with a median CiteScore of 1.16 (IQR 0.28–2.55); in SCIe/SSCIe (44.6%) with a median impact factor of 2.410 (IQR 1.629–3.316); and in PubMed (65.7%). The DHC of active words produced three major groups (A, B, C) with two lexical classes each, representing six Pharmacy subareas depicted by the FCA as: Group A comprising ‘Cell Pharmacology’ (20 journals) and ‘Molecular Pharmacology’ (46 journals), Group B with ‘Clinical Pharmacology’ (57 journals) and ‘Pharmacy Practice’ (67 journals), and Group C with ‘Pharmaceutics’ (35 journals) and ‘Pharmaceutical Analysis’ (60 journals).
+--------------------------------------------------------------------------------
+Serum retinol binding protein 4 is negatively related to beta cell function in Chinese women with non-alcoholic fatty liver disease: a cross-sectional study (https://link.springer.com/article/10.1186/1476-511X-12-157)
+citeturn119search11 [wordlim: 200] Published: 13.1 years ago; Crawled: last month; Grant support: This work was supported by National Natural Science Foundation of China Grant 81200627 (H.M.Y.) and 81270933 (X.G.), National Basic Research Program of China (2012CB524906 to X.G.) http://www.973.gov.cn/Default_3.aspx). ... Serum retinol binding protein 4 is negatively related to beta cell function in Chinese women with non-alcoholic fatty liver disease: a cross-sectional study. Lipids Health Dis 12, 157 (2013). https://doi.org/10.1186/1476-511X-12-157
+

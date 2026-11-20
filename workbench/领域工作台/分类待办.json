@@ -1,0 +1,95 @@
+{
+  "paper_extensions": [
+    {
+      "topic_id": "DM:PAPER:L46",
+      "name": "生活方式和体成分与预防结局",
+      "source_issue_ids": [
+        "LIT20261117:L46"
+      ],
+      "status": "保留论文独立议题，会议对应待核"
+    },
+    {
+      "topic_id": "DM:PAPER:L49",
+      "name": "日常照护、睡眠与心理体验",
+      "source_issue_ids": [
+        "LIT20261117:L49"
+      ],
+      "status": "保留论文独立议题，会议对应待核"
+    },
+    {
+      "topic_id": "DM:PAPER:L23",
+      "name": "肠促胰素及α细胞的生理调节",
+      "source_issue_ids": [
+        "LIT20261117:L23"
+      ],
+      "status": "保留论文独立议题，会议对应待核"
+    },
+    {
+      "topic_id": "DM:PAPER:L50",
+      "name": "T1D起病年龄与长期并发症",
+      "source_issue_ids": [
+        "LIT20261117:L50"
+      ],
+      "status": "保留论文独立议题，会议对应待核"
+    },
+    {
+      "topic_id": "DM:PAPER:L17",
+      "name": "低血糖风险与短期脑功能影响",
+      "source_issue_ids": [
+        "LIT20261117:L17"
+      ],
+      "status": "保留论文独立议题，会议对应待核"
+    },
+    {
+      "topic_id": "DM:PAPER:L16",
+      "name": "T1D酮症酸中毒风险如何提前识别",
+      "source_issue_ids": [
+        "LIT20261117:L16"
+      ],
+      "status": "保留论文独立议题，会议对应待核"
+    },
+    {
+      "topic_id": "DM:PAPER:L47",
+      "name": "医疗费用与胰岛素可及性",
+      "source_issue_ids": [
+        "LIT20261117:L47"
+      ],
+      "status": "保留论文独立议题，会议对应待核"
+    },
+    {
+      "topic_id": "DM:PAPER:L41",
+      "name": "肝糖代谢的非胰岛素调控",
+      "source_issue_ids": [
+        "LIT20261117:L41"
+      ],
+      "status": "保留论文独立议题，会议对应待核"
+    }
+  ],
+  "biomarkers": [
+    {
+      "biomarker_id": "BM_MASLD_METAB",
+      "name": "MASLD肝脏小分子代谢组",
+      "context_ids": [
+        "CTX_MASLD_LIVER"
+      ],
+      "status": "来源尚未建立准确主议题关联；待分类"
+    },
+    {
+      "biomarker_id": "BM_APPL1_GENETICS",
+      "name": "APPL1变异线索（位点待核）",
+      "context_ids": [
+        "CTX_APPL1_MODY"
+      ],
+      "status": "来源尚未建立准确主议题关联；待分类"
+    },
+    {
+      "biomarker_id": "BM_PREDIABETES_SUBTYPES",
+      "name": "糖尿病前期聚类亚型特征",
+      "context_ids": [
+        "CTX_PRED_EGFR"
+      ],
+      "status": "来源尚未建立准确主议题关联；待分类"
+    }
+  ],
+  "owner": "分类结构由我们维护；具体来源与信息增量由WorkBuddy提交，保留证据后复核。"
+}

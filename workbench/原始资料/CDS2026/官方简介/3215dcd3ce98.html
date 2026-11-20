@@ -1,0 +1,391 @@
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <meta name="renderer" content="webkit">
+    
+    <title>讲者简介-中华医学会第二十八次糖尿病学术会议</title>
+    <meta name="description">
+    <meta name="keywords">
+
+    
+    <link href="https://file-bj.mscps.com/static/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://file-bj.mscps.com/static/utils/css/common.css">
+    <script src="https://file-bj.mscps.com/static/utils/js/jquery.min.js" type="text/javascript"></script>
+
+    
+    <script src="https://file-bj.mscps.com/static/plugins/vue/2.6.14/vue.min.js"></script>
+
+    <link href="https://file-bj.mscps.com/static/pc/speaker/speaker-detail.css" rel="stylesheet" />
+    <link href="https://file-bj.mscps.com/static/utils/css/share.min.css" rel="stylesheet" />
+
+    <script src="https://file-bj.mscps.com/static/plugins/JsQrcode/utf.js"></script>
+    <script src="https://file-bj.mscps.com/static/plugins/JsQrcode/jquery.qrcode.js"></script>
+
+    <style>
+        /*日程主题色*/
+        .theme, .li-item.on, .li-item:hover {
+            background-color: rgba(4, 55, 134, 1) !important;
+        }
+
+       .proram-item-table, .btn-default, .program-box .program-item .proram-item-table tbody tr:nth-child(odd) {
+            border-color: rgba(4, 55, 134, 1) !important;
+        }
+
+        .btn-default, .pit-link {
+            color: rgba(4, 55, 134, 1) !important;
+        }
+
+        /*简介换行*/
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+
+    
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="container" id="app_speaker">
+        <div class="banner-box">
+            <div class="bannerimg">
+                <img src="https://file-bj.mscps.com/webupload/21363/meetingInfo/89geqy121_70.jpg" />
+            </div>
+        </div>
+
+        <div class="bread container-padding">
+            <div class="left bread-content">
+                您的位置：<a href="https://cds26.tiemeeting.com/CN">首页</a> &gt; <span>
+                    <a href="/CN/Program/Details">会议日程</a>
+                </span>
+            </div>
+            <div class="right break-right">
+                <a href="#" class="btn-default" id="print"><i class="fa fa-print"></i>  打印</a>
+                    <a href="/CN/Program/Preview" class="btn-default">
+                        <i class="fa fa-calendar"></i>
+                        查看日程一览表
+                    </a>
+                <a href="/CN/Program/Details" class="btn-default"><i class="fa fa-calendar"></i>日程详情</a>
+                <a href="/CN/Programme/SpeakerList" target="_blank" class="btn-default"><i class="fa fa-user-md"></i> 讲者主持列表</a>
+            </div>
+        </div>
+
+        <div class="speaker-person container-padding">
+            <div class="clearfix">
+                
+                <div class="left" style="background-size: cover; background-position: center center; background-repeat: no-repeat; background-image: url('https://file-bj.mscps.com/webupload/21363/Programm/UserImg/8arm37187_29.jpg?imageMogr2/thumbnail/750x/interlace/0'); width:175px;height:250px;">
+                </div>
+                <div class="speaker-content">
+                    <div class="speaker-h1">
+                        <div class="speaker-title">
+                            <span>
+侯新国                            </span>
+                        </div>
+                        <div class="speaker-share">
+                            <span class="speaker-share-text">分享到：</span>
+                            <div class="speaker-share-content share-component social-share" id="share">
+                                <a class="social-share-icon icon-qzone" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://cds26.tiemeeting.com/CN/Programme/Speaker?uid=1RvwM&amp;title=中华医学会第二十八次糖尿病学术会议&amp;desc=中华医学会第二十八次糖尿病学术会议&amp;site=中华医学会第二十八次糖尿病学术会议" target="_blank">
+                                    <i class=""></i>
+                                </a>
+
+                                <a class="social-share-icon icon-weibo" href="http://service.weibo.com/share/share.php?url=http://cds26.tiemeeting.com/CN/Programme/Speaker?uid=1RvwM&amp;title=中华医学会第二十八次糖尿病学术会议&amp;pic=https://file-bj.mscps.com/webupload/21363/meetingInfo/89geqy121_70.jpg" target="_blank"></a>
+
+                                <a class="social-share-icon icon-qq" href="http://connect.qq.com/widget/shareqq/index.html?url=http://cds26.tiemeeting.com/CN/Programme/Speaker?uid=1RvwM&amp;title=中华医学会第二十八次糖尿病学术会议&amp;desc=中华医学会第二十八次糖尿病学术会议&amp;pics=https://file-bj.mscps.com/webupload/21363/meetingInfo/89geqy121_70.jpg" target="_blank"></a>
+
+                                <a class="social-share-icon icon-wechat" href="javascript:;" tabindex="-1">
+                                    <div class="wechat-qrcode">
+                                        <h4>微信扫一扫：分享</h4>
+                                        <div class="qrcode" id="RQCode">
+                                            <img id="image" />
+                                        </div>
+                                        <div class="help">
+                                            <p>微信里点“发现”，扫一下</p>
+                                            <p>二维码便可将本文分享至朋友圈。</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                        <div class="speaker-content-item">
+                            <label class="speaker-label left">单位：</label>
+                            <div class="speaker-content-name">
+                                山东大学齐鲁医院
+                            </div>
+                        </div>
+                                            <div class="speaker-content-item">
+                            <label class="speaker-label left">简历：</label>
+                            <div class="speaker-content-name js_content_desc speaker-content-desc">
+                                <pre>
+主任医师、博士生导师
+山东大学齐鲁医院内分泌与代谢病科主任
+中华医学会糖尿病分会常务委员
+山东省医学会糖尿病分会主任委员
+
+
+</pre>
+
+                                <a href="javascript:;" data-close="收起" data-open="展开" class="js_more css-more">
+                                    
+                                </a>
+                            </div>
+                        </div>
+
+                    <div class="speaker-info-box" style="display:none;">
+                        <div class="left speaker-info-left">
+                                                                                </div>
+                    </div>
+                </div>
+            </div>
+
+            <h5 class="speaker-title-h5">学术任务如下</h5>
+            <table class="proram-item-table">
+                <thead>
+                    <tr>
+                        <th width="90">日期 </th>
+                        <th width="90">时间 </th>
+                        <th width="150">会场</th>
+                        <th width="20%">Session</th>
+                            <th width="100" style="text-align:center;">
+                                发言类型
+                            </th>
+                        <th width="100" style="text-align:center;">角色</th>
+                        <th width="25%">讲题</th>
+                            <th width="15%">单位</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr>
+                            <td>2026-11-19</td>
+                            <td>
+                                12:30-13:00
+                            </td>
+                            <td>
+                                会场16-多功能厅E2
+                            </td>
+                            <td>
+                                <p>
+                                    GLP-1RA类似物III期临床研究与代谢价值解读
+                                </p>
+                            </td>
+
+                                <td style="text-align:center;">
+                                    专题会发言
+                                </td>
+
+                            <td style="text-align:center;">
+讲者                            </td>
+                            <td>
+                                司美格鲁肽类似物III期临床研究结果及临床价值解读
+                            </td>
+                                <td>
+                                    山东大学齐鲁医院
+                                </td>
+
+                        </tr>
+                        <tr>
+                            <td>2026-11-19</td>
+                            <td>
+                                13:30-14:30
+                            </td>
+                            <td>
+                                会场5-多功能厅B3
+                            </td>
+                            <td>
+                                <p>
+                                    靶向治疗甲状腺眼病临床进展
+                                </p>
+                            </td>
+
+                                <td style="text-align:center;">
+                                    主持
+                                </td>
+
+                            <td style="text-align:center;">
+主持                            </td>
+                            <td>
+                                
+                            </td>
+                                <td>
+                                    山东大学齐鲁医院
+                                </td>
+
+                        </tr>
+                        <tr>
+                            <td>2026-11-20</td>
+                            <td>
+                                12:50-13:10
+                            </td>
+                            <td>
+                                会场1-多功能厅A1
+                            </td>
+                            <td>
+                                <p>
+                                    新一代偏向型GLP-1RA,关爱中国T2D及超重肥胖患者的长期管理
+                                </p>
+                            </td>
+
+                                <td style="text-align:center;">
+                                    专题会发言
+                                </td>
+
+                            <td style="text-align:center;">
+讲者                            </td>
+                            <td>
+                                肠促胰素时代下偏向型GLP-1RA的精准治疗
+                            </td>
+                                <td>
+                                    山东大学齐鲁医院
+                                </td>
+
+                        </tr>
+                        <tr>
+                            <td>2026-11-20</td>
+                            <td>
+                                13:10-13:30
+                            </td>
+                            <td>
+                                会场1-多功能厅A1
+                            </td>
+                            <td>
+                                <p>
+                                    新一代偏向型GLP-1RA,关爱中国T2D及超重肥胖患者的长期管理
+                                </p>
+                            </td>
+
+                                <td style="text-align:center;">
+                                    讨论
+                                </td>
+
+                            <td style="text-align:center;">
+讨论                            </td>
+                            <td>
+                                讨论
+                            </td>
+                                <td>
+                                    山东大学齐鲁医院
+                                </td>
+
+                        </tr>
+                        <tr>
+                            <td>2026-11-20</td>
+                            <td>
+                                15:30-15:48
+                            </td>
+                            <td>
+                                会场2-多功能厅A2
+                            </td>
+                            <td>
+                                <p>
+                                    肌少症与糖尿病
+                                </p>
+                            </td>
+
+                                <td style="text-align:center;">
+                                    专题报告
+                                </td>
+
+                            <td style="text-align:center;">
+讲者                            </td>
+                            <td>
+                                干细胞细胞外囊泡干预糖尿病肌少症的研究进展
+                            </td>
+                                <td>
+                                    山东大学齐鲁医院
+                                </td>
+
+                        </tr>
+                        <tr>
+                            <td>2026-11-20</td>
+                            <td>
+                                16:10-16:28
+                            </td>
+                            <td>
+                                会场3-多功能厅B1
+                            </td>
+                            <td>
+                                <p>
+                                    β细胞再生的基础与临床
+                                </p>
+                            </td>
+
+                                <td style="text-align:center;">
+                                    专题报告
+                                </td>
+
+                            <td style="text-align:center;">
+讲者                            </td>
+                            <td>
+                                从GCK基因突变看GCK对胰岛功能调节作用
+                            </td>
+                                <td>
+                                    山东大学齐鲁医院
+                                </td>
+
+                        </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            //打印网页
+            $('#print').click(function () {
+                window.print();
+            });
+
+            $('.js_more').click(function () {
+                $(this).toggleClass('active');
+                $('.js_content_desc').toggleClass('active');
+            });
+
+            initQRcode();
+        });
+
+        function initQRcode() {
+            $("#RQCode").qrcode({
+                render: 'canvas',    //设置渲染方式，有table和canvas，使用canvas方式渲染性能相对来说比较好
+                text: 'http://cds26.tiemeeting.com/CN/Programme/Speaker?uid=1RvwM',    //扫描二维码后显示的内容,可以直接填一个网址，扫描二维码后自动跳向该链接
+                width: 100,               //二维码的宽度
+                height: 100,              //二维码的高度
+                background: "#ffffff",       //二维码的后景色
+                foreground: "#000000",        //二维码的前景色
+                //src: '/Content/images/getqrcode.jpg'             //二维码中间的图片
+            });
+
+            $("canvas").attr("id", "erw");
+            $("canvas").hide();
+            var canvas = document.getElementById('erw');
+            var strDataURI = canvas.toDataURL("image/png");
+            document.getElementById('image').src = strDataURI;
+        }
+    </script>
+
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script type="text/javascript">
+        var wx_appid = '';
+        var wx_timestamp = '';
+        var wx_nonceStr = '';
+        var wx_signature = '';
+        var wx_desc = decodeURIComponent('');
+        var wx_title = '讲者简介-中华医学会第二十八次糖尿病学术会议';
+        var wx_link = '';
+        var wx_imgUrl = 'https://file-bj.mscps.com/webupload/21363/MeetingInfo/89geyB521_28.jpg';
+    </script>
+    <script src="/Content/js/wx.js"></script>
+
+    
+    
+</body>
+</html>

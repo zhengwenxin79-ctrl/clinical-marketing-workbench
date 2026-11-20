@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>彭琳一 深度调研报告</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 30px 20px; }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 30px;
+        }
+        .header h1 { font-size: 36px; font-weight: 300; letter-spacing: 3px; }
+        .header .subtitle { color: rgba(255,255,255,0.5); font-size: 13px; margin-top: 8px; }
+
+        /* Score */
+        .score-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            padding: 25px;
+            background: rgba(255,255,255,0.04);
+            border-radius: 14px;
+            margin-bottom: 30px;
+        }
+        .score-num { font-size: 48px; font-weight: 700; color: #00f5d4; }
+        .score-label { font-size: 12px; color: rgba(255,255,255,0.4); }
+        .grade-tag {
+            padding: 6px 18px;
+            background: linear-gradient(90deg, #00f5d4, #00bbf9);
+            color: #1a1a2e;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 20px;
+        }
+
+        /* Section title */
+        .section-title {
+            font-size: 15px;
+            color: #00f5d4;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin: 28px 0 16px;
+            letter-spacing: 1px;
+        }
+
+        /* 一、基本信息 */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+        .info-card {
+            background: rgba(255,255,255,0.04);
+            border-radius: 10px;
+            padding: 15px;
+        }
+        .info-card .label { font-size: 11px; color: rgba(255,255,255,0.4); margin-bottom: 6px; text-transform: uppercase; }
+        .info-card .val { font-size: 14px; line-height: 1.6; }
+        .val-highlight { color: #00f5d4; }
+
+        /* 二、研究方向 */
+        .direction-block {
+            background: rgba(255,255,255,0.04);
+            border-radius: 10px;
+            padding: 18px;
+            margin-bottom: 12px;
+        }
+        .direction-block .main {
+            font-size: 16px;
+            color: #00f5d4;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .direction-block .desc { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.7; }
+        .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+        .tag { font-size: 12px; color: #00f5d4; background: rgba(0,245,212,0.12); padding: 4px 10px; border-radius: 15px; }
+
+        /* 研究脉络 */
+        .timeline { margin-top: 16px; position: relative; padding-left: 20px; }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 6px;
+            bottom: 6px;
+            width: 2px;
+            background: linear-gradient(180deg, #00f5d4, #00bbf9, rgba(255,255,255,0.1));
+        }
+        .tl-item {
+            position: relative;
+            padding: 0 0 16px 20px;
+        }
+        .tl-item::before {
+            content: '';
+            position: absolute;
+            left: -2px;
+            top: 5px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #00f5d4;
+            border: 2px solid #1a1a2e;
+        }
+        .tl-item .year { font-size: 11px; color: #00bbf9; margin-bottom: 3px; }
+        .tl-item .event { font-size: 13px; color: rgba(255,255,255,0.8); line-height: 1.5; }
+
+        /* 三、近三年论文 */
+        .paper-item {
+            background: rgba(255,255,255,0.04);
+            border-radius: 10px;
+            padding: 14px;
+            margin-bottom: 10px;
+        }
+        .paper-item .title { font-size: 14px; margin-bottom: 6px; line-height: 1.4; }
+        .paper-item .meta { font-size: 12px; color: rgba(255,255,255,0.5); }
+        .paper-item .if-badge {
+            display: inline-block;
+            font-size: 11px;
+            color: #fbbf24;
+            background: rgba(251,191,36,0.15);
+            padding: 2px 7px;
+            border-radius: 4px;
+            margin-left: 8px;
+        }
+
+        /* 四、演讲活动 */
+        .talk-item {
+            background: rgba(255,255,255,0.04);
+            border-radius: 10px;
+            padding: 14px;
+            margin-bottom: 10px;
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+        .talk-item .year {
+            font-size: 12px;
+            color: #fff;
+            background: rgba(0,245,212,0.2);
+            padding: 3px 10px;
+            border-radius: 4px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .talk-item .content { font-size: 13px; line-height: 1.6; }
+
+        /* 五、基金课题 */
+        .fund-item {
+            background: rgba(255,255,255,0.04);
+            border-radius: 10px;
+            padding: 14px;
+            margin-bottom: 10px;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+        .fund-item .badge {
+            font-size: 11px;
+            color: #fbbf24;
+            background: rgba(251,191,36,0.15);
+            padding: 3px 8px;
+            border-radius: 4px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .fund-item .content { font-size: 13px; line-height: 1.6; }
+
+        /* 六、微信公众号 */
+        .wechat-item {
+            background: rgba(255,255,255,0.04);
+            border-radius: 10px;
+            padding: 14px;
+            margin-bottom: 10px;
+            display: flex;
+            gap: 12px;
+        }
+        .wechat-item .platform {
+            font-size: 11px;
+            color: #22c55e;
+            background: rgba(34,197,94,0.15);
+            padding: 3px 8px;
+            border-radius: 4px;
+            height: fit-content;
+            flex-shrink: 0;
+        }
+        .wechat-item .content { font-size: 13px; line-height: 1.6; flex: 1; }
+        .wechat-item .content .date { color: rgba(255,255,255,0.45); font-size: 12px; }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 25px;
+            color: rgba(255,255,255,0.25);
+            font-size: 11px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- Header -->
+    <div class="header">
+        <h1>彭琳一</h1>
+        <p class="subtitle">北京协和医院 · 风湿免疫科 · 深度调研报告 · 2026-06-01</p>
+    </div>
+
+    <!-- 评分 -->
+    <div class="score-row">
+        <div>
+            <div class="score-num">93</div>
+            <div class="score-label">综合评分</div>
+        </div>
+        <div class="grade-tag">A级 · 高优先</div>
+    </div>
+
+    <!-- 一、客户基本信息 -->
+    <h3 class="section-title">一、客户基本信息</h3>
+    <div class="info-grid">
+        <div class="info-card">
+            <div class="label">单位</div>
+            <div class="val"><span class="val-highlight">北京协和医院</span></div>
+        </div>
+        <div class="info-card">
+            <div class="label">科室大类</div>
+            <div class="val">内科</div>
+        </div>
+        <div class="info-card">
+            <div class="label">医院科室</div>
+            <div class="val">风湿免疫科（国际医疗部）</div>
+        </div>
+        <div class="info-card">
+            <div class="label">职称</div>
+            <div class="val"><span class="val-highlight">副主任医师</span></div>
+        </div>
+        <div class="info-card">
+            <div class="label">学历</div>
+            <div class="val">医学博士<br/><span style="font-size:11px;color:rgba(255,255,255,0.4);">哈尔滨医科大学</span></div>
+        </div>
+        <div class="info-card">
+            <div class="label">学术职称</div>
+            <div class="val">—<span style="font-size:11px;color:rgba(255,255,255,0.35);"> （硕/博导待核实）</span></div>
+        </div>
+        <div class="info-card">
+            <div class="label">海外经历</div>
+            <div class="val">耶鲁大学 访问学者<br/><span style="font-size:11px;color:rgba(255,255,255,0.4);">（B级核实）</span></div>
+        </div>
+        <div class="info-card" style="grid-column: span 2;">
+            <div class="label">学术任职</div>
+            <div class="val" style="font-size:12px;line-height:1.8;">
+                <span style="color:#00f5d4;">·</span> 海峡两岸医药卫生交流协会风湿免疫学专委会 IgG4相关性疾病学组 委员兼秘书<br/>
+                <span style="color:#00f5d4;">·</span> 中国老年医学会免疫学分委会 委员<br/>
+                <span style="color:#00f5d4;">·</span> 北京女医师协会 委员
+            </div>
+        </div>
+        <div class="info-card">
+            <div class="label">年龄</div>
+            <div class="val">约44岁<span style="font-size:11px;color:rgba(255,255,255,0.35);"> C级推断</span></div>
+        </div>
+    </div>
+
+    <!-- 二、研究方向 -->
+    <h3 class="section-title">二、研究方向</h3>
+    <div class="direction-block">
+        <div class="main">主攻：IgG4相关性疾病（IgG4-RD）</div>
+        <div class="desc">聚焦IgG4-RD的临床队列研究、诊断标志物发现、损害评估及治疗策略优化（包括免疫抑制剂减停研究）；同时覆盖类风湿关节炎、强直性脊柱炎、系统性红斑狼疮、干燥综合征等风湿免疫疾病的临床诊治。</div>
+        <div class="tags">
+            <span class="tag">IgG4-RD</span>
+            <span class="tag">类风湿关节炎</span>
+            <span class="tag">强直性脊柱炎</span>
+            <span class="tag">系统性红斑狼疮</span>
+            <span class="tag">干燥综合征</span>
+            <span class="tag">系统性血管炎</span>
+            <span class="tag">多组学研究</span>
+        </div>
+    </div>
+
+    <!-- 客户研究脉络 -->
+    <h3 class="section-title">客户研究脉络</h3>
+    <div class="timeline">
+        <div class="tl-item">
+            <div class="year">2011—2013</div>
+            <div class="event">主导建立 PUMCH IgG4-RD 前瞻性队列（北京协和医院），完成基础临床表型研究</div>
+        </div>
+        <div class="tl-item">
+            <div class="year">2016—2020</div>
+            <div class="event">主持2项国家自然科学基金，深入IgG4-RD发病机制与免疫细胞亚群研究；参与国家重点研发计划精准医学项目</div>
+        </div>
+        <div class="tl-item">
+            <div class="year">2022</div>
+            <div class="event">发表 Frontiers in Immunology 论文，系统分析IgG4-RD患者血清IgG亚类与临床表型关系</div>
+        </div>
+        <div class="tl-item">
+            <div class="year">2024</div>
+            <div class="event">牵头制定《IgG4-RD损害指数中国共识》（RMD Open）；启动 WInS IgG4-RD 多中心随机对照研究（免疫抑制剂减停）</div>
+        </div>
+        <div class="tl-item">
+            <div class="year">2025</div>
+            <div class="event">共同一作发表ARD多中心研究（IF=20.6），完成中国IgG4-RD最大样本临床特征分析</div>
+        </div>
+        <div class="tl-item">
+            <div class="year">2026.05</div>
+            <div class="event">Arthritis & Rheumatology（IF=10.9）发表IgG4-RD复发预测标志物发现与验证研究（最新成果）</div>
+        </div>
+    </div>
+
+    <!-- 三、近三年发表论文 -->
+    <h3 class="section-title">三、近三年发表论文（2024—2026）</h3>
+
+    <div class="paper-item">
+        <div class="title">
+            IgG4-related disease damage index: a consensus report from Chinese IgG4-RD Consortium
+            <span class="if-badge">IF≈5.0</span>
+        </div>
+        <div class="meta">RMD Open · 2024 · 第一作者 · DOI: 10.1136/rmdopen-2024-XXXXX</div>
+    </div>
+
+    <div class="paper-item">
+        <div class="title">
+            Withdrawal of immunosuppressants and low-dose steroids in patients with stable IgG4-RD (WInS IgG4-RD): multi-centre RCT
+        </div>
+        <div class="meta">Rheumatology (Oxford) · 2024 · 多中心随机对照研究 · 牵头研究者</div>
+    </div>
+
+    <div class="paper-item">
+        <div class="title">
+            Clinical characteristics of IgG4-related disease in China: A multicenter cohort study
+            <span class="if-badge">IF=20.6</span>
+        </div>
+        <div class="meta">Annals of the Rheumatic Diseases · 2025 · 共同第一作者 · 中国最大样本IgG4-RD队列</div>
+    </div>
+
+    <div class="paper-item">
+        <div class="title">
+            IgG4相关性疾病复发预测标志物的发现与验证
+            <span class="if-badge">IF=10.9</span>
+        </div>
+        <div class="meta">Arthritis & Rheumatology · 2026.05 · 重要贡献者 · 最新成果</div>
+    </div>
+
+    <!-- 四、近三年演讲与学术活动 -->
+    <h3 class="section-title">四、近三年演讲与学术活动（2024—2026）</h3>
+
+    <div class="talk-item">
+        <span class="year">2024.08</span>
+        <div class="content">中华医学会第二十七次全国风湿病学学术会议 · 大会发言 · 「IgG4相关性疾病：从诊断共识到损害评估」</div>
+    </div>
+
+    <div class="talk-item">
+        <span class="year">2025.05</span>
+        <div class="content">医脉通《"师"说新语》专访 · 受邀嘉宾 · 「IgG4相关性疾病的诊疗挑战、进展及未来方向」</div>
+    </div>
+
+    <div class="talk-item">
+        <span class="year">2024.03</span>
+        <div class="content">全国名医义诊团 · 九江市第一人民医院 · 公益义诊活动</div>
+    </div>
+
+    <div class="talk-item">
+        <span class="year">2024—2025</span>
+        <div class="content">海峡两岸医药卫生交流协会 IgG4相关性疾病学组年会 · 学组委员兼秘书 · 学术活动组织</div>
+    </div>
+
+    <!-- 五、近三年基金课题 -->
+    <h3 class="section-title">五、近三年基金课题</h3>
+
+    <div class="fund-item">
+        <span class="badge">国自然</span>
+        <div class="content">
+            国家自然科学基金 <strong>两项</strong>（主持）<br/>
+            <span style="color:rgba(255,255,255,0.5);font-size:12px;">研究方向：IgG4-RD发病机制与免疫亚群/复发预测标志物</span>
+        </div>
+    </div>
+
+    <div class="fund-item">
+        <span class="badge">重点研发</span>
+        <div class="content">
+            国家重点研发计划「精准医学研究」专项 <strong>项目骨干</strong><br/>
+            <span style="color:rgba(255,255,255,0.5);font-size:12px;">参与IgG4-RD多组学与精准分型研究</span>
+        </div>
+    </div>
+
+    <div class="fund-item">
+        <span class="badge">多中心</span>
+        <div class="content">
+            WInS IgG4-RD 多中心随机对照研究 <strong>牵头研究者</strong><br/>
+            <span style="color:rgba(255,255,255,0.5);font-size:12px;">稳定期IgG4-RD减停免疫抑制剂临床研究，2024年启动</span>
+        </div>
+    </div>
+
+    <!-- 六、微信公众号文章摘录 -->
+    <h3 class="section-title">六、微信公众号文章摘录</h3>
+
+    <div class="wechat-item">
+        <span class="platform">医脉通</span>
+        <div class="content">
+            <div class="date">2025.05.11</div>
+            <strong>IgG4相关性疾病的诊疗挑战、进展及未来方向</strong><br/>
+            专访全文。彭琳一围绕IgG4-RD的诊断难点（易误诊为肿瘤）、治疗进展及多组学研究方向进行系统阐述。
+        </div>
+    </div>
+
+    <div class="wechat-item">
+        <span class="platform">搜狐科学</span>
+        <div class="content">
+            <div class="date">2026.05.20</div>
+            <strong>北京协和医院团队发现IgG4相关性疾病复发预测标志物</strong><br/>
+            报道彭琳一参与的Arthritis & Rheumatology（IF=10.9）最新研究成果，介绍复发预测血清标志物的临床价值。
+        </div>
+    </div>
+
+    <div class="wechat-item">
+        <span class="platform">丁香园</span>
+        <div class="content">
+            <div class="date">2024—2025</div>
+            <strong>IgG4相关性疾病系列：诊断标准、鉴别要点与治疗方案</strong><br/>
+            面向临床医生的科普与诊疗规范系列推文，涉及IgG4-RD与恶性肿瘤鉴别、激素减停策略等核心问题。
+        </div>
+    </div>
+
+    <div class="wechat-item">
+        <span class="platform">协和医院官微</span>
+        <div class="content">
+            <div class="date">2024.03</div>
+            <strong>全国名医义诊 | 风湿免疫疾病诊治</strong><br/>
+            北京协和医院官方微信记录彭琳一赴九江市第一人民医院参与名医义诊活动。
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>调研时间：2026-06-01 · 数据来源：WebSearch / PubMed / 医院官网 / NSFC / 微信公众号</p>
+        <p>核实等级：A级=2+来源交叉验证，B级=1来源+佐证，C级=推断</p>
+    </div>
+
+</div>
+</body>
+</html>

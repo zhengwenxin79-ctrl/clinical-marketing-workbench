@@ -1,0 +1,26 @@
+{
+  "database_sha256": "5630b3f68c19484363fa90569829e7d4890492f6d37620351d7a1bbfbce8397b",
+  "backup": "备份/CDS分层前_2026-11-17.db",
+  "original_table_fingerprints": {
+    "academic_role_claims": "6114ebeb54a8727c5f837a68e9e1cc43188a915f948ec8e6050b5d39f2615962",
+    "agenda_items": "09f4a850246dbba87173e13f3fd6274bcf1a3edf9ba10af6f7d5d80cde761b6c",
+    "agenda_participants": "8e3323747dbb7f6186e06a33e027dcb3951b4d4e90a27280dbf76b5b9ae90851",
+    "analysis_versions": "963de715f2e182cf52fc759d54be896b3e9beaf963fcd0b0daa5102e79a927f4",
+    "biomarker_title_reviews": "60000f9763ee8f6799b8ccf33fd71a71138c996738c3cc306b07d596929f1a02",
+    "conference_editions": "a07f3f502571a2e9833cea27040d5d9b4ec35fb15ca90df7868b1c658e613cd3",
+    "conference_series": "82dd64d4005cbf5acf21504e1b4e94a4abbe8b26259df14b0805ae7057fedce2",
+    "import_batches": "78be78d8e088af14c1901ecae61c40e72c0553d7c2421b79d0e4512ef21a0691",
+    "legacy_marker_bindings": "4bbcf9368565170a79fe44977da7c55434a66c382fda613b1da8a4020b6887e1",
+    "people": "7cd2635a4966c41b532ef5ba856748ec8615caa03496770a85f5ad44d6c60cf8",
+    "person_profiles": "46d6118219709533994b7965747142d32744723bb5ec5ceba15049c616de6ffe",
+    "report_classifications": "77c84d4a7bf16f038a1d876e4f3b4221d05f611accc8a94ca9f21b23091ca00a",
+    "report_study_links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "report_tags": "84039e9c617d75a78c2de71f8d6e0cec576d4ecebd583a0c807ef34b0f344b16",
+    "reports": "1724f1e503657966e5b1dfb0c94aad5b4092d09a3ee8294fbe2a2b2d2ff17731",
+    "research_topics": "dbe5219e779dc5a34003505e07589838623fe0c316dada7585bc3d17d3561910",
+    "session_chairs": "e15ea493ad3f4051927e101892c0c8ac913071a326b605b510c2e90d2d42165d",
+    "sessions": "5b3aa7b9a0382e1933cb03ddbdfc0703ab19522a8394d79fca73177747092c2e",
+    "source_materials": "761f8e4010ae18e9f82c1947a8c73100ecaa8dbf22e39c48d3bb41dc63bddd4e",
+    "studies": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  }
+}

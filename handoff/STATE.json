@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "project": "clinical-marketing-antigravity",
+  "current_stage": "P03",
+  "status": "completed",
+  "completed_stages": [
+    "P00",
+    "P01",
+    "P02",
+    "P03"
+  ],
+  "next_action": "等待用户确认后推进P04采集审核接入与更新链路",
+  "open_items": [
+    "WorkBuddy采集审核闭环待接（P04）",
+    "实时AI模型未接（P05）",
+    "WorkBuddy补证评级暂缓中"
+  ],
+  "latest_delivery": "handoff/acceptance/P03/交付.md"
+}

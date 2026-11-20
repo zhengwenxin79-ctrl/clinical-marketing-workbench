@@ -1,0 +1,144 @@
+{
+  "checked_on": "2026-11-16",
+  "type": "独立联网查漏；非固定采集脚本运行",
+  "scope": {
+    "publication_window": "2026-11-10至2026-11-16",
+    "upcoming_window": "2026-11-16至2027-02-14",
+    "extra": "复核现有六个核心会议系列的届次及关键入口"
+  },
+  "comparison_basis": [
+    "本地monitoring/sources.json的六系列八入口",
+    "本地20261113T102037-cc4d95待复核会议清单",
+    "用户提供的国内信息源实测报告-20261116.html",
+    "用户粘贴的Windows运行20261113T172346-55b2ff摘要；未取得该轮原始文件"
+  ],
+  "interpretation": "配置外候选不等同解析失败；未知最新WorkBuddy执行情况；发现日期不等于主办方发布日期；本轮非穷尽性检索。",
+  "new_candidates": [
+    {
+      "id": "lnma-youth-2026",
+      "name": "辽宁省医学会内分泌学分会暨糖尿病学分会青年医师学术会议",
+      "region": "domestic",
+      "start": "2026-11-27",
+      "end": "2026-11-28",
+      "location": "沈阳",
+      "publication_date": "2026-11-11",
+      "status": "官方正文已核",
+      "comparison": "不在现有配置及用户报告会议清单中",
+      "url": "https://www.lnma.org/index.php/artgen/1414",
+      "relevance": "区域临床团队与青年医师触达；业务价值为AI初判"
+    },
+    {
+      "id": "ahmu-metabolic-2026",
+      "name": "代谢健康与泛血管疾病国际学术会议",
+      "region": "domestic",
+      "start": "2026-12-03",
+      "end": "2026-12-05",
+      "location": "合肥翡翠湖大酒店",
+      "publication_date": "2026-11-05",
+      "status": "承办高校正文已核",
+      "comparison": "不在现有配置及用户报告会议清单中",
+      "url": "https://www.ahmu.edu.cn/2026/1104/c4327a206428/page.htm",
+      "relevance": "代谢与心血管交叉；有EASD-Diabetologia-Metabologia专场；优先跟踪为AI建议"
+    },
+    {
+      "id": "lancet-diabetes-prevention-2026",
+      "name": "The Lancet Summit: shaping the future of diabetes prevention",
+      "region": "international",
+      "start": "2026-11-30",
+      "end": "2026-12-02",
+      "location": "Sitges, Spain",
+      "publication_date": null,
+      "status": "主办方会议网页已核；详细日程页本轮文本为空，未解析完整议程",
+      "comparison": "不在现有配置及用户报告会议清单中",
+      "url": "https://thelancetsummit.com/diabetes-prevention/index.html",
+      "program_url": "https://thelancetsummit.com/diabetes-prevention/conference-programme.html",
+      "relevance": "早期检测与筛查、T1D延缓、妊娠糖尿病；关联产品与转化需逐研究另评"
+    },
+    {
+      "id": "wcirdc-2026",
+      "name": "24th World Congress on Insulin Resistance, Diabetes & Cardiovascular Disease",
+      "region": "international",
+      "start": "2026-12-03",
+      "end": "2026-12-05",
+      "location": "Hilton Universal City Hotel, Los Angeles",
+      "publication_date": null,
+      "status": "主办方官网、CME提交平台及官方资料检索交叉核对",
+      "comparison": "不在现有配置及用户报告会议清单中",
+      "url": "https://www.wcir.org/",
+      "date_evidence_url": "https://tmioa.submittable.com/submit",
+      "official_date_document_url": "https://www.wcir.org/_files/ugd/a72e45_dd9e74710edc420f8ab27e4849921492.pdf",
+      "relevance": "胰岛素抵抗及心肾代谢交叉；AI建议进入相关会议候选池"
+    }
+  ],
+  "previous_report_candidates": [
+    {
+      "name": "第二十五次中医药糖尿病学术会议",
+      "start": "2026-11-21",
+      "end": "2026-11-22",
+      "location": "深圳",
+      "status": "用户报告已发现；本轮官方正文确认；不算本次新增",
+      "url": "https://www.cacm.org.cn/2026/10/23/41278/"
+    },
+    {
+      "name": "第三届营养代谢与机体健康专题研讨会",
+      "status": "用户报告已发现；本轮官方入口两次无法访问，未独立确认",
+      "url": "https://www.cnsoc.org/acadconfg/912601200.html"
+    }
+  ],
+  "existing_meeting_gaps": [
+    {
+      "series": "EASD 2026",
+      "type": "入口不正确",
+      "existing_program_url": "https://www.easd.org/annual-meeting/annual-meeting/easd-2026/programme/",
+      "observed": "重复annual-meeting路径，本轮跳转首页",
+      "verified_program_url": "https://www.easd.org/annual-meeting/easd-2026/programme/",
+      "verified_content": "真正Programme Overview页可读；含日程总览和最终程序PDF入口，未读取PDF"
+    },
+    {
+      "series": "IDF 2027",
+      "type": "缺关键字段",
+      "field": "early_registration_deadline",
+      "value": "2026-11-30",
+      "status": "官网正文已核；本地待复核记录缺此字段；不是确认本周变更",
+      "url": "https://idf.org/congress-and-events/idf2027/"
+    },
+    {
+      "series": "ATTD 2027",
+      "type": "缺届次子页覆盖",
+      "verified_edition_url": "https://attd2027.kenes.com/",
+      "abstract_url": "https://attd2027.kenes.com/abstract-submission/",
+      "status": "现有全局首页已配置；届次子页本轮已访问；尚未完整采集日程/摘要"
+    },
+    {
+      "series": "ADA 2027",
+      "type": "已覆盖",
+      "abstract_deadline": "2027-01-05 17:00 ET",
+      "status": "本地草稿已有，本轮官网一致；不重复算新增",
+      "url": "https://professional.diabetes.org/scientific-sessions"
+    }
+  ],
+  "pending_or_limited": [
+    {
+      "name": "ASPED 2026",
+      "dates": "2026-12-05至2026-12-07",
+      "status": "官网同时显示Jeddah和Riyadh两个场地，冲突未解决，候选待核，不发布地点",
+      "url": "https://asped2026.com/"
+    },
+    {
+      "name": "CSE 2026",
+      "status": "本轮官网403；沿用已有证据，未声称再次完整核查",
+      "url": "https://cse2026.sciconf.cn"
+    },
+    {
+      "name": "WCIRDC临时摘要窗口",
+      "status": "搜索摘要显示11/16开放、11/23截止，但本轮打开正文未复现相同文字；不作为已确认截止日入库",
+      "url": "https://www.wcir.org/abstracts"
+    }
+  ],
+  "changes": {
+    "formal_website": false,
+    "source_configuration": false,
+    "scheduling": false,
+    "published": false
+  }
+}

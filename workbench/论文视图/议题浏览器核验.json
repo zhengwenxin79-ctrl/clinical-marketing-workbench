@@ -1,0 +1,19 @@
+{
+  "result": "passed",
+  "checks": [
+    "三栏议题首页、160篇/51议题、数量柱状图和研究进展联动",
+    "逐议题计数与数据库导出一致；论文主归属去重，板块数合计160",
+    "选择议题、详情逐篇发现、团队依据、未解决问题及公司环节预留",
+    "免疫治疗议题可见阳性、亚组差异、停药与IL-2阴性结果，5篇不漏",
+    "既有补充和系统评价展示但不增加主榜数量",
+    "按议题跳转文章池、原始论文详情、复核类型与计数状态、关闭返回",
+    "板块、来源与搜索筛选和无结果状态",
+    "日期过滤、分页和file://深链刷新",
+    "保留文章/团队/来源页面，桌面平板手机无整页横向溢出"
+  ],
+  "page_errors": [],
+  "external_requests": [],
+  "browser_identity": "dedicated automation-chrome with temporary task profile; finally cleanup",
+  "new_collection": false,
+  "published": false
+}

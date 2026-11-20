@@ -1,0 +1,19 @@
+{
+  "result": "passed",
+  "checked_on": "2026-11-17",
+  "checks": [
+    "三榜独立页签，综合默认50/50；板块按当前榜单占比降序且显示百分比",
+    "国内/国际分别排序、报告及讲者范围联动；研究板块顺序随榜单变化",
+    "详情复算、会议纳入条件、分类覆盖率与采集完整率区别、现有两会试算状态",
+    "海报缺国内资料：综合留空，国际榜可用，国内无数据不伪造0分",
+    "板块、讲者检索、无结果状态及报告数量排序可用",
+    "file://分页深链与刷新保留",
+    "旧地域深链兼容；全部会议和区域空入口保留",
+    "桌面/平板/手机无整页横向溢出"
+  ],
+  "page_errors": [],
+  "external_requests": [],
+  "browser_identity": "independent automation-chrome; task-specific temporary profile; finally cleanup",
+  "new_collection": false,
+  "published": false
+}

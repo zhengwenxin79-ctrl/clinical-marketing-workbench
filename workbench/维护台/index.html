@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>数据库维护台 · 智能营销</title><link rel="stylesheet" href="/style.css"><script defer src="/app.js"></script></head>
+<body>
+<header><div class="brand"><span class="brand-mark" aria-hidden="true">M</span><div><strong>智能营销 · 数据维护</strong><span>CDS资料 → 已确认数据库 → 会议工作台</span></div></div><a class="header-link" href="/meeting/" target="_blank" rel="noopener">查看会议工作台 ↗</a></header>
+<div class="layout">
+<aside><div class="aside-title">维护流程</div><nav aria-label="数据库维护步骤">
+<button data-step="import" class="step active"><span class="step-num">01</span><span>导入资料<small>保留原件，生成草稿</small></span></button>
+<button data-step="diff" class="step"><span class="step-num">02</span><span>查看变化<small>逐项比较，列出缺口</small></span></button>
+<button data-step="confirm" class="step"><span class="step-num">03</span><span>确认更新<small>备份后写入，留下记录</small></span></button>
+<button data-step="export" class="step"><span class="step-num">04</span><span>核验导出<small>检查一致性，生成网页</small></span></button>
+</nav><div class="aside-title history-title">最近导入</div><div id="history"><p class="muted">正在读取…</p></div><div class="local-label"><i></i> 本机维护 · SQLite</div></aside>
+<main><div class="topline"><span class="eyebrow">DATA OPERATIONS / CDS2026</span><button class="text-button" id="refresh">刷新状态</button></div><h1>让每次更新都有依据</h1><p class="intro">原始资料先保存，确认差异后再入库，核验通过再更新会议网页。</p>
+<div id="stats" class="stats"></div><div id="notice" role="status" aria-live="polite" hidden></div>
+<section id="panel-import" class="panel"><div class="panel-heading"><span class="icon" aria-hidden="true">↓</span><div><h2>导入资料</h2><p>选择CDS结构化日程JSON，或先用已有资料体验完整流程。</p></div></div>
+<div class="import-grid"><div class="upload-card"><label for="source-file" class="file-label"><span class="upload-icon" aria-hidden="true">＋</span><strong>选择CDS日程资料</strong><span>UTF-8 JSON · 最大12MB</span></label><input type="file" id="source-file" accept=".json,application/json"><label class="field-label" for="note">本次更新说明（可选）</label><textarea id="note" rows="2" placeholder="例如：官网日程更新了会场安排"></textarea><button id="import-file" class="primary">保存原件并比较</button></div>
+<div class="sample-card"><span class="tag">已有资料试跑</span><h3>CDS2026 日程快照</h3><p>148个场次、797条日程。使用2026-11-16保存的资料，先检查与当前库是否一致。</p><button id="import-sample" class="secondary">用已有CDS资料试跑 →</button><a href="/api/sample" class="download-link">下载输入样例 ↓</a><p class="tiny">每次试跑独立留档。资料相同会明确显示“无变化”。</p></div></div>
+<div class="scope-note"><strong>首版处理范围</strong><p>可确认现有日程的日期、时间与会场更新。题名、讲者、场次增删和分类变化列为待复核；HTML、PDF需先提取为样例格式。上传仅表示本地提供资料，来源真实性需人工确认。</p></div></section>
+<section id="panel-diff" class="panel" hidden><div class="panel-heading"><span class="icon" aria-hidden="true">≋</span><div><h2>查看变化</h2><p>先看统计范围，再查看变更前后与待核内容。</p></div></div><div class="batch-line" id="diff-batch"></div><div id="diff-content"></div><div class="actions"><button class="secondary" data-go="import">重新导入</button><button class="primary" id="go-confirm">已查看变化，进入确认 →</button></div></section>
+<section id="panel-confirm" class="panel" hidden><div class="panel-heading"><span class="icon" aria-hidden="true">✓</span><div><h2>确认更新</h2><p>确认时先制作一致性备份，随后在同一事务中保存更新与记录。</p></div></div><div id="confirm-content"></div><div class="actions"><button class="secondary" data-go="diff">返回查看变化</button><button class="primary" id="confirm-run">确认这批更新</button></div></section>
+<section id="panel-export" class="panel" hidden><div class="panel-heading"><span class="icon" aria-hidden="true">↗</span><div><h2>核验导出</h2><p>对当前已确认数据库做核验，生成本地会议网页与JSON快照。</p></div></div><div id="export-content"></div><div class="actions"><button class="primary" id="export-run">开始核验并导出</button><a href="/meeting/" class="secondary button-link" target="_blank" rel="noopener">查看会议工作台 ↗</a></div></section>
+<footer><span id="db-status">正在读取数据库…</span><a href="#" id="records-link" hidden target="_blank" rel="noopener">查看本批原件与完整记录 ↗</a></footer>
+</main></div></body></html>

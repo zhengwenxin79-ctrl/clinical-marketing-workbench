@@ -1,0 +1,16 @@
+{
+  "as_of": "2026-11-16",
+  "topics": 10,
+  "pi_rating_cards": 14,
+  "dimensions_per_pi": 4,
+  "weight_switch": true,
+  "category_filter": true,
+  "search": true,
+  "review_sort": true,
+  "topic_deep_links_and_reload": true,
+  "standalone_file": true,
+  "local_links_exist": true,
+  "mobile_no_overflow": true,
+  "external_requests": [],
+  "errors": []
+}

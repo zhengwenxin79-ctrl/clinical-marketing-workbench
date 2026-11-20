@@ -1,0 +1,19 @@
+{
+  "result": "generated",
+  "database_sha256": "4f16bd5b161785ec9be493bc0c0503b8b5a60064f9a8342078381e11378d1bef",
+  "tier_rule_version": "CDS2026:ROLE-TIERS:20261117:v1",
+  "topic_quantity_version": "CDS2026:TOPIC-QUANTITY:20261117:v1",
+  "scoring_enabled": false,
+  "snapshot_sha256": "f15823bcddacd62ece2c773c8fa8bb00c54015609c8902c3bc26a68363a00148",
+  "html_sha256": "4f1ffee862337e9583c0e8e620f32e9ed8ea40d78f177993d93bc56481f0557f",
+  "record_counts": {
+    "reports": 606,
+    "topics": 58,
+    "boards": 12,
+    "speakers": 533
+  },
+  "database_unchanged": true,
+  "new_collection": false,
+  "published": false,
+  "source_database": "数据库/marketing.db"
+}

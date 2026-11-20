@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="从会议与论文两条主线，连接六个临床科研工作领域、研究问题与技术应用。">
+<title>糖尿病研究热点｜会议与论文研究台</title>
+<style>__STYLE__</style>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#/overview"><span class="brand-mark" aria-hidden="true">研</span><span><strong>临床科研热点工作台</strong><small>GENEPLUS · 会议与论文研究台</small></span></a>
+  <label class="field-select">研究领域<select id="field" aria-label="研究领域"><option value="diabetes">内分泌代谢（糖尿病）</option></select></label>
+  <label class="global-search"><span class="sr-only">搜索当前研究或主题</span><input type="search" id="search" placeholder="搜索研究问题、技术或团队" autocomplete="off"></label>
+</header>
+<nav class="navstrip" aria-label="主导航">
+  <div class="primary-nav"><a href="#/overview" data-nav="overview">领域总览</a><a href="#/conferences" data-nav="conferences">会议研究</a><a href="#/papers" data-nav="papers">论文研究</a><a href="#/technologies" data-nav="technologies">产品与技术</a></div>
+  <div class="support-nav"><a href="#/sources" data-nav="sources">信息来源</a><a href="#/criteria" data-nav="criteria">判断标准</a></div>
+</nav>
+<div class="app-layout" id="layout"><aside id="sidebar" aria-label="当前页面目录"></aside><main id="main" tabindex="-1"></main></div>
+<footer class="site-footer"><span><span id="footer-label">研究资料截至</span> <span id="cutoff"></span> · <span id="footer-kind">B03快照</span></span><span id="footer-note">会议与论文关联保存 · 主题趋势待建立可比基线</span></footer>
+<script id="weekly-meetings-data" type="application/json">__WEEKLY_MEETINGS__</script>
+<script id="field-config-data" type="application/json">__FIELD_CONFIG__</script>
+<script id="workbench-data" type="application/json">__DATA__</script>
+<script id="translation-review-data" type="application/json">__TRANSLATION_REVIEW__</script>
+<script id="paper-evidence-data" type="application/json">__PAPER_EVIDENCE__</script>
+<script id="biomarker-data" type="application/json">__BIOMARKERS__</script>
+<script>__APP__</script>
+</body>
+</html>

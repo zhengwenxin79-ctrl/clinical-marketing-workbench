@@ -1,0 +1,80 @@
+{
+  "version": "domain-framework:v3-market-sales-workspaces",
+  "default_domain": "diabetes",
+  "domains": [
+    {
+      "id": "diabetes",
+      "name": "糖尿病",
+      "connected": true
+    },
+    {
+      "id": "rheumatology",
+      "name": "风湿免疫",
+      "connected": false
+    },
+    {
+      "id": "neurology",
+      "name": "神经精神",
+      "connected": false
+    },
+    {
+      "id": "cardiovascular",
+      "name": "心血管",
+      "connected": false
+    },
+    {
+      "id": "respiratory",
+      "name": "呼吸慢病",
+      "connected": false
+    },
+    {
+      "id": "vascular",
+      "name": "泛血管及器官损伤",
+      "connected": false
+    }
+  ],
+  "modules": [
+    {
+      "id": "topics",
+      "label": "领域热点",
+      "question": "这个领域在关注什么研究问题？"
+    },
+    {
+      "id": "conferences",
+      "label": "会议库",
+      "question": "有哪些会议，各场会议讨论什么？"
+    },
+    {
+      "id": "papers",
+      "label": "论文库",
+      "question": "哪些研究发表了什么证据？"
+    },
+    {
+      "id": "experts",
+      "label": "专家与团队",
+      "question": "谁在讨论和研究这些问题？"
+    },
+    {
+      "id": "market",
+      "label": "市场工作台",
+      "question": "筛选PI与合作线索，分配推荐，复盘销售反馈。"
+    },
+    {
+      "id": "sales",
+      "label": "销售工作台",
+      "question": "查看我的推荐与PI资料，收藏线索，记录跟进和信息评价。"
+    }
+  ],
+  "domain_views": [
+    {
+      "id": "topics",
+      "label": "研究议题"
+    },
+    {
+      "id": "biomarkers",
+      "label": "Biomarker",
+      "path": "../标志物视图/index.html"
+    }
+  ],
+  "scope": "页面结构、现有分类和展示整理；资料采集由WorkBuddy执行。"
+}

@@ -1,0 +1,17 @@
+{
+  "result": "passed",
+  "imported_tables_unchanged": 63,
+  "source_materials_verified": 448,
+  "received_files_verified": 6,
+  "audited_records": 107,
+  "evidence": 24,
+  "report_mentions": 19,
+  "paper_mentions": 5,
+  "result_evidence": 0,
+  "capability_candidates": 11,
+  "papers_preserved": 618,
+  "ranked_papers_preserved": 160,
+  "issues_preserved": 51,
+  "new_collection": false,
+  "published": false
+}

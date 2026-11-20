@@ -1,0 +1,48 @@
+{
+  "result": "passed",
+  "checked_at": "2026-11-17T06:10:46+00:00",
+  "database_sha256": "34a8e58f07659da8a396ab533bd705c7013770172592a0f29a565f098e2df36b",
+  "checks": [
+    "本批归档原件、变化清单与确认前数据库备份指纹一致",
+    "数据库完整性与外键通过",
+    "436份数据库来源文件逐一核对SHA256",
+    "最初436份CDS随包原始资料保持不变",
+    "797条日程与148个场次逐条回读原资料一致",
+    "12板块／58议题／579条分类报告范围一致",
+    "网页、JSON导出数量及数据库/文件指纹一致"
+  ],
+  "counts": {
+    "agenda_items": 797,
+    "sessions": 148,
+    "reports": 606,
+    "classified_reports": 579,
+    "topics": 58,
+    "boards": 12,
+    "source_materials": 436
+  },
+  "run_id": "CDS-20261117T141045-23af7114",
+  "exported": true,
+  "published": false,
+  "export_url": "/meeting/",
+  "export_manifest": {
+    "result": "generated",
+    "database_sha256": "34a8e58f07659da8a396ab533bd705c7013770172592a0f29a565f098e2df36b",
+    "tier_rule_version": "CDS2026:ROLE-TIERS:20261117:v1",
+    "topic_quantity_version": "CDS2026:TOPIC-QUANTITY:20261117:v1",
+    "scoring_enabled": false,
+    "snapshot_sha256": "b30837ab8b1949d5d9b516aec4a82e4843013626665842353782fede3212b411",
+    "html_sha256": "7d0ef3ca534bc22bea48442107f57c974f89fed832f0a932fe8afd9cf1e36836",
+    "record_counts": {
+      "reports": 606,
+      "topics": 58,
+      "boards": 12,
+      "speakers": 533
+    },
+    "database_unchanged": true,
+    "new_collection": false,
+    "published": false,
+    "source_database": "数据库/marketing.db"
+  },
+  "attempt": "维护记录/批次/CDS-20261117T141045-23af7114/核验与导出/20261117T141046-db9ff2",
+  "export_scope": "当前已确认数据库；不是重放所选历史批次。"
+}

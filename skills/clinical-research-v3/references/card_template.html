@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{PI_NAME}} 深度调研报告</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 30px 20px; }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 30px;
+        }
+        .header h1 { font-size: 36px; font-weight: 300; letter-spacing: 3px; }
+        .header .subtitle { color: rgba(255,255,255,0.5); font-size: 13px; margin-top: 8px; }
+
+        /* Score */
+        .score-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            padding: 25px;
+            background: rgba(255,255,255,0.04);
+            border-radius: 14px;
+            margin-bottom: 30px;
+        }
+        .score-num { font-size: 48px; font-weight: 700; color: #00f5d4; }
+        .score-label { font-size: 12px; color: rgba(255,255,255,0.4); }
+        .grade-tag {
+            padding: 6px 18px;
+            background: linear-gradient(90deg, #00f5d4, #00bbf9);
+            color: #1a1a2e;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 20px;
+        }
+
+        /* Section title */
+        .section-title {
+            font-size: 15px;
+            color: #00f5d4;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin: 28px 0 16px;
+            letter-spacing: 1px;
+        }
+
+        /* 一、基本信息 */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+        .info-card {
+            background: rgba(255,255,255,0.04);
+            border-radius: 10px;
+            padding: 15px;
+        }
+        .info-card .label { font-size: 11px; color: rgba(255,255,255,0.4); margin-bottom: 6px; text-transform: uppercase; }
+        .info-card .val { font-size: 14px; line-height: 1.6; }
+        .val-highlight { color: #00f5d4; }
+        .info-note { font-size: 11px; color: rgba(255,255,255,0.35); }
+
+        /* 二、研究方向 */
+        .direction-block {
+            background: rgba(255,255,255,0.04);
+            border-radius: 10px;
+            padding: 18px;
+            margin-bottom: 12px;
+        }
+        .direction-block .main {
+            font-size: 16px;
+            color: #00f5d4;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .direction-block .desc { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.7; }
+        .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+        .tag { font-size: 12px; color: #00f5d4; background: rgba(0,245,212,0.12); padding: 4px 10px; border-radius: 15px; }
+
+        /* 研究脉络 */
+        .timeline { margin-top: 16px; position: relative; padding-left: 20px; }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 6px;
+            bottom: 6px;
+            width: 2px;
+            background: linear-gradient(180deg, #00f5d4, #00bbf9, rgba(255,255,255,0.1));
+        }
+        .tl-item {
+            position: relative;
+            padding: 0 0 16px 20px;
+        }
+        .tl-item::before {
+            content: '';
+            position: absolute;
+            left: -2px;
+            top: 5px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #00f5d4;
+            border: 2px solid #1a1a2e;
+        }
+        .tl-item .year { font-size: 11px; color: #00bbf9; margin-bottom: 3px; }
+        .tl-item .event { font-size: 13px; color: rgba(255,255,255,0.8); line-height: 1.5; }
+
+        /* 三、近三年论文 */
+        .paper-item {
+            background: rgba(255,255,255,0.04);
+            border-radius: 10px;
+            padding: 14px;
+            margin-bottom: 10px;
+        }
+        .paper-item .title { font-size: 14px; margin-bottom: 6px; line-height: 1.4; }
+        .paper-item .meta { font-size: 12px; color: rgba(255,255,255,0.5); }
+        .paper-item .if-badge {
+            display: inline-block;
+            font-size: 11px;
+            color: #fbbf24;
+            background: rgba(251,191,36,0.15);
+            padding: 2px 7px;
+            border-radius: 4px;
+            margin-left: 8px;
+        }
+
+        /* 四、演讲活动 */
+        .talk-item {
+            background: rgba(255,255,255,0.04);
+            border-radius: 10px;
+            padding: 14px;
+            margin-bottom: 10px;
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+        .talk-item .year {
+            font-size: 12px;
+            color: #fff;
+            background: rgba(0,245,212,0.2);
+            padding: 3px 10px;
+            border-radius: 4px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .talk-item .content { font-size: 13px; line-height: 1.6; }
+
+        /* 五、基金课题 */
+        .fund-item {
+            background: rgba(255,255,255,0.04);
+            border-radius: 10px;
+            padding: 14px;
+            margin-bottom: 10px;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+        .fund-item .badge {
+            font-size: 11px;
+            color: #fbbf24;
+            background: rgba(251,191,36,0.15);
+            padding: 3px 8px;
+            border-radius: 4px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .fund-item .content { font-size: 13px; line-height: 1.6; }
+
+        /* 六、微信公众号 */
+        .wechat-item {
+            background: rgba(255,255,255,0.04);
+            border-radius: 10px;
+            padding: 14px;
+            margin-bottom: 10px;
+            display: flex;
+            gap: 12px;
+        }
+        .wechat-item .platform {
+            font-size: 11px;
+            color: #22c55e;
+            background: rgba(34,197,94,0.15);
+            padding: 3px 8px;
+            border-radius: 4px;
+            height: fit-content;
+            flex-shrink: 0;
+        }
+        .wechat-item .content { font-size: 13px; line-height: 1.6; flex: 1; }
+        .wechat-item .content .date { color: rgba(255,255,255,0.45); font-size: 12px; }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 25px;
+            color: rgba(255,255,255,0.25);
+            font-size: 11px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- ========== HEADER ========== -->
+    <div class="header">
+        <h1>{{PI_NAME}}</h1>
+        <p class="subtitle">{{HOSPITAL}} · {{DEPARTMENT}} · 深度调研报告 · {{DATE}}</p>
+    </div>
+
+    <!-- ========== 综合评分卡 ========== -->
+    <!-- 评分规则：四维度加权计算，详见SKILL.md「综合评分逻辑」章节 -->
+    <div class="score-row">
+        <div>
+            <div class="score-num">{{SCORE}}</div>
+            <div class="score-label">综合评分</div>
+        </div>
+        <div class="grade-tag">{{GRADE}}级 · {{PRIORITY}}</div>
+    </div>
+
+    <!-- ========== 一、客户基本信息（9字段，3列网格） ========== -->
+    <!-- 学术任职卡片跨两列：grid-column: span 2 -->
+    <!-- B级核实字段后加：<span class="info-note">（B级核实）</span> -->
+    <!-- C级推断字段后加：<span class="info-note"> C级推断</span> -->
+    <h3 class="section-title">一、客户基本信息</h3>
+    <div class="info-grid">
+        <div class="info-card">
+            <div class="label">单位</div>
+            <div class="val"><span class="val-highlight">{{HOSPITAL}}</span></div>
+        </div>
+        <div class="info-card">
+            <div class="label">科室大类</div>
+            <div class="val">{{DEPT_CATEGORY}}</div>
+        </div>
+        <div class="info-card">
+            <div class="label">医院科室</div>
+            <div class="val">{{DEPT_FULL}}</div>
+        </div>
+        <div class="info-card">
+            <div class="label">职称</div>
+            <div class="val"><span class="val-highlight">{{TITLE}}</span></div>
+        </div>
+        <div class="info-card">
+            <div class="label">学历</div>
+            <div class="val">{{DEGREE}}<br/><span style="font-size:11px;color:rgba(255,255,255,0.4);">{{SCHOOL}}</span></div>
+        </div>
+        <div class="info-card">
+            <div class="label">学术职称</div>
+            <div class="val">{{ACADEMIC_TITLE}}<span class="info-note">{{ACADEMIC_TITLE_NOTE}}</span></div>
+        </div>
+        <div class="info-card">
+            <div class="label">海外经历</div>
+            <div class="val">{{OVERSEAS}}<br/><span class="info-note">{{OVERSEAS_VERIFY}}</span></div>
+        </div>
+        <!-- 学术任职卡片：跨两列，逐条列出所有学术委员身份 -->
+        <div class="info-card" style="grid-column: span 2;">
+            <div class="label">学术任职</div>
+            <div class="val" style="font-size:12px;line-height:1.8;">
+                {{ACADEMIC_ROLES}}
+            </div>
+        </div>
+        <div class="info-card">
+            <div class="label">年龄</div>
+            <div class="val">{{AGE}}<span class="info-note"> C级推断</span></div>
+        </div>
+    </div>
+
+    <!-- ========== 二、研究方向 + 研究脉络 ========== -->
+    <h3 class="section-title">二、研究方向</h3>
+    <div class="direction-block">
+        <div class="main">主攻：{{MAIN_DIRECTION}}</div>
+        <div class="desc">{{DIRECTION_DESC}}</div>
+        <div class="tags">
+            {{TAGS}}
+        </div>
+    </div>
+
+    <!-- 客户研究脉络：按年份倒序，5-7个关键里程碑 -->
+    <h3 class="section-title">客户研究脉络</h3>
+    <div class="timeline">
+        {{TIMELINE_ITEMS}}
+    </div>
+
+    <!-- ========== 三、近三年发表论文 ========== -->
+    <h3 class="section-title">三、近三年发表论文（{{YEAR_RANGE}}）</h3>
+    {{PAPER_ITEMS}}
+
+    <!-- ========== 四、近三年演讲与学术活动 ========== -->
+    <h3 class="section-title">四、近三年演讲与学术活动（{{YEAR_RANGE}}）</h3>
+    {{TALK_ITEMS}}
+
+    <!-- ========== 五、近三年基金课题 ========== -->
+    <h3 class="section-title">五、近三年基金课题</h3>
+    {{FUND_ITEMS}}
+
+    <!-- ========== 六、微信公众号文章摘录 ========== -->
+    <h3 class="section-title">六、微信公众号文章摘录</h3>
+    {{WECHAT_ITEMS}}
+
+    <!-- ========== FOOTER ========== -->
+    <div class="footer">
+        <p>调研时间：{{DATE}} · 数据来源：WebSearch / PubMed / 医院官网 / NSFC / 微信公众号</p>
+        <p>核实等级：A级=2+来源交叉验证，B级=1来源+佐证，C级=推断</p>
+    </div>
+
+</div>
+</body>
+</html>

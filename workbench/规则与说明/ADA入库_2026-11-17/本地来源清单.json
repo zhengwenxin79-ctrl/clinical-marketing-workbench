@@ -1,0 +1,74 @@
+[
+  {
+    "original_path": "/Users/zwx/Documents/文献阅读/BrainHao-Study/wenxin/糖尿病热点知识地图/来源/ADA2026_日程.pdf",
+    "relative_path": "原始资料/ADA2026/官方程序/ADA2026_日程.pdf",
+    "sha256": "3f137887c45c3ed387111c57cb8987d75e42fbeb8b6e5ab7c3f3f87d7c2b1057",
+    "byte_size": 3072176,
+    "kind": "official_program_pdf",
+    "source_observed_on": "2026-11-11"
+  },
+  {
+    "original_path": "/Users/zwx/Documents/文献阅读/BrainHao-Study/wenxin/糖尿病热点知识地图/来源/ADA2026_日程.txt",
+    "relative_path": "原始资料/ADA2026/官方程序/ADA2026_日程.txt",
+    "sha256": "3fca5973b8d44f47a836a7c832298ca340773165ef43f5e36e5f1ba058a61a17",
+    "byte_size": 831929,
+    "kind": "official_program_text",
+    "source_observed_on": "2026-11-11"
+  },
+  {
+    "original_path": "/Users/zwx/Documents/文献阅读/BrainHao-Study/wenxin/糖尿病热点知识地图/来源/ADA2026_研究动向.json",
+    "relative_path": "原始资料/ADA2026/研究记录/ADA2026_研究动向.json",
+    "sha256": "527fe3eefb93622b4fccdf19b12f51e15d34e23379d9ffc992a9b4f4ad9a4734",
+    "byte_size": 63427,
+    "kind": "curated_research_records",
+    "source_observed_on": "2026-11-11"
+  },
+  {
+    "original_path": "/Users/zwx/Documents/文献阅读/BrainHao-Study/wenxin/糖尿病热点知识地图/来源/ADA2026_重点动向6条.json",
+    "relative_path": "原始资料/ADA2026/研究记录/ADA2026_重点动向6条.json",
+    "sha256": "2ce7ec60508b10a1cb5d8dd8769b0d883b9e2282dac62211074b74e203696ed8",
+    "byte_size": 8661,
+    "kind": "historical_curated_records",
+    "source_observed_on": "2026-11-11"
+  },
+  {
+    "original_path": "/Users/zwx/Documents/文献阅读/BrainHao-Study/wenxin/糖尿病热点知识地图/来源/ADA覆盖审计_2026-11-11.json",
+    "relative_path": "原始资料/ADA2026/研究记录/ADA覆盖审计_2026-11-11.json",
+    "sha256": "489876315193ca776c1ad32801a99bddb254b71b93fe4e641afef8cf314dcef0",
+    "byte_size": 1032,
+    "kind": "historical_coverage_audit",
+    "source_observed_on": "2026-11-11"
+  },
+  {
+    "original_path": "/Users/zwx/Documents/文献阅读/BrainHao-Study/wenxin/糖尿病热点知识地图/热点量化试评_2026-11-16/原始材料/ADA_14篇原始摘要结构化.json",
+    "relative_path": "原始资料/ADA2026/关联论文/ADA_14篇原始论文摘要结构化.json",
+    "sha256": "65f2e4b41e769080537ebad4d61c6c0d99de5fbb135a29384cf8235009d34fa2",
+    "byte_size": 56472,
+    "kind": "paper_abstracts",
+    "source_observed_on": "2026-11-16"
+  },
+  {
+    "original_path": "/Users/zwx/Documents/文献阅读/BrainHao-Study/wenxin/糖尿病热点知识地图/热点量化试评_2026-11-16/原始材料/ADA_论文摘要批量.xml",
+    "relative_path": "原始资料/ADA2026/关联论文/ADA_论文摘要批量.xml",
+    "sha256": "c0d79a4fa6f56354e59414375852f359656a8d30ec0d19a29a2ce6eeb2cde63c",
+    "byte_size": 308366,
+    "kind": "paper_pubmed_xml",
+    "source_observed_on": "2026-11-16"
+  },
+  {
+    "original_path": "/Users/zwx/Documents/文献阅读/BrainHao-Study/wenxin/糖尿病热点知识地图/热点量化试评_2026-11-16/原始材料/ADA_A01关联论文.xml",
+    "relative_path": "原始资料/ADA2026/关联论文/ADA_A01关联论文.xml",
+    "sha256": "e5d49e78e3e121c248466615e30243664a5d285cb9cc6b777021d0b7fd761c5a",
+    "byte_size": 28549,
+    "kind": "paper_pubmed_xml",
+    "source_observed_on": "2026-11-16"
+  },
+  {
+    "original_path": "/Users/zwx/Documents/文献阅读/BrainHao-Study/wenxin/糖尿病热点知识地图/热点量化试评_2026-11-16/ADA_重点议题榜.json",
+    "relative_path": "原始资料/ADA2026/历史分析/ADA_旧重点议题榜.json",
+    "sha256": "c33b435f2cbddfacabf5b2818dbe358022e3feb6c17ed7111ced7337e9d5fb23",
+    "byte_size": 80194,
+    "kind": "historical_scored_analysis",
+    "source_observed_on": "2026-11-16"
+  }
+]

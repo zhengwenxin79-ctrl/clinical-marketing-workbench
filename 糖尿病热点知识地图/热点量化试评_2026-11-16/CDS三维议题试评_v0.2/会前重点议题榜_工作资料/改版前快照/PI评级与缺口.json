@@ -1,0 +1,2603 @@
+[
+  {
+    "id": "P01",
+    "name": "黄斌",
+    "institution": "中国科学技术大学附属第一医院（安徽省立医院）",
+    "role_status": "副主任医师、博士/博士后、硕导（本届CDS简介）",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=WnD6j",
+    "topics": [
+      "Q01"
+    ],
+    "report_codes": [
+      "OR_003"
+    ],
+    "evidence": [
+      {
+        "code": "OR_003",
+        "title": "正常白蛋白尿且肾功能保留糖尿病患者的隐匿性肾小管损伤：4046例队列与多尺度转录组研究",
+        "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40603",
+        "reading_level": "已存原始日程，计划题名级"
+      }
+    ],
+    "customer_pool_match": false,
+    "customer_pool_row": null,
+    "total_score": 62,
+    "grade": "C",
+    "rating_status": "四维暂评完成",
+    "head_pi_status": "青年临床科研负责人线索；未作全国头部结论",
+    "dimensions": [
+      {
+        "name": "研究方向契合度",
+        "maximum": 30,
+        "score": 28,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "DKD早期损伤、转录组和临床指标验证，直接连接T03/T04/T10；具体体液产品待确认。",
+        "source_ids": [
+          "BIO_P01"
+        ]
+      },
+      {
+        "name": "学术产出质量",
+        "maximum": 25,
+        "score": 11,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "PubMed确认Journal of Diabetes 2025第一作者，IF5.9进入8—13档；本轮未以未核全篇IF累计加分。",
+        "source_ids": [
+          "PM39968673",
+          "IF_J Diabetes"
+        ]
+      },
+      {
+        "name": "科研转化潜力",
+        "maximum": 25,
+        "score": 11,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "官方省自然名单确认本人青年项目；已发表研究有临床人群与标本，支持8—13档。CDS题名4046例不是已验证可开放队列。",
+        "source_ids": [
+          "ANHUI",
+          "PM40718584"
+        ]
+      },
+      {
+        "name": "平台资源禀赋",
+        "maximum": 20,
+        "score": 12,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "三甲及内分泌代谢研究所、省重点实验室可核，按区域平台11—15档暂评；不把研究所全部资源视作本人可调配。",
+        "source_ids": [
+          "USTC"
+        ]
+      }
+    ],
+    "rating_date": "2026-11-16",
+    "scored_dimensions": 4,
+    "known_subtotal": 62,
+    "known_maximum": 100,
+    "papers": [
+      {
+        "pmid": "39968673",
+        "title": "Iron-Deficiency Anemia Elevates Risk of Diabetic Kidney Disease in Type 2 Diabetes Mellitus.",
+        "journal": "Journal of diabetes",
+        "journal_abbrev": "J Diabetes",
+        "doi": "10.1111/1753-0407.70060",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39968673/",
+        "dates": [
+          {
+            "Year": "2025",
+            "Month": "Feb",
+            "Day": null,
+            "MedlineDate": null
+          }
+        ],
+        "author_position": "1/3",
+        "author_role": "第一列名作者",
+        "matched_author": {
+          "first": "Bin",
+          "last": "Huang",
+          "initials": "B",
+          "affiliations": [
+            "Department of Endocrinology, Division of Life Science and Medicine, The First Affiliated Hospital of USTC, University of Science and Technology of China, Hefei, Anhui, China."
+          ]
+        },
+        "if_value": 5.9,
+        "if_year": "2025",
+        "if_source_id": "IF_J Diabetes",
+        "if_status": "已核期刊指标（非单篇质量）",
+        "raw_file": "pubmed_batch_2.xml",
+        "identity_review": "英文全名与本人所属机构匹配；人工复核。"
+      },
+      {
+        "pmid": "40718584",
+        "title": "Urinary Ferritin as an Early Indicator of Tubular Injury in Diabetic Kidney Disease: Insights from NHANES and Clinical Cohorts.",
+        "journal": "Diabetes, metabolic syndrome and obesity : targets and therapy",
+        "journal_abbrev": "Diabetes Metab Syndr Obes",
+        "doi": "10.2147/DMSO.S523961",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40718584/",
+        "dates": [
+          {
+            "Year": "2025",
+            "Month": null,
+            "Day": null,
+            "MedlineDate": null
+          },
+          {
+            "Year": "2025",
+            "Month": "07",
+            "Day": "21",
+            "MedlineDate": null
+          }
+        ],
+        "author_position": "1/4",
+        "author_role": "第一列名作者",
+        "matched_author": {
+          "first": "Bin",
+          "last": "Huang",
+          "initials": "B",
+          "affiliations": [
+            "Department of Endocrinology, The First Affiliated Hospital of USTC, Division of Life Science and Medicine, University of Science and Technology of China, Hefei, Anhui, 230001, People's Republic of China."
+          ]
+        },
+        "if_value": null,
+        "if_year": null,
+        "if_source_id": null,
+        "if_status": "最新IF未核；不据此提高档位",
+        "raw_file": "pubmed_batch_2.xml",
+        "identity_review": "英文全名与本人所属机构匹配；人工复核。"
+      },
+      {
+        "pmid": "40716618",
+        "title": "Sculpting liver-related injury in type 2 diabetes mellitus: Decoding serum ferritin's correlation and ferroptosis pathways.",
+        "journal": "The Journal of nutritional biochemistry",
+        "journal_abbrev": "J Nutr Biochem",
+        "doi": "10.1016/j.jnutbio.2025.110044",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40716618/",
+        "dates": [
+          {
+            "Year": "2025",
+            "Month": "Dec",
+            "Day": null,
+            "MedlineDate": null
+          },
+          {
+            "Year": "2025",
+            "Month": "07",
+            "Day": "25",
+            "MedlineDate": null
+          }
+        ],
+        "author_position": "1/4",
+        "author_role": "第一列名作者",
+        "matched_author": {
+          "first": "Bin",
+          "last": "Huang",
+          "initials": "B",
+          "affiliations": [
+            "Department of Endocrinology, The First Affiliated Hospital of USTC, Division of Life Science and Medicine, University of Science and Technology of China, Hefei, Anhui, China."
+          ]
+        },
+        "if_value": null,
+        "if_year": null,
+        "if_source_id": null,
+        "if_status": "最新IF未核；不据此提高档位",
+        "raw_file": "pubmed_batch_2.xml",
+        "identity_review": "英文全名与本人所属机构匹配；人工复核。"
+      }
+    ],
+    "grants": [
+      {
+        "level": "省自然青年",
+        "name": "维生素D调节肾小球内皮细胞糖萼和铁死亡改善糖尿病肾脏病",
+        "number": "2308085QH261",
+        "role": "负责人",
+        "status": "官方名单与论文致谢交叉支持",
+        "source_ids": [
+          "ANHUI",
+          "PM39968673"
+        ]
+      }
+    ],
+    "gaps": [
+      "国家级课题的具体类别、负责人和在研期限；尚不足以按国自然主持1项加档。",
+      "最新完整论文清单与IF年度核对；可开放队列、样本使用权及当前合作需求。"
+    ],
+    "contact_action": "围绕隐匿肾损伤与组织—体液验证交流；先确认具体采样和独立验证需求。",
+    "identity_note": "以中文姓名+机构、本人英文全名+作者自身机构共同核对；仍需本人/团队核验。",
+    "evidence_status": "公开资料AI暂评，未经过人工/本人确认",
+    "profile_read": true
+  },
+  {
+    "id": "P02",
+    "name": "曾明旺",
+    "institution": "天津医科大学",
+    "role_status": "天津医科大学研究生（CDS官方简介）",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=vzddP",
+    "topics": [
+      "Q02"
+    ],
+    "report_codes": [
+      "OR_031"
+    ],
+    "evidence": [
+      {
+        "code": "OR_031",
+        "title": "胰岛素治疗糖尿病人群β细胞衰竭表型的数据驱动分型及其临床特征",
+        "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40605",
+        "reading_level": "已存原始日程，计划题名级"
+      }
+    ],
+    "customer_pool_match": false,
+    "customer_pool_row": null,
+    "total_score": null,
+    "grade": null,
+    "rating_status": "部分维度已评分",
+    "head_pi_status": "研究生报告人；独立PI与决策角色未确认",
+    "dimensions": [
+      {
+        "name": "研究方向契合度",
+        "maximum": 30,
+        "score": 23,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "数据驱动β细胞衰竭分型连接T10；题名未指明分子检测需求，按18—24档。",
+        "source_ids": [
+          "BIO_P02"
+        ]
+      },
+      {
+        "name": "学术产出质量",
+        "maximum": 25,
+        "score": null,
+        "status": "本轮已检索，证据仍不足",
+        "basis": "限定机构/病种的PubMed检索未定位唯一论文；检索未命中不证明没有SCI。",
+        "source_ids": []
+      },
+      {
+        "name": "科研转化潜力",
+        "maximum": 25,
+        "score": null,
+        "status": "本轮已检索，证据仍不足",
+        "basis": "未找到可归到本人的基金主持、队列权限或试验负责人证据。",
+        "source_ids": []
+      },
+      {
+        "name": "平台资源禀赋",
+        "maximum": 20,
+        "score": null,
+        "status": "本轮已检索，证据仍不足",
+        "basis": "当前只知天津医科大学，未确认就读/执业医院和科室；不套用某附属医院资源。",
+        "source_ids": [
+          "BIO_P02"
+        ]
+      }
+    ],
+    "rating_date": "2026-11-16",
+    "scored_dimensions": 1,
+    "known_subtotal": 23,
+    "known_maximum": 30,
+    "papers": [],
+    "grants": [],
+    "gaps": [
+      "英文署名、导师及具体医院/课题组。",
+      "本人论文、独立基金或参与角色；分型研究负责人和临床资源联系人。"
+    ],
+    "contact_action": "先确认导师或实际课题负责人，保留青年研究者交流入口。",
+    "identity_note": "以中文姓名+机构、本人英文全名+作者自身机构共同核对；仍需本人/团队核验。",
+    "evidence_status": "公开资料AI暂评，未经过人工/本人确认",
+    "profile_read": true
+  },
+  {
+    "id": "P03",
+    "name": "雷康",
+    "institution": "南华大学附属第二医院",
+    "role_status": "医学博士、主治医师；衡阳糖尿病专委会委员兼秘书",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=R1OMx",
+    "topics": [
+      "Q03"
+    ],
+    "report_codes": [
+      "OR_262"
+    ],
+    "evidence": [
+      {
+        "code": "OR_262",
+        "title": "外周血CD52⁺ NK细胞是一类与1型糖尿病疾病进展与缓解相关的免疫调节性固有免疫细胞亚群",
+        "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40629",
+        "reading_level": "已存原始日程，计划题名级"
+      }
+    ],
+    "customer_pool_match": false,
+    "customer_pool_row": null,
+    "total_score": null,
+    "grade": null,
+    "rating_status": "部分维度已评分",
+    "head_pi_status": "临床青年研究者；独立课题角色待核",
+    "dimensions": [
+      {
+        "name": "研究方向契合度",
+        "maximum": 30,
+        "score": 28,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "NK细胞、T1D进展/缓解及免疫表型，直接相关单细胞与联合建模研究。",
+        "source_ids": [
+          "BIO_P03",
+          "PM40471558"
+        ]
+      },
+      {
+        "name": "学术产出质量",
+        "maximum": 25,
+        "score": 11,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "Clinical Science 2025第一作者；IF7.3支持8—13档。简介中的Nat Metab/Nat Commun未逐篇定位到近三年，不直接补分。",
+        "source_ids": [
+          "PM40471558",
+          "IF_Clin Sci (Lond)"
+        ]
+      },
+      {
+        "name": "科研转化潜力",
+        "maximum": 25,
+        "score": null,
+        "status": "本轮已检索，证据仍不足",
+        "basis": "官方简介只说“主持及参与”，基金负责人和参与项目未分开；不能据此定独立基金档。",
+        "source_ids": [
+          "BIO_P03"
+        ]
+      },
+      {
+        "name": "平台资源禀赋",
+        "maximum": 20,
+        "score": 8,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "南华大学官网明确附二院为三甲，按6—10档暂评8；未核内分泌科区域排名及本人可调配资源。",
+        "source_ids": [
+          "NHPLATFORM"
+        ]
+      }
+    ],
+    "rating_date": "2026-11-16",
+    "scored_dimensions": 3,
+    "known_subtotal": 47,
+    "known_maximum": 75,
+    "papers": [
+      {
+        "pmid": "40471558",
+        "title": "Dysregulation of NK cell subsets and phenotypes in COVID-19 patients with comorbid type 2 diabetes.",
+        "journal": "Clinical science (London, England : 1979)",
+        "journal_abbrev": "Clin Sci (Lond)",
+        "doi": "10.1042/CS20243133",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40471558/",
+        "dates": [
+          {
+            "Year": "2025",
+            "Month": "Jun",
+            "Day": "23",
+            "MedlineDate": null
+          },
+          {
+            "Year": "2025",
+            "Month": "06",
+            "Day": "23",
+            "MedlineDate": null
+          }
+        ],
+        "author_position": "1/7",
+        "author_role": "第一列名作者",
+        "matched_author": {
+          "first": "Kang",
+          "last": "Lei",
+          "initials": "K",
+          "affiliations": [
+            "Department of Endocrinology, The Second Affiliated Hospital, University of South China, Hengyang, Hunan , 421001, China.",
+            "National Clinical Research Center for Metabolic Diseases, Key Laboratory of Diabetes immunology, Ministry of Education, and Department of Metabolism and Endocrinology, The Second Xiangya Hospital of Central South University, Changsha, Hunan, China."
+          ]
+        },
+        "if_value": 7.3,
+        "if_year": "2025",
+        "if_source_id": "IF_Clin Sci (Lond)",
+        "if_status": "已核期刊指标（非单篇质量）",
+        "raw_file": "pubmed_batch_2.xml",
+        "identity_review": "英文全名与本人所属机构匹配；人工复核。"
+      }
+    ],
+    "grants": [],
+    "gaps": [
+      "各基金名称/负责人及本人角色，尤其国自然主持证明。",
+      "T1D样本队列及使用权限；最新科室平台和区域专科证据。"
+    ],
+    "contact_action": "核对CD52+NK具体检测、患者队列和主管PI后讨论免疫状态验证。",
+    "identity_note": "以中文姓名+机构、本人英文全名+作者自身机构共同核对；仍需本人/团队核验。",
+    "evidence_status": "公开资料AI暂评，未经过人工/本人确认",
+    "profile_read": true
+  },
+  {
+    "id": "P04",
+    "name": "余超伦",
+    "institution": "广东省人民医院",
+    "role_status": "广东省人民医院报告人；公开招聘表有内分泌医师拟录用线索，现职待核",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=YGDor",
+    "topics": [
+      "Q04"
+    ],
+    "report_codes": [
+      "OR_008"
+    ],
+    "evidence": [
+      {
+        "code": "OR_008",
+        "title": "单细胞联合空间转录组技术解析糖尿病肾病肾脏纤维化微环境起源及机制研究",
+        "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40603",
+        "reading_level": "已存原始日程，计划题名级"
+      }
+    ],
+    "customer_pool_match": false,
+    "customer_pool_row": null,
+    "total_score": null,
+    "grade": null,
+    "rating_status": "部分维度已评分",
+    "head_pi_status": "独立PI与任职层级待核",
+    "dimensions": [
+      {
+        "name": "研究方向契合度",
+        "maximum": 30,
+        "score": 28,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "DKD单细胞/空间图谱直接连接T03/T04，另有微血管病和多组学论文。",
+        "source_ids": [
+          "BIO_P04",
+          "PM40979545"
+        ]
+      },
+      {
+        "name": "学术产出质量",
+        "maximum": 25,
+        "score": 16,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "J Pharm Anal 2025列名作者3/10，IF11.2进入14—19档；不是以第一/通讯作者计。",
+        "source_ids": [
+          "PM40979545",
+          "IF_J Pharm Anal"
+        ]
+      },
+      {
+        "name": "科研转化潜力",
+        "maximum": 25,
+        "score": null,
+        "status": "本轮已检索，证据仍不足",
+        "basis": "无已核本人主持基金、可开放队列及RCT牵头记录；论文合作不替代项目负责人。",
+        "source_ids": []
+      },
+      {
+        "name": "平台资源禀赋",
+        "maximum": 20,
+        "score": 8,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "三级甲等平台有国家临床研究中心成员单位名录支持；未加未经核对的科室排名分。",
+        "source_ids": [
+          "PLATFORM_CSU"
+        ]
+      }
+    ],
+    "rating_date": "2026-11-16",
+    "scored_dimensions": 3,
+    "known_subtotal": 52,
+    "known_maximum": 75,
+    "papers": [
+      {
+        "pmid": "40979545",
+        "title": "Prioritization of potential drug targets for diabetic kidney disease using integrative omics data mining and causal inference.",
+        "journal": "Journal of pharmaceutical analysis",
+        "journal_abbrev": "J Pharm Anal",
+        "doi": "10.1016/j.jpha.2025.101265",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40979545/",
+        "dates": [
+          {
+            "Year": "2025",
+            "Month": "Aug",
+            "Day": null,
+            "MedlineDate": null
+          },
+          {
+            "Year": "2025",
+            "Month": "03",
+            "Day": "14",
+            "MedlineDate": null
+          }
+        ],
+        "author_position": "3/10",
+        "author_role": "列名共同作者；不视为牵头",
+        "matched_author": {
+          "first": "Chaolun",
+          "last": "Yu",
+          "initials": "C",
+          "affiliations": [
+            "Guangdong Cardiovascular Institute, Guangdong Provincial People's Hospital, Guangdong Academy of Medical Sciences, Guangzhou, 510080, China."
+          ]
+        },
+        "if_value": 11.2,
+        "if_year": "2025年度JCR发布口径；2026-06公告",
+        "if_source_id": "IF_J Pharm Anal",
+        "if_status": "已核期刊指标（非单篇质量）",
+        "raw_file": "pubmed_batch_3.xml",
+        "identity_review": "英文全名与本人所属机构匹配；人工复核。"
+      },
+      {
+        "pmid": "40414620",
+        "title": "Birth Weight, Cardiovascular Health, and Microvascular Complications in Individuals with Diabetes Mellitus.",
+        "journal": "Diabetes & metabolism journal",
+        "journal_abbrev": "Diabetes Metab J",
+        "doi": "10.4093/dmj.2024.0518",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40414620/",
+        "dates": [
+          {
+            "Year": "2025",
+            "Month": "Sep",
+            "Day": null,
+            "MedlineDate": null
+          },
+          {
+            "Year": "2025",
+            "Month": "05",
+            "Day": "23",
+            "MedlineDate": null
+          }
+        ],
+        "author_position": "1/11",
+        "author_role": "第一列名作者",
+        "matched_author": {
+          "first": "Chaolun",
+          "last": "Yu",
+          "initials": "C",
+          "affiliations": [
+            "Department of Endocrinology, Guangdong Provincial People's Hospital, Guangdong Academy of Medical Sciences, Southern Medical University, Guangzhou, China."
+          ]
+        },
+        "if_value": null,
+        "if_year": null,
+        "if_source_id": null,
+        "if_status": "最新IF未核；不据此提高档位",
+        "raw_file": "pubmed_batch_2.xml",
+        "identity_review": "英文全名与本人所属机构匹配；人工复核。"
+      },
+      {
+        "pmid": "40042920",
+        "title": "Global Burden of the Key Components of Cardiovascular-Kidney-Metabolic Syndrome.",
+        "journal": "Journal of the American Society of Nephrology : JASN",
+        "journal_abbrev": "J Am Soc Nephrol",
+        "doi": "10.1681/ASN.0000000658",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40042920/",
+        "dates": [
+          {
+            "Year": "2025",
+            "Month": "Mar",
+            "Day": "05",
+            "MedlineDate": null
+          },
+          {
+            "Year": "2025",
+            "Month": "03",
+            "Day": "05",
+            "MedlineDate": null
+          }
+        ],
+        "author_position": "2/8",
+        "author_role": "列名共同作者；不视为牵头",
+        "matched_author": {
+          "first": "Chaolun",
+          "last": "Yu",
+          "initials": "C",
+          "affiliations": [
+            "Department of Endocrinology, Guangdong Provincial People's Hospital, Guangdong Academy of Medical Sciences, Southern Medical University, Guangzhou, China."
+          ]
+        },
+        "if_value": null,
+        "if_year": null,
+        "if_source_id": null,
+        "if_status": "最新IF未核；不据此提高档位",
+        "raw_file": "pubmed_batch_2.xml",
+        "identity_review": "英文全名与本人所属机构匹配；人工复核。"
+      }
+    ],
+    "grants": [],
+    "gaps": [
+      "独立基金主持记录、本人职位和研究决策权。",
+      "图谱样本来源/获取权限；临床团队负责人及可合作环节。"
+    ],
+    "contact_action": "先核对图谱研究团队分工，再讨论组织图谱及候选分子验证。",
+    "identity_note": "以中文姓名+机构、本人英文全名+作者自身机构共同核对；仍需本人/团队核验。",
+    "evidence_status": "公开资料AI暂评，未经过人工/本人确认",
+    "profile_read": true
+  },
+  {
+    "id": "P05",
+    "name": "陈铎",
+    "institution": "郑州大学第一附属医院",
+    "role_status": "郑大一附院内分泌科主治医师、医学博士（CDS简介）",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=GGOdq",
+    "topics": [
+      "Q04"
+    ],
+    "report_codes": [
+      "OR_143"
+    ],
+    "evidence": [
+      {
+        "code": "OR_143",
+        "title": "结合单细胞 RNA 测序与空间转录组技术构建人类糖尿病肾病图谱",
+        "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40616",
+        "reading_level": "已存原始日程，计划题名级"
+      }
+    ],
+    "customer_pool_match": false,
+    "customer_pool_row": null,
+    "total_score": 63,
+    "grade": "C",
+    "rating_status": "四维暂评完成",
+    "head_pi_status": "青年课题负责人；全国头部未证实",
+    "dimensions": [
+      {
+        "name": "研究方向契合度",
+        "maximum": 30,
+        "score": 28,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "单细胞/空间DKD图谱、代谢重编程和铁死亡，连接T03/T04及标志物验证。",
+        "source_ids": [
+          "BIO_P05",
+          "PM38236410"
+        ]
+      },
+      {
+        "name": "学术产出质量",
+        "maximum": 25,
+        "score": 16,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "Diabetologia 2024列名第二作者2/16，IF10.4支持14—19档。",
+        "source_ids": [
+          "PM38236410",
+          "IF_Diabetologia"
+        ]
+      },
+      {
+        "name": "科研转化潜力",
+        "maximum": 25,
+        "score": 11,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "官方省级教育科研项目负责人可核；Diabetologia研究35例DKD治疗前后血浆代谢组，支持省级基金+小临床队列8—13档。",
+        "source_ids": [
+          "HENAN",
+          "PM38236410"
+        ]
+      },
+      {
+        "name": "平台资源禀赋",
+        "maximum": 20,
+        "score": 8,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "高校来源确认三甲；本轮未核内分泌科全国/区域排名，只取三甲档。",
+        "source_ids": [
+          "ZZU"
+        ]
+      }
+    ],
+    "rating_date": "2026-11-16",
+    "scored_dimensions": 4,
+    "known_subtotal": 63,
+    "known_maximum": 100,
+    "papers": [
+      {
+        "pmid": "38236410",
+        "title": "Canagliflozin regulates metabolic reprogramming in diabetic kidney disease by inducing fasting-like and aestivation-like metabolic patterns.",
+        "journal": "Diabetologia",
+        "journal_abbrev": "Diabetologia",
+        "doi": "10.1007/s00125-023-06078-0",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38236410/",
+        "dates": [
+          {
+            "Year": "2024",
+            "Month": "Apr",
+            "Day": null,
+            "MedlineDate": null
+          },
+          {
+            "Year": "2024",
+            "Month": "01",
+            "Day": "18",
+            "MedlineDate": null
+          }
+        ],
+        "author_position": "2/16",
+        "author_role": "列名共同作者；不视为牵头",
+        "matched_author": {
+          "first": "Duo",
+          "last": "Chen",
+          "initials": "D",
+          "affiliations": [
+            "Institute of Clinical Medicine, The First Affiliated Hospital of Zhengzhou University, Zhengzhou, Henan, China."
+          ]
+        },
+        "if_value": 10.4,
+        "if_year": "2025",
+        "if_source_id": "IF_Diabetologia",
+        "if_status": "已核期刊指标（非单篇质量）",
+        "raw_file": "pubmed_batch_1.xml",
+        "identity_review": "英文全名与本人所属机构匹配；人工复核。"
+      },
+      {
+        "pmid": "38128823",
+        "title": "Canagliflozin improves fatty acid oxidation and ferroptosis of renal tubular epithelial cells via FOXA1-CPT1A axis in diabetic kidney disease.",
+        "journal": "Molecular and cellular endocrinology",
+        "journal_abbrev": "Mol Cell Endocrinol",
+        "doi": "10.1016/j.mce.2023.112139",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38128823/",
+        "dates": [
+          {
+            "Year": "2024",
+            "Month": "Mar",
+            "Day": "01",
+            "MedlineDate": null
+          },
+          {
+            "Year": "2023",
+            "Month": "12",
+            "Day": "19",
+            "MedlineDate": null
+          }
+        ],
+        "author_position": "11/13",
+        "author_role": "列名共同作者；不视为牵头",
+        "matched_author": {
+          "first": "Duo",
+          "last": "Chen",
+          "initials": "D",
+          "affiliations": [
+            "Department of Endocrinology and Metabolism, The First Affiliated Hospital of Zhengzhou University, Zhengzhou, 450052, China."
+          ]
+        },
+        "if_value": null,
+        "if_year": null,
+        "if_source_id": null,
+        "if_status": "最新IF未核；不据此提高档位",
+        "raw_file": "pubmed_batch_1.xml",
+        "identity_review": "英文全名与本人所属机构匹配；人工复核。"
+      },
+      {
+        "pmid": "41710879",
+        "title": "Anti-phospholipid antibodies as a risk factor for renal injury in patients with systemic lupus erythematosus: a comprehensive analysis.",
+        "journal": "Frontiers in immunology",
+        "journal_abbrev": "Front Immunol",
+        "doi": "10.3389/fimmu.2026.1734274",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41710879/",
+        "dates": [
+          {
+            "Year": "2026",
+            "Month": null,
+            "Day": null,
+            "MedlineDate": null
+          },
+          {
+            "Year": "2026",
+            "Month": "02",
+            "Day": "03",
+            "MedlineDate": null
+          }
+        ],
+        "author_position": "8/8",
+        "author_role": "末位列名作者；通讯身份另核",
+        "matched_author": {
+          "first": "Duo",
+          "last": "Chen",
+          "initials": "D",
+          "affiliations": [
+            "Department of Endocrinology and Metabolism, The First Affiliated Hospital of Zhengzhou University, Zhengzhou, Henan, China."
+          ]
+        },
+        "if_value": null,
+        "if_year": null,
+        "if_source_id": null,
+        "if_status": "最新IF未核；不据此提高档位",
+        "raw_file": "pubmed_batch_3.xml",
+        "identity_review": "英文全名与本人所属机构匹配；人工复核。"
+      }
+    ],
+    "grants": [
+      {
+        "level": "省教育科研",
+        "name": "靶向抑制IER2相关DKD肾小管铁死亡研究",
+        "number": "26A320037",
+        "role": "负责人",
+        "status": "官方立项名单；不按国自然计",
+        "source_ids": [
+          "HENAN"
+        ]
+      }
+    ],
+    "gaps": [
+      "省级项目在研状态、队列本人职责和开放权限。",
+      "是否已有独立国自然、跨中心验证或临床转化项目；最新科室平台证据。"
+    ],
+    "contact_action": "优先核对肾脏单细胞/空间图谱到体液标志物验证的实际项目需求。",
+    "identity_note": "以中文姓名+机构、本人英文全名+作者自身机构共同核对；仍需本人/团队核验。",
+    "evidence_status": "公开资料AI暂评，未经过人工/本人确认",
+    "profile_read": true
+  },
+  {
+    "id": "P06",
+    "name": "宋金方",
+    "institution": "江南大学附属医院",
+    "role_status": "副主任药师、硕导、江南大学在站博士后（CDS简介）",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=ejDgz",
+    "topics": [
+      "Q05"
+    ],
+    "report_codes": [
+      "OR_006"
+    ],
+    "evidence": [
+      {
+        "code": "OR_006",
+        "title": "Ppp1r3g介导达格列净肾脏获益个体差异的机制研究与精准预测模型构建",
+        "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40603",
+        "reading_level": "已存原始日程，计划题名级"
+      }
+    ],
+    "customer_pool_match": false,
+    "customer_pool_row": null,
+    "total_score": 68,
+    "grade": "C",
+    "rating_status": "四维暂评完成",
+    "head_pi_status": "有独立基金的药学研究者；全国头部未证实",
+    "dimensions": [
+      {
+        "name": "研究方向契合度",
+        "maximum": 30,
+        "score": 28,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "代谢病药物应答、遗传多态性和定量蛋白组研究，直接连接应答分层/多组学建模。",
+        "source_ids": [
+          "BIO_P06",
+          "PM42542611"
+        ]
+      },
+      {
+        "name": "学术产出质量",
+        "maximum": 25,
+        "score": 16,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "J Pharm Anal 2024列名13/15，IF11.2支持14—19档；另核iScience和临床队列论文，不把共同作者改作牵头。",
+        "source_ids": [
+          "PM39350964",
+          "IF_J Pharm Anal"
+        ]
+      },
+      {
+        "name": "科研转化潜力",
+        "maximum": 25,
+        "score": 16,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "导师页与CDS简介均明确主持国自然青年；已发表10860例回顾队列与前瞻验证线索，支持14—19档。国自然项数未证明≥2，不入20—25档。",
+        "source_ids": [
+          "SONG",
+          "BIO_P06",
+          "PM41923691",
+          "PM42542611"
+        ]
+      },
+      {
+        "name": "平台资源禀赋",
+        "maximum": 20,
+        "score": 8,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "江苏卫健委确认江南大学附属医院三甲；药学科室全国排名未核，取6—10档。",
+        "source_ids": [
+          "JIANGSU"
+        ]
+      }
+    ],
+    "rating_date": "2026-11-16",
+    "scored_dimensions": 4,
+    "known_subtotal": 68,
+    "known_maximum": 100,
+    "papers": [
+      {
+        "pmid": "39350964",
+        "title": "17β-Estradiol, through activating the G protein-coupled estrogen receptor, exacerbates the complication of benign prostatic hyperplasia in type 2 diabetes mellitus patients by inducing prostate proliferation.",
+        "journal": "Journal of pharmaceutical analysis",
+        "journal_abbrev": "J Pharm Anal",
+        "doi": "10.1016/j.jpha.2024.03.003",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39350964/",
+        "dates": [
+          {
+            "Year": "2024",
+            "Month": "Sep",
+            "Day": null,
+            "MedlineDate": null
+          },
+          {
+            "Year": "2024",
+            "Month": "03",
+            "Day": "12",
+            "MedlineDate": null
+          }
+        ],
+        "author_position": "13/15",
+        "author_role": "列名共同作者；不视为牵头",
+        "matched_author": {
+          "first": "Jinfang",
+          "last": "Song",
+          "initials": "J",
+          "affiliations": [
+            "Department of Pharmacy, The Affiliated Hospital of Jiangnan University, Wuxi, Jiangsu, 214000, China."
+          ]
+        },
+        "if_value": 11.2,
+        "if_year": "2025年度JCR发布口径；2026-06公告",
+        "if_source_id": "IF_J Pharm Anal",
+        "if_status": "已核期刊指标（非单篇质量）",
+        "raw_file": "pubmed_batch_2.xml",
+        "identity_review": "英文全名与本人所属机构匹配；人工复核。"
+      },
+      {
+        "pmid": "41923691",
+        "title": "Reduction in Albuminuria with Dapagliflozin Exhibits Substantial Interindividual Variability: A Real-World Study Utilizing a Big Data Approach.",
+        "journal": "Balkan medical journal",
+        "journal_abbrev": "Balkan Med J",
+        "doi": "10.4274/balkanmedj.galenos.2026.2025-12-261",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41923691/",
+        "dates": [
+          {
+            "Year": "2026",
+            "Month": "Jul",
+            "Day": "01",
+            "MedlineDate": null
+          },
+          {
+            "Year": "2026",
+            "Month": "04",
+            "Day": "02",
+            "MedlineDate": null
+          }
+        ],
+        "author_position": "1/8",
+        "author_role": "第一列名作者",
+        "matched_author": {
+          "first": "Jinfang",
+          "last": "Song",
+          "initials": "J",
+          "affiliations": [
+            "Department of Pharmacy, Affiliated Hospital of Jiangnan University, Jiangsu, China.",
+            "Jiangsu Key Laboratory of New Drug Research and Clinical Pharmacy, Xuzhou Medical University, Jiangsu, China."
+          ]
+        },
+        "if_value": null,
+        "if_year": null,
+        "if_source_id": null,
+        "if_status": "最新IF未核；不据此提高档位",
+        "raw_file": "pubmed_batch_3.xml",
+        "identity_review": "英文全名与本人所属机构匹配；人工复核。"
+      },
+      {
+        "pmid": "42542611",
+        "title": "GSK3B variations influence renoprotective responses to dapagliflozin in diabetic kidney disease.",
+        "journal": "iScience",
+        "journal_abbrev": "iScience",
+        "doi": "10.1016/j.isci.2026.116862",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42542611/",
+        "dates": [
+          {
+            "Year": "2026",
+            "Month": "Aug",
+            "Day": "21",
+            "MedlineDate": null
+          },
+          {
+            "Year": "2026",
+            "Month": "07",
+            "Day": "23",
+            "MedlineDate": null
+          }
+        ],
+        "author_position": "1/9",
+        "author_role": "第一列名作者",
+        "matched_author": {
+          "first": "Jinfang",
+          "last": "Song",
+          "initials": "J",
+          "affiliations": [
+            "Department of Pharmacy, Affiliated Hospital of Jiangnan University, Jiangnan University, Wuxi, China.",
+            "Jiangsu Key Laboratory of New Drug Research and Clinical Pharmacy, Xuzhou Medical University, Xuzhou, China."
+          ]
+        },
+        "if_value": null,
+        "if_year": null,
+        "if_source_id": null,
+        "if_status": "最新IF未核；不据此提高档位",
+        "raw_file": "pubmed_batch_4.xml",
+        "identity_review": "英文全名与本人所属机构匹配；人工复核。"
+      },
+      {
+        "pmid": "40474205",
+        "title": "Case-control study combined with machine learning techniques to identify key genetic variations in GSK3B that affect susceptibility to diabetic kidney diseases.",
+        "journal": "BMC endocrine disorders",
+        "journal_abbrev": "BMC Endocr Disord",
+        "doi": "10.1186/s12902-025-01960-x",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40474205/",
+        "dates": [
+          {
+            "Year": "2025",
+            "Month": "Jun",
+            "Day": "05",
+            "MedlineDate": null
+          },
+          {
+            "Year": "2025",
+            "Month": "06",
+            "Day": "05",
+            "MedlineDate": null
+          }
+        ],
+        "author_position": "1/9",
+        "author_role": "第一列名作者",
+        "matched_author": {
+          "first": "Jinfang",
+          "last": "Song",
+          "initials": "J",
+          "affiliations": [
+            "Jiangsu Key Laboratory of New Drug Research and Clinical Pharmacy, Xuzhou Medical University, No.209, Tongshan Road, Xuzhou, China.",
+            "Department of Pharmacy, Affiliated Hospital of Jiangnan University, Wuxi, China."
+          ]
+        },
+        "if_value": null,
+        "if_year": null,
+        "if_source_id": null,
+        "if_status": "最新IF未核；不据此提高档位",
+        "raw_file": "pubmed_batch_2.xml",
+        "identity_review": "英文全名与本人所属机构匹配；人工复核。"
+      }
+    ],
+    "grants": [
+      {
+        "level": "国自然青年",
+        "name": "官方导师与CDS简介明确主持；项目题名待补",
+        "number": null,
+        "role": "主持（至少1项；准确数量待核）",
+        "status": "官方简介交叉支持；NSFC项目详情待补",
+        "source_ids": [
+          "SONG",
+          "BIO_P06"
+        ]
+      }
+    ],
+    "gaps": [
+      "国自然个人立项原件/准确项目号与期限；本轮不将论文全部基金号归本人。",
+      "临床数据库与前瞻试验中本人角色、队列开放权限；CDS的Ppp1r3g与已发GSK3B不是同一指标。"
+    ],
+    "contact_action": "可优先交流达格列净应答分层、药物基因组学及验证设计；公司具体交付先对齐。",
+    "identity_note": "以中文姓名+机构、本人英文全名+作者自身机构共同核对；仍需本人/团队核验。",
+    "evidence_status": "公开资料AI暂评，未经过人工/本人确认",
+    "profile_read": true
+  },
+  {
+    "id": "P07",
+    "name": "匡洪宇",
+    "institution": "哈尔滨医科大学附属第一医院",
+    "role_status": "内分泌科/内科学主任、二级教授、博导；CDS副主任委员（2026简介）",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=Z8D7o",
+    "topics": [
+      "Q06"
+    ],
+    "report_codes": [
+      "S_198"
+    ],
+    "evidence": [
+      {
+        "code": "S_198",
+        "title": "多维度标志物联合构建糖网风险预警模型",
+        "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40563",
+        "reading_level": "已存原始日程，计划题名级"
+      }
+    ],
+    "customer_pool_match": false,
+    "customer_pool_row": null,
+    "total_score": null,
+    "grade": null,
+    "rating_status": "部分维度已评分",
+    "head_pi_status": "全国学术任职已核；糖网方向牵头项目证据待补",
+    "dimensions": [
+      {
+        "name": "研究方向契合度",
+        "maximum": 30,
+        "score": 27,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "糖网风险模型与分子/临床指标组合，与T10及候选分子验证相关。",
+        "source_ids": [
+          "BIO_P07",
+          "PM42769213"
+        ]
+      },
+      {
+        "name": "学术产出质量",
+        "maximum": 25,
+        "score": 21,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "BMJ 2025列名8/23，IF55.1支持20—25档；糖网论文有末位署名。高IF合作论文不等于全国头部PI证明。",
+        "source_ids": [
+          "PM39843169",
+          "IF_BMJ",
+          "PM42851386"
+        ]
+      },
+      {
+        "name": "科研转化潜力",
+        "maximum": 25,
+        "score": null,
+        "status": "本轮已检索，证据仍不足",
+        "basis": "有临床注册/试验合作及基金致谢，但本人主持项目数仍未获原始负责名单。不能把合辑中其他教师基金或论文致谢基金转给本人。",
+        "source_ids": [
+          "BIO_P07",
+          "PM43021325"
+        ]
+      },
+      {
+        "name": "平台资源禀赋",
+        "maximum": 20,
+        "score": 13,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "大学与CDS简介确认科主任、省糖尿病临床研究中心主任和全国任职，按区域知名平台11—15档；无已核TOP5科室排名。",
+        "source_ids": [
+          "KUANG",
+          "BIO_P07"
+        ]
+      }
+    ],
+    "rating_date": "2026-11-16",
+    "scored_dimensions": 3,
+    "known_subtotal": 61,
+    "known_maximum": 75,
+    "papers": [
+      {
+        "pmid": "39843169",
+        "title": "Dapagliflozin plus calorie restriction for remission of type 2 diabetes: multicentre, double blind, randomised, placebo controlled trial.",
+        "journal": "BMJ (Clinical research ed.)",
+        "journal_abbrev": "BMJ",
+        "doi": "10.1136/bmj-2024-081820",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39843169/",
+        "dates": [
+          {
+            "Year": "2025",
+            "Month": "Jan",
+            "Day": "22",
+            "MedlineDate": null
+          },
+          {
+            "Year": "2025",
+            "Month": "01",
+            "Day": "22",
+            "MedlineDate": null
+          }
+        ],
+        "author_position": "8/23",
+        "author_role": "列名共同作者；不视为牵头",
+        "matched_author": {
+          "first": "Hongyu",
+          "last": "Kuang",
+          "initials": "H",
+          "affiliations": [
+            "Department of Endocrinology, The First Affiliated Hospital of Harbin Medical University, Harbin, China."
+          ]
+        },
+        "if_value": 55.1,
+        "if_year": "2025",
+        "if_source_id": "IF_BMJ",
+        "if_status": "已核期刊指标（非单篇质量）",
+        "raw_file": "P07_extra_2.xml",
+        "identity_review": "英文全名与本人所属机构匹配；人工复核。"
+      },
+      {
+        "pmid": "42769213",
+        "title": "The leukocyte glucose index: a novel inflammatory-glucose biomarker for prevalent diabetic retinopathy and its supplementary predictive capacity in individuals with type 2 diabetes mellitus.",
+        "journal": "Frontiers in endocrinology",
+        "journal_abbrev": "Front Endocrinol (Lausanne)",
+        "doi": "10.3389/fendo.2026.1959346",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42769213/",
+        "dates": [
+          {
+            "Year": "2026",
+            "Month": null,
+            "Day": null,
+            "MedlineDate": null
+          },
+          {
+            "Year": "2026",
+            "Month": "09",
+            "Day": "07",
+            "MedlineDate": null
+          }
+        ],
+        "author_position": "13/13",
+        "author_role": "末位列名作者；通讯身份另核",
+        "matched_author": {
+          "first": "Hongyu",
+          "last": "Kuang",
+          "initials": "H",
+          "affiliations": [
+            "Department of Endocrinology, The First Affiliated Hospital of Harbin Medical University, Harbin, Heilongjiang, China."
+          ]
+        },
+        "if_value": 5.7,
+        "if_year": "官网现值，页面未标指标年度",
+        "if_source_id": "IF_Front Endocrinol (Lausanne)",
+        "if_status": "已核期刊指标（非单篇质量）",
+        "raw_file": "P07_extra_0.xml",
+        "identity_review": "英文全名与本人所属机构匹配；人工复核。"
+      },
+      {
+        "pmid": "42851386",
+        "title": "Integration of ultra-widefield optical coherence tomography angiography images and clinical indicators for identifying early-stage diabetic retinopathy in type 2 diabetes.",
+        "journal": "Frontiers in endocrinology",
+        "journal_abbrev": "Front Endocrinol (Lausanne)",
+        "doi": "10.3389/fendo.2026.1941613",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42851386/",
+        "dates": [
+          {
+            "Year": "2026",
+            "Month": null,
+            "Day": null,
+            "MedlineDate": null
+          },
+          {
+            "Year": "2026",
+            "Month": "09",
+            "Day": "24",
+            "MedlineDate": null
+          }
+        ],
+        "author_position": "13/13",
+        "author_role": "末位列名作者；通讯身份另核",
+        "matched_author": {
+          "first": "Hongyu",
+          "last": "Kuang",
+          "initials": "H",
+          "affiliations": [
+            "Department of Endocrinology, The First Affiliated Hospital of Harbin Medical University, Harbin, China."
+          ]
+        },
+        "if_value": 5.7,
+        "if_year": "官网现值，页面未标指标年度",
+        "if_source_id": "IF_Front Endocrinol (Lausanne)",
+        "if_status": "已核期刊指标（非单篇质量）",
+        "raw_file": "P07_extra_0.xml",
+        "identity_review": "英文全名与本人所属机构匹配；人工复核。"
+      },
+      {
+        "pmid": "43021325",
+        "title": "Targeting NIK-mediated microglial polarization: a novel therapeutic strategy for diabetic retinopathy.",
+        "journal": "Journal of translational medicine",
+        "journal_abbrev": "J Transl Med",
+        "doi": "10.1186/s12967-026-08728-4",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/43021325/",
+        "dates": [
+          {
+            "Year": "2026",
+            "Month": "Aug",
+            "Day": "17",
+            "MedlineDate": null
+          },
+          {
+            "Year": "2026",
+            "Month": "08",
+            "Day": "17",
+            "MedlineDate": null
+          }
+        ],
+        "author_position": "5/5",
+        "author_role": "末位列名作者；通讯身份另核",
+        "matched_author": {
+          "first": "Hongyu",
+          "last": "Kuang",
+          "initials": "H",
+          "affiliations": [
+            "First Affiliated Hospital of Harbin Medical University, Harbin, China. kuanghongyu@hrbmu.edu.cn."
+          ]
+        },
+        "if_value": null,
+        "if_year": null,
+        "if_source_id": null,
+        "if_status": "最新IF未核；不据此提高档位",
+        "raw_file": "P07_extra_0.xml",
+        "identity_review": "英文全名与本人所属机构匹配；人工复核。"
+      }
+    ],
+    "grants": [],
+    "gaps": [
+      "本人NSFC主持记录/项目详情；临床队列和RCT中的中心负责人或总PI角色。",
+      "2026CDS糖网模型的原摘要、实际指标和跨中心验证。"
+    ],
+    "contact_action": "属于应优先补基金归属的全国学术联系人；可先围绕糖网风险模型和验证需求沟通。",
+    "identity_note": "以中文姓名+机构、本人英文全名+作者自身机构共同核对；仍需本人/团队核验。",
+    "evidence_status": "公开资料AI暂评，未经过人工/本人确认",
+    "profile_read": true
+  },
+  {
+    "id": "P08",
+    "name": "毛百微",
+    "institution": "上海市第一人民医院",
+    "role_status": "2026级内分泌代谢博士研究生，导师王育璠（CDS简介）",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=Z8Djv",
+    "topics": [
+      "Q06"
+    ],
+    "report_codes": [
+      "OR_007"
+    ],
+    "evidence": [
+      {
+        "code": "OR_007",
+        "title": "基于代谢物的糖尿病视网膜病变与肾脏病变发生发展异质性的纵向关联研究",
+        "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40603",
+        "reading_level": "已存原始日程，计划题名级"
+      }
+    ],
+    "customer_pool_match": false,
+    "customer_pool_row": null,
+    "total_score": null,
+    "grade": null,
+    "rating_status": "部分维度已评分",
+    "head_pi_status": "博士研究生报告人；不视为独立PI",
+    "dimensions": [
+      {
+        "name": "研究方向契合度",
+        "maximum": 30,
+        "score": 28,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "简介明确参与代谢组/蛋白组队列和微血管病早期分层，技术研究契合。",
+        "source_ids": [
+          "BIO_P08"
+        ]
+      },
+      {
+        "name": "学术产出质量",
+        "maximum": 25,
+        "score": 11,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "Renal Failure 2026在线发表第一作者，IF3.8支持8—13档；卷期标2026-12，Epub为06-14，分别展示。Materials Today Bio最新IF未核，不据此加档。",
+        "source_ids": [
+          "PM42289383",
+          "IF_Ren Fail"
+        ]
+      },
+      {
+        "name": "科研转化潜力",
+        "maximum": 25,
+        "score": null,
+        "status": "本轮已检索，证据仍不足",
+        "basis": "已确认参与队列；无本人独立基金或负责人证明，不能因学生身份自动填0。",
+        "source_ids": [
+          "BIO_P08"
+        ]
+      },
+      {
+        "name": "平台资源禀赋",
+        "maximum": 20,
+        "score": 8,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "上海卫健委复评通知将上海一院列在三级甲等：平台暂评8分，不假设学生可独立调配。",
+        "source_ids": [
+          "SHHOSPITAL"
+        ]
+      }
+    ],
+    "rating_date": "2026-11-16",
+    "scored_dimensions": 3,
+    "known_subtotal": 47,
+    "known_maximum": 75,
+    "papers": [
+      {
+        "pmid": "42289383",
+        "title": "AMD1-mediated polyamine metabolism governs tubular repair fate by restraining senescence after kidney injury.",
+        "journal": "Renal failure",
+        "journal_abbrev": "Ren Fail",
+        "doi": "10.1080/0886022X.2026.2680375",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42289383/",
+        "dates": [
+          {
+            "Year": "2026",
+            "Month": "Dec",
+            "Day": null,
+            "MedlineDate": null
+          },
+          {
+            "Year": "2026",
+            "Month": "06",
+            "Day": "14",
+            "MedlineDate": null
+          }
+        ],
+        "author_position": "1/10",
+        "author_role": "第一列名作者",
+        "matched_author": {
+          "first": "Baiwei",
+          "last": "Mao",
+          "initials": "B",
+          "affiliations": [
+            "Department of Nephrology, Shanghai General Hospital, Shanghai Jiaotong University School of Medicine, Shanghai, China.",
+            "Laboratory of Nephropathy, Translational Medicine Center, Shanghai General Hospital, Shanghai Jiaotong University School of Medicine, Shanghai, China.",
+            "Institute of Translational Medicine, Shanghai General Hospital, Shanghai Jiaotong University School of Medicine, Shanghai, China."
+          ]
+        },
+        "if_value": 3.8,
+        "if_year": "2025",
+        "if_source_id": "IF_Ren Fail",
+        "if_status": "已核期刊指标（非单篇质量）",
+        "raw_file": "P08_extra_0.xml",
+        "identity_review": "英文全名与本人所属机构匹配；人工复核。"
+      },
+      {
+        "pmid": "42569254",
+        "title": "Rewiring the mitochondrial NAD+-CoQ axis using metabolic nanomedicine for acute kidney injury therapy.",
+        "journal": "Materials today. Bio",
+        "journal_abbrev": "Mater Today Bio",
+        "doi": "10.1016/j.mtbio.2026.103479",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42569254/",
+        "dates": [
+          {
+            "Year": "2026",
+            "Month": "Aug",
+            "Day": null,
+            "MedlineDate": null
+          },
+          {
+            "Year": "2026",
+            "Month": "07",
+            "Day": "22",
+            "MedlineDate": null
+          }
+        ],
+        "author_position": "6/10",
+        "author_role": "列名共同作者；不视为牵头",
+        "matched_author": {
+          "first": "Baiwei",
+          "last": "Mao",
+          "initials": "B",
+          "affiliations": [
+            "Department of Nephrology, Shanghai General Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, 200080, China."
+          ]
+        },
+        "if_value": null,
+        "if_year": null,
+        "if_source_id": null,
+        "if_status": "最新IF未核；不据此提高档位",
+        "raw_file": "P08_extra_0.xml",
+        "identity_review": "英文全名与本人所属机构匹配；人工复核。"
+      }
+    ],
+    "grants": [],
+    "gaps": [
+      "导师/项目PI及本人职责；独立基金情况。",
+      "DR/DKD临床队列与AKI机制论文的具体关系、样本与合作权限；Materials Today Bio最新IF。"
+    ],
+    "contact_action": "可作青年团队入口；合作与采样权限需同导师/实际PI核对。",
+    "identity_note": "以中文姓名+机构、本人英文全名+作者自身机构共同核对；仍需本人/团队核验。",
+    "evidence_status": "公开资料AI暂评，未经过人工/本人确认",
+    "profile_read": true
+  },
+  {
+    "id": "P09",
+    "name": "张静宜",
+    "institution": "北京市糖尿病研究所",
+    "role_status": "北京市糖尿病研究所报告人；论文所属首都医大北京同仁医院体系",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=wo8bL",
+    "topics": [
+      "Q06"
+    ],
+    "report_codes": [
+      "OR_120"
+    ],
+    "evidence": [
+      {
+        "code": "OR_120",
+        "title": "基于极端表型的机器学习揭示重度糖尿病视网膜病变的易感与耐受特征",
+        "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40614",
+        "reading_level": "已存原始日程，计划题名级"
+      }
+    ],
+    "customer_pool_match": false,
+    "customer_pool_row": null,
+    "total_score": null,
+    "grade": null,
+    "rating_status": "部分维度已评分",
+    "head_pi_status": "职称及独立PI身份待核",
+    "dimensions": [
+      {
+        "name": "研究方向契合度",
+        "maximum": 30,
+        "score": 27,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "重度糖网极端表型机器学习，直接连接风险建模；现有变量以临床/生化为主，新增组学需求待核。",
+        "source_ids": [
+          "BIO_P09",
+          "PM42723850"
+        ]
+      },
+      {
+        "name": "学术产出质量",
+        "maximum": 25,
+        "score": 11,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "Front Endocrinol 2026第一作者1/8；官网现值IF5.7支持8—13档，指标年度待JCR复核。",
+        "source_ids": [
+          "PM42723850",
+          "IF_Front Endocrinol (Lausanne)"
+        ]
+      },
+      {
+        "name": "科研转化潜力",
+        "maximum": 25,
+        "score": null,
+        "status": "本轮已检索，证据仍不足",
+        "basis": "已发712例极端表型及673例社区人群研究；没有本人基金主持证明，队列存在不等于独立负责。",
+        "source_ids": [
+          "PM42723850"
+        ]
+      },
+      {
+        "name": "平台资源禀赋",
+        "maximum": 20,
+        "score": 12,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "首医大学报中英文署名交叉确认本人同仁/糖尿病研究所与重点实验室，医保局确认同仁三甲；按区域研究平台档暂评12，样本调用权限另核。",
+        "source_ids": [
+          "BEIJINGHOSP",
+          "ZHANGCN"
+        ]
+      }
+    ],
+    "rating_date": "2026-11-16",
+    "scored_dimensions": 3,
+    "known_subtotal": 50,
+    "known_maximum": 75,
+    "papers": [
+      {
+        "pmid": "42723850",
+        "title": "Extreme phenotype-derived machine learning reveals susceptibility and resilience signatures for severe diabetic retinopathy.",
+        "journal": "Frontiers in endocrinology",
+        "journal_abbrev": "Front Endocrinol (Lausanne)",
+        "doi": "10.3389/fendo.2026.1933878",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42723850/",
+        "dates": [
+          {
+            "Year": "2026",
+            "Month": null,
+            "Day": null,
+            "MedlineDate": null
+          },
+          {
+            "Year": "2026",
+            "Month": "08",
+            "Day": "27",
+            "MedlineDate": null
+          }
+        ],
+        "author_position": "1/8",
+        "author_role": "第一列名作者",
+        "matched_author": {
+          "first": "Jing-Yi",
+          "last": "Zhang",
+          "initials": "JY",
+          "affiliations": [
+            "Department of Endocrinology, Beijing Diabetes Institute, Beijing Tongren Hospital, Capital Medical University, Beijing, China.",
+            "Beijing Diabetes Institute,Beijing Tongren Hospital, Capital Medical University, Beijing, China."
+          ]
+        },
+        "if_value": 5.7,
+        "if_year": "官网现值，页面未标指标年度",
+        "if_source_id": "IF_Front Endocrinol (Lausanne)",
+        "if_status": "已核期刊指标（非单篇质量）",
+        "raw_file": "P09_extra_0.xml",
+        "identity_review": "英文全名与本人所属机构匹配；人工复核。"
+      }
+    ],
+    "grants": [],
+    "gaps": [
+      "中英文署名已有期刊交叉证明；本人职称/导师/独立PI角色待核。",
+      "本人基金主持、队列权限及研究负责人；期刊指标年度。"
+    ],
+    "contact_action": "先核对实际课题负责人，讨论模型外部验证和新增检测是否有临床增量。",
+    "identity_note": "以中文姓名+机构、本人英文全名+作者自身机构共同核对；仍需本人/团队核验。",
+    "evidence_status": "公开资料AI暂评，未经过人工/本人确认",
+    "profile_read": true
+  },
+  {
+    "id": "P10",
+    "name": "沈洁",
+    "institution": "南方医科大学第八附属医院",
+    "role_status": "南医大第八附属医院/顺德医院内分泌学科带头人、二级教授、博导",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=Z8D2q",
+    "topics": [
+      "Q07"
+    ],
+    "report_codes": [
+      "S_074"
+    ],
+    "evidence": [
+      {
+        "code": "S_074",
+        "title": "孕早期妊娠糖尿病预测研究进展",
+        "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40586",
+        "reading_level": "已存原始日程，计划题名级"
+      }
+    ],
+    "customer_pool_match": false,
+    "customer_pool_row": null,
+    "total_score": 79,
+    "grade": "B",
+    "rating_status": "四维暂评完成",
+    "head_pi_status": "区域学科带头人与专项子课题负责人已核；全国头部需具体方向代表工作评议",
+    "dimensions": [
+      {
+        "name": "研究方向契合度",
+        "maximum": 30,
+        "score": 27,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "妊娠代谢风险及代谢病队列/微生态、多组学工作，与早期分层及标志物研究相关。",
+        "source_ids": [
+          "SHENBIO",
+          "SHENPLATFORM"
+        ]
+      },
+      {
+        "name": "学术产出质量",
+        "maximum": 25,
+        "score": 23,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "J Hepatol正式2025、Epub2024，列名4/6，IF40.1支持20—25档；并列明共同作者身份，不把论文当本人单独成果。",
+        "source_ids": [
+          "PM39084473",
+          "IF_J Hepatol"
+        ]
+      },
+      {
+        "name": "科研转化潜力",
+        "maximum": 25,
+        "score": 16,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "本人官方简介明确主持国自然等课题，保守落入至少1项+队列14—19档；专项仅为子课题负责人。NSFC原始详情及准确项数仍需补，不按≥2项加档。",
+        "source_ids": [
+          "SHENBIO",
+          "SHENPROJECT",
+          "PM40403723"
+        ]
+      },
+      {
+        "name": "平台资源禀赋",
+        "maximum": 20,
+        "score": 13,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "三甲区域医院的省临床重点专科、GCP研究室和区域网络有官方资料，11—15档。门诊人次/全科基金不算本人可直接转化资源。",
+        "source_ids": [
+          "SHENPLATFORM",
+          "SHEN3A",
+          "SHENALIAS"
+        ]
+      }
+    ],
+    "rating_date": "2026-11-16",
+    "scored_dimensions": 4,
+    "known_subtotal": 79,
+    "known_maximum": 100,
+    "papers": [
+      {
+        "pmid": "39084473",
+        "title": "High prevalence of steatotic liver disease and fibrosis in the general population: A large prospective study in China.",
+        "journal": "Journal of hepatology",
+        "journal_abbrev": "J Hepatol",
+        "doi": "10.1016/j.jhep.2024.07.026",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39084473/",
+        "dates": [
+          {
+            "Year": "2025",
+            "Month": "Jan",
+            "Day": null,
+            "MedlineDate": null
+          },
+          {
+            "Year": "2024",
+            "Month": "07",
+            "Day": "29",
+            "MedlineDate": null
+          }
+        ],
+        "author_position": "4/6",
+        "author_role": "列名共同作者；不视为牵头",
+        "matched_author": {
+          "first": "Jie",
+          "last": "Shen",
+          "initials": "J",
+          "affiliations": [
+            "Department of Endocrinology and Metabolism, Shunde Hospital, Southern Medical University (The First People's Hospital of Shunde, Foshan), Guangdong, China. Electronic address: sjiesy@smu.edu.cn."
+          ]
+        },
+        "if_value": 40.1,
+        "if_year": "2025",
+        "if_source_id": "IF_J Hepatol",
+        "if_status": "已核期刊指标（非单篇质量）",
+        "raw_file": "P10_extra_0.xml",
+        "identity_review": "英文全名与本人所属机构匹配；人工复核。"
+      },
+      {
+        "pmid": "40403723",
+        "title": "DiabetesLiver score: A non-invasive algorithm for advanced liver fibrosis and liver-related outcomes in type 2 diabetes mellitus population.",
+        "journal": "Med (New York, N.Y.)",
+        "journal_abbrev": "Med",
+        "doi": "10.1016/j.medj.2025.100700",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40403723/",
+        "dates": [
+          {
+            "Year": "2025",
+            "Month": "Aug",
+            "Day": "08",
+            "MedlineDate": null
+          },
+          {
+            "Year": "2025",
+            "Month": "05",
+            "Day": "21",
+            "MedlineDate": null
+          }
+        ],
+        "author_position": "2/45",
+        "author_role": "列名共同作者；不视为牵头",
+        "matched_author": {
+          "first": "Jie",
+          "last": "Shen",
+          "initials": "J",
+          "affiliations": [
+            "Department of Endocrinology and Metabolism, Shunde Hospital, Southern Medical University (The First People's Hospital of Shunde), Foshan, China."
+          ]
+        },
+        "if_value": null,
+        "if_year": null,
+        "if_source_id": null,
+        "if_status": "最新IF未核；不据此提高档位",
+        "raw_file": "P10_extra_0.xml",
+        "identity_review": "英文全名与本人所属机构匹配；人工复核。"
+      },
+      {
+        "pmid": "38652239",
+        "title": "Dipeptidyl Peptidase 4 Inhibitors vs Metformin for New-onset Dementia: A Propensity Score-matched Cohort Study.",
+        "journal": "The Journal of clinical endocrinology and metabolism",
+        "journal_abbrev": "J Clin Endocrinol Metab",
+        "doi": "10.1210/clinem/dgae281",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38652239/",
+        "dates": [
+          {
+            "Year": "2025",
+            "Month": "Feb",
+            "Day": "18",
+            "MedlineDate": null
+          }
+        ],
+        "author_position": "28/28",
+        "author_role": "末位列名作者；通讯身份另核",
+        "matched_author": {
+          "first": "Jie",
+          "last": "Shen",
+          "initials": "J",
+          "affiliations": [
+            "Institute and Department of Endocrinology and Metabolism, Shunde Hospital, Southern Medical University (The First People's Hospital of Shunde), Foshan 528308, Guangdong, China."
+          ]
+        },
+        "if_value": null,
+        "if_year": null,
+        "if_source_id": null,
+        "if_status": "最新IF未核；不据此提高档位",
+        "raw_file": "P10_extra_0.xml",
+        "identity_review": "英文全名与本人所属机构匹配；人工复核。"
+      },
+      {
+        "pmid": "42504991",
+        "title": "Ahcy Acts as an Effector of Hnf4a-Driven Super-Enhancer Activation to Alleviate MASLD During Intermittent Fasting.",
+        "journal": "Advanced science (Weinheim, Baden-Wurttemberg, Germany)",
+        "journal_abbrev": "Adv Sci (Weinh)",
+        "doi": "10.1002/advs.76826",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42504991/",
+        "dates": [
+          {
+            "Year": "2026",
+            "Month": "Oct",
+            "Day": null,
+            "MedlineDate": null
+          },
+          {
+            "Year": "2026",
+            "Month": "07",
+            "Day": "27",
+            "MedlineDate": null
+          }
+        ],
+        "author_position": "6/7",
+        "author_role": "列名共同作者；不视为牵头",
+        "matched_author": {
+          "first": "Jie",
+          "last": "Shen",
+          "initials": "J",
+          "affiliations": [
+            "Department of Endocrinology and Metabolism, The Eighth Affiliated Hospital, Southern Medical University (The First People's Hospital of Shunde, Foshan), Foshan, Guangdong, China."
+          ]
+        },
+        "if_value": null,
+        "if_year": null,
+        "if_source_id": null,
+        "if_status": "最新IF未核；不据此提高档位",
+        "raw_file": "P10_extra_0.xml",
+        "identity_review": "英文全名与本人所属机构匹配；人工复核。"
+      }
+    ],
+    "grants": [
+      {
+        "level": "国家级科研",
+        "name": "国自然主持经历（官方本人简介）；项目题名待核",
+        "number": null,
+        "role": "主持；至少1项口径暂评",
+        "status": "官方本人简介；尚未查得NSFC原始项目详情",
+        "source_ids": [
+          "SHENBIO"
+        ]
+      },
+      {
+        "level": "四大慢病重大专项",
+        "name": "糖尿病微血管并发症前瞻干预研究",
+        "number": null,
+        "role": "子课题负责人、管理委员会副主任",
+        "status": "官方医院报道；不升级总PI",
+        "source_ids": [
+          "SHENPROJECT"
+        ]
+      }
+    ],
+    "gaps": [
+      "本人在研国自然原始记录、项目号和准确项数；当前GDM合作队列的实际权限。",
+      "专项子课题设计、是否涉及本人牵头的多中心RCT，以及吉因加可承接的具体样本/检测。"
+    ],
+    "contact_action": "当前完整暂评中优先联系人；围绕早孕风险分层、队列验证和具体分子检测需求对接。",
+    "identity_note": "以中文姓名+机构、本人英文全名+作者自身机构共同核对；仍需本人/团队核验。",
+    "evidence_status": "公开资料AI暂评，未经过人工/本人确认",
+    "profile_read": true
+  },
+  {
+    "id": "P11",
+    "name": "杨敏",
+    "institution": "复旦大学附属上海市第五人民医院",
+    "role_status": "复旦附属上海五院内分泌研究者；官方基金负责人和论文末位作者",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=J0ORY",
+    "topics": [
+      "Q07"
+    ],
+    "report_codes": [
+      "OR_274"
+    ],
+    "evidence": [
+      {
+        "code": "OR_274",
+        "title": "孕早期胰岛素抵抗代谢评分(METS-IR)与妊娠期糖尿发病风险的非线性关联及阈值效应:中国一项双中心队列研究",
+        "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40630",
+        "reading_level": "已存原始日程，计划题名级"
+      }
+    ],
+    "customer_pool_match": false,
+    "customer_pool_row": null,
+    "total_score": 52,
+    "grade": "D",
+    "rating_status": "四维暂评完成",
+    "head_pi_status": "省市基金负责人已核；全国头部未证实",
+    "dimensions": [
+      {
+        "name": "研究方向契合度",
+        "maximum": 30,
+        "score": 26,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "早孕脂质风险指标与代谢调控，临床用途相关；新增组学检测价值仍需论证。",
+        "source_ids": [
+          "PM42046136"
+        ]
+      },
+      {
+        "name": "学术产出质量",
+        "maximum": 25,
+        "score": 11,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "Lipids Health Dis 2026末位7/7，IF6.9支持8—13档；末位不自动等同通讯身份。",
+        "source_ids": [
+          "PM42046136",
+          "IF_Lipids Health Dis"
+        ]
+      },
+      {
+        "name": "科研转化潜力",
+        "maximum": 25,
+        "score": 11,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "上海自然基金官方负责人同名同单位，基金号与论文匹配；1858例妊娠队列支持8—13档，未核NSFC主持。",
+        "source_ids": [
+          "SHGRANT",
+          "PM42046136"
+        ]
+      },
+      {
+        "name": "平台资源禀赋",
+        "maximum": 20,
+        "score": 4,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "上海卫健委2021完整正文将上海五院列在三级乙等；未核升级三甲，按非三甲0—5档暂评4。",
+        "source_ids": [
+          "SHHOSPITAL"
+        ]
+      }
+    ],
+    "rating_date": "2026-11-16",
+    "scored_dimensions": 4,
+    "known_subtotal": 52,
+    "known_maximum": 100,
+    "papers": [
+      {
+        "pmid": "42046136",
+        "title": "Atherogenic index of plasma in early pregnancy: associations with gestational diabetes mellitus and preeclampsia and its mediating role.",
+        "journal": "Lipids in health and disease",
+        "journal_abbrev": "Lipids Health Dis",
+        "doi": "10.1186/s12944-026-02955-w",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42046136/",
+        "dates": [
+          {
+            "Year": "2026",
+            "Month": "Apr",
+            "Day": "27",
+            "MedlineDate": null
+          },
+          {
+            "Year": "2026",
+            "Month": "04",
+            "Day": "27",
+            "MedlineDate": null
+          }
+        ],
+        "author_position": "7/7",
+        "author_role": "末位列名作者；通讯身份另核",
+        "matched_author": {
+          "first": "Min",
+          "last": "Yang",
+          "initials": "M",
+          "affiliations": [
+            "Division of Endocrinology, The Fifth People's Hospital of Shanghai, Fudan University, Heqing Road 801, Minhang District, Shanghai, 200240, PR China. yangmin@5thhospital.com."
+          ]
+        },
+        "if_value": 6.9,
+        "if_year": "2025",
+        "if_source_id": "IF_Lipids Health Dis",
+        "if_status": "已核期刊指标（非单篇质量）",
+        "raw_file": "pubmed_batch_4.xml",
+        "identity_review": "英文全名与本人所属机构匹配；人工复核。"
+      },
+      {
+        "pmid": "41998543",
+        "title": "Associations between cholesterol, high-density lipoprotein, and glucose index and hyperuricemia in patients with diabetes.",
+        "journal": "BMC endocrine disorders",
+        "journal_abbrev": "BMC Endocr Disord",
+        "doi": "10.1186/s12902-026-02281-3",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41998543/",
+        "dates": [
+          {
+            "Year": "2026",
+            "Month": "Apr",
+            "Day": "17",
+            "MedlineDate": null
+          },
+          {
+            "Year": "2026",
+            "Month": "04",
+            "Day": "17",
+            "MedlineDate": null
+          }
+        ],
+        "author_position": "9/10",
+        "author_role": "列名共同作者；不视为牵头",
+        "matched_author": {
+          "first": "Min",
+          "last": "Yang",
+          "initials": "M",
+          "affiliations": [
+            "Department of Endocrinology, Fifth People's Hospital of Shanghai, Fudan University, Shanghai, China. yangmin87420@163.com."
+          ]
+        },
+        "if_value": null,
+        "if_year": null,
+        "if_source_id": null,
+        "if_status": "最新IF未核；不据此提高档位",
+        "raw_file": "pubmed_batch_3.xml",
+        "identity_review": "英文全名与本人所属机构匹配；人工复核。"
+      },
+      {
+        "pmid": "42012885",
+        "title": "BAT-derived miR-378a-3p facilitates endothelial angiogenic function and promotes wound healing.",
+        "journal": "JCI insight",
+        "journal_abbrev": "JCI Insight",
+        "doi": "10.1172/jci.insight.201311",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42012885/",
+        "dates": [
+          {
+            "Year": "2026",
+            "Month": "Jun",
+            "Day": "08",
+            "MedlineDate": null
+          },
+          {
+            "Year": "2026",
+            "Month": "04",
+            "Day": "21",
+            "MedlineDate": null
+          }
+        ],
+        "author_position": "14/15",
+        "author_role": "列名共同作者；不视为牵头",
+        "matched_author": {
+          "first": "Min",
+          "last": "Yang",
+          "initials": "M",
+          "affiliations": [
+            "Department of Endocrinology, Fifth People's Hospital of Shanghai, Fudan University, Shanghai, China."
+          ]
+        },
+        "if_value": null,
+        "if_year": null,
+        "if_source_id": null,
+        "if_status": "最新IF未核；不据此提高档位",
+        "raw_file": "pubmed_batch_4.xml",
+        "identity_review": "英文全名与本人所属机构匹配；人工复核。"
+      }
+    ],
+    "grants": [
+      {
+        "level": "上海市自然基金",
+        "name": "APOE通过STRAP介导脂肪产热调控脂肪衰老的作用及机制",
+        "number": "25ZR1402433",
+        "role": "负责人",
+        "status": "官方立项名单与论文基金号一致；2025.07—2028.06",
+        "source_ids": [
+          "SHGRANT",
+          "PM42046136"
+        ]
+      }
+    ],
+    "gaps": [
+      "本人职称和通讯作者职责进一步官方核实；当前队列权限和独立国自然情况。",
+      "AIP是常规血脂派生指标，新检测需证明在临床基线之上的增量。D级为本Skill暂评，不代表研究无价值。"
+    ],
+    "contact_action": "保留具体GDM验证合作线索；按Skill暂列D，不因总分将临床队列合作问题删除。",
+    "identity_note": "以中文姓名+机构、本人英文全名+作者自身机构共同核对；仍需本人/团队核验。",
+    "evidence_status": "公开资料AI暂评，未经过人工/本人确认",
+    "profile_read": true
+  },
+  {
+    "id": "P12",
+    "name": "程棣",
+    "institution": "上海交通大学医学院附属第六人民医院",
+    "role_status": "上海糖尿病研究所助理研究员、医学博士（CDS简介）",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=7p37E",
+    "topics": [
+      "Q08"
+    ],
+    "report_codes": [
+      "OR_333"
+    ],
+    "evidence": [
+      {
+        "code": "OR_333",
+        "title": "循环生物标志物预测早期心血管 - 肾脏 - 代谢综合征 0–2 期心肾代谢结局风险：一项前瞻性队列研究",
+        "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40602",
+        "reading_level": "已存原始日程，计划题名级"
+      }
+    ],
+    "customer_pool_match": false,
+    "customer_pool_row": null,
+    "total_score": null,
+    "grade": null,
+    "rating_status": "部分维度已评分",
+    "head_pi_status": "临床队列/转化研究执行骨干；独立PI待核",
+    "dimensions": [
+      {
+        "name": "研究方向契合度",
+        "maximum": 30,
+        "score": 27,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "社区/代谢队列、临床表型与样本整合，多指标风险与T10研究相符。",
+        "source_ids": [
+          "BIO_P12",
+          "PM39895483"
+        ]
+      },
+      {
+        "name": "学术产出质量",
+        "maximum": 25,
+        "score": 20,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "Nat Med 2024列名59/93，IF52.3落20—25档的入门分；另有Sci Bull 2026列名第二作者。Skill原规则无作者排位加权，明示合作论文的局限。",
+        "source_ids": [
+          "PM39030266",
+          "IF_Nat Med",
+          "PM42297720"
+        ]
+      },
+      {
+        "name": "科研转化潜力",
+        "maximum": 25,
+        "score": null,
+        "status": "本轮已检索，证据仍不足",
+        "basis": "已核队列组织和临床试验合作，不证明独立基金或RCT牵头；BMJ Open论文是研究方案，不能当已完成试验。",
+        "source_ids": [
+          "BIO_P12",
+          "CHENG",
+          "PM41062131"
+        ]
+      },
+      {
+        "name": "平台资源禀赋",
+        "maximum": 20,
+        "score": 13,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "官方预算文件确认糖尿病研究所、中心和重点实验室；按区域资源档保守暂评，未用未核TOP5排名。",
+        "source_ids": [
+          "SIXTH"
+        ]
+      }
+    ],
+    "rating_date": "2026-11-16",
+    "scored_dimensions": 3,
+    "known_subtotal": 60,
+    "known_maximum": 75,
+    "papers": [
+      {
+        "pmid": "39030266",
+        "title": "Integrated image-based deep learning and language models for primary diabetes care.",
+        "journal": "Nature medicine",
+        "journal_abbrev": "Nat Med",
+        "doi": "10.1038/s41591-024-03139-8",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39030266/",
+        "dates": [
+          {
+            "Year": "2024",
+            "Month": "Oct",
+            "Day": null,
+            "MedlineDate": null
+          },
+          {
+            "Year": "2024",
+            "Month": "07",
+            "Day": "19",
+            "MedlineDate": null
+          }
+        ],
+        "author_position": "59/93",
+        "author_role": "列名共同作者；不视为牵头",
+        "matched_author": {
+          "first": "Di",
+          "last": "Cheng",
+          "initials": "D",
+          "affiliations": [
+            "Shanghai Belt and Road International Joint Laboratory of Intelligent Prevention and Treatment for Metabolic Diseases, Department of Computer Science and Engineering, School of Electronic, Information, and Electrical Engineering, Shanghai Jiao Tong University, Department of Endocrinology and Metabolism, Shanghai Sixth People's Hospital Affiliated to Shanghai Jiao Tong University School of Medicine, Shanghai Diabetes Institute, Shanghai Clinical Center for Diabetes, Shanghai, China."
+          ]
+        },
+        "if_value": 52.3,
+        "if_year": "2025（官方期刊组合表现值）",
+        "if_source_id": "IF_Nat Med",
+        "if_status": "已核期刊指标（非单篇质量）",
+        "raw_file": "pubmed_batch_1.xml",
+        "identity_review": "英文全名与本人所属机构匹配；人工复核。"
+      },
+      {
+        "pmid": "42297720",
+        "title": "Multidimensional effects of personalized exercise intervention in type 2 diabetes: a randomized controlled trial.",
+        "journal": "Science bulletin",
+        "journal_abbrev": "Sci Bull (Beijing)",
+        "doi": "10.1016/j.scib.2026.06.021",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42297720/",
+        "dates": [
+          {
+            "Year": "2026",
+            "Month": "Jul",
+            "Day": "15",
+            "MedlineDate": null
+          },
+          {
+            "Year": "2026",
+            "Month": "06",
+            "Day": "08",
+            "MedlineDate": null
+          }
+        ],
+        "author_position": "2/48",
+        "author_role": "列名共同作者；不视为牵头",
+        "matched_author": {
+          "first": "Di",
+          "last": "Cheng",
+          "initials": "D",
+          "affiliations": [
+            "Shanghai Key Laboratory of Diabetes Mellitus, Department of Endocrinology and Metabolism, Shanghai Diabetes Institute, Shanghai Clinical Center for Diabetes, Shanghai Sixth People's Hospital Affiliated to Shanghai Jiao Tong University School of Medicine, Shanghai 200233, China; Department of Medicine, Shanghai Jiao Tong University School of Medicine, Shanghai 200025, China."
+          ]
+        },
+        "if_value": null,
+        "if_year": null,
+        "if_source_id": null,
+        "if_status": "最新IF未核；不据此提高档位",
+        "raw_file": "pubmed_batch_4.xml",
+        "identity_review": "英文全名与本人所属机构匹配；人工复核。"
+      },
+      {
+        "pmid": "39895483",
+        "title": "Fibroblast growth factor 23 predicts incident diabetic kidney disease: A 4.6-year prospective study.",
+        "journal": "Diabetes, obesity & metabolism",
+        "journal_abbrev": "Diabetes Obes Metab",
+        "doi": "10.1111/dom.16224",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39895483/",
+        "dates": [
+          {
+            "Year": "2025",
+            "Month": "Apr",
+            "Day": null,
+            "MedlineDate": null
+          },
+          {
+            "Year": "2025",
+            "Month": "02",
+            "Day": "03",
+            "MedlineDate": null
+          }
+        ],
+        "author_position": "8/15",
+        "author_role": "列名共同作者；不视为牵头",
+        "matched_author": {
+          "first": "Di",
+          "last": "Cheng",
+          "initials": "D",
+          "affiliations": [
+            "Department of Endocrinology and Metabolism, Shanghai Sixth People's Hospital Affiliated to Shanghai Jiao Tong University School of Medicine, Shanghai Diabetes Institute, Shanghai Clinical Center for Diabetes, Shanghai Key Laboratory of Diabetes Mellitus, Institute for Proactive Healthcare, Shanghai Jiao Tong University, Shanghai, China.",
+            "Department of Medicine, Shanghai Jiao Tong University School of Medicine, Shanghai, China."
+          ]
+        },
+        "if_value": null,
+        "if_year": null,
+        "if_source_id": null,
+        "if_status": "最新IF未核；不据此提高档位",
+        "raw_file": "pubmed_batch_2.xml",
+        "identity_review": "英文全名与本人所属机构匹配；人工复核。"
+      },
+      {
+        "pmid": "41062131",
+        "title": "Intervention effects of optimised carbohydrate diet in patients with type 2 diabetes: study protocol for a randomised controlled crossover trial.",
+        "journal": "BMJ open",
+        "journal_abbrev": "BMJ Open",
+        "doi": "10.1136/bmjopen-2025-106756",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41062131/",
+        "dates": [
+          {
+            "Year": "2025",
+            "Month": "Oct",
+            "Day": "07",
+            "MedlineDate": null
+          },
+          {
+            "Year": "2025",
+            "Month": "10",
+            "Day": "07",
+            "MedlineDate": null
+          }
+        ],
+        "author_position": "7/19",
+        "author_role": "列名共同作者；不视为牵头",
+        "matched_author": {
+          "first": "Di",
+          "last": "Cheng",
+          "initials": "D",
+          "affiliations": [
+            "State Key Laboratory of Metabolic Dysregulation & Prevention and Treatment of Esophageal Cancer, Shanghai Key Laboratory of Diabetes Mellitus, Department of Endocrinology and Metabolism, Shanghai Diabetes Institute, Shanghai Clinical Center for Diabetes, Shanghai Sixth People's Hospital Affiliated to Shanghai Jiao Tong University School of Medicine, Shanghai, China.",
+            "Department of Medicine, Shanghai Jiao Tong University School of Medicine, Shanghai, China."
+          ]
+        },
+        "if_value": null,
+        "if_year": null,
+        "if_source_id": null,
+        "if_status": "最新IF未核；不据此提高档位",
+        "raw_file": "pubmed_batch_3.xml",
+        "identity_review": "英文全名与本人所属机构匹配；人工复核。"
+      }
+    ],
+    "grants": [],
+    "gaps": [
+      "本人基金负责记录、队列项目角色和可用资源权限。",
+      "是否承担多中心RCT牵头而非执行；科室最新排名原始依据。"
+    ],
+    "contact_action": "可讨论社区队列和模型验证实施，预算与决策联系人需要进一步确认。",
+    "identity_note": "以中文姓名+机构、本人英文全名+作者自身机构共同核对；仍需本人/团队核验。",
+    "evidence_status": "公开资料AI暂评，未经过人工/本人确认",
+    "profile_read": true
+  },
+  {
+    "id": "P13",
+    "name": "肖新华",
+    "institution": "中国医学科学院北京协和医院",
+    "role_status": "北京协和内分泌主任医师、博导/博士后导师；CDS副主任委员",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=J0OZ4",
+    "topics": [
+      "Q09"
+    ],
+    "report_codes": [
+      "S_147"
+    ],
+    "evidence": [
+      {
+        "code": "S_147",
+        "title": "糖尿病前期的精准分型及个体化干预新视角",
+        "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40567",
+        "reading_level": "已存原始日程，计划题名级"
+      }
+    ],
+    "customer_pool_match": false,
+    "customer_pool_row": null,
+    "total_score": null,
+    "grade": null,
+    "rating_status": "部分维度已评分",
+    "head_pi_status": "全国学术任职与队列牵头有官方证据；基金档位仍待核",
+    "dimensions": [
+      {
+        "name": "研究方向契合度",
+        "maximum": 30,
+        "score": 28,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "遗传/早期糖代谢异常、母婴队列及尿液组学，与标志物分层和T10研究直接相关。",
+        "source_ids": [
+          "XIAO",
+          "XIAOTEAM",
+          "PM38368766"
+        ]
+      },
+      {
+        "name": "学术产出质量",
+        "maximum": 25,
+        "score": 23,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "Nat Med 2026列名19/20，IF52.3进入20—25档；论文属于多中心合作，不将全部试验业绩归个人。",
+        "source_ids": [
+          "PM42811187",
+          "IF_Nat Med"
+        ]
+      },
+      {
+        "name": "科研转化潜力",
+        "maximum": 25,
+        "score": null,
+        "status": "本轮已检索，证据仍不足",
+        "basis": "官方资料支持大规模母婴队列牵头；本人国家级课题类别/项数未核为NSFC。相近导师页基金属于张茜，南华大学同名专家基金也不计入。",
+        "source_ids": [
+          "XIAOTEAM",
+          "XIAO"
+        ]
+      },
+      {
+        "name": "平台资源禀赋",
+        "maximum": 20,
+        "score": 13,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "协和内分泌与国家级学术职务已核，区域平台档暂评13；本轮未取得最新科室全国TOP5原始依据，未上16—20档。",
+        "source_ids": [
+          "XIAO",
+          "BIO_P13",
+          "BEIJINGHOSP"
+        ]
+      }
+    ],
+    "rating_date": "2026-11-16",
+    "scored_dimensions": 3,
+    "known_subtotal": 64,
+    "known_maximum": 75,
+    "papers": [
+      {
+        "pmid": "42811187",
+        "title": "Oral small-molecule GLP-1 receptor agonist safiglipron in early type 2 diabetes: a randomized, double-blind, placebo-controlled trial.",
+        "journal": "Nature medicine",
+        "journal_abbrev": "Nat Med",
+        "doi": "10.1038/s41591-026-04651-9",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42811187/",
+        "dates": [
+          {
+            "Year": "2026",
+            "Month": "Nov",
+            "Day": null,
+            "MedlineDate": null
+          },
+          {
+            "Year": "2026",
+            "Month": "09",
+            "Day": "29",
+            "MedlineDate": null
+          }
+        ],
+        "author_position": "19/20",
+        "author_role": "列名共同作者；不视为牵头",
+        "matched_author": {
+          "first": "Xinhua",
+          "last": "Xiao",
+          "initials": "X",
+          "affiliations": [
+            "Department of Endocrinology, Peking Union Medical College Hospital, Chinese Academy of Medical Sciences and Peking Union Medical College, Beijing, China. xiaoxh2014@vip.163.com."
+          ]
+        },
+        "if_value": 52.3,
+        "if_year": "2025（官方期刊组合表现值）",
+        "if_source_id": "IF_Nat Med",
+        "if_status": "已核期刊指标（非单篇质量）",
+        "raw_file": "pubmed_batch_5.xml",
+        "identity_review": "英文全名与本人所属机构匹配；人工复核。"
+      },
+      {
+        "pmid": "38368766",
+        "title": "Using metabolomics and proteomics to identify the potential urine biomarkers for prediction and diagnosis of gestational diabetes.",
+        "journal": "EBioMedicine",
+        "journal_abbrev": "EBioMedicine",
+        "doi": "10.1016/j.ebiom.2024.105008",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38368766/",
+        "dates": [
+          {
+            "Year": "2024",
+            "Month": "Mar",
+            "Day": null,
+            "MedlineDate": null
+          },
+          {
+            "Year": "2024",
+            "Month": "02",
+            "Day": "17",
+            "MedlineDate": null
+          }
+        ],
+        "author_position": "7/7",
+        "author_role": "末位列名作者；通讯身份另核",
+        "matched_author": {
+          "first": "Xinhua",
+          "last": "Xiao",
+          "initials": "X",
+          "affiliations": [
+            "Key Laboratory of Endocrinology, Ministry of Health, Department of Endocrinology, Peking Union Medical College Hospital, Peking Union Medical College, Chinese Academy of Medical Sciences, Beijing, 100730, China. Electronic address: xiaoxh2014@vip.163.com."
+          ]
+        },
+        "if_value": null,
+        "if_year": null,
+        "if_source_id": null,
+        "if_status": "最新IF未核；不据此提高档位",
+        "raw_file": "pubmed_batch_1.xml",
+        "identity_review": "英文全名与本人所属机构匹配；人工复核。"
+      },
+      {
+        "pmid": "42612614",
+        "title": "Trans-omics integration underscores distinct roles of polyunsaturated phospholipids in bidirectional offspring birth weight deviations.",
+        "journal": "EBioMedicine",
+        "journal_abbrev": "EBioMedicine",
+        "doi": "10.1016/j.ebiom.2026.106435",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42612614/",
+        "dates": [
+          {
+            "Year": "2026",
+            "Month": "Sep",
+            "Day": null,
+            "MedlineDate": null
+          },
+          {
+            "Year": "2026",
+            "Month": "08",
+            "Day": "18",
+            "MedlineDate": null
+          }
+        ],
+        "author_position": "12/12",
+        "author_role": "末位列名作者；通讯身份另核",
+        "matched_author": {
+          "first": "Xinhua",
+          "last": "Xiao",
+          "initials": "X",
+          "affiliations": [
+            "Key Laboratory of Endocrinology of National Health Commission, Diabetes Research Center of Chinese Academy of Medical Sciences, Department of Endocrinology, Peking Union Medical College Hospital, Peking Union Medical College, Chinese Academy of Medical Sciences, Beijing, 100730, China. Electronic address: xiaoxh2014@vip.163.com."
+          ]
+        },
+        "if_value": null,
+        "if_year": null,
+        "if_source_id": null,
+        "if_status": "最新IF未核；不据此提高档位",
+        "raw_file": "pubmed_batch_4.xml",
+        "identity_review": "英文全名与本人所属机构匹配；人工复核。"
+      }
+    ],
+    "grants": [],
+    "gaps": [
+      "本人NSFC原始负责人记录、在研项目与项数（不可用南华同名专家替代）。",
+      "科室TOP5的最新原始榜单；前期分型项目的具体临床队列及当前合作需求。"
+    ],
+    "contact_action": "全国学术联系人优先补证；先交流前期分型/早期风险的临床验证问题，独立基金核实后再计客户总分。",
+    "identity_note": "以中文姓名+机构、本人英文全名+作者自身机构共同核对；仍需本人/团队核验。",
+    "evidence_status": "公开资料AI暂评，未经过人工/本人确认",
+    "profile_read": true
+  },
+  {
+    "id": "P14",
+    "name": "万杰",
+    "institution": "南方医科大学深圳坪山医院",
+    "role_status": "南医大深圳坪山医院住院医师（CDS简介）",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=nzYMg",
+    "topics": [
+      "Q10"
+    ],
+    "report_codes": [
+      "OR_105"
+    ],
+    "evidence": [
+      {
+        "code": "OR_105",
+        "title": "基于代谢年龄加速残差的2型糖尿病分型及其与白蛋白尿分期的关系：中美双人群验证",
+        "source_url": "https://cds26.tiemeeting.com/CN/Program/Details#session40613",
+        "reading_level": "已存原始日程，计划题名级"
+      }
+    ],
+    "customer_pool_match": false,
+    "customer_pool_row": null,
+    "total_score": null,
+    "grade": null,
+    "rating_status": "部分维度已评分",
+    "head_pi_status": "青年临床报告人；独立PI待核",
+    "dimensions": [
+      {
+        "name": "研究方向契合度",
+        "maximum": 30,
+        "score": 23,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "代谢年龄与T2D分型可连接T10，当前只掌握题名与广义方向，18—24档。",
+        "source_ids": [
+          "BIO_P14"
+        ]
+      },
+      {
+        "name": "学术产出质量",
+        "maximum": 25,
+        "score": null,
+        "status": "本轮已检索，证据仍不足",
+        "basis": "英文全名扩展检索发现同名作者，但未定位到本人坪山机构；保留缺失，不认定无SCI。",
+        "source_ids": []
+      },
+      {
+        "name": "科研转化潜力",
+        "maximum": 25,
+        "score": null,
+        "status": "本轮已检索，证据仍不足",
+        "basis": "未核本人独立基金、队列权限及试验角色，不填0分。",
+        "source_ids": []
+      },
+      {
+        "name": "平台资源禀赋",
+        "maximum": 20,
+        "score": 4,
+        "status": "有原始来源支持的AI暂评；待人工校准",
+        "basis": "市政府资料明确三级且未定甲等，三甲为创建目标；依Skill非三甲0—5档暂评4，未升级为三甲。",
+        "source_ids": [
+          "PINGSHAN"
+        ]
+      }
+    ],
+    "rating_date": "2026-11-16",
+    "scored_dimensions": 2,
+    "known_subtotal": 27,
+    "known_maximum": 50,
+    "papers": [],
+    "grants": [],
+    "gaps": [
+      "英文署名及本人论文清单、导师/课题负责人。",
+      "独立基金和队列角色；医院后续正式等级评审结果。"
+    ],
+    "contact_action": "先确认代谢年龄研究的实际PI与数据来源，可保留青年临床联系窗口。",
+    "identity_note": "以中文姓名+机构、本人英文全名+作者自身机构共同核对；仍需本人/团队核验。",
+    "evidence_status": "公开资料AI暂评，未经过人工/本人确认",
+    "profile_read": true
+  }
+]

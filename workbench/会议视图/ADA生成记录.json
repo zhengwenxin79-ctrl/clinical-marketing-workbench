@@ -1,0 +1,30 @@
+{
+  "result": "generated",
+  "database_sha256": "645adc48a9af2eb67a9df04a0f4990fce706a5a4fcf2fe467c8e2372f0e78568",
+  "html_sha256": "7e5667a97830b1ff26d7ba6ef27c1befd10d935347ff29de2700822404fda4c7",
+  "snapshot_sha256": "02d8b150c6423b987e0aea99b3cbcdf88098074ce2219a98efe9c481172ee293",
+  "counts": {
+    "reports": 2539,
+    "topics": 56,
+    "classified": 2049,
+    "speakers": 2096
+  },
+  "cohorts": {
+    "all": {
+      "denominator": 2049,
+      "all_reports": 2539
+    },
+    "talks": {
+      "denominator": 677,
+      "all_reports": 775
+    },
+    "posters": {
+      "denominator": 1372,
+      "all_reports": 1764
+    }
+  },
+  "database_unchanged_during_export": true,
+  "new_collection": false,
+  "published": false,
+  "scoring_enabled": false
+}

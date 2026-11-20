@@ -1,0 +1,1303 @@
+{
+  "version": "diabetes-topic-taxonomy:20261118:v1",
+  "domain_id": "diabetes",
+  "status": "既有分类整理草案，待业务复核",
+  "boards": [
+    {
+      "board_id": "DM:M01",
+      "name": "早期识别与精准分型",
+      "source_board_id": "CDS2026:M01"
+    },
+    {
+      "board_id": "DM:M02",
+      "name": "T1D、胰岛功能与细胞治疗",
+      "source_board_id": "CDS2026:M02"
+    },
+    {
+      "board_id": "DM:M03",
+      "name": "血糖监测与人工智能",
+      "source_board_id": "CDS2026:M03"
+    },
+    {
+      "board_id": "DM:M04",
+      "name": "降糖与体重管理",
+      "source_board_id": "CDS2026:M04"
+    },
+    {
+      "board_id": "DM:M05",
+      "name": "糖尿病肾脏病",
+      "source_board_id": "CDS2026:M05"
+    },
+    {
+      "board_id": "DM:M06",
+      "name": "眼、足与神经并发症",
+      "source_board_id": "CDS2026:M06"
+    },
+    {
+      "board_id": "DM:M07",
+      "name": "心血管风险与多器官共病",
+      "source_board_id": "CDS2026:M07"
+    },
+    {
+      "board_id": "DM:M08",
+      "name": "脂肪肝与MASH",
+      "source_board_id": "CDS2026:M08"
+    },
+    {
+      "board_id": "DM:M09",
+      "name": "营养、运动与肠道环境",
+      "source_board_id": "CDS2026:M09"
+    },
+    {
+      "board_id": "DM:M10",
+      "name": "妊娠、肌骨与内分泌共病",
+      "source_board_id": "CDS2026:M10"
+    },
+    {
+      "board_id": "DM:M11",
+      "name": "人群防控与照护",
+      "source_board_id": "CDS2026:M11"
+    },
+    {
+      "board_id": "DM:M12",
+      "name": "代谢调控基础研究",
+      "source_board_id": "CDS2026:M12"
+    }
+  ],
+  "topics": [
+    {
+      "topic_id": "DM:Q01A",
+      "name": "糖尿病发生风险与代谢异常早期识别",
+      "board_id": "DM:M01",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q01B",
+      "name": "糖代谢与肥胖异质性分型",
+      "board_id": "DM:M01",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q02",
+      "name": "单基因、罕见病与特殊病因诊断",
+      "board_id": "DM:M01",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q03A",
+      "name": "T1D筛查、分型与人群特征",
+      "board_id": "DM:M02",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q03B",
+      "name": "T1D长期与过渡期管理",
+      "board_id": "DM:M02",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q04",
+      "name": "T1D免疫耐受与免疫干预",
+      "board_id": "DM:M02",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q05",
+      "name": "胰岛与胰腺功能失代偿及保护",
+      "board_id": "DM:M02",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q06",
+      "name": "胰岛再生、移植与干细胞替代",
+      "board_id": "DM:M02",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q07",
+      "name": "CGM动态表型、监测指标与临床应用",
+      "board_id": "DM:M03",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q08",
+      "name": "胰岛素泵、人工胰腺与自动闭环",
+      "board_id": "DM:M03",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q09",
+      "name": "AI与多模态数据辅助诊疗",
+      "board_id": "DM:M03",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q10",
+      "name": "无创传感与新型代谢检测",
+      "board_id": "DM:M03",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q11",
+      "name": "肠促胰素、多受体药物与应答差异",
+      "board_id": "DM:M04",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q12",
+      "name": "固定复方、胰岛素与其他降糖方案",
+      "board_id": "DM:M04",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q13A",
+      "name": "体重维持与减重反弹",
+      "board_id": "DM:M04",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q13B",
+      "name": "代谢手术及术后管理",
+      "board_id": "DM:M04",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q13C",
+      "name": "肥胖综合管理与糖尿病缓解",
+      "board_id": "DM:M04",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q14",
+      "name": "脂肪产热、细胞状态与能量稳态",
+      "board_id": "DM:M12",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q15",
+      "name": "脑—脂肪与器官间代谢通讯",
+      "board_id": "DM:M12",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q16",
+      "name": "代谢性炎症、脂毒性与胰岛素抵抗",
+      "board_id": "DM:M12",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q17",
+      "name": "肾损伤早期识别、表型与进展预测",
+      "board_id": "DM:M05",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q18",
+      "name": "DKD细胞图谱、肾小管损伤与纤维化",
+      "board_id": "DM:M05",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q19",
+      "name": "DKD药物获益、联合治疗与非应答",
+      "board_id": "DM:M05",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q20",
+      "name": "糖网早期预警、筛查与异质性分层",
+      "board_id": "DM:M06",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q21",
+      "name": "糖网病理机制、微生态与新型治疗",
+      "board_id": "DM:M06",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q22A",
+      "name": "糖尿病创面与皮肤损伤修复",
+      "board_id": "DM:M06",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q22B",
+      "name": "糖尿病足风险与综合管理",
+      "board_id": "DM:M06",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q22C",
+      "name": "糖尿病足感染管理",
+      "board_id": "DM:M06",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q23",
+      "name": "周围、自主神经病变与疼痛干预",
+      "board_id": "DM:M06",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q24",
+      "name": "糖尿病心肌损伤与心力衰竭",
+      "board_id": "DM:M07",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q25A",
+      "name": "ASCVD与血管残余风险",
+      "board_id": "DM:M07",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q25B",
+      "name": "卒中风险与二级预防",
+      "board_id": "DM:M07",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q26",
+      "name": "血脂、脂蛋白与降脂管理",
+      "board_id": "DM:M07",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q27",
+      "name": "CKM/M-LCK共病与多器官风险",
+      "board_id": "DM:M07",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q28",
+      "name": "MASLD分型、肝纤维化评估与共管",
+      "board_id": "DM:M08",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q29",
+      "name": "MASH炎症纤维化、细胞状态与靶向治疗",
+      "board_id": "DM:M08",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q30",
+      "name": "孕早期GDM预测、分型与临床管理",
+      "board_id": "DM:M10",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q31",
+      "name": "母婴代谢编程与子代远期风险",
+      "board_id": "DM:M10",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q32A",
+      "name": "甲状腺疾病与糖脂代谢",
+      "board_id": "DM:M10",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q32B",
+      "name": "肾上腺疾病与代谢异常",
+      "board_id": "DM:M10",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q32C",
+      "name": "生殖内分泌与代谢异常",
+      "board_id": "DM:M10",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q32D",
+      "name": "高尿酸与代谢相关损伤",
+      "board_id": "DM:M10",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q33A",
+      "name": "糖尿病肌少症与肌肉健康",
+      "board_id": "DM:M10",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q33B",
+      "name": "糖尿病骨代谢与骨质疏松",
+      "board_id": "DM:M10",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q33C",
+      "name": "减重期间身体成分与肌骨保护",
+      "board_id": "DM:M10",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q34",
+      "name": "精准营养、限时进食与生活方式干预",
+      "board_id": "DM:M09",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q35",
+      "name": "运动处方、体医融合与代谢获益",
+      "board_id": "DM:M09",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q36",
+      "name": "肠道微生态及微生物—代谢物信号",
+      "board_id": "DM:M09",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q37A",
+      "name": "基层区域网络与共同照护",
+      "board_id": "DM:M11",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q37B",
+      "name": "数字化自我管理与教育工具",
+      "board_id": "DM:M11",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q38A",
+      "name": "糖尿病心理行为与困扰干预",
+      "board_id": "DM:M11",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q38B",
+      "name": "糖尿病护理与特殊人群教育",
+      "board_id": "DM:M11",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q39",
+      "name": "糖尿病流行趋势、环境与疾病负担",
+      "board_id": "DM:M11",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q40",
+      "name": "中西医结合糖尿病防治",
+      "board_id": "DM:M11",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q41",
+      "name": "多组学、遗传调控与跨疾病机制线索",
+      "board_id": "DM:M12",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q42",
+      "name": "肝脂毒性、代谢重编程与细胞器稳态",
+      "board_id": "DM:M08",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q43",
+      "name": "肠—肝微生态与饮食、运动干预",
+      "board_id": "DM:M08",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:Q44",
+      "name": "认知障碍、低血糖脑效应与脑健康",
+      "board_id": "DM:M06",
+      "origin": "existing_conference_directory",
+      "boundary": "沿用已有会议工作议题范围；不等于同一研究。"
+    },
+    {
+      "topic_id": "DM:PAPER:L46",
+      "name": "生活方式和体成分与预防结局",
+      "board_id": "DM:M11",
+      "origin": "paper_directory_extension",
+      "boundary": "论文补充议题；暂未建立准确的会议议题对应，不强行并入邻近主题。"
+    },
+    {
+      "topic_id": "DM:PAPER:L49",
+      "name": "日常照护、睡眠与心理体验",
+      "board_id": "DM:M11",
+      "origin": "paper_directory_extension",
+      "boundary": "论文补充议题；暂未建立准确的会议议题对应，不强行并入邻近主题。"
+    },
+    {
+      "topic_id": "DM:PAPER:L23",
+      "name": "肠促胰素及α细胞的生理调节",
+      "board_id": "DM:M12",
+      "origin": "paper_directory_extension",
+      "boundary": "论文补充议题；暂未建立准确的会议议题对应，不强行并入邻近主题。"
+    },
+    {
+      "topic_id": "DM:PAPER:L50",
+      "name": "T1D起病年龄与长期并发症",
+      "board_id": "DM:M11",
+      "origin": "paper_directory_extension",
+      "boundary": "论文补充议题；暂未建立准确的会议议题对应，不强行并入邻近主题。"
+    },
+    {
+      "topic_id": "DM:PAPER:L17",
+      "name": "低血糖风险与短期脑功能影响",
+      "board_id": "DM:M03",
+      "origin": "paper_directory_extension",
+      "boundary": "论文补充议题；暂未建立准确的会议议题对应，不强行并入邻近主题。"
+    },
+    {
+      "topic_id": "DM:PAPER:L16",
+      "name": "T1D酮症酸中毒风险如何提前识别",
+      "board_id": "DM:M03",
+      "origin": "paper_directory_extension",
+      "boundary": "论文补充议题；暂未建立准确的会议议题对应，不强行并入邻近主题。"
+    },
+    {
+      "topic_id": "DM:PAPER:L47",
+      "name": "医疗费用与胰岛素可及性",
+      "board_id": "DM:M11",
+      "origin": "paper_directory_extension",
+      "boundary": "论文补充议题；暂未建立准确的会议议题对应，不强行并入邻近主题。"
+    },
+    {
+      "topic_id": "DM:PAPER:L41",
+      "name": "肝糖代谢的非胰岛素调控",
+      "board_id": "DM:M12",
+      "origin": "paper_directory_extension",
+      "boundary": "论文补充议题；暂未建立准确的会议议题对应，不强行并入邻近主题。"
+    }
+  ],
+  "mappings": [
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q01A",
+      "topic_id": "DM:Q01A",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q01B",
+      "topic_id": "DM:Q01B",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q02",
+      "topic_id": "DM:Q02",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q03A",
+      "topic_id": "DM:Q03A",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q03B",
+      "topic_id": "DM:Q03B",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q04",
+      "topic_id": "DM:Q04",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q05",
+      "topic_id": "DM:Q05",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q06",
+      "topic_id": "DM:Q06",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q07",
+      "topic_id": "DM:Q07",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q08",
+      "topic_id": "DM:Q08",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q09",
+      "topic_id": "DM:Q09",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q10",
+      "topic_id": "DM:Q10",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q11",
+      "topic_id": "DM:Q11",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q12",
+      "topic_id": "DM:Q12",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q13A",
+      "topic_id": "DM:Q13A",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q13B",
+      "topic_id": "DM:Q13B",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q13C",
+      "topic_id": "DM:Q13C",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q14",
+      "topic_id": "DM:Q14",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q15",
+      "topic_id": "DM:Q15",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q16",
+      "topic_id": "DM:Q16",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q17",
+      "topic_id": "DM:Q17",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q18",
+      "topic_id": "DM:Q18",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q19",
+      "topic_id": "DM:Q19",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q20",
+      "topic_id": "DM:Q20",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q21",
+      "topic_id": "DM:Q21",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q22A",
+      "topic_id": "DM:Q22A",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q22B",
+      "topic_id": "DM:Q22B",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q22C",
+      "topic_id": "DM:Q22C",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q23",
+      "topic_id": "DM:Q23",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q24",
+      "topic_id": "DM:Q24",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q25A",
+      "topic_id": "DM:Q25A",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q25B",
+      "topic_id": "DM:Q25B",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q26",
+      "topic_id": "DM:Q26",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q27",
+      "topic_id": "DM:Q27",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q28",
+      "topic_id": "DM:Q28",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q29",
+      "topic_id": "DM:Q29",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q30",
+      "topic_id": "DM:Q30",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q31",
+      "topic_id": "DM:Q31",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q32A",
+      "topic_id": "DM:Q32A",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q32B",
+      "topic_id": "DM:Q32B",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q32C",
+      "topic_id": "DM:Q32C",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q32D",
+      "topic_id": "DM:Q32D",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q33A",
+      "topic_id": "DM:Q33A",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q33B",
+      "topic_id": "DM:Q33B",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q33C",
+      "topic_id": "DM:Q33C",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q34",
+      "topic_id": "DM:Q34",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q35",
+      "topic_id": "DM:Q35",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q36",
+      "topic_id": "DM:Q36",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q37A",
+      "topic_id": "DM:Q37A",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q37B",
+      "topic_id": "DM:Q37B",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q38A",
+      "topic_id": "DM:Q38A",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q38B",
+      "topic_id": "DM:Q38B",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q39",
+      "topic_id": "DM:Q39",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q40",
+      "topic_id": "DM:Q40",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q41",
+      "topic_id": "DM:Q41",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q42",
+      "topic_id": "DM:Q42",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q43",
+      "topic_id": "DM:Q43",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "conference_topic",
+      "source_id": "CDS2026:Q44",
+      "topic_id": "DM:Q44",
+      "relation": "existing_directory",
+      "basis": "已有CDS/ADA显式议题映射；当前只换领域中性的目录ID。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L05",
+      "topic_id": "DM:Q03A",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L07",
+      "topic_id": "DM:Q05",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L01",
+      "topic_id": "DM:Q01B",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L02",
+      "topic_id": "DM:Q02",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L06",
+      "topic_id": "DM:Q04",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L14",
+      "topic_id": "DM:Q07",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L44",
+      "topic_id": "DM:Q30",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L46",
+      "topic_id": "DM:PAPER:L46",
+      "relation": "paper_extension",
+      "basis": "保留论文原议题及板块，会议对应待WorkBuddy或人工复核。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L49",
+      "topic_id": "DM:PAPER:L49",
+      "relation": "paper_extension",
+      "basis": "保留论文原议题及板块，会议对应待WorkBuddy或人工复核。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L08",
+      "topic_id": "DM:Q05",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L09",
+      "topic_id": "DM:Q06",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L13",
+      "topic_id": "DM:Q08",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L15",
+      "topic_id": "DM:Q07",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L20",
+      "topic_id": "DM:Q11",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L23",
+      "topic_id": "DM:PAPER:L23",
+      "relation": "paper_extension",
+      "basis": "保留论文原议题及板块，会议对应待WorkBuddy或人工复核。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L29",
+      "topic_id": "DM:Q17",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L39",
+      "topic_id": "DM:Q28",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L43",
+      "topic_id": "DM:Q30",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L45",
+      "topic_id": "DM:Q31",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L50",
+      "topic_id": "DM:PAPER:L50",
+      "relation": "paper_extension",
+      "basis": "保留论文原议题及板块，会议对应待WorkBuddy或人工复核。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L03",
+      "topic_id": "DM:Q01A",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L11",
+      "topic_id": "DM:Q15",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L17",
+      "topic_id": "DM:PAPER:L17",
+      "relation": "paper_extension",
+      "basis": "保留论文原议题及板块，会议对应待WorkBuddy或人工复核。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L21",
+      "topic_id": "DM:Q13C",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L27",
+      "topic_id": "DM:Q34",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L28",
+      "topic_id": "DM:Q33A",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L30",
+      "topic_id": "DM:Q18",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L32",
+      "topic_id": "DM:Q21",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L34",
+      "topic_id": "DM:Q23",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L36",
+      "topic_id": "DM:Q22B",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L37",
+      "topic_id": "DM:Q25A",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L48",
+      "topic_id": "DM:Q39",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L12",
+      "topic_id": "DM:Q04",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L16",
+      "topic_id": "DM:PAPER:L16",
+      "relation": "paper_extension",
+      "basis": "保留论文原议题及板块，会议对应待WorkBuddy或人工复核。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L18",
+      "topic_id": "DM:Q11",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L24",
+      "topic_id": "DM:Q14",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L25",
+      "topic_id": "DM:Q14",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L26",
+      "topic_id": "DM:Q34",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L31",
+      "topic_id": "DM:Q33B",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L40",
+      "topic_id": "DM:Q28",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L42",
+      "topic_id": "DM:Q30",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L47",
+      "topic_id": "DM:PAPER:L47",
+      "relation": "paper_extension",
+      "basis": "保留论文原议题及板块，会议对应待WorkBuddy或人工复核。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L04",
+      "topic_id": "DM:Q01B",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L10",
+      "topic_id": "DM:Q06",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L19",
+      "topic_id": "DM:Q12",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L22",
+      "topic_id": "DM:Q12",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L33",
+      "topic_id": "DM:Q20",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L35",
+      "topic_id": "DM:Q44",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L38",
+      "topic_id": "DM:Q24",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L41",
+      "topic_id": "DM:PAPER:L41",
+      "relation": "paper_extension",
+      "basis": "保留论文原议题及板块，会议对应待WorkBuddy或人工复核。"
+    },
+    {
+      "source_kind": "paper_issue",
+      "source_id": "LIT20261117:L51",
+      "topic_id": "DM:Q39",
+      "relation": "same_board_thematic_group",
+      "basis": "按现有题名分类对应同板块研究问题；是主题归类，不是同研究或完全同范围认定。"
+    }
+  ],
+  "rules": {
+    "primary": "每条会议报告/主池论文沿用其原主议题，再映射至一个领域议题，不重复计数。",
+    "secondary": "Biomarker可通过不同证据关联多个用途/领域议题，指标数不可跨议题直接相加。",
+    "independence": "主题归类不确认同一研究、独立研究或PI身份。",
+    "unresolved": "无明确原主议题的材料保留待归类，不按关键词强制分配。",
+    "ranking": "会议关注和论文进展分别展示/排序，不相加为领域热度总分。"
+  }
+}

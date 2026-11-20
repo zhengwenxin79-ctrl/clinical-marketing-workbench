@@ -1,0 +1,44 @@
+{
+  "latest_run": "20261113T102037-cc4d95",
+  "sources": {
+    "cds-home": {
+      "text_sha256": "823ddc8d38df109d7d104da375cf57f788f0de7b65e85afdc0085402c153142d",
+      "final_url": "https://cds26.tiemeeting.com/CN",
+      "status": "checked"
+    },
+    "cds-program": {
+      "text_sha256": "f7b435e03b3a32951b2ce2c5ab59a32b21ee3ed725020a0ec675279d70d0adec",
+      "final_url": "https://cds26.tiemeeting.com/CN/Program/Details",
+      "status": "page_only"
+    },
+    "cse-notice": {
+      "final_url": "https://xue.sciconf.cn/infomation-detail?id=918C9639-0AA7-75C5-D3D6-6A78FBB8A2B4",
+      "status": "fetch_failed"
+    },
+    "ada-home": {
+      "text_sha256": "3a79c920c7495f82d4e2ba0778c1626dd63b3c3bf35a709c2aa59fe94c58b259",
+      "final_url": "https://professional.diabetes.org/scientific-sessions",
+      "status": "checked"
+    },
+    "easd-2026": {
+      "text_sha256": "c46aad4082a86f2574478f7e873378f82f840e687d937c57bda140d5a6f13556",
+      "final_url": "https://www.easd.org/annual-meeting/easd-2026.html",
+      "status": "checked"
+    },
+    "easd-2027": {
+      "text_sha256": "dca3be417c00761e670e73f69ca9b899a4332282b80e2549d2279b7c31378895",
+      "final_url": "https://www.easd.org/annual-meeting/easd-2027/",
+      "status": "checked"
+    },
+    "idf-home": {
+      "text_sha256": "ba9f03e327fbe402839449b66f1a93497f1ce89a17b97ee4bbcafa774adb1597",
+      "final_url": "https://idf.org/congress-and-events/idf2027/",
+      "status": "checked"
+    },
+    "attd-home": {
+      "text_sha256": "3f582691eec25c43802aee29355e3449140daf160989bdf8ee3ec2a12182f1d8",
+      "final_url": "https://attd.kenes.com/",
+      "status": "checked"
+    }
+  }
+}

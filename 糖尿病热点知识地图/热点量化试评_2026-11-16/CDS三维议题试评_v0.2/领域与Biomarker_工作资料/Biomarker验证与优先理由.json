@@ -1,0 +1,5774 @@
+[
+  {
+    "id": "rna35",
+    "label": "35基因RNA组合",
+    "kind": "分子组合",
+    "summary": "研究孕约16周的血浆RNA组合与后续GDM风险。",
+    "bindings": [
+      {
+        "record_id": "R16",
+        "categories": [
+          "early"
+        ],
+        "role": "research",
+        "basis": "35基因cfRNA模型；内部测试AUC 0.84、外部验证0.73。",
+        "sample": "孕期血浆cf-mRNA/cf-lncRNA",
+        "use": "常规诊断前的GDM风险识别",
+        "signal": "研究线索",
+        "evidence_id": "P-R16",
+        "original_role": "research"
+      }
+    ],
+    "agendas": [],
+    "matches": [
+      {
+        "tech_id": "CF",
+        "relation": "direct",
+        "purpose": "围绕血浆RNA组合开展候选筛选、独立验证与临床模型增益评价。"
+      }
+    ],
+    "notes": "现有台账未列出全部35个基因，使用原研究组合描述，不补写成员。",
+    "categories": [
+      "early"
+    ],
+    "research_ids": [
+      "P-R16"
+    ],
+    "record_ids": [
+      "P-R16"
+    ],
+    "field_ids": [
+      "H30"
+    ],
+    "study_groups": [
+      "R16"
+    ],
+    "study_count": 1,
+    "agenda_count": 0,
+    "stage": "V3",
+    "stage_label": "有人体外部验证记录",
+    "priority": "优先复核",
+    "priority_reason": "已有外部验证AUC 0.73，可先评估临床基线模型上的增益。",
+    "gap": "补35基因成员、外部验证样本量、独立中心、校准与临床基线增益；补检测重复性及标准化流程。",
+    "status": "候选线索",
+    "heat_eligible": false,
+    "heat_basis": "按会议、研究和转化分别列证据；无综合分和跨资料池排名。",
+    "reference": false,
+    "sample_notes": [
+      "孕期血浆cf-mRNA/cf-lncRNA"
+    ],
+    "heat_gaps": [
+      "核对样本/队列与团队独立性。",
+      "补可比会议/时间窗口，才能判断上升或持续。"
+    ],
+    "review": {
+      "conferences": [
+        {
+          "source": "CDS2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": 0,
+          "share": 0.0,
+          "denominator": 80,
+          "total_reviewed": 606,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "完整606条学术题名，按本轮规则复核",
+          "reading": "计划题名"
+        },
+        {
+          "source": "ADA2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": null,
+          "share": null,
+          "denominator": null,
+          "total_reviewed": null,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "27条定向关联记录；不是全会",
+          "reading": "会议摘要/方法及关联论文更新"
+        }
+      ],
+      "study_count": 1,
+      "study_groups": [
+        "R16"
+      ],
+      "teams": [
+        {
+          "study_group": "R16",
+          "team_labels": [
+            "Songchang Chen、Yuwei Liu等；复旦大学/BGI等。外部研究，不是公司已确认案例。"
+          ],
+          "evidence_ids": [
+            "P-R16"
+          ]
+        }
+      ],
+      "confirmed_independent_studies": null,
+      "confirmed_independent_teams": null,
+      "independence_note": "跨研究队列/样本与团队独立性尚未完成核查；不以不同作者字符串或单位数替代。",
+      "recent_count": 0,
+      "recent_ids": [],
+      "latest_known_date": "2026-02-09",
+      "unknown_date_ids": [],
+      "validation_ids": [
+        "P-R16"
+      ],
+      "validation_study_count": 1,
+      "paper_ids": [
+        "P-R16"
+      ],
+      "population_ids": [],
+      "cases": [
+        {
+          "id": "rna35-P-R16",
+          "evidence_id": "P-R16",
+          "role": "research",
+          "sample": "孕期血浆cf-mRNA/cf-lncRNA",
+          "use": "常规诊断前的GDM风险识别",
+          "basis": "35基因cfRNA模型；内部测试AUC 0.84、外部验证0.73。",
+          "review_note": "",
+          "signal": "研究线索",
+          "source": "Epigenetics",
+          "study_group": "R16",
+          "has_results": true
+        }
+      ],
+      "attention_checks": [
+        {
+          "label": "候选线索",
+          "status": "已记录",
+          "basis": "有明确指标/类别及对应原始记录，按用途与输入分别保留。"
+        },
+        {
+          "label": "会议集中讨论",
+          "status": "待同用途复核",
+          "basis": "类别下不同检测、筛查、组合不合并为同一具体指标热点。"
+        },
+        {
+          "label": "多团队跟进",
+          "status": "待核",
+          "basis": "研究组去重与外部验证记录，不直接证明独立团队复现。"
+        },
+        {
+          "label": "持续关注",
+          "status": "待可比窗口",
+          "basis": "当前无相同覆盖规则的连续会议/时间窗口。"
+        }
+      ],
+      "negative": false,
+      "translation": {
+        "priority": "优先复核",
+        "reason": "已有外部验证AUC 0.73，可先评估临床基线模型上的增益。",
+        "stage": "V3",
+        "stage_label": "有人体外部验证记录",
+        "gap": "补35基因成员、外部验证样本量、独立中心、校准与临床基线增益；补检测重复性及标准化流程。",
+        "checks": [
+          {
+            "name": "人体证据",
+            "status": "有人体研究记录"
+          },
+          {
+            "name": "独立/外部验证",
+            "status": "有原研究验证记录，细节待复核"
+          },
+          {
+            "name": "临床增益",
+            "status": "相对现行临床模型/路径的增益待补"
+          },
+          {
+            "name": "检测与交付适配",
+            "status": "有研究技术关联，样本/平台/参数待技术确认"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "malat1",
+    "label": "MALAT1",
+    "kind": "具体分子",
+    "summary": "尿液lncRNA研究，重点验证信号来自尿液细胞。",
+    "bindings": [
+      {
+        "record_id": "R17",
+        "categories": [
+          "stratification"
+        ],
+        "role": "research",
+        "basis": "论文最终重点验证的是尿液细胞来源MALAT1。",
+        "sample": "尿液多组分；重点验证尿液细胞",
+        "use": "DKD与NDKD鉴别",
+        "signal": "研究线索",
+        "evidence_id": "P-R17",
+        "original_role": "research"
+      }
+    ],
+    "agendas": [],
+    "matches": [
+      {
+        "tech_id": "CF",
+        "relation": "related",
+        "purpose": "可借鉴尿液RNA靶标选择、组分比较和靶向验证设计，具体样本与PCR流程需分别适配。"
+      }
+    ],
+    "notes": "单项尿液RNA研究；尿液细胞、无细胞尿液、EV和血浆测序的性能分别解释。",
+    "categories": [
+      "stratification"
+    ],
+    "research_ids": [
+      "P-R17"
+    ],
+    "record_ids": [
+      "P-R17"
+    ],
+    "field_ids": [
+      "H17"
+    ],
+    "study_groups": [
+      "R17"
+    ],
+    "study_count": 1,
+    "agenda_count": 0,
+    "stage": "V3",
+    "stage_label": "有人体独立验证记录",
+    "priority": "优先复核",
+    "priority_reason": "尿液细胞MALAT1有独立验证，适合围绕DKD/NDKD鉴别复核。",
+    "gap": "补独立验证人数、跨中心设计、检测阈值及相对现有临床路径的增益；先确认尿液细胞输入。",
+    "status": "候选线索",
+    "heat_eligible": false,
+    "heat_basis": "按会议、研究和转化分别列证据；无综合分和跨资料池排名。",
+    "reference": false,
+    "sample_notes": [
+      "尿液多组分；重点验证尿液细胞"
+    ],
+    "heat_gaps": [
+      "核对样本/队列与团队独立性。",
+      "补可比会议/时间窗口，才能判断上升或持续。"
+    ],
+    "review": {
+      "conferences": [
+        {
+          "source": "CDS2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": 0,
+          "share": 0.0,
+          "denominator": 80,
+          "total_reviewed": 606,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "完整606条学术题名，按本轮规则复核",
+          "reading": "计划题名"
+        },
+        {
+          "source": "ADA2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": null,
+          "share": null,
+          "denominator": null,
+          "total_reviewed": null,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "27条定向关联记录；不是全会",
+          "reading": "会议摘要/方法及关联论文更新"
+        }
+      ],
+      "study_count": 1,
+      "study_groups": [
+        "R17"
+      ],
+      "teams": [
+        {
+          "study_group": "R17",
+          "team_labels": [
+            "Madhurima Basu、Subhasis Neogi等；印度IPGMER等。外部研究。"
+          ],
+          "evidence_ids": [
+            "P-R17"
+          ]
+        }
+      ],
+      "confirmed_independent_studies": null,
+      "confirmed_independent_teams": null,
+      "independence_note": "跨研究队列/样本与团队独立性尚未完成核查；不以不同作者字符串或单位数替代。",
+      "recent_count": 0,
+      "recent_ids": [],
+      "latest_known_date": "2026-05-25",
+      "unknown_date_ids": [],
+      "validation_ids": [
+        "P-R17"
+      ],
+      "validation_study_count": 1,
+      "paper_ids": [
+        "P-R17"
+      ],
+      "population_ids": [],
+      "cases": [
+        {
+          "id": "malat1-P-R17",
+          "evidence_id": "P-R17",
+          "role": "research",
+          "sample": "尿液多组分；重点验证尿液细胞",
+          "use": "DKD与NDKD鉴别",
+          "basis": "论文最终重点验证的是尿液细胞来源MALAT1。",
+          "review_note": "",
+          "signal": "研究线索",
+          "source": "BMJ Open Diabetes Research & Care",
+          "study_group": "R17",
+          "has_results": true
+        }
+      ],
+      "attention_checks": [
+        {
+          "label": "候选线索",
+          "status": "已记录",
+          "basis": "有明确指标/类别及对应原始记录，按用途与输入分别保留。"
+        },
+        {
+          "label": "会议集中讨论",
+          "status": "待同用途复核",
+          "basis": "类别下不同检测、筛查、组合不合并为同一具体指标热点。"
+        },
+        {
+          "label": "多团队跟进",
+          "status": "待核",
+          "basis": "研究组去重与外部验证记录，不直接证明独立团队复现。"
+        },
+        {
+          "label": "持续关注",
+          "status": "待可比窗口",
+          "basis": "当前无相同覆盖规则的连续会议/时间窗口。"
+        }
+      ],
+      "negative": false,
+      "translation": {
+        "priority": "优先复核",
+        "reason": "尿液细胞MALAT1有独立验证，适合围绕DKD/NDKD鉴别复核。",
+        "stage": "V3",
+        "stage_label": "有人体独立验证记录",
+        "gap": "补独立验证人数、跨中心设计、检测阈值及相对现有临床路径的增益；先确认尿液细胞输入。",
+        "checks": [
+          {
+            "name": "人体证据",
+            "status": "有人体研究记录"
+          },
+          {
+            "name": "独立/外部验证",
+            "status": "有原研究验证记录，细节待复核"
+          },
+          {
+            "name": "临床增益",
+            "status": "相对现行临床模型/路径的增益待补"
+          },
+          {
+            "name": "检测与交付适配",
+            "status": "有研究技术关联，样本/平台/参数待技术确认"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "pvt1",
+    "label": "PVT1",
+    "kind": "具体分子",
+    "summary": "已有台账记录尿液多组分中PVT1等候选lncRNA差异。",
+    "bindings": [
+      {
+        "record_id": "R17",
+        "categories": [
+          "stratification"
+        ],
+        "role": "research",
+        "basis": "不同尿液成分可见MALAT1/PVT1等差异；最终重点验证的是MALAT1。",
+        "sample": "尿液多组分；PVT1具体成分结果待核",
+        "use": "肾病鉴别的候选RNA线索",
+        "signal": "候选差异",
+        "evidence_id": "P-R17",
+        "original_role": "research"
+      }
+    ],
+    "agendas": [],
+    "matches": [
+      {
+        "tech_id": "CF",
+        "relation": "related",
+        "purpose": "用于比较尿液RNA候选靶标和输入组分，继续补齐PVT1的具体检测与验证结果。"
+      }
+    ],
+    "notes": "",
+    "categories": [
+      "stratification"
+    ],
+    "research_ids": [
+      "P-R17"
+    ],
+    "record_ids": [
+      "P-R17"
+    ],
+    "field_ids": [
+      "H17"
+    ],
+    "study_groups": [
+      "R17"
+    ],
+    "study_count": 1,
+    "agenda_count": 0,
+    "stage": "V2",
+    "stage_label": "人体候选比较",
+    "priority": "继续验证",
+    "priority_reason": "有明确候选分子，可比较不同尿液输入的检测表现。",
+    "gap": "独立验证中PVT1的具体结果和性能待核；不沿用MALAT1结果。",
+    "status": "候选线索",
+    "heat_eligible": false,
+    "heat_basis": "按会议、研究和转化分别列证据；无综合分和跨资料池排名。",
+    "reference": false,
+    "sample_notes": [
+      "尿液多组分；PVT1具体成分结果待核"
+    ],
+    "heat_gaps": [
+      "核对样本/队列与团队独立性。",
+      "补可比会议/时间窗口，才能判断上升或持续。"
+    ],
+    "review": {
+      "conferences": [
+        {
+          "source": "CDS2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": 0,
+          "share": 0.0,
+          "denominator": 80,
+          "total_reviewed": 606,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "完整606条学术题名，按本轮规则复核",
+          "reading": "计划题名"
+        },
+        {
+          "source": "ADA2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": null,
+          "share": null,
+          "denominator": null,
+          "total_reviewed": null,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "27条定向关联记录；不是全会",
+          "reading": "会议摘要/方法及关联论文更新"
+        }
+      ],
+      "study_count": 1,
+      "study_groups": [
+        "R17"
+      ],
+      "teams": [
+        {
+          "study_group": "R17",
+          "team_labels": [
+            "Madhurima Basu、Subhasis Neogi等；印度IPGMER等。外部研究。"
+          ],
+          "evidence_ids": [
+            "P-R17"
+          ]
+        }
+      ],
+      "confirmed_independent_studies": null,
+      "confirmed_independent_teams": null,
+      "independence_note": "跨研究队列/样本与团队独立性尚未完成核查；不以不同作者字符串或单位数替代。",
+      "recent_count": 0,
+      "recent_ids": [],
+      "latest_known_date": "2026-05-25",
+      "unknown_date_ids": [],
+      "validation_ids": [],
+      "validation_study_count": 0,
+      "paper_ids": [
+        "P-R17"
+      ],
+      "population_ids": [],
+      "cases": [
+        {
+          "id": "pvt1-P-R17",
+          "evidence_id": "P-R17",
+          "role": "research",
+          "sample": "尿液多组分；PVT1具体成分结果待核",
+          "use": "肾病鉴别的候选RNA线索",
+          "basis": "不同尿液成分可见MALAT1/PVT1等差异；最终重点验证的是MALAT1。",
+          "review_note": "",
+          "signal": "候选差异",
+          "source": "BMJ Open Diabetes Research & Care",
+          "study_group": "R17",
+          "has_results": true
+        }
+      ],
+      "attention_checks": [
+        {
+          "label": "候选线索",
+          "status": "已记录",
+          "basis": "有明确指标/类别及对应原始记录，按用途与输入分别保留。"
+        },
+        {
+          "label": "会议集中讨论",
+          "status": "待同用途复核",
+          "basis": "类别下不同检测、筛查、组合不合并为同一具体指标热点。"
+        },
+        {
+          "label": "多团队跟进",
+          "status": "待核",
+          "basis": "研究组去重与外部验证记录，不直接证明独立团队复现。"
+        },
+        {
+          "label": "持续关注",
+          "status": "待可比窗口",
+          "basis": "当前无相同覆盖规则的连续会议/时间窗口。"
+        }
+      ],
+      "negative": false,
+      "translation": {
+        "priority": "继续验证",
+        "reason": "有明确候选分子，可比较不同尿液输入的检测表现。",
+        "stage": "V2",
+        "stage_label": "人体候选比较",
+        "gap": "独立验证中PVT1的具体结果和性能待核；不沿用MALAT1结果。",
+        "checks": [
+          {
+            "name": "人体证据",
+            "status": "有人体研究记录"
+          },
+          {
+            "name": "独立/外部验证",
+            "status": "未核实，待补"
+          },
+          {
+            "name": "临床增益",
+            "status": "相对现行临床模型/路径的增益待补"
+          },
+          {
+            "name": "检测与交付适配",
+            "status": "有研究技术关联，样本/平台/参数待技术确认"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "tnfr",
+    "label": "TNFR1/2",
+    "kind": "具体分子",
+    "summary": "正常白蛋白尿T2D患者肾风险研究中的候选蛋白。",
+    "bindings": [
+      {
+        "record_id": "R11",
+        "categories": [
+          "early",
+          "stratification"
+        ],
+        "role": "research",
+        "basis": "TNFR1/2、KIM1、MMP7等提供UACR之外的关联信息。",
+        "sample": "具体样本与平台待原文细化；现有记录含尿液相关指标",
+        "use": "正常白蛋白尿T2D人群的后续肾功能风险",
+        "signal": "研究线索",
+        "evidence_id": "P-R11",
+        "original_role": "research"
+      }
+    ],
+    "agendas": [],
+    "matches": [
+      {
+        "tech_id": "PR",
+        "relation": "direct",
+        "purpose": "围绕候选蛋白与肾风险开展检测、纵向随访及相对常规指标的增量评价。"
+      }
+    ],
+    "notes": "现有记录说明部分动态轨迹相关，尚未逐蛋白核清纵向结果，因此不据此将每个蛋白单独归为已验证的动态监测指标。",
+    "categories": [
+      "early",
+      "stratification"
+    ],
+    "research_ids": [
+      "P-R11"
+    ],
+    "record_ids": [
+      "P-R11"
+    ],
+    "field_ids": [
+      "H17"
+    ],
+    "study_groups": [
+      "R11"
+    ],
+    "study_count": 1,
+    "agenda_count": 0,
+    "stage": "V2",
+    "stage_label": "人体风险关联",
+    "priority": "优先复核",
+    "priority_reason": "聚焦常规白蛋白尿未覆盖的早期肾风险，临床问题明确。",
+    "gap": "补TNFR1/2各自效应、检测方法、外部验证及eGFR/UACR之上的增量。",
+    "status": "候选线索",
+    "heat_eligible": false,
+    "heat_basis": "按会议、研究和转化分别列证据；无综合分和跨资料池排名。",
+    "reference": false,
+    "sample_notes": [
+      "具体样本与平台待原文细化；现有记录含尿液相关指标"
+    ],
+    "heat_gaps": [
+      "核对样本/队列与团队独立性。",
+      "补可比会议/时间窗口，才能判断上升或持续。"
+    ],
+    "review": {
+      "conferences": [
+        {
+          "source": "CDS2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": 0,
+          "share": 0.0,
+          "denominator": 80,
+          "total_reviewed": 606,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "完整606条学术题名，按本轮规则复核",
+          "reading": "计划题名"
+        },
+        {
+          "source": "ADA2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": null,
+          "share": null,
+          "denominator": null,
+          "total_reviewed": null,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "27条定向关联记录；不是全会",
+          "reading": "会议摘要/方法及关联论文更新"
+        }
+      ],
+      "study_count": 1,
+      "study_groups": [
+        "R11"
+      ],
+      "teams": [
+        {
+          "study_group": "R11",
+          "team_labels": [
+            "Moedt E／Ju W等；Groningen、Michigan等（作者单位）"
+          ],
+          "evidence_ids": [
+            "P-R11"
+          ]
+        }
+      ],
+      "confirmed_independent_studies": null,
+      "confirmed_independent_teams": null,
+      "independence_note": "跨研究队列/样本与团队独立性尚未完成核查；不以不同作者字符串或单位数替代。",
+      "recent_count": 1,
+      "recent_ids": [
+        "P-R11"
+      ],
+      "latest_known_date": "2026-10-21",
+      "unknown_date_ids": [],
+      "validation_ids": [],
+      "validation_study_count": 0,
+      "paper_ids": [
+        "P-R11"
+      ],
+      "population_ids": [],
+      "cases": [
+        {
+          "id": "tnfr-P-R11",
+          "evidence_id": "P-R11",
+          "role": "research",
+          "sample": "具体样本与平台待原文细化；现有记录含尿液相关指标",
+          "use": "正常白蛋白尿T2D人群的后续肾功能风险",
+          "basis": "TNFR1/2、KIM1、MMP7等提供UACR之外的关联信息。",
+          "review_note": "",
+          "signal": "研究线索",
+          "source": "Diabetes",
+          "study_group": "R11",
+          "has_results": true
+        }
+      ],
+      "attention_checks": [
+        {
+          "label": "候选线索",
+          "status": "已记录",
+          "basis": "有明确指标/类别及对应原始记录，按用途与输入分别保留。"
+        },
+        {
+          "label": "会议集中讨论",
+          "status": "待同用途复核",
+          "basis": "类别下不同检测、筛查、组合不合并为同一具体指标热点。"
+        },
+        {
+          "label": "多团队跟进",
+          "status": "待核",
+          "basis": "研究组去重与外部验证记录，不直接证明独立团队复现。"
+        },
+        {
+          "label": "持续关注",
+          "status": "待可比窗口",
+          "basis": "当前无相同覆盖规则的连续会议/时间窗口。"
+        }
+      ],
+      "negative": false,
+      "translation": {
+        "priority": "优先复核",
+        "reason": "聚焦常规白蛋白尿未覆盖的早期肾风险，临床问题明确。",
+        "stage": "V2",
+        "stage_label": "人体风险关联",
+        "gap": "补TNFR1/2各自效应、检测方法、外部验证及eGFR/UACR之上的增量。",
+        "checks": [
+          {
+            "name": "人体证据",
+            "status": "有人体研究记录"
+          },
+          {
+            "name": "独立/外部验证",
+            "status": "未核实，待补"
+          },
+          {
+            "name": "临床增益",
+            "status": "相对现行临床模型/路径的增益待补"
+          },
+          {
+            "name": "检测与交付适配",
+            "status": "有研究技术关联，样本/平台/参数待技术确认"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "kim1",
+    "label": "KIM1",
+    "kind": "具体分子",
+    "summary": "正常白蛋白尿T2D患者肾风险研究中的候选蛋白。",
+    "bindings": [
+      {
+        "record_id": "R11",
+        "categories": [
+          "early",
+          "stratification"
+        ],
+        "role": "research",
+        "basis": "TNFR1/2、KIM1、MMP7等提供UACR之外的关联信息。",
+        "sample": "具体样本与平台待原文细化；现有记录含尿液相关指标",
+        "use": "正常白蛋白尿T2D人群的后续肾功能风险",
+        "signal": "研究线索",
+        "evidence_id": "P-R11",
+        "original_role": "research"
+      }
+    ],
+    "agendas": [],
+    "matches": [
+      {
+        "tech_id": "PR",
+        "relation": "direct",
+        "purpose": "围绕候选蛋白与肾风险开展检测、纵向随访及相对常规指标的增量评价。"
+      }
+    ],
+    "notes": "现有记录说明部分动态轨迹相关，尚未逐蛋白核清纵向结果，因此不据此将每个蛋白单独归为已验证的动态监测指标。",
+    "categories": [
+      "early",
+      "stratification"
+    ],
+    "research_ids": [
+      "P-R11"
+    ],
+    "record_ids": [
+      "P-R11"
+    ],
+    "field_ids": [
+      "H17"
+    ],
+    "study_groups": [
+      "R11"
+    ],
+    "study_count": 1,
+    "agenda_count": 0,
+    "stage": "V2",
+    "stage_label": "人体风险关联",
+    "priority": "优先复核",
+    "priority_reason": "面向正常白蛋白尿T2D的肾功能下降风险。",
+    "gap": "补样本输入与方法、外部验证及相对eGFR/UACR增量。",
+    "status": "候选线索",
+    "heat_eligible": false,
+    "heat_basis": "按会议、研究和转化分别列证据；无综合分和跨资料池排名。",
+    "reference": false,
+    "sample_notes": [
+      "具体样本与平台待原文细化；现有记录含尿液相关指标"
+    ],
+    "heat_gaps": [
+      "核对样本/队列与团队独立性。",
+      "补可比会议/时间窗口，才能判断上升或持续。"
+    ],
+    "review": {
+      "conferences": [
+        {
+          "source": "CDS2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": 0,
+          "share": 0.0,
+          "denominator": 80,
+          "total_reviewed": 606,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "完整606条学术题名，按本轮规则复核",
+          "reading": "计划题名"
+        },
+        {
+          "source": "ADA2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": null,
+          "share": null,
+          "denominator": null,
+          "total_reviewed": null,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "27条定向关联记录；不是全会",
+          "reading": "会议摘要/方法及关联论文更新"
+        }
+      ],
+      "study_count": 1,
+      "study_groups": [
+        "R11"
+      ],
+      "teams": [
+        {
+          "study_group": "R11",
+          "team_labels": [
+            "Moedt E／Ju W等；Groningen、Michigan等（作者单位）"
+          ],
+          "evidence_ids": [
+            "P-R11"
+          ]
+        }
+      ],
+      "confirmed_independent_studies": null,
+      "confirmed_independent_teams": null,
+      "independence_note": "跨研究队列/样本与团队独立性尚未完成核查；不以不同作者字符串或单位数替代。",
+      "recent_count": 1,
+      "recent_ids": [
+        "P-R11"
+      ],
+      "latest_known_date": "2026-10-21",
+      "unknown_date_ids": [],
+      "validation_ids": [],
+      "validation_study_count": 0,
+      "paper_ids": [
+        "P-R11"
+      ],
+      "population_ids": [],
+      "cases": [
+        {
+          "id": "kim1-P-R11",
+          "evidence_id": "P-R11",
+          "role": "research",
+          "sample": "具体样本与平台待原文细化；现有记录含尿液相关指标",
+          "use": "正常白蛋白尿T2D人群的后续肾功能风险",
+          "basis": "TNFR1/2、KIM1、MMP7等提供UACR之外的关联信息。",
+          "review_note": "",
+          "signal": "研究线索",
+          "source": "Diabetes",
+          "study_group": "R11",
+          "has_results": true
+        }
+      ],
+      "attention_checks": [
+        {
+          "label": "候选线索",
+          "status": "已记录",
+          "basis": "有明确指标/类别及对应原始记录，按用途与输入分别保留。"
+        },
+        {
+          "label": "会议集中讨论",
+          "status": "待同用途复核",
+          "basis": "类别下不同检测、筛查、组合不合并为同一具体指标热点。"
+        },
+        {
+          "label": "多团队跟进",
+          "status": "待核",
+          "basis": "研究组去重与外部验证记录，不直接证明独立团队复现。"
+        },
+        {
+          "label": "持续关注",
+          "status": "待可比窗口",
+          "basis": "当前无相同覆盖规则的连续会议/时间窗口。"
+        }
+      ],
+      "negative": false,
+      "translation": {
+        "priority": "优先复核",
+        "reason": "面向正常白蛋白尿T2D的肾功能下降风险。",
+        "stage": "V2",
+        "stage_label": "人体风险关联",
+        "gap": "补样本输入与方法、外部验证及相对eGFR/UACR增量。",
+        "checks": [
+          {
+            "name": "人体证据",
+            "status": "有人体研究记录"
+          },
+          {
+            "name": "独立/外部验证",
+            "status": "未核实，待补"
+          },
+          {
+            "name": "临床增益",
+            "status": "相对现行临床模型/路径的增益待补"
+          },
+          {
+            "name": "检测与交付适配",
+            "status": "有研究技术关联，样本/平台/参数待技术确认"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "mmp7",
+    "label": "MMP7",
+    "kind": "具体分子",
+    "summary": "正常白蛋白尿T2D患者肾风险研究中的候选蛋白。",
+    "bindings": [
+      {
+        "record_id": "R11",
+        "categories": [
+          "early",
+          "stratification"
+        ],
+        "role": "research",
+        "basis": "TNFR1/2、KIM1、MMP7等提供UACR之外的关联信息。",
+        "sample": "具体样本与平台待原文细化；现有记录含尿液相关指标",
+        "use": "正常白蛋白尿T2D人群的后续肾功能风险",
+        "signal": "研究线索",
+        "evidence_id": "P-R11",
+        "original_role": "research"
+      }
+    ],
+    "agendas": [],
+    "matches": [
+      {
+        "tech_id": "PR",
+        "relation": "direct",
+        "purpose": "围绕候选蛋白与肾风险开展检测、纵向随访及相对常规指标的增量评价。"
+      }
+    ],
+    "notes": "现有记录说明部分动态轨迹相关，尚未逐蛋白核清纵向结果，因此不据此将每个蛋白单独归为已验证的动态监测指标。",
+    "categories": [
+      "early",
+      "stratification"
+    ],
+    "research_ids": [
+      "P-R11"
+    ],
+    "record_ids": [
+      "P-R11"
+    ],
+    "field_ids": [
+      "H17"
+    ],
+    "study_groups": [
+      "R11"
+    ],
+    "study_count": 1,
+    "agenda_count": 0,
+    "stage": "V2",
+    "stage_label": "人体风险关联",
+    "priority": "优先复核",
+    "priority_reason": "面向正常白蛋白尿T2D的肾功能下降风险。",
+    "gap": "补样本输入与方法、阈值、外部验证及相对eGFR/UACR增量。",
+    "status": "候选线索",
+    "heat_eligible": false,
+    "heat_basis": "按会议、研究和转化分别列证据；无综合分和跨资料池排名。",
+    "reference": false,
+    "sample_notes": [
+      "具体样本与平台待原文细化；现有记录含尿液相关指标"
+    ],
+    "heat_gaps": [
+      "核对样本/队列与团队独立性。",
+      "补可比会议/时间窗口，才能判断上升或持续。"
+    ],
+    "review": {
+      "conferences": [
+        {
+          "source": "CDS2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": 0,
+          "share": 0.0,
+          "denominator": 80,
+          "total_reviewed": 606,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "完整606条学术题名，按本轮规则复核",
+          "reading": "计划题名"
+        },
+        {
+          "source": "ADA2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": null,
+          "share": null,
+          "denominator": null,
+          "total_reviewed": null,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "27条定向关联记录；不是全会",
+          "reading": "会议摘要/方法及关联论文更新"
+        }
+      ],
+      "study_count": 1,
+      "study_groups": [
+        "R11"
+      ],
+      "teams": [
+        {
+          "study_group": "R11",
+          "team_labels": [
+            "Moedt E／Ju W等；Groningen、Michigan等（作者单位）"
+          ],
+          "evidence_ids": [
+            "P-R11"
+          ]
+        }
+      ],
+      "confirmed_independent_studies": null,
+      "confirmed_independent_teams": null,
+      "independence_note": "跨研究队列/样本与团队独立性尚未完成核查；不以不同作者字符串或单位数替代。",
+      "recent_count": 1,
+      "recent_ids": [
+        "P-R11"
+      ],
+      "latest_known_date": "2026-10-21",
+      "unknown_date_ids": [],
+      "validation_ids": [],
+      "validation_study_count": 0,
+      "paper_ids": [
+        "P-R11"
+      ],
+      "population_ids": [],
+      "cases": [
+        {
+          "id": "mmp7-P-R11",
+          "evidence_id": "P-R11",
+          "role": "research",
+          "sample": "具体样本与平台待原文细化；现有记录含尿液相关指标",
+          "use": "正常白蛋白尿T2D人群的后续肾功能风险",
+          "basis": "TNFR1/2、KIM1、MMP7等提供UACR之外的关联信息。",
+          "review_note": "",
+          "signal": "研究线索",
+          "source": "Diabetes",
+          "study_group": "R11",
+          "has_results": true
+        }
+      ],
+      "attention_checks": [
+        {
+          "label": "候选线索",
+          "status": "已记录",
+          "basis": "有明确指标/类别及对应原始记录，按用途与输入分别保留。"
+        },
+        {
+          "label": "会议集中讨论",
+          "status": "待同用途复核",
+          "basis": "类别下不同检测、筛查、组合不合并为同一具体指标热点。"
+        },
+        {
+          "label": "多团队跟进",
+          "status": "待核",
+          "basis": "研究组去重与外部验证记录，不直接证明独立团队复现。"
+        },
+        {
+          "label": "持续关注",
+          "status": "待可比窗口",
+          "basis": "当前无相同覆盖规则的连续会议/时间窗口。"
+        }
+      ],
+      "negative": false,
+      "translation": {
+        "priority": "优先复核",
+        "reason": "面向正常白蛋白尿T2D的肾功能下降风险。",
+        "stage": "V2",
+        "stage_label": "人体风险关联",
+        "gap": "补样本输入与方法、阈值、外部验证及相对eGFR/UACR增量。",
+        "checks": [
+          {
+            "name": "人体证据",
+            "status": "有人体研究记录"
+          },
+          {
+            "name": "独立/外部验证",
+            "status": "未核实，待补"
+          },
+          {
+            "name": "临床增益",
+            "status": "相对现行临床模型/路径的增益待补"
+          },
+          {
+            "name": "检测与交付适配",
+            "status": "有研究技术关联，样本/平台/参数待技术确认"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "longitudinal-proteins",
+    "label": "纵向蛋白特征",
+    "kind": "特征集合",
+    "summary": "重复测量蛋白随时间变化与糖尿病发病风险的关系。",
+    "bindings": [
+      {
+        "record_id": "R03",
+        "categories": [
+          "early",
+          "monitoring"
+        ],
+        "role": "research",
+        "basis": "MESA三个采样时点；重复测量发现额外关联及不同通路。",
+        "sample": "血浆；Olink Explore 3K",
+        "use": "发病风险与纵向分子变化",
+        "signal": "研究线索",
+        "evidence_id": "P-R03",
+        "original_role": "research"
+      },
+      {
+        "record_id": "A01",
+        "categories": [
+          "early",
+          "monitoring"
+        ],
+        "role": "research",
+        "basis": "与R03同研究的会议版本，按同研究合并计数。",
+        "sample": "MESA纵向蛋白组",
+        "use": "重复采样与发病信号",
+        "signal": "研究线索",
+        "evidence_id": "A-A01",
+        "original_role": "research"
+      }
+    ],
+    "agendas": [],
+    "matches": [
+      {
+        "tech_id": "PR",
+        "relation": "direct",
+        "purpose": "设计重复采样与蛋白轨迹研究，评价其相对单次测量的附加信息。"
+      }
+    ],
+    "notes": "成员在现有台账中未逐一列出，保留为特征集合；A01/R03计为1项去重研究。",
+    "categories": [
+      "early",
+      "monitoring"
+    ],
+    "research_ids": [
+      "P-R03",
+      "A-A01"
+    ],
+    "record_ids": [
+      "P-R03",
+      "A-A01"
+    ],
+    "field_ids": [
+      "F45"
+    ],
+    "study_groups": [
+      "R03"
+    ],
+    "study_count": 1,
+    "agenda_count": 0,
+    "stage": "V2",
+    "stage_label": "人体纵向队列",
+    "priority": "继续验证",
+    "priority_reason": "大队列和重复采样可支持动态风险研究。",
+    "gap": "补明确候选蛋白、可复现模型和外部验证；A01/R03只计一组。",
+    "status": "候选线索",
+    "heat_eligible": false,
+    "heat_basis": "按会议、研究和转化分别列证据；无综合分和跨资料池排名。",
+    "reference": false,
+    "sample_notes": [
+      "血浆；Olink Explore 3K",
+      "MESA纵向蛋白组"
+    ],
+    "heat_gaps": [
+      "核对样本/队列与团队独立性。",
+      "补可比会议/时间窗口，才能判断上升或持续。"
+    ],
+    "review": {
+      "conferences": [
+        {
+          "source": "CDS2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": 0,
+          "share": 0.0,
+          "denominator": 80,
+          "total_reviewed": 606,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "完整606条学术题名，按本轮规则复核",
+          "reading": "计划题名"
+        },
+        {
+          "source": "ADA2026",
+          "record_ids": [
+            "A-A01"
+          ],
+          "count": 1,
+          "focus_count": null,
+          "share": null,
+          "denominator": null,
+          "total_reviewed": null,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [
+            "A-A01"
+          ],
+          "coverage": "27条定向关联记录；不是全会",
+          "reading": "会议摘要/方法及关联论文更新"
+        }
+      ],
+      "study_count": 1,
+      "study_groups": [
+        "R03"
+      ],
+      "teams": [
+        {
+          "study_group": "R03",
+          "team_labels": [
+            "Chen ZZ／Mi MY等；Beth Israel Deaconess与Harvard等（作者单位）",
+            "Zsu-Zsu Chen等；计划报告人见官方程序第114物理页。"
+          ],
+          "evidence_ids": [
+            "P-R03",
+            "A-A01"
+          ]
+        }
+      ],
+      "confirmed_independent_studies": null,
+      "confirmed_independent_teams": null,
+      "independence_note": "跨研究队列/样本与团队独立性尚未完成核查；不以不同作者字符串或单位数替代。",
+      "recent_count": 0,
+      "recent_ids": [],
+      "latest_known_date": "2026-06-05",
+      "unknown_date_ids": [
+        "P-R03"
+      ],
+      "validation_ids": [],
+      "validation_study_count": 0,
+      "paper_ids": [
+        "P-R03"
+      ],
+      "population_ids": [],
+      "cases": [
+        {
+          "id": "longitudinal-proteins-P-R03",
+          "evidence_id": "P-R03",
+          "role": "research",
+          "sample": "血浆；Olink Explore 3K",
+          "use": "发病风险与纵向分子变化",
+          "basis": "MESA三个采样时点；重复测量发现额外关联及不同通路。",
+          "review_note": "",
+          "signal": "研究线索",
+          "source": "Diabetes",
+          "study_group": "R03",
+          "has_results": true
+        },
+        {
+          "id": "longitudinal-proteins-A-A01",
+          "evidence_id": "A-A01",
+          "role": "research",
+          "sample": "MESA纵向蛋白组",
+          "use": "重复采样与发病信号",
+          "basis": "与R03同研究的会议版本，按同研究合并计数。",
+          "review_note": "",
+          "signal": "研究线索",
+          "source": "ADA2026",
+          "study_group": "R03",
+          "has_results": true
+        }
+      ],
+      "attention_checks": [
+        {
+          "label": "候选线索",
+          "status": "已记录",
+          "basis": "有明确指标/类别及对应原始记录，按用途与输入分别保留。"
+        },
+        {
+          "label": "会议集中讨论",
+          "status": "待同用途复核",
+          "basis": "类别下不同检测、筛查、组合不合并为同一具体指标热点。"
+        },
+        {
+          "label": "多团队跟进",
+          "status": "待核",
+          "basis": "研究组去重与外部验证记录，不直接证明独立团队复现。"
+        },
+        {
+          "label": "持续关注",
+          "status": "待可比窗口",
+          "basis": "当前无相同覆盖规则的连续会议/时间窗口。"
+        }
+      ],
+      "negative": false,
+      "translation": {
+        "priority": "继续验证",
+        "reason": "大队列和重复采样可支持动态风险研究。",
+        "stage": "V2",
+        "stage_label": "人体纵向队列",
+        "gap": "补明确候选蛋白、可复现模型和外部验证；A01/R03只计一组。",
+        "checks": [
+          {
+            "name": "人体证据",
+            "status": "有人体研究记录"
+          },
+          {
+            "name": "独立/外部验证",
+            "status": "未核实，待补"
+          },
+          {
+            "name": "临床增益",
+            "status": "相对现行临床模型/路径的增益待补"
+          },
+          {
+            "name": "检测与交付适配",
+            "status": "有研究技术关联，样本/平台/参数待技术确认"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "metabolite15",
+    "label": "15项代谢物组合",
+    "kind": "分子组合",
+    "summary": "免疫治疗前血清代谢物的探索性应答分类研究。",
+    "bindings": [
+      {
+        "record_id": "R05",
+        "categories": [
+          "stratification"
+        ],
+        "role": "research",
+        "basis": "15项代谢物差异用于随机森林，内部测试AUC 0.881。",
+        "sample": "AbATE受试者基线血清",
+        "use": "T1D免疫治疗应答分层",
+        "signal": "研究线索",
+        "evidence_id": "P-R05",
+        "original_role": "research"
+      }
+    ],
+    "agendas": [],
+    "matches": [
+      {
+        "tech_id": "MT",
+        "relation": "direct",
+        "purpose": "围绕治疗前代谢组合开展应答分层与独立人群验证。"
+      }
+    ],
+    "notes": "具体15个代谢物名单未在现有台账列全；41人探索分析及内部测试状态保留。",
+    "categories": [
+      "stratification"
+    ],
+    "research_ids": [
+      "P-R05"
+    ],
+    "record_ids": [
+      "P-R05"
+    ],
+    "field_ids": [
+      "H04"
+    ],
+    "study_groups": [
+      "R05"
+    ],
+    "study_count": 1,
+    "agenda_count": 0,
+    "stage": "V2",
+    "stage_label": "人体内部建模",
+    "priority": "继续验证",
+    "priority_reason": "免疫治疗应答分层有具体临床用途。",
+    "gap": "补15个成员、外部验证、稳定性和相对基础临床指标增益。",
+    "status": "候选线索",
+    "heat_eligible": false,
+    "heat_basis": "按会议、研究和转化分别列证据；无综合分和跨资料池排名。",
+    "reference": false,
+    "sample_notes": [
+      "AbATE受试者基线血清"
+    ],
+    "heat_gaps": [
+      "核对样本/队列与团队独立性。",
+      "补可比会议/时间窗口，才能判断上升或持续。"
+    ],
+    "review": {
+      "conferences": [
+        {
+          "source": "CDS2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": 0,
+          "share": 0.0,
+          "denominator": 80,
+          "total_reviewed": 606,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "完整606条学术题名，按本轮规则复核",
+          "reading": "计划题名"
+        },
+        {
+          "source": "ADA2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": null,
+          "share": null,
+          "denominator": null,
+          "total_reviewed": null,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "27条定向关联记录；不是全会",
+          "reading": "会议摘要/方法及关联论文更新"
+        }
+      ],
+      "study_count": 1,
+      "study_groups": [
+        "R05"
+      ],
+      "teams": [
+        {
+          "study_group": "R05",
+          "team_labels": [
+            "Flammer ER等；University of Florida、Immune Tolerance Network（作者单位）"
+          ],
+          "evidence_ids": [
+            "P-R05"
+          ]
+        }
+      ],
+      "confirmed_independent_studies": null,
+      "confirmed_independent_teams": null,
+      "independence_note": "跨研究队列/样本与团队独立性尚未完成核查；不以不同作者字符串或单位数替代。",
+      "recent_count": 0,
+      "recent_ids": [],
+      "latest_known_date": null,
+      "unknown_date_ids": [
+        "P-R05"
+      ],
+      "validation_ids": [],
+      "validation_study_count": 0,
+      "paper_ids": [
+        "P-R05"
+      ],
+      "population_ids": [],
+      "cases": [
+        {
+          "id": "metabolite15-P-R05",
+          "evidence_id": "P-R05",
+          "role": "research",
+          "sample": "AbATE受试者基线血清",
+          "use": "T1D免疫治疗应答分层",
+          "basis": "15项代谢物差异用于随机森林，内部测试AUC 0.881。",
+          "review_note": "",
+          "signal": "研究线索",
+          "source": "Diabetes",
+          "study_group": "R05",
+          "has_results": true
+        }
+      ],
+      "attention_checks": [
+        {
+          "label": "候选线索",
+          "status": "已记录",
+          "basis": "有明确指标/类别及对应原始记录，按用途与输入分别保留。"
+        },
+        {
+          "label": "会议集中讨论",
+          "status": "待同用途复核",
+          "basis": "类别下不同检测、筛查、组合不合并为同一具体指标热点。"
+        },
+        {
+          "label": "多团队跟进",
+          "status": "待核",
+          "basis": "研究组去重与外部验证记录，不直接证明独立团队复现。"
+        },
+        {
+          "label": "持续关注",
+          "status": "待可比窗口",
+          "basis": "当前无相同覆盖规则的连续会议/时间窗口。"
+        }
+      ],
+      "negative": false,
+      "translation": {
+        "priority": "继续验证",
+        "reason": "免疫治疗应答分层有具体临床用途。",
+        "stage": "V2",
+        "stage_label": "人体内部建模",
+        "gap": "补15个成员、外部验证、稳定性和相对基础临床指标增益。",
+        "checks": [
+          {
+            "name": "人体证据",
+            "status": "有人体研究记录"
+          },
+          {
+            "name": "独立/外部验证",
+            "status": "未核实，待补"
+          },
+          {
+            "name": "临床增益",
+            "status": "相对现行临床模型/路径的增益待补"
+          },
+          {
+            "name": "检测与交付适配",
+            "status": "有研究技术关联，样本/平台/参数待技术确认"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "bile-acids",
+    "label": "次级胆汁酸",
+    "kind": "分子类别",
+    "summary": "T1D免疫亚群研究中的代谢差异线索。",
+    "bindings": [
+      {
+        "record_id": "A21",
+        "categories": [
+          "stratification"
+        ],
+        "role": "research",
+        "basis": "免疫亚群出现次级胆汁酸及炎症/稳态相关代谢差异。",
+        "sample": "新发T1D样本，非靶向LC-MS；具体样本类型待细化",
+        "use": "免疫亚群与代谢特征",
+        "signal": "研究线索",
+        "evidence_id": "A-A21",
+        "original_role": "research"
+      }
+    ],
+    "agendas": [],
+    "matches": [
+      {
+        "tech_id": "MT",
+        "relation": "direct",
+        "purpose": "比较免疫亚群的代谢特征，筛选可进一步验证的候选代谢物。"
+      }
+    ],
+    "notes": "具体胆汁酸成员未列全；与R13的样本重叠关系待核，不作为已独立复现。",
+    "categories": [
+      "stratification"
+    ],
+    "research_ids": [
+      "A-A21"
+    ],
+    "record_ids": [
+      "A-A21"
+    ],
+    "field_ids": [
+      "H04"
+    ],
+    "study_groups": [
+      "免疫分群-待核重叠"
+    ],
+    "study_count": 1,
+    "agenda_count": 0,
+    "stage": "V2",
+    "stage_label": "人体分群关联",
+    "priority": "继续验证",
+    "priority_reason": "可研究免疫代谢与治疗应答的联系。",
+    "gap": "补具体分子、外部验证及与R13样本重叠情况。",
+    "status": "候选线索",
+    "heat_eligible": false,
+    "heat_basis": "按会议、研究和转化分别列证据；无综合分和跨资料池排名。",
+    "reference": false,
+    "sample_notes": [
+      "新发T1D样本，非靶向LC-MS；具体样本类型待细化"
+    ],
+    "heat_gaps": [
+      "核对样本/队列与团队独立性。",
+      "补可比会议/时间窗口，才能判断上升或持续。"
+    ],
+    "review": {
+      "conferences": [
+        {
+          "source": "CDS2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": 0,
+          "share": 0.0,
+          "denominator": 80,
+          "total_reviewed": 606,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "完整606条学术题名，按本轮规则复核",
+          "reading": "计划题名"
+        },
+        {
+          "source": "ADA2026",
+          "record_ids": [
+            "A-A21"
+          ],
+          "count": 1,
+          "focus_count": null,
+          "share": null,
+          "denominator": null,
+          "total_reviewed": null,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [
+            "A-A21"
+          ],
+          "coverage": "27条定向关联记录；不是全会",
+          "reading": "会议摘要/方法及关联论文更新"
+        }
+      ],
+      "study_count": 1,
+      "study_groups": [
+        "免疫分群-待核重叠"
+      ],
+      "teams": [
+        {
+          "study_group": "免疫分群-待核重叠",
+          "team_labels": [
+            "Amina Bedrat、Martin Hessner等；队列重叠待核。"
+          ],
+          "evidence_ids": [
+            "A-A21"
+          ]
+        }
+      ],
+      "confirmed_independent_studies": null,
+      "confirmed_independent_teams": null,
+      "independence_note": "跨研究队列/样本与团队独立性尚未完成核查；不以不同作者字符串或单位数替代。",
+      "recent_count": 0,
+      "recent_ids": [],
+      "latest_known_date": "2026-06-05",
+      "unknown_date_ids": [],
+      "validation_ids": [],
+      "validation_study_count": 0,
+      "paper_ids": [],
+      "population_ids": [],
+      "cases": [
+        {
+          "id": "bile-acids-A-A21",
+          "evidence_id": "A-A21",
+          "role": "research",
+          "sample": "新发T1D样本，非靶向LC-MS；具体样本类型待细化",
+          "use": "免疫亚群与代谢特征",
+          "basis": "免疫亚群出现次级胆汁酸及炎症/稳态相关代谢差异。",
+          "review_note": "",
+          "signal": "研究线索",
+          "source": "ADA2026",
+          "study_group": "免疫分群-待核重叠",
+          "has_results": true
+        }
+      ],
+      "attention_checks": [
+        {
+          "label": "候选线索",
+          "status": "已记录",
+          "basis": "有明确指标/类别及对应原始记录，按用途与输入分别保留。"
+        },
+        {
+          "label": "会议集中讨论",
+          "status": "待同用途复核",
+          "basis": "类别下不同检测、筛查、组合不合并为同一具体指标热点。"
+        },
+        {
+          "label": "多团队跟进",
+          "status": "待核",
+          "basis": "研究组去重与外部验证记录，不直接证明独立团队复现。"
+        },
+        {
+          "label": "持续关注",
+          "status": "待可比窗口",
+          "basis": "当前无相同覆盖规则的连续会议/时间窗口。"
+        }
+      ],
+      "negative": false,
+      "translation": {
+        "priority": "继续验证",
+        "reason": "可研究免疫代谢与治疗应答的联系。",
+        "stage": "V2",
+        "stage_label": "人体分群关联",
+        "gap": "补具体分子、外部验证及与R13样本重叠情况。",
+        "checks": [
+          {
+            "name": "人体证据",
+            "status": "有人体研究记录"
+          },
+          {
+            "name": "独立/外部验证",
+            "status": "未核实，待补"
+          },
+          {
+            "name": "临床增益",
+            "status": "相对现行临床模型/路径的增益待补"
+          },
+          {
+            "name": "检测与交付适配",
+            "status": "有研究技术关联，样本/平台/参数待技术确认"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "scfa",
+    "label": "短链脂肪酸",
+    "kind": "分子类别",
+    "summary": "母婴队列中粪便SCFA与后续胰岛自身免疫的风险研究。",
+    "bindings": [
+      {
+        "record_id": "R07",
+        "categories": [
+          "early"
+        ],
+        "role": "research",
+        "basis": "孕期及幼儿粪便SCFA水平未与自身免疫发生建立关联。",
+        "sample": "孕期及幼儿粪便；LC-MS",
+        "use": "胰岛自身免疫发生风险",
+        "signal": "阴性结果",
+        "evidence_id": "P-R07",
+        "original_role": "research"
+      }
+    ],
+    "agendas": [],
+    "matches": [
+      {
+        "tech_id": "MT",
+        "relation": "direct",
+        "purpose": "利用阴性证据明确样本、时间窗和候选指标选择，设计后续靶向代谢研究。"
+      }
+    ],
+    "notes": "",
+    "categories": [
+      "early"
+    ],
+    "research_ids": [
+      "P-R07"
+    ],
+    "record_ids": [
+      "P-R07"
+    ],
+    "field_ids": [
+      "H03"
+    ],
+    "study_groups": [
+      "R07"
+    ],
+    "study_count": 1,
+    "agenda_count": 0,
+    "stage": "V2",
+    "stage_label": "人体阴性结果",
+    "priority": "方向观察",
+    "priority_reason": "保留阴性证据，帮助评估指标适用范围。",
+    "gap": "现有ENDIA研究未支持目标关联；后续研究需解释人群、时窗或检测差异。",
+    "status": "候选线索",
+    "heat_eligible": false,
+    "heat_basis": "按会议、研究和转化分别列证据；无综合分和跨资料池排名。",
+    "reference": false,
+    "sample_notes": [
+      "孕期及幼儿粪便；LC-MS"
+    ],
+    "heat_gaps": [
+      "核对样本/队列与团队独立性。",
+      "补可比会议/时间窗口，才能判断上升或持续。"
+    ],
+    "review": {
+      "conferences": [
+        {
+          "source": "CDS2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": 0,
+          "share": 0.0,
+          "denominator": 80,
+          "total_reviewed": 606,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "完整606条学术题名，按本轮规则复核",
+          "reading": "计划题名"
+        },
+        {
+          "source": "ADA2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": null,
+          "share": null,
+          "denominator": null,
+          "total_reviewed": null,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "27条定向关联记录；不是全会",
+          "reading": "会议摘要/方法及关联论文更新"
+        }
+      ],
+      "study_count": 1,
+      "study_groups": [
+        "R07"
+      ],
+      "teams": [
+        {
+          "study_group": "R07",
+          "team_labels": [
+            "Tillett BJ等；University of Queensland、Monash等（作者单位）"
+          ],
+          "evidence_ids": [
+            "P-R07"
+          ]
+        }
+      ],
+      "confirmed_independent_studies": null,
+      "confirmed_independent_teams": null,
+      "independence_note": "跨研究队列/样本与团队独立性尚未完成核查；不以不同作者字符串或单位数替代。",
+      "recent_count": 0,
+      "recent_ids": [],
+      "latest_known_date": null,
+      "unknown_date_ids": [
+        "P-R07"
+      ],
+      "validation_ids": [],
+      "validation_study_count": 0,
+      "paper_ids": [
+        "P-R07"
+      ],
+      "population_ids": [],
+      "cases": [
+        {
+          "id": "scfa-P-R07",
+          "evidence_id": "P-R07",
+          "role": "research",
+          "sample": "孕期及幼儿粪便；LC-MS",
+          "use": "胰岛自身免疫发生风险",
+          "basis": "孕期及幼儿粪便SCFA水平未与自身免疫发生建立关联。",
+          "review_note": "",
+          "signal": "阴性结果",
+          "source": "Diabetes Care",
+          "study_group": "R07",
+          "has_results": true
+        }
+      ],
+      "attention_checks": [
+        {
+          "label": "候选线索",
+          "status": "已记录",
+          "basis": "有明确指标/类别及对应原始记录，按用途与输入分别保留。"
+        },
+        {
+          "label": "会议集中讨论",
+          "status": "待同用途复核",
+          "basis": "类别下不同检测、筛查、组合不合并为同一具体指标热点。"
+        },
+        {
+          "label": "多团队跟进",
+          "status": "待核",
+          "basis": "研究组去重与外部验证记录，不直接证明独立团队复现。"
+        },
+        {
+          "label": "持续关注",
+          "status": "待可比窗口",
+          "basis": "当前无相同覆盖规则的连续会议/时间窗口。"
+        }
+      ],
+      "negative": true,
+      "translation": {
+        "priority": "方向观察",
+        "reason": "保留阴性证据，帮助评估指标适用范围。",
+        "stage": "V2",
+        "stage_label": "人体阴性结果",
+        "gap": "现有ENDIA研究未支持目标关联；后续研究需解释人群、时窗或检测差异。",
+        "checks": [
+          {
+            "name": "人体证据",
+            "status": "有人体研究记录"
+          },
+          {
+            "name": "独立/外部验证",
+            "status": "未核实，待补"
+          },
+          {
+            "name": "临床增益",
+            "status": "目标关联未获支持"
+          },
+          {
+            "name": "检测与交付适配",
+            "status": "有研究技术关联，样本/平台/参数待技术确认"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "glp1r-r131q",
+    "label": "GLP1R R131Q",
+    "kind": "遗传变异",
+    "summary": "GLP1R变异与GLP-1RA治疗应答差异的研究。",
+    "bindings": [
+      {
+        "record_id": "R02",
+        "categories": [
+          "stratification"
+        ],
+        "role": "research",
+        "basis": "R131Q每个等位基因与用药6个月HbA1c额外下降0.53个百分点相关。",
+        "sample": "遗传分型、用药队列及功能实验",
+        "use": "药物应答分层",
+        "signal": "研究线索",
+        "evidence_id": "P-R02",
+        "original_role": "research"
+      }
+    ],
+    "agendas": [],
+    "matches": [],
+    "notes": "现有技术关联为待判断；具体基因分型服务及公司流程未确认。",
+    "categories": [
+      "stratification"
+    ],
+    "research_ids": [
+      "P-R02"
+    ],
+    "record_ids": [
+      "P-R02"
+    ],
+    "field_ids": [
+      "H11"
+    ],
+    "study_groups": [
+      "R02"
+    ],
+    "study_count": 1,
+    "agenda_count": 0,
+    "stage": "V2",
+    "stage_label": "人体观察与功能研究",
+    "priority": "优先复核",
+    "priority_reason": "变异明确并关联GLP-1RA应答，适合复核应答分层价值。",
+    "gap": "补跨族群验证、预设分层试验和临床决策增益；公司基因检测流程待核。",
+    "status": "候选线索",
+    "heat_eligible": false,
+    "heat_basis": "按会议、研究和转化分别列证据；无综合分和跨资料池排名。",
+    "reference": false,
+    "sample_notes": [
+      "遗传分型、用药队列及功能实验"
+    ],
+    "heat_gaps": [
+      "核对样本/队列与团队独立性。",
+      "补可比会议/时间窗口，才能判断上升或持续。"
+    ],
+    "review": {
+      "conferences": [
+        {
+          "source": "CDS2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": 0,
+          "share": 0.0,
+          "denominator": 80,
+          "total_reviewed": 606,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "完整606条学术题名，按本轮规则复核",
+          "reading": "计划题名"
+        },
+        {
+          "source": "ADA2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": null,
+          "share": null,
+          "denominator": null,
+          "total_reviewed": null,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "27条定向关联记录；不是全会",
+          "reading": "会议摘要/方法及关联论文更新"
+        }
+      ],
+      "study_count": 1,
+      "study_groups": [
+        "R02"
+      ],
+      "teams": [
+        {
+          "study_group": "R02",
+          "team_labels": [
+            "Lee H等；首尔大学、Mayo Clinic等（作者单位）"
+          ],
+          "evidence_ids": [
+            "P-R02"
+          ]
+        }
+      ],
+      "confirmed_independent_studies": null,
+      "confirmed_independent_teams": null,
+      "independence_note": "跨研究队列/样本与团队独立性尚未完成核查；不以不同作者字符串或单位数替代。",
+      "recent_count": 0,
+      "recent_ids": [],
+      "latest_known_date": null,
+      "unknown_date_ids": [
+        "P-R02"
+      ],
+      "validation_ids": [],
+      "validation_study_count": 0,
+      "paper_ids": [
+        "P-R02"
+      ],
+      "population_ids": [],
+      "cases": [
+        {
+          "id": "glp1r-r131q-P-R02",
+          "evidence_id": "P-R02",
+          "role": "research",
+          "sample": "遗传分型、用药队列及功能实验",
+          "use": "药物应答分层",
+          "basis": "R131Q每个等位基因与用药6个月HbA1c额外下降0.53个百分点相关。",
+          "review_note": "",
+          "signal": "研究线索",
+          "source": "Diabetes Care",
+          "study_group": "R02",
+          "has_results": true
+        }
+      ],
+      "attention_checks": [
+        {
+          "label": "候选线索",
+          "status": "已记录",
+          "basis": "有明确指标/类别及对应原始记录，按用途与输入分别保留。"
+        },
+        {
+          "label": "会议集中讨论",
+          "status": "待同用途复核",
+          "basis": "类别下不同检测、筛查、组合不合并为同一具体指标热点。"
+        },
+        {
+          "label": "多团队跟进",
+          "status": "待核",
+          "basis": "研究组去重与外部验证记录，不直接证明独立团队复现。"
+        },
+        {
+          "label": "持续关注",
+          "status": "待可比窗口",
+          "basis": "当前无相同覆盖规则的连续会议/时间窗口。"
+        }
+      ],
+      "negative": false,
+      "translation": {
+        "priority": "优先复核",
+        "reason": "变异明确并关联GLP-1RA应答，适合复核应答分层价值。",
+        "stage": "V2",
+        "stage_label": "人体观察与功能研究",
+        "gap": "补跨族群验证、预设分层试验和临床决策增益；公司基因检测流程待核。",
+        "checks": [
+          {
+            "name": "人体证据",
+            "status": "有人体研究记录"
+          },
+          {
+            "name": "独立/外部验证",
+            "status": "未核实，待补"
+          },
+          {
+            "name": "临床增益",
+            "status": "相对现行临床模型/路径的增益待补"
+          },
+          {
+            "name": "检测与交付适配",
+            "status": "对应检测流程待技术确认"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "pgs",
+    "label": "多基因风险评分",
+    "kind": "指标组合",
+    "summary": "GDM后长期随访中，分别评价T1D和T2D的遗传风险信息。",
+    "bindings": [
+      {
+        "record_id": "R12",
+        "categories": [
+          "early",
+          "stratification"
+        ],
+        "role": "research",
+        "basis": "PGS加入临床模型对T1D有补充，对T2D增益较小。",
+        "sample": "既往GDM女性遗传与长期随访资料",
+        "use": "GDM后T1D/T2D风险分层",
+        "signal": "研究线索",
+        "evidence_id": "P-R12",
+        "original_role": "research"
+      }
+    ],
+    "agendas": [],
+    "matches": [],
+    "notes": "保留疾病类型间增量差异；评分所需分型和分析流程尚待公司适配确认。",
+    "categories": [
+      "early",
+      "stratification"
+    ],
+    "research_ids": [
+      "P-R12"
+    ],
+    "record_ids": [
+      "P-R12"
+    ],
+    "field_ids": [
+      "H31"
+    ],
+    "study_groups": [
+      "R12"
+    ],
+    "study_count": 1,
+    "agenda_count": 0,
+    "stage": "V2",
+    "stage_label": "长期队列关联",
+    "priority": "继续验证",
+    "priority_reason": "GDM后长期风险分层用途明确。",
+    "gap": "补人群外验证、模型校准与临床增益；T1D/T2D适用范围分别判断。",
+    "status": "候选线索",
+    "heat_eligible": false,
+    "heat_basis": "按会议、研究和转化分别列证据；无综合分和跨资料池排名。",
+    "reference": false,
+    "sample_notes": [
+      "既往GDM女性遗传与长期随访资料"
+    ],
+    "heat_gaps": [
+      "核对样本/队列与团队独立性。",
+      "补可比会议/时间窗口，才能判断上升或持续。"
+    ],
+    "review": {
+      "conferences": [
+        {
+          "source": "CDS2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": 0,
+          "share": 0.0,
+          "denominator": 80,
+          "total_reviewed": 606,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "完整606条学术题名，按本轮规则复核",
+          "reading": "计划题名"
+        },
+        {
+          "source": "ADA2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": null,
+          "share": null,
+          "denominator": null,
+          "total_reviewed": null,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "27条定向关联记录；不是全会",
+          "reading": "会议摘要/方法及关联论文更新"
+        }
+      ],
+      "study_count": 1,
+      "study_groups": [
+        "R12"
+      ],
+      "teams": [
+        {
+          "study_group": "R12",
+          "team_labels": [
+            "Jørgensen IL等；Rigshospitalet及University of Copenhagen（作者单位）"
+          ],
+          "evidence_ids": [
+            "P-R12"
+          ]
+        }
+      ],
+      "confirmed_independent_studies": null,
+      "confirmed_independent_teams": null,
+      "independence_note": "跨研究队列/样本与团队独立性尚未完成核查；不以不同作者字符串或单位数替代。",
+      "recent_count": 0,
+      "recent_ids": [],
+      "latest_known_date": "2026-08-04",
+      "unknown_date_ids": [],
+      "validation_ids": [],
+      "validation_study_count": 0,
+      "paper_ids": [
+        "P-R12"
+      ],
+      "population_ids": [],
+      "cases": [
+        {
+          "id": "pgs-P-R12",
+          "evidence_id": "P-R12",
+          "role": "research",
+          "sample": "既往GDM女性遗传与长期随访资料",
+          "use": "GDM后T1D/T2D风险分层",
+          "basis": "PGS加入临床模型对T1D有补充，对T2D增益较小。",
+          "review_note": "",
+          "signal": "研究线索",
+          "source": "Diabetologia",
+          "study_group": "R12",
+          "has_results": true
+        }
+      ],
+      "attention_checks": [
+        {
+          "label": "候选线索",
+          "status": "已记录",
+          "basis": "有明确指标/类别及对应原始记录，按用途与输入分别保留。"
+        },
+        {
+          "label": "会议集中讨论",
+          "status": "待同用途复核",
+          "basis": "类别下不同检测、筛查、组合不合并为同一具体指标热点。"
+        },
+        {
+          "label": "多团队跟进",
+          "status": "待核",
+          "basis": "研究组去重与外部验证记录，不直接证明独立团队复现。"
+        },
+        {
+          "label": "持续关注",
+          "status": "待可比窗口",
+          "basis": "当前无相同覆盖规则的连续会议/时间窗口。"
+        }
+      ],
+      "negative": false,
+      "translation": {
+        "priority": "继续验证",
+        "reason": "GDM后长期风险分层用途明确。",
+        "stage": "V2",
+        "stage_label": "长期队列关联",
+        "gap": "补人群外验证、模型校准与临床增益；T1D/T2D适用范围分别判断。",
+        "checks": [
+          {
+            "name": "人体证据",
+            "status": "有人体研究记录"
+          },
+          {
+            "name": "独立/外部验证",
+            "status": "未核实，待补"
+          },
+          {
+            "name": "临床增益",
+            "status": "T1D有补充记录，T2D增益较小；待复核"
+          },
+          {
+            "name": "检测与交付适配",
+            "status": "对应检测流程待技术确认"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "induced-transcript",
+    "label": "诱导转录特征",
+    "kind": "特征集合",
+    "summary": "利用患者血浆刺激报告细胞后的转录反应进行免疫分群。",
+    "bindings": [
+      {
+        "record_id": "R13",
+        "categories": [
+          "stratification"
+        ],
+        "role": "research",
+        "basis": "血浆诱导报告细胞转录反应＋芯片，发现两个免疫亚群及治疗应答线索。",
+        "sample": "患者血浆刺激标准报告细胞，再检测细胞转录反应",
+        "use": "T1D免疫分型与治疗反应",
+        "signal": "研究线索",
+        "evidence_id": "P-R13",
+        "original_role": "research"
+      }
+    ],
+    "agendas": [],
+    "matches": [],
+    "notes": "测量对象是报告细胞转录反应；公司承接流程待确认，部分表型关联未在验证队列复现。",
+    "categories": [
+      "stratification"
+    ],
+    "research_ids": [
+      "P-R13"
+    ],
+    "record_ids": [
+      "P-R13"
+    ],
+    "field_ids": [
+      "H04"
+    ],
+    "study_groups": [
+      "免疫分群-待核重叠"
+    ],
+    "study_count": 1,
+    "agenda_count": 0,
+    "stage": "V2",
+    "stage_label": "人体关联与验证差异",
+    "priority": "继续验证",
+    "priority_reason": "有免疫分群线索，但部分临床关联在验证队列未复现，优先核重复性。",
+    "gap": "独立验证的临床关联未复现；使用血浆刺激报告细胞后测转录，需复核可重复性。",
+    "status": "候选线索",
+    "heat_eligible": false,
+    "heat_basis": "按会议、研究和转化分别列证据；无综合分和跨资料池排名。",
+    "reference": false,
+    "sample_notes": [
+      "患者血浆刺激标准报告细胞，再检测细胞转录反应"
+    ],
+    "heat_gaps": [
+      "核对样本/队列与团队独立性。",
+      "补可比会议/时间窗口，才能判断上升或持续。"
+    ],
+    "review": {
+      "conferences": [
+        {
+          "source": "CDS2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": 0,
+          "share": 0.0,
+          "denominator": 80,
+          "total_reviewed": 606,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "完整606条学术题名，按本轮规则复核",
+          "reading": "计划题名"
+        },
+        {
+          "source": "ADA2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": null,
+          "share": null,
+          "denominator": null,
+          "total_reviewed": null,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "27条定向关联记录；不是全会",
+          "reading": "会议摘要/方法及关联论文更新"
+        }
+      ],
+      "study_count": 1,
+      "study_groups": [
+        "免疫分群-待核重叠"
+      ],
+      "teams": [
+        {
+          "study_group": "免疫分群-待核重叠",
+          "team_labels": [
+            "Bedrat A／Hessner MJ等；Medical College of Wisconsin及Children’s Wisconsin（作者单位）"
+          ],
+          "evidence_ids": [
+            "P-R13"
+          ]
+        }
+      ],
+      "confirmed_independent_studies": null,
+      "confirmed_independent_teams": null,
+      "independence_note": "跨研究队列/样本与团队独立性尚未完成核查；不以不同作者字符串或单位数替代。",
+      "recent_count": 0,
+      "recent_ids": [],
+      "latest_known_date": "2026-07-11",
+      "unknown_date_ids": [],
+      "validation_ids": [],
+      "validation_study_count": 0,
+      "paper_ids": [
+        "P-R13"
+      ],
+      "population_ids": [],
+      "cases": [
+        {
+          "id": "induced-transcript-P-R13",
+          "evidence_id": "P-R13",
+          "role": "research",
+          "sample": "患者血浆刺激标准报告细胞，再检测细胞转录反应",
+          "use": "T1D免疫分型与治疗反应",
+          "basis": "血浆诱导报告细胞转录反应＋芯片，发现两个免疫亚群及治疗应答线索。",
+          "review_note": "",
+          "signal": "研究线索",
+          "source": "Diabetologia",
+          "study_group": "免疫分群-待核重叠",
+          "has_results": true
+        }
+      ],
+      "attention_checks": [
+        {
+          "label": "候选线索",
+          "status": "已记录",
+          "basis": "有明确指标/类别及对应原始记录，按用途与输入分别保留。"
+        },
+        {
+          "label": "会议集中讨论",
+          "status": "待同用途复核",
+          "basis": "类别下不同检测、筛查、组合不合并为同一具体指标热点。"
+        },
+        {
+          "label": "多团队跟进",
+          "status": "待核",
+          "basis": "研究组去重与外部验证记录，不直接证明独立团队复现。"
+        },
+        {
+          "label": "持续关注",
+          "status": "待可比窗口",
+          "basis": "当前无相同覆盖规则的连续会议/时间窗口。"
+        }
+      ],
+      "negative": false,
+      "translation": {
+        "priority": "继续验证",
+        "reason": "有免疫分群线索，但部分临床关联在验证队列未复现，优先核重复性。",
+        "stage": "V2",
+        "stage_label": "人体关联与验证差异",
+        "gap": "独立验证的临床关联未复现；使用血浆刺激报告细胞后测转录，需复核可重复性。",
+        "checks": [
+          {
+            "name": "人体证据",
+            "status": "有人体研究记录"
+          },
+          {
+            "name": "独立/外部验证",
+            "status": "未核实，待补"
+          },
+          {
+            "name": "临床增益",
+            "status": "部分临床关联未复现"
+          },
+          {
+            "name": "检测与交付适配",
+            "status": "对应检测流程待技术确认"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "c-peptide",
+    "label": "C肽",
+    "kind": "临床指标",
+    "summary": "既用于β细胞功能分层，也用于免疫治疗纵向终点评价。",
+    "bindings": [
+      {
+        "record_id": "R04",
+        "categories": [
+          "early",
+          "stratification"
+        ],
+        "role": "research",
+        "basis": "OGTT葡萄糖＋C肽联合β细胞功能指标区分进展风险组。",
+        "sample": "TrialNet单一自身抗体阳性亲属",
+        "use": "T1D进展风险分层",
+        "signal": "研究线索",
+        "evidence_id": "P-R04",
+        "original_role": "research"
+      },
+      {
+        "record_id": "A19",
+        "categories": [
+          "monitoring"
+        ],
+        "role": "endpoint_method",
+        "basis": "利用C肽下降到预设阈值的时间评价免疫治疗。",
+        "sample": "六项既有TrialNet试验的纵向C肽",
+        "use": "β细胞功能变化与免疫干预评价",
+        "signal": "终点方法研究",
+        "evidence_id": "A-A19",
+        "original_role": "research",
+        "review_note": "C肽阈值用于免疫治疗终点方法评价，与R04进展风险用途分开。"
+      },
+      {
+        "record_id": "R05",
+        "categories": [
+          "monitoring"
+        ],
+        "role": "reference",
+        "basis": "按两年C肽下降划分治疗应答，C肽是应答终点。",
+        "sample": "免疫治疗随访",
+        "use": "治疗应答终点",
+        "signal": "常规参照/终点",
+        "evidence_id": "P-R05",
+        "original_role": "reference"
+      }
+    ],
+    "agendas": [],
+    "matches": [],
+    "notes": "C肽在不同记录中的用途分别说明；具体检测服务匹配待确认。",
+    "categories": [
+      "early",
+      "monitoring",
+      "stratification"
+    ],
+    "research_ids": [
+      "P-R04",
+      "A-A19"
+    ],
+    "record_ids": [
+      "P-R04",
+      "A-A19",
+      "P-R05"
+    ],
+    "field_ids": [
+      "H03",
+      "H04"
+    ],
+    "study_groups": [
+      "A19",
+      "R04"
+    ],
+    "study_count": 2,
+    "agenda_count": 0,
+    "stage": "V2",
+    "stage_label": "已用临床指标的研究用途",
+    "priority": "继续验证",
+    "priority_reason": "作为T1D进展与治疗应答研究的临床比较基准。",
+    "gap": "区分既有指标与新用途；补新增模型效益及不同研究/队列的独立性。",
+    "status": "候选线索",
+    "heat_eligible": false,
+    "heat_basis": "按会议、研究和转化分别列证据；无综合分和跨资料池排名。",
+    "reference": false,
+    "sample_notes": [
+      "TrialNet单一自身抗体阳性亲属",
+      "六项既有TrialNet试验的纵向C肽"
+    ],
+    "heat_gaps": [
+      "核对样本/队列与团队独立性。",
+      "补可比会议/时间窗口，才能判断上升或持续。"
+    ],
+    "review": {
+      "conferences": [
+        {
+          "source": "CDS2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": 0,
+          "share": 0.0,
+          "denominator": 80,
+          "total_reviewed": 606,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "完整606条学术题名，按本轮规则复核",
+          "reading": "计划题名"
+        },
+        {
+          "source": "ADA2026",
+          "record_ids": [
+            "A-A19"
+          ],
+          "count": 1,
+          "focus_count": null,
+          "share": null,
+          "denominator": null,
+          "total_reviewed": null,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [
+            "A-A19"
+          ],
+          "coverage": "27条定向关联记录；不是全会",
+          "reading": "会议摘要/方法及关联论文更新"
+        }
+      ],
+      "study_count": 2,
+      "study_groups": [
+        "A19",
+        "R04"
+      ],
+      "teams": [
+        {
+          "study_group": "A19",
+          "team_labels": [
+            "Aidong Ding、Jeffrey Krischer、Samuel Wu等；计划报告人Samuel Wu。"
+          ],
+          "evidence_ids": [
+            "A-A19"
+          ]
+        },
+        {
+          "study_group": "R04",
+          "team_labels": [
+            "Sims EK等；Indiana University、South Florida等（作者单位）"
+          ],
+          "evidence_ids": [
+            "P-R04"
+          ]
+        }
+      ],
+      "confirmed_independent_studies": null,
+      "confirmed_independent_teams": null,
+      "independence_note": "跨研究队列/样本与团队独立性尚未完成核查；不以不同作者字符串或单位数替代。",
+      "recent_count": 1,
+      "recent_ids": [
+        "P-R04"
+      ],
+      "latest_known_date": "2026-09-02",
+      "unknown_date_ids": [],
+      "validation_ids": [],
+      "validation_study_count": 0,
+      "paper_ids": [
+        "P-R04"
+      ],
+      "population_ids": [],
+      "cases": [
+        {
+          "id": "c-peptide-P-R04",
+          "evidence_id": "P-R04",
+          "role": "research",
+          "sample": "TrialNet单一自身抗体阳性亲属",
+          "use": "T1D进展风险分层",
+          "basis": "OGTT葡萄糖＋C肽联合β细胞功能指标区分进展风险组。",
+          "review_note": "",
+          "signal": "研究线索",
+          "source": "Diabetes Care",
+          "study_group": "R04",
+          "has_results": true
+        },
+        {
+          "id": "c-peptide-A-A19",
+          "evidence_id": "A-A19",
+          "role": "endpoint_method",
+          "sample": "六项既有TrialNet试验的纵向C肽",
+          "use": "β细胞功能变化与免疫干预评价",
+          "basis": "利用C肽下降到预设阈值的时间评价免疫治疗。",
+          "review_note": "C肽阈值用于免疫治疗终点方法评价，与R04进展风险用途分开。",
+          "signal": "终点方法研究",
+          "source": "ADA2026",
+          "study_group": "A19",
+          "has_results": true
+        },
+        {
+          "id": "c-peptide-P-R05",
+          "evidence_id": "P-R05",
+          "role": "reference",
+          "sample": "免疫治疗随访",
+          "use": "治疗应答终点",
+          "basis": "按两年C肽下降划分治疗应答，C肽是应答终点。",
+          "review_note": "",
+          "signal": "常规参照/终点",
+          "source": "Diabetes",
+          "study_group": "R05",
+          "has_results": true
+        }
+      ],
+      "attention_checks": [
+        {
+          "label": "候选线索",
+          "status": "已记录",
+          "basis": "有明确指标/类别及对应原始记录，按用途与输入分别保留。"
+        },
+        {
+          "label": "会议集中讨论",
+          "status": "待同用途复核",
+          "basis": "类别下不同检测、筛查、组合不合并为同一具体指标热点。"
+        },
+        {
+          "label": "多团队跟进",
+          "status": "待核",
+          "basis": "研究组去重与外部验证记录，不直接证明独立团队复现。"
+        },
+        {
+          "label": "持续关注",
+          "status": "待可比窗口",
+          "basis": "当前无相同覆盖规则的连续会议/时间窗口。"
+        }
+      ],
+      "negative": false,
+      "translation": {
+        "priority": "继续验证",
+        "reason": "作为T1D进展与治疗应答研究的临床比较基准。",
+        "stage": "V2",
+        "stage_label": "已用临床指标的研究用途",
+        "gap": "区分既有指标与新用途；补新增模型效益及不同研究/队列的独立性。",
+        "checks": [
+          {
+            "name": "人体证据",
+            "status": "有人体研究记录"
+          },
+          {
+            "name": "独立/外部验证",
+            "status": "未核实，待补"
+          },
+          {
+            "name": "临床增益",
+            "status": "相对现行临床模型/路径的增益待补"
+          },
+          {
+            "name": "检测与交付适配",
+            "status": "对应检测流程待技术确认"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "islet-autoantibodies",
+    "label": "胰岛自身抗体",
+    "kind": "指标类别",
+    "summary": "早期T1D风险人群研究中的抗体状态。",
+    "bindings": [
+      {
+        "record_id": "R04",
+        "categories": [
+          "early",
+          "stratification"
+        ],
+        "role": "population",
+        "basis": "研究对象为单一胰岛自身抗体阳性亲属，结合代谢表型分层。",
+        "sample": "T1D亲属筛查人群",
+        "use": "进展风险与亚群识别",
+        "signal": "研究线索",
+        "evidence_id": "P-R04",
+        "original_role": "research",
+        "review_note": "抗体阳性定义入组人群；本文主要分析代谢表型，不计为抗体新检测性能验证。"
+      }
+    ],
+    "agendas": [
+      {
+        "code": "S_029",
+        "categories": [
+          "stratification"
+        ],
+        "basis": "相关议题为中国T1D异质性与抗体检测；议题未明确具体抗体成员。",
+        "evidence_id": "C-S_029"
+      },
+      {
+        "code": "OR_087",
+        "categories": [
+          "stratification"
+        ],
+        "basis": "原题明确IA-2A与ZnT8的自身抗体谱研究，归入抗体类别；成员与组合单独保留，不解释为全部抗体均有同样性能。",
+        "sample": "3826例患者；检测输入、阈值及结果待摘要核实",
+        "use": "自身抗体谱的协同价值",
+        "evidence_id": "C-OR_087"
+      },
+      {
+        "code": "OR_329",
+        "categories": [
+          "early"
+        ],
+        "basis": "原题明确基于胰岛自身抗体开展T1D一级亲属筛查。",
+        "sample": "T1D一级亲属；具体样本输入待核",
+        "use": "T1D亲属筛查",
+        "evidence_id": "C-OR_329"
+      }
+    ],
+    "matches": [],
+    "notes": "R04中抗体用于定义入组人群。CDS原题已明确IA-2A与ZnT8等成员，但不同抗体及组合性能应分别核实。",
+    "categories": [
+      "early",
+      "stratification"
+    ],
+    "research_ids": [],
+    "record_ids": [
+      "P-R04",
+      "C-S_029",
+      "C-OR_087",
+      "C-OR_329"
+    ],
+    "field_ids": [
+      "H03"
+    ],
+    "study_groups": [],
+    "study_count": 0,
+    "agenda_count": 3,
+    "stage": "V0",
+    "stage_label": "会前检测/筛查议题；具体新用途待核",
+    "priority": "方向观察",
+    "priority_reason": "先取得CDS各具体抗体与用途的结果；R04入组筛查条件不作为新抗体检测发现。",
+    "gap": "补各抗体/组合的检测输入、阈值及结果；区分异质性、抗体谱协同与亲属筛查用途。",
+    "status": "候选线索",
+    "heat_eligible": false,
+    "heat_basis": "按会议、研究和转化分别列证据；无综合分和跨资料池排名。",
+    "reference": false,
+    "sample_notes": [
+      "T1D亲属筛查人群"
+    ],
+    "heat_gaps": [
+      "核对样本/队列与团队独立性。",
+      "补可比会议/时间窗口，才能判断上升或持续。"
+    ],
+    "review": {
+      "conferences": [
+        {
+          "source": "CDS2026",
+          "record_ids": [
+            "C-S_029",
+            "C-OR_087",
+            "C-OR_329"
+          ],
+          "count": 3,
+          "focus_count": 3,
+          "share": 3.75,
+          "denominator": 80,
+          "total_reviewed": 606,
+          "leader_ids": [
+            "E035"
+          ],
+          "people_ids": [
+            "E035",
+            "E192",
+            "E522"
+          ],
+          "unknown_role_ids": [
+            "E192",
+            "E522"
+          ],
+          "unresolved_team_record_ids": [],
+          "coverage": "完整606条学术题名，按本轮规则复核",
+          "reading": "计划题名"
+        },
+        {
+          "source": "ADA2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": null,
+          "share": null,
+          "denominator": null,
+          "total_reviewed": null,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "27条定向关联记录；不是全会",
+          "reading": "会议摘要/方法及关联论文更新"
+        }
+      ],
+      "study_count": 0,
+      "study_groups": [],
+      "teams": [],
+      "confirmed_independent_studies": null,
+      "confirmed_independent_teams": null,
+      "independence_note": "跨研究队列/样本与团队独立性尚未完成核查；不以不同作者字符串或单位数替代。",
+      "recent_count": 0,
+      "recent_ids": [],
+      "latest_known_date": null,
+      "unknown_date_ids": [],
+      "validation_ids": [],
+      "validation_study_count": 0,
+      "paper_ids": [],
+      "population_ids": [
+        "P-R04"
+      ],
+      "cases": [
+        {
+          "id": "islet-autoantibodies-P-R04",
+          "evidence_id": "P-R04",
+          "role": "population",
+          "sample": "T1D亲属筛查人群",
+          "use": "进展风险与亚群识别",
+          "basis": "研究对象为单一胰岛自身抗体阳性亲属，结合代谢表型分层。",
+          "review_note": "抗体阳性定义入组人群；本文主要分析代谢表型，不计为抗体新检测性能验证。",
+          "signal": "研究线索",
+          "source": "Diabetes Care",
+          "study_group": "R04",
+          "has_results": true
+        },
+        {
+          "id": "islet-autoantibodies-C-S_029",
+          "evidence_id": "C-S_029",
+          "role": "agenda",
+          "sample": "输入/测量方法待摘要核实",
+          "use": "T1D异质性与抗体检测",
+          "basis": "相关议题为中国T1D异质性与抗体检测；议题未明确具体抗体成员。",
+          "review_note": "会前题名，具体研究结果待补。",
+          "signal": "计划议题",
+          "source": "CDS2026",
+          "study_group": null,
+          "has_results": false
+        },
+        {
+          "id": "islet-autoantibodies-C-OR_087",
+          "evidence_id": "C-OR_087",
+          "role": "agenda",
+          "sample": "3826例患者；检测输入、阈值及结果待摘要核实",
+          "use": "自身抗体谱的协同价值",
+          "basis": "原题明确IA-2A与ZnT8的自身抗体谱研究，归入抗体类别；成员与组合单独保留，不解释为全部抗体均有同样性能。",
+          "review_note": "会前题名，具体研究结果待补。",
+          "signal": "计划议题",
+          "source": "CDS2026",
+          "study_group": null,
+          "has_results": false
+        },
+        {
+          "id": "islet-autoantibodies-C-OR_329",
+          "evidence_id": "C-OR_329",
+          "role": "agenda",
+          "sample": "T1D一级亲属；具体样本输入待核",
+          "use": "T1D亲属筛查",
+          "basis": "原题明确基于胰岛自身抗体开展T1D一级亲属筛查。",
+          "review_note": "会前题名，具体研究结果待补。",
+          "signal": "计划议题",
+          "source": "CDS2026",
+          "study_group": null,
+          "has_results": false
+        }
+      ],
+      "attention_checks": [
+        {
+          "label": "候选线索",
+          "status": "已记录",
+          "basis": "有明确指标/类别及对应原始记录，按用途与输入分别保留。"
+        },
+        {
+          "label": "会议集中讨论",
+          "status": "待同用途复核",
+          "basis": "类别下不同检测、筛查、组合不合并为同一具体指标热点。"
+        },
+        {
+          "label": "多团队跟进",
+          "status": "待核",
+          "basis": "研究组去重与外部验证记录，不直接证明独立团队复现。"
+        },
+        {
+          "label": "持续关注",
+          "status": "待可比窗口",
+          "basis": "当前无相同覆盖规则的连续会议/时间窗口。"
+        }
+      ],
+      "negative": false,
+      "translation": {
+        "priority": "方向观察",
+        "reason": "先取得CDS各具体抗体与用途的结果；R04入组筛查条件不作为新抗体检测发现。",
+        "stage": "V0",
+        "stage_label": "会前检测/筛查议题；具体新用途待核",
+        "gap": "补各抗体/组合的检测输入、阈值及结果；区分异质性、抗体谱协同与亲属筛查用途。",
+        "checks": [
+          {
+            "name": "人体证据",
+            "status": "题名/方法待结果"
+          },
+          {
+            "name": "独立/外部验证",
+            "status": "未核实，待补"
+          },
+          {
+            "name": "临床增益",
+            "status": "相对现行临床模型/路径的增益待补"
+          },
+          {
+            "name": "检测与交付适配",
+            "status": "对应检测流程待技术确认"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "postmeal-glucose",
+    "label": "餐后1小时葡萄糖增幅",
+    "kind": "生理指标",
+    "summary": "孕期动态葡萄糖中用于早期GDM风险研究的特征。",
+    "bindings": [
+      {
+        "record_id": "A23",
+        "categories": [
+          "early"
+        ],
+        "role": "research",
+        "basis": "餐后1小时增幅指标AUC约0.78；仍需前瞻性与增量评价。",
+        "sample": "孕期CGM与OGTT相关资料",
+        "use": "GDM早期风险识别",
+        "signal": "研究线索",
+        "evidence_id": "A-A23",
+        "original_role": "research"
+      }
+    ],
+    "agendas": [],
+    "matches": [],
+    "notes": "CGM是测量技术；词条表示实际研究的葡萄糖特征，公司组学技术匹配尚待讨论。",
+    "categories": [
+      "early"
+    ],
+    "research_ids": [
+      "A-A23"
+    ],
+    "record_ids": [
+      "A-A23"
+    ],
+    "field_ids": [
+      "H30"
+    ],
+    "study_groups": [
+      "A23"
+    ],
+    "study_count": 1,
+    "agenda_count": 0,
+    "stage": "V2",
+    "stage_label": "人体风险预测",
+    "priority": "继续验证",
+    "priority_reason": "常规诊断前的GDM风险研究用途明确。",
+    "gap": "补外部验证、时间窗和相对临床基础模型增益。",
+    "status": "候选线索",
+    "heat_eligible": false,
+    "heat_basis": "按会议、研究和转化分别列证据；无综合分和跨资料池排名。",
+    "reference": false,
+    "sample_notes": [
+      "孕期CGM与OGTT相关资料"
+    ],
+    "heat_gaps": [
+      "核对样本/队列与团队独立性。",
+      "补可比会议/时间窗口，才能判断上升或持续。"
+    ],
+    "review": {
+      "conferences": [
+        {
+          "source": "CDS2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": 0,
+          "share": 0.0,
+          "denominator": 80,
+          "total_reviewed": 606,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "完整606条学术题名，按本轮规则复核",
+          "reading": "计划题名"
+        },
+        {
+          "source": "ADA2026",
+          "record_ids": [
+            "A-A23"
+          ],
+          "count": 1,
+          "focus_count": null,
+          "share": null,
+          "denominator": null,
+          "total_reviewed": null,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [
+            "A-A23"
+          ],
+          "coverage": "27条定向关联记录；不是全会",
+          "reading": "会议摘要/方法及关联论文更新"
+        }
+      ],
+      "study_count": 1,
+      "study_groups": [
+        "A23"
+      ],
+      "teams": [
+        {
+          "study_group": "A23",
+          "team_labels": [
+            "Azin Mousavi、Claire Scott、Helen Murphy等；Abbott相关资助/关系见原摘要。"
+          ],
+          "evidence_ids": [
+            "A-A23"
+          ]
+        }
+      ],
+      "confirmed_independent_studies": null,
+      "confirmed_independent_teams": null,
+      "independence_note": "跨研究队列/样本与团队独立性尚未完成核查；不以不同作者字符串或单位数替代。",
+      "recent_count": 0,
+      "recent_ids": [],
+      "latest_known_date": "2026-06-07",
+      "unknown_date_ids": [],
+      "validation_ids": [],
+      "validation_study_count": 0,
+      "paper_ids": [],
+      "population_ids": [],
+      "cases": [
+        {
+          "id": "postmeal-glucose-A-A23",
+          "evidence_id": "A-A23",
+          "role": "research",
+          "sample": "孕期CGM与OGTT相关资料",
+          "use": "GDM早期风险识别",
+          "basis": "餐后1小时增幅指标AUC约0.78；仍需前瞻性与增量评价。",
+          "review_note": "",
+          "signal": "研究线索",
+          "source": "ADA2026",
+          "study_group": "A23",
+          "has_results": true
+        }
+      ],
+      "attention_checks": [
+        {
+          "label": "候选线索",
+          "status": "已记录",
+          "basis": "有明确指标/类别及对应原始记录，按用途与输入分别保留。"
+        },
+        {
+          "label": "会议集中讨论",
+          "status": "待同用途复核",
+          "basis": "类别下不同检测、筛查、组合不合并为同一具体指标热点。"
+        },
+        {
+          "label": "多团队跟进",
+          "status": "待核",
+          "basis": "研究组去重与外部验证记录，不直接证明独立团队复现。"
+        },
+        {
+          "label": "持续关注",
+          "status": "待可比窗口",
+          "basis": "当前无相同覆盖规则的连续会议/时间窗口。"
+        }
+      ],
+      "negative": false,
+      "translation": {
+        "priority": "继续验证",
+        "reason": "常规诊断前的GDM风险研究用途明确。",
+        "stage": "V2",
+        "stage_label": "人体风险预测",
+        "gap": "补外部验证、时间窗和相对临床基础模型增益。",
+        "checks": [
+          {
+            "name": "人体证据",
+            "status": "有人体研究记录"
+          },
+          {
+            "name": "独立/外部验证",
+            "status": "未核实，待补"
+          },
+          {
+            "name": "临床增益",
+            "status": "相对现行临床模型/路径的增益待补"
+          },
+          {
+            "name": "检测与交付适配",
+            "status": "对应检测流程待技术确认"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "mage",
+    "label": "MAGE",
+    "kind": "生理指标",
+    "summary": "孕中期CGM特征与OGTT诊断比较中的指标。",
+    "bindings": [
+      {
+        "record_id": "A25",
+        "categories": [
+          "early"
+        ],
+        "role": "research",
+        "basis": "MAGE AUC约0.73，现有指标性能不足以支持替代OGTT。",
+        "sample": "孕24–28周CGM；GOMOMs队列",
+        "use": "GDM诊断方法评价",
+        "signal": "替代诊断未获支持",
+        "evidence_id": "A-A25",
+        "original_role": "research"
+      }
+    ],
+    "agendas": [],
+    "matches": [],
+    "notes": "与A24共享队列，但研究问题不同；临床监测技术与公司组学能力分开匹配。",
+    "categories": [
+      "early"
+    ],
+    "research_ids": [
+      "A-A25"
+    ],
+    "record_ids": [
+      "A-A25"
+    ],
+    "field_ids": [
+      "H30"
+    ],
+    "study_groups": [
+      "GDM-同队列"
+    ],
+    "study_count": 1,
+    "agenda_count": 0,
+    "stage": "V2",
+    "stage_label": "人体诊断模型",
+    "priority": "继续验证",
+    "priority_reason": "现有诊断性能未支持替代OGTT；可复核其辅助用途与外部验证。",
+    "gap": "补外部验证、阈值与OGTT比较；A24/A25共享队列。",
+    "status": "候选线索",
+    "heat_eligible": false,
+    "heat_basis": "按会议、研究和转化分别列证据；无综合分和跨资料池排名。",
+    "reference": false,
+    "sample_notes": [
+      "孕24–28周CGM；GOMOMs队列"
+    ],
+    "heat_gaps": [
+      "核对样本/队列与团队独立性。",
+      "补可比会议/时间窗口，才能判断上升或持续。"
+    ],
+    "review": {
+      "conferences": [
+        {
+          "source": "CDS2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": 0,
+          "share": 0.0,
+          "denominator": 80,
+          "total_reviewed": 606,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "完整606条学术题名，按本轮规则复核",
+          "reading": "计划题名"
+        },
+        {
+          "source": "ADA2026",
+          "record_ids": [
+            "A-A25"
+          ],
+          "count": 1,
+          "focus_count": null,
+          "share": null,
+          "denominator": null,
+          "total_reviewed": null,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [
+            "A-A25"
+          ],
+          "coverage": "27条定向关联记录；不是全会",
+          "reading": "会议摘要/方法及关联论文更新"
+        }
+      ],
+      "study_count": 1,
+      "study_groups": [
+        "GDM-同队列"
+      ],
+      "teams": [
+        {
+          "study_group": "GDM-同队列",
+          "team_labels": [
+            "Audrey Merriam等；NIDDK、Dexcom支持信息见摘要。"
+          ],
+          "evidence_ids": [
+            "A-A25"
+          ]
+        }
+      ],
+      "confirmed_independent_studies": null,
+      "confirmed_independent_teams": null,
+      "independence_note": "跨研究队列/样本与团队独立性尚未完成核查；不以不同作者字符串或单位数替代。",
+      "recent_count": 0,
+      "recent_ids": [],
+      "latest_known_date": "2026-06-07",
+      "unknown_date_ids": [],
+      "validation_ids": [],
+      "validation_study_count": 0,
+      "paper_ids": [],
+      "population_ids": [],
+      "cases": [
+        {
+          "id": "mage-A-A25",
+          "evidence_id": "A-A25",
+          "role": "research",
+          "sample": "孕24–28周CGM；GOMOMs队列",
+          "use": "GDM诊断方法评价",
+          "basis": "MAGE AUC约0.73，现有指标性能不足以支持替代OGTT。",
+          "review_note": "",
+          "signal": "替代诊断未获支持",
+          "source": "ADA2026",
+          "study_group": "GDM-同队列",
+          "has_results": true
+        }
+      ],
+      "attention_checks": [
+        {
+          "label": "候选线索",
+          "status": "已记录",
+          "basis": "有明确指标/类别及对应原始记录，按用途与输入分别保留。"
+        },
+        {
+          "label": "会议集中讨论",
+          "status": "待同用途复核",
+          "basis": "类别下不同检测、筛查、组合不合并为同一具体指标热点。"
+        },
+        {
+          "label": "多团队跟进",
+          "status": "待核",
+          "basis": "研究组去重与外部验证记录，不直接证明独立团队复现。"
+        },
+        {
+          "label": "持续关注",
+          "status": "待可比窗口",
+          "basis": "当前无相同覆盖规则的连续会议/时间窗口。"
+        }
+      ],
+      "negative": true,
+      "translation": {
+        "priority": "继续验证",
+        "reason": "现有诊断性能未支持替代OGTT；可复核其辅助用途与外部验证。",
+        "stage": "V2",
+        "stage_label": "人体诊断模型",
+        "gap": "补外部验证、阈值与OGTT比较；A24/A25共享队列。",
+        "checks": [
+          {
+            "name": "人体证据",
+            "status": "有人体研究记录"
+          },
+          {
+            "name": "独立/外部验证",
+            "status": "未核实，待补"
+          },
+          {
+            "name": "临床增益",
+            "status": "未支持替代OGTT"
+          },
+          {
+            "name": "检测与交付适配",
+            "status": "对应检测流程待技术确认"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "ffa",
+    "label": "游离脂肪酸",
+    "kind": "代谢指标",
+    "summary": "GOMOMs孕早期风险模型中的候选指标。",
+    "bindings": [
+      {
+        "record_id": "A24",
+        "categories": [
+          "early"
+        ],
+        "role": "research",
+        "basis": "加入所测游离脂肪酸、甘油三酯及其他代谢指标后，未提升GDM或大于胎龄儿的预测。",
+        "sample": "孕10–14周代谢/脂质测量",
+        "use": "孕期风险模型的增量评价",
+        "signal": "未见预测增益",
+        "evidence_id": "A-A24",
+        "original_role": "research"
+      }
+    ],
+    "agendas": [],
+    "matches": [],
+    "notes": "原记录未明确该指标的具体检测平台及公司承接流程，保留为研究指标。",
+    "categories": [
+      "early"
+    ],
+    "research_ids": [
+      "A-A24"
+    ],
+    "record_ids": [
+      "A-A24"
+    ],
+    "field_ids": [
+      "H30"
+    ],
+    "study_groups": [
+      "GDM-同队列"
+    ],
+    "study_count": 1,
+    "agenda_count": 0,
+    "stage": "V2",
+    "stage_label": "人体预测模型",
+    "priority": "继续验证",
+    "priority_reason": "现有GDM队列加入这些指标后未见预测增益；先核适用人群、方法与重复验证。",
+    "gap": "补外部验证、阈值与常规危险因素增益；A24/A25共享队列。",
+    "status": "候选线索",
+    "heat_eligible": false,
+    "heat_basis": "按会议、研究和转化分别列证据；无综合分和跨资料池排名。",
+    "reference": false,
+    "sample_notes": [
+      "孕10–14周代谢/脂质测量"
+    ],
+    "heat_gaps": [
+      "核对样本/队列与团队独立性。",
+      "补可比会议/时间窗口，才能判断上升或持续。"
+    ],
+    "review": {
+      "conferences": [
+        {
+          "source": "CDS2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": 0,
+          "share": 0.0,
+          "denominator": 80,
+          "total_reviewed": 606,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "完整606条学术题名，按本轮规则复核",
+          "reading": "计划题名"
+        },
+        {
+          "source": "ADA2026",
+          "record_ids": [
+            "A-A24"
+          ],
+          "count": 1,
+          "focus_count": null,
+          "share": null,
+          "denominator": null,
+          "total_reviewed": null,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [
+            "A-A24"
+          ],
+          "coverage": "27条定向关联记录；不是全会",
+          "reading": "会议摘要/方法及关联论文更新"
+        }
+      ],
+      "study_count": 1,
+      "study_groups": [
+        "GDM-同队列"
+      ],
+      "teams": [
+        {
+          "study_group": "GDM-同队列",
+          "team_labels": [
+            "详见原始会议摘要。"
+          ],
+          "evidence_ids": [
+            "A-A24"
+          ]
+        }
+      ],
+      "confirmed_independent_studies": null,
+      "confirmed_independent_teams": null,
+      "independence_note": "跨研究队列/样本与团队独立性尚未完成核查；不以不同作者字符串或单位数替代。",
+      "recent_count": 0,
+      "recent_ids": [],
+      "latest_known_date": "2026-06-07",
+      "unknown_date_ids": [],
+      "validation_ids": [],
+      "validation_study_count": 0,
+      "paper_ids": [],
+      "population_ids": [],
+      "cases": [
+        {
+          "id": "ffa-A-A24",
+          "evidence_id": "A-A24",
+          "role": "research",
+          "sample": "孕10–14周代谢/脂质测量",
+          "use": "孕期风险模型的增量评价",
+          "basis": "加入所测游离脂肪酸、甘油三酯及其他代谢指标后，未提升GDM或大于胎龄儿的预测。",
+          "review_note": "",
+          "signal": "未见预测增益",
+          "source": "ADA2026",
+          "study_group": "GDM-同队列",
+          "has_results": true
+        }
+      ],
+      "attention_checks": [
+        {
+          "label": "候选线索",
+          "status": "已记录",
+          "basis": "有明确指标/类别及对应原始记录，按用途与输入分别保留。"
+        },
+        {
+          "label": "会议集中讨论",
+          "status": "待同用途复核",
+          "basis": "类别下不同检测、筛查、组合不合并为同一具体指标热点。"
+        },
+        {
+          "label": "多团队跟进",
+          "status": "待核",
+          "basis": "研究组去重与外部验证记录，不直接证明独立团队复现。"
+        },
+        {
+          "label": "持续关注",
+          "status": "待可比窗口",
+          "basis": "当前无相同覆盖规则的连续会议/时间窗口。"
+        }
+      ],
+      "negative": true,
+      "translation": {
+        "priority": "继续验证",
+        "reason": "现有GDM队列加入这些指标后未见预测增益；先核适用人群、方法与重复验证。",
+        "stage": "V2",
+        "stage_label": "人体预测模型",
+        "gap": "补外部验证、阈值与常规危险因素增益；A24/A25共享队列。",
+        "checks": [
+          {
+            "name": "人体证据",
+            "status": "有人体研究记录"
+          },
+          {
+            "name": "独立/外部验证",
+            "status": "未核实，待补"
+          },
+          {
+            "name": "临床增益",
+            "status": "未见预测增益"
+          },
+          {
+            "name": "检测与交付适配",
+            "status": "对应检测流程待技术确认"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "triglycerides",
+    "label": "甘油三酯",
+    "kind": "代谢指标",
+    "summary": "GOMOMs孕早期风险模型中的候选指标。",
+    "bindings": [
+      {
+        "record_id": "A24",
+        "categories": [
+          "early"
+        ],
+        "role": "research",
+        "basis": "加入所测游离脂肪酸、甘油三酯及其他代谢指标后，未提升GDM或大于胎龄儿的预测。",
+        "sample": "孕10–14周代谢/脂质测量",
+        "use": "孕期风险模型的增量评价",
+        "signal": "未见预测增益",
+        "evidence_id": "A-A24",
+        "original_role": "research"
+      }
+    ],
+    "agendas": [],
+    "matches": [],
+    "notes": "原记录未明确该指标的具体检测平台及公司承接流程，保留为研究指标。",
+    "categories": [
+      "early"
+    ],
+    "research_ids": [
+      "A-A24"
+    ],
+    "record_ids": [
+      "A-A24"
+    ],
+    "field_ids": [
+      "H30"
+    ],
+    "study_groups": [
+      "GDM-同队列"
+    ],
+    "study_count": 1,
+    "agenda_count": 0,
+    "stage": "V2",
+    "stage_label": "人体预测模型",
+    "priority": "继续验证",
+    "priority_reason": "现有GDM队列加入这些指标后未见预测增益；先核适用人群、方法与重复验证。",
+    "gap": "补外部验证、阈值与临床基础模型增益；常规生化与代谢组流程分别确认。",
+    "status": "候选线索",
+    "heat_eligible": false,
+    "heat_basis": "按会议、研究和转化分别列证据；无综合分和跨资料池排名。",
+    "reference": false,
+    "sample_notes": [
+      "孕10–14周代谢/脂质测量"
+    ],
+    "heat_gaps": [
+      "核对样本/队列与团队独立性。",
+      "补可比会议/时间窗口，才能判断上升或持续。"
+    ],
+    "review": {
+      "conferences": [
+        {
+          "source": "CDS2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": 0,
+          "share": 0.0,
+          "denominator": 80,
+          "total_reviewed": 606,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "完整606条学术题名，按本轮规则复核",
+          "reading": "计划题名"
+        },
+        {
+          "source": "ADA2026",
+          "record_ids": [
+            "A-A24"
+          ],
+          "count": 1,
+          "focus_count": null,
+          "share": null,
+          "denominator": null,
+          "total_reviewed": null,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [
+            "A-A24"
+          ],
+          "coverage": "27条定向关联记录；不是全会",
+          "reading": "会议摘要/方法及关联论文更新"
+        }
+      ],
+      "study_count": 1,
+      "study_groups": [
+        "GDM-同队列"
+      ],
+      "teams": [
+        {
+          "study_group": "GDM-同队列",
+          "team_labels": [
+            "详见原始会议摘要。"
+          ],
+          "evidence_ids": [
+            "A-A24"
+          ]
+        }
+      ],
+      "confirmed_independent_studies": null,
+      "confirmed_independent_teams": null,
+      "independence_note": "跨研究队列/样本与团队独立性尚未完成核查；不以不同作者字符串或单位数替代。",
+      "recent_count": 0,
+      "recent_ids": [],
+      "latest_known_date": "2026-06-07",
+      "unknown_date_ids": [],
+      "validation_ids": [],
+      "validation_study_count": 0,
+      "paper_ids": [],
+      "population_ids": [],
+      "cases": [
+        {
+          "id": "triglycerides-A-A24",
+          "evidence_id": "A-A24",
+          "role": "research",
+          "sample": "孕10–14周代谢/脂质测量",
+          "use": "孕期风险模型的增量评价",
+          "basis": "加入所测游离脂肪酸、甘油三酯及其他代谢指标后，未提升GDM或大于胎龄儿的预测。",
+          "review_note": "",
+          "signal": "未见预测增益",
+          "source": "ADA2026",
+          "study_group": "GDM-同队列",
+          "has_results": true
+        }
+      ],
+      "attention_checks": [
+        {
+          "label": "候选线索",
+          "status": "已记录",
+          "basis": "有明确指标/类别及对应原始记录，按用途与输入分别保留。"
+        },
+        {
+          "label": "会议集中讨论",
+          "status": "待同用途复核",
+          "basis": "类别下不同检测、筛查、组合不合并为同一具体指标热点。"
+        },
+        {
+          "label": "多团队跟进",
+          "status": "待核",
+          "basis": "研究组去重与外部验证记录，不直接证明独立团队复现。"
+        },
+        {
+          "label": "持续关注",
+          "status": "待可比窗口",
+          "basis": "当前无相同覆盖规则的连续会议/时间窗口。"
+        }
+      ],
+      "negative": true,
+      "translation": {
+        "priority": "继续验证",
+        "reason": "现有GDM队列加入这些指标后未见预测增益；先核适用人群、方法与重复验证。",
+        "stage": "V2",
+        "stage_label": "人体预测模型",
+        "gap": "补外部验证、阈值与临床基础模型增益；常规生化与代谢组流程分别确认。",
+        "checks": [
+          {
+            "name": "人体证据",
+            "status": "有人体研究记录"
+          },
+          {
+            "name": "独立/外部验证",
+            "status": "未核实，待补"
+          },
+          {
+            "name": "临床增益",
+            "status": "未见预测增益"
+          },
+          {
+            "name": "检测与交付适配",
+            "status": "对应检测流程待技术确认"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "ev-proteins",
+    "label": "EV蛋白特征",
+    "kind": "特征集合",
+    "summary": "探索血浆细胞外囊泡蛋白与T1D部分缓解的关系。",
+    "bindings": [
+      {
+        "record_id": "A20",
+        "categories": [
+          "monitoring"
+        ],
+        "role": "research",
+        "basis": "已读采血时点和研究设计，原始结果段未完整取得。",
+        "sample": "新发T1D青少年不同时点血浆EV",
+        "use": "部分缓解与病程变化",
+        "signal": "结果待核",
+        "evidence_id": "A-A20",
+        "original_role": "research"
+      }
+    ],
+    "agendas": [],
+    "matches": [
+      {
+        "tech_id": "PR",
+        "relation": "direct",
+        "purpose": "围绕EV蛋白特征开展候选筛选、采样时点与纵向验证设计。"
+      }
+    ],
+    "notes": "已有资料未核清具体蛋白名单，不补写分子名称或模型性能；EV分离与检测平台适配待确认。",
+    "categories": [
+      "monitoring"
+    ],
+    "research_ids": [
+      "A-A20"
+    ],
+    "record_ids": [
+      "A-A20"
+    ],
+    "field_ids": [
+      "H03"
+    ],
+    "study_groups": [],
+    "study_count": 0,
+    "agenda_count": 0,
+    "stage": "V0",
+    "stage_label": "仅取得研究方法",
+    "priority": "方向观察",
+    "priority_reason": "EV蛋白可提出T1D部分缓解相关标志物研究问题。",
+    "gap": "补候选蛋白清单、结果、样本量、验证设计与EV分离/蛋白检测方法。",
+    "status": "候选线索",
+    "heat_eligible": false,
+    "heat_basis": "按会议、研究和转化分别列证据；无综合分和跨资料池排名。",
+    "reference": false,
+    "sample_notes": [
+      "新发T1D青少年不同时点血浆EV"
+    ],
+    "heat_gaps": [
+      "核对样本/队列与团队独立性。",
+      "补可比会议/时间窗口，才能判断上升或持续。"
+    ],
+    "review": {
+      "conferences": [
+        {
+          "source": "CDS2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": 0,
+          "share": 0.0,
+          "denominator": 80,
+          "total_reviewed": 606,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "完整606条学术题名，按本轮规则复核",
+          "reading": "计划题名"
+        },
+        {
+          "source": "ADA2026",
+          "record_ids": [
+            "A-A20"
+          ],
+          "count": 1,
+          "focus_count": null,
+          "share": null,
+          "denominator": null,
+          "total_reviewed": null,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [
+            "A-A20"
+          ],
+          "coverage": "27条定向关联记录；不是全会",
+          "reading": "会议摘要/方法及关联论文更新"
+        }
+      ],
+      "study_count": 0,
+      "study_groups": [],
+      "teams": [],
+      "confirmed_independent_studies": null,
+      "confirmed_independent_teams": null,
+      "independence_note": "跨研究队列/样本与团队独立性尚未完成核查；不以不同作者字符串或单位数替代。",
+      "recent_count": 0,
+      "recent_ids": [],
+      "latest_known_date": null,
+      "unknown_date_ids": [],
+      "validation_ids": [],
+      "validation_study_count": 0,
+      "paper_ids": [],
+      "population_ids": [],
+      "cases": [
+        {
+          "id": "ev-proteins-A-A20",
+          "evidence_id": "A-A20",
+          "role": "research",
+          "sample": "新发T1D青少年不同时点血浆EV",
+          "use": "部分缓解与病程变化",
+          "basis": "已读采血时点和研究设计，原始结果段未完整取得。",
+          "review_note": "",
+          "signal": "结果待核",
+          "source": "ADA2026",
+          "study_group": null,
+          "has_results": false
+        }
+      ],
+      "attention_checks": [
+        {
+          "label": "候选线索",
+          "status": "已记录",
+          "basis": "有明确指标/类别及对应原始记录，按用途与输入分别保留。"
+        },
+        {
+          "label": "会议集中讨论",
+          "status": "待同用途复核",
+          "basis": "类别下不同检测、筛查、组合不合并为同一具体指标热点。"
+        },
+        {
+          "label": "多团队跟进",
+          "status": "待核",
+          "basis": "研究组去重与外部验证记录，不直接证明独立团队复现。"
+        },
+        {
+          "label": "持续关注",
+          "status": "待可比窗口",
+          "basis": "当前无相同覆盖规则的连续会议/时间窗口。"
+        }
+      ],
+      "negative": false,
+      "translation": {
+        "priority": "方向观察",
+        "reason": "EV蛋白可提出T1D部分缓解相关标志物研究问题。",
+        "stage": "V0",
+        "stage_label": "仅取得研究方法",
+        "gap": "补候选蛋白清单、结果、样本量、验证设计与EV分离/蛋白检测方法。",
+        "checks": [
+          {
+            "name": "人体证据",
+            "status": "题名/方法待结果"
+          },
+          {
+            "name": "独立/外部验证",
+            "status": "未核实，待补"
+          },
+          {
+            "name": "临床增益",
+            "status": "相对现行临床模型/路径的增益待补"
+          },
+          {
+            "name": "检测与交付适配",
+            "status": "有研究技术关联，样本/平台/参数待技术确认"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "hgf",
+    "label": "HGF",
+    "kind": "机制分子",
+    "summary": "胰岛周细胞来源HGF与β细胞功能的机制线索。",
+    "bindings": [
+      {
+        "record_id": "R10",
+        "categories": [
+          "other"
+        ],
+        "role": "mechanism",
+        "basis": "周细胞HGF来源与β细胞功能有关，主要功能证据来自小鼠。",
+        "sample": "人胰岛单细胞资料及小鼠实验",
+        "use": "标志物发现的细胞来源与功能线索",
+        "signal": "机制线索",
+        "evidence_id": "P-R10",
+        "original_role": "mechanism"
+      }
+    ],
+    "agendas": [],
+    "matches": [
+      {
+        "tech_id": "SC",
+        "relation": "direct",
+        "purpose": "利用单细胞分析定位来源细胞和微环境，为候选信号选择提供机制依据。"
+      }
+    ],
+    "notes": "本条是组织/细胞机制分子，尚未在现有研究中建立人体液体样本的标志物用途。",
+    "categories": [
+      "other"
+    ],
+    "research_ids": [
+      "P-R10"
+    ],
+    "record_ids": [
+      "P-R10"
+    ],
+    "field_ids": [
+      "H05"
+    ],
+    "study_groups": [
+      "R10"
+    ],
+    "study_count": 1,
+    "agenda_count": 0,
+    "stage": "V1",
+    "stage_label": "机制研究",
+    "priority": "方向观察",
+    "priority_reason": "可从周细胞HGF与β细胞功能寻找后续候选靶点。",
+    "gap": "以机制证据为主，补人体体液可测性、临床关联与验证。",
+    "status": "机制观察",
+    "heat_eligible": false,
+    "heat_basis": "按会议、研究和转化分别列证据；无综合分和跨资料池排名。",
+    "reference": false,
+    "sample_notes": [
+      "人胰岛单细胞资料及小鼠实验"
+    ],
+    "heat_gaps": [
+      "核对样本/队列与团队独立性。",
+      "补可比会议/时间窗口，才能判断上升或持续。"
+    ],
+    "review": {
+      "conferences": [
+        {
+          "source": "CDS2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": 0,
+          "share": 0.0,
+          "denominator": 80,
+          "total_reviewed": 606,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "完整606条学术题名，按本轮规则复核",
+          "reading": "计划题名"
+        },
+        {
+          "source": "ADA2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": null,
+          "share": null,
+          "denominator": null,
+          "total_reviewed": null,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "27条定向关联记录；不是全会",
+          "reading": "会议摘要/方法及关联论文更新"
+        }
+      ],
+      "study_count": 1,
+      "study_groups": [
+        "R10"
+      ],
+      "teams": [
+        {
+          "study_group": "R10",
+          "team_labels": [
+            "Puyesky S等；Tel Aviv University（作者单位）"
+          ],
+          "evidence_ids": [
+            "P-R10"
+          ]
+        }
+      ],
+      "confirmed_independent_studies": null,
+      "confirmed_independent_teams": null,
+      "independence_note": "跨研究队列/样本与团队独立性尚未完成核查；不以不同作者字符串或单位数替代。",
+      "recent_count": 0,
+      "recent_ids": [],
+      "latest_known_date": null,
+      "unknown_date_ids": [
+        "P-R10"
+      ],
+      "validation_ids": [],
+      "validation_study_count": 0,
+      "paper_ids": [
+        "P-R10"
+      ],
+      "population_ids": [],
+      "cases": [
+        {
+          "id": "hgf-P-R10",
+          "evidence_id": "P-R10",
+          "role": "mechanism",
+          "sample": "人胰岛单细胞资料及小鼠实验",
+          "use": "标志物发现的细胞来源与功能线索",
+          "basis": "周细胞HGF来源与β细胞功能有关，主要功能证据来自小鼠。",
+          "review_note": "",
+          "signal": "机制线索",
+          "source": "Diabetes",
+          "study_group": "R10",
+          "has_results": true
+        }
+      ],
+      "attention_checks": [
+        {
+          "label": "候选线索",
+          "status": "已记录",
+          "basis": "有明确指标/类别及对应原始记录，按用途与输入分别保留。"
+        },
+        {
+          "label": "会议集中讨论",
+          "status": "待同用途复核",
+          "basis": "类别下不同检测、筛查、组合不合并为同一具体指标热点。"
+        },
+        {
+          "label": "多团队跟进",
+          "status": "待核",
+          "basis": "研究组去重与外部验证记录，不直接证明独立团队复现。"
+        },
+        {
+          "label": "持续关注",
+          "status": "待可比窗口",
+          "basis": "当前无相同覆盖规则的连续会议/时间窗口。"
+        }
+      ],
+      "negative": false,
+      "translation": {
+        "priority": "方向观察",
+        "reason": "可从周细胞HGF与β细胞功能寻找后续候选靶点。",
+        "stage": "V1",
+        "stage_label": "机制研究",
+        "gap": "以机制证据为主，补人体体液可测性、临床关联与验证。",
+        "checks": [
+          {
+            "name": "人体证据",
+            "status": "机制为主；人体标志物用途待核"
+          },
+          {
+            "name": "独立/外部验证",
+            "status": "未核实，待补"
+          },
+          {
+            "name": "临床增益",
+            "status": "相对现行临床模型/路径的增益待补"
+          },
+          {
+            "name": "检测与交付适配",
+            "status": "有研究技术关联，样本/平台/参数待技术确认"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "glutamate",
+    "label": "谷氨酸",
+    "kind": "机制分子",
+    "summary": "胰岛成纤维细胞与β细胞互作中的机制信号。",
+    "bindings": [
+      {
+        "record_id": "R09",
+        "categories": [
+          "other"
+        ],
+        "role": "mechanism",
+        "basis": "成纤维细胞谷氨酸—β细胞NMDAR通路与损伤相关。",
+        "sample": "组织、细胞共培养及动物模型",
+        "use": "标志物发现的机制与细胞互作线索",
+        "signal": "机制线索",
+        "evidence_id": "P-R09",
+        "original_role": "mechanism"
+      }
+    ],
+    "agendas": [],
+    "matches": [
+      {
+        "tech_id": "SC",
+        "relation": "direct",
+        "purpose": "结合单细胞与细胞互作分析筛选来源信号，再设计具体候选物的验证。"
+      }
+    ],
+    "notes": "作为候选来源的机制线索展示，不标为已验证临床标志物。",
+    "categories": [
+      "other"
+    ],
+    "research_ids": [
+      "P-R09"
+    ],
+    "record_ids": [
+      "P-R09"
+    ],
+    "field_ids": [
+      "H05"
+    ],
+    "study_groups": [
+      "R09"
+    ],
+    "study_count": 1,
+    "agenda_count": 0,
+    "stage": "V1",
+    "stage_label": "机制研究",
+    "priority": "方向观察",
+    "priority_reason": "可研究成纤维细胞-β细胞代谢互作并寻找候选信号。",
+    "gap": "补人体体液可测性、来源特异性、临床风险关联与验证。",
+    "status": "机制观察",
+    "heat_eligible": false,
+    "heat_basis": "按会议、研究和转化分别列证据；无综合分和跨资料池排名。",
+    "reference": false,
+    "sample_notes": [
+      "组织、细胞共培养及动物模型"
+    ],
+    "heat_gaps": [
+      "核对样本/队列与团队独立性。",
+      "补可比会议/时间窗口，才能判断上升或持续。"
+    ],
+    "review": {
+      "conferences": [
+        {
+          "source": "CDS2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": 0,
+          "share": 0.0,
+          "denominator": 80,
+          "total_reviewed": 606,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "完整606条学术题名，按本轮规则复核",
+          "reading": "计划题名"
+        },
+        {
+          "source": "ADA2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": null,
+          "share": null,
+          "denominator": null,
+          "total_reviewed": null,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "27条定向关联记录；不是全会",
+          "reading": "会议摘要/方法及关联论文更新"
+        }
+      ],
+      "study_count": 1,
+      "study_groups": [
+        "R09"
+      ],
+      "teams": [
+        {
+          "study_group": "R09",
+          "team_labels": [
+            "Xiang Z等；山东大学齐鲁医院普通外科（作者单位；中文姓名待核）"
+          ],
+          "evidence_ids": [
+            "P-R09"
+          ]
+        }
+      ],
+      "confirmed_independent_studies": null,
+      "confirmed_independent_teams": null,
+      "independence_note": "跨研究队列/样本与团队独立性尚未完成核查；不以不同作者字符串或单位数替代。",
+      "recent_count": 0,
+      "recent_ids": [],
+      "latest_known_date": null,
+      "unknown_date_ids": [
+        "P-R09"
+      ],
+      "validation_ids": [],
+      "validation_study_count": 0,
+      "paper_ids": [
+        "P-R09"
+      ],
+      "population_ids": [],
+      "cases": [
+        {
+          "id": "glutamate-P-R09",
+          "evidence_id": "P-R09",
+          "role": "mechanism",
+          "sample": "组织、细胞共培养及动物模型",
+          "use": "标志物发现的机制与细胞互作线索",
+          "basis": "成纤维细胞谷氨酸—β细胞NMDAR通路与损伤相关。",
+          "review_note": "",
+          "signal": "机制线索",
+          "source": "Diabetes",
+          "study_group": "R09",
+          "has_results": true
+        }
+      ],
+      "attention_checks": [
+        {
+          "label": "候选线索",
+          "status": "已记录",
+          "basis": "有明确指标/类别及对应原始记录，按用途与输入分别保留。"
+        },
+        {
+          "label": "会议集中讨论",
+          "status": "待同用途复核",
+          "basis": "类别下不同检测、筛查、组合不合并为同一具体指标热点。"
+        },
+        {
+          "label": "多团队跟进",
+          "status": "待核",
+          "basis": "研究组去重与外部验证记录，不直接证明独立团队复现。"
+        },
+        {
+          "label": "持续关注",
+          "status": "待可比窗口",
+          "basis": "当前无相同覆盖规则的连续会议/时间窗口。"
+        }
+      ],
+      "negative": false,
+      "translation": {
+        "priority": "方向观察",
+        "reason": "可研究成纤维细胞-β细胞代谢互作并寻找候选信号。",
+        "stage": "V1",
+        "stage_label": "机制研究",
+        "gap": "补人体体液可测性、来源特异性、临床风险关联与验证。",
+        "checks": [
+          {
+            "name": "人体证据",
+            "status": "机制为主；人体标志物用途待核"
+          },
+          {
+            "name": "独立/外部验证",
+            "status": "未核实，待补"
+          },
+          {
+            "name": "临床增益",
+            "status": "相对现行临床模型/路径的增益待补"
+          },
+          {
+            "name": "检测与交付适配",
+            "status": "有研究技术关联，样本/平台/参数待技术确认"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "cytokines",
+    "label": "血清细胞因子特征",
+    "kind": "指标类别",
+    "summary": "会议计划研究不同糖代谢人群的细胞因子表达与干预后转归。",
+    "bindings": [],
+    "agendas": [
+      {
+        "code": "OR_313",
+        "categories": [
+          "stratification"
+        ],
+        "basis": "原始题目提及血清细胞因子表达特征及对生活方式干预下血糖转归的预测。",
+        "evidence_id": "C-OR_313"
+      }
+    ],
+    "matches": [],
+    "notes": "仅有计划议题；具体因子名称、样本量与结果待采集。",
+    "categories": [
+      "stratification"
+    ],
+    "research_ids": [],
+    "record_ids": [
+      "C-OR_313"
+    ],
+    "field_ids": [
+      "H01"
+    ],
+    "study_groups": [],
+    "study_count": 0,
+    "agenda_count": 1,
+    "stage": "V0",
+    "stage_label": "会前题名线索",
+    "priority": "方向观察",
+    "priority_reason": "可跟踪生活方式干预的应答预测研究。",
+    "gap": "补具体因子、样本、方法、结果及独立验证。",
+    "status": "候选线索",
+    "heat_eligible": false,
+    "heat_basis": "按会议、研究和转化分别列证据；无综合分和跨资料池排名。",
+    "reference": false,
+    "sample_notes": [],
+    "heat_gaps": [
+      "核对样本/队列与团队独立性。",
+      "补可比会议/时间窗口，才能判断上升或持续。"
+    ],
+    "review": {
+      "conferences": [
+        {
+          "source": "CDS2026",
+          "record_ids": [
+            "C-OR_313"
+          ],
+          "count": 1,
+          "focus_count": 1,
+          "share": 1.25,
+          "denominator": 80,
+          "total_reviewed": 606,
+          "leader_ids": [],
+          "people_ids": [
+            "E481"
+          ],
+          "unknown_role_ids": [
+            "E481"
+          ],
+          "unresolved_team_record_ids": [],
+          "coverage": "完整606条学术题名，按本轮规则复核",
+          "reading": "计划题名"
+        },
+        {
+          "source": "ADA2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": null,
+          "share": null,
+          "denominator": null,
+          "total_reviewed": null,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "27条定向关联记录；不是全会",
+          "reading": "会议摘要/方法及关联论文更新"
+        }
+      ],
+      "study_count": 0,
+      "study_groups": [],
+      "teams": [],
+      "confirmed_independent_studies": null,
+      "confirmed_independent_teams": null,
+      "independence_note": "跨研究队列/样本与团队独立性尚未完成核查；不以不同作者字符串或单位数替代。",
+      "recent_count": 0,
+      "recent_ids": [],
+      "latest_known_date": null,
+      "unknown_date_ids": [],
+      "validation_ids": [],
+      "validation_study_count": 0,
+      "paper_ids": [],
+      "population_ids": [],
+      "cases": [
+        {
+          "id": "cytokines-C-OR_313",
+          "evidence_id": "C-OR_313",
+          "role": "agenda",
+          "sample": "输入/测量方法待摘要核实",
+          "use": "生活方式干预下血糖转归预测",
+          "basis": "原始题目提及血清细胞因子表达特征及对生活方式干预下血糖转归的预测。",
+          "review_note": "会前题名，具体研究结果待补。",
+          "signal": "计划议题",
+          "source": "CDS2026",
+          "study_group": null,
+          "has_results": false
+        }
+      ],
+      "attention_checks": [
+        {
+          "label": "候选线索",
+          "status": "已记录",
+          "basis": "有明确指标/类别及对应原始记录，按用途与输入分别保留。"
+        },
+        {
+          "label": "会议集中讨论",
+          "status": "待同用途复核",
+          "basis": "类别下不同检测、筛查、组合不合并为同一具体指标热点。"
+        },
+        {
+          "label": "多团队跟进",
+          "status": "待核",
+          "basis": "研究组去重与外部验证记录，不直接证明独立团队复现。"
+        },
+        {
+          "label": "持续关注",
+          "status": "待可比窗口",
+          "basis": "当前无相同覆盖规则的连续会议/时间窗口。"
+        }
+      ],
+      "negative": false,
+      "translation": {
+        "priority": "方向观察",
+        "reason": "可跟踪生活方式干预的应答预测研究。",
+        "stage": "V0",
+        "stage_label": "会前题名线索",
+        "gap": "补具体因子、样本、方法、结果及独立验证。",
+        "checks": [
+          {
+            "name": "人体证据",
+            "status": "题名/方法待结果"
+          },
+          {
+            "name": "独立/外部验证",
+            "status": "未核实，待补"
+          },
+          {
+            "name": "临床增益",
+            "status": "相对现行临床模型/路径的增益待补"
+          },
+          {
+            "name": "检测与交付适配",
+            "status": "对应检测流程待技术确认"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "retina-panel",
+    "label": "糖网风险指标组合",
+    "kind": "指标组合",
+    "summary": "会议计划用多维度标志物构建糖网风险预警模型。",
+    "bindings": [],
+    "agendas": [
+      {
+        "code": "S_198",
+        "categories": [
+          "stratification"
+        ],
+        "basis": "原始题目为多维度标志物联合构建糖网风险预警模型。",
+        "evidence_id": "C-S_198"
+      }
+    ],
+    "matches": [],
+    "notes": "计划议题未给出组合成员及检测平台，保留组合描述。",
+    "categories": [
+      "stratification"
+    ],
+    "research_ids": [],
+    "record_ids": [
+      "C-S_198"
+    ],
+    "field_ids": [
+      "H20"
+    ],
+    "study_groups": [],
+    "study_count": 0,
+    "agenda_count": 1,
+    "stage": "V0",
+    "stage_label": "会前题名线索",
+    "priority": "方向观察",
+    "priority_reason": "可跟踪糖网风险预警模型的指标组合。",
+    "gap": "补组合成员、输入样本、研究结果及独立验证。",
+    "status": "候选线索",
+    "heat_eligible": false,
+    "heat_basis": "按会议、研究和转化分别列证据；无综合分和跨资料池排名。",
+    "reference": false,
+    "sample_notes": [],
+    "heat_gaps": [
+      "核对样本/队列与团队独立性。",
+      "补可比会议/时间窗口，才能判断上升或持续。"
+    ],
+    "review": {
+      "conferences": [
+        {
+          "source": "CDS2026",
+          "record_ids": [
+            "C-S_198"
+          ],
+          "count": 1,
+          "focus_count": 1,
+          "share": 1.25,
+          "denominator": 80,
+          "total_reviewed": 606,
+          "leader_ids": [
+            "E144"
+          ],
+          "people_ids": [
+            "E144"
+          ],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "完整606条学术题名，按本轮规则复核",
+          "reading": "计划题名"
+        },
+        {
+          "source": "ADA2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": null,
+          "share": null,
+          "denominator": null,
+          "total_reviewed": null,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "27条定向关联记录；不是全会",
+          "reading": "会议摘要/方法及关联论文更新"
+        }
+      ],
+      "study_count": 0,
+      "study_groups": [],
+      "teams": [],
+      "confirmed_independent_studies": null,
+      "confirmed_independent_teams": null,
+      "independence_note": "跨研究队列/样本与团队独立性尚未完成核查；不以不同作者字符串或单位数替代。",
+      "recent_count": 0,
+      "recent_ids": [],
+      "latest_known_date": null,
+      "unknown_date_ids": [],
+      "validation_ids": [],
+      "validation_study_count": 0,
+      "paper_ids": [],
+      "population_ids": [],
+      "cases": [
+        {
+          "id": "retina-panel-C-S_198",
+          "evidence_id": "C-S_198",
+          "role": "agenda",
+          "sample": "输入/测量方法待摘要核实",
+          "use": "糖网风险预警",
+          "basis": "原始题目为多维度标志物联合构建糖网风险预警模型。",
+          "review_note": "会前题名，具体研究结果待补。",
+          "signal": "计划议题",
+          "source": "CDS2026",
+          "study_group": null,
+          "has_results": false
+        }
+      ],
+      "attention_checks": [
+        {
+          "label": "候选线索",
+          "status": "已记录",
+          "basis": "有明确指标/类别及对应原始记录，按用途与输入分别保留。"
+        },
+        {
+          "label": "会议集中讨论",
+          "status": "待同用途复核",
+          "basis": "类别下不同检测、筛查、组合不合并为同一具体指标热点。"
+        },
+        {
+          "label": "多团队跟进",
+          "status": "待核",
+          "basis": "研究组去重与外部验证记录，不直接证明独立团队复现。"
+        },
+        {
+          "label": "持续关注",
+          "status": "待可比窗口",
+          "basis": "当前无相同覆盖规则的连续会议/时间窗口。"
+        }
+      ],
+      "negative": false,
+      "translation": {
+        "priority": "方向观察",
+        "reason": "可跟踪糖网风险预警模型的指标组合。",
+        "stage": "V0",
+        "stage_label": "会前题名线索",
+        "gap": "补组合成员、输入样本、研究结果及独立验证。",
+        "checks": [
+          {
+            "name": "人体证据",
+            "status": "题名/方法待结果"
+          },
+          {
+            "name": "独立/外部验证",
+            "status": "未核实，待补"
+          },
+          {
+            "name": "临床增益",
+            "status": "相对现行临床模型/路径的增益待补"
+          },
+          {
+            "name": "检测与交付适配",
+            "status": "对应检测流程待技术确认"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "cardiometabolic-markers",
+    "label": "循环心肾代谢标志物",
+    "kind": "指标类别",
+    "summary": "会议计划以循环标志物研究早期心肾代谢结局风险。",
+    "bindings": [],
+    "agendas": [
+      {
+        "code": "OR_333",
+        "categories": [
+          "stratification"
+        ],
+        "basis": "原始题目提及循环生物标志物预测早期心血管-肾脏-代谢综合征结局。",
+        "evidence_id": "C-OR_333"
+      }
+    ],
+    "matches": [],
+    "notes": "具体成员和结果未在已存议题列明。",
+    "categories": [
+      "stratification"
+    ],
+    "research_ids": [],
+    "record_ids": [
+      "C-OR_333"
+    ],
+    "field_ids": [
+      "H27"
+    ],
+    "study_groups": [],
+    "study_count": 0,
+    "agenda_count": 1,
+    "stage": "V0",
+    "stage_label": "会前题名线索",
+    "priority": "方向观察",
+    "priority_reason": "可跟踪早期CKM结局风险指标。",
+    "gap": "补具体标志物、研究结果、随访终点及独立验证。",
+    "status": "候选线索",
+    "heat_eligible": false,
+    "heat_basis": "按会议、研究和转化分别列证据；无综合分和跨资料池排名。",
+    "reference": false,
+    "sample_notes": [],
+    "heat_gaps": [
+      "核对样本/队列与团队独立性。",
+      "补可比会议/时间窗口，才能判断上升或持续。"
+    ],
+    "review": {
+      "conferences": [
+        {
+          "source": "CDS2026",
+          "record_ids": [
+            "C-OR_333"
+          ],
+          "count": 1,
+          "focus_count": 1,
+          "share": 1.25,
+          "denominator": 80,
+          "total_reviewed": 606,
+          "leader_ids": [],
+          "people_ids": [
+            "E526"
+          ],
+          "unknown_role_ids": [
+            "E526"
+          ],
+          "unresolved_team_record_ids": [],
+          "coverage": "完整606条学术题名，按本轮规则复核",
+          "reading": "计划题名"
+        },
+        {
+          "source": "ADA2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": null,
+          "share": null,
+          "denominator": null,
+          "total_reviewed": null,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "27条定向关联记录；不是全会",
+          "reading": "会议摘要/方法及关联论文更新"
+        }
+      ],
+      "study_count": 0,
+      "study_groups": [],
+      "teams": [],
+      "confirmed_independent_studies": null,
+      "confirmed_independent_teams": null,
+      "independence_note": "跨研究队列/样本与团队独立性尚未完成核查；不以不同作者字符串或单位数替代。",
+      "recent_count": 0,
+      "recent_ids": [],
+      "latest_known_date": null,
+      "unknown_date_ids": [],
+      "validation_ids": [],
+      "validation_study_count": 0,
+      "paper_ids": [],
+      "population_ids": [],
+      "cases": [
+        {
+          "id": "cardiometabolic-markers-C-OR_333",
+          "evidence_id": "C-OR_333",
+          "role": "agenda",
+          "sample": "输入/测量方法待摘要核实",
+          "use": "早期CKM心肾代谢结局风险",
+          "basis": "原始题目提及循环生物标志物预测早期心血管-肾脏-代谢综合征结局。",
+          "review_note": "会前题名，具体研究结果待补。",
+          "signal": "计划议题",
+          "source": "CDS2026",
+          "study_group": null,
+          "has_results": false
+        }
+      ],
+      "attention_checks": [
+        {
+          "label": "候选线索",
+          "status": "已记录",
+          "basis": "有明确指标/类别及对应原始记录，按用途与输入分别保留。"
+        },
+        {
+          "label": "会议集中讨论",
+          "status": "待同用途复核",
+          "basis": "类别下不同检测、筛查、组合不合并为同一具体指标热点。"
+        },
+        {
+          "label": "多团队跟进",
+          "status": "待核",
+          "basis": "研究组去重与外部验证记录，不直接证明独立团队复现。"
+        },
+        {
+          "label": "持续关注",
+          "status": "待可比窗口",
+          "basis": "当前无相同覆盖规则的连续会议/时间窗口。"
+        }
+      ],
+      "negative": false,
+      "translation": {
+        "priority": "方向观察",
+        "reason": "可跟踪早期CKM结局风险指标。",
+        "stage": "V0",
+        "stage_label": "会前题名线索",
+        "gap": "补具体标志物、研究结果、随访终点及独立验证。",
+        "checks": [
+          {
+            "name": "人体证据",
+            "status": "题名/方法待结果"
+          },
+          {
+            "name": "独立/外部验证",
+            "status": "未核实，待补"
+          },
+          {
+            "name": "临床增益",
+            "status": "相对现行临床模型/路径的增益待补"
+          },
+          {
+            "name": "检测与交付适配",
+            "status": "对应检测流程待技术确认"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "sarcopenia-metabolites",
+    "label": "肌少症代谢物特征",
+    "kind": "特征集合",
+    "summary": "会议计划筛选糖尿病肌少症相关的血清代谢特征。",
+    "bindings": [],
+    "agendas": [
+      {
+        "code": "OR_301",
+        "categories": [
+          "other"
+        ],
+        "basis": "原始题目为糖尿病肌少症患者的血清代谢组学特征及关键代谢物筛选。",
+        "evidence_id": "C-OR_301"
+      }
+    ],
+    "matches": [],
+    "notes": "仅有议题，尚无具体代谢物名单与结果；技术关联待摘要补核。",
+    "categories": [
+      "other"
+    ],
+    "research_ids": [],
+    "record_ids": [
+      "C-OR_301"
+    ],
+    "field_ids": [
+      "H33"
+    ],
+    "study_groups": [],
+    "study_count": 0,
+    "agenda_count": 1,
+    "stage": "V0",
+    "stage_label": "会前题名线索",
+    "priority": "方向观察",
+    "priority_reason": "可从肌少症代谢表型中寻找候选分子。",
+    "gap": "补代谢物成员、结果、肌少症定义及独立验证。",
+    "status": "候选线索",
+    "heat_eligible": false,
+    "heat_basis": "按会议、研究和转化分别列证据；无综合分和跨资料池排名。",
+    "reference": false,
+    "sample_notes": [],
+    "heat_gaps": [
+      "核对样本/队列与团队独立性。",
+      "补可比会议/时间窗口，才能判断上升或持续。"
+    ],
+    "review": {
+      "conferences": [
+        {
+          "source": "CDS2026",
+          "record_ids": [
+            "C-OR_301"
+          ],
+          "count": 1,
+          "focus_count": 1,
+          "share": 1.25,
+          "denominator": 80,
+          "total_reviewed": 606,
+          "leader_ids": [],
+          "people_ids": [
+            "E468"
+          ],
+          "unknown_role_ids": [
+            "E468"
+          ],
+          "unresolved_team_record_ids": [],
+          "coverage": "完整606条学术题名，按本轮规则复核",
+          "reading": "计划题名"
+        },
+        {
+          "source": "ADA2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": null,
+          "share": null,
+          "denominator": null,
+          "total_reviewed": null,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "27条定向关联记录；不是全会",
+          "reading": "会议摘要/方法及关联论文更新"
+        }
+      ],
+      "study_count": 0,
+      "study_groups": [],
+      "teams": [],
+      "confirmed_independent_studies": null,
+      "confirmed_independent_teams": null,
+      "independence_note": "跨研究队列/样本与团队独立性尚未完成核查；不以不同作者字符串或单位数替代。",
+      "recent_count": 0,
+      "recent_ids": [],
+      "latest_known_date": null,
+      "unknown_date_ids": [],
+      "validation_ids": [],
+      "validation_study_count": 0,
+      "paper_ids": [],
+      "population_ids": [],
+      "cases": [
+        {
+          "id": "sarcopenia-metabolites-C-OR_301",
+          "evidence_id": "C-OR_301",
+          "role": "agenda",
+          "sample": "输入/测量方法待摘要核实",
+          "use": "糖尿病肌少症候选筛选",
+          "basis": "原始题目为糖尿病肌少症患者的血清代谢组学特征及关键代谢物筛选。",
+          "review_note": "会前题名，具体研究结果待补。",
+          "signal": "计划议题",
+          "source": "CDS2026",
+          "study_group": null,
+          "has_results": false
+        }
+      ],
+      "attention_checks": [
+        {
+          "label": "候选线索",
+          "status": "已记录",
+          "basis": "有明确指标/类别及对应原始记录，按用途与输入分别保留。"
+        },
+        {
+          "label": "会议集中讨论",
+          "status": "待同用途复核",
+          "basis": "类别下不同检测、筛查、组合不合并为同一具体指标热点。"
+        },
+        {
+          "label": "多团队跟进",
+          "status": "待核",
+          "basis": "研究组去重与外部验证记录，不直接证明独立团队复现。"
+        },
+        {
+          "label": "持续关注",
+          "status": "待可比窗口",
+          "basis": "当前无相同覆盖规则的连续会议/时间窗口。"
+        }
+      ],
+      "negative": false,
+      "translation": {
+        "priority": "方向观察",
+        "reason": "可从肌少症代谢表型中寻找候选分子。",
+        "stage": "V0",
+        "stage_label": "会前题名线索",
+        "gap": "补代谢物成员、结果、肌少症定义及独立验证。",
+        "checks": [
+          {
+            "name": "人体证据",
+            "status": "题名/方法待结果"
+          },
+          {
+            "name": "独立/外部验证",
+            "status": "未核实，待补"
+          },
+          {
+            "name": "临床增益",
+            "status": "相对现行临床模型/路径的增益待补"
+          },
+          {
+            "name": "检测与交付适配",
+            "status": "对应检测流程待技术确认"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "hba1c",
+    "label": "HbA1c",
+    "kind": "常规指标",
+    "summary": "现有干预与临床研究中的常规血糖控制指标。",
+    "bindings": [
+      {
+        "record_id": "R02",
+        "categories": [
+          "stratification"
+        ],
+        "role": "reference",
+        "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+        "sample": "具体测量按原研究",
+        "use": "临床分层、监测或疗效终点",
+        "signal": "常规参照/终点",
+        "evidence_id": "P-R02",
+        "original_role": "reference"
+      },
+      {
+        "record_id": "R06",
+        "categories": [
+          "monitoring"
+        ],
+        "role": "reference",
+        "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+        "sample": "具体测量按原研究",
+        "use": "临床分层、监测或疗效终点",
+        "signal": "常规参照/终点",
+        "evidence_id": "P-R06",
+        "original_role": "reference"
+      },
+      {
+        "record_id": "R08",
+        "categories": [
+          "other"
+        ],
+        "role": "reference",
+        "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+        "sample": "具体测量按原研究",
+        "use": "临床分层、监测或疗效终点",
+        "signal": "常规参照/终点",
+        "evidence_id": "P-R08",
+        "original_role": "reference"
+      },
+      {
+        "record_id": "R14",
+        "categories": [
+          "monitoring"
+        ],
+        "role": "reference",
+        "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+        "sample": "具体测量按原研究",
+        "use": "临床分层、监测或疗效终点",
+        "signal": "常规参照/终点",
+        "evidence_id": "P-R14",
+        "original_role": "reference"
+      },
+      {
+        "record_id": "R15",
+        "categories": [
+          "monitoring"
+        ],
+        "role": "reference",
+        "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+        "sample": "具体测量按原研究",
+        "use": "临床分层、监测或疗效终点",
+        "signal": "常规参照/终点",
+        "evidence_id": "P-R15",
+        "original_role": "reference"
+      },
+      {
+        "record_id": "A03",
+        "categories": [
+          "monitoring"
+        ],
+        "role": "reference",
+        "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+        "sample": "具体测量按原研究",
+        "use": "临床分层、监测或疗效终点",
+        "signal": "常规参照/终点",
+        "evidence_id": "A-A03",
+        "original_role": "reference"
+      },
+      {
+        "record_id": "A04",
+        "categories": [
+          "monitoring"
+        ],
+        "role": "reference",
+        "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+        "sample": "具体测量按原研究",
+        "use": "临床分层、监测或疗效终点",
+        "signal": "常规参照/终点",
+        "evidence_id": "A-A04",
+        "original_role": "reference"
+      },
+      {
+        "record_id": "A07",
+        "categories": [
+          "monitoring"
+        ],
+        "role": "reference",
+        "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+        "sample": "具体测量按原研究",
+        "use": "临床分层、监测或疗效终点",
+        "signal": "常规参照/终点",
+        "evidence_id": "A-A07",
+        "original_role": "reference"
+      },
+      {
+        "record_id": "A08",
+        "categories": [
+          "monitoring"
+        ],
+        "role": "reference",
+        "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+        "sample": "具体测量按原研究",
+        "use": "临床分层、监测或疗效终点",
+        "signal": "常规参照/终点",
+        "evidence_id": "A-A08",
+        "original_role": "reference"
+      },
+      {
+        "record_id": "A09",
+        "categories": [
+          "monitoring"
+        ],
+        "role": "reference",
+        "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+        "sample": "具体测量按原研究",
+        "use": "临床分层、监测或疗效终点",
+        "signal": "常规参照/终点",
+        "evidence_id": "A-A09",
+        "original_role": "reference"
+      },
+      {
+        "record_id": "A10",
+        "categories": [
+          "monitoring"
+        ],
+        "role": "reference",
+        "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+        "sample": "具体测量按原研究",
+        "use": "临床分层、监测或疗效终点",
+        "signal": "常规参照/终点",
+        "evidence_id": "A-A10",
+        "original_role": "reference"
+      },
+      {
+        "record_id": "A11",
+        "categories": [
+          "monitoring"
+        ],
+        "role": "reference",
+        "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+        "sample": "具体测量按原研究",
+        "use": "临床分层、监测或疗效终点",
+        "signal": "常规参照/终点",
+        "evidence_id": "A-A11",
+        "original_role": "reference"
+      },
+      {
+        "record_id": "A12",
+        "categories": [
+          "monitoring"
+        ],
+        "role": "reference",
+        "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+        "sample": "具体测量按原研究",
+        "use": "临床分层、监测或疗效终点",
+        "signal": "常规参照/终点",
+        "evidence_id": "A-A12",
+        "original_role": "reference"
+      },
+      {
+        "record_id": "A14",
+        "categories": [
+          "monitoring"
+        ],
+        "role": "reference",
+        "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+        "sample": "具体测量按原研究",
+        "use": "临床分层、监测或疗效终点",
+        "signal": "常规参照/终点",
+        "evidence_id": "A-A14",
+        "original_role": "reference"
+      },
+      {
+        "record_id": "A23",
+        "categories": [
+          "monitoring"
+        ],
+        "role": "reference",
+        "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+        "sample": "具体测量按原研究",
+        "use": "临床分层、监测或疗效终点",
+        "signal": "常规参照/终点",
+        "evidence_id": "A-A23",
+        "original_role": "reference"
+      },
+      {
+        "record_id": "A26",
+        "categories": [
+          "monitoring"
+        ],
+        "role": "reference",
+        "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+        "sample": "具体测量按原研究",
+        "use": "临床分层、监测或疗效终点",
+        "signal": "常规参照/终点",
+        "evidence_id": "A-A26",
+        "original_role": "reference"
+      }
+    ],
+    "agendas": [],
+    "matches": [],
+    "notes": "在“含常规参照”范围中显示，计数不表示新型标志物发现数量。",
+    "categories": [
+      "monitoring",
+      "other",
+      "stratification"
+    ],
+    "research_ids": [],
+    "record_ids": [
+      "P-R02",
+      "P-R06",
+      "P-R08",
+      "P-R14",
+      "P-R15",
+      "A-A03",
+      "A-A04",
+      "A-A07",
+      "A-A08",
+      "A-A09",
+      "A-A10",
+      "A-A11",
+      "A-A12",
+      "A-A14",
+      "A-A23",
+      "A-A26"
+    ],
+    "field_ids": [
+      "H07",
+      "H11",
+      "H12",
+      "H30",
+      "H34",
+      "H37"
+    ],
+    "study_groups": [],
+    "study_count": 0,
+    "agenda_count": 0,
+    "stage": "REF",
+    "stage_label": "常规参照/结局",
+    "priority": "参照用途",
+    "priority_reason": "用于解释新模型是否增加已有临床指标之外的信息。",
+    "gap": "多次作为结局出现，不累计为新Biomarker发现热度。",
+    "status": "常规参照",
+    "heat_eligible": false,
+    "heat_basis": "按会议、研究和转化分别列证据；无综合分和跨资料池排名。",
+    "reference": true,
+    "sample_notes": [],
+    "heat_gaps": [
+      "核对样本/队列与团队独立性。",
+      "补可比会议/时间窗口，才能判断上升或持续。"
+    ],
+    "review": {
+      "conferences": [
+        {
+          "source": "CDS2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": 0,
+          "share": 0.0,
+          "denominator": 80,
+          "total_reviewed": 606,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "完整606条学术题名，按本轮规则复核",
+          "reading": "计划题名"
+        },
+        {
+          "source": "ADA2026",
+          "record_ids": [
+            "A-A03",
+            "A-A04",
+            "A-A07",
+            "A-A08",
+            "A-A09",
+            "A-A10",
+            "A-A11",
+            "A-A12",
+            "A-A14",
+            "A-A23",
+            "A-A26"
+          ],
+          "count": 11,
+          "focus_count": null,
+          "share": null,
+          "denominator": null,
+          "total_reviewed": null,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [
+            "A-A03",
+            "A-A04",
+            "A-A07",
+            "A-A08",
+            "A-A09",
+            "A-A10",
+            "A-A11",
+            "A-A12",
+            "A-A14",
+            "A-A23",
+            "A-A26"
+          ],
+          "coverage": "27条定向关联记录；不是全会",
+          "reading": "会议摘要/方法及关联论文更新"
+        }
+      ],
+      "study_count": 0,
+      "study_groups": [],
+      "teams": [],
+      "confirmed_independent_studies": null,
+      "confirmed_independent_teams": null,
+      "independence_note": "跨研究队列/样本与团队独立性尚未完成核查；不以不同作者字符串或单位数替代。",
+      "recent_count": 0,
+      "recent_ids": [],
+      "latest_known_date": null,
+      "unknown_date_ids": [],
+      "validation_ids": [],
+      "validation_study_count": 0,
+      "paper_ids": [],
+      "population_ids": [],
+      "cases": [
+        {
+          "id": "hba1c-P-R02",
+          "evidence_id": "P-R02",
+          "role": "reference",
+          "sample": "具体测量按原研究",
+          "use": "临床分层、监测或疗效终点",
+          "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+          "review_note": "",
+          "signal": "常规参照/终点",
+          "source": "Diabetes Care",
+          "study_group": "R02",
+          "has_results": true
+        },
+        {
+          "id": "hba1c-P-R06",
+          "evidence_id": "P-R06",
+          "role": "reference",
+          "sample": "具体测量按原研究",
+          "use": "临床分层、监测或疗效终点",
+          "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+          "review_note": "",
+          "signal": "常规参照/终点",
+          "source": "Lancet Diabetes Endocrinol",
+          "study_group": "R06",
+          "has_results": true
+        },
+        {
+          "id": "hba1c-P-R08",
+          "evidence_id": "P-R08",
+          "role": "reference",
+          "sample": "具体测量按原研究",
+          "use": "临床分层、监测或疗效终点",
+          "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+          "review_note": "",
+          "signal": "常规参照/终点",
+          "source": "Lancet Diabetes Endocrinol",
+          "study_group": "R08",
+          "has_results": true
+        },
+        {
+          "id": "hba1c-P-R14",
+          "evidence_id": "P-R14",
+          "role": "reference",
+          "sample": "具体测量按原研究",
+          "use": "临床分层、监测或疗效终点",
+          "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+          "review_note": "",
+          "signal": "常规参照/终点",
+          "source": "Diabetologia",
+          "study_group": "R14",
+          "has_results": true
+        },
+        {
+          "id": "hba1c-P-R15",
+          "evidence_id": "P-R15",
+          "role": "reference",
+          "sample": "具体测量按原研究",
+          "use": "临床分层、监测或疗效终点",
+          "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+          "review_note": "",
+          "signal": "常规参照/终点",
+          "source": "Diabetologia",
+          "study_group": "R15",
+          "has_results": true
+        },
+        {
+          "id": "hba1c-A-A03",
+          "evidence_id": "A-A03",
+          "role": "reference",
+          "sample": "具体测量按原研究",
+          "use": "临床分层、监测或疗效终点",
+          "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+          "review_note": "",
+          "signal": "常规参照/终点",
+          "source": "ADA2026",
+          "study_group": "A03",
+          "has_results": true
+        },
+        {
+          "id": "hba1c-A-A04",
+          "evidence_id": "A-A04",
+          "role": "reference",
+          "sample": "具体测量按原研究",
+          "use": "临床分层、监测或疗效终点",
+          "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+          "review_note": "",
+          "signal": "常规参照/终点",
+          "source": "ADA2026",
+          "study_group": "A04",
+          "has_results": true
+        },
+        {
+          "id": "hba1c-A-A07",
+          "evidence_id": "A-A07",
+          "role": "reference",
+          "sample": "具体测量按原研究",
+          "use": "临床分层、监测或疗效终点",
+          "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+          "review_note": "",
+          "signal": "常规参照/终点",
+          "source": "ADA2026",
+          "study_group": "A07",
+          "has_results": true
+        },
+        {
+          "id": "hba1c-A-A08",
+          "evidence_id": "A-A08",
+          "role": "reference",
+          "sample": "具体测量按原研究",
+          "use": "临床分层、监测或疗效终点",
+          "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+          "review_note": "",
+          "signal": "常规参照/终点",
+          "source": "ADA2026",
+          "study_group": "A08",
+          "has_results": true
+        },
+        {
+          "id": "hba1c-A-A09",
+          "evidence_id": "A-A09",
+          "role": "reference",
+          "sample": "具体测量按原研究",
+          "use": "临床分层、监测或疗效终点",
+          "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+          "review_note": "",
+          "signal": "常规参照/终点",
+          "source": "ADA2026",
+          "study_group": "A09",
+          "has_results": true
+        },
+        {
+          "id": "hba1c-A-A10",
+          "evidence_id": "A-A10",
+          "role": "reference",
+          "sample": "具体测量按原研究",
+          "use": "临床分层、监测或疗效终点",
+          "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+          "review_note": "",
+          "signal": "常规参照/终点",
+          "source": "ADA2026",
+          "study_group": "A10",
+          "has_results": true
+        },
+        {
+          "id": "hba1c-A-A11",
+          "evidence_id": "A-A11",
+          "role": "reference",
+          "sample": "具体测量按原研究",
+          "use": "临床分层、监测或疗效终点",
+          "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+          "review_note": "",
+          "signal": "常规参照/终点",
+          "source": "ADA2026",
+          "study_group": "A11",
+          "has_results": true
+        },
+        {
+          "id": "hba1c-A-A12",
+          "evidence_id": "A-A12",
+          "role": "reference",
+          "sample": "具体测量按原研究",
+          "use": "临床分层、监测或疗效终点",
+          "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+          "review_note": "",
+          "signal": "常规参照/终点",
+          "source": "ADA2026",
+          "study_group": "A12",
+          "has_results": true
+        },
+        {
+          "id": "hba1c-A-A14",
+          "evidence_id": "A-A14",
+          "role": "reference",
+          "sample": "具体测量按原研究",
+          "use": "临床分层、监测或疗效终点",
+          "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+          "review_note": "",
+          "signal": "常规参照/终点",
+          "source": "ADA2026",
+          "study_group": "A14",
+          "has_results": true
+        },
+        {
+          "id": "hba1c-A-A23",
+          "evidence_id": "A-A23",
+          "role": "reference",
+          "sample": "具体测量按原研究",
+          "use": "临床分层、监测或疗效终点",
+          "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+          "review_note": "",
+          "signal": "常规参照/终点",
+          "source": "ADA2026",
+          "study_group": "A23",
+          "has_results": true
+        },
+        {
+          "id": "hba1c-A-A26",
+          "evidence_id": "A-A26",
+          "role": "reference",
+          "sample": "具体测量按原研究",
+          "use": "临床分层、监测或疗效终点",
+          "basis": "现有设计或结果明确记载HbA1c；在本研究中主要作为临床表型或疗效终点。",
+          "review_note": "",
+          "signal": "常规参照/终点",
+          "source": "ADA2026",
+          "study_group": "A26",
+          "has_results": true
+        }
+      ],
+      "attention_checks": [
+        {
+          "label": "候选线索",
+          "status": "参照用途",
+          "basis": "有明确指标/类别及对应原始记录，按用途与输入分别保留。"
+        },
+        {
+          "label": "会议集中讨论",
+          "status": "待同用途复核",
+          "basis": "类别下不同检测、筛查、组合不合并为同一具体指标热点。"
+        },
+        {
+          "label": "多团队跟进",
+          "status": "待核",
+          "basis": "研究组去重与外部验证记录，不直接证明独立团队复现。"
+        },
+        {
+          "label": "持续关注",
+          "status": "待可比窗口",
+          "basis": "当前无相同覆盖规则的连续会议/时间窗口。"
+        }
+      ],
+      "negative": false,
+      "translation": {
+        "priority": "参照用途",
+        "reason": "用于解释新模型是否增加已有临床指标之外的信息。",
+        "stage": "REF",
+        "stage_label": "常规参照/结局",
+        "gap": "多次作为结局出现，不累计为新Biomarker发现热度。",
+        "checks": [
+          {
+            "name": "人体证据",
+            "status": "常规参照"
+          },
+          {
+            "name": "独立/外部验证",
+            "status": "未核实，待补"
+          },
+          {
+            "name": "临床增益",
+            "status": "相对现行临床模型/路径的增益待补"
+          },
+          {
+            "name": "检测与交付适配",
+            "status": "对应检测流程待技术确认"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "tir",
+    "label": "TIR",
+    "kind": "常规指标",
+    "summary": "CGM/AID研究中的目标范围内时间。",
+    "bindings": [
+      {
+        "record_id": "A03",
+        "categories": [
+          "monitoring"
+        ],
+        "role": "reference",
+        "basis": "研究结果以目标血糖范围内时间（TIR）评价血糖管理。",
+        "sample": "CGM资料",
+        "use": "血糖管理与干预评价",
+        "signal": "常规参照/终点",
+        "evidence_id": "A-A03",
+        "original_role": "reference"
+      },
+      {
+        "record_id": "A05",
+        "categories": [
+          "monitoring"
+        ],
+        "role": "reference",
+        "basis": "研究结果以目标血糖范围内时间（TIR）评价血糖管理。",
+        "sample": "CGM资料",
+        "use": "血糖管理与干预评价",
+        "signal": "常规参照/终点",
+        "evidence_id": "A-A05",
+        "original_role": "reference"
+      },
+      {
+        "record_id": "A18",
+        "categories": [
+          "monitoring"
+        ],
+        "role": "reference",
+        "basis": "研究结果以目标血糖范围内时间（TIR）评价血糖管理。",
+        "sample": "CGM资料",
+        "use": "血糖管理与干预评价",
+        "signal": "常规参照/终点",
+        "evidence_id": "A-A18",
+        "original_role": "reference"
+      }
+    ],
+    "agendas": [],
+    "matches": [],
+    "notes": "A05/A18可能存在主研究或亚组关系，尚未确认；去重研究记录数按已核版本合并，不代表独立队列数。",
+    "categories": [
+      "monitoring"
+    ],
+    "research_ids": [],
+    "record_ids": [
+      "A-A03",
+      "A-A05",
+      "A-A18"
+    ],
+    "field_ids": [
+      "H07",
+      "H08"
+    ],
+    "study_groups": [],
+    "study_count": 0,
+    "agenda_count": 0,
+    "stage": "REF",
+    "stage_label": "常规参照/结局",
+    "priority": "参照用途",
+    "priority_reason": "用于解释监测和干预的临床结局。",
+    "gap": "多次作为结局出现，不累计为新Biomarker发现热度；A05/A18同源待核。",
+    "status": "常规参照",
+    "heat_eligible": false,
+    "heat_basis": "按会议、研究和转化分别列证据；无综合分和跨资料池排名。",
+    "reference": true,
+    "sample_notes": [],
+    "heat_gaps": [
+      "核对样本/队列与团队独立性。",
+      "补可比会议/时间窗口，才能判断上升或持续。"
+    ],
+    "review": {
+      "conferences": [
+        {
+          "source": "CDS2026",
+          "record_ids": [],
+          "count": 0,
+          "focus_count": 0,
+          "share": 0.0,
+          "denominator": 80,
+          "total_reviewed": 606,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [],
+          "coverage": "完整606条学术题名，按本轮规则复核",
+          "reading": "计划题名"
+        },
+        {
+          "source": "ADA2026",
+          "record_ids": [
+            "A-A03",
+            "A-A05",
+            "A-A18"
+          ],
+          "count": 3,
+          "focus_count": null,
+          "share": null,
+          "denominator": null,
+          "total_reviewed": null,
+          "leader_ids": [],
+          "people_ids": [],
+          "unknown_role_ids": [],
+          "unresolved_team_record_ids": [
+            "A-A03",
+            "A-A05",
+            "A-A18"
+          ],
+          "coverage": "27条定向关联记录；不是全会",
+          "reading": "会议摘要/方法及关联论文更新"
+        }
+      ],
+      "study_count": 0,
+      "study_groups": [],
+      "teams": [],
+      "confirmed_independent_studies": null,
+      "confirmed_independent_teams": null,
+      "independence_note": "跨研究队列/样本与团队独立性尚未完成核查；不以不同作者字符串或单位数替代。",
+      "recent_count": 0,
+      "recent_ids": [],
+      "latest_known_date": null,
+      "unknown_date_ids": [],
+      "validation_ids": [],
+      "validation_study_count": 0,
+      "paper_ids": [],
+      "population_ids": [],
+      "cases": [
+        {
+          "id": "tir-A-A03",
+          "evidence_id": "A-A03",
+          "role": "reference",
+          "sample": "CGM资料",
+          "use": "血糖管理与干预评价",
+          "basis": "研究结果以目标血糖范围内时间（TIR）评价血糖管理。",
+          "review_note": "",
+          "signal": "常规参照/终点",
+          "source": "ADA2026",
+          "study_group": "A03",
+          "has_results": true
+        },
+        {
+          "id": "tir-A-A05",
+          "evidence_id": "A-A05",
+          "role": "reference",
+          "sample": "CGM资料",
+          "use": "血糖管理与干预评价",
+          "basis": "研究结果以目标血糖范围内时间（TIR）评价血糖管理。",
+          "review_note": "",
+          "signal": "常规参照/终点",
+          "source": "ADA2026",
+          "study_group": "AID-待核同源",
+          "has_results": true
+        },
+        {
+          "id": "tir-A-A18",
+          "evidence_id": "A-A18",
+          "role": "reference",
+          "sample": "CGM资料",
+          "use": "血糖管理与干预评价",
+          "basis": "研究结果以目标血糖范围内时间（TIR）评价血糖管理。",
+          "review_note": "",
+          "signal": "常规参照/终点",
+          "source": "ADA2026",
+          "study_group": null,
+          "has_results": true
+        }
+      ],
+      "attention_checks": [
+        {
+          "label": "候选线索",
+          "status": "参照用途",
+          "basis": "有明确指标/类别及对应原始记录，按用途与输入分别保留。"
+        },
+        {
+          "label": "会议集中讨论",
+          "status": "待同用途复核",
+          "basis": "类别下不同检测、筛查、组合不合并为同一具体指标热点。"
+        },
+        {
+          "label": "多团队跟进",
+          "status": "待核",
+          "basis": "研究组去重与外部验证记录，不直接证明独立团队复现。"
+        },
+        {
+          "label": "持续关注",
+          "status": "待可比窗口",
+          "basis": "当前无相同覆盖规则的连续会议/时间窗口。"
+        }
+      ],
+      "negative": false,
+      "translation": {
+        "priority": "参照用途",
+        "reason": "用于解释监测和干预的临床结局。",
+        "stage": "REF",
+        "stage_label": "常规参照/结局",
+        "gap": "多次作为结局出现，不累计为新Biomarker发现热度；A05/A18同源待核。",
+        "checks": [
+          {
+            "name": "人体证据",
+            "status": "常规参照"
+          },
+          {
+            "name": "独立/外部验证",
+            "status": "未核实，待补"
+          },
+          {
+            "name": "临床增益",
+            "status": "相对现行临床模型/路径的增益待补"
+          },
+          {
+            "name": "检测与交付适配",
+            "status": "对应检测流程待技术确认"
+          }
+        ]
+      }
+    }
+  }
+]

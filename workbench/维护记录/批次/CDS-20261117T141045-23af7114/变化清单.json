@@ -1,0 +1,18 @@
+{
+  "version": "cds-maintenance-1",
+  "conference_id": "CDS2026",
+  "baseline_sha256": "4f16bd5b161785ec9be493bc0c0503b8b5a60064f9a8342078381e11378d1bef",
+  "source_observed_on": "2026-11-16",
+  "summary": {
+    "sessions": 148,
+    "agenda_items": 797,
+    "changed_fields": 0,
+    "changed_records": 0,
+    "blocked": 0
+  },
+  "changes": [],
+  "blocked": [],
+  "updates": [],
+  "can_confirm": true,
+  "scope": "只更新现有日程/场次的日期、时间、会场；不改讲者、议题分类、科研结论和评分。"
+}

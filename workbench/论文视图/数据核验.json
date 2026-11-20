@@ -1,0 +1,22 @@
+{
+  "result": "passed",
+  "old_tables_preserved": 40,
+  "old_conference_view_files_preserved": 31,
+  "old_source_files_verified": 448,
+  "papers": 618,
+  "pubmed_records": 587,
+  "core_counted": 162,
+  "broad_discovery_ids": 16034,
+  "checks": [
+    "数据库完整性和外键",
+    "旧40表逐行指纹与原会议页面、原始文件保留",
+    "原始PubMed XML全PMID集合与入库相等",
+    "CSV/JSON/数据库主键一致，无重复计数",
+    "图表仅计核心池，类型/范围/日期按规则筛选",
+    "8条作者参与不升级为负责人；跨语言待核身份保持",
+    "宁光参与论文已核8/14首发，排除窗口外",
+    "广检索编号与已读元数据分开"
+  ],
+  "published": false,
+  "biomarker_changes": false
+}

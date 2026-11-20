@@ -1,0 +1,24 @@
+{
+  "as_of": "2026-11-16",
+  "calculation_checks": 52,
+  "browser": {
+    "as_of": "2026-11-16",
+    "desktop_tables": true,
+    "weight_switching": true,
+    "details_expand": true,
+    "pending_records": 13,
+    "mobile_no_overflow": true,
+    "standalone_file": true,
+    "errors": []
+  },
+  "expert_review": "pending",
+  "formal_website_changed": false,
+  "github_published": false,
+  "new_schedule_created": false,
+  "reading_pages_fix": {
+    "date": "2026-11-16",
+    "cause": "Safari直接打开UTF-8 Markdown时出现编码误判及原文展示；源文件无损",
+    "report": "说明网页验证.json",
+    "preserved": "原Markdown及评分数据保留；正式站未改"
+  }
+}

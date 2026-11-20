@@ -1,0 +1,18 @@
+{
+  "result": "passed",
+  "checks": [
+    "PI列表/详情双栏、AI推荐默认4条，未评级不补分，浏览不写任务",
+    "仅投影14人已有评级，其中5人完整；等级/最低分/四维依据有效，79/B不充当学术级别",
+    "市场收藏及取消状态两处一致，刷新保留，收藏不自动分配",
+    "PI库可直接分配给销售，绑定人物来源ID，已有任务不重复分配",
+    "销售能看PI详情/评分并独立收藏；收藏不丢未保存反馈，保存反馈不丢收藏",
+    "市场/销售A/销售B收藏分开，取消收藏保留任务与沟通历史",
+    "390px人物浏览与销售PI详情无横向溢出"
+  ],
+  "errors": [],
+  "rating_records": 14,
+  "complete_provisional_ratings": 5,
+  "new_collection": false,
+  "database_modified": false,
+  "published": false
+}

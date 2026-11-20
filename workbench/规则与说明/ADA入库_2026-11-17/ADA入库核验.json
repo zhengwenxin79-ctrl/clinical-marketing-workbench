@@ -1,0 +1,55 @@
+{
+  "result": "passed",
+  "checked_on": "2026-11-17",
+  "database_sha256": "f1fd660c1349ac4701a78db189ea097c5a1ffd3952297220ea555ee423185c22",
+  "summary": {
+    "programme_physical_pages": 385,
+    "sessions": 242,
+    "raw_agenda_items": 2859,
+    "academic_occurrences": 2621,
+    "distinct_reports": 2539,
+    "duplicate_occurrences": 82,
+    "classified_reports": 2049,
+    "unclassified_reports": 490,
+    "nonacademic_agenda_items": 238,
+    "coded_reports": 2102,
+    "topics": 56,
+    "formats": {
+      "大会报告": 10,
+      "论文发言": 338,
+      "专题报告": 427,
+      "海报报告": 1340,
+      "晚期突破海报": 424
+    },
+    "classification_methods": {
+      "unclassified": 490,
+      "title_rule": 1907,
+      "session_context_rule": 140,
+      "manual_title_review": 2
+    },
+    "page_statuses": {
+      "cover_or_other": 2,
+      "numbered_session": 242,
+      "unparsed_satellite_or_metadata": 12,
+      "programme_continuation": 129
+    }
+  },
+  "speaker_tiers": {
+    "national": 2,
+    "undetermined": 2094
+  },
+  "checks": [
+    "版本5完整性和外键通过；入库前31表全部旧记录保留，维护日志未改",
+    "2859条结构化原题逐条回读；原程序2102个摘要编号全部捕获；2621次展示按同号去重为2539报告",
+    "385页逐页覆盖记录；12页卫星/活动留缺口；56议题2049初分+490待归类=2539",
+    "56议题独立回算数量、报告类型、全部出现专题、三级+待定讲者去重；多展示/多角色未重复加人",
+    "2096条程序姓名身份：2条程序角色暂定、2094待定；角色摘录可回读且不计为完整简介",
+    "全部/口头专题大会/海报三种范围独立核算：2049/677/1372条初分，分母及去重匹配",
+    "27精选记录与14论文摘要独立保存；CONNECT程序讲者Tom Martens与论文第一作者分开；未将论文结果变为程序结果",
+    "ADA原件及CDS436份原件/旧研究台未改；CDS58议题579报告保留"
+  ],
+  "new_collection": false,
+  "published": false,
+  "scoring_enabled": false,
+  "old_records_preserved": true
+}

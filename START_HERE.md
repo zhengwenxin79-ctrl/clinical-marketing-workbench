@@ -1,0 +1,33 @@
+# Antigravity 开发交接入口
+
+版本日期：2026-11-19。请先完整解压，再把整个文件夹作为开发工作区打开。当前开发入口是workbench，旧版资料只用于参考。
+
+## 第一次接手
+
+1. 阅读本文件、AGENTS.md和handoff/00_当前状态.md。
+2. 发送handoff/prompts/首次接手.txt给Antigravity，首次只执行P00。
+3. 在项目根运行 `python3 tools/verify_package.py --check-manifest`；Windows用 `py -3 -X utf8 tools/verify_package.py --check-manifest`。
+4. 打开 `打开工作台.html`。市场入口为workbench/领域工作台/index.html#market，销售入口为同文件#sales。
+5. 浏览开发计划后，每次只推进一个阶段，完成后更新handoff/STATE.json和交付记录。
+
+## 先记住这几个位置
+
+| 位置 | 用途 |
+| --- | --- |
+| workbench | 当前源码、SQLite、导出页面、配置、原始材料和规则 |
+| handoff | 当前事实、架构、任务卡、状态、接手提示词和验收记录 |
+| tools | 可迁移的离线核验、隔离构建、预览和浏览器验收工具 |
+| docs | 给mentor看的六页Word框架说明，含六张页面截图 |
+| collector / skills | WorkBuddy既有八入口采集工作区与Skill、四维评级Skill |
+| reference | 公司能力、整体方案、原讨论及旧页面参考，不作当前入口 |
+| 糖尿病热点知识地图 | 原PI评级与来源材料，保留相对目录供当前页面回查 |
+
+## 当前限制
+
+网页可直接打开；常规生成和只读核验使用Python 3.11+标准库。浏览器验收额外需要Node 20+、Playwright和独立Chromium。此包不含node_modules、浏览器、账户凭证或定时任务。
+
+分配、收藏、客户沟通和推荐有用性反馈现在保存在原浏览器localStorage，**不会随项目文件自动迁移**。如原浏览器已有实际填写，请在原页面的市场分配记录或销售我的推荐中点击“导出本地记录”，把JSON另存后交给下一阶段迁移。包中没有读取用户浏览器或伪造这些实际记录。迁移后仍需先验证导入功能，目前原型只支持导出。
+
+真实登录、权限隔离、共享业务保存和实时AI模型尚未接入。WorkBuddy联网补PI评级已由用户暂缓；不要因接手项目而自动启动。先验收框架，不采集、不调度、不发布。
+
+详细开发建议见handoff/02_分阶段开发计划.md；已实现的事实以00_当前状态.md和本次baseline为准，历史文档的四/五入口、旧表数或旧评分只作为历史记录。

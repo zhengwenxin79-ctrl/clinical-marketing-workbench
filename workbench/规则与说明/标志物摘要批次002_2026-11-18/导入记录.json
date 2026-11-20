@@ -1,0 +1,13 @@
+{
+  "result": "imported",
+  "version": "BM:LOCAL-ABSTRACT-AUDIT:20261118:v2",
+  "papers": 10,
+  "entities_added": 20,
+  "contexts_added": 21,
+  "evidence_added": 21,
+  "audit_records_added": 73,
+  "source_materials_added": 5,
+  "new_collection": false,
+  "published": false,
+  "source_batch": "P03-EXISTING-ABSTRACTS-002"
+}

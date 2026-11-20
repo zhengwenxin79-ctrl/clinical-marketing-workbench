@@ -1,0 +1,19 @@
+{
+  "result": "passed",
+  "old_tables_preserved": 65,
+  "old_rows_preserved": 52844,
+  "old_review_versions_preserved": true,
+  "papers_processed": 10,
+  "biomarker_result_evidence": 21,
+  "raw_excerpt_checks": 21,
+  "components": 4,
+  "source_materials_verified": 453,
+  "reference_entities": 7,
+  "independent_external_validation_not_overstated": true,
+  "idempotent_import": true,
+  "core_papers": 618,
+  "ranked_papers": 160,
+  "issues": 51,
+  "new_collection": false,
+  "published": false
+}

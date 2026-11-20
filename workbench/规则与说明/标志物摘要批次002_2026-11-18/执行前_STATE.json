@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "updated_on": "2026-11-18",
+  "current_stage": "P03",
+  "current_batch": "P03-LOCAL-SOURCE-AUDIT-001",
+  "batch_status": "completed",
+  "next_batch": "P03-EXISTING-ABSTRACTS-002",
+  "next_queue": "下一批_已有摘要10篇.json",
+  "progress": {
+    "P02": "已接收结构；原迁移源码/Windows验收记录未随包提供",
+    "P03": "首批30个来源题名对照完成；结果提取未完成",
+    "P04": "11项能力候选已按底表复核，场景/独立研究仍待核",
+    "P05": "本地复核页面可用；不认定全领域热度"
+  },
+  "completed_evidence_ids": [
+    "EV_REP_S_029",
+    "EV_REP_S_198",
+    "EV_REP_OR_087",
+    "EV_REP_OR_301",
+    "EV_REP_OR_313",
+    "EV_REP_OR_329",
+    "EV_REP_OR_333",
+    "EV_REP_OR_002",
+    "EV_REP_OR_006",
+    "EV_REP_OR_007",
+    "EV_REP_OR_024",
+    "EV_REP_OR_053",
+    "EV_REP_OR_056",
+    "EV_REP_OR_089",
+    "EV_REP_OR_092",
+    "EV_REP_OR_093",
+    "EV_REP_OR_096",
+    "EV_REP_OR_097",
+    "EV_REP_OR_101",
+    "EV_PAP_SOLI_D",
+    "EV_PAP_GCK_FAM",
+    "EV_PAP_MASLD_SEMA",
+    "EV_PAP_APPL1_MODY",
+    "EV_PAP_PRED_CLUST"
+  ],
+  "constraints": {
+    "new_collection": false,
+    "publish": false,
+    "schedule": false
+  }
+}

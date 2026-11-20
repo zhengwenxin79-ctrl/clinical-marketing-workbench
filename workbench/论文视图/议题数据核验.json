@@ -1,0 +1,15 @@
+{
+  "result": "passed",
+  "old_tables_preserved": 51,
+  "reviewed_core": 162,
+  "ranked": 160,
+  "issues": 51,
+  "reassigned_board_count": 53,
+  "background": 2,
+  "existing_supplement": 1,
+  "highlights_linked": 7,
+  "old_meeting_files_preserved": 28,
+  "source_files_verified": 448,
+  "new_collection": false,
+  "published": false
+}

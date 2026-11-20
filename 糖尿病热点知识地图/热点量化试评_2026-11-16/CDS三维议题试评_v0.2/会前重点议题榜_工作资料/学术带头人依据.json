@@ -1,0 +1,3391 @@
+[
+  {
+    "id": "E002",
+    "key": "徐向进|中国人民解放军联勤保障部队第九〇〇医院",
+    "name": "徐向进",
+    "institution": "中国人民解放军联勤保障部队第九〇〇医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=mLZej",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌科首席专家",
+      "全军内分泌专业委员会副主委"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_002",
+      "S_195"
+    ],
+    "topic_ids": [
+      "H06"
+    ],
+    "kind_counts": {
+      "专题报告": 2
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E003",
+    "key": "温俊平|福州大学附属福建省立医院",
+    "name": "温俊平",
+    "institution": "福州大学附属福建省立医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=D0OZk",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌科主任",
+      "福建省医学会内分泌学分会主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_003"
+    ],
+    "topic_ids": [],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E004",
+    "key": "吴佩文|福建医科大学附属第一医院",
+    "name": "吴佩文",
+    "institution": "福建医科大学附属第一医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=GGOA9",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌科主任",
+      "福建省医学会内分泌学分会副主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_004"
+    ],
+    "topic_ids": [],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E006",
+    "key": "黄敬泽|福建医科大学附属协和医院",
+    "name": "黄敬泽",
+    "institution": "福建医科大学附属协和医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=VRDJj",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌代谢科主任",
+      "福建省医学会糖尿病学分会主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_006"
+    ],
+    "topic_ids": [],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E007",
+    "key": "刘长勤|厦门大学附属第一医院",
+    "name": "刘长勤",
+    "institution": "厦门大学附属第一医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=2PvxD",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "福建省医学会内分泌学分会副主委",
+      "市医学会糖尿病学分会主委"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_007"
+    ],
+    "topic_ids": [],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E009",
+    "key": "秦映芬|广西医科大学第一附属医院",
+    "name": "秦映芬",
+    "institution": "广西医科大学第一附属医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=WnDzb",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌科主任",
+      "广西糖尿病分会第六届主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_009"
+    ],
+    "topic_ids": [],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E010",
+    "key": "赵艳艳|郑州大学第一附属医院",
+    "name": "赵艳艳",
+    "institution": "郑州大学第一附属医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=nzYZ3",
+    "profile_status": "read",
+    "profile_origin": "日程原附官方讲者页连接重试成功",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌代谢病科主任",
+      "糖尿病并发症早期筛查及精准诊疗工程研究中心主任"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_010",
+      "OR_173"
+    ],
+    "topic_ids": [
+      "H18"
+    ],
+    "kind_counts": {
+      "专题报告": 1,
+      "论文发言": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E011",
+    "key": "陈频|中国人民解放军联勤保障部队第九〇〇医院",
+    "name": "陈频",
+    "institution": "中国人民解放军联勤保障部队第九〇〇医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=1Rvp3",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌科主任",
+      "福建省营养学会肥胖防控专业委员会主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_011"
+    ],
+    "topic_ids": [],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E013",
+    "key": "刘礼斌|福建医科大学附属协和医院",
+    "name": "刘礼斌",
+    "institution": "福建医科大学附属协和医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=Z8Dqa",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌研究所所长"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_013",
+      "S_223"
+    ],
+    "topic_ids": [
+      "H44"
+    ],
+    "kind_counts": {
+      "专题报告": 2
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E014",
+    "key": "林明珠|厦门大学附属第一医院",
+    "name": "林明珠",
+    "institution": "厦门大学附属第一医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=YGDRY",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "糖尿病研究所副所长",
+      "福建省医师协会内分泌代谢科医师分会副主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_014"
+    ],
+    "topic_ids": [],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E015",
+    "key": "关美萍|南方医科大学南方医院",
+    "name": "关美萍",
+    "institution": "南方医科大学南方医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=50Wlv",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌代谢科主任",
+      "省医师协会内分泌科医师分会副主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_015",
+      "S_124"
+    ],
+    "topic_ids": [
+      "H18"
+    ],
+    "kind_counts": {
+      "专题报告": 2
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E017",
+    "key": "贾伟平|上海交通大学医学院附属第六人民医院",
+    "name": "贾伟平",
+    "institution": "上海交通大学医学院附属第六人民医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=qDJA8",
+    "profile_status": "read",
+    "profile_origin": "日程原附官方讲者页连接重试成功",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "国家基层糖尿病防治管理办公室主任"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "PL_01"
+    ],
+    "topic_ids": [
+      "H44"
+    ],
+    "kind_counts": {
+      "大会报告": 1
+    },
+    "is_plenary": true
+  },
+  {
+    "id": "E018",
+    "key": "宁光|上海交通大学医学院附属瑞金医院",
+    "name": "宁光",
+    "institution": "上海交通大学医学院附属瑞金医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=MZJwR",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "国家代谢性疾病临床医学研究中心主任"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "PL_02"
+    ],
+    "topic_ids": [
+      "H09"
+    ],
+    "kind_counts": {
+      "大会报告": 1
+    },
+    "is_plenary": true
+  },
+  {
+    "id": "E019",
+    "key": "郭立新|北京医院国家老年医学中心",
+    "name": "郭立新",
+    "institution": "北京医院 国家老年医学中心",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=1RvzM",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "中华医学会糖尿病学分会主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "PL_03"
+    ],
+    "topic_ids": [
+      "H39"
+    ],
+    "kind_counts": {
+      "大会报告": 1
+    },
+    "is_plenary": true
+  },
+  {
+    "id": "E020",
+    "key": "王卫庆|上海交通大学医学院附属瑞金医院",
+    "name": "王卫庆",
+    "institution": "上海交通大学医学院附属瑞金医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=E6E6G",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "国家代谢性疾病临床医学研究中心主任"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "PL_04"
+    ],
+    "topic_ids": [],
+    "kind_counts": {
+      "大会报告": 1
+    },
+    "is_plenary": true
+  },
+  {
+    "id": "E022",
+    "key": "洪天配|北京大学第三医院",
+    "name": "洪天配",
+    "institution": "北京大学第三医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=ejDAy",
+    "profile_status": "read",
+    "profile_origin": "日程原附官方讲者页连接重试成功",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "中国医师协会内分泌代谢科医师分会候任主任委员",
+      "中华医学会内分泌学分会（第9/10/11届）副主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "PL_06",
+      "S_082",
+      "S_206",
+      "S_213"
+    ],
+    "topic_ids": [
+      "H05",
+      "H11",
+      "H24"
+    ],
+    "kind_counts": {
+      "大会报告": 1,
+      "专题报告": 3
+    },
+    "is_plenary": true
+  },
+  {
+    "id": "E023",
+    "key": "陈莉明|天津医科大学朱宪彝纪念医院",
+    "name": "陈莉明",
+    "institution": "天津医科大学朱宪彝纪念医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=ejDbj",
+    "profile_status": "read",
+    "profile_origin": "日程原附官方讲者页连接重试成功",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "中华糖尿病学会候任主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "PL_07",
+      "S_081",
+      "S_085",
+      "S_123",
+      "S_156"
+    ],
+    "topic_ids": [
+      "H11",
+      "H25",
+      "H17"
+    ],
+    "kind_counts": {
+      "大会报告": 1,
+      "专题报告": 4
+    },
+    "is_plenary": true
+  },
+  {
+    "id": "E024",
+    "key": "向光大|中国人民解放军中部战区总医院",
+    "name": "向光大",
+    "institution": "中国人民解放军中部战区总医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=YGD7z",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "中华医学会糖尿病学分会副主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_017"
+    ],
+    "topic_ids": [
+      "H13"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E025",
+    "key": "肖新华|中国医学科学院北京协和医院",
+    "name": "肖新华",
+    "institution": "中国医学科学院北京协和医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=J0OZ4",
+    "profile_status": "read",
+    "profile_origin": "复用本轮已存官方简介",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "中华医学会糖尿病学分会副主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_018",
+      "S_141",
+      "S_147"
+    ],
+    "topic_ids": [
+      "H27",
+      "H42",
+      "H01"
+    ],
+    "kind_counts": {
+      "专题报告": 3
+    },
+    "is_plenary": false,
+    "same_name_note": "存在同名/不同单位条目，各条独立保存，未自动合并任职。"
+  },
+  {
+    "id": "E030",
+    "key": "郑雪瑛|中国科学技术大学附属第一医院（安徽省立医院）",
+    "name": "郑雪瑛",
+    "institution": "中国科学技术大学附属第一医院（安徽省立医院）",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=R1OqG",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌与代谢病研究所副所长"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_024",
+      "S_030"
+    ],
+    "topic_ids": [
+      "H03"
+    ],
+    "kind_counts": {
+      "专题报告": 2
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E031",
+    "key": "李光伟|中国医学科学院阜外医院",
+    "name": "李光伟",
+    "institution": "中国医学科学院阜外医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=66v8E",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "简介含曾任/历任：中华医学会内分泌学会副主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_025"
+    ],
+    "topic_ids": [
+      "H25"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E032",
+    "key": "纪立农|北京大学人民医院",
+    "name": "纪立农",
+    "institution": "北京大学人民医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=kX17k",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "中国心血管代谢联盟共同主席"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_026",
+      "S_212",
+      "OR_035",
+      "OR_221",
+      "OR_222"
+    ],
+    "topic_ids": [
+      "H25",
+      "H11"
+    ],
+    "kind_counts": {
+      "专题报告": 2,
+      "论文发言": 3
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E033",
+    "key": "毕艳|南京大学医学院附属鼓楼医院",
+    "name": "毕艳",
+    "institution": "南京大学医学院附属鼓楼医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=d4DmO",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌科学科带头人",
+      "内分泌专业质控中心主任"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_027",
+      "S_058",
+      "S_152",
+      "S_238"
+    ],
+    "topic_ids": [
+      "H44",
+      "H15",
+      "H27"
+    ],
+    "kind_counts": {
+      "专题报告": 4
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E034",
+    "key": "张翼飞|上海交通大学医学院附属瑞金医院",
+    "name": "张翼飞",
+    "institution": "上海交通大学医学院附属瑞金医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=wo8Od",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "上海市医学会糖尿病专科分会副主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_028",
+      "S_050"
+    ],
+    "topic_ids": [
+      "H17",
+      "H10"
+    ],
+    "kind_counts": {
+      "专题报告": 2
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E035",
+    "key": "周智广|中南大学湘雅二医院",
+    "name": "周智广",
+    "institution": "中南大学湘雅二医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=g7bev",
+    "profile_status": "read",
+    "profile_origin": "日程原附官方讲者页连接重试成功",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "国家代谢性疾病临床医学研究中心主任",
+      "中国医师协会内分泌代谢科医师分会名誉主委"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_029",
+      "S_210"
+    ],
+    "topic_ids": [
+      "H03",
+      "H11"
+    ],
+    "kind_counts": {
+      "专题报告": 2
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E038",
+    "key": "关海霞|广东省人民医院",
+    "name": "关海霞",
+    "institution": "广东省人民医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=XxDpq",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "省医学会内分泌学分会副主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_033"
+    ],
+    "topic_ids": [
+      "H03"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E039",
+    "key": "傅君芬|浙江大学医学院附属儿童医院",
+    "name": "傅君芬",
+    "institution": "浙江大学医学院附属儿童医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=0OvJm",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "牵头制定全国性专家共识指南"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_034"
+    ],
+    "topic_ids": [
+      "H03"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E041",
+    "key": "张梅|江苏省人民医院（南京医科大学第一附属医院）",
+    "name": "张梅",
+    "institution": "江苏省人民医院（南京医科大学第一附属医院）",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=L0p5b",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "省医学会糖尿病学分会副主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_036"
+    ],
+    "topic_ids": [
+      "H44"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E042",
+    "key": "刘铭|天津医科大学总医院",
+    "name": "刘铭",
+    "institution": "天津医科大学总医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=ejD2j",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "中华医学会内分泌分会副主任委员（会议简介原文跨逗号，已逐句核对）"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_037",
+      "S_109"
+    ],
+    "topic_ids": [
+      "H05",
+      "H32"
+    ],
+    "kind_counts": {
+      "专题报告": 2
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E043",
+    "key": "杨金奎|首都医科大学附属北京同仁医院",
+    "name": "杨金奎",
+    "institution": "首都医科大学附属北京同仁医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=Z8Dmo",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "国家重点研发计划首席科学家"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_038"
+    ],
+    "topic_ids": [
+      "H42"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E044",
+    "key": "陈树春|河北省人民医院",
+    "name": "陈树春",
+    "institution": "河北省人民医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=YGDaz",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌学科带头人",
+      "代谢性疾病临床研究中心主任"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_039"
+    ],
+    "topic_ids": [
+      "H16"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E045",
+    "key": "刘峰|中南大学湘雅二医院",
+    "name": "刘峰",
+    "institution": "中南大学湘雅二医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=50WDP",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "简介含曾任/历任：国家重大科学研究计划首席科学家"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_040"
+    ],
+    "topic_ids": [
+      "H16"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E046",
+    "key": "徐焱成|武汉大学中南医院",
+    "name": "徐焱成",
+    "institution": "武汉大学中南医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=zdoGL",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌科学术带头人"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_041"
+    ],
+    "topic_ids": [
+      "H16"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E049",
+    "key": "何庆|天津医科大学总医院",
+    "name": "何庆",
+    "institution": "天津医科大学总医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=AZXPV",
+    "profile_status": "read",
+    "profile_origin": "日程原附官方讲者页连接重试成功",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "天津市医学会糖尿病分会副主任委员",
+      "天津市医师协会内分泌代谢科医师分会副会长"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_044"
+    ],
+    "topic_ids": [
+      "H02"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E052",
+    "key": "王育璠|上海市第一人民医院",
+    "name": "王育璠",
+    "institution": "上海市第一人民医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=2PvWG",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "科室主任",
+      "上海市医学会内分泌分会副主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_048",
+      "S_075"
+    ],
+    "topic_ids": [
+      "H09",
+      "H07"
+    ],
+    "kind_counts": {
+      "专题报告": 2
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E053",
+    "key": "宋振强|天津医科大学朱宪彝纪念医院",
+    "name": "宋振强",
+    "institution": "天津医科大学朱宪彝纪念医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=zdoZO",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "糖尿病管理中心主任"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_045"
+    ],
+    "topic_ids": [
+      "H03"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E054",
+    "key": "杨艳|四川省医学科学院·四川省人民医院",
+    "name": "杨艳",
+    "institution": "四川省医学科学院·四川省人民医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=Pa7gv",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "四川省医学会内分泌学专委会副主任委员",
+      "四川省医师协会内分泌代谢学专委会副会长"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_049"
+    ],
+    "topic_ids": [
+      "H10"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E055",
+    "key": "张亚光|哈尔滨医科大学附属第二医院",
+    "name": "张亚光",
+    "institution": "哈尔滨医科大学附属第二医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=WnDg4",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "省老年学和老年医学学会内分泌分会副主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_051"
+    ],
+    "topic_ids": [
+      "H10"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E057",
+    "key": "周健|上海交大医学院附属第六人民医院",
+    "name": "周健",
+    "institution": "上海交大医学院附属第六人民医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=XxD2q",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌代谢科主任",
+      "糖尿病研究所副所长"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_053"
+    ],
+    "topic_ids": [
+      "H09"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E062",
+    "key": "陈宏|南方医科大学珠江医院",
+    "name": "陈宏",
+    "institution": "南方医科大学珠江医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=D0OJG",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "省医学会糖尿病学分会主任委员",
+      "内分泌代谢科主任"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_059"
+    ],
+    "topic_ids": [
+      "H13"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E063",
+    "key": "肖新华|南华大学附属第一医院",
+    "name": "肖新华",
+    "institution": "南华大学附属第一医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=GGORL",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌代谢科主任"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_060"
+    ],
+    "topic_ids": [
+      "H13"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false,
+    "same_name_note": "存在同名/不同单位条目，各条独立保存，未自动合并任职。"
+  },
+  {
+    "id": "E064",
+    "key": "章秋|安徽医科大学第一附属医院",
+    "name": "章秋",
+    "institution": "安徽医科大学第一附属医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=R1OgO",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌质控中心主任",
+      "省医学会糖尿病学分会（第3届）现任主委"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_061",
+      "S_066"
+    ],
+    "topic_ids": [
+      "H38",
+      "H37"
+    ],
+    "kind_counts": {
+      "专题报告": 2
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E068",
+    "key": "郭晓蕙|北京大学第一医院",
+    "name": "郭晓蕙",
+    "institution": "北京大学第一医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=wo8X0",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "简介含曾任/历任：中国医师协会内分泌代谢医师分会会长"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_065",
+      "S_190"
+    ],
+    "topic_ids": [
+      "H37",
+      "H07"
+    ],
+    "kind_counts": {
+      "专题报告": 2
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E069",
+    "key": "邢秋玲|天津医科大学朱宪彝纪念医院",
+    "name": "邢秋玲",
+    "institution": "天津医科大学朱宪彝纪念医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=oP53w",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "中华护理学会糖尿病专业委员会副主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_067"
+    ],
+    "topic_ids": [
+      "H37"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E070",
+    "key": "徐玉善|昆明医科大学第一附属医院",
+    "name": "徐玉善",
+    "institution": "昆明医科大学第一附属医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=wo8n0",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌一科科主任",
+      "云南省医学会糖尿病学分会主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_068"
+    ],
+    "topic_ids": [
+      "H37"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E073",
+    "key": "王海宁|北京大学第三医院",
+    "name": "王海宁",
+    "institution": "北京大学第三医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=1Rv9Z",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "北京糖尿病学会副主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_071"
+    ],
+    "topic_ids": [
+      "H30"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E075",
+    "key": "李玲|沈阳菁华医院",
+    "name": "李玲",
+    "institution": "沈阳菁华医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=ejDGy",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌科主任",
+      "省医学会第七届糖尿病学分会主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_073"
+    ],
+    "topic_ids": [
+      "H32"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E078",
+    "key": "陈丽|山东大学齐鲁医院",
+    "name": "陈丽",
+    "institution": "山东大学齐鲁医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=ejD3y",
+    "profile_status": "read",
+    "profile_origin": "日程原附官方讲者页连接重试成功",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "中华医学会糖尿病学分会第九届副主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_077",
+      "S_194"
+    ],
+    "topic_ids": [
+      "H12",
+      "H06"
+    ],
+    "kind_counts": {
+      "专题报告": 2
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E079",
+    "key": "李小英|复旦大学附属中山医院",
+    "name": "李小英",
+    "institution": "复旦大学附属中山医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=50W7D",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌科学术带头人"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_078",
+      "S_096"
+    ],
+    "topic_ids": [
+      "H12",
+      "H13"
+    ],
+    "kind_counts": {
+      "专题报告": 2
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E080",
+    "key": "姬秋和|西安国际医学中心医院",
+    "name": "姬秋和",
+    "institution": "西安国际医学中心医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=YGD37",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "曾任中华医学会糖尿病分会第八、九届委员会副主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_079"
+    ],
+    "topic_ids": [
+      "H12"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E081",
+    "key": "母义明|解放军总医院第一医学中心",
+    "name": "母义明",
+    "institution": "解放军总医院第一医学中心",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=AZjeO",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "中华医学会内分泌学分会第十届主任委员",
+      "中国医师协会内分泌代谢分会主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_080"
+    ],
+    "topic_ids": [
+      "H11"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E084",
+    "key": "张宇辉|中国医学科学院阜外医院",
+    "name": "张宇辉",
+    "institution": "中国医学科学院阜外医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=1Rv5Z",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "心力衰竭中心主任"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_086"
+    ],
+    "topic_ids": [
+      "H24"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E085",
+    "key": "祝之明|中国人民解放军陆军特色医学中心",
+    "name": "祝之明",
+    "institution": "中国人民解放军陆军特色医学中心",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=arDaw",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "科室主任",
+      "国家杰出青年"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_087",
+      "S_091"
+    ],
+    "topic_ids": [
+      "H27",
+      "H13"
+    ],
+    "kind_counts": {
+      "专题报告": 2
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E086",
+    "key": "王宁荐|上海健康医学院附属浦东公利医院",
+    "name": "王宁荐",
+    "institution": "上海健康医学院附属浦东公利医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=qDJVE",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌科科主任"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_088",
+      "S_114"
+    ],
+    "topic_ids": [
+      "H11",
+      "H25"
+    ],
+    "kind_counts": {
+      "专题报告": 2
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E087",
+    "key": "邹梦晨|南方医科大学南方医院",
+    "name": "邹梦晨",
+    "institution": "南方医科大学南方医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=d4D5M",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "省医学会糖尿病学分会副主任委员",
+      "省医药质量管理学会糖尿病足与周围血管病专委会主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_089",
+      "S_245"
+    ],
+    "topic_ids": [
+      "H27",
+      "H22"
+    ],
+    "kind_counts": {
+      "专题报告": 2
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E088",
+    "key": "汪志红|重庆医科大学附属第一医院",
+    "name": "汪志红",
+    "institution": "重庆医科大学附属第一医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=4MPWP",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "重庆市预防医学会糖尿病预防与控制专委会主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_090"
+    ],
+    "topic_ids": [
+      "H19"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E089",
+    "key": "董志勇|广东省人民医院",
+    "name": "董志勇",
+    "institution": "广东省人民医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=66vRq",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "省医学会肥胖代谢外科分会主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_092"
+    ],
+    "topic_ids": [
+      "H13"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E090",
+    "key": "包玉倩|上海交通大学医学院附属第六人民医院",
+    "name": "包玉倩",
+    "institution": "上海交通大学医学院附属第六人民医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=XxDkr",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "中华医学会糖尿病学分会副主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_093"
+    ],
+    "topic_ids": [
+      "H13"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E091",
+    "key": "朱利勇|中南大学湘雅三医院",
+    "name": "朱利勇",
+    "institution": "中南大学湘雅三医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=8pvdq",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "国家科技创新2030“四大慢病”重大专项首席科学家"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_094"
+    ],
+    "topic_ids": [
+      "H13"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E092",
+    "key": "刘超|南京中医药大学附属中西医结合医院",
+    "name": "刘超",
+    "institution": "南京中医药大学附属中西医结合医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=arw44",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "中华医学会内分泌学分会中青年委员会第8—11届主任委员（学组/委员会角色）"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_095"
+    ],
+    "topic_ids": [
+      "H42"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E093",
+    "key": "周嘉强|浙江大学医学院附属邵逸夫医院",
+    "name": "周嘉强",
+    "institution": "浙江大学医学院附属邵逸夫医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=7p32p",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌科主任",
+      "省医师协会内分泌代谢科医师分会会长"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_097"
+    ],
+    "topic_ids": [
+      "H11"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E095",
+    "key": "孙子林|东南大学附属中大医院",
+    "name": "孙子林",
+    "institution": "东南大学附属中大医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=j7DaM",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "糖尿病研究所所长",
+      "省医师协会内分泌与代谢科分会主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_099",
+      "S_218"
+    ],
+    "topic_ids": [
+      "H35",
+      "H09"
+    ],
+    "kind_counts": {
+      "专题报告": 2
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E097",
+    "key": "常翠青|北京大学第三医院",
+    "name": "常翠青",
+    "institution": "北京大学第三医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=4MPxp",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "中国营养学会副理事长"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_101"
+    ],
+    "topic_ids": [
+      "H35"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E099",
+    "key": "李全民|中国人民解放军火箭军特色医学中心",
+    "name": "李全民",
+    "institution": "中国人民解放军火箭军特色医学中心",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=50W9D",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "中华医学会糖尿病学分会副主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_103"
+    ],
+    "topic_ids": [
+      "H40"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E102",
+    "key": "单忠艳|中国医科大学附属第一医院",
+    "name": "单忠艳",
+    "institution": "中国医科大学附属第一医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=bJDG4",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "中国医师协会内分泌代谢病医师协会副主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_107"
+    ],
+    "topic_ids": [
+      "H32"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E103",
+    "key": "秦贵军|郑州大学第一医院",
+    "name": "秦贵军",
+    "institution": "郑州大学第一医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=J0OkP",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "中华医学会糖尿病分会副主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_108",
+      "S_126"
+    ],
+    "topic_ids": [
+      "H32",
+      "H17"
+    ],
+    "kind_counts": {
+      "专题报告": 2
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E104",
+    "key": "任艳|四川大学华西医院",
+    "name": "任艳",
+    "institution": "四川大学华西医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=VRDpE",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "四川省医师协会内分泌代谢科医师分会副会长"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_110"
+    ],
+    "topic_ids": [
+      "H32"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E107",
+    "key": "潘琦|北京医院国家老年医学中心",
+    "name": "潘琦",
+    "institution": "北京医院 国家老年医学中心",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=4MPzp",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "国家科技重大专项首席项目负责人"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_113",
+      "S_155",
+      "S_167",
+      "S_226"
+    ],
+    "topic_ids": [
+      "H33",
+      "H13"
+    ],
+    "kind_counts": {
+      "专题报告": 4
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E108",
+    "key": "冉兴无|四川大学华西医院",
+    "name": "冉兴无",
+    "institution": "四川大学华西医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=O5Omw",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "四川省糖尿病防治协会副会长"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_115"
+    ],
+    "topic_ids": [
+      "H22"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E110",
+    "key": "朱迪|中国人民解放军空军特色医学中心",
+    "name": "朱迪",
+    "institution": "中国人民解放军空军特色医学中心",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=3rvDb",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌科主任",
+      "北京围手术期医学会糖尿病足专委会主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_117"
+    ],
+    "topic_ids": [
+      "H22"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E115",
+    "key": "王爱红|中国人民解放军总医院第九医学中心",
+    "name": "王爱红",
+    "institution": "中国人民解放军总医院第九医学中心",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=pLA21",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "全军内分泌专委会中青年委员会副主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_122"
+    ],
+    "topic_ids": [
+      "H22"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E117",
+    "key": "薛耀明|广州南方医科大学南方医院",
+    "name": "薛耀明",
+    "institution": "广州南方医科大学南方医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=E69m7",
+    "profile_status": "read",
+    "profile_origin": "日程原附官方讲者页连接重试成功",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "中华医学会糖尿病学分会副主委"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_127"
+    ],
+    "topic_ids": [
+      "H19"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E118",
+    "key": "朱虹|温州医科大学附属第一医院",
+    "name": "朱虹",
+    "institution": "温州医科大学附属第一医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=g7b2v",
+    "profile_status": "read",
+    "profile_origin": "日程原附官方讲者页连接重试成功",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌科主任",
+      "省医学会糖尿病学分会候任主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_128"
+    ],
+    "topic_ids": [],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E119",
+    "key": "常宝成|天津医科大学朱宪彝纪念医院",
+    "name": "常宝成",
+    "institution": "天津医科大学朱宪彝纪念医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=vzdyg",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "天津医师协会内分泌代谢科医师分会主任委员",
+      "天津医学会糖尿病分会副主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_130"
+    ],
+    "topic_ids": [
+      "H19"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E120",
+    "key": "王清|中日联谊医院",
+    "name": "王清",
+    "institution": "中日联谊医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=2Pvop",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌科主任",
+      "内分泌临床重点专科主任"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_131"
+    ],
+    "topic_ids": [
+      "H23"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E121",
+    "key": "李益明|复旦大学附属华山医院",
+    "name": "李益明",
+    "institution": "复旦大学附属华山医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=D0OmM",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌科主任",
+      "上海医学会内分泌分会副主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_132"
+    ],
+    "topic_ids": [
+      "H23"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E122",
+    "key": "胡吉|苏州大学附属第二医院",
+    "name": "胡吉",
+    "institution": "苏州大学附属第二医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=Pa7m8",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌主任",
+      "市医学会内分泌学分会主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_133"
+    ],
+    "topic_ids": [
+      "H23"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E127",
+    "key": "鲁一兵|南京医科大学第二附属医院",
+    "name": "鲁一兵",
+    "institution": "南京医科大学第二附属医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=VRDaq",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌科主任",
+      "省医师协会糖尿病专业委员会候任主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_138"
+    ],
+    "topic_ids": [
+      "H23"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E129",
+    "key": "武晓泓|浙江省人民医院",
+    "name": "武晓泓",
+    "institution": "浙江省人民医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=AZXgg",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌科主任",
+      "省预防医学会糖尿病预防与控制专业委员会主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_140"
+    ],
+    "topic_ids": [
+      "H28"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E130",
+    "key": "翁建平|安徽医科大学",
+    "name": "翁建平",
+    "institution": "安徽医科大学",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=R1OZw",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "中华医学会糖尿病学分会第七届主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_142"
+    ],
+    "topic_ids": [
+      "H28"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E131",
+    "key": "杜建玲|大连医科大学附属第一医院",
+    "name": "杜建玲",
+    "institution": "大连医科大学附属第一医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=50WkD",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌临床重点专科学科带头人",
+      "省医学会糖尿病学分会前任主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_143"
+    ],
+    "topic_ids": [
+      "H29"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E132",
+    "key": "李于|中科院上海营养与健康研究所",
+    "name": "李于",
+    "institution": "中科院上海营养与健康研究所",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=j7Dnn",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "国家杰青"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_144",
+      "S_187"
+    ],
+    "topic_ids": [
+      "H42"
+    ],
+    "kind_counts": {
+      "专题报告": 2
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E135",
+    "key": "AliciaJenkins|国际糖尿病联盟西太平洋地区(IDFWPR)主席",
+    "name": "Alicia Jenkins",
+    "institution": "国际糖尿病联盟 西太平洋地区(IDF WPR)主席",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=ymVmp",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "国际糖尿病联盟 西太平洋地区(IDF WPR)主席"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "PL_10"
+    ],
+    "topic_ids": [
+      "H26"
+    ],
+    "kind_counts": {
+      "大会报告": 1
+    },
+    "is_plenary": true
+  },
+  {
+    "id": "E136",
+    "key": "赵家军|山东第一医科大学附属省立医院",
+    "name": "赵家军",
+    "institution": "山东第一医科大学附属省立医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=rg4ZV",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "中华医学会内分泌分会前任主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "PL_09"
+    ],
+    "topic_ids": [
+      "H16"
+    ],
+    "kind_counts": {
+      "大会报告": 1
+    },
+    "is_plenary": true
+  },
+  {
+    "id": "E137",
+    "key": "王拥军|首都医科大学附属北京天坛医院",
+    "name": "王拥军",
+    "institution": "首都医科大学附属北京天坛医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=lmoAz",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "中国科学院院士"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "PL_08"
+    ],
+    "topic_ids": [
+      "H25"
+    ],
+    "kind_counts": {
+      "大会报告": 1
+    },
+    "is_plenary": true
+  },
+  {
+    "id": "E138",
+    "key": "林圣彩|厦门大学生命科学学院",
+    "name": "林圣彩",
+    "institution": "厦门大学生命科学学院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=rg456",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "中国科学院院士"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "PL_11"
+    ],
+    "topic_ids": [
+      "H16"
+    ],
+    "kind_counts": {
+      "大会报告": 1
+    },
+    "is_plenary": true
+  },
+  {
+    "id": "E139",
+    "key": "陈伟|中国医学科学院北京协和医院",
+    "name": "陈伟",
+    "institution": "中国医学科学院北京协和医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=rgzXZ",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "中国营养学会临床营养分会主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_148"
+    ],
+    "topic_ids": [
+      "H33"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E140",
+    "key": "葛声|上海交通大学医学院附属第六人民医院",
+    "name": "葛声",
+    "institution": "上海交通大学医学院附属第六人民医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=E69pM",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "中国营养学会糖尿病营养分会主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_149"
+    ],
+    "topic_ids": [
+      "H13"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E141",
+    "key": "蒋升|新疆医科大学第一附属医院",
+    "name": "蒋升",
+    "institution": "新疆医科大学第一附属医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=lmn8q",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌科主任",
+      "新疆医学会糖尿病学分会主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_150",
+      "S_211",
+      "S_231"
+    ],
+    "topic_ids": [
+      "H32",
+      "H33",
+      "H12"
+    ],
+    "kind_counts": {
+      "专题报告": 3
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E144",
+    "key": "匡洪宇|哈尔滨医科大学附属第一医院",
+    "name": "匡洪宇",
+    "institution": "哈尔滨医科大学附属第一医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=Z8D7o",
+    "profile_status": "read",
+    "profile_origin": "复用本轮已存官方简介",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "中华医学会糖尿病学分会副主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_154",
+      "S_198",
+      "S_232"
+    ],
+    "topic_ids": [
+      "H11",
+      "H20",
+      "H37"
+    ],
+    "kind_counts": {
+      "专题报告": 3
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E145",
+    "key": "贾鹏|武汉大学",
+    "name": "贾鹏",
+    "institution": "武汉大学",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=O5x2a",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "国家重点研发计划项目首席科学家"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_157"
+    ],
+    "topic_ids": [
+      "H39"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E146",
+    "key": "权金星|甘肃省人民医院",
+    "name": "权金星",
+    "institution": "甘肃省人民医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=MZDAr",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌科主任",
+      "代谢性疾病临床医学研究中心主任"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_158"
+    ],
+    "topic_ids": [
+      "H37"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E147",
+    "key": "李军|石河子大学第一附属医院",
+    "name": "李军",
+    "institution": "石河子大学第一附属医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=lmnJa",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌代谢科主任"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_159"
+    ],
+    "topic_ids": [
+      "H37"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E148",
+    "key": "刘昊凌|哈尔滨医科大学附属第一医院",
+    "name": "刘昊凌",
+    "institution": "哈尔滨医科大学附属第一医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=rgz8G",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "省医学会糖尿病分会青年委员会主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_160"
+    ],
+    "topic_ids": [
+      "H37"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E150",
+    "key": "李晶|天津医科大学朱宪彝纪念医院",
+    "name": "李晶",
+    "institution": "天津医科大学朱宪彝纪念医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=ymwOV",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "天津市中西医结合学会内分泌专业委员会副主任委员",
+      "天津市内分泌质量控制中心副主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_162"
+    ],
+    "topic_ids": [
+      "H37"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E151",
+    "key": "秦洁|山西省人民医院",
+    "name": "秦洁",
+    "institution": "山西省人民医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=4MPqP",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "省医学会糖尿病学专业委员会主任委员",
+      "内分泌科科主任"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_163"
+    ],
+    "topic_ids": [
+      "H37"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E153",
+    "key": "侯新国|山东大学齐鲁医院",
+    "name": "侯新国",
+    "institution": "山东大学齐鲁医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=1RvwM",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌与代谢病科主任",
+      "省医学会糖尿病分会主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_166",
+      "S_180"
+    ],
+    "topic_ids": [
+      "H33",
+      "H02"
+    ],
+    "kind_counts": {
+      "专题报告": 2
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E154",
+    "key": "刘建萍|南昌大学第二附属医院",
+    "name": "刘建萍",
+    "institution": "南昌大学第二附属医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=vzdXA",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌代谢科主任",
+      "代谢性疾病临床医学研究中心省级分中心主任"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_168",
+      "S_197"
+    ],
+    "topic_ids": [
+      "H33",
+      "H06"
+    ],
+    "kind_counts": {
+      "专题报告": 2
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E155",
+    "key": "胡承|上海交通大学医学院附属第六人民医院",
+    "name": "胡承",
+    "institution": "上海交通大学医学院附属第六人民医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=8pvDR",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "国家杰出青年"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_169",
+      "S_182",
+      "S_258"
+    ],
+    "topic_ids": [
+      "H16",
+      "H41"
+    ],
+    "kind_counts": {
+      "专题报告": 3
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E158",
+    "key": "刘兴国|中国科学院广州生物医药与健康研究院",
+    "name": "刘兴国",
+    "institution": "中国科学院广州生物医药与健康研究院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=D0OdM",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "国家重点研发项目首席科学家"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_172",
+      "S_239"
+    ],
+    "topic_ids": [
+      "H06"
+    ],
+    "kind_counts": {
+      "专题报告": 2
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E159",
+    "key": "肖扬|中南大学湘雅二医院",
+    "name": "肖扬",
+    "institution": "中南大学湘雅二医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=mLZzW",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌研究所副所长"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_173"
+    ],
+    "topic_ids": [
+      "H04"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E160",
+    "key": "杨涛|江苏省人民医院（南京医科大学第一附属医院）",
+    "name": "杨涛",
+    "institution": "江苏省人民医院（南京医科大学第一附属医院）",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=2Pvkp",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌科主任"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_174"
+    ],
+    "topic_ids": [
+      "H05"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E161",
+    "key": "朱剑|南京市第一医院",
+    "name": "朱剑",
+    "institution": "南京市第一医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=bJD7P",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌科主任",
+      "省预防医学会糖尿病预防与控制专业委员会副主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_175"
+    ],
+    "topic_ids": [
+      "H05"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E163",
+    "key": "谢晓敏|银川市第一人民医院",
+    "name": "谢晓敏",
+    "institution": "银川市第一人民医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=XxD7V",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "代谢性疾病临床研究中心主任"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_177"
+    ],
+    "topic_ids": [
+      "H05"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E165",
+    "key": "殷浩|中国人民解放军海军军医大学第二附属医院",
+    "name": "殷浩",
+    "institution": "中国人民解放军海军军医大学第二附属医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=nzYkA",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "国家科技重大专项/国家重点研发计划首席科学家"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_179"
+    ],
+    "topic_ids": [
+      "H06"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E167",
+    "key": "杨吉春|北京大学",
+    "name": "杨吉春",
+    "institution": "北京大学",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=66v2E",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "国家科技重大专项首席科学家"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_183"
+    ],
+    "topic_ids": [
+      "H42"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E168",
+    "key": "孟卓贤|浙江大学",
+    "name": "孟卓贤",
+    "institution": "浙江大学",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=wo89d",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "国家杰青"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_184",
+      "S_186"
+    ],
+    "topic_ids": [
+      "H15",
+      "H05"
+    ],
+    "kind_counts": {
+      "专题报告": 2
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E171",
+    "key": "徐勇|西南医科大学附属医院",
+    "name": "徐勇",
+    "institution": "西南医科大学附属医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=d4D2O",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "代谢性血管病四川省重点实验室主任、川渝重点实验室主任"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_189"
+    ],
+    "topic_ids": [
+      "H18"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E172",
+    "key": "刘静|甘肃省人民医院",
+    "name": "刘静",
+    "institution": "甘肃省人民医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=oP5ow",
+    "profile_status": "read",
+    "profile_origin": "日程原附官方讲者页连接重试成功",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌代谢病诊疗中心主任",
+      "省医师协会内分泌代谢分会会长"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_191"
+    ],
+    "topic_ids": [
+      "H38"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E173",
+    "key": "赵林华|中国中医科学院广安门医院",
+    "name": "赵林华",
+    "institution": "中国中医科学院广安门医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=j7DqM",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌病学学科带头人"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_192"
+    ],
+    "topic_ids": [
+      "H38"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E177",
+    "key": "李华婷|上海交通大学医学院附属第六人民医院",
+    "name": "李华婷",
+    "institution": "上海交通大学医学院附属第六人民医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=Z8Ddo",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "糖尿病研究所副所长"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_200",
+      "S_250"
+    ],
+    "topic_ids": [
+      "H20",
+      "H35"
+    ],
+    "kind_counts": {
+      "专题报告": 2
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E180",
+    "key": "邹海东|上海交通大学医学院附属第一人民医院",
+    "name": "邹海东",
+    "institution": "上海交通大学医学院附属第一人民医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=AZXgV",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "国家科技部重点研发计划项目首席专家"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_203"
+    ],
+    "topic_ids": [
+      "H21"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E182",
+    "key": "刘东方|重庆医科大学附属第二医院",
+    "name": "刘东方",
+    "institution": "重庆医科大学附属第二医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=kX1dZ",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌科主任",
+      "重庆医学会糖尿病分会主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_205"
+    ],
+    "topic_ids": [
+      "H21"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E186",
+    "key": "赵芳|中日友好医院",
+    "name": "赵芳",
+    "institution": "中日友好医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=arDmd",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "中华护理学会糖尿病专业委员会主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_215"
+    ],
+    "topic_ids": [
+      "H38"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E187",
+    "key": "张明霞|北大人民医院",
+    "name": "张明霞",
+    "institution": "北大人民医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=g7b3Y",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "中华护理学会糖尿病专业委员会主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_216"
+    ],
+    "topic_ids": [
+      "H38"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E188",
+    "key": "武全莹|北京医院国家老年医学中心",
+    "name": "武全莹",
+    "institution": "北京医院 国家老年医学中心",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=O5OgP",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "北京护理学会内分泌专委会副主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_217"
+    ],
+    "topic_ids": [
+      "H07"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E191",
+    "key": "陶静|华中科技大学同济医学院附属同济医院",
+    "name": "陶静",
+    "institution": "华中科技大学同济医学院附属同济医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=rgz3Z",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "市预防医学会代谢健康与疾病防治专委会副主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_221"
+    ],
+    "topic_ids": [
+      "H38"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E471",
+    "key": "滕晓春|中国医科大学附属第一医院",
+    "name": "滕晓春",
+    "institution": "中国医科大学附属第一医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=kX1dg",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌研究所副所长",
+      "省医学会糖尿病学分会主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_224"
+    ],
+    "topic_ids": [
+      "H26"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E489",
+    "key": "王颜刚|青岛大学附属医院",
+    "name": "王颜刚",
+    "institution": "青岛大学附属医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=R1dz0",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌代谢科中心主任",
+      "省医学会内分泌分会候任主委"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_227"
+    ],
+    "topic_ids": [
+      "H32"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E491",
+    "key": "曾天舒|华中科技大学同济医学院附属协和医院",
+    "name": "曾天舒",
+    "institution": "华中科技大学同济医学院附属协和医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=wo8v6",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "中国医师协会内分泌代谢科医师分会副主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_229"
+    ],
+    "topic_ids": [
+      "H25"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E492",
+    "key": "杨雁|华中科技大学同济医学院附属同济医院",
+    "name": "杨雁",
+    "institution": "华中科技大学同济医学院附属同济医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=nzY2A",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌科主任"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_230"
+    ],
+    "topic_ids": [
+      "H44"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E493",
+    "key": "廖鑫|遵义医科大学附属医院",
+    "name": "廖鑫",
+    "institution": "遵义医科大学附属医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=oP5GD",
+    "profile_status": "read",
+    "profile_origin": "日程原附官方讲者页连接重试成功",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "省医学会内分泌暨糖尿病学分会副主任委员"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_233"
+    ],
+    "topic_ids": [
+      "H12"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E498",
+    "key": "刘铁民|复旦大学生命科学院",
+    "name": "刘铁民",
+    "institution": "复旦大学生命科学院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=1Rv9Y",
+    "profile_status": "read",
+    "profile_origin": "日程原附官方讲者页连接重试成功",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "国家重点研发计划‘发育编程及其代谢调节’重点专项项目首席科学家"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_240"
+    ],
+    "topic_ids": [
+      "H33"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E511",
+    "key": "ZhenqiLiu|DivisionofEndocrinologyandMetabolismUniversityofVirginiaHealthSystem",
+    "name": "Zhenqi Liu",
+    "institution": "Division of Endocrinology and Metabolism University of Virginia Health System",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=50502",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "简介含曾任/历任：内分泌及代谢病科主任"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_255"
+    ],
+    "topic_ids": [
+      "H33"
+    ],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E513",
+    "key": "李卓|吉林大学第一医院",
+    "name": "李卓",
+    "institution": "吉林大学第一医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=J0Y0b",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "全国/领域学术引领",
+    "leader_weight": 3,
+    "leader_basis": [
+      "国家科技重大专项首席科学家"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_257"
+    ],
+    "topic_ids": [],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  },
+  {
+    "id": "E514",
+    "key": "王广|首都医科大学附属北京朝阳医院",
+    "name": "王广",
+    "institution": "首都医科大学附属北京朝阳医院",
+    "profile_url": "https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=zdVdq",
+    "profile_status": "read",
+    "profile_origin": "读取原日程所附CDS官方讲者页；未扩展其他会议/论文",
+    "profile_has_bio": true,
+    "leader_level": "区域/专科学术带头",
+    "leader_weight": 2,
+    "leader_basis": [
+      "内分泌科主任",
+      "北京医学会内分泌学分会候任主委"
+    ],
+    "source_note": "CDS官方会议简介自报角色；含历任，任期未独立核查；不推断多位同职务者同时在任",
+    "reports": [
+      "S_259"
+    ],
+    "topic_ids": [],
+    "kind_counts": {
+      "专题报告": 1
+    },
+    "is_plenary": false
+  }
+]

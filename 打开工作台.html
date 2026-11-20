@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>临床科研营销工作台入口导航</title>
+  <style>
+    body {
+      max-width: 820px;
+      margin: 50px auto;
+      padding: 32px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.8;
+      color: #1e293b;
+      background: #f8fafc;
+    }
+    .header {
+      margin-bottom: 32px;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 20px;
+    }
+    h1 {
+      font-size: 26px;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+    .badge {
+      display: inline-block;
+      background: #dbeafe;
+      color: #1d4ed8;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 3px 12px;
+      border-radius: 999px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 24px 0;
+    }
+    @media (max-width: 640px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+    .card {
+      background: #ffffff;
+      padding: 22px;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      transition: all 0.2s;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+      border-color: #3b82f6;
+    }
+    .card.primary-card {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+      color: #ffffff;
+      border: none;
+    }
+    .card.primary-card .card-title {
+      color: #ffffff;
+      font-size: 18px;
+    }
+    .card.primary-card .card-desc {
+      color: #cbd5e1;
+    }
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1e40af;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .card-desc {
+      font-size: 13.5px;
+      color: #64748b;
+      line-height: 1.6;
+    }
+    .tag {
+      font-size: 11px;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: normal;
+    }
+    .card:not(.primary-card) .tag {
+      background: #f1f5f9;
+      color: #475569;
+    }
+    .footer-note {
+      margin-top: 36px;
+      padding: 16px 20px;
+      background: #f1f5f9;
+      border-radius: 8px;
+      font-size: 13px;
+      color: #475569;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <span class="badge">P03 阶段已就绪 · 双角色权限模型</span>
+    <h1 style="margin-top: 10px;">临床科研智能营销工作台</h1>
+    <p style="color: #64748b; font-size: 14.5px;">连接学术科研证据与商业转化闭环</p>
+  </div>
+
+  <div class="grid">
+    <!-- 统一认证登录入口（高亮置顶） -->
+    <a href="登录工作台.html" class="card primary-card">
+      <div>
+        <div class="card-title">
+          <span>✨ 统一系统登录门户 (登录工作台.html)</span>
+          <span class="tag">推荐使用</span>
+        </div>
+        <p class="card-desc">
+          提供两类角色切换登录：市场部（查看所有界面、线索分配与全员复盘）与销售代表（不同销售登录各自专属账号，严格隔离线索）。
+        </p>
+      </div>
+    </a>
+
+    <!-- 市场工作台直达 -->
+    <a href="workbench/领域工作台/index.html#market" class="card">
+      <div>
+        <div class="card-title">
+          <span>市场工作台</span>
+          <span class="tag">市场部权限</span>
+        </div>
+        <p class="card-desc">
+          查看全部学术事实、PI合作推荐池、向各销售代表分配线索，审阅全团队销售跟进记录与反馈复盘统计。
+        </p>
+      </div>
+    </a>
+
+    <!-- 会议更新与审核工作台直达 -->
+    <a href="workbench/领域工作台/会议审核入库.html" class="card">
+      <div>
+        <div class="card-title">
+          <span>🏛️ 会议更新与审核入库</span>
+          <span class="tag" style="background: #fef3c7; color: #b45309;">市场部独享</span>
+        </div>
+        <p class="card-desc">
+          独立会议更新库（conference_updates.db）。抓取批次暂存、首次收录与日程变更差异比对、自动去重与每周动态发布。
+        </p>
+      </div>
+    </a>
+
+    <!-- 销售工作台直达 -->
+    <a href="workbench/领域工作台/index.html#sales" class="card">
+      <div>
+        <div class="card-title">
+          <span>销售工作台</span>
+          <span class="tag">销售代表权限</span>
+        </div>
+        <p class="card-desc">
+          销售代表专属界面。查看分配给本人的推荐线索、个人PI收藏夹、记录客户沟通纪要与推荐有用性评价。
+        </p>
+      </div>
+    </a>
+
+    <!-- 学术事实入口 -->
+    <a href="workbench/领域工作台/index.html#topics" class="card">
+      <div>
+        <div class="card-title">
+          <span>领域热点与学术议题</span>
+          <span class="tag">公共研究事实</span>
+        </div>
+        <p class="card-desc">
+          查看跨会议热点分析、66个细分研究议题与每周学术动态。
+        </p>
+      </div>
+    </a>
+
+    <!-- 专家库入口 -->
+    <a href="workbench/领域工作台/index.html#experts" class="card">
+      <div>
+        <div class="card-title">
+          <span>专家与团队画像 (PI库)</span>
+          <span class="tag">公共研究事实</span>
+        </div>
+        <p class="card-desc">
+          四维科研转化评级（研究方向30/学术产出25/科研转化25/平台20）与学术带头人讲题依据。
+        </p>
+      </div>
+    </a>
+  </div>
+
+  <h2 style="font-size: 18px; color: #0f172a; margin: 32px 0 16px 0; display: flex; align-items: center; gap: 8px;">
+    <span>🔬 六大临床前沿领域界面直达（100% 离线就绪 · 各具特色）</span>
+  </h2>
+  <div class="grid" style="grid-template-columns: repeat(3, 1fr);">
+    <a href="workbench/领域工作台/index.html#topics?field=diabetes" class="card">
+      <div class="card-title" style="color: #0f766e;">糖尿病</div>
+      <p class="card-desc">12研究板块 · 66议题 · CDS/ADA会议 · 39项Biomarker</p>
+    </a>
+    <a href="workbench/领域工作台/index.html#topics?field=cardiovascular" class="card" style="border-top: 3px solid #1e40af;">
+      <div class="card-title" style="color: #1e40af;">心血管</div>
+      <p class="card-desc">心衰/冠心病/心律失常 · ACC/ESC/AHA · Circulation/JACC</p>
+    </a>
+    <a href="workbench/领域工作台/index.html#topics?field=rheumatology" class="card" style="border-top: 3px solid #15803d;">
+      <div class="card-title" style="color: #15803d;">风湿免疫</div>
+      <p class="card-desc">SLE/RA/强直/痛风 · EULAR/ACR · ARD/Lancet Rheum</p>
+    </a>
+    <a href="workbench/领域工作台/index.html#topics?field=neurology" class="card" style="border-top: 3px solid #7e22ce;">
+      <div class="card-title" style="color: #7e22ce;">神经精神</div>
+      <p class="card-desc">AD早筛/PD/脑卒中 · AAN/WCN · Lancet Neurol/Brain</p>
+    </a>
+    <a href="workbench/领域工作台/index.html#topics?field=respiratory" class="card" style="border-top: 3px solid #b91c1c;">
+      <div class="card-title" style="color: #b91c1c;">呼吸慢病</div>
+      <p class="card-desc">COPD/哮喘/肺纤维化 · ATS/ERS · Lancet Respir Med</p>
+    </a>
+    <a href="workbench/领域工作台/index.html#topics?field=vascular" class="card" style="border-top: 3px solid #b45309;">
+      <div class="card-title" style="color: #b45309;">泛血管及器官损伤</div>
+      <p class="card-desc">心肾综合征/微循环/血管硬化 · ASN/CMVS · Kidney Int</p>
+    </a>
+  </div>
+
+  <div class="footer-note">
+    <strong>💡 架构说明</strong>：当前已完成 P00（基线核验）、P01（工程规范与回归）、P02（业务持久化与导入导出）及 P03（市场/销售两级权限隔离）。底层学术研究事实库 `marketing.db`（66表25视图）保持只读与零修改。
+  </div>
+</body>
+</html>

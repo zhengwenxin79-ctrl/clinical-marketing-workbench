@@ -1,0 +1,26 @@
+{
+  "result": "passed",
+  "modules": [
+    "全部会议",
+    "领域热点"
+  ],
+  "hotspot_tabs": [
+    "综合榜",
+    "国内榜",
+    "国际榜"
+  ],
+  "aggregate": "国内会议内占比均值×50%＋国际会议内占比均值×50%；缺任一侧留空",
+  "board_sort": "板块内报告去重，使用当前榜同口径关注度降序，展示百分比",
+  "conference_admission": "现有CDS/ADA试算纳入；新增默认仅补充，须复核明确配置",
+  "coverage": "归类覆盖与采集完整率分开说明",
+  "default_classified_talks": 1256,
+  "unified_topics": 58,
+  "research_boards": 12,
+  "protected_files_unchanged": 479,
+  "numeric_assertions": 1552,
+  "database_sha256": "f1fd660c1349ac4701a78db189ea097c5a1ffd3952297220ea555ee423185c22",
+  "html_sha256": "393205b765901b2c0f404af70516c2327a892bd1f35b2de8fad97345a2ca7c57",
+  "backup": "/Users/zwx/Documents/文献阅读/BrainHao-Study/wenxin/智能营销数据中心/备份/领域热点三榜调整前_20261117-161934",
+  "new_collection": false,
+  "published": false
+}

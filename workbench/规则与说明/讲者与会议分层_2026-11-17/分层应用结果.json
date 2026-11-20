@@ -1,0 +1,17 @@
+{
+  "result": "applied",
+  "rule_version": "CDS2026:ROLE-TIERS:20261117:v1",
+  "counts": {
+    "international": 6,
+    "national": 96,
+    "regional": 43,
+    "undetermined": 388
+  },
+  "speaker_records": 533,
+  "evidence_rows": 150,
+  "conference_tier": "国内全国性大型会议",
+  "original_20_tables_unchanged": true,
+  "new_collection": false,
+  "published": false,
+  "database_sha256": "dcf53b0fd6111cac90930f2d4c7345169fa6013bcdbb8ecb2db52e0bbfb3382b"
+}

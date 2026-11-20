@@ -1,0 +1,97 @@
+{
+  "version": 1,
+  "field": "diabetes",
+  "scope": "糖尿病六个会议系列；仅会议信息，不抓全文或生成热点结论",
+  "checked_on": "2026-11-13",
+  "sources": [
+    {
+      "id": "cds-home",
+      "source_id": "CDS",
+      "url": "https://cds26.tiemeeting.com/CN",
+      "adapter": "cds",
+      "region": "domestic",
+      "fields": [
+        "diabetes"
+      ],
+      "note": "会议官网；当前届次"
+    },
+    {
+      "id": "cds-program",
+      "source_id": "CDS",
+      "url": "https://cds26.tiemeeting.com/CN/Program/Details",
+      "adapter": "links",
+      "region": "domestic",
+      "fields": [
+        "diabetes"
+      ],
+      "note": "当前届次日程；动态页失败需单列"
+    },
+    {
+      "id": "cse-notice",
+      "source_id": "CSE",
+      "url": "https://xue.sciconf.cn/infomation-detail?id=918C9639-0AA7-75C5-D3D6-6A78FBB8A2B4",
+      "adapter": "cse",
+      "region": "domestic",
+      "fields": [
+        "diabetes"
+      ],
+      "note": "学分会供稿公告；历史固定页，后续届次需补入口"
+    },
+    {
+      "id": "ada-home",
+      "source_id": "ADA",
+      "url": "https://professional.diabetes.org/scientific-sessions",
+      "adapter": "ada",
+      "region": "international",
+      "fields": [
+        "diabetes"
+      ],
+      "note": "官方滚动入口，按页面届次识别"
+    },
+    {
+      "id": "easd-2026",
+      "source_id": "EASD",
+      "url": "https://www.easd.org/annual-meeting/easd-2026.html",
+      "adapter": "easd",
+      "region": "international",
+      "fields": [
+        "diabetes"
+      ],
+      "note": "2026届次页"
+    },
+    {
+      "id": "easd-2027",
+      "source_id": "EASD",
+      "url": "https://www.easd.org/annual-meeting/easd-2027/",
+      "adapter": "easd",
+      "region": "international",
+      "fields": [
+        "diabetes"
+      ],
+      "note": "2027届次页"
+    },
+    {
+      "id": "idf-home",
+      "source_id": "IDF",
+      "url": "https://idf.org/congress-and-events/idf2027/",
+      "adapter": "idf",
+      "region": "international",
+      "fields": [
+        "diabetes"
+      ],
+      "note": "IDF官方届次介绍"
+    },
+    {
+      "id": "attd-home",
+      "source_id": "ATTD",
+      "url": "https://attd.kenes.com/",
+      "adapter": "attd",
+      "region": "international",
+      "fields": [
+        "diabetes"
+      ],
+      "note": "主办方滚动入口；旧welcome-message页已失效"
+    }
+  ],
+  "execution_mode": "manual_draft_only"
+}

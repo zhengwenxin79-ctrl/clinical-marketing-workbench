@@ -1,0 +1,21 @@
+{
+  "result": "passed",
+  "checked_at": "2026-11-17T06:49:24+00:00",
+  "database_sha256": "f1fd660c1349ac4701a78db189ea097c5a1ffd3952297220ea555ee423185c22",
+  "checks": [
+    "数据库完整性与外键通过",
+    "448份数据库来源文件逐一核对SHA256",
+    "最初436份CDS随包原始资料保持不变",
+    "797条日程与148个场次逐条回读原资料一致",
+    "12板块／58议题／579条分类报告范围一致"
+  ],
+  "counts": {
+    "agenda_items": 797,
+    "sessions": 148,
+    "reports": 606,
+    "classified_reports": 579,
+    "topics": 58,
+    "boards": 12,
+    "source_materials": 448
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-16",
+  "stage": "PI联网补证完成；5完整暂评/9部分评分",
+  "result": "passed",
+  "data_checks": 449,
+  "browser_checks": [
+    "桌面首页及5/14新状态",
+    "分类和报告人搜索",
+    "权重切换",
+    "14人四维表及5个暂评等级",
+    "14人深链接展开及证据/缺口",
+    "代表作可展开、作者位置及PubMed",
+    "10个议题详情的客户覆盖及产品环节",
+    "评分标准及来源入口",
+    "390px手机及768px平板无整页横向溢出",
+    "file离线页面深链接正常"
+  ],
+  "formal_sha256": "bc8c010b470f2fab2f640bda497e1690d656f07acd3214fbae2e3a13ca6e35a3",
+  "pi_pubmed_articles": 35,
+  "published": false,
+  "skill_pack_created": false,
+  "files": {
+    "index.html": "33dd5b2260d39847fe70fc7537622562727fb47a5d9a99e263094a96f0cb4e5c",
+    "试评数据.json": "f979a9045bceae525d738c706367177bf0d171c67b9b2a062d490fff43ccb7ed",
+    "PI联网评级.json": "b5850a3044b70dce9d0c617b1d3d88a03a9a616891ef1fb207118c4510ebe914",
+    "生成试评.py": "948e36cbfc08a5d9f86873f983cebccff828c2151014f3537399974a8daa162f",
+    "整理PI评级.py": "659f671e1089c5b54f0688d0d980132be87fde8bdad9b86a00b2aca7ead38f79"
+  },
+  "previous_check_results": "联网补证_2026-11-16/更新前快照/"
+}

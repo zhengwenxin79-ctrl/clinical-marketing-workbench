@@ -1,0 +1,141 @@
+{
+  "status": "passed",
+  "checked_on": "2026-11-16",
+  "browser": "独立Chrome for Testing；automation-chrome；任务专用临时profile已在finally清理",
+  "counts": {
+    "parents": 12,
+    "topics": 44,
+    "classified": 579,
+    "academic": 606,
+    "excluded": 27
+  },
+  "checks": [
+    "12个板块按报告数降序；合计579，所有占比固定除以579，舍入口径明确",
+    "完整44个细分议题仍可展开查看",
+    "12个条形均可点击；各板块细分议题与逐报告归属一致，原加权分及全榜排名保留",
+    "板块深链接、详情返回、刷新与浏览器后退保留所选板块",
+    "原搜索、专家筛选和去专家项口径可用；上方分布数量、占比分母始终不变",
+    "培训16、科研方法5、综合待细分6分别列出；27条原题、讲者及来源可展开",
+    "条形支持键盘选择，选中后定位细分议题标题",
+    "专家列表、个人详情及原评分来源页面保留",
+    "360/390/768/1024/1440px共20个页面布局场景无横向溢出",
+    "离线file打开无脚本错误、无外部页面请求",
+    "原分类、逐报告归属、数据、评分生成逻辑、正式站及监控配置指纹未变"
+  ],
+  "responsive": [
+    {
+      "width": 360,
+      "route": "board",
+      "overflow": false
+    },
+    {
+      "width": 360,
+      "route": "board?parent=M05",
+      "overflow": false
+    },
+    {
+      "width": 360,
+      "route": "topic/H17",
+      "overflow": false
+    },
+    {
+      "width": 360,
+      "route": "sources",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "route": "board",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "route": "board?parent=M05",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "route": "topic/H17",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "route": "sources",
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "route": "board",
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "route": "board?parent=M05",
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "route": "topic/H17",
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "route": "sources",
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "route": "board",
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "route": "board?parent=M05",
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "route": "topic/H17",
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "route": "sources",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "route": "board",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "route": "board?parent=M05",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "route": "topic/H17",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "route": "sources",
+      "overflow": false
+    }
+  ],
+  "browser_errors": [],
+  "external_page_requests": [],
+  "protected_files": [
+    "/Users/zwx/Documents/文献阅读/BrainHao-Study/wenxin/糖尿病热点知识地图/热点量化试评_2026-11-16/CDS三维议题试评_v0.2/会前重点议题数据.json",
+    "/Users/zwx/Documents/文献阅读/BrainHao-Study/wenxin/糖尿病热点知识地图/热点量化试评_2026-11-16/CDS三维议题试评_v0.2/生成会前重点议题榜.py",
+    "/Users/zwx/Documents/文献阅读/BrainHao-Study/wenxin/糖尿病热点知识地图/热点量化试评_2026-11-16/CDS三维议题试评_v0.2/会前重点议题榜_工作资料/议题定义.json",
+    "/Users/zwx/Documents/文献阅读/BrainHao-Study/wenxin/糖尿病热点知识地图/热点量化试评_2026-11-16/CDS三维议题试评_v0.2/会前重点议题榜_工作资料/逐报告归类与计分.json",
+    "/Users/zwx/Documents/文献阅读/BrainHao-Study/wenxin/糖尿病热点知识地图/热点量化试评_2026-11-16/CDS三维议题试评_v0.2/会前重点议题榜_工作资料/会前重点议题榜.csv",
+    "/Users/zwx/Documents/文献阅读/BrainHao-Study/wenxin/糖尿病热点知识地图/会议与论文研究台_v2/index.html",
+    "/Users/zwx/Documents/文献阅读/BrainHao-Study/wenxin/糖尿病热点知识地图/会议与论文研究台_v2/src/data.snapshot.json",
+    "/Users/zwx/Documents/文献阅读/BrainHao-Study/wenxin/糖尿病热点知识地图/会议与论文研究台_v2/monitoring/sources.json",
+    "/Users/zwx/Documents/文献阅读/BrainHao-Study/wenxin/糖尿病热点知识地图/会议与论文研究台_v2/monitoring/state.json",
+    "/Users/zwx/Documents/文献阅读/BrainHao-Study/wenxin/糖尿病热点知识地图/会议与论文研究台_v2/monitoring/schedule-status.json"
+  ]
+}
