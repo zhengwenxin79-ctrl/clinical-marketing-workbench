@@ -28,6 +28,10 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Auto-ingest Crawled Batches from WorkBuddy
+        run: |
+          python -X utf8 tools/auto_ingest_batches.py
+
       - name: Verify Baseline & Regressions
         run: |
           python -X utf8 tools/test_regression.py
