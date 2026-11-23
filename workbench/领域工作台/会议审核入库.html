@@ -378,8 +378,10 @@
       <h1>学术会议更新与审核入库</h1>
       <p class="subtitle">独立会议库 (conference_updates.db) · 59个核心监控锚点 · 自动日程比对与每周动态同步</p>
     </div>
-    <div style="display:flex; gap:10px;">
+    <div style="display:flex; gap:10px; align-items:center;">
       <a href="index.html#weekly" class="btn btn-outline">👀 查看已发布每周动态</a>
+      <a href="index.html#conferences" class="btn btn-outline">📅 进入会议库</a>
+      <button class="btn btn-primary" id="btn-deploy-online" onclick="deployToOnline()" style="background:#2563eb;color:#fff;border:none;box-shadow:0 2px 6px rgba(37,99,235,0.3);cursor:pointer;">🚀 一键同步发布到线上 (GitHub Pages)</button>
     </div>
   </div>
 
@@ -1449,7 +1451,22 @@ async function reviewItem(queueId, action, note = "") {
       });
       const result = await res.json();
       if (res.ok && result.success) {
+        const item = currentQueue.find(i => i.queue_id === queueId);
+        if (item && action === "approve") {
+          try {
+            let approvedList = JSON.parse(localStorage.getItem('clinical-workbench:approved-conferences:v1') || '[]');
+            if (!approvedList.some(x => x.conference_id === item.conference_id)) {
+              item.review_status = 'approved';
+              item.tier_code = chosenTier;
+              approvedList.unshift(item);
+              localStorage.setItem('clinical-workbench:approved-conferences:v1', JSON.stringify(approvedList));
+            }
+          } catch(e) {}
+        }
         await loadQueueData();
+        if (action === "approve") {
+          alert(`🎉 审核通过！【${item ? item.conference_name : queueId}】已成功批准入库！\n\n✅ 已实时同步至【会议库】(${chosenTier}类)\n✅ 已自动在【领域热点】提炼衍生临床转化热点\n✅ 销售代表可在工作台查收并认领跟进`);
+        }
         return;
       } else {
         alert("审核处理失败：" + (result.error || "未知错误"));
@@ -1470,9 +1487,63 @@ async function reviewItem(queueId, action, note = "") {
     if (note) item.review_note = (item.review_note ? item.review_note + " | " : "") + note;
     try {
       localStorage.setItem("demo_review_queue_v4", JSON.stringify(currentQueue));
+      if (action === "approve") {
+        let approvedList = JSON.parse(localStorage.getItem('clinical-workbench:approved-conferences:v1') || '[]');
+        if (!approvedList.some(x => x.conference_id === item.conference_id)) {
+          approvedList.unshift(item);
+          localStorage.setItem('clinical-workbench:approved-conferences:v1', JSON.stringify(approvedList));
+        }
+      }
     } catch (e) {}
     updateStats();
     renderQueue();
+    if (action === "approve") {
+      alert(`🎉 审核通过！【${item.conference_name}】已成功批准入库！\n\n✅ 已实时同步至【会议库】(${chosenTier}类)\n✅ 已自动在【领域热点】提炼衍生临床转化热点\n✅ 销售代表可在工作台查收并认领跟进`);
+    }
+  }
+}
+
+async function deployToOnline() {
+  const btn = document.getElementById("btn-deploy-online");
+  const origText = btn ? btn.textContent : "发布";
+  if (btn) {
+    btn.disabled = true;
+    btn.textContent = "⏳ 正在同步与构建部署...";
+  }
+
+  if (isBackendConnected) {
+    try {
+      const res = await fetch(`${API_BASE}/api/deploy/publish`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`
+        }
+      });
+      const data = await res.json();
+      if (res.ok && data.success) {
+        alert("🎉 全网发布部署已成功触发！\n\n" + data.message);
+        if (btn) {
+          btn.textContent = "✓ 已成功推送部署";
+          setTimeout(() => { btn.disabled = false; btn.textContent = origText; }, 3000);
+        }
+        return;
+      }
+    } catch (e) {
+      console.warn("Deploy endpoint error, fallback to instructions:", e);
+    }
+  }
+
+  if (btn) {
+    btn.disabled = false;
+    btn.textContent = origText;
+  }
+  const cmd = "python tools/sync_and_deploy.py";
+  const ok = confirm(`💡 本地一键发布部署提示：\n\n请在本地项目终端中执行以下命令，即可一键同步最新审核会议并推送到 GitHub Pages：\n\n${cmd}\n\n是否立即复制该命令到剪贴板？`);
+  if (ok && navigator.clipboard) {
+    navigator.clipboard.writeText(cmd).then(() => {
+      alert("✅ 命令已复制！请在 PowerShell 终端粘贴并运行。");
+    });
   }
 }
 

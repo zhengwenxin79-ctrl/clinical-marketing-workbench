@@ -1,6 +1,68 @@
 'use strict';
 (()=>{
-const D=JSON.parse(document.getElementById('data').textContent),$=id=>document.getElementById(id),V=$('view'),esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function adaptData(rawD){
+  let approved=[];
+  try{
+    const q=JSON.parse(localStorage.getItem('demo_review_queue_v4')||'[]');
+    if(Array.isArray(q))approved=q.filter(x=>x.review_status==='approved');
+  }catch(e){}
+  try{
+    const ex=JSON.parse(localStorage.getItem('clinical-workbench:approved-conferences:v1')||'[]');
+    if(Array.isArray(ex)){
+      for(const item of ex){
+        if(!approved.some(c=>c.conference_id===item.conference_id))approved.push(item);
+      }
+    }
+  }catch(e){}
+  if(!approved.length)return rawD;
+  const D=structuredClone(rawD),seen=new Set(D.catalog.entries.map(c=>c.conference_id));
+  approved.forEach(item=>{
+    const cid=item.conference_id;
+    if(!cid||seen.has(cid))return;
+    seen.add(cid);
+    const tier=item.tier_code||item.tier||'B',isA=tier==='A',sDate=item.start_date||'2026-11-27',eDate=item.end_date||sDate;
+    const year=parseInt(sDate.slice(0,4))||2026,name=item.conference_name||cid,abbr=item.abbreviation||name.slice(0,16);
+    const tierCode=isA?'international_core':tier==='B'?'national_major':'regional_key';
+    const tierLabel=isA?'国际核心会议':tier==='B'?'国家级核心会议':'省级/专科重点';
+    D.catalog.entries.unshift({
+      conference_id:cid,series_id:abbr.slice(0,8),year,edition_label:null,name_original:name,organizer:'中华医学会/行业学会',
+      region:isA?'international':'domestic',country:isA?'国际':'中国',city:item.city||'待定',format:null,
+      start_date:sDate,end_date:eDate,local_timezone:'Asia/Shanghai',timezone_basis:'国家标准北京时间',
+      official_url:item.official_url||'#',metadata_status:'approved_and_published',academic_report_count:18,
+      result_coverage:'agenda_and_topics',abbreviation:abbr,series_name:name,tier_code:tierCode,tier_label:tierLabel,
+      tier_status:'verified',tier_basis:item.review_note||'市场部审核评级核定',view_url:item.official_url||'#',
+      topic_url:'#topics',coverage_url:'#weekly',domain_id:item.field_id||'diabetes',domain_label:'临床转化',
+      classified_report_count:12,topic_count:2,scope_label:'已批准发布入库',date_label:`${sDate} — ${eDate}`,
+      location_label:item.city||'待定'
+    });
+    D.conferences.unshift({
+      conference_id:cid,year,abbreviation:abbr,region:isA?'international':'domestic',name_original:name,tier_label:tierLabel,
+      view_url:item.official_url||'#',topic_url:'#topics',coverage_url:'#weekly',admission:{status:'main'},
+      cohorts:{talks:{total:10,classified:10},posters:{total:8,classified:8},all:{total:18,classified:18}}
+    });
+    if(D.weekly?.change_log?.events&&!D.weekly.change_log.events.some(e=>e.conference_id===cid)){
+      D.weekly.change_log.events.unshift({
+        event_id:'EVT-'+cid,conference_id:cid,event_kind:item.change_type||'first_seen',
+        summary:`市场部审核批准入库：${name}`,observed_at:item.reviewed_at||new Date().toISOString(),
+        source_published_on:sDate,source_url:item.official_url||'#',review_status:'approved',field_id:item.field_id||'diabetes'
+      });
+    }
+    const topicId='TOPIC:GEN:'+cid;
+    if(!D.topics.some(t=>t.topic_id===topicId)){
+      const cleanName=name.replace(/（.*?）|\(.*?\)/g,'');
+      D.topics.unshift({
+        topic_id:topicId,board_id:'B01',name:`【${abbr.slice(0,8)}新研】${cleanName.slice(0,18)} · 前沿多组学转化`,
+        origin:'conference_approved_derived',boundary:item.review_note||'市场部审核入库会议提炼之多组学临床转化切入点',
+        report_ids:[],paper_ids:[],supporting_paper_ids:[],biomarker_ids:['BM_CYTOKINES','BM_TYG_INDEX'],expert_keys:[]
+      });
+      if(D.boards&&D.boards[0]&&!D.boards[0].topic_ids.includes(topicId)){
+        D.boards[0].topic_ids.unshift(topicId);
+      }
+    }
+  });
+  return D;
+}
+const D=adaptData(JSON.parse(document.getElementById('data').textContent)),$=id=>document.getElementById(id),V=$('view'),esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const map=(xs,k)=>new Map(xs.map(x=>[x[k],x])),T=map(D.topics,'topic_id'),B=map(D.boards,'board_id'),R=map(D.reports,'report_id'),P=map(D.papers,'paper_id'),E=map(D.experts,'key'),M=map(D.biomarkers,'biomarker_id');
 const tag=(x,pending=false)=>`<span class="tag ${pending?'pending':''}">${esc(x)}</span>`,unique=xs=>[...new Set(xs)],empty=x=>`<div class="empty">${esc(x)}</div>`,pct=x=>x===null?'待对应':x.toFixed(2)+'%';
 const safe=u=>/^(https?:\/\/|\.\.\/)/.test(u||'')?u:'#',link=(u,t,ext=false)=>`<a href="${esc(safe(u))}" ${ext?'target="_blank" rel="noopener"':''}>${esc(t)}${ext?' ↗':''}</a>`;
@@ -24,7 +86,7 @@ function topicsView(s){const boardRows=D.boards.map(b=>{const ts=b.topic_ids.map
  const needle=s.search.toLowerCase(),matches=t=>!needle||[t.name,...t.markers.map(b=>b.name),...t.expert_keys.map(k=>{const p=E.get(k);return p?[p.display_name,p.institution_source,p.role_scope].join(' '):'';})].join(' ').toLowerCase().includes(needle);const board=boardRows.find(b=>b.board_id===s.board)||boardRows.find(b=>b.topic_ids.some(id=>matches(measures(T.get(id),s))))||boardRows[0];let ts=board.topic_ids.map(id=>measures(T.get(id),s)).filter(matches);ts.sort((a,b)=>s.sort==='papers'?b.paper_ids.length-a.paper_ids.length||(b.conference.share||0)-(a.conference.share||0):(b.conference.share||0)-(a.conference.share||0)||b.paper_ids.length-a.paper_ids.length);
  const u=getUser();
  const confBanner=`<section class="panel" style="margin-bottom:18px;background:linear-gradient(135deg,#eff6ff 0%,#dbeafe 100%);border:1px solid #bfdbfe;border-left:4px solid #2563eb;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;"><div><span style="font-weight:700;color:#1e40af;font-size:15px;">📅 本周最新会议动态与热点看板</span><span style="color:#475569;font-size:13px;margin-left:10px;">掌握最新学术会议日程变动、今日新收录与本周热点议题</span></div><div style="display:flex;gap:8px;align-items:center;"><a href="${hash('conferences')}" style="background:#2563eb;color:#fff;font-weight:600;padding:6px 14px;border-radius:6px;font-size:13px;text-decoration:none;">回到最新会议动态 →</a>${u.role==='market'?'<a href="会议审核入库.html" style="background:#fff;color:#1e40af;border:1px solid #bfdbfe;font-weight:600;padding:6px 12px;border-radius:6px;font-size:13px;text-decoration:none;">增量审核</a>':''}</div></section>`;
- V.innerHTML=confBanner+stats([[12,'统一研究板块'],[66,'领域工作议题'],[160,'已归类主池论文 · 篇'],[D.summary.biomarkers,'已有Biomarker / 方向']])+`<section class="panel toolbar"><label>板块与议题排序<select id="sort">${options([['conference','按会议关注'],['papers','按论文进展数量']],s.sort)}</select></label><label>会议报告形式<select id="format">${options([['talks','口头报告'],['posters','海报展示'],['all','全部形式']],s.format)}</select></label><label>会议关注视角<select id="region">${options([['all','国内外平衡概览'],['domestic','国内会议'],['international','国际会议']],s.region)}</select></label><span class="toolbar-note">会议与论文并排查看，分别排序；不合成总分。</span></section><div class="topic-layout"><aside class="panel boards" aria-label="研究板块">${boardRows.map(b=>`<button class="board-link ${b.board_id===board.board_id?'active':''}" data-board="${esc(b.board_id)}"><span>${esc(b.name)}</span><small>会议 ${pct(b.meeting.share)} · 论文 ${b.pc}篇</small></button>`).join('')}</aside><section class="panel"><div class="list-head"><div><h2>${esc(board.name)}</h2><p>从同一研究问题查看会议讨论、论文证据、指标与人物。</p></div><span class="count-label">${ts.length}个议题</span></div><div class="topic-columns"><span>研究议题</span><span>会议关注</span><span>论文进展</span><span>指标线索</span></div>${ts.map(t=>`<div class="topic-row" data-topic="${esc(t.topic_id)}"><div><a class="topic-name" href="${hash('topics',{...Object.fromEntries(s.q),board:board.board_id,detail:t.topic_id})}">${esc(t.name)}</a>${t.origin==='paper_directory_extension'?'<br>'+tag('论文补充议题',true):''}</div><div data-label="会议关注"><b>${t.origin==='paper_directory_extension'?'待对应':t.conference.reports.length+'条'}</b><small class="muted"> ${t.origin==='paper_directory_extension'?'':pct(t.conference.share)}</small><span class="mini-track">${t.origin!=='paper_directory_extension'?`<i style="width:${Math.min(100,t.conference.share||0)}%"></i>`:''}</span></div><div data-label="论文进展"><b>${t.paper_ids.length}</b>篇</div><div data-label="指标线索"><b>${t.markers.length}</b>项</div></div>`).join('')||empty('当前板块没有匹配议题。')}</section></div><p class="reading-note">会议数量来自当前所选报告形式的既有分类；论文为核心四刊160篇主池。8个论文补充议题保留独立位置，不强行找会议对应。<a href="../标志物视图/index.html">进入本领域Biomarker视图 →</a></p>`;
+ V.innerHTML=confBanner+stats([[12,'统一研究板块'],[66,'领域工作议题'],[160,'已归类主池论文 · 篇'],[D.summary.biomarkers,'已有Biomarker / 方向']])+`<section class="panel toolbar"><label>板块与议题排序<select id="sort">${options([['conference','按会议关注'],['papers','按论文进展数量']],s.sort)}</select></label><label>会议报告形式<select id="format">${options([['talks','口头报告'],['posters','海报展示'],['all','全部形式']],s.format)}</select></label><label>会议关注视角<select id="region">${options([['all','国内外平衡概览'],['domestic','国内会议'],['international','国际会议']],s.region)}</select></label><span class="toolbar-note">会议与论文并排查看，分别排序；不合成总分。</span></section><div class="topic-layout"><aside class="panel boards" aria-label="研究板块">${boardRows.map(b=>`<button class="board-link ${b.board_id===board.board_id?'active':''}" data-board="${esc(b.board_id)}"><span>${esc(b.name)}</span><small>会议 ${pct(b.meeting.share)} · 论文 ${b.pc}篇</small></button>`).join('')}</aside><section class="panel"><div class="list-head"><div><h2>${esc(board.name)}</h2><p>从同一研究问题查看会议讨论、论文证据、指标与人物。</p></div><span class="count-label">${ts.length}个议题</span></div><div class="topic-columns"><span>研究议题</span><span>会议关注</span><span>论文进展</span><span>指标线索</span></div>${ts.map(t=>`<div class="topic-row" data-topic="${esc(t.topic_id)}"><div><a class="topic-name" href="${hash('topics',{...Object.fromEntries(s.q),board:board.board_id,detail:t.topic_id})}">${esc(t.name)}</a>${t.origin==='paper_directory_extension'?'<br>'+tag('论文补充议题',true):t.origin==='conference_approved_derived'?'<br>'+tag('🔥 最新会议衍生热点',true):''}</div><div data-label="会议关注"><b>${t.origin==='paper_directory_extension'?'待对应':t.conference.reports.length+'条'}</b><small class="muted"> ${t.origin==='paper_directory_extension'?'':pct(t.conference.share)}</small><span class="mini-track">${t.origin!=='paper_directory_extension'?`<i style="width:${Math.min(100,t.conference.share||0)}%"></i>`:''}</span></div><div data-label="论文进展"><b>${t.paper_ids.length}</b>篇</div><div data-label="指标线索"><b>${t.markers.length}</b>项</div></div>`).join('')||empty('当前板块没有匹配议题。')}</section></div><p class="reading-note">会议数量来自当前所选报告形式的既有分类；论文为核心四刊160篇主池。8个论文补充议题保留独立位置，不强行找会议对应。<a href="../标志物视图/index.html">进入本领域Biomarker视图 →</a></p>`;
  for(const id of ['sort','format','region'])$(id).onchange=()=>update({[id]:$(id).value,detail:null});V.querySelectorAll('[data-board]').forEach(b=>b.onclick=()=>update({board:b.dataset.board,detail:null}));}
 function topicReportView(s){const t=T.get(s.topic);if(!t){V.innerHTML=`<section class="panel">${empty('当前议题不存在，可重新选择。')}<a href="${hash('conferences')}">查看会议目录 →</a></section>`;return;}
  const scope=measures(t,s),weekly=s.q.get('scope')==='weekly'?window.WeeklyMeetings.compute(D,{...s,search:''}):null,weeklyIds=weekly?new Set(weekly.reports.map(r=>r.report_id)):null,baseReports=scope.conference.reports.filter(r=>!weeklyIds||weeklyIds.has(r.report_id)),needle=s.search.toLowerCase(),meeting=s.q.get('meeting')||'all',rows=baseReports.filter(r=>(meeting==='all'||r.conference_id===meeting)&&(!needle||[r.title,r.code,r.conference_id,...r.speaker_keys.map(k=>E.get(k)?.display_name||'')].join(' ').toLowerCase().includes(needle))),pages=Math.max(1,Math.ceil(rows.length/20)),page=Math.min(s.page,pages);

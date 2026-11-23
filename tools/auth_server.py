@@ -533,6 +533,23 @@ class RBACRequestHandler(SimpleHTTPRequestHandler):
             conn.close()
             return self.send_json(200, {"success": True, "id": rec_id})
 
+        if path == "/api/deploy/publish":
+            if user["role"] != "market":
+                conn.close()
+                return self.send_json(403, {"error": "权限拒绝：仅市场部人员可执行全网发布部署"})
+            conn.close()
+            try:
+                import sync_and_deploy
+                sync_and_deploy.sync_approved_conferences_to_snapshot()
+                sync_and_deploy.build_and_test()
+                sync_and_deploy.git_commit_and_push()
+                return self.send_json(200, {
+                    "success": True,
+                    "message": "已成功将审核会议与热点同步入库，并推送到 GitHub 线上仓库。GitHub Pages 将在 1 分钟内完成全网更新上线！"
+                })
+            except Exception as err:
+                return self.send_json(500, {"success": False, "error": str(err)})
+
         conn.close()
         return self.send_json(404, {"error": "API route not found"})
 
