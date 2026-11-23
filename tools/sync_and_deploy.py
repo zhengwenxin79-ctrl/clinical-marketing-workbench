@@ -76,7 +76,20 @@ def sync_approved_conferences_to_snapshot():
         edate = item.get("end_date") or sdate
         year = int(sdate[:4]) if len(sdate) >= 4 and sdate[:4].isdigit() else 2026
         abbr = item.get("abbreviation") or name[:16]
-        field_id = item.get("field_id") or "diabetes"
+        field_id = item.get("field_id")
+        if not field_id or field_id == "diabetes":
+            if any(k in name for k in ["神经", "脑卒中", "脑血管"]):
+                field_id = "neurology"
+            elif any(k in name for k in ["呼吸", "哮喘", "慢阻肺"]):
+                field_id = "respiratory"
+            elif any(k in name for k in ["风湿", "免疫", "红斑狼疮"]):
+                field_id = "rheumatology"
+            elif any(k in name for k in ["心血管", "心脏", "心衰", "房颤"]):
+                field_id = "cardiovascular"
+            elif any(k in name for k in ["泛血管", "血栓"]):
+                field_id = "vascular"
+            else:
+                field_id = "diabetes"
 
         # Construct standard catalog entry
         entry = {

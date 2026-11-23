@@ -493,14 +493,46 @@ window.DomainFrameworks = (() => {
     `;
   }
 
-  function renderDomainConferences(fieldId, esc) {
+  function renderDomainConferences(fieldId, esc, hash, D) {
     const data = getDomain(fieldId);
     if (!data) return '';
+    let extraConferences = [];
+    try {
+      const allEntries = (D && D.catalog && D.catalog.entries) || (window.DomainWorkbench && window.DomainWorkbench.data && window.DomainWorkbench.data.catalog.entries) || [];
+      extraConferences = allEntries.filter(e => e.domain_id === fieldId);
+    } catch(e) {}
+
     return `
       <section class="panel" style="margin-bottom: 20px;">
         <h2>${esc(data.name)} · 权威学术会议目录</h2>
-        <p class="reading-note">本领域已结构化预置国际旗舰学术年会与国内全国性大型会议。点击可查看举办周期、核心关注方向与学术层级。</p>
+        <p class="reading-note">本领域已结构化预置国际旗舰学术年会与国内全国性大型会议；已自动接入市场部最新审核入库的学术会议。</p>
       </section>
+      ${extraConferences.length ? `
+        <h3 style="margin: 0 0 12px; font-size: 16px; color: #1e40af; display: flex; align-items: center; gap: 8px;">
+          <span>🏛️</span> 本领域最新审核入库与跟踪会议 (${extraConferences.length}场)
+        </h3>
+        <div class="weekly-cards" style="margin-bottom: 24px;">
+          ${extraConferences.map(c => `
+            <article class="weekly-card" style="border-top: 3px solid #16a34a; background: #fbfdff;">
+              <div>
+                <span class="week-code">${esc(c.abbreviation)} ${c.year || 2026}</span>
+                <span class="tag" style="background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">${esc(c.tier_label || '国家级重点')}</span>
+                <span class="tag" style="background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;">已审核入库</span>
+                <h3 style="margin: 10px 0 6px 0;">
+                  <a href="${hash ? hash('conferences', {conf: c.conference_id}) : '#'}" style="text-decoration:none;color:inherit;">${esc(c.name_original)}</a>
+                </h3>
+                <p class="muted">举办时间与城市：${esc(c.date_label || c.start_date)} · ${esc(c.location_label || c.city)}</p>
+                <p class="week-coverage" style="margin-top: 8px; color: #334155;"><strong>评级与科研线索</strong>：${esc(c.tier_basis || '市场部审核评级核定')}</p>
+              </div>
+              <div class="links" style="margin-top: 10px;">
+                <a href="${hash ? hash('conferences', {conf: c.conference_id}) : '#'}" style="font-weight:600;color:#2563eb;">进入会议 (详情) →</a>
+                ${c.official_url && c.official_url !== '#' ? `<a href="${esc(c.official_url)}" target="_blank" rel="noopener">官方来源 ↗</a>` : ''}
+              </div>
+            </article>
+          `).join('')}
+        </div>
+      ` : ''}
+      <h3 style="margin: 0 0 12px; font-size: 16px; color: #334155;">旗舰常设会议目录 (${data.conferences.length}场)</h3>
       <div class="weekly-cards">
         ${data.conferences.map(c => `
           <article class="weekly-card" style="border-top: 3px solid #1e40af;">
