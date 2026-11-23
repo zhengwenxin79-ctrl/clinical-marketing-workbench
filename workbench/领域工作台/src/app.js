@@ -67,7 +67,7 @@ const D=adaptData(JSON.parse(document.getElementById('data').textContent)),$=id=
 const map=(xs,k)=>new Map(xs.map(x=>[x[k],x])),T=map(D.topics,'topic_id'),B=map(D.boards,'board_id'),R=map(D.reports,'report_id'),P=map(D.papers,'paper_id'),E=map(D.experts,'key'),M=map(D.biomarkers,'biomarker_id');
 const tag=(x,pending=false)=>`<span class="tag ${pending?'pending':''}">${esc(x)}</span>`,unique=xs=>[...new Set(xs)],empty=x=>`<div class="empty">${esc(x)}</div>`,pct=x=>x===null?'待对应':x.toFixed(2)+'%';
 const safe=u=>/^(https?:\/\/|\.\.\/)/.test(u||'')?u:'#',link=(u,t,ext=false)=>`<a href="${esc(safe(u))}" ${ext?'target="_blank" rel="noopener"':''}>${esc(t)}${ext?' ↗':''}</a>`;
-function state(){const [rawTab,query]=(location.hash.slice(1)||'topics').split('?'),q=new URLSearchParams(query||'');let tab=rawTab;if(rawTab==='sales'&&['market','manager'].includes(q.get('role'))){tab='market';if(q.get('role')==='manager'&&!q.has('sales_tab'))q.set('sales_tab','summary');}const field=D.navigation.domains.find(x=>x.id===q.get('field'))?.id||'diabetes';return {tab:D.navigation.modules.some(x=>x.id===tab)?tab:'topics',q,field,search:q.get('q')||'',board:q.get('board')||'',sort:q.get('sort')==='papers'?'papers':'conference',format:['all','posters'].includes(q.get('format'))?q.get('format'):'talks',region:['domestic','international'].includes(q.get('region'))?q.get('region'):'all',tier:q.get('tier')||'known',source:q.get('source')||'all',type:q.get('type')||'all',page:Math.max(1,parseInt(q.get('page'))||1),topic:q.get('topic')||''};}
+function state(){const defaultTab=getUser().role==='market'?'overview':'topics';const [rawTab,query]=(location.hash.slice(1)||defaultTab).split('?'),q=new URLSearchParams(query||'');let tab=rawTab;if(rawTab==='sales'&&['market','manager'].includes(q.get('role'))){tab='market';if(q.get('role')==='manager'&&!q.has('sales_tab'))q.set('sales_tab','summary');}const field=D.navigation.domains.find(x=>x.id===q.get('field'))?.id||'diabetes';const validTab=tab==='overview'||D.navigation.modules.some(x=>x.id===tab);return {tab:validTab?tab:defaultTab,q,field,search:q.get('q')||'',board:q.get('board')||'',sort:q.get('sort')==='papers'?'papers':'conference',format:['all','posters'].includes(q.get('format'))?q.get('format'):'talks',region:['domestic','international'].includes(q.get('region'))?q.get('region'):'all',tier:q.get('tier')||'known',source:q.get('source')||'all',type:q.get('type')||'all',page:Math.max(1,parseInt(q.get('page'))||1),topic:q.get('topic')||''};}
 function hash(tab,values={}){values={...values};if(tab==='sales'&&['market','manager'].includes(values.role))tab='market';if(values.role!=='manager')delete values.role;const p=new URLSearchParams();if(state().field!=='diabetes')p.set('field',state().field);for(const [k,v] of Object.entries(values))if(v&&(v!=='all'||['format','weekly_format','pi_focus'].includes(k)))p.set(k,v);return '#'+tab+(p.size?'?'+p.toString():'');}
 function update(values){const s=state();for(const [k,v] of Object.entries(values))if(v===null||v===''||(v==='all'&&!['format','weekly_format','pi_focus'].includes(k)))s.q.delete(k);else s.q.set(k,v);location.hash=s.tab+(s.q.size?'?'+s.q.toString():'');}
 function options(xs,v){return xs.map(([id,label])=>`<option value="${esc(id)}" ${id===v?'selected':''}>${esc(label)}</option>`).join('');}
@@ -131,7 +131,7 @@ function render(){
   let s=state();
 
   // 严格角色隔离与重定向拦截
-  if(user.role==='sales'&&s.tab==='market'){
+  if(user.role==='sales'&&(s.tab==='market'||s.tab==='overview')){
     location.hash='#sales?sales='+user.id;
     return;
   }
@@ -141,17 +141,17 @@ function render(){
   }
 
   const domain=D.navigation.domains.find(x=>x.id===s.field)||D.navigation.domains[0];
-  const module=D.navigation.modules.find(x=>x.id===s.tab)||D.navigation.modules[0];
+  const module=s.tab==='overview'?{id:'overview',label:'市场总览',question:'先看本周流动更新与待办，再下钻到各业务模块。'}:(D.navigation.modules.find(x=>x.id===s.tab)||D.navigation.modules[0]);
   $('domain').value=s.field;
   if(document.activeElement!==$('q'))$('q').value=s.search;
 
-  // 根据当前角色严格过滤主导航：销售代表看不到市场工作台，市场人员看不到销售个人台
+  // 根据当前角色严格过滤主导航：销售代表看不到市场工作台与市场总览，市场人员看不到销售个人台
   const visibleModules=D.navigation.modules.filter(m=>{
     if(user.role==='sales')return m.id!=='market';
     return m.id!=='sales';
   });
 
-  let navHtml=visibleModules.map(x=>`<a class="${x.id===s.tab?'active':''}" ${x.id===s.tab?'aria-current="page"':''} href="${hash(x.id,user.role==='sales'?{sales:user.id}:{})}">${esc(x.label)}</a>`).join('');
+  let navHtml=(user.role==='market'?`<a class="${s.tab==='overview'?'active':''}" ${s.tab==='overview'?'aria-current="page"':''} href="#overview" style="font-weight:700;">📊 市场总览</a>`:'')+visibleModules.map(x=>`<a class="${x.id===s.tab?'active':''}" ${x.id===s.tab?'aria-current="page"':''} href="${hash(x.id,user.role==='sales'?{sales:user.id}:{})}">${esc(x.label)}</a>`).join('');
   if(user.role==='market'){
     navHtml+=`<a href="会议审核入库.html" style="color:#d97706;font-weight:600;" title="市场部专属会议审核入库通道">🏛️ 会议审核入库</a>`;
   }
@@ -167,8 +167,10 @@ function render(){
     }
   }
 
-  $('eyebrow').textContent=domain.name+' / '+module.label;$('title').textContent=domain.name+module.label;$('subtitle').textContent=module.question;$('domain-tabs').innerHTML=`<a id="topic-tab" class="${s.tab==='topics'?'active':''}" href="${hash('topics')}">研究议题</a><a href="${hash('conferences')}" style="color:#2563eb;font-weight:600;">📅 回到最新会议动态</a><a href="../标志物视图/index.html">Biomarker</a>`;$('domain-tabs').hidden=s.tab!=='topics';
- if(s.field!=='diabetes'&&window.DomainFrameworks&&window.DomainFrameworks.getDomain(s.field)){
+  $('eyebrow').textContent=s.tab==='overview'?'MARKET COMMAND CENTER / 端到端闭环流水线':domain.name+' / '+module.label;$('title').textContent=s.tab==='overview'?'市场部营销总览':domain.name+module.label;$('subtitle').textContent=module.question;$('domain-tabs').innerHTML=`<a id="topic-tab" class="${s.tab==='topics'?'active':''}" href="${hash('topics')}">研究议题</a><a href="${hash('conferences')}" style="color:#2563eb;font-weight:600;">📅 回到最新会议动态</a><a href="../标志物视图/index.html">Biomarker</a>`;$('domain-tabs').hidden=s.tab!=='topics';
+ if(s.tab==='overview'&&window.MarketOverview){
+  window.MarketOverview.render({D,s,V,esc,hash,update});
+ }else if(s.field!=='diabetes'&&window.DomainFrameworks&&window.DomainFrameworks.getDomain(s.field)){
   if(s.tab==='topics')V.innerHTML=window.DomainFrameworks.renderDomainDashboard(s.field,s,esc,hash);
   else if(s.tab==='conferences')V.innerHTML=window.DomainFrameworks.renderDomainConferences(s.field,esc,hash,D);
   else if(s.tab==='papers')V.innerHTML=window.DomainFrameworks.renderDomainPapers(s.field,esc);
