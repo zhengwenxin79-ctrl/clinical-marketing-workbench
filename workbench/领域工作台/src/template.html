@@ -541,22 +541,51 @@
         <div x-show="hotspotTab === 'academic'" class="space-y-5">
 
           <!-- ------------------------------------------------------------ -->
-          <!-- STAGE 1: ① 会议来源与审核 (Clean Cards, Big Fonts)             -->
+          <!-- STAGE 1: ① 会议来源与审核 (3-Way Collection Console + Cards)    -->
           <!-- ------------------------------------------------------------ -->
           <div x-show="academicMode === 'audit'" class="space-y-4">
-            <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs space-y-3">
-              <div class="flex flex-wrap items-center justify-between gap-3">
-                <div class="flex items-center gap-3">
-                  <span class="w-10 h-10 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center font-bold text-lg">📡</span>
+            <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs space-y-4">
+              <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4">
+                <div class="flex items-center gap-3.5">
+                  <span class="w-12 h-12 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center font-bold text-xl shrink-0">📡</span>
                   <div>
-                    <h3 class="font-bold text-slate-900 text-base">第一步：会议来源监控（59 个官方学会与微官网锚点） &amp; 审核分流</h3>
-                    <p class="text-sm text-slate-500">核定疾病领域与 A/B/C/D 等级，审核通过后自动按“已发日程 / 未发日程”分流入库</p>
+                    <div class="flex items-center gap-2.5 flex-wrap">
+                      <h3 class="font-bold text-slate-900 text-lg">第一步：会议采集控制台 &amp; 来源审核分流</h3>
+                      <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-200"
+                            x-text="'上次巡检：' + lastCrawlTime"></span>
+                    </div>
+                    <p class="text-sm text-slate-500 mt-0.5">支持一键触发 WorkBuddy 自动抓取、定时无人值守巡检、或直接上传会议 Excel/CSV 表格</p>
                   </div>
                 </div>
-                <button @click="showAnchorsPanel = !showAnchorsPanel"
-                        class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-sm font-semibold transition-all">
-                  <span x-text="showAnchorsPanel ? '收起监控来源说明 ↑' : '查看 59 个监控来源锚点 ↓'"></span>
-                </button>
+
+                <!-- 3-Way Collection Action Buttons (Large, Clear, No Clutter) -->
+                <div class="flex flex-wrap items-center gap-2.5">
+                  <!-- Button 1: One-Click WorkBuddy Crawl -->
+                  <button @click="openCrawlModal()"
+                          class="px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-sm font-bold shadow-xs transition-all flex items-center gap-2">
+                    <span>⚡ 一键让 WorkBuddy 抓取会议</span>
+                  </button>
+
+                  <!-- Button 2: Scheduled Auto-Crawl Config -->
+                  <button @click="openScheduleModal()"
+                          class="px-4 py-2.5 rounded-xl text-sm font-bold border transition-all flex items-center gap-2"
+                          :class="scheduleConfig.enabled ? 'bg-emerald-50 text-emerald-800 border-emerald-200 hover:bg-emerald-100' : 'bg-slate-100 text-slate-700 border-slate-200 hover:bg-slate-200'">
+                    <span>⏰ 定时抓取：</span>
+                    <span x-text="scheduleConfig.nextRunLabel"></span>
+                  </button>
+
+                  <!-- Button 3: Upload Excel / CSV / JSON Fallback -->
+                  <button @click="openConfExcelModal()"
+                          class="px-4 py-2.5 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-sm font-bold shadow-xs transition-all flex items-center gap-2">
+                    <span>📂 上传会议 Excel / CSV</span>
+                  </button>
+
+                  <!-- Toggle 59 Anchors Info -->
+                  <button @click="showAnchorsPanel = !showAnchorsPanel"
+                          class="px-3.5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-sm font-semibold transition-all">
+                    <span x-text="showAnchorsPanel ? '收起锚点 ↑' : '59个监控锚点 ↓'"></span>
+                  </button>
+                </div>
               </div>
 
               <div x-show="showAnchorsPanel" x-transition class="pt-3 border-t border-slate-100 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
@@ -570,7 +599,7 @@
                 </div>
                 <div class="bg-slate-50 p-4 rounded-xl border border-slate-200/70">
                   <div class="font-bold text-slate-900 mb-1">🔍 6 大会务平台自动巡检</div>
-                  <p class="text-slate-600">实时巡检美迪康(sciconf)、钛会务(tiemeeting)、cnconf、梅斯医学，自动识别新会议与日程上线。</p>
+                  <p class="text-slate-600">实时巡检美迪康(sciconf)、钛会务(tiemeeting)、cnconf、互会科技(hoohui)、生物谷，自动识别新会议与日程上线。</p>
                 </div>
               </div>
             </div>
@@ -2105,6 +2134,198 @@
         </div>
       </div>
     </template>
+  </div>
+
+  <!-- =================================================================== -->
+  <!-- CONFERENCE COLLECTION 3-WAY MODALS (WorkBuddy Crawl / Schedule / Excel) -->
+  <!-- =================================================================== -->
+
+  <!-- Modal 5: ⚡ 一键让 WorkBuddy 抓取会议 Modal -->
+  <div x-show="showCrawlModal"
+       x-cloak
+       x-transition.opacity
+       class="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-xs flex items-center justify-center p-4">
+    <div @click.outside="showCrawlModal = false"
+         class="bg-white rounded-2xl max-w-2xl w-full p-7 shadow-2xl border border-slate-200 max-h-[90vh] overflow-y-auto space-y-5">
+      <div class="flex items-start justify-between gap-3">
+        <div>
+          <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">WORKBUDDY AUTO-COLLECTOR</span>
+          <h3 class="text-xl font-bold text-slate-900 mt-0.5">⚡ 一键让 WorkBuddy 抓取最新会议与日程</h3>
+        </div>
+        <button @click="showCrawlModal = false" class="text-slate-400 hover:text-slate-600 text-xl font-bold">✕</button>
+      </div>
+
+      <div class="space-y-4 text-sm">
+        <!-- Scope Selection -->
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-3">
+          <label class="block font-bold text-slate-800">1. 选择本次巡检与抓取范围</label>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+            <button @click="crawlScope = 'all_59'"
+                    :class="crawlScope === 'all_59' ? 'bg-blue-600 text-white font-bold border-blue-600' : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-100'"
+                    class="p-3 rounded-xl border text-left transition-all">
+              <div class="text-sm font-bold">🌐 全量 59 个官方锚点</div>
+              <div class="text-xs opacity-80 mt-0.5">19学会+6大会务微站</div>
+            </button>
+            <button @click="crawlScope = 'upcoming_week'"
+                    :class="crawlScope === 'upcoming_week' ? 'bg-blue-600 text-white font-bold border-blue-600' : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-100'"
+                    class="p-3 rounded-xl border text-left transition-all">
+              <div class="text-sm font-bold">📅 近期/下周即将召开</div>
+              <div class="text-xs opacity-80 mt-0.5">重点追查最新上线日程</div>
+            </button>
+            <button @click="crawlScope = 'domain_focus'"
+                    :class="crawlScope === 'domain_focus' ? 'bg-blue-600 text-white font-bold border-blue-600' : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-100'"
+                    class="p-3 rounded-xl border text-left transition-all">
+              <div class="text-sm font-bold">🎯 追查“未发日程”会议</div>
+              <div class="text-xs opacity-80 mt-0.5">巡检入库会议日程更新</div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Live Execution Progress Box -->
+        <div x-show="isCrawling || crawlProgress > 0" class="bg-blue-50/70 border border-blue-200 rounded-xl p-4 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-blue-900" x-text="crawlStatusText"></span>
+            <span class="font-extrabold text-blue-700" x-text="crawlProgress + '%'"></span>
+          </div>
+          <div class="h-2.5 w-full bg-blue-100 rounded-full overflow-hidden">
+            <div class="h-full bg-blue-600 rounded-full transition-all duration-500" :style="'width:' + crawlProgress + '%'"></div>
+          </div>
+          <div class="bg-slate-900 text-slate-100 rounded-xl p-3.5 text-xs font-mono space-y-1.5 max-h-36 overflow-y-auto">
+            <template x-for="lg in crawlLogs" :key="lg">
+              <div x-text="lg"></div>
+            </template>
+          </div>
+        </div>
+
+        <!-- Option B: Direct WorkBuddy Prompt Copy -->
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2.5">
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-slate-800">2. WorkBuddy 客户端联动指令包（可选）</span>
+            <button @click="copyWorkBuddyPrompt()"
+                    class="px-3.5 py-1.5 bg-white hover:bg-blue-50 text-blue-600 border border-blue-200 rounded-lg text-xs font-bold transition-all">
+              📋 一键复制采集提示词
+            </button>
+          </div>
+          <p class="text-xs text-slate-500">如在外部 WorkBuddy 客户端执行深度全网搜索，可点击复制上方标准 ABCD 评级提示词；WorkBuddy 采集完成后推送到 GitHub 或导出 CSV 即可自动入列。</p>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+        <span class="text-xs text-slate-400">自动去重 · 自动提取日程链接 (schedule_url) · 自动初评 A/B/C/D</span>
+        <div class="flex items-center gap-3">
+          <button @click="showCrawlModal = false" class="px-5 py-2.5 bg-slate-100 text-slate-700 text-sm font-bold rounded-xl">关闭</button>
+          <button @click="startWorkBuddyCrawl()"
+                  :disabled="isCrawling"
+                  class="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white text-sm font-bold rounded-xl shadow-xs transition-all">
+            <span x-text="isCrawling ? '🔄 正在巡检抓取中...' : '🚀 立即启动 WorkBuddy 抓取'"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 6: ⏰ WorkBuddy 定时执行会议抓取配置 Modal -->
+  <div x-show="showScheduleModal"
+       x-cloak
+       x-transition.opacity
+       class="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-xs flex items-center justify-center p-4">
+    <div @click.outside="showScheduleModal = false"
+         class="bg-white rounded-2xl max-w-lg w-full p-7 shadow-2xl border border-slate-200 space-y-5">
+      <div class="flex items-start justify-between gap-3">
+        <div>
+          <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">SCHEDULED AUTOMATION</span>
+          <h3 class="text-xl font-bold text-slate-900 mt-0.5">⏰ WorkBuddy 定时会议抓取设置</h3>
+        </div>
+        <button @click="showScheduleModal = false" class="text-slate-400 hover:text-slate-600 text-xl font-bold">✕</button>
+      </div>
+
+      <div class="space-y-4 text-sm">
+        <div class="flex items-center justify-between p-4 bg-emerald-50/70 border border-emerald-200 rounded-xl">
+          <div>
+            <div class="font-bold text-slate-900 text-base">启用 WorkBuddy 定时自动巡检</div>
+            <div class="text-xs text-slate-600 mt-0.5">已绑定 GitHub Actions 云端定时任务 (.github/workflows/deploy.yml)</div>
+          </div>
+          <input type="checkbox" x-model="scheduleConfig.enabled" class="w-5 h-5 rounded text-emerald-600">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+          <div>
+            <label class="block font-bold text-slate-700 mb-1.5">巡检执行周期</label>
+            <select x-model="scheduleConfig.frequency" class="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl font-semibold text-slate-800">
+              <option value="weekly_mon">每周一例行周度采集 (推荐)</option>
+              <option value="daily">每日早间巡检</option>
+              <option value="every_3_days">每 3 天巡检一次</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 mb-1.5">执行时间 (北京时间)</label>
+            <input type="time" x-model="scheduleConfig.timeOfDay" class="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl font-semibold text-slate-800">
+          </div>
+        </div>
+
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2.5">
+          <div class="font-bold text-slate-800">定时任务自动执行动作：</div>
+          <label class="flex items-center gap-2.5 text-slate-700 cursor-pointer">
+            <input type="checkbox" x-model="scheduleConfig.autoPreGrade" class="rounded text-blue-600">
+            <span>发现新会议自动按六大领域与 10 大城市规则初评 A/B/C/D 推入【① 来源与审核】</span>
+          </label>
+          <label class="flex items-center gap-2.5 text-slate-700 cursor-pointer">
+            <input type="checkbox" x-model="scheduleConfig.autoTrackUnpublished" class="rounded text-blue-600">
+            <span>自动追查【② 未发布日程】中的会议，一旦官方放出日程立即转为“已发布”并提醒抓议题</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="flex justify-end gap-3 pt-4 border-t border-slate-100">
+        <button @click="showScheduleModal = false" class="px-5 py-2.5 bg-slate-100 text-slate-700 text-sm font-bold rounded-xl">取消</button>
+        <button @click="saveScheduleConfig()" class="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-bold rounded-xl shadow-xs">保存定时策略</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 7: 📂 上传会议 Excel / CSV / JSON 兜底导入 Modal -->
+  <div x-show="showConfExcelModal"
+       x-cloak
+       x-transition.opacity
+       class="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-xs flex items-center justify-center p-4">
+    <div @click.outside="showConfExcelModal = false"
+         class="bg-white rounded-2xl max-w-xl w-full p-7 shadow-2xl border border-slate-200 space-y-5">
+      <div class="flex items-start justify-between gap-3">
+        <div>
+          <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">EXCEL / CSV FALLBACK IMPORT</span>
+          <h3 class="text-xl font-bold text-slate-900 mt-0.5">📂 上传会议 Excel / CSV 表格直接入列</h3>
+        </div>
+        <button @click="showConfExcelModal = false" class="text-slate-400 hover:text-slate-600 text-xl font-bold">✕</button>
+      </div>
+
+      <div class="space-y-4 text-sm">
+        <label class="block border-2 border-dashed border-blue-300 hover:border-blue-600 rounded-2xl p-8 text-center bg-blue-50/40 hover:bg-blue-50/80 cursor-pointer transition-all">
+          <input type="file" accept=".csv,.json,.txt" class="hidden" @change="handleConfFileUpload($event)">
+          <div class="text-3xl mb-2">📊</div>
+          <p class="font-bold text-slate-800 text-base">点击选择本地会议 Excel (CSV) 或 JSON 文件上传</p>
+          <p class="text-slate-500 text-xs mt-1.5">完美兼容《06_官方评级金标准参考_20261123周度.csv》表头格式</p>
+        </label>
+
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2 text-xs text-slate-600">
+          <div class="font-bold text-slate-800 text-sm">✨ 智能解析能力说明：</div>
+          <p>• 自动识别表头：<code class="bg-white px-1.5 py-0.5 rounded border">会议名称</code>、<code class="bg-white px-1.5 py-0.5 rounded border">领域大类/疾病方向</code>、<code class="bg-white px-1.5 py-0.5 rounded border">会议时间</code>、<code class="bg-white px-1.5 py-0.5 rounded border">会议地点</code>、<code class="bg-white px-1.5 py-0.5 rounded border">联系人</code>、<code class="bg-white px-1.5 py-0.5 rounded border">优先级</code>、<code class="bg-white px-1.5 py-0.5 rounded border">备注</code>。</p>
+          <p>• <strong>自动提取日程链接</strong>：自动从备注列中抽取所有 <code class="bg-white px-1.5 py-0.5 rounded border">https://...</code> 官方日程链接、微站链接与通知原文，生成可点击胶囊按钮。</p>
+          <p>• <strong>自动去重</strong>：已存在的会议自动补充缺失链接，新会议直接进入【① 来源与审核】。</p>
+        </div>
+
+        <div class="pt-1 flex items-center justify-between bg-amber-50/70 border border-amber-200 rounded-xl p-3.5">
+          <span class="text-xs font-bold text-amber-900">💡 想直接测试表格导入效果？</span>
+          <button @click="loadGoldStandardSampleCSV()"
+                  class="px-3.5 py-1.5 bg-amber-500 hover:bg-amber-600 text-white rounded-lg text-xs font-bold shadow-2xs transition-all">
+            一键载入金标准表补充会议样本 &rarr;
+          </button>
+        </div>
+      </div>
+
+      <div class="flex justify-end pt-3 border-t border-slate-100">
+        <button @click="showConfExcelModal = false" class="px-5 py-2.5 bg-slate-100 text-slate-700 text-sm font-bold rounded-xl">关闭</button>
+      </div>
+    </div>
   </div>
 
   <!-- ========================================== -->
