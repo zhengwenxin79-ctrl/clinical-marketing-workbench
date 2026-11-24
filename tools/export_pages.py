@@ -109,6 +109,11 @@ def export_all():
             copy_folder_clean(src_folder, DIST / folder)
             print(f"  -> Staged view suite: workbench/{folder}/ (to dist/workbench/ & dist/).")
 
+    # 7. Generate DingTalk packages (Baseline & Weekly Delta)
+    dingtalk_script = ROOT / "tools/export_dingtalk.py"
+    if dingtalk_script.is_file():
+        subprocess.check_call([sys.executable, "-X", "utf8", str(dingtalk_script)])
+
     print(f"=== [Export Pages Complete] Output directory: {DIST} ===")
     return DIST
 
