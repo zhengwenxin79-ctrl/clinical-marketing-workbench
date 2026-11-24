@@ -394,20 +394,33 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
         <template x-for="fb in myFeedbacks" :key="fb.id">
-          <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-2xs space-y-3.5">
+          <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-2xs space-y-4">
             <div class="flex items-center justify-between">
-              <div class="flex items-center gap-2.5">
+              <div class="flex items-center gap-2.5 flex-wrap">
                 <span class="font-bold text-slate-900 text-lg" x-text="fb.piName"></span>
                 <span class="text-sm text-slate-500" x-text="fb.hospital"></span>
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-blue-50 text-blue-700 border border-blue-200/80"
+                      x-text="fb.contactStatusLabel || '已接触面访'"></span>
               </div>
               <span class="text-xs text-slate-400" x-text="fb.date"></span>
             </div>
 
-            <p class="text-sm text-slate-700 bg-slate-50 p-4 rounded-xl border border-slate-100 leading-relaxed"
-               x-text="fb.cohort || fb.content"></p>
+            <!-- 目前的在研项目 / 课题基金 -->
+            <div class="bg-amber-50/70 border border-amber-200/80 rounded-xl px-4 py-3 flex items-start gap-2.5">
+              <span class="text-xs font-extrabold text-amber-800 bg-amber-100/90 px-2 py-0.5 rounded-md shrink-0 mt-0.5">🔬 目前在研项目</span>
+              <span class="text-sm font-semibold text-slate-800 leading-relaxed"
+                    x-text="fb.ongoingProject || '国家/省部级临床转化课题在研（待进一步核实项目编号）'"></span>
+            </div>
+
+            <!-- 样本队列与合作意向 -->
+            <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 space-y-1.5">
+              <div class="text-xs font-bold text-slate-500">🧬 样本队列底数 &amp; 合作切入点</div>
+              <p class="text-sm text-slate-700 leading-relaxed"
+                 x-text="fb.cohort || fb.content"></p>
+            </div>
 
             <div class="flex items-center justify-between text-xs pt-1">
-              <span class="text-slate-500 font-medium" x-text="'下一步：' + fb.nextStep"></span>
+              <span class="text-slate-600 font-semibold" x-text="'👉 下一步：' + fb.nextStep"></span>
               <span class="text-emerald-600 font-bold">✓ 已同步市场部</span>
             </div>
           </div>
@@ -452,12 +465,17 @@
         </div>
 
         <div>
-          <label class="block font-bold text-slate-700 mb-1.5">1. 摸清的样本队列底数与合作意向（同步回流校准市场部 PI 画像）</label>
-          <textarea rows="3" x-model="fbForm.cohort" placeholder="例如：已冻存 320 例配对血浆与尿液样本，省自然在研，对转录组+蛋白组感兴趣..." class="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl"></textarea>
+          <label class="block font-bold text-slate-700 mb-1.5">1. 目前的在研项目 / 课题基金（国自然、省部级、IIT 或横向课题）</label>
+          <input type="text" x-model="fbForm.ongoingProject" placeholder="例如：国家自然科学基金重点项目在研 / 省自然青年项目《DKD早期外泌体标志物》在研" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl">
         </div>
 
         <div>
-          <label class="block font-bold text-slate-700 mb-1.5">2. 需要公司支持 &amp; 下一步计划</label>
+          <label class="block font-bold text-slate-700 mb-1.5">2. 摸清的样本队列底数与合作意向（同步回流校准市场部 PI 画像）</label>
+          <textarea rows="3" x-model="fbForm.cohort" placeholder="例如：已冻存 320 例配对血浆与尿液样本，对转录组+蛋白组感兴趣..." class="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl"></textarea>
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-700 mb-1.5">3. 需要公司支持 &amp; 下一步计划</label>
           <input type="text" x-model="fbForm.nextStep" placeholder="例如：下周二携医学支持提交 200 例多组学初筛方案与报价" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl">
         </div>
       </div>
@@ -846,6 +864,7 @@
           piName: '王卫庆',
           hospital: '上海瑞金医院',
           contactStatusLabel: '已接触面访',
+          ongoingProject: '国家重点研发计划「四大慢病」代谢病精准分型专项在研 + 国家自然重点项目在研',
           cohort: '围绕 CDS 2026 大会报告沟通了瑞金代谢队列需求，拟挑 300 例微血管并发症进展亚组开展血浆蛋白组与转录组验证(T10/T14)。',
           content: '围绕 CDS 2026 大会报告沟通了瑞金代谢队列需求，拟挑 300 例微血管并发症进展亚组开展血浆蛋白组与转录组验证(T10/T14)。',
           nextStep: '下周二前提交《代谢队列多组学联合验证方案》'
@@ -858,11 +877,50 @@
           piName: '黄斌',
           hospital: '安徽省立医院',
           contactStatusLabel: '已接触面访',
-          cohort: '省自然青年基金在研，已冻存 320 例具备完整随访的 DKD 早期患者配对尿液与血浆标本，拟 Q4 启动转录组验证。',
-          content: '省自然青年基金在研，已冻存 320 例具备完整随访的 DKD 早期患者配对尿液与血浆标本，拟 Q4 启动转录组验证。',
+          ongoingProject: '安徽省自然科学基金青年项目《DKD早期损伤标志物筛选与外泌体转录组验证》在研（准备冲刺2027国自然面上）',
+          cohort: '已冻存 320 例具备完整随访的 DKD 早期患者配对尿液与血浆标本，拟 Q4 启动转录组验证。',
+          content: '已冻存 320 例具备完整随访的 DKD 早期患者配对尿液与血浆标本，拟 Q4 启动转录组验证。',
           nextStep: '寄送尿液外泌体建库质控 SOP'
+        },
+        {
+          id: 'vr3',
+          repId: 'sales_north_li',
+          repName: '李娜 (华北战区)',
+          date: '2026-11-23',
+          piName: '吉训明',
+          hospital: '首都医科大学宣武医院',
+          contactStatusLabel: '已接触面访',
+          ongoingProject: '科技创新2030「脑科学与类脑研究」重大项目在研 + 国家百万减残工程急性卒中多中心临床队列',
+          cohort: '在 2026 脑卒中大会筹备期对接了课题秘书，首期拟挑选 200 例急性卒中再灌注损伤配对血浆/脑脊液做超敏蛋白组与外泌体转录组联检。',
+          content: '在 2026 脑卒中大会筹备期对接了课题秘书，首期拟挑选 200 例急性卒中再灌注损伤配对血浆/脑脊液做超敏蛋白组与外泌体转录组联检。',
+          nextStep: '11-27 脑卒中大会现场与分管子课题负责人敲定建库质控标准'
+        },
+        {
+          id: 'vr4',
+          repId: 'sales_south_wang',
+          repName: '王强 (华南战区)',
+          date: '2026-11-23',
+          piName: '陈荣昌',
+          hospital: '广州医科大学附属第一医院',
+          contactStatusLabel: '已接触面访',
+          ongoingProject: '国家自然科学基金面上项目《慢阻肺早期气道微生态-宿主互作分子分型》在研 + 钟南山院士团队呼吸健康大队列子课题',
+          cohort: '已收集 180 例慢阻肺早期进展患者配对诱导痰与外周血样本，认可吉因加同一份痰液样本同时做宏基因组+宿主转录组的双组学方案。',
+          content: '已收集 180 例慢阻肺早期进展患者配对诱导痰与外周血样本，认可吉因加同一份痰液样本同时做宏基因组+宿主转录组的双组学方案。',
+          nextStep: '长沙 CACP 呼吸年会会后安排生信总监到广医一院做专题技术交流'
         }
       ];
+
+      const storedFeedbacksRaw = readStore('clinical-workbench:visit-reports:v2', null);
+      const initialFeedbacks = Array.isArray(storedFeedbacksRaw) && storedFeedbacksRaw.length
+        ? storedFeedbacksRaw.map(fb => {
+            const def = defaultFeedbacks.find(d => d.id === fb.id || d.piName === fb.piName);
+            return {
+              ...(def || {}),
+              ...fb,
+              ongoingProject: fb.ongoingProject || (def && def.ongoingProject) || '国家/省部级临床转化课题在研（国自然/省自然在研课题）'
+            };
+          })
+        : defaultFeedbacks;
 
       return {
         reps: REPS,
@@ -876,7 +934,7 @@
         battleCards: initialCards,
         conferencePushes: CONFERENCE_PUSHES,
         territoryPIs: buildTerritoryPool(),
-        feedbacks: readStore('clinical-workbench:visit-reports:v2', defaultFeedbacks),
+        feedbacks: initialFeedbacks,
 
         selectedCardId: initialCards[0]?.id || '',
 
@@ -1013,6 +1071,7 @@
           piName: '',
           hospital: '',
           contactStatusLabel: '已接触面访',
+          ongoingProject: '',
           cohort: '',
           nextStep: ''
         },
@@ -1023,6 +1082,7 @@
             piName: card ? card.piName : '王卫庆',
             hospital: card ? card.hospital : '重点合作三甲医院',
             contactStatusLabel: '已接触面访',
+            ongoingProject: '',
             cohort: '',
             nextStep: ''
           };
@@ -1032,16 +1092,19 @@
         fillDemoFeedback() {
           const name = this.fbForm.piName || '专家';
           this.fbForm.contactStatusLabel = '已接触面访';
+          this.fbForm.ongoingProject = `国家自然科学基金面上项目 / 省级临床医学研究中心重点专项（${name}课题组在研，经费充足）`;
           this.fbForm.cohort = `一线核实：${name}教授团队已冻存 260 例具备完整随访终点的配对血浆与体液样本，对 T10 多组学队列验证很感兴趣，拟下月启动初筛。`;
           this.fbForm.nextStep = `下周三携医学部同事二次进院提交 200 例蛋白组+转录组报价方案`;
         },
 
         submitFeedback() {
-          if (!this.fbForm.cohort) {
-            this.showToast('请填写摸清的样本队列底数与合作意向', 'error');
+          if (!this.fbForm.cohort && !this.fbForm.ongoingProject) {
+            this.showToast('请填写在研项目或样本队列底数', 'error');
             return;
           }
           const today = new Date().toISOString().slice(0, 10);
+          const ongoing = this.fbForm.ongoingProject || '国家/省部级临床转化课题在研';
+          const cohortText = this.fbForm.cohort || '已完成初步接触，正在核实具体样本队列例数';
           const newFb = {
             id: 'vr_' + Date.now(),
             repId: this.currentRepId,
@@ -1050,8 +1113,9 @@
             piName: this.fbForm.piName,
             hospital: this.fbForm.hospital,
             contactStatusLabel: this.fbForm.contactStatusLabel,
-            cohort: this.fbForm.cohort,
-            content: this.fbForm.cohort,
+            ongoingProject: ongoing,
+            cohort: cohortText,
+            content: `【在研项目】${ongoing}；【样本队列】${cohortText}`,
             nextStep: this.fbForm.nextStep || '协同医学技术支持持续跟进'
           };
 
@@ -1063,8 +1127,8 @@
             id: 'intel_' + Date.now(),
             piName: this.fbForm.piName,
             hospital: this.fbForm.hospital,
-            type: '销售拜访摸底 · 样本队列核实',
-            content: this.fbForm.cohort,
+            type: '销售拜访摸底 · 在研项目与样本队列核实',
+            content: `【在研项目】${ongoing}；【样本队列】${cohortText}`,
             date: today,
             synced: false
           });
