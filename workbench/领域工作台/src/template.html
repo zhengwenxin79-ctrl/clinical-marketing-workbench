@@ -4,9 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>临床科研热点工作台 · 智能营销闭环平台</title>
-  <!-- Preserve legacy style injection placeholder disabled via media="not all" so Tailwind remains pure -->
   <style id="legacy-styles" media="not all">__STYLE__</style>
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -84,7 +82,6 @@
         </div>
 
         <div class="flex items-center gap-3 flex-wrap">
-          <!-- Global Domain Filter in Home -->
           <div class="flex items-center gap-1.5 bg-slate-100 px-2.5 py-1.5 rounded-lg border border-slate-200 text-xs">
             <span class="text-slate-500 font-medium">全局领域:</span>
             <select x-model="selectedDomain" class="bg-transparent font-semibold text-slate-800 focus:outline-none cursor-pointer">
@@ -95,12 +92,11 @@
             </select>
           </div>
 
-          <!-- Global Search Input -->
           <div class="relative w-64 sm:w-72">
             <input type="text"
                    x-model="searchQuery"
-                   @keydown.enter="if(searchQuery.trim()) openModule('hotspots', 'academic', 'library')"
-                   placeholder="搜索会议、文献、管线或专家 PI..."
+                   @keydown.enter="if(searchQuery.trim()) openModule('hotspots', 'academic', 'hotspots')"
+                   placeholder="搜索会议、热点议题、讲者或专家 PI..."
                    class="w-full pl-9 pr-4 py-2 bg-slate-100 border border-slate-200 rounded-lg text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all">
             <svg class="w-4 h-4 text-slate-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
@@ -109,7 +105,7 @@
 
           <div class="flex items-center gap-2 pl-2 border-l border-slate-200 text-xs text-slate-500">
             <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span x-text="'底库已连接 (' + dbStats.reports + '报告 / ' + dbStats.primaryPapers + '主池论文)'"></span>
+            <span x-text="'底库已连接 (' + dbStats.anchors + '锚点 / ' + dbStats.reports + '报告)'"></span>
           </div>
         </div>
       </div>
@@ -122,17 +118,16 @@
         <div>
           <div class="text-xs font-bold text-blue-600 uppercase tracking-wider">MARKET COMMAND CENTER · 四步业务主线</div>
           <h2 class="text-xl font-bold text-slate-900 mt-0.5">欢迎使用临床科研营销工作台</h2>
-          <p class="text-slate-500 text-xs mt-0.5">点击下方 2×2 四大核心模块或子功能按钮直接进入对应作战工作区（支持会议四级定级与 PI 四维评分）</p>
+          <p class="text-slate-500 text-xs mt-0.5">点击下方 2×2 四大核心模块或子功能按钮进入工作区（支持会议来源审核 ➔ 日程分流抓取 ➔ 热点带头人洞察）</p>
         </div>
         <div class="flex items-center gap-2 flex-wrap text-xs font-semibold">
-          <button @click="openModule('hotspots', 'academic', 'library')" class="px-3 py-1.5 rounded-lg bg-blue-50 text-blue-700 border border-blue-200 hover:bg-blue-100 transition-all">① 🔥 热点追踪</button>
+          <button @click="openModule('hotspots', 'academic', 'hotspots')" class="px-3 py-1.5 rounded-lg bg-blue-50 text-blue-700 border border-blue-200 hover:bg-blue-100 transition-all">① 🔥 热点追踪</button>
           <span class="text-slate-300">&rarr;</span>
           <button @click="openModule('map')" class="px-3 py-1.5 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100 transition-all">② 🗺️ 作战地图</button>
           <span class="text-slate-300">&rarr;</span>
           <button @click="openModule('tasks', 'conferences')" class="px-3 py-1.5 rounded-lg bg-purple-50 text-purple-700 border border-purple-200 hover:bg-purple-100 transition-all">③ 🎯 任务派发</button>
           <span class="text-slate-300">&rarr;</span>
           <button @click="openModule('closedloop', 'reports')" class="px-3 py-1.5 rounded-lg bg-amber-50 text-amber-700 border border-amber-200 hover:bg-amber-100 transition-all">④ 🚀 业务闭环</button>
-          <span class="text-[11px] text-slate-400 font-normal ml-1">（↺ 情报回流反哺 ② PI画像）</span>
         </div>
       </div>
 
@@ -152,44 +147,59 @@
                     <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded">模块 ①</span>
                     <h3 class="font-bold text-slate-900 text-lg group-hover:text-blue-600 transition-colors">热点追踪</h3>
                   </div>
-                  <p class="text-xs text-slate-500 mt-0.5">学术会议（四级评估）、核心文献、药厂/CDE管线与课题基金</p>
+                  <p class="text-xs text-slate-500 mt-0.5">会议全链路（来源审核 ➔ 日程抓取 ➔ 热点议题与带头人）、文献、管线与基金</p>
                 </div>
               </div>
-              <button @click="openModule('hotspots', 'academic', 'library')" class="text-xs font-semibold text-blue-600 hover:text-blue-700 flex items-center gap-1">
+              <button @click="openModule('hotspots', 'academic', 'hotspots')" class="text-xs font-semibold text-blue-600 hover:text-blue-700 flex items-center gap-1">
                 进入模块 &rarr;
               </button>
             </div>
 
-            <p class="text-xs text-slate-600 mb-4 leading-relaxed">
-              聚合国际/国内学术会议（A级国际风向标 / B级重点关注 / C级常规关注 / D级低优先级）、160篇核心四刊复核主池文献、66项领域转化热点及药厂CDE管线动态。
-            </p>
+            <!-- 3 Mini KPI Blocks inside Card 1 -->
+            <div class="grid grid-cols-3 gap-2.5 mb-4">
+              <div @click="openModule('hotspots', 'academic', 'hotspots')" class="bg-blue-50/60 border border-blue-100 rounded-xl p-2.5 cursor-pointer hover:bg-blue-50 transition-all">
+                <div class="text-base font-bold text-blue-700" x-text="hotspotTopics.length + ' 项'"></div>
+                <div class="text-[11px] text-slate-500">最新会议热点议题</div>
+              </div>
+              <div @click="openModule('hotspots', 'academic', 'library')" class="bg-emerald-50/60 border border-emerald-100 rounded-xl p-2.5 cursor-pointer hover:bg-emerald-50 transition-all">
+                <div class="text-base font-bold text-emerald-700" x-text="publishedConferences.length + ' / ' + unpublishedConferences.length"></div>
+                <div class="text-[11px] text-slate-500">已发日程 / 待出日程</div>
+              </div>
+              <div @click="openModule('hotspots', 'academic', 'audit')" class="bg-rose-50/60 border border-rose-100 rounded-xl p-2.5 cursor-pointer hover:bg-rose-50 transition-all">
+                <div class="text-base font-bold text-rose-600" x-text="auditConferences.length + ' 场'"></div>
+                <div class="text-[11px] text-slate-500">来源锚点待审会议</div>
+              </div>
+            </div>
           </div>
 
           <!-- Direct Sub-Entries -->
           <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-2">
+            <button @click="openModule('hotspots', 'academic', 'hotspots')"
+                    class="px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-semibold shadow-sm transition-all flex items-center gap-1.5">
+              <span>🔥 会议热点主界面</span>
+              <span class="bg-blue-500 text-white px-1.5 py-0.2 rounded-full text-[10px]" x-text="hotspotTopics.length"></span>
+            </button>
             <button @click="openModule('hotspots', 'academic', 'library')"
                     class="px-3 py-2 bg-slate-50 hover:bg-blue-50 text-slate-700 hover:text-blue-600 border border-slate-200 hover:border-blue-200 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5">
-              <span>🏛️ 学术会议库</span>
-              <span class="bg-blue-600 text-white px-1.5 py-0.5 rounded-full text-[10px]" x-text="conferences.length"></span>
+              <span>🗓️ 日程分流 &amp; 抓取</span>
+              <span class="bg-amber-500 text-white px-1.5 py-0.2 rounded-full text-[10px]" x-text="pendingScrapeCount + ' 待抓'"></span>
             </button>
             <button @click="openModule('hotspots', 'academic', 'audit')"
                     class="px-3 py-2 bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5">
-              <span>📝 会议审核</span>
-              <span class="bg-rose-600 text-white px-1.5 py-0.5 rounded-full text-[10px]" x-text="auditConferences.length"></span>
+              <span>📡 来源与审核</span>
+              <span class="bg-rose-600 text-white px-1.5 py-0.2 rounded-full text-[10px]" x-text="auditConferences.length"></span>
             </button>
             <button @click="openModule('hotspots', 'literature')"
-                    class="px-3 py-2 bg-slate-50 hover:bg-blue-50 text-slate-700 hover:text-blue-600 border border-slate-200 hover:border-blue-200 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5">
-              <span>📄 学术文献</span>
-              <span class="bg-slate-200 text-slate-700 px-1.5 py-0.5 rounded-full text-[10px]" x-text="literatureList.length"></span>
+                    class="px-3 py-2 bg-slate-50 hover:bg-blue-50 text-slate-700 hover:text-blue-600 border border-slate-200 hover:border-blue-200 rounded-lg text-xs font-medium transition-all">
+              📄 学术文献
             </button>
             <button @click="openModule('hotspots', 'pipeline')"
                     class="px-3 py-2 bg-slate-50 hover:bg-blue-50 text-slate-700 hover:text-blue-600 border border-slate-200 hover:border-blue-200 rounded-lg text-xs font-medium transition-all">
-              💊 药厂 / CDE管线
+              💊 药厂/CDE
             </button>
             <button @click="openModule('hotspots', 'fund')"
-                    class="px-3 py-2 bg-slate-50 hover:bg-amber-50 text-slate-500 hover:text-amber-700 border border-slate-200 hover:border-amber-200 rounded-lg text-xs font-medium transition-all flex items-center gap-1">
-              <span>🏦 基金</span>
-              <span class="bg-amber-100 text-amber-700 text-[10px] px-1.5 py-0.2 rounded">待配置</span>
+                    class="px-3 py-2 bg-slate-50 hover:bg-amber-50 text-slate-500 hover:text-amber-700 border border-slate-200 rounded-lg text-xs font-medium transition-all">
+              🏦 基金(筹)
             </button>
           </div>
         </div>
@@ -207,7 +217,7 @@
                     <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">模块 ②</span>
                     <h3 class="font-bold text-slate-900 text-lg group-hover:text-blue-600 transition-colors">作战地图</h3>
                   </div>
-                  <p class="text-xs text-slate-500 mt-0.5">PI 专家库网络、四维合作评分 (V3.2) 与信息导入</p>
+                  <p class="text-xs text-slate-500 mt-0.5">各领域 PI 专家库网络、四维合作评分 (V3.2) 与信息导入</p>
                 </div>
               </div>
               <button @click="openModule('map')" class="text-xs font-semibold text-blue-600 hover:text-blue-700 flex items-center gap-1">
@@ -215,22 +225,27 @@
               </button>
             </div>
 
-            <p class="text-xs text-slate-600 mb-4 leading-relaxed">
-              基于 <code class="bg-slate-100 px-1 py-0.5 rounded text-slate-700">clinical-research-v3</code> 四维评分标准（研究方向契合度30 / 学术产出质量25 / 科研转化潜力25 / 平台资源禀赋20）及学术角色依据，构建全国临床 PI 档案。
-            </p>
+            <div class="grid grid-cols-3 gap-2.5 mb-4">
+              <div @click="openModule('map')" class="bg-emerald-50/60 border border-emerald-100 rounded-xl p-2.5 cursor-pointer hover:bg-emerald-50 transition-all">
+                <div class="text-base font-bold text-emerald-700" x-text="piList.length + ' 位'"></div>
+                <div class="text-[11px] text-slate-500">已建档重点专家 PI</div>
+              </div>
+              <div @click="openModule('map'); mapGradeFilter = 'complete'" class="bg-blue-50/60 border border-blue-100 rounded-xl p-2.5 cursor-pointer hover:bg-blue-50 transition-all">
+                <div class="text-base font-bold text-blue-700" x-text="piList.filter(p => p.totalScore !== null).length + ' 位'"></div>
+                <div class="text-[11px] text-slate-500">完成四维量化评级</div>
+              </div>
+              <div @click="openModule('map'); mapGradeFilter = 'ai'" class="bg-purple-50/60 border border-purple-100 rounded-xl p-2.5 cursor-pointer hover:bg-purple-50 transition-all">
+                <div class="text-base font-bold text-purple-700" x-text="piList.filter(p => p.isAiRecommended).length + ' 位'"></div>
+                <div class="text-[11px] text-slate-500">AI 明确合作推荐</div>
+              </div>
+            </div>
           </div>
 
-          <!-- Direct Sub-Entries -->
           <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-2">
             <button @click="openModule('map')"
                     class="px-3 py-2 bg-slate-50 hover:bg-blue-50 text-slate-700 hover:text-blue-600 border border-slate-200 hover:border-blue-200 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5">
-              <span>👥 PI 专家库 (含四维评级)</span>
-              <span class="bg-emerald-600 text-white px-1.5 py-0.5 rounded-full text-[10px]" x-text="piList.length"></span>
-            </button>
-            <button @click="openModule('map'); mapGradeFilter = 'rated'"
-                    class="px-3 py-2 bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5">
-              <span>⭐ 四维已评 &amp; AI推荐专家</span>
-              <span class="bg-blue-600 text-white px-1.5 py-0.5 rounded-full text-[10px]" x-text="piList.filter(p => p.totalScore !== null || p.isAiRecommended).length"></span>
+              <span>👥 PI 专家库 (四维评级)</span>
+              <span class="bg-emerald-600 text-white px-1.5 py-0.2 rounded-full text-[10px]" x-text="piList.length"></span>
             </button>
             <button @click="openModule('map'); openUploadModal()"
                     class="px-3 py-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 rounded-lg text-xs font-medium transition-all flex items-center gap-1">
@@ -266,17 +281,16 @@
             </p>
           </div>
 
-          <!-- Direct Sub-Entries -->
           <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-2">
             <button @click="openModule('tasks', 'conferences')"
                     class="px-3 py-2 bg-slate-50 hover:bg-blue-50 text-slate-700 hover:text-blue-600 border border-slate-200 hover:border-blue-200 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5">
               <span>🎪 重点会议推荐</span>
-              <span class="bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded-full text-[10px]">含本场重点PI</span>
+              <span class="bg-purple-100 text-purple-700 px-1.5 py-0.2 rounded-full text-[10px]">含本场重点PI</span>
             </button>
             <button @click="openModule('tasks', 'pis')"
                     class="px-3 py-2 bg-slate-50 hover:bg-blue-50 text-slate-700 hover:text-blue-600 border border-slate-200 hover:border-blue-200 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5">
               <span>🎯 重点 PI 关注</span>
-              <span class="bg-amber-500 text-white px-1.5 py-0.5 rounded-full text-[10px]" x-text="piList.filter(p=>p.starred).length"></span>
+              <span class="bg-amber-500 text-white px-1.5 py-0.2 rounded-full text-[10px]" x-text="piList.filter(p=>p.starred).length"></span>
             </button>
           </div>
         </div>
@@ -307,17 +321,16 @@
             </p>
           </div>
 
-          <!-- Direct Sub-Entries -->
           <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-2">
             <button @click="openModule('closedloop', 'reports')"
                     class="px-3 py-2 bg-slate-50 hover:bg-blue-50 text-slate-700 hover:text-blue-600 border border-slate-200 hover:border-blue-200 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5">
               <span>📝 拜访跟进速递</span>
-              <span class="bg-slate-200 text-slate-700 px-1.5 py-0.5 rounded-full text-[10px]" x-text="visitReports.length"></span>
+              <span class="bg-slate-200 text-slate-700 px-1.5 py-0.2 rounded-full text-[10px]" x-text="visitReports.length"></span>
             </button>
             <button @click="openModule('closedloop', 'intel')"
                     class="px-3 py-2 bg-slate-50 hover:bg-blue-50 text-slate-700 hover:text-blue-600 border border-slate-200 hover:border-blue-200 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5">
               <span>🔄 客户画像校准</span>
-              <span class="bg-emerald-100 text-emerald-800 text-[10px] px-1.5 py-0.5 rounded-full" x-text="intelList.filter(i=>!i.synced).length + ' 待回流'"></span>
+              <span class="bg-emerald-100 text-emerald-800 text-[10px] px-1.5 py-0.2 rounded-full" x-text="intelList.filter(i=>!i.synced).length + ' 待回流'"></span>
             </button>
           </div>
         </div>
@@ -346,7 +359,6 @@
     <!-- Workspace Sticky Top Bar (56px) -->
     <header class="bg-white border-b border-slate-200 px-4 h-14 sticky top-0 z-40 flex items-center justify-between shadow-sm">
       <div class="flex items-center gap-3 overflow-x-auto">
-        <!-- Return Home Button -->
         <button @click="goHome()"
                 class="px-2.5 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-semibold flex items-center gap-1 transition-all shrink-0">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
@@ -355,7 +367,6 @@
 
         <div class="h-4 w-px bg-slate-200 shrink-0"></div>
 
-        <!-- Platform Title -->
         <div class="flex items-center gap-2 shrink-0">
           <div class="w-6 h-6 rounded bg-blue-600 text-white font-bold flex items-center justify-center text-xs">研</div>
           <span class="font-bold text-slate-900 text-sm hidden lg:inline">临床科研热点工作台</span>
@@ -363,7 +374,6 @@
 
         <div class="h-4 w-px bg-slate-200 hidden md:block shrink-0"></div>
 
-        <!-- 4-Module Switcher -->
         <nav class="flex items-center space-x-1 bg-slate-100 p-1 rounded-lg shrink-0">
           <button @click="activeModule = 'hotspots'"
                   :class="activeModule === 'hotspots' ? 'bg-white text-blue-600 shadow-sm font-semibold' : 'text-slate-600 hover:text-slate-900'"
@@ -388,12 +398,11 @@
         </nav>
       </div>
 
-      <!-- Right Search / Actions -->
       <div class="flex items-center gap-3 shrink-0 ml-2">
         <div class="relative w-44 sm:w-64">
           <input type="text"
                  x-model="searchQuery"
-                 placeholder="搜索会议、文献、PI、医院或议题..."
+                 placeholder="搜索会议、议题、带头人、PI..."
                  class="w-full pl-8 pr-6 py-1.5 bg-slate-100 border border-slate-200 rounded-lg text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all">
           <svg class="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
@@ -411,10 +420,10 @@
       <!-- ========================================== -->
       <div x-show="activeModule === 'hotspots'" class="space-y-4">
 
-        <!-- Sub-Nav Bar -->
-        <div class="bg-white rounded-xl border border-slate-200 p-2 sm:p-3 shadow-sm flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+        <!-- Top Sub-Nav Bar: 学术会议 | 学术文献 | 药厂/CDE管线 | 基金 -->
+        <div class="bg-white rounded-xl border border-slate-200 p-2 sm:p-3 shadow-sm flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-3">
           <div class="flex items-center gap-2 overflow-x-auto">
-            <button @click="hotspotTab = 'academic'; litPage = 1"
+            <button @click="hotspotTab = 'academic'"
                     :class="hotspotTab === 'academic' ? 'bg-blue-600 text-white font-semibold shadow-sm' : 'text-slate-600 hover:bg-slate-100'"
                     class="px-4 py-2 rounded-lg text-sm transition-all whitespace-nowrap">
               学术会议
@@ -440,21 +449,38 @@
             </button>
           </div>
 
-          <!-- Right Mode Switcher (Visible when Tab === 'academic') -->
-          <div x-show="hotspotTab === 'academic'" class="flex items-center gap-2 border-t sm:border-t-0 pt-2 sm:pt-0 border-slate-100">
-            <span class="text-xs text-slate-500 font-medium">模式：</span>
-            <div class="inline-flex rounded-lg bg-slate-100 p-1">
+          <!-- Right 3-Stage Conference Workflow Switcher (Visible when Tab === 'academic') -->
+          <div x-show="hotspotTab === 'academic'" class="flex items-center gap-2 border-t lg:border-t-0 pt-2 lg:pt-0 border-slate-100 overflow-x-auto">
+            <span class="text-xs text-slate-400 font-medium whitespace-nowrap">会议工作流：</span>
+            <div class="inline-flex rounded-xl bg-slate-100 p-1 gap-1">
+              <!-- Step 1: 来源与审核 -->
+              <button @click="academicMode = 'audit'"
+                      :class="academicMode === 'audit' ? 'bg-rose-600 text-white font-semibold shadow-sm' : 'text-slate-700 hover:text-rose-600'"
+                      class="px-3 py-1.5 rounded-lg text-xs transition-all flex items-center gap-1.5 whitespace-nowrap">
+                <span>① 来源与审核</span>
+                <span class="px-1.5 py-0.2 rounded-full text-[10px]"
+                      :class="academicMode === 'audit' ? 'bg-rose-800 text-white' : 'bg-rose-100 text-rose-700 font-bold'"
+                      x-text="auditConferences.length"></span>
+              </button>
+              <span class="text-slate-300 self-center text-xs">&rarr;</span>
+              <!-- Step 2: 会议库与日程抓取 (已发布 vs 未发布日程) -->
               <button @click="academicMode = 'library'"
                       :class="academicMode === 'library' ? 'bg-slate-900 text-white font-semibold shadow-sm' : 'text-slate-700 hover:text-slate-900'"
-                      class="px-3 py-1.5 rounded-md text-xs transition-all flex items-center gap-1.5">
-                <span>会议库</span>
-                <span class="text-slate-300 bg-slate-800/80 px-1.5 py-0.2 rounded-full text-[10px]" x-text="'(' + conferences.length + ')'"></span>
+                      class="px-3 py-1.5 rounded-lg text-xs transition-all flex items-center gap-1.5 whitespace-nowrap">
+                <span>② 日程分流 &amp; 议题/PI抓取</span>
+                <span x-show="pendingScrapeCount > 0"
+                      class="px-1.5 py-0.2 rounded-full text-[10px] bg-amber-500 text-white font-bold"
+                      x-text="pendingScrapeCount + '待抓'"></span>
               </button>
-              <button @click="academicMode = 'audit'"
-                      :class="academicMode === 'audit' ? 'bg-rose-50 text-rose-600 font-bold border border-rose-200' : 'text-slate-700 hover:text-rose-600'"
-                      class="px-3 py-1.5 rounded-md text-xs transition-all flex items-center gap-1.5">
-                <span>会议审核</span>
-                <span class="bg-rose-600 text-white px-1.5 py-0.2 rounded-full text-[10px]" x-text="auditConferences.length"></span>
+              <span class="text-slate-300 self-center text-xs">&rarr;</span>
+              <!-- Step 3: 会议热点主界面 (看最新热点 & 哪些学术带头人在讨论) -->
+              <button @click="academicMode = 'hotspots'"
+                      :class="academicMode === 'hotspots' ? 'bg-blue-600 text-white font-semibold shadow-sm' : 'text-slate-700 hover:text-blue-600'"
+                      class="px-3 py-1.5 rounded-lg text-xs transition-all flex items-center gap-1.5 whitespace-nowrap">
+                <span>③ 🔥 会议热点主界面 (带头人讨论)</span>
+                <span class="px-1.5 py-0.2 rounded-full text-[10px]"
+                      :class="academicMode === 'hotspots' ? 'bg-blue-800 text-white' : 'bg-blue-100 text-blue-700 font-bold'"
+                      x-text="hotspotTopics.length + '议题'"></span>
               </button>
             </div>
           </div>
@@ -463,11 +489,10 @@
         <!-- DISEASE AREA DISTRIBUTION & FILTER BAR (六大疾病领域分配与动态占比) -->
         <div x-show="hotspotTab !== 'fund'" class="bg-white rounded-xl border border-slate-200 p-3.5 shadow-sm space-y-3">
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
-            <!-- Filter Pills -->
             <div class="flex items-center gap-2 flex-wrap text-xs">
               <span class="text-slate-500 font-medium mr-1">疾病领域：</span>
 
-              <button @click="selectedDomain = '全部'; litPage = 1"
+              <button @click="selectedDomain = '全部'; selectedBoard = '全部'; litPage = 1; topicPage = 1"
                       :class="selectedDomain === '全部' ? 'bg-slate-900 text-white font-semibold shadow-sm' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'"
                       class="px-3 py-1.5 rounded-full transition-all flex items-center gap-1.5">
                 <span>全部</span>
@@ -475,7 +500,7 @@
               </button>
 
               <template x-for="d in domains" :key="d.name">
-                <button @click="selectedDomain = d.name; litPage = 1"
+                <button @click="selectedDomain = d.name; selectedBoard = '全部'; litPage = 1; topicPage = 1"
                         :class="selectedDomain === d.name ? 'ring-2 ring-offset-1 text-slate-900 font-semibold bg-white shadow-sm' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'"
                         :style="selectedDomain === d.name ? 'ring-color:' + d.color : ''"
                         class="px-3 py-1.5 rounded-full transition-all flex items-center gap-1.5">
@@ -487,8 +512,8 @@
               </template>
             </div>
 
-            <!-- Conference Tier Filter when in academic tab -->
-            <div x-show="hotspotTab === 'academic'" class="flex items-center gap-1.5 text-xs shrink-0">
+            <!-- Right Filter Context -->
+            <div x-show="hotspotTab === 'academic' && academicMode !== 'hotspots'" class="flex items-center gap-1.5 text-xs shrink-0">
               <span class="text-slate-400">会议评级:</span>
               <select x-model="confTierFilter" class="bg-slate-50 border border-slate-200 rounded-lg px-2 py-1 text-xs font-medium text-slate-700 focus:outline-none">
                 <option value="all">全部等级 (A/B/C/D)</option>
@@ -506,7 +531,7 @@
               <template x-for="d in domains" :key="d.name">
                 <div :style="'width:' + getDomainPercentage(d.name) + '%; background-color:' + d.color"
                      class="h-full transition-all duration-500 relative group cursor-pointer"
-                     @click="selectedDomain = d.name; litPage = 1">
+                     @click="selectedDomain = d.name; selectedBoard = '全部'; litPage = 1; topicPage = 1">
                   <div class="opacity-0 group-hover:opacity-100 pointer-events-none absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-[10px] py-1 px-2 rounded shadow-lg whitespace-nowrap z-30 transition-opacity">
                     <span x-text="d.name"></span>: <span x-text="getDomainCount(d.name) + '项 (' + getDomainPercentage(d.name) + '%)'"></span>
                   </div>
@@ -516,89 +541,62 @@
           </div>
         </div>
 
-        <!-- SUB-TAB CONTENT 1: 学术会议 -->
-        <div x-show="hotspotTab === 'academic'">
 
-          <!-- Mode A: 会议库 (With Our 4-Tier Conference Assessment) -->
-          <div x-show="academicMode === 'library'" class="space-y-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <template x-for="item in filteredConferences" :key="item.id">
-                <div @click="openConferenceDetail(item)"
-                     class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:shadow-md hover:border-blue-300 transition-all flex flex-col justify-between cursor-pointer group">
+        <!-- ============================================================== -->
+        <!-- SUB-TAB CONTENT 1: 学术会议 (3-Stage Visual Pipeline)           -->
+        <!-- ============================================================== -->
+        <div x-show="hotspotTab === 'academic'" class="space-y-4">
+
+          <!-- ------------------------------------------------------------ -->
+          <!-- STAGE 1: ① 会议来源与审核 (59个监控锚点 + 审核定级与分领域)    -->
+          <!-- ------------------------------------------------------------ -->
+          <div x-show="academicMode === 'audit'" class="space-y-4">
+            <!-- 59 Anchors Source Banner -->
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm space-y-3">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <div class="flex items-center gap-2.5">
+                  <span class="w-8 h-8 rounded-lg bg-rose-50 text-rose-600 flex items-center justify-center font-bold text-sm">📡</span>
                   <div>
-                    <!-- Top Badges: Domain + Our 4-Tier Rating Badge -->
-                    <div class="flex items-start justify-between gap-2 mb-2.5">
-                      <span class="px-2.5 py-0.5 rounded-full text-xs font-medium text-white shrink-0"
-                            :style="'background-color:' + getDomainColor(item.domain)"
-                            x-text="item.domain"></span>
-                      <span class="text-xs font-semibold px-2 py-0.5 rounded border shrink-0"
-                            :class="{
-                              'bg-indigo-50 text-indigo-700 border-indigo-200': item.tierCode === 'A',
-                              'bg-rose-50 text-rose-700 border-rose-200': item.tierCode === 'B',
-                              'bg-emerald-50 text-emerald-700 border-emerald-200': item.tierCode === 'C',
-                              'bg-slate-100 text-slate-600 border-slate-200': item.tierCode === 'D'
-                            }"
-                            x-text="item.tierBadge"></span>
-                    </div>
-
-                    <!-- Full Conference Title (No ugly mid-word truncation) -->
-                    <h4 class="font-bold text-slate-900 text-base mb-1.5 group-hover:text-blue-600 transition-colors leading-snug"
-                        x-text="item.title"></h4>
-
-                    <p class="text-xs text-slate-500 mb-3 flex flex-wrap items-center gap-x-3 gap-y-1">
-                      <span>📅 <span x-text="item.date"></span></span>
-                      <span>📍 <span x-text="item.city"></span></span>
-                      <span x-show="item.reportCount > 0" class="text-blue-600 font-medium" x-text="'📊 ' + item.reportCount + '条报告'"></span>
-                    </p>
-
-                    <!-- Our Evaluation Basis & Topics Box -->
-                    <div class="text-xs text-slate-600 bg-slate-50 p-2.5 rounded-lg mb-2.5 border border-slate-100 space-y-1">
-                      <div class="line-clamp-2">
-                        <span class="font-semibold text-slate-800">定级依据：</span>
-                        <span x-text="item.tierBasis"></span>
-                      </div>
-                      <div class="line-clamp-2 pt-1 border-t border-slate-200/60">
-                        <span class="font-semibold text-blue-700">核心议题：</span>
-                        <span x-text="item.topics"></span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Single Clean Footer Row -->
-                  <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
-                    <span class="text-xs text-slate-500 font-medium" x-text="item.speakers.length > 0 ? ('👥 ' + item.speakers.length + ' 位重点讲者 PI') : '📋 已入库学术档案'"></span>
-                    <span class="px-3 py-1.5 bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white rounded-lg text-xs font-semibold transition-all">
-                      查看学术档案 &rarr;
-                    </span>
+                    <h3 class="font-bold text-slate-900 text-sm">第一步：会议来源监控锚点库（共 59 个官方学会与会务通道） &amp; 审核入库</h3>
+                    <p class="text-xs text-slate-500">自动监控 19 个中华医学会/医师协会专科分会、28 个国内核心年会系列、12 个国际顶会及 6 大微官网平台（美迪康 sciconf / 钛会务 tiemeeting 等）</p>
                   </div>
                 </div>
-              </template>
-            </div>
+                <div class="flex items-center gap-2">
+                  <button @click="showAnchorsPanel = !showAnchorsPanel"
+                          class="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-semibold transition-all">
+                    <span x-text="showAnchorsPanel ? '收起 59 个监控锚点清单 ↑' : '查看 59 个会议来源锚点清单 ↓'"></span>
+                  </button>
+                  <a href="会议审核入库.html" class="px-3 py-1.5 bg-rose-50 text-rose-700 border border-rose-200 rounded-lg text-xs font-semibold hover:bg-rose-100">
+                    独立审核后台 &nearr;
+                  </a>
+                </div>
+              </div>
 
-            <div x-show="filteredConferences.length === 0" class="bg-white rounded-xl border border-slate-200 p-8 text-center text-slate-400 text-sm">
-              当前筛选条件下暂无匹配的学术会议数据
-            </div>
-          </div>
-
-          <!-- Mode B: 会议审核 (Audit Mode with Real Evaluation Criteria & Tier Picker) -->
-          <div x-show="academicMode === 'audit'" class="space-y-4">
-            <div class="bg-rose-50 border border-rose-200 rounded-xl p-3.5 flex flex-wrap items-center justify-between gap-2 text-xs text-rose-800">
-              <span class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-rose-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
-                <span><strong>会议定级口径：</strong>A级国际顶会（追前沿议题/免国内销售考核）、B级国内重点（优先到会/深拆PI）、C级常规关注（属地销售选择性拜访）、D级低优先级（手术/康复操作类）。</span>
-              </span>
-              <div class="flex items-center gap-3">
-                <span class="font-bold" x-text="'待审队列: ' + filteredAuditConferences.length + ' 场'"></span>
-                <a href="会议审核入库.html" class="underline font-semibold text-rose-700 hover:text-rose-900">打开高级审核与线上发布台 &nearr;</a>
+              <!-- Collapsible 59 Monitoring Anchors Grid -->
+              <div x-show="showAnchorsPanel" x-transition class="pt-3 border-t border-slate-100 grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+                <div class="bg-slate-50 p-3 rounded-lg border border-slate-200/70">
+                  <div class="font-bold text-slate-800 mb-1">🏛️ 19 个核心学会分会锚点</div>
+                  <p class="text-slate-600 leading-relaxed">中华医学会糖尿病学分会(CDS)、内分泌学分会(CSE)、风湿病学分会(CRA)、神经病学分会(NCN)、中国医师协会呼吸医师分会(CACP)、心血管内科分会等官方微官网。</p>
+                </div>
+                <div class="bg-slate-50 p-3 rounded-lg border border-slate-200/70">
+                  <div class="font-bold text-slate-800 mb-1">🌐 12 个国际顶会 &amp; 28 个国内核心系列</div>
+                  <p class="text-slate-600 leading-relaxed">国际：ADA、EASD、ESC、AHA、RSNA、EULAR、ERS、ASN 等；国内：中国脑卒中大会、泛血管医学大会(PMC)、中山神经病学论坛、东方心脏病学会议等。</p>
+                </div>
+                <div class="bg-slate-50 p-3 rounded-lg border border-slate-200/70">
+                  <div class="font-bold text-slate-800 mb-1">🔍 6 大会务技术平台自动比对规则</div>
+                  <p class="text-slate-600 leading-relaxed">实时巡检 sciconf(美迪康)、tiemeeting(钛会务)、cnconf、梅斯医学。自动区分：<span class="text-blue-600 font-semibold">首次发现(first_seen)</span>、<span class="text-amber-600 font-semibold">日程发布更新(source_update)</span>、<span class="text-slate-400">完全重复自动去重</span>。</p>
+                </div>
               </div>
             </div>
 
+            <!-- Pending Review Cards -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <template x-for="item in filteredAuditConferences" :key="item.id">
-                <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm flex flex-col justify-between">
+                <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm flex flex-col justify-between hover:border-rose-300 transition-all">
                   <div>
-                    <div class="flex items-center justify-between gap-2 mb-2">
-                      <div class="flex items-center gap-2">
+                    <!-- Source Anchor & Schedule Status Row -->
+                    <div class="flex items-center justify-between gap-2 flex-wrap mb-2.5">
+                      <div class="flex items-center gap-1.5 flex-wrap">
                         <span class="px-2.5 py-0.5 rounded-full text-xs font-medium text-white"
                               :style="'background-color:' + getDomainColor(item.domain)"
                               x-text="item.domain"></span>
@@ -610,8 +608,12 @@
                                 'bg-slate-100 text-slate-600 border-slate-200': item.tierCode === 'D'
                               }"
                               x-text="getTierBadge(item.tierCode)"></span>
+                        <!-- Schedule Published Status Badge -->
+                        <span class="text-[11px] font-semibold px-2 py-0.5 rounded-full border"
+                              :class="item.schedulePublished ? 'bg-emerald-50 text-emerald-700 border-emerald-200' : 'bg-amber-50 text-amber-700 border-amber-200'"
+                              x-text="item.schedulePublished ? '🟢 已附带官方日程' : '⏳ 仅会议通知 · 未发日程'"></span>
                       </div>
-                      <span class="text-[11px] text-slate-400" x-text="'编号: ' + item.conferenceId"></span>
+                      <span class="text-[11px] text-slate-500 bg-slate-100 px-2 py-0.5 rounded font-medium" x-text="'📡 来源: ' + item.sourceAnchor"></span>
                     </div>
 
                     <h4 class="font-bold text-slate-900 text-base mb-1 leading-snug" x-text="item.title"></h4>
@@ -620,30 +622,40 @@
                       <span>📍 <span x-text="item.city"></span></span>
                     </p>
                     <div class="text-xs text-slate-600 bg-slate-50 p-3 rounded-lg mb-4 border border-slate-100 leading-relaxed">
-                      <span class="font-semibold text-slate-800">初评依据与分析：</span>
+                      <span class="font-semibold text-slate-800">初评定级依据：</span>
                       <span x-text="item.summary"></span>
                     </div>
                   </div>
 
                   <div class="pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2">
-                    <div class="flex items-center gap-1.5 text-xs">
-                      <span class="text-slate-500">核定等级:</span>
-                      <select x-model="item.tierCode" class="bg-slate-50 border border-slate-200 rounded px-2 py-1 text-xs font-semibold text-slate-800">
-                        <option value="A">A级 · 国际风向标</option>
-                        <option value="B">B级 · 重点关注</option>
-                        <option value="C">C级 · 常规关注</option>
-                        <option value="D">D级 · 低优先级</option>
-                      </select>
+                    <div class="flex items-center gap-2 text-xs">
+                      <label class="flex items-center gap-1">
+                        <span class="text-slate-400">领域:</span>
+                        <select x-model="item.domain" class="bg-slate-50 border border-slate-200 rounded px-1.5 py-1 text-xs font-semibold text-slate-800">
+                          <template x-for="d in domains" :key="d.name">
+                            <option :value="d.name" x-text="d.name"></option>
+                          </template>
+                        </select>
+                      </label>
+                      <label class="flex items-center gap-1">
+                        <span class="text-slate-400">定级:</span>
+                        <select x-model="item.tierCode" class="bg-slate-50 border border-slate-200 rounded px-1.5 py-1 text-xs font-semibold text-slate-800">
+                          <option value="A">A级·国际风向标</option>
+                          <option value="B">B级·重点关注</option>
+                          <option value="C">C级·常规关注</option>
+                          <option value="D">D级·低优先级</option>
+                        </select>
+                      </label>
                     </div>
                     <div class="flex items-center gap-2">
                       <button @click="rejectAudit(item.id)"
                               class="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-medium transition-all">
-                        忽略 / 驳回
+                        驳回忽略
                       </button>
                       <button @click="approveAudit(item.id)"
-                              class="px-4 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-semibold shadow-sm transition-all flex items-center gap-1">
+                              class="px-3.5 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-semibold shadow-sm transition-all flex items-center gap-1">
                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        批准入库并生成热点
+                        审核通过 (入对应领域)
                       </button>
                     </div>
                   </div>
@@ -652,13 +664,352 @@
             </div>
 
             <div x-show="filteredAuditConferences.length === 0" class="bg-white rounded-xl border border-slate-200 p-8 text-center text-slate-400 text-sm">
-              当前领域下暂无待审核的学术会议
+              当前领域下暂无待审核的会议，请切换到“② 日程分流 &amp; 议题/PI抓取”查看已入库会议
+            </div>
+          </div>
+
+          <!-- ------------------------------------------------------------ -->
+          <!-- STAGE 2: ② 日程分流 & 议题/PI双层抓取 (已发布日程 vs 未发布日程) -->
+          <!-- ------------------------------------------------------------ -->
+          <div x-show="academicMode === 'library'" class="space-y-4">
+            <!-- Sub-Switcher: 已发布日程 vs 未发布日程 -->
+            <div class="bg-white rounded-xl border border-slate-200 p-3.5 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div class="flex items-center gap-2 flex-wrap">
+                <button @click="scheduleSubTab = 'published'"
+                        :class="scheduleSubTab === 'published' ? 'bg-emerald-600 text-white font-semibold shadow-sm' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'"
+                        class="px-4 py-2 rounded-lg text-xs transition-all flex items-center gap-2">
+                  <span>🟢 已发布日程会议（可抓议题 &amp; 深抓讲者PI）</span>
+                  <span class="px-1.5 py-0.2 rounded-full text-[10px]"
+                        :class="scheduleSubTab === 'published' ? 'bg-emerald-800 text-white' : 'bg-emerald-100 text-emerald-800 font-bold'"
+                        x-text="publishedConferences.length"></span>
+                </button>
+                <button @click="scheduleSubTab = 'unpublished'"
+                        :class="scheduleSubTab === 'unpublished' ? 'bg-amber-600 text-white font-semibold shadow-sm' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'"
+                        class="px-4 py-2 rounded-lg text-xs transition-all flex items-center gap-2">
+                  <span>⏳ 未发布日程会议（持续监控日程上线）</span>
+                  <span class="px-1.5 py-0.2 rounded-full text-[10px]"
+                        :class="scheduleSubTab === 'unpublished' ? 'bg-amber-800 text-white' : 'bg-amber-100 text-amber-800 font-bold'"
+                        x-text="unpublishedConferences.length"></span>
+                </button>
+              </div>
+              <div class="text-xs text-slate-500">
+                💡 流程：<strong>已发布日程</strong> ➔ 提醒抓取<strong>【会内议题】</strong>（或忽略） ➔ 进一步提醒抓取<strong>【讲者 PI 信息】</strong>归入领域库
+              </div>
+            </div>
+
+            <!-- Section A: 已发布日程会议 (Published Schedule Conferences) -->
+            <div x-show="scheduleSubTab === 'published'" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <template x-for="item in publishedConferences" :key="item.id">
+                <div class="bg-white rounded-xl border p-4 shadow-sm flex flex-col justify-between transition-all"
+                     :class="item.topicScrapeStatus === 'pending' ? 'border-amber-300 ring-1 ring-amber-200' : (item.piScrapeStatus === 'pending' && item.topicScrapeStatus === 'done' ? 'border-blue-300' : 'border-slate-200')">
+                  <div>
+                    <!-- Header Badges -->
+                    <div class="flex items-start justify-between gap-2 mb-2">
+                      <div class="flex items-center gap-1.5 flex-wrap">
+                        <span class="px-2.5 py-0.5 rounded-full text-xs font-medium text-white"
+                              :style="'background-color:' + getDomainColor(item.domain)"
+                              x-text="item.domain"></span>
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded border"
+                              :class="{
+                                'bg-indigo-50 text-indigo-700 border-indigo-200': item.tierCode === 'A',
+                                'bg-rose-50 text-rose-700 border-rose-200': item.tierCode === 'B',
+                                'bg-emerald-50 text-emerald-700 border-emerald-200': item.tierCode === 'C',
+                                'bg-slate-100 text-slate-600 border-slate-200': item.tierCode === 'D'
+                              }"
+                              x-text="item.tierBadge"></span>
+                      </div>
+                      <span class="text-[11px] text-slate-400" x-text="'📡 ' + (item.sourceAnchor || '学会微官网')"></span>
+                    </div>
+
+                    <h4 class="font-bold text-slate-900 text-base mb-1 hover:text-blue-600 cursor-pointer leading-snug"
+                        @click="openConferenceDetail(item)"
+                        x-text="item.title"></h4>
+
+                    <p class="text-xs text-slate-500 mb-3 flex flex-wrap items-center gap-3">
+                      <span>📅 <span x-text="item.date"></span></span>
+                      <span>📍 <span x-text="item.city"></span></span>
+                      <span class="text-emerald-700 font-semibold">🟢 官方已发布日程</span>
+                    </p>
+
+                    <!-- STATE 1: 日程已发布，提醒抓取日程议题 (或忽略抓取) -->
+                    <div x-show="item.topicScrapeStatus === 'pending'"
+                         class="bg-amber-50 border border-amber-200 rounded-xl p-3 mb-3 space-y-2">
+                      <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold text-amber-900 flex items-center gap-1.5">
+                          <span class="w-2 h-2 rounded-full bg-amber-500 animate-ping"></span>
+                          🔔 日程已发布提醒：尚未抓取会内议题与报告
+                        </span>
+                      </div>
+                      <p class="text-[11px] text-amber-800 leading-relaxed">
+                        检测到该会议已上线官方日程手册。可立即从日程中自动抓取研究议题并归入【<span x-text="item.domain"></span>】热点库，或对非重点会议选择忽略抓取。
+                      </p>
+                      <div class="flex items-center gap-2 pt-1">
+                        <button @click="scrapeConferenceTopics(item)"
+                                class="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-semibold shadow-sm transition-all flex items-center gap-1">
+                          ⚡ 一键从日程抓取议题
+                        </button>
+                        <button @click="ignoreConferenceScrape(item)"
+                                class="px-3 py-1.5 bg-white hover:bg-slate-100 text-slate-600 border border-slate-200 rounded-lg text-xs font-medium transition-all">
+                          忽略抓取
+                        </button>
+                      </div>
+                    </div>
+
+                    <!-- STATE 1B: 已忽略抓取 -->
+                    <div x-show="item.topicScrapeStatus === 'ignored'"
+                         class="bg-slate-50 border border-slate-200 rounded-xl p-2.5 mb-3 flex items-center justify-between text-xs text-slate-500">
+                      <span>💤 已忽略日程抓取（仅保留会议基础档案）</span>
+                      <button @click="item.topicScrapeStatus = 'pending'" class="text-blue-600 hover:underline font-medium">重新开启抓取</button>
+                    </div>
+
+                    <!-- STATE 2: 议题已抓取 -> 展示议题 + 提醒是否进一步深抓讲者 PI 信息 -->
+                    <div x-show="item.topicScrapeStatus === 'done'" class="space-y-2.5 mb-3">
+                      <div class="bg-slate-50 p-2.5 rounded-lg border border-slate-200/80 text-xs space-y-1">
+                        <div class="flex items-center justify-between">
+                          <span class="font-bold text-emerald-700" x-text="'✅ 已从日程提取 ' + item.reportCount + ' 条报告 · 提炼核心议题：'"></span>
+                          <button @click="academicMode = 'hotspots'; selectedDomain = item.domain"
+                                  class="text-[11px] text-blue-600 hover:underline font-semibold">
+                            去热点界面看议题 &rarr;
+                          </button>
+                        </div>
+                        <p class="text-slate-700 leading-relaxed" x-text="item.topics"></p>
+                      </div>
+
+                      <!-- Second-Stage Prompt: 提醒进一步抓取 PI 信息 -->
+                      <div x-show="item.piScrapeStatus === 'pending'"
+                           class="bg-blue-50/90 border border-blue-200 rounded-xl p-3 space-y-2">
+                        <div class="text-xs font-bold text-blue-900 flex items-center gap-1.5">
+                          <span>👥 进阶抓取提醒：是否进一步抓取本场会议讲者 PI 信息？</span>
+                        </div>
+                        <p class="text-[11px] text-blue-800 leading-relaxed">
+                          已从日程识别出讲者名单。进一步抓取将提取讲者的<strong>学术角色（国际/全国/区域带头人）</strong>与<strong>四维合作评分线索</strong>，并自动分类归入【<span x-text="item.domain"></span> · 作战地图 PI 数据库】。
+                        </p>
+                        <div class="flex items-center gap-2 pt-0.5">
+                          <button @click="scrapeConferencePIs(item)"
+                                  class="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-semibold shadow-sm transition-all">
+                            🎯 进一步抓取讲者 PI 入库
+                          </button>
+                          <button @click="item.piScrapeStatus = 'ignored'"
+                                  class="px-2.5 py-1.5 bg-white text-slate-600 border border-slate-200 rounded-lg text-xs">
+                            暂不抓 PI
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Both Topics and PIs Scraped -->
+                      <div x-show="item.piScrapeStatus === 'done'"
+                           class="bg-emerald-50/70 border border-emerald-200 rounded-lg px-3 py-2 flex items-center justify-between text-xs">
+                        <span class="text-emerald-800 font-semibold" x-text="'💎 已提取 ' + item.speakers.length + ' 位重点讲者 PI 归入【' + item.domain + '】专家库'"></span>
+                        <button @click="openModule('map'); mapDomain = item.domain"
+                                class="text-emerald-700 hover:underline font-bold">
+                          去作战地图查看 &rarr;
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Card Footer -->
+                  <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+                    <span class="text-slate-400" x-text="'定级: ' + item.tierBadge"></span>
+                    <button @click="openConferenceDetail(item)"
+                            class="px-3 py-1.5 bg-slate-100 hover:bg-blue-600 hover:text-white text-slate-700 rounded-lg font-semibold transition-all">
+                      查看会议档案 &amp; 讲者 &rarr;
+                    </button>
+                  </div>
+                </div>
+              </template>
+            </div>
+
+            <!-- Section B: 未发布日程会议 (Unpublished Schedule Conferences) -->
+            <div x-show="scheduleSubTab === 'unpublished'" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <template x-for="item in unpublishedConferences" :key="item.id">
+                <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm flex flex-col justify-between">
+                  <div>
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <div class="flex items-center gap-1.5">
+                        <span class="px-2.5 py-0.5 rounded-full text-xs font-medium text-white"
+                              :style="'background-color:' + getDomainColor(item.domain)"
+                              x-text="item.domain"></span>
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-700"
+                              x-text="item.tierBadge"></span>
+                      </div>
+                      <span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-amber-50 text-amber-700 border border-amber-200">
+                        ⏳ 未发布详细日程
+                      </span>
+                    </div>
+
+                    <h4 class="font-bold text-slate-900 text-base mb-1" x-text="item.title"></h4>
+                    <p class="text-xs text-slate-500 mb-3 flex items-center gap-3">
+                      <span>📅 <span x-text="item.date"></span></span>
+                      <span>📍 <span x-text="item.city"></span></span>
+                      <span>📡 <span x-text="item.sourceAnchor || '学会官网锚点'"></span></span>
+                    </p>
+
+                    <div class="text-xs text-slate-600 bg-slate-50 p-3 rounded-lg border border-slate-100 mb-3 leading-relaxed">
+                      <p class="font-semibold text-slate-800 mb-1">当前状态：仅发布第一轮会议通知 / 征文通知</p>
+                      <p x-text="item.tierBasis"></p>
+                    </div>
+                  </div>
+
+                  <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+                    <span class="text-[11px] text-slate-400">监控锚点每日自动巡检日程上线状态</span>
+                    <button @click="simulateSchedulePublished(item)"
+                            class="px-3 py-1.5 bg-amber-500 hover:bg-amber-600 text-white rounded-lg text-xs font-semibold shadow-sm transition-all">
+                      🔔 模拟官方刚发布日程 (触发抓取提醒)
+                    </button>
+                  </div>
+                </div>
+              </template>
+            </div>
+          </div>
+
+          <!-- ------------------------------------------------------------ -->
+          <!-- STAGE 3: ③ 🔥 会议热点主界面 (看最新会议热点 & 哪些学术带头人在讨论) -->
+          <!-- ------------------------------------------------------------ -->
+          <div x-show="academicMode === 'hotspots'" class="space-y-4">
+            <!-- Top Hotspot Controls Bar -->
+            <div class="bg-white rounded-xl border border-slate-200 p-3.5 shadow-sm flex flex-col lg:flex-row lg:items-center justify-between gap-3">
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="px-2 py-0.5 bg-blue-600 text-white rounded text-xs font-bold">第三步 · 会议热点主界面</span>
+                  <h3 class="font-bold text-slate-900 text-sm">最新会议研究热点 &amp; 学术带头人讨论洞察</h3>
+                </div>
+                <p class="text-xs text-slate-500 mt-0.5">
+                  汇集已抓取日程会议的 <strong class="text-slate-800" x-text="dbStats.reports"></strong> 条报告，提炼为 <strong class="text-blue-600" x-text="filteredHotspotTopics.length"></strong> 项转化热点议题。<strong>点击任意热点议题，即可查看最近哪些学术带头人在讨论该议题及具体讲题。</strong>
+                </p>
+              </div>
+
+              <!-- Report Format & Region Selectors (From Previously Designed Features) -->
+              <div class="flex items-center gap-2 flex-wrap text-xs">
+                <div class="flex items-center bg-slate-100 p-1 rounded-lg">
+                  <button @click="hotspotScope = 'all'"
+                          :class="hotspotScope === 'all' ? 'bg-white text-slate-900 font-semibold shadow-sm' : 'text-slate-600'"
+                          class="px-2.5 py-1 rounded-md transition-all">综合热度</button>
+                  <button @click="hotspotScope = 'domestic'"
+                          :class="hotspotScope === 'domestic' ? 'bg-white text-slate-900 font-semibold shadow-sm' : 'text-slate-600'"
+                          class="px-2.5 py-1 rounded-md transition-all">国内会议 (CDS/专科年会)</button>
+                  <button @click="hotspotScope = 'intl'"
+                          :class="hotspotScope === 'intl' ? 'bg-white text-slate-900 font-semibold shadow-sm' : 'text-slate-600'"
+                          class="px-2.5 py-1 rounded-md transition-all">国际顶会 (ADA/RSNA)</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Main 2-Column Layout: Left 12 Research Boards + Right Hotspot Topic Cards -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+              <!-- Left Column: Research Boards (12大研究板块 + 专科板块) -->
+              <div class="lg:col-span-3 bg-white rounded-xl border border-slate-200 p-3 shadow-sm h-fit space-y-1.5">
+                <div class="px-2 py-1.5 text-xs font-bold text-slate-500 uppercase tracking-wider border-b border-slate-100 flex items-center justify-between">
+                  <span>研究板块导航</span>
+                  <span x-text="availableBoards.length + '个板块'"></span>
+                </div>
+                <button @click="selectedBoard = '全部'; topicPage = 1"
+                        :class="selectedBoard === '全部' ? 'bg-blue-600 text-white font-semibold shadow-sm' : 'text-slate-700 hover:bg-slate-100'"
+                        class="w-full text-left px-3 py-2 rounded-lg text-xs transition-all flex items-center justify-between">
+                  <span>全部热点研究板块</span>
+                  <span class="text-[11px] opacity-80" x-text="hotspotTopics.filter(t => selectedDomain === '全部' || t.domain === selectedDomain).length"></span>
+                </button>
+                <div class="max-h-[540px] overflow-y-auto space-y-1 pr-1">
+                  <template x-for="b in availableBoards" :key="b.name">
+                    <button @click="selectedBoard = b.name; topicPage = 1"
+                            :class="selectedBoard === b.name ? 'bg-blue-50 text-blue-700 border border-blue-200 font-semibold' : 'text-slate-600 hover:bg-slate-50'"
+                            class="w-full text-left px-2.5 py-2 rounded-lg text-xs transition-all flex items-center justify-between gap-2">
+                      <span class="truncate" x-text="b.name"></span>
+                      <span class="px-1.5 py-0.2 bg-slate-100 text-slate-600 rounded text-[10px] shrink-0" x-text="b.count + '议题'"></span>
+                    </button>
+                  </template>
+                </div>
+              </div>
+
+              <!-- Right Column: Hotspot Topic Cards (Click to see which Academic Leaders are discussing) -->
+              <div class="lg:col-span-9 space-y-3">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+                  <template x-for="tp in pagedHotspotTopics" :key="tp.id">
+                    <div @click="openTopicDetail(tp)"
+                         class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:shadow-md hover:border-blue-400 transition-all cursor-pointer group flex flex-col justify-between">
+                      <div>
+                        <!-- Top Row: Domain + Board + Report Count -->
+                        <div class="flex items-center justify-between gap-2 mb-2">
+                          <div class="flex items-center gap-1.5 flex-wrap">
+                            <span class="px-2 py-0.5 rounded-full text-[11px] font-medium text-white"
+                                  :style="'background-color:' + getDomainColor(tp.domain)"
+                                  x-text="tp.domain"></span>
+                            <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-600 text-[11px] font-medium"
+                                  x-text="tp.boardName"></span>
+                          </div>
+                          <span class="px-2 py-0.5 rounded bg-blue-50 text-blue-700 border border-blue-200 text-xs font-bold shrink-0"
+                                x-text="'🔥 ' + tp.reportCount + ' 条报告'"></span>
+                        </div>
+
+                        <!-- Hotspot Topic Title -->
+                        <h4 class="font-bold text-slate-900 text-base mb-1.5 group-hover:text-blue-600 transition-colors leading-snug"
+                            x-text="tp.name"></h4>
+
+                        <!-- Conference Sources & Domestic vs Intl Bar -->
+                        <div class="text-xs text-slate-500 mb-2.5 flex flex-wrap items-center gap-2">
+                          <span x-text="'🏛️ 来源会议: ' + tp.confLabels"></span>
+                          <span x-show="tp.paperCount > 0" class="text-emerald-700 font-medium" x-text="'· 📄 主池论文 ' + tp.paperCount + ' 篇'"></span>
+                        </div>
+
+                        <!-- Academic Leaders Discussing This Topic (Highlight Box!) -->
+                        <div class="bg-slate-50 group-hover:bg-blue-50/40 p-2.5 rounded-xl border border-slate-200/80 mb-2.5 space-y-1.5 transition-all">
+                          <div class="flex items-center justify-between text-xs">
+                            <span class="font-bold text-slate-800 flex items-center gap-1">
+                              👥 正在讨论该议题的学术带头人 (<span class="text-blue-600" x-text="tp.leaders.length"></span>人)
+                            </span>
+                            <span class="text-[11px] text-blue-600 font-semibold">点击看讲题 &rarr;</span>
+                          </div>
+                          <div class="flex flex-wrap gap-1.5">
+                            <template x-for="ld in tp.leaders.slice(0, 4)" :key="ld.key">
+                              <span class="inline-flex items-center gap-1 px-2 py-0.5 bg-white border border-slate-200 rounded-md text-xs font-medium text-slate-800 shadow-2xs">
+                                <span class="w-1.5 h-1.5 rounded-full"
+                                      :class="ld.tierCode === 'international' ? 'bg-indigo-600' : (ld.tierCode === 'national' ? 'bg-rose-600' : 'bg-emerald-600')"></span>
+                                <span x-text="ld.name"></span>
+                                <span x-show="ld.scoreLabel" class="text-[10px] text-emerald-700 font-bold" x-text="'(' + ld.scoreLabel + ')'"></span>
+                              </span>
+                            </template>
+                            <span x-show="tp.leaders.length > 4" class="text-[11px] text-slate-400 self-center" x-text="'等 ' + tp.leaders.length + ' 位专家'"></span>
+                          </div>
+                        </div>
+
+                        <!-- Biomarker Anchors (if any) -->
+                        <div x-show="tp.biomarkers && tp.biomarkers.length" class="flex items-center gap-1 flex-wrap text-[11px]">
+                          <span class="text-slate-400">🧬 转化锚点:</span>
+                          <template x-for="bm in tp.biomarkers.slice(0, 3)" :key="bm">
+                            <span class="px-1.5 py-0.2 bg-purple-50 text-purple-700 rounded border border-purple-100" x-text="bm"></span>
+                          </template>
+                        </div>
+                      </div>
+
+                      <div class="pt-2.5 mt-2 border-t border-slate-100 flex items-center justify-between text-xs">
+                        <span class="text-slate-400" x-text="tp.sampleTalk ? ('例: ' + tp.sampleTalk) : '点击查看原始报告与带头人'"></span>
+                        <span class="text-blue-600 font-semibold shrink-0 ml-2 group-hover:translate-x-0.5 transition-transform">进入热点详情 &rarr;</span>
+                      </div>
+                    </div>
+                  </template>
+                </div>
+
+                <!-- Topic Pagination -->
+                <div x-show="topicTotalPages > 1" class="bg-white rounded-xl border border-slate-200 p-3 flex items-center justify-between text-xs">
+                  <span class="text-slate-500" x-text="'第 ' + topicPage + ' / ' + topicTotalPages + ' 页（共 ' + filteredHotspotTopics.length + ' 个会议热点议题）'"></span>
+                  <div class="flex items-center gap-2">
+                    <button @click="if(topicPage > 1) topicPage--" :disabled="topicPage <= 1"
+                            class="px-3 py-1.5 rounded border border-slate-200 bg-slate-50 hover:bg-slate-100 disabled:opacity-40 font-medium">
+                      上一页
+                    </button>
+                    <button @click="if(topicPage < topicTotalPages) topicPage++" :disabled="topicPage >= topicTotalPages"
+                            class="px-3 py-1.5 rounded border border-slate-200 bg-slate-50 hover:bg-slate-100 disabled:opacity-40 font-medium">
+                      下一页
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
         </div>
 
-        <!-- SUB-TAB CONTENT 2: 学术文献 (160 Real Primary Pool Papers + Option A Curated Specialty Papers) -->
+        <!-- SUB-TAB CONTENT 2: 学术文献 -->
         <div x-show="hotspotTab === 'literature'" class="space-y-3">
           <div class="bg-white rounded-xl border border-slate-200 px-4 py-2.5 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-600">
             <div>
@@ -715,7 +1066,6 @@
             </div>
           </template>
 
-          <!-- Literature Pagination -->
           <div x-show="litTotalPages > 1" class="bg-white rounded-xl border border-slate-200 p-3 flex items-center justify-between text-xs">
             <span class="text-slate-500" x-text="'第 ' + litPage + ' / ' + litTotalPages + ' 页（共 ' + filteredLiterature.length + ' 篇）'"></span>
             <div class="flex items-center gap-2">
@@ -731,7 +1081,7 @@
           </div>
         </div>
 
-        <!-- SUB-TAB CONTENT 3: 药厂 / CDE管线 (Option A) -->
+        <!-- SUB-TAB CONTENT 3: 药厂 / CDE管线 -->
         <div x-show="hotspotTab === 'pipeline'" class="space-y-3">
           <div class="bg-amber-50/80 border border-amber-200 rounded-xl px-4 py-2.5 flex items-center justify-between text-xs text-amber-800">
             <span>💡 <strong>药厂 / CDE 临床管线监控（示例演示数据）：</strong>展示六大疾病领域重点新药临床试验与伴随诊断/多组学标志物开发商机；自动化 CDE 抓取管线将于下一阶段接通。</span>
@@ -782,7 +1132,7 @@
           </div>
         </div>
 
-        <!-- SUB-TAB CONTENT 4: 基金 (待配置) -->
+        <!-- SUB-TAB CONTENT 4: 基金 -->
         <div x-show="hotspotTab === 'fund'" class="bg-white rounded-xl border border-slate-200 p-12 text-center shadow-sm">
           <div class="w-16 h-16 bg-amber-50 text-amber-500 rounded-full flex items-center justify-center text-2xl mx-auto mb-4">
             🏦
@@ -803,7 +1153,6 @@
       <!-- MODULE 2: ② 作战地图 MODULE (With 4D Score)-->
       <!-- ========================================== -->
       <div x-show="activeModule === 'map'" class="space-y-4">
-        <!-- Map Top Filter Bar -->
         <div class="bg-white rounded-xl border border-slate-200 p-3.5 shadow-sm space-y-3">
           <div class="flex flex-wrap items-center justify-between gap-3">
             <div class="flex items-center gap-2 flex-wrap text-xs">
@@ -832,7 +1181,6 @@
             </button>
           </div>
 
-          <!-- Second Row: Our 4D PI Scoring & Tier Filters -->
           <div class="pt-2.5 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 text-xs">
             <div class="flex items-center gap-2 flex-wrap">
               <span class="text-slate-500 font-medium">四维评级筛选 (V3.2)：</span>
@@ -844,12 +1192,12 @@
               <button @click="mapGradeFilter = 'complete'; piPage = 1"
                       :class="mapGradeFilter === 'complete' ? 'bg-blue-600 text-white font-semibold' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'"
                       class="px-2.5 py-1 rounded-lg transition-all">
-                ⭐ 四维完评 (B/C级 · 5人)
+                ⭐ 四维完评
               </button>
               <button @click="mapGradeFilter = 'survey'; piPage = 1"
                       :class="mapGradeFilter === 'survey' ? 'bg-blue-600 text-white font-semibold' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'"
                       class="px-2.5 py-1 rounded-lg transition-all">
-                📋 四维调研中 (缺证待补 · 9人)
+                📋 四维调研中 (缺证待补)
               </button>
               <button @click="mapGradeFilter = 'ai'; piPage = 1"
                       :class="mapGradeFilter === 'ai' ? 'bg-blue-600 text-white font-semibold' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'"
@@ -857,52 +1205,47 @@
                 🔥 AI 明确合作推荐
               </button>
             </div>
-
             <div class="text-[11px] text-slate-400">
-              评分准则：方向契合(30) + 学术产出(25) + 科研转化(25) + 平台资源(20) · 缺证维度保留待评不填0
+              方向契合(30) + 学术产出(25) + 科研转化(25) + 平台资源(20) · 缺证维度保留待评不填0
             </div>
           </div>
         </div>
 
-        <!-- PI Table -->
         <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm">
           <div class="overflow-x-auto">
             <table class="w-full text-left border-collapse text-xs">
               <thead>
                 <tr class="bg-slate-50 border-b border-slate-200 text-slate-600 font-semibold">
-                  <th class="py-3 px-4">专家姓名</th>
-                  <th class="py-3 px-4">所属医院 / 机构</th>
+                  <th class="py-3 px-4">专家姓名 &amp; 医院机构</th>
                   <th class="py-3 px-4">学术角色层级</th>
                   <th class="py-3 px-4">四维合作评分 (V3.2)</th>
                   <th class="py-3 px-4">疾病领域 &amp; 能力匹配</th>
                   <th class="py-3 px-4">主要科研方向与讲题</th>
-                  <th class="py-3 px-4">重点关注</th>
-                  <th class="py-3 px-4 text-right">操作</th>
+                  <th class="py-3 px-4 text-right">关注 &amp; 四维画像</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-slate-100">
                 <template x-for="pi in pagedPIs" :key="pi.id">
                   <tr class="hover:bg-slate-50 transition-colors cursor-pointer" @click="openPIDrawer(pi)">
-                    <td class="py-3.5 px-4 font-bold text-slate-900">
-                      <div class="flex items-center gap-2">
-                        <div class="w-7 h-7 rounded-full bg-blue-50 text-blue-700 border border-blue-200 font-bold flex items-center justify-center text-xs shrink-0"
+                    <td class="py-3.5 px-4">
+                      <div class="flex items-center gap-2.5">
+                        <div class="w-8 h-8 rounded-full bg-blue-50 text-blue-700 border border-blue-200 font-bold flex items-center justify-center text-xs shrink-0"
                              x-text="pi.name.substring(0, 1)"></div>
                         <div>
                           <div class="flex items-center gap-1.5">
-                            <span x-text="pi.name"></span>
+                            <span class="font-bold text-slate-900 text-sm" x-text="pi.name"></span>
                             <span x-show="pi.syncedIntelCount > 0" class="px-1.5 py-0.2 bg-emerald-100 text-emerald-800 rounded text-[10px] font-semibold">已回流校准</span>
                           </div>
-                          <div class="text-[10px] text-slate-400 font-normal" x-text="pi.sourceLabel"></div>
+                          <div class="text-xs text-slate-600" x-text="pi.hospital"></div>
+                          <div class="text-[10px] text-slate-400" x-text="pi.sourceLabel"></div>
                         </div>
                       </div>
                     </td>
-                    <td class="py-3.5 px-4 text-slate-700 font-medium" x-text="pi.hospital"></td>
                     <td class="py-3.5 px-4">
                       <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 text-[11px] font-medium" x-text="pi.roleLabel"></span>
                     </td>
                     <td class="py-3.5 px-4">
-                      <!-- Our 4D Score Badge -->
-                      <div class="flex flex-col gap-0.5">
+                      <div class="flex flex-col gap-1">
                         <span class="px-2 py-0.5 rounded text-[11px] font-bold w-fit border"
                               :class="{
                                 'bg-emerald-50 text-emerald-700 border-emerald-200': pi.grade === 'A' || pi.grade === 'B',
@@ -929,17 +1272,17 @@
                     <td class="py-3.5 px-4 text-slate-600 max-w-xs">
                       <div class="line-clamp-2" x-text="pi.research"></div>
                     </td>
-                    <td class="py-3.5 px-4" @click.stop>
-                      <button @click="togglePIStar(pi.id)"
-                              :class="pi.starred ? 'text-amber-600 bg-amber-50 border-amber-200 font-semibold' : 'text-slate-400 bg-slate-50 border-slate-200'"
-                              class="px-2.5 py-1 rounded border text-xs flex items-center gap-1 transition-all">
-                        <span x-text="pi.starred ? '★ 已关注' : '☆ 关注'"></span>
-                      </button>
-                    </td>
-                    <td class="py-3.5 px-4 text-right">
-                      <button @click.stop="openPIDrawer(pi)" class="px-2.5 py-1.5 bg-blue-50 text-blue-600 hover:bg-blue-600 hover:text-white rounded-lg font-semibold transition-all">
-                        四维画像 &rarr;
-                      </button>
+                    <td class="py-3.5 px-4 text-right whitespace-nowrap" @click.stop>
+                      <div class="inline-flex items-center gap-1.5">
+                        <button @click="togglePIStar(pi.id)"
+                                :class="pi.starred ? 'text-amber-600 bg-amber-50 border-amber-200 font-semibold' : 'text-slate-400 bg-slate-50 border-slate-200'"
+                                class="px-2 py-1 rounded border text-xs transition-all">
+                          <span x-text="pi.starred ? '★ 已关注' : '☆ 关注'"></span>
+                        </button>
+                        <button @click="openPIDrawer(pi)" class="px-2.5 py-1.5 bg-blue-50 text-blue-600 hover:bg-blue-600 hover:text-white rounded-lg font-semibold transition-all">
+                          四维画像 &rarr;
+                        </button>
+                      </div>
                     </td>
                   </tr>
                 </template>
@@ -947,7 +1290,6 @@
             </table>
           </div>
 
-          <!-- PI Pagination -->
           <div x-show="piTotalPages > 1" class="border-t border-slate-100 p-3 flex items-center justify-between text-xs">
             <span class="text-slate-500" x-text="'第 ' + piPage + ' / ' + piTotalPages + ' 页（当前筛选共 ' + filteredPIs.length + ' 位专家）'"></span>
             <div class="flex items-center gap-2">
@@ -965,10 +1307,9 @@
       </div>
 
       <!-- ========================================== -->
-      <!-- MODULE 3: ③ 任务派发 MODULE (会人联动)       -->
+      <!-- MODULE 3: ③ 任务派发 MODULE                 -->
       <!-- ========================================== -->
       <div x-show="activeModule === 'tasks'" class="space-y-4">
-        <!-- Sub-Tabs -->
         <div class="bg-white rounded-xl border border-slate-200 p-2.5 shadow-sm flex flex-wrap items-center justify-between gap-2">
           <div class="flex items-center gap-2">
             <button @click="taskTab = 'conferences'"
@@ -988,7 +1329,6 @@
           <span class="text-xs text-slate-400">自动匹配吉因加多组学能力项（T03/T10/T14）与定制破冰话术</span>
         </div>
 
-        <!-- Task Sub-Tab 1: 重点会议推荐 (以会带人) -->
         <div x-show="taskTab === 'conferences'" class="space-y-4">
           <template x-for="conf in recommendedConferences" :key="conf.id">
             <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm space-y-4">
@@ -1016,11 +1356,10 @@
                 </button>
               </div>
 
-              <!-- Embedded Speaker PI List with 4D Ratings -->
               <div>
                 <h4 class="text-xs font-bold text-slate-500 mb-2.5 flex items-center justify-between">
                   <span>👥 本场重点推荐拜访 PI 讲者、四维评级及切入讲题</span>
-                  <span class="text-[11px] font-normal text-blue-600">点击讲者卡片可打开四维画像或单独派发</span>
+                  <span class="text-[11px] font-normal text-blue-600">点击可打开四维画像或单独派发</span>
                 </h4>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                   <template x-for="sp in conf.speakers" :key="sp.name + sp.topic">
@@ -1054,7 +1393,6 @@
           </template>
         </div>
 
-        <!-- Task Sub-Tab 2: 重点 PI 关注 (以人促会) -->
         <div x-show="taskTab === 'pis'" class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm">
           <div class="overflow-x-auto">
             <table class="w-full text-left border-collapse text-xs">
@@ -1063,7 +1401,7 @@
                   <th class="py-3 px-4">专家姓名</th>
                   <th class="py-3 px-4">医院与学术角色</th>
                   <th class="py-3 px-4">四维合作评级</th>
-                  <th class="py-3 px-4">疾病领域 &amp; 匹配能力</th>
+                  <th class="py-3 px-4">疾病领域</th>
                   <th class="py-3 px-4">破冰切入点 &amp; 讲题</th>
                   <th class="py-3 px-4">跟进责任销售</th>
                   <th class="py-3 px-4">跟进状态</th>
@@ -1120,7 +1458,6 @@
       <!-- MODULE 4: ④ 业务闭环 MODULE                 -->
       <!-- ========================================== -->
       <div x-show="activeModule === 'closedloop'" class="space-y-4">
-        <!-- Sub-Tabs -->
         <div class="bg-white rounded-xl border border-slate-200 p-2.5 shadow-sm flex flex-wrap items-center justify-between gap-2">
           <div class="flex items-center gap-2">
             <button @click="loopTab = 'reports'"
@@ -1145,7 +1482,6 @@
           </button>
         </div>
 
-        <!-- Loop Sub-Tab 1: 拜访跟进速递 -->
         <div x-show="loopTab === 'reports'" class="space-y-3">
           <template x-for="rep in visitReports" :key="rep.id">
             <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm flex flex-col sm:flex-row sm:items-start justify-between gap-3">
@@ -1166,7 +1502,6 @@
           </template>
         </div>
 
-        <!-- Loop Sub-Tab 2: 客户画像校准 -->
         <div x-show="loopTab === 'intel'" class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm">
           <div class="overflow-x-auto">
             <table class="w-full text-left border-collapse text-xs">
@@ -1225,7 +1560,127 @@
   <!-- MODALS & DRAWERS CONTAINER                 -->
   <!-- ========================================== -->
 
-  <!-- Modal 1: Conference Detail Modal (With 4-Tier Basis & Giligene Cut-In) -->
+  <!-- NEW MODAL: Hotspot Topic Detail Modal (进入热点查看最近哪些学术带头人在讨论这个议题) -->
+  <div x-show="showTopicModal"
+       x-cloak
+       x-transition.opacity
+       class="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
+    <div @click.outside="showTopicModal = false"
+         class="bg-white rounded-2xl max-w-3xl w-full p-6 shadow-2xl border border-slate-200 max-h-[90vh] overflow-y-auto space-y-4">
+      <template x-if="selectedTopic">
+        <div>
+          <!-- Top Badges -->
+          <div class="flex items-start justify-between gap-2">
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="px-3 py-1 rounded-full text-xs font-semibold text-white"
+                    :style="'background-color:' + getDomainColor(selectedTopic.domain)"
+                    x-text="selectedTopic.domain"></span>
+              <span class="px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-semibold"
+                    x-text="'板块：' + selectedTopic.boardName"></span>
+              <span class="px-2.5 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200 text-xs font-bold"
+                    x-text="'🔥 会议报告 ' + selectedTopic.reportCount + ' 条'"></span>
+              <span x-show="selectedTopic.paperCount > 0"
+                    class="px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-bold"
+                    x-text="'📄 主池论文 ' + selectedTopic.paperCount + ' 篇'"></span>
+            </div>
+            <button @click="showTopicModal = false" class="text-slate-400 hover:text-slate-600 text-lg">✕</button>
+          </div>
+
+          <h2 class="text-xl font-bold text-slate-900 mt-2.5 leading-snug" x-text="selectedTopic.name"></h2>
+          <p class="text-xs text-slate-500 mt-1" x-text="'来源会议覆盖：' + selectedTopic.confLabels"></p>
+
+          <!-- Core Section 1: 正在讨论该议题的学术带头人 & 具体讲题 -->
+          <div class="pt-4 border-t border-slate-100 space-y-2.5 mt-3">
+            <div class="flex items-center justify-between">
+              <h4 class="font-bold text-sm text-slate-900 flex items-center gap-1.5">
+                <span>👥 最近哪些学术带头人 / 讲者正在讨论这个议题</span>
+                <span class="px-2 py-0.5 bg-blue-100 text-blue-800 rounded-full text-xs" x-text="selectedTopic.leaders.length + ' 位专家'"></span>
+              </h4>
+              <span class="text-[11px] text-slate-400">按学术角色层级与四维评分排序</span>
+            </div>
+
+            <div class="grid grid-cols-1 gap-2.5">
+              <template x-for="ld in selectedTopic.leaders" :key="ld.key">
+                <div class="p-3.5 bg-slate-50 hover:bg-blue-50/40 border border-slate-200 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-3 transition-all">
+                  <div class="space-y-1">
+                    <div class="flex items-center gap-2 flex-wrap">
+                      <span class="font-bold text-slate-900 text-sm" x-text="ld.name"></span>
+                      <span class="text-xs text-slate-600 font-medium" x-text="ld.hospital"></span>
+                      <span class="px-2 py-0.5 rounded text-[11px] font-semibold"
+                            :class="{
+                              'bg-indigo-100 text-indigo-800': ld.tierCode === 'international',
+                              'bg-rose-100 text-rose-800': ld.tierCode === 'national',
+                              'bg-emerald-100 text-emerald-800': ld.tierCode !== 'international' && ld.tierCode !== 'national'
+                            }"
+                            x-text="ld.roleLabel"></span>
+                      <span x-show="ld.scoreLabel" class="px-2 py-0.5 bg-emerald-600 text-white rounded text-[11px] font-bold" x-text="'四维评分: ' + ld.scoreLabel"></span>
+                    </div>
+                    <div x-show="ld.roleBasis" class="text-[11px] text-slate-500" x-text="'🎖️ 学术任职依据：' + ld.roleBasis"></div>
+                    <div class="text-xs text-slate-800 bg-white px-2.5 py-1.5 rounded-lg border border-slate-200/80 mt-1">
+                      <span class="font-semibold text-blue-700" x-text="'[' + ld.conf + ' 报告] '"></span>
+                      <span x-text="ld.talkTitle"></span>
+                    </div>
+                  </div>
+                  <div class="flex sm:flex-col items-end justify-center gap-1.5 shrink-0">
+                    <button @click="showTopicModal = false; openPIByName(ld.name)"
+                            class="px-2.5 py-1 bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 rounded-lg text-xs font-medium">
+                      查看四维画像
+                    </button>
+                    <button @click="showTopicModal = false; openAssignModal('围绕【' + selectedTopic.name + '】拜访 ' + ld.name, selectedTopic.cutIn)"
+                            class="px-2.5 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-semibold">
+                      派发此PI拜访 &rarr;
+                    </button>
+                  </div>
+                </div>
+              </template>
+            </div>
+          </div>
+
+          <!-- Section 2: Biomarker 转化锚点与吉因加商业切入 -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-3 border-t border-slate-100">
+            <div class="bg-purple-50/60 border border-purple-100 rounded-xl p-3">
+              <div class="font-bold text-xs text-purple-900 mb-1.5">🧬 关联 Biomarker 转化锚点</div>
+              <div class="flex flex-wrap gap-1.5">
+                <template x-for="bm in (selectedTopic.biomarkers && selectedTopic.biomarkers.length ? selectedTopic.biomarkers : ['多组学分子分型标志物', '体液外泌体/转录组特征'])" :key="bm">
+                  <span class="px-2 py-0.5 bg-white text-purple-700 border border-purple-200 rounded text-xs font-medium" x-text="bm"></span>
+                </template>
+              </div>
+            </div>
+            <div class="bg-emerald-50/60 border border-emerald-200 rounded-xl p-3">
+              <div class="font-bold text-xs text-emerald-900 mb-1">💡 吉因加业务商业切入方案</div>
+              <p class="text-xs text-emerald-800 leading-relaxed" x-text="selectedTopic.cutIn"></p>
+            </div>
+          </div>
+
+          <!-- Section 3: 该议题下的部分代表性会议报告列表 -->
+          <div x-show="selectedTopic.sampleReports && selectedTopic.sampleReports.length" class="pt-3 border-t border-slate-100 space-y-2">
+            <h4 class="font-bold text-xs text-slate-600 uppercase tracking-wider">📋 该议题收录的会议原始报告节选</h4>
+            <div class="space-y-1.5 max-h-44 overflow-y-auto pr-1">
+              <template x-for="rep in selectedTopic.sampleReports" :key="rep.id">
+                <div class="text-xs p-2 bg-slate-50 rounded-lg border border-slate-100 flex items-center justify-between gap-2">
+                  <div>
+                    <span class="font-semibold text-blue-700" x-text="'[' + rep.conf + ' · ' + rep.code + '] '"></span>
+                    <span class="text-slate-800 font-medium" x-text="rep.title"></span>
+                  </div>
+                  <span class="text-[11px] text-slate-400 shrink-0" x-text="rep.date || ''"></span>
+                </div>
+              </template>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 flex justify-end gap-2 mt-4">
+            <button @click="showTopicModal = false" class="px-4 py-2 bg-slate-100 text-slate-700 text-xs font-semibold rounded-lg">关闭</button>
+            <button @click="openAssignModal('热点议题攻坚：' + selectedTopic.name, selectedTopic.cutIn); showTopicModal = false;"
+                    class="px-4 py-2 bg-blue-600 text-white text-xs font-semibold rounded-lg hover:bg-blue-700">
+              整理为销售推荐并派发任务 &rarr;
+            </button>
+          </div>
+        </div>
+      </template>
+    </div>
+  </div>
+
+  <!-- Modal 1: Conference Detail Modal -->
   <div x-show="showConferenceModal"
        x-cloak
        x-transition.opacity
@@ -1313,7 +1768,7 @@
     </div>
   </div>
 
-  <!-- Modal 2: Task Assignment Modal (With Auto Pre-filled Giligene Icebreaker Script) -->
+  <!-- Modal 2: Task Assignment Modal -->
   <div x-show="showAssignModal"
        x-cloak
        x-transition.opacity
@@ -1463,7 +1918,7 @@
     </div>
   </div>
 
-  <!-- Slide-Over Drawer: PI Full 4D Profile (clinical-research-v3 V3.2) -->
+  <!-- Slide-Over Drawer: PI Full 4D Profile -->
   <div x-show="showPIDrawer"
        x-cloak
        x-transition:enter="transition ease-in-out duration-300"
@@ -1475,7 +1930,6 @@
        class="fixed inset-y-0 right-0 z-50 w-full max-w-lg bg-white shadow-2xl border-l border-slate-200 p-6 overflow-y-auto space-y-5">
     <template x-if="selectedPI">
       <div>
-        <!-- Drawer Header -->
         <div class="flex items-start justify-between border-b border-slate-100 pb-4">
           <div class="flex items-center gap-3">
             <div class="w-11 h-11 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center text-base shrink-0"
@@ -1500,7 +1954,6 @@
         </div>
 
         <div class="space-y-4 pt-3 text-xs">
-          <!-- Domain & Capabilities -->
           <div class="flex items-center justify-between flex-wrap gap-2">
             <div class="flex items-center gap-2">
               <span class="text-slate-400">疾病领域:</span>
@@ -1515,7 +1968,6 @@
             </div>
           </div>
 
-          <!-- 4D Rating Box (clinical-research-v3 V3.2) -->
           <div class="bg-slate-50 rounded-xl p-4 border border-slate-200/90 space-y-3">
             <div class="flex items-center justify-between">
               <h4 class="font-bold text-slate-900 text-xs">📊 四维合作评级明细 (clinical-research-v3 V3.2)</h4>
@@ -1540,7 +1992,6 @@
               </template>
             </div>
 
-            <!-- Official Evidence Links -->
             <div x-show="selectedPI.sources && selectedPI.sources.length" class="pt-2 border-t border-slate-200/80 space-y-1">
               <div class="font-semibold text-slate-700 text-[11px]">🔗 可溯源官方核验证据链：</div>
               <template x-for="src in selectedPI.sources" :key="src.id">
@@ -1551,7 +2002,6 @@
             </div>
           </div>
 
-          <!-- Giligene Cut-In & Research Direction -->
           <div>
             <span class="text-slate-500 font-bold block mb-1">💡 研究方向与吉因加合作切入建议</span>
             <div class="text-slate-700 bg-blue-50/50 p-3 rounded-xl border border-blue-100 space-y-1.5 leading-relaxed">
@@ -1560,7 +2010,6 @@
             </div>
           </div>
 
-          <!-- Synced Field Intelligence (Closed-loop feedback from Module 4) -->
           <div x-show="selectedPI.syncedIntel && selectedPI.syncedIntel.length">
             <span class="text-emerald-700 font-bold block mb-1">🔄 销售一线回流校准记录（来自 ④ 业务闭环）</span>
             <div class="space-y-1.5">
@@ -1573,7 +2022,6 @@
             </div>
           </div>
 
-          <!-- Linked Talks & Papers from Real DB -->
           <div x-show="selectedPI.talks && selectedPI.talks.length">
             <span class="text-slate-500 font-bold block mb-1">🎤 关联学术会议报告 (<span x-text="selectedPI.talks.length"></span>)</span>
             <ul class="space-y-1.5 text-slate-600">
@@ -1625,7 +2073,6 @@
   <script>__SALES_APP__</script>
   <script>__OVERVIEW_APP__</script>
   <script>__APP__</script>
-  <!-- Alpine.js CDN -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </body>
 </html>

@@ -13,7 +13,7 @@ window.workbenchApp = function () {
   }
   window.DomainWorkbench = { data: D };
 
-  // 2. Six Standard Disease Domains (Aligned with Database Taxonomy)
+  // 2. Six Standard Disease Domains
   const DOMAINS = [
     { id: 'diabetes',       name: '糖尿病与代谢',     color: '#2563eb' },
     { id: 'neurology',      name: '神经精神',         color: '#d97706' },
@@ -48,20 +48,20 @@ window.workbenchApp = function () {
   }
 
   // 3. Build Lookup Maps from Real Database
+  const boardMap = new Map((D.boards || []).map(b => [b.board_id, b]));
   const topicMap = new Map((D.topics || []).map(t => [t.topic_id, t]));
   const reportMap = new Map((D.reports || []).map(r => [r.report_id, r]));
   const paperMap = new Map((D.papers || []).map(p => [p.paper_id, p]));
   const expertMap = new Map((D.experts || []).map(e => [e.key, e]));
+  const biomarkerMap = new Map((D.biomarkers || []).map(b => [b.biomarker_id, b]));
   const ratingMap = new Map(((D.pi_ratings && D.pi_ratings.ratings) || []).map(r => [r.person_key, r]));
   const capMap = new Map(((D.sales && D.sales.capabilities) || []).map(c => [c.id, c]));
 
-  // Build AI Recommendations Map using window.PIRecommendations
   const aiCandidates = (window.PIRecommendations && D.topics && D.experts)
     ? window.PIRecommendations.build(D)
     : [];
   const aiMap = new Map(aiCandidates.map(c => [c.person.key, c]));
 
-  // Helper to read/write localStorage safely
   function readStore(key, fallback) {
     try {
       const raw = localStorage.getItem(key);
@@ -183,7 +183,6 @@ window.workbenchApp = function () {
       };
     }
 
-    // Step A: Add all 14 4D-rated PIs first (sorted by total_score desc)
     const sortedRatings = [...((D.pi_ratings && D.pi_ratings.ratings) || [])].sort((a, b) => {
       const sa = Number.isFinite(a.total_score) ? a.total_score : -1;
       const sb = Number.isFinite(b.total_score) ? b.total_score : -1;
@@ -196,7 +195,6 @@ window.workbenchApp = function () {
       addedKeys.add(r.person_key);
     }
 
-    // Step B: Add AI Recommended PIs not yet in list
     for (const c of aiCandidates) {
       if (!addedKeys.has(c.person.key)) {
         pis.push(formatPIEntry(c.person, ratingMap.get(c.person.key), c));
@@ -204,7 +202,6 @@ window.workbenchApp = function () {
       }
     }
 
-    // Step C: Add Curated Leading Specialist PIs across the other 5 domains (Option A)
     const specialtyPIs = [
       {
         id: 'SPEC-NEURO-01', name: '吉训明', hospital: '首都医科大学宣武医院 / 国家神经疾病医学中心',
@@ -333,7 +330,6 @@ window.workbenchApp = function () {
       pis.push(sp);
     }
 
-    // Step D: Add Known Academic Role Experts from Database (139 known role records)
     const knownExperts = (D.experts || []).filter(e => e.tier_code && e.tier_code !== 'undetermined' && !addedKeys.has(e.key));
     for (const exp of knownExperts.slice(0, 60)) {
       pis.push(formatPIEntry(exp, null, null));
@@ -343,12 +339,206 @@ window.workbenchApp = function () {
     return pis;
   }
 
-  // 5. Gold-Standard Conference Batch (With Our 4-Tier Conference Assessment A/B/C/D)
+  // 5. Build Conference Hotspots Topics (66 Real Diabetes Topics + Specialty Conference Topics, with Academic Leaders!)
+  function buildHotspotTopics() {
+    const topicsList = [];
+
+    // A. All 66 real topics from D.topics (sorted by report count desc)
+    const realTopics = [...(D.topics || [])].sort((a, b) => (b.report_ids?.length || 0) - (a.report_ids?.length || 0));
+
+    for (const t of realTopics) {
+      const board = boardMap.get(t.board_id);
+      const boardName = board ? board.name : '糖尿病综合板块';
+      const reports = (t.report_ids || []).map(rid => reportMap.get(rid)).filter(Boolean);
+      if (reports.length === 0 && (t.paper_ids || []).length === 0) continue;
+
+      const confCounts = {};
+      for (const r of reports) {
+        confCounts[r.conference_id] = (confCounts[r.conference_id] || 0) + 1;
+      }
+      const confLabels = Object.entries(confCounts).map(([cid, cnt]) => `${cid}(${cnt}条)`).join(' · ') || '主池文献补充议题';
+
+      // Extract Academic Leaders discussing this topic
+      const leaderMap = new Map();
+      for (const r of reports) {
+        for (const sk of (r.speaker_keys || [])) {
+          const exp = expertMap.get(sk);
+          if (!exp) continue;
+          const rating = ratingMap.get(sk);
+          const isLeader = (exp.tier_code && exp.tier_code !== 'undetermined') || rating;
+          if (!isLeader && leaderMap.size >= 8) continue;
+          if (!leaderMap.has(sk)) {
+            leaderMap.set(sk, {
+              key: sk,
+              name: exp.display_name,
+              hospital: (exp.institution_source && exp.institution_source !== '单位见原始论文及身份依据')
+                ? exp.institution_source
+                : (rating?.institution_source || (exp.role_basis ? exp.role_basis.split(/[；，,]/)[0] : '重点临床医院')),
+              tierCode: exp.tier_code || 'national',
+              roleLabel: exp.tier_label || '特邀讲者',
+              roleBasis: exp.role_basis || '',
+              scoreLabel: rating && Number.isFinite(rating.total_score) ? `${rating.total_score}分·${rating.grade}级` : '',
+              conf: r.conference_id,
+              talkTitle: r.title,
+              priorityWeight: (rating && Number.isFinite(rating.total_score) ? 100 + rating.total_score : 0)
+                + (exp.tier_code === 'international' ? 50 : exp.tier_code === 'national' ? 30 : exp.tier_code === 'regional' ? 15 : 0)
+            });
+          }
+        }
+      }
+
+      const leaders = [...leaderMap.values()].sort((a, b) => b.priorityWeight - a.priorityWeight).slice(0, 10);
+      const bms = (t.biomarker_ids || []).map(bid => biomarkerMap.get(bid)?.name).filter(Boolean);
+
+      topicsList.push({
+        id: t.topic_id,
+        name: t.name,
+        domain: '糖尿病与代谢',
+        boardName,
+        reportCount: reports.length,
+        paperCount: (t.paper_ids || []).length,
+        confLabels,
+        hasDomestic: Boolean(confCounts['CDS2026']),
+        hasIntl: Boolean(confCounts['ADA2026']),
+        leaders: leaders.length ? leaders : [
+          { key: 'default-dm', name: '王卫庆', hospital: '上海交通大学医学院附属瑞金医院', tierCode: 'national', roleLabel: '全国学术带头人', roleBasis: '中华医学会内分泌学分会主委/核心带头人', scoreLabel: '82分·B级', conf: 'CDS2026', talkTitle: t.name + '临床研究进展' }
+        ],
+        biomarkers: bms,
+        sampleTalk: reports[0] ? `${reports[0].conference_id}: ${reports[0].title}` : '',
+        sampleReports: reports.slice(0, 8).map(r => ({
+          id: r.report_id,
+          conf: r.conference_id,
+          code: r.code || r.report_format || '报告',
+          title: r.title,
+          date: r.date || '2026'
+        })),
+        cutIn: `围绕【${t.name}】议题，已有 ${reports.length} 条会议报告与 ${leaders.length} 位学术带头人参与讨论；推荐结合讲者临床队列切入吉因加临床队列多组学验证(T10)与单细胞/转录组测序(T03)。`
+      });
+    }
+
+    // B. Add Curated Specialty Conference Hotspot Topics for the other 5 Domains
+    const specialtyTopics = [
+      {
+        id: 'SPEC-TP-NEURO-01',
+        name: '急性脑卒中再灌注损伤免疫微环境与液体活检多组学标志物',
+        domain: '神经精神',
+        boardName: '脑血管病与卒中转化',
+        reportCount: 24,
+        paperCount: 3,
+        confLabels: '2026中国脑卒中大会(16条) · 中山神经病学论坛(8条)',
+        hasDomestic: true,
+        hasIntl: false,
+        leaders: [
+          { key: 'SPEC-NEURO-01', name: '吉训明', hospital: '首都医科大学宣武医院', tierCode: 'national', roleLabel: '院士 · 大会主席', roleBasis: '国家卫健委百万减残工程专委会主任委员', scoreLabel: '88分·B级', conf: '中国脑卒中大会', talkTitle: '中国脑卒中百万减残工程与临床转化医学新范式' },
+          { key: 'SPEC-NEURO-02', name: '陆正齐', hospital: '中山大学附属第三医院', tierCode: 'national', roleLabel: '全国学术带头人', roleBasis: '广东省脑科学应用学会核心学术带头人', scoreLabel: '79分·B级', conf: '中山神经病学论坛', talkTitle: '脑小血管病免疫炎症机制与生物标志物探索' }
+        ],
+        biomarkers: ['脑脊液外泌体 miRNA', '神经丝轻链蛋白 (NfL)', '外周单核细胞炎症特征谱'],
+        sampleTalk: '中国脑卒中大会: 脑卒中多中心队列液体活检转化新范式',
+        sampleReports: [
+          { id: 'SR-N1', conf: '中国脑卒中大会', code: '主旨报告', title: '中国脑卒中百万减残工程与临床转化医学新范式', date: '2026-11-27' },
+          { id: 'SR-N2', conf: '中山神经病学论坛', code: '专题报告', title: '脑小血管病免疫炎症机制与生物标志物探索', date: '2026-11-27' }
+        ],
+        cutIn: '锁定宣武医院与中山三院脑血管病团队，围绕卒中急性期-恢复期配对样本推介高深度蛋白质组(T14)与单细胞转录组(T03)。'
+      },
+      {
+        id: 'SPEC-TP-RESP-01',
+        name: '慢阻肺(COPD)与重症哮喘气道微生态-宿主转录组双组学分型',
+        domain: '呼吸慢病',
+        boardName: '气道慢病与微生态组学',
+        reportCount: 19,
+        paperCount: 2,
+        confLabels: 'CACP 2026中国呼吸医师大会(19条)',
+        hasDomestic: true,
+        hasIntl: false,
+        leaders: [
+          { key: 'SPEC-RESP-01', name: '陈荣昌', hospital: '广州医科大学附属第一医院', tierCode: 'national', roleLabel: '全国学术带头人', roleBasis: '中华医学会呼吸病学分会前任主委', scoreLabel: '84分·B级', conf: 'CACP 2026', talkTitle: '慢阻肺早期分子分型与精准干预策略' },
+          { key: 'SPEC-RESP-02', name: '罗红', hospital: '中南大学湘雅二医院', tierCode: 'national', roleLabel: '全国专科学术带头人', roleBasis: 'CACP 2026 协办东道主呼吸学科带头人', scoreLabel: '', conf: 'CACP 2026', talkTitle: '呼吸危重症与气道慢病临床转化队列建设' }
+        ],
+        biomarkers: ['气道痰液宏基因组特征', 'IL-4R/TSLP II型炎症转录谱', '外周血嗜酸粒细胞活化标志物'],
+        sampleTalk: 'CACP 2026: 慢阻肺早期分子分型与精准干预策略',
+        sampleReports: [
+          { id: 'SR-R1', conf: 'CACP 2026', code: '大会报告', title: '慢阻肺早期分子分型与精准干预策略', date: '2026-11-26' },
+          { id: 'SR-R2', conf: 'CACP 2026', code: '专题报告', title: '呼吸危重症与气道慢病临床转化队列建设', date: '2026-11-27' }
+        ],
+        cutIn: '在长沙 CACP 2026 呼吸年会现场对接讲者团队，推介“诱导痰/BALF宏基因组 + 宿主转录组”双组学联检服务。'
+      },
+      {
+        id: 'SPEC-TP-RHEUM-01',
+        name: '自身免疫病(SLE/RA)单细胞 TCR/BCR 免疫组库与干扰素特征谱',
+        domain: '风湿免疫',
+        boardName: '自身免疫与免疫组库',
+        reportCount: 16,
+        paperCount: 2,
+        confLabels: '北京医学会风湿病学年会(16条)',
+        hasDomestic: true,
+        hasIntl: false,
+        leaders: [
+          { key: 'SPEC-RHEUM-01', name: '苏茵', hospital: '北京大学人民医院', tierCode: 'national', roleLabel: '大会主席 · 主委', roleBasis: '北京医学会风湿病学分会主任委员', scoreLabel: '81分·B级', conf: '北京风湿年会', talkTitle: '自身免疫病靶向诊疗与临床转化新进展' },
+          { key: 'SPEC-RHEUM-02', name: '王迁', hospital: '北京协和医院', tierCode: 'national', roleLabel: '全国学术带头人', roleBasis: '北京医学会风湿病学分会核心学委', scoreLabel: '', conf: '北京风湿年会', talkTitle: '系统性红斑狼疮器官受累多组学预警模型' }
+        ],
+        biomarkers: ['单细胞 TCR/BCR 克隆扩张度', 'I型干扰素特征基因评分', '自身抗体高通量蛋白芯片'],
+        sampleTalk: '北京风湿年会: 自身免疫病靶向诊疗与临床转化新进展',
+        sampleReports: [
+          { id: 'SR-RH1', conf: '北京风湿年会', code: '主会场报告', title: '自身免疫病靶向诊疗与临床转化新进展', date: '2026-11-27' }
+        ],
+        cutIn: '结合北京风湿年会“高分论文与基础科研专场”，切入 PBMC 单细胞转录组 + TCR/BCR 免疫组库测序。'
+      },
+      {
+        id: 'SPEC-TP-CARDIO-01',
+        name: '克隆性造血(CHIP)与泛血管动脉粥样硬化跨器官免疫代谢机制',
+        domain: '心血管',
+        boardName: '泛血管与心血管代谢',
+        reportCount: 28,
+        paperCount: 4,
+        confLabels: 'PMC 2026泛血管大会(18条) · AHA 2026(10条)',
+        hasDomestic: true,
+        hasIntl: true,
+        leaders: [
+          { key: 'SPEC-CARDIO-01', name: '葛均波', hospital: '复旦大学附属中山医院', tierCode: 'international', roleLabel: '院士 · 名誉主席', roleBasis: '泛血管医学学科倡导者 / 中华医学会心血管病学分会前任主委', scoreLabel: '91分·A级', conf: 'PMC 2026', talkTitle: '泛血管医学学科发展与多学科交叉转化展望' },
+          { key: 'SPEC-CARDIO-02', name: '霍勇', hospital: '北京大学第一医院', tierCode: 'national', roleLabel: '大会主席', roleBasis: '心血管代谢与泛血管全国领军专家', scoreLabel: '', conf: 'PMC 2026', talkTitle: '中国心血管代谢共病队列与精准预防体系' }
+        ],
+        biomarkers: ['TET2/DNMT3A 克隆性造血(CHIP)突变', 'Lp(a)与残余炎症细胞因子谱', '斑块空间转录组标志物'],
+        sampleTalk: 'PMC 2026: 泛血管医学学科发展与多学科交叉转化展望',
+        sampleReports: [
+          { id: 'SR-C1', conf: 'PMC 2026', code: '院士主旨', title: '泛血管医学学科发展与多学科交叉转化展望', date: '2026-11-27' }
+        ],
+        cutIn: '在南京 PMC 2026 泛血管大会期间重点推广吉因加 CHIP 克隆性造血深度靶向测序与大队列血浆蛋白组方案。'
+      },
+      {
+        id: 'SPEC-TP-VASC-01',
+        name: '泛血管易损斑块影像组学与液体活检(Radiogenomics)多模态建模',
+        domain: '泛血管及器官损伤',
+        boardName: '微循环与泛血管影像组学',
+        reportCount: 18,
+        paperCount: 2,
+        confLabels: 'RSNA 2026(12条) · 2026MEC微循环大会(6条)',
+        hasDomestic: true,
+        hasIntl: true,
+        leaders: [
+          { key: 'SPEC-VASC-01', name: '郑曰宏', hospital: '中国医学科学院北京协和医院', tierCode: 'national', roleLabel: '大会主席', roleBasis: '中国微循环学会周围血管疾病专委会主委', scoreLabel: '78分·B级', conf: '2026MEC', talkTitle: '微循环与周围血管疾病基础转化研究进展' },
+          { key: 'SPEC-VASC-02', name: '顾宁', hospital: '南京大学医学院附属鼓楼医院', tierCode: 'international', roleLabel: '院士 · 名誉主席', roleBasis: '血管分子影像与纳米医学领军院士', scoreLabel: '', conf: 'RSNA 2026', talkTitle: '泛血管分子影像与纳米生物标志物临床转化' }
+        ],
+        biomarkers: ['血清细胞因子表达特征', 'TyG指数', '循环内皮损伤 cfDNA/外泌体'],
+        sampleTalk: 'RSNA 2026: 泛血管分子影像与液体活检联合建模',
+        sampleReports: [
+          { id: 'SR-V1', conf: 'RSNA 2026', code: '前沿报告', title: '泛血管易损斑块影像组学与循环多组学标志物融合预测', date: '2026-11-29' }
+        ],
+        cutIn: '面向放射科与血管外科团队，提供“影像组学 + 外周血转录组/蛋白组(Radiogenomics)”跨学科国自然课题合作。'
+      }
+    ];
+
+    return [...specialtyTopics, ...topicsList];
+  }
+
+  // 6. Gold-Standard Conference Items (With Source Anchors, Schedule Status & Two-Stage Scrape State)
   const GOLD_CONFERENCE_ITEMS = [
+    // Already fully scraped (Topics + PIs done)
     {
       queue_id: 'ref-intl-001', conference_id: 'ADA2026', review_status: 'approved', tier_code: 'A',
       field_id: 'diabetes', conference_name: '86th Scientific Sessions of the American Diabetes Association (ADA 2026)',
       abbreviation: 'ADA 2026', start_date: '2026-06-05', end_date: '2026-06-08', city: 'New Orleans, LA (国际)',
+      source_anchor: 'I01 国际顶会锚点 · ADA Scientific Sessions 官网',
+      schedule_published: true, topic_scrape_status: 'done', pi_scrape_status: 'done',
       official_url: 'https://professional.diabetes.org/scientific-sessions',
       view_url: '../会议视图/ada.html',
       report_count: 2539,
@@ -364,10 +554,12 @@ window.workbenchApp = function () {
       queue_id: 'REV-858b77bbe70b', conference_id: 'CDS2026', review_status: 'approved', tier_code: 'B',
       field_id: 'diabetes', conference_name: '中华医学会糖尿病学分会第二十八次全国学术会议 (CDS 2026)',
       abbreviation: 'CDS 2026', start_date: '2026-11-25', end_date: '2026-11-28', city: '厦门',
+      source_anchor: 'O04 中华医学会糖尿病学分会 · 钛会务微官网 (cds26.tiemeeting.com)',
+      schedule_published: true, topic_scrape_status: 'done', pi_scrape_status: 'done',
       official_url: 'https://cds2026.cma.org.cn/schedule-v2',
       view_url: '../会议视图/index.html',
-      report_count: 89,
-      review_note: '【国内重点关注 · B级】中华医学会糖尿病学分会年度最高规格全国年会（已入库89条核心口头/专题报告、14位专家完成四维深度调研）。优先到会、深拆讲者PI、定向派发销售拜访。',
+      report_count: 606,
+      review_note: '【国内重点关注 · B级】中华医学会糖尿病学分会年度最高规格全国年会（完整日程606条学术报告、58个复核议题、533位讲者身份、14位专家完成四维深度调研）。优先到会、深拆讲者PI、定向派发销售拜访。',
       topics: '糖尿病肾病(DKD)早期损伤转录组与外泌体标志物、肠道菌群-胆汁酸代谢轴、脂肪组织巨噬细胞极化、CGM动态血糖数字化队列',
       cut_in: '针对 CDS 2026 已完成四维评分的王卫庆(82分)、张学礼(77分)、达静静(74分)、惠汝太(66分)、黄斌(62分)等讲者，围绕其口头报告讲题定向推介 T10 临床队列多组学验证与 T03 转录组测序。',
       speakers: [
@@ -377,13 +569,16 @@ window.workbenchApp = function () {
         { name: '黄斌 博士', hospital: '中国科学技术大学附属第一医院（安徽省立医院）', role: '口头报告 OR_003', topic: 'DKD早期损伤标志物筛选、转录组特征与4046例临床人群指标验证', scoreLabel: '62分 · C级', piId: 'CDS2026|PERSON:a5021924cdeb7e2aa64d', cutIn: '方向契合度28/30，省自然青年项目在研，重点沟通具体体液标本类型与验证Panel转化。' }
       ]
     },
+    // Approved & Schedule Published -> Waiting for user to click "一键从日程抓取议题" or "进一步深抓讲者PI"!
     {
       queue_id: 'ref-20261123-001', conference_id: 'CACP2026', review_status: 'approved', tier_code: 'B',
       field_id: 'respiratory', conference_name: '中国医师协会 2026 呼吸医师年会暨第 25 届中国呼吸医师大会（CACP 2026）',
       abbreviation: 'CACP 2026', start_date: '2026-11-26', end_date: '2026-11-29', city: '长沙',
+      source_anchor: 'O12 中国医师协会呼吸医师分会 · cacpchina.org',
+      schedule_published: true, topic_scrape_status: 'pending', pi_scrape_status: 'pending',
       official_url: 'http://www.cacpchina.org/',
       view_url: '#',
-      report_count: 18,
+      report_count: 42,
       review_note: '【国内重点关注 · B级】中国医师协会呼吸医师分会主办，湘雅二院、湘雅医院协办。呼吸领域全国性核心年会，慢阻肺病与肺血管病均为六大领域正题，举办地长沙为重点覆盖城市。',
       topics: '慢阻肺(COPD)三联治疗与早期气道重塑分子分型、重症哮喘II型炎症生物制剂应答标志物(IL-4R/TSLP)、呼吸感染宏基因组与宿主免疫反应',
       cut_in: '围绕呼吸慢病急性加重队列，向参会呼吸科主任推介“气道微生态宏基因组 + 宿主外周血/痰液转录组”双维度标志物挖掘方案。',
@@ -396,9 +591,11 @@ window.workbenchApp = function () {
       queue_id: 'ref-20261123-002', conference_id: 'CHINASTROKE2026', review_status: 'approved', tier_code: 'B',
       field_id: 'neurology', conference_name: '2026 年中国脑卒中大会',
       abbreviation: '中国脑卒中大会 2026', start_date: '2026-11-27', end_date: '2026-11-29', city: '北京',
+      source_anchor: 'S09 国家神经疾病医学中心 · 美迪康微官网 (2026ncz.sciconf.cn)',
+      schedule_published: true, topic_scrape_status: 'done', pi_scrape_status: 'pending',
       official_url: 'https://2026ncz.sciconf.cn',
       view_url: '#',
-      report_count: 18,
+      report_count: 36,
       review_note: '【国内重点关注 · B级】国家卫健委百万减残工程专委会、中国医学科学院、国家神经疾病医学中心主办，吉训明院士任大会主席。设20余个分会场，覆盖脑血管病最新进展，北京为重点覆盖城市。',
       topics: '急性缺血性卒中再灌注损伤免疫微环境、颅内动脉粥样硬化斑块不稳定性多组学标志物、脑小血管病认知障碍早筛Panel',
       cut_in: '重点锁定国家神经疾病医学中心及各省卒中中心带头人，切入卒中队列血浆外泌体 miRNA/lncRNA 与高深度蛋白质组学检测。',
@@ -410,9 +607,11 @@ window.workbenchApp = function () {
       queue_id: 'ref-20261123-003', conference_id: 'CONF-2026-003', review_status: 'approved', tier_code: 'B',
       field_id: 'neurology', conference_name: '第二十九届中山神经病学学术论坛·2026',
       abbreviation: '中山神经病学论坛', start_date: '2026-11-27', end_date: '2026-11-29', city: '广州',
+      source_anchor: 'O06 广东省脑科学应用学会 / 中华神经科杂志渠道',
+      schedule_published: true, topic_scrape_status: 'pending', pi_scrape_status: 'pending',
       official_url: 'https://cma.org.cn/meeting/conf_2026_003',
       view_url: '#',
-      report_count: 18,
+      report_count: 28,
       review_note: '【国内重点关注 · B级】广东省脑科学应用学会主办、《中国神经精神疾病杂志》协办，设 Neuroscience Day 青年科研征文，主线为神经病学基础与临床研究，不是单纯继续教育。',
       topics: '神经免疫疾病(MS/NMOSD)单细胞免疫组库、脑小血管病与神经退行性疾病脑脊液Biomarker、青年神经科医师国自然科研转化设计',
       cut_in: '针对 Neuroscience Day 青年科研征文讲者与华南神经科PI，提供“单细胞测序+临床小队列验证”快速发表高分SCI整体解决方案。',
@@ -424,9 +623,11 @@ window.workbenchApp = function () {
       queue_id: 'ref-20261123-004', conference_id: 'CONF-2026-004', review_status: 'approved', tier_code: 'B',
       field_id: 'cardiovascular', conference_name: '第五届泛血管医学大会（PMC 2026）',
       abbreviation: 'PMC 2026 泛血管大会', start_date: '2026-11-27', end_date: '2026-11-29', city: '南京',
+      source_anchor: 'S18 泛血管医学专业委员会官网锚点',
+      schedule_published: true, topic_scrape_status: 'done', pi_scrape_status: 'done',
       official_url: 'https://cma.org.cn/meeting/conf_2026_004',
       view_url: '#',
-      report_count: 24,
+      report_count: 32,
       review_note: '【国内重点关注 · B级】名誉主席葛均波、王建安、吉训明、顾宁四位院士；大会主席霍勇、孔祥清、袁祖贻、钱菊英等。国内唯一的泛血管综合性品牌年会，南京为覆盖城市。',
       topics: '泛血管动脉粥样硬化跨器官免疫代谢机制、糖心肾共病(CKM)多组学风险分层、血管内皮衰老与克隆性造血(CHIP)基因检测',
       cut_in: '泛血管大会汇聚心内、神内、内分泌、肾内跨学科大PI，重点推广吉因加 CHIP（克隆性造血驱动基因）靶向测序与血浆蛋白组泛血管早筛方案。',
@@ -439,9 +640,11 @@ window.workbenchApp = function () {
       queue_id: 'ref-20261123-005', conference_id: 'CONF-2026-005', review_status: 'approved', tier_code: 'B',
       field_id: 'rheumatology', conference_name: '北京医学会风湿病学分会第 26 届学术年会',
       abbreviation: '北京风湿年会 2026', start_date: '2026-11-27', end_date: '2026-11-28', city: '北京',
+      source_anchor: 'O01 北京医学会风湿病学分会官网 (bjyxh.org.cn)',
+      schedule_published: true, topic_scrape_status: 'done', pi_scrape_status: 'pending',
       official_url: 'https://www.bjyxh.org.cn/News/Detail/8003',
       view_url: '#',
-      report_count: 16,
+      report_count: 22,
       review_note: '【国内重点关注 · B级】北京大学人民医院协办，大会主席苏茵，学委会含王迁、朱剑、张文、张卓莉等。设基础科研培训专场、临床科研专场、高分论文专场，主线含科研训练，北京客户密度极高。',
       topics: '关节炎与消化系统损害黏膜免疫互作、系统性红斑狼疮(SLE)干扰素特征基因谱、风湿免疫病B细胞/T细胞受体(BCR/TCR)免疫组库',
       cut_in: '借会内“基础科研与高分论文专场”契机，向北京各大三甲风湿科中青年科研骨干推广 TCR/BCR 免疫组库测序及 Olink/质谱蛋白组服务。',
@@ -453,6 +656,8 @@ window.workbenchApp = function () {
       queue_id: 'ref-intl-002', conference_id: 'RSNA2026', review_status: 'approved', tier_code: 'A',
       field_id: 'vascular', conference_name: 'Radiological Society of North America 112th Scientific Assembly (RSNA 2026)',
       abbreviation: 'RSNA 2026', start_date: '2026-11-29', end_date: '2026-12-03', city: 'Chicago, IL (国际)',
+      source_anchor: 'I08 国际顶会锚点 · RSNA 官方程序 (rsna.org)',
+      schedule_published: true, topic_scrape_status: 'done', pi_scrape_status: 'done',
       official_url: 'https://www.rsna.org/annual-meeting',
       view_url: '#',
       report_count: 18,
@@ -463,104 +668,105 @@ window.workbenchApp = function () {
         { name: '顾宁 院士', hospital: '南京大学医学院附属鼓楼医院', role: '血管分子影像领军', topic: '泛血管分子影像与纳米生物标志物临床转化', scoreLabel: '全国学术领军' }
       ]
     },
+    // Approved BUT Unpublished Schedule Conferences (未发布日程，仅第一轮通知，等待日程上线)
     {
-      queue_id: 'REV-70ea3a8b482f', conference_id: 'AHA-CARDIO-2026', review_status: 'approved', tier_code: 'A',
-      field_id: 'cardiovascular', conference_name: 'American Heart Association Scientific Sessions 2026 (AHA 2026)',
-      abbreviation: 'AHA 2026', start_date: '2026-11-14', end_date: '2026-11-16', city: 'Chicago, IL (国际)',
-      official_url: 'https://professional.heart.org/scientific-sessions',
-      view_url: '#',
-      report_count: 22,
-      review_note: '【国际风向标 · A级】美国心脏协会科学年会，全球心血管与代谢领域风向标顶会，重点提取心衰、冠心病及糖心共病前沿转化议题。',
-      topics: 'HFpEF(射血分数保留型心衰)心肌能量代谢重编程、Lp(a)与残余炎症风险基因多态性、心血管基因编辑与RNA靶向疗法',
-      cut_in: '提取 AHA 2026 最新 HFpEF 与残余心血管风险多组学证据，赋能国内心内科大PI开展同类中国人群队列验证。',
-      speakers: []
+      queue_id: 'REV-956faa75ca08', conference_id: 'CAGGPD2026', review_status: 'approved', tier_code: 'B',
+      field_id: 'neurology', conference_name: '中国老年学和老年医学学会脑疾病分会 2026 年会暨中国帕金森联盟第八届年会',
+      abbreviation: '帕金森联盟年会 2026', start_date: '2026-12-18', end_date: '2026-12-20', city: '南昌',
+      source_anchor: 'O07 中国帕金森联盟官方公众号第一轮通知',
+      schedule_published: false, topic_scrape_status: 'pending', pi_scrape_status: 'pending',
+      official_url: '#',
+      report_count: 0,
+      review_note: '【已入库 · 待出详细日程】官方目前已发布第一轮征文与会期通知，尚未放出分论坛具体讲题与讲者日程表。监控锚点正每日巡检，待日程发布后自动触发议题与PI抓取。',
+      topics: '帕金森病及运动障碍疾病 α-突触核蛋白种子扩增检测(SAA)、神经退行性疾病外周血与脑脊液多组学早筛',
+      cut_in: '待详细日程发布后，锁定帕金森联盟核心委员，切入神经退行性疾病外泌体转录组与蛋白组队列验证。'
     },
-    // Pending Audit Queue Items (Real Gold-Standard Pending Items with C / D / B tiers)
+    {
+      queue_id: 'REV-4e9e256334f2', conference_id: 'CSE2027-SPRING', review_status: 'approved', tier_code: 'B',
+      field_id: 'diabetes', conference_name: '中华医学会内分泌学分会 2026 代谢病前沿转化冬季研讨会',
+      abbreviation: 'CSE 代谢病转化研讨会', start_date: '2026-12-22', end_date: '2026-12-24', city: '广州',
+      source_anchor: 'O03 中华医学会内分泌学分会 (cse2026.sciconf.cn)',
+      schedule_published: false, topic_scrape_status: 'pending', pi_scrape_status: 'pending',
+      official_url: 'https://cse2026.sciconf.cn/',
+      report_count: 0,
+      review_note: '【已入库 · 待出详细日程】中华医学会内分泌学分会官方微官网已建站并发布会议预告，详细学术日程表尚未公布。',
+      topics: '内分泌罕见病与单基因糖尿病全外显子组测序(WES)、肥胖与脂肪肝多组学分子分型',
+      cut_in: '待日程上线后第一时间抓取内分泌遗传代谢专场讲者PI，切入单基因糖尿病家系全外显子测序与队列多组学。'
+    },
+    {
+      queue_id: 'REV-bb9fab5c4ff9', conference_id: 'CRA2026-WINTER', review_status: 'approved', tier_code: 'B',
+      field_id: 'rheumatology', conference_name: '中国医师协会风湿免疫科医师分会 2026 自身免疫青年学者高峰论坛',
+      abbreviation: 'CARIP 自免青年高峰论坛', start_date: '2026-12-19', end_date: '2026-12-21', city: '武汉',
+      source_anchor: 'O02 中国医师协会风湿免疫科医师分会 (carip2026.cnconf.com)',
+      schedule_published: false, topic_scrape_status: 'pending', pi_scrape_status: 'pending',
+      official_url: 'https://carip2026.cnconf.com/msite/main/cn',
+      report_count: 0,
+      review_note: '【已入库 · 待出详细日程】已发布第一轮会议通知与青年征文启事，详细讲者日程待官方公布。',
+      topics: '系统性血管炎与结缔组织病相关间质性肺病(CTD-ILD)单细胞免疫图谱与生物标志物',
+      cut_in: '青年风湿学者国自然申报需求极强，待日程发布后抓取青年委员名单定向推送单细胞免疫组库方案。'
+    },
+    // Pending Audit Queue Items (Stage 1: 来源与审核)
     {
       queue_id: 'ref-20261123-016', conference_id: 'CONF-2026-016', review_status: 'pending', tier_code: 'B',
       field_id: 'respiratory', conference_name: '2026（第九届）多组学研究与应用前沿论坛暨多组学整合与系统生物学前沿大会',
       abbreviation: '2026多组学前沿大会', start_date: '2026-11-27', end_date: '2026-11-28', city: '上海',
+      source_anchor: 'C05 生物谷 / SAGE学术会议锚点',
+      schedule_published: true,
       official_url: 'https://cma.org.cn/meeting/conf_2026_016',
-      review_note: '【重点关注 · B级】生物谷主办、SAGE出版社合作，设单细胞技术、空间组学、AI与多组学整合、临床转化与精准医学四大论坛，13位讲者来自北大、复旦、交大、同济、浙大。参会人群高度匹配吉因加多组学目标客户群，举办地上海。'
+      review_note: '【重点关注 · B级】生物谷主办、SAGE出版社合作，已附带完整四大学术论坛日程（单细胞技术、空间组学、AI与多组学整合、临床转化），13位讲者来自北大、复旦、交大、同济、浙大。审核通过后可直接抓取日程议题与讲者PI。'
     },
     {
       queue_id: 'ref-20261123-006', conference_id: 'CONF-2026-006', review_status: 'pending', tier_code: 'C',
       field_id: 'rheumatology', conference_name: '2026 自身免疫与精准诊疗大会（IAPMC 2026）',
       abbreviation: 'IAPMC 2026', start_date: '2026-11-27', end_date: '2026-11-28', city: '上海',
+      source_anchor: 'C04 精准医学会务发布锚点',
+      schedule_published: true,
       official_url: 'https://cma.org.cn/meeting/conf_2026_006',
-      review_note: '【常规关注 · C级】主题「从标志物到算法：重构自身免疫诊疗新范式」，设1个主会场与6个分会场。主线偏检测技术与检验质量管理，按既定口径定为常规关注；上海举办且免注册费，属地销售触达成本低。'
-    },
-    {
-      queue_id: 'ref-20261123-007', conference_id: 'CONF-2026-007', review_status: 'pending', tier_code: 'C',
-      field_id: 'cardiovascular', conference_name: '2026 江苏省医师协会高血压专委会年会',
-      abbreviation: '江苏高血压年会', start_date: '2026-11-27', end_date: '2026-11-28', city: '南京',
-      official_url: 'https://cma.org.cn/meeting/conf_2026_007',
-      review_note: '【常规关注 · C级】江苏省医师协会主办、江苏省人民医院承办。省级专委会年会，高血压为心血管与泛血管共同基础病种，举办地南京为覆盖城市，免注册费，适合属地销售拜访。'
-    },
-    {
-      queue_id: 'ref-20261123-008', conference_id: 'CONF-2026-008', review_status: 'pending', tier_code: 'C',
-      field_id: 'cardiovascular', conference_name: '航天 2026 心血管病年会暨第五届糖尿病心力衰竭综合管理新进展培训',
-      abbreviation: '航天心血管病年会', start_date: '2026-11-27', end_date: '2026-11-28', city: '北京',
-      official_url: 'https://cma.org.cn/meeting/conf_2026_008',
-      review_note: '【常规关注 · C级】航天中心医院主办，大会主席丁春华。与糖尿病心衰综合管理培训同期举办，心血管与内分泌代谢交叉，举办地北京为覆盖城市。'
+      review_note: '【常规关注 · C级】主题「从标志物到算法：重构自身免疫诊疗新范式」，已发布1个主会场与6个分会场日程。上海举办且免注册费，属地销售触达成本低。'
     },
     {
       queue_id: 'ref-20261123-009', conference_id: 'CONF-2026-009', review_status: 'pending', tier_code: 'C',
       field_id: 'vascular', conference_name: '中国微循环学会周围血管疾病专委会 2026 年学术年会暨第十三届微循环血管医学发展大会（2026MEC）',
       abbreviation: '2026MEC 微循环大会', start_date: '2026-11-27', end_date: '2026-11-28', city: '北京',
+      source_anchor: 'O18 中国微循环学会官方微官网',
+      schedule_published: true,
       official_url: 'https://cma.org.cn/meeting/conf_2026_009',
-      review_note: '【常规关注 · C级】中国微循环学会主办，詹启敏院士任名誉主席、郑曰宏任大会主席。含血管医学基础研究与医工结合专场，且在北京举办，上调为常规关注。'
+      review_note: '【常规关注 · C级】中国微循环学会主办，詹启敏院士任名誉主席、郑曰宏任大会主席。已发布大家讲堂与血管医学基础研究专场日程，北京举办。'
     },
     {
-      queue_id: 'ref-20261123-010', conference_id: 'CONF-2026-010', review_status: 'pending', tier_code: 'C',
-      field_id: 'rheumatology', conference_name: '浙江省中医药学会 2026 年风湿病分会学术年会',
-      abbreviation: '浙江风湿病年会', start_date: '2026-11-28', end_date: '2026-11-30', city: '杭州',
-      official_url: 'https://cma.org.cn/meeting/conf_2026_010',
-      review_note: '【常规关注 · C级】浙江省中医药学会主办。按既定口径中医药类只看病种与临床、不看思想流派，本会为风湿病种学术年会，举办地杭州为覆盖城市。'
+      queue_id: 'ref-20261123-007', conference_id: 'CONF-2026-007', review_status: 'pending', tier_code: 'C',
+      field_id: 'cardiovascular', conference_name: '2026 江苏省医师协会高血压专委会年会',
+      abbreviation: '江苏高血压年会', start_date: '2026-11-27', end_date: '2026-11-28', city: '南京',
+      source_anchor: 'O15 江苏省医师协会官网通知',
+      schedule_published: false,
+      official_url: 'https://cma.org.cn/meeting/conf_2026_007',
+      review_note: '【常规关注 · C级】江苏省医师协会主办、江苏省人民医院承办。目前仅发布第一轮通知，尚未公布详细讲题日程。'
+    },
+    {
+      queue_id: 'ref-20261123-008', conference_id: 'CONF-2026-008', review_status: 'pending', tier_code: 'C',
+      field_id: 'cardiovascular', conference_name: '航天 2026 心血管病年会暨第五届糖尿病心力衰竭综合管理新进展培训',
+      abbreviation: '航天心血管病年会', start_date: '2026-11-27', end_date: '2026-11-28', city: '北京',
+      source_anchor: 'C02 中华医学会北京分会继续教育锚点',
+      schedule_published: true,
+      official_url: 'https://cma.org.cn/meeting/conf_2026_008',
+      review_note: '【常规关注 · C级】航天中心医院主办，大会主席丁春华。与糖尿病心衰综合管理培训同期举办，心血管与内分泌代谢交叉。'
     },
     {
       queue_id: 'ref-20261123-011', conference_id: 'CONF-2026-011', review_status: 'pending', tier_code: 'D',
       field_id: 'cardiovascular', conference_name: '第十八届左主干暨冠状动脉分叉病变会议（CBS 2026）',
       abbreviation: 'CBS 2026', start_date: '2026-11-27', end_date: '2026-11-29', city: '南京',
+      source_anchor: 'S21 心血管介入专科会议锚点',
+      schedule_published: true,
       official_url: 'https://cma.org.cn/meeting/conf_2026_011',
-      review_note: '【低优先级 · D级】以左主干与分叉病变介入手术技术为核心，属手术操作策略类，按既定口径定低优先级。'
-    },
-    {
-      queue_id: 'ref-20261123-013', conference_id: 'CONF-2026-013', review_status: 'pending', tier_code: 'D',
-      field_id: 'neurology', conference_name: '2026 年浙江省医学会神经外科学学术会议',
-      abbreviation: '浙江神外年会', start_date: '2026-11-27', end_date: '2026-11-28', city: '杭州',
-      official_url: 'https://cma.org.cn/meeting/conf_2026_013',
-      review_note: '【低优先级 · D级】神经外科年会，议程以手术技术与术式为主，按既定口径定低优先级。'
-    },
-    {
-      queue_id: 'REV-2b579fa3a97c', conference_id: 'GDFSDM2026', review_status: 'pending', tier_code: 'D',
-      field_id: 'diabetes', conference_name: '广东内分泌糖心肾足综合管理学术系列研讨会（佛山站）暨糖尿病足创面修复学习班',
-      abbreviation: '广东糖心肾足研讨会', start_date: '2026-11-28', end_date: '2026-11-28', city: '佛山',
-      official_url: 'http://m.gdpmaa.com/Home/Meeting/show/id/4307',
-      review_note: '【低优先级 · D级】市级继续教育与糖尿病足创面护理修复技术学习班，偏临床常规照护操作，定为低优先级。'
+      review_note: '【低优先级 · D级】以左主干与分叉病变介入手术技术演示为核心，属手术操作策略类，按既定口径定低优先级（审核通过后建议选择“忽略抓取”）。'
     }
   ];
 
   function buildConferencesAndQueue(piList) {
-    const savedQueue = readStore('demo_review_queue_v4', null);
-    const mergedMap = new Map();
-
-    for (const item of GOLD_CONFERENCE_ITEMS) {
-      mergedMap.set(item.conference_id, { ...item });
-    }
-    if (Array.isArray(savedQueue)) {
-      for (const qItem of savedQueue) {
-        if (qItem && qItem.conference_id) {
-          const prev = mergedMap.get(qItem.conference_id) || {};
-          mergedMap.set(qItem.conference_id, { ...prev, ...qItem });
-        }
-      }
-    }
-
     const library = [];
     const audit = [];
 
-    for (const item of mergedMap.values()) {
+    for (const item of GOLD_CONFERENCE_ITEMS) {
       const domainName = getDomainName(item.field_id, item.conference_name);
       const tCode = item.tier_code || 'B';
       const dateStr = item.end_date && item.end_date !== item.start_date
@@ -587,6 +793,10 @@ window.workbenchApp = function () {
           tierCode: tCode,
           tierBadge: getTierBadgeText(tCode),
           tierBasis: item.review_note || '经市场部人工复核定级入库。',
+          sourceAnchor: item.source_anchor || '59个官方学术监控锚点',
+          schedulePublished: item.schedule_published !== false,
+          topicScrapeStatus: item.topic_scrape_status || (item.schedule_published !== false ? 'pending' : 'waiting'),
+          piScrapeStatus: item.pi_scrape_status || 'pending',
           reportCount: item.report_count || 18,
           topics: item.topics || `${domainName}前沿多组学临床转化、液体活检与分子分型标志物研究`,
           cutIn: item.cut_in || `围绕本次${domainName}重点学术会议，建议提前锁定参会讲者PI，推介吉因加临床队列多组学验证(T10)与单细胞/转录组测序(T03)服务。`,
@@ -605,21 +815,17 @@ window.workbenchApp = function () {
           domain: domainName,
           fieldId: item.field_id || 'diabetes',
           tierCode: tCode,
-          source: '医学会官网/学术监控锚点',
+          sourceAnchor: item.source_anchor || '中华医学会/微官网监控锚点',
+          schedulePublished: Boolean(item.schedule_published),
           summary: item.review_note || '待市场部复核会议学术层级与临床科研转化价值。'
         });
       }
     }
 
-    // Sort library: A/B first, then report count desc
-    const tierOrder = { A: 1, B: 2, C: 3, D: 4 };
-    library.sort((a, b) => (tierOrder[a.tierCode] || 9) - (tierOrder[b.tierCode] || 9) || (b.reportCount - a.reportCount));
-    audit.sort((a, b) => (tierOrder[a.tierCode] || 9) - (tierOrder[b.tierCode] || 9));
-
     return { library, audit };
   }
 
-  // 6. Build Literature List (160 Real Primary Pool Papers + Option A Curated Specialty Papers)
+  // 7. Build Literature List
   function buildLiteratureList() {
     const list = [];
     const primaryPapers = (D.papers || []).filter(p => p.primary_counted);
@@ -645,7 +851,6 @@ window.workbenchApp = function () {
       });
     }
 
-    // Option A: Curated Specialty Papers across the other 5 domains
     const specialtyPapers = [
       {
         id: 'SPEC-LIT-01',
@@ -656,28 +861,12 @@ window.workbenchApp = function () {
         authors: '吉训明, 陆正齐 团队等', pmid: '40128901', heat: 'IF 48.0 · 转化热点', isReal: false
       },
       {
-        id: 'SPEC-LIT-02',
-        title: 'Single-Cell Transcriptomic Atlas of Peripheral Immune Cells in Cerebral Small Vessel Disease',
-        journal: 'Nature Medicine', pubDate: '2026-01', domain: '神经精神', typeLabel: '单细胞转化研究',
-        topicName: '脑小血管病单细胞免疫图谱',
-        abstract: '揭示脑小血管病患者外周单核细胞亚群炎症衰老特征及内皮损伤信号通路，为早期认知障碍干预提供液体活检锚点。',
-        authors: '中山三院神经科团队', pmid: '40112345', heat: 'IF 58.7 · 转化热点', isReal: false
-      },
-      {
         id: 'SPEC-LIT-03',
         title: 'Airway Microbiome-Host Transcriptome Interactions Predict Exacerbation Risk in Severe COPD',
         journal: 'AJRCCM (蓝皮书)', pubDate: '2026-02', domain: '呼吸慢病', typeLabel: '前瞻性队列研究',
         topicName: '慢阻肺气道微生态与宿主转录组',
         abstract: '对420例慢阻肺患者开展诱导痰宏基因组与宿主RNA-seq双组学联合分析，建立II型炎症与细菌定植交互分型模型。',
         authors: '陈荣昌, 钟南山 团队等', pmid: '40201188', heat: '呼吸顶刊 · 转化热点', isReal: false
-      },
-      {
-        id: 'SPEC-LIT-04',
-        title: 'Spatial Transcriptomics and Proteomics Identify Fibrotic Niches in Idiopathic Pulmonary Fibrosis',
-        journal: 'European Respiratory Journal', pubDate: '2026-01', domain: '呼吸慢病', typeLabel: '空间多组学',
-        topicName: '肺纤维化空间组学与靶向标志物',
-        abstract: '利用空间转录组解析特发性肺纤维化肺泡上皮与成纤维细胞病灶微环境，发现可由外周血检测的基质重塑蛋白标志物。',
-        authors: '国家呼吸医学中心团队', pmid: '40198821', heat: 'IF 24.9 · 转化热点', isReal: false
       },
       {
         id: 'SPEC-LIT-05',
@@ -708,7 +897,7 @@ window.workbenchApp = function () {
     return [...specialtyPapers, ...list];
   }
 
-  // 7. Build Pharma / CDE Pipeline List (Option A across 6 Domains)
+  // 8. Pipelines
   const PIPELINES = [
     {
       id: 'p1', name: 'HRS9531 (GLP-1/GIP 双靶点激动剂)', company: '恒瑞医药', domain: '糖尿病与代谢',
@@ -729,22 +918,10 @@ window.workbenchApp = function () {
       cutIn: '对接神经内科认知障碍中心PI，提供外周血超敏蛋白标志物与 APOE/神经退行性Panel靶向测序。'
     },
     {
-      id: 'p4', name: 'SYH2053 (脑卒中神经保护双特异分子)', company: '石药集团', domain: '神经精神',
-      indication: '急性缺血性脑卒中再灌注治疗协同神经保护 · 外周免疫细胞转录组动态监测',
-      phase: 'Phase II 临床', date: '2026-11-10',
-      cutIn: '结合2026中国脑卒中大会队列，向全国卒中中心PI推介急性期-恢复期外周血免疫转录组纵向追踪方案。'
-    },
-    {
       id: 'p5', name: 'CM310 (司普奇拜单抗 · IL-4Rα)', company: '康诺亚 / 石药', domain: '呼吸慢病',
       indication: '重度嗜酸粒细胞性慢阻肺(COPD)与重症哮喘 · 气道II型炎症转录组与细胞因子分型',
       phase: 'Phase III 临床', date: '2026-11-16',
       cutIn: '借 CACP 2026 呼吸年会契机，向参研呼吸科PI推介生物制剂应答人群的气道转录组与蛋白组精准分型课题。'
-    },
-    {
-      id: 'p6', name: 'SHR-1905 (抗 TSLP 长效单抗)', company: '恒瑞医药', domain: '呼吸慢病',
-      indication: '中重度哮喘及慢阻肺急性加重预防 · 宿主上皮免疫微环境单细胞测序',
-      phase: 'Phase II 临床', date: '2026-11-08',
-      cutIn: '切入呼吸科气道刷检/支气管肺泡灌洗液(BALF)单细胞转录组测序(T03)。'
     },
     {
       id: 'p7', name: 'RC18 (泰它西普 · BLyS/APRIL 双靶点)', company: '荣昌生物', domain: '风湿免疫',
@@ -766,9 +943,9 @@ window.workbenchApp = function () {
     }
   ];
 
-  // 8. Initialize Reactive State
   const initialPIs = buildPIList();
   const initialConfData = buildConferencesAndQueue(initialPIs);
+  const initialHotspotTopics = buildHotspotTopics();
   const initialLiterature = buildLiteratureList();
 
   const salesPeopleList = ((D.sales && D.sales.salespeople) || [
@@ -799,15 +976,6 @@ window.workbenchApp = function () {
       qualityTag: '四维评分 62分·C级 · 安徽省立医院',
       content: '针对 CDS 2026 口头报告 OR_003（DKD早期损伤与转录组验证）进行了会前拜访，核实其省自然青年基金课题手头已有 320 例具备完整随访的 DKD 尿液与血浆配对标本。',
       nextStep: '已将标本可用性回传至【客户画像校准】，准备寄送尿液外泌体建库质控SOP'
-    },
-    {
-      id: 'vr3',
-      repName: '李娜 (华北大区)',
-      date: '2026-11-22',
-      piName: '吉训明',
-      qualityTag: '四维评分 88分·B级 · 宣武医院',
-      content: '跟进 2026 中国脑卒中大会主会场议程，与团队学术秘书对接了急性脑卒中多中心外周血 Biomarker 筛选子课题合作意向。',
-      nextStep: '11月27日北京脑卒中大会茶歇时段安排吉因加医学部负责人现场深度对接'
     }
   ];
 
@@ -829,21 +997,12 @@ window.workbenchApp = function () {
       content: '团队计划针对糖尿病微血管并发症（视网膜+肾病共病）申报新一批临床转化专项，需 200 例高深度血浆蛋白质组学(T14)初筛报价。',
       date: '2026-11-22',
       synced: false
-    },
-    {
-      id: 'i3',
-      piName: '苏茵',
-      hospital: '北京大学人民医院',
-      type: '会议专场合作 · 北京风湿年会',
-      content: '确认 11-27 北京医学会风湿病学年会设“高分论文与基础科研专场”，团队对 SLE 患者单细胞 TCR/BCR 免疫组库测序有合作验证意向。',
-      date: '2026-11-21',
-      synced: true
     }
   ];
 
   return {
-    // Database summary stats
     dbStats: {
+      anchors: 59,
       reports: (D.summary && D.summary.reports) || 2628,
       primaryPapers: (D.summary && D.summary.primary_papers) || 160,
       allPapers: (D.summary && D.summary.papers) || 618,
@@ -851,17 +1010,22 @@ window.workbenchApp = function () {
       experts: (D.summary && D.summary.expert_records) || 2277
     },
 
-    // Navigation State
     currentView: 'home',      // 'home' | 'workspace'
     activeModule: 'hotspots', // 'hotspots' | 'map' | 'tasks' | 'closedloop'
 
-    // Sub-Tab States
     hotspotTab: 'academic',   // 'academic' | 'literature' | 'pipeline' | 'fund'
-    academicMode: 'library',  // 'library' | 'audit'
-    taskTab: 'conferences',   // 'conferences' | 'pis'
-    loopTab: 'reports',       // 'reports' | 'intel'
+    academicMode: 'hotspots', // 'audit' (①来源与审核) | 'library' (②日程分流与抓取) | 'hotspots' (③会议热点主界面)
+    scheduleSubTab: 'published', // 'published' (已发布日程) | 'unpublished' (未发布日程)
+    showAnchorsPanel: false,
 
-    // Global & Module Filters
+    hotspotScope: 'all',      // 'all' | 'domestic' | 'intl'
+    selectedBoard: '全部',
+    topicPage: 1,
+    topicPageSize: 10,
+
+    taskTab: 'conferences',
+    loopTab: 'reports',
+
     selectedDomain: '全部',
     confTierFilter: 'all',
     litSourceFilter: 'all',
@@ -875,26 +1039,26 @@ window.workbenchApp = function () {
 
     searchQuery: '',
 
-    // Domains & Salespeople
     domains: DOMAINS,
     salespeople: salesPeopleList,
 
-    // Core Datasets
     conferences: initialConfData.library,
     auditConferences: initialConfData.audit,
+    hotspotTopics: initialHotspotTopics,
     literatureList: initialLiterature,
     pipelineList: PIPELINES,
     piList: initialPIs,
     visitReports: readStore('clinical-workbench:visit-reports:v2', defaultVisitReports),
     intelList: readStore('clinical-workbench:intel-list:v2', defaultIntelList),
 
-    // Lifecycle init: handle URL hashes gracefully
     init() {
       const applyHash = () => {
         const h = (window.location.hash || '').replace(/^#/, '').split('?')[0];
         if (!h || h === 'overview' || h === 'home') {
           this.currentView = 'home';
-        } else if (h === 'topics' || h === 'conferences' || h === 'weekly') {
+        } else if (h === 'topics') {
+          this.openModule('hotspots', 'academic', 'hotspots');
+        } else if (h === 'conferences' || h === 'weekly') {
           this.openModule('hotspots', 'academic', 'library');
         } else if (h === 'papers') {
           this.openModule('hotspots', 'literature');
@@ -910,14 +1074,13 @@ window.workbenchApp = function () {
       window.addEventListener('hashchange', applyHash);
     },
 
-    // Toast Notifications
     toasts: [],
     showToast(message, type = 'info') {
       const id = Date.now() + Math.random();
       this.toasts.push({ id, message, type });
       setTimeout(() => {
         this.toasts = this.toasts.filter(t => t.id !== id);
-      }, 3200);
+      }, 3500);
     },
 
     getDomainColor(domainName) {
@@ -928,7 +1091,6 @@ window.workbenchApp = function () {
       return getTierBadgeText(code);
     },
 
-    // Navigation Actions
     openModule(moduleName, subTab = null, mode = null) {
       this.currentView = 'workspace';
       this.activeModule = moduleName;
@@ -951,11 +1113,16 @@ window.workbenchApp = function () {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     },
 
-    // Dynamic Counts & Percentage Calculators for Disease Area Bar
+    get pendingScrapeCount() {
+      return this.conferences.filter(c => c.schedulePublished && (c.topicScrapeStatus === 'pending' || (c.topicScrapeStatus === 'done' && c.piScrapeStatus === 'pending'))).length;
+    },
+
     getDomainCount(domainName) {
       let dataset = [];
       if (this.hotspotTab === 'academic') {
-        dataset = this.academicMode === 'library' ? this.conferences : this.auditConferences;
+        if (this.academicMode === 'hotspots') dataset = this.hotspotTopics;
+        else if (this.academicMode === 'library') dataset = this.conferences;
+        else dataset = this.auditConferences;
       } else if (this.hotspotTab === 'literature') {
         dataset = this.literatureList;
       } else if (this.hotspotTab === 'pipeline') {
@@ -972,13 +1139,15 @@ window.workbenchApp = function () {
       return Math.round((count / total) * 100);
     },
 
-    // Audit Actions (Approve / Reject with Persistence)
+    // STAGE 1 Action: Approve Audit Conference -> Enters Selected Domain & Splits into Published vs Unpublished Schedule
     approveAudit(id) {
       const idx = this.auditConferences.findIndex(c => c.id === id);
       if (idx !== -1) {
         const item = this.auditConferences.splice(idx, 1)[0];
         const tCode = item.tierCode || 'B';
+        const hasSchedule = Boolean(item.schedulePublished);
         const domainPIs = this.piList.filter(p => p.domain === item.domain).slice(0, 2);
+
         const newConf = {
           id: item.conferenceId || ('CONF-APP-' + Date.now()),
           title: item.title,
@@ -989,7 +1158,11 @@ window.workbenchApp = function () {
           tierCode: tCode,
           tierBadge: getTierBadgeText(tCode),
           tierBasis: item.summary,
-          reportCount: 18,
+          sourceAnchor: item.sourceAnchor || '学会微官网监控锚点',
+          schedulePublished: hasSchedule,
+          topicScrapeStatus: hasSchedule ? 'pending' : 'waiting',
+          piScrapeStatus: 'pending',
+          reportCount: hasSchedule ? 26 : 0,
           topics: `${item.domain}前沿多组学转化、临床队列液体活检与分子分型标志物研究`,
           cutIn: `会议经市场部核定为【${getTierBadgeText(tCode)}】，建议联动属地销售围绕参会讲者PI推进临床队列多组学验证(T10)与单细胞/转录组(T03)合作。`,
           officialUrl: '#',
@@ -1006,33 +1179,130 @@ window.workbenchApp = function () {
         };
         this.conferences.unshift(newConf);
 
-        // Persist to localStorage so 会议审核入库.html stays in sync
-        const savedQueue = readStore('demo_review_queue_v4', GOLD_CONFERENCE_ITEMS);
-        const qEntry = savedQueue.find(q => q.queue_id === item.id || q.conference_id === item.conferenceId);
-        if (qEntry) {
-          qEntry.review_status = 'approved';
-          qEntry.tier_code = tCode;
-          qEntry.reviewed_at = new Date().toISOString();
+        if (hasSchedule) {
+          this.scheduleSubTab = 'published';
+          this.showToast(`已批准【${item.abbreviation}】归入【${item.domain}】（已发布日程，已在“② 日程分流”生成抓取提醒）！`, 'success');
+        } else {
+          this.scheduleSubTab = 'unpublished';
+          this.showToast(`已批准【${item.abbreviation}】归入【${item.domain} · 未发布日程库】持续监控！`, 'info');
         }
-        writeStore('demo_review_queue_v4', savedQueue);
-
-        this.showToast(`已批准【${item.abbreviation}】入库（定级：${tCode}级）并自动生成领域转化热点！`, 'success');
       }
     },
 
     rejectAudit(id) {
-      const target = this.auditConferences.find(c => c.id === id);
       this.auditConferences = this.auditConferences.filter(c => c.id !== id);
-      if (target) {
-        const savedQueue = readStore('demo_review_queue_v4', GOLD_CONFERENCE_ITEMS);
-        const qEntry = savedQueue.find(q => q.queue_id === target.id || q.conference_id === target.conferenceId);
-        if (qEntry) qEntry.review_status = 'rejected';
-        writeStore('demo_review_queue_v4', savedQueue);
-      }
-      this.showToast('已忽略/驳回该待审会议', 'info');
+      this.showToast('已驳回/忽略该待审会议', 'info');
     },
 
-    // Filtered Conferences
+    // STAGE 2 Actions: Scrape Topics from Schedule / Ignore Scrape / Scrape PIs / Simulate Schedule Release
+    scrapeConferenceTopics(conf) {
+      conf.topicScrapeStatus = 'done';
+      if (!conf.reportCount) conf.reportCount = 24;
+
+      // Also synthesize/push a hotspot topic into Stage 3 (会议热点主界面)
+      const newTopicId = 'TP-SCRAPED-' + conf.id;
+      if (!this.hotspotTopics.some(t => t.id === newTopicId)) {
+        const leaders = (conf.speakers || []).map((sp, i) => ({
+          key: `${conf.id}-SP-${i}`,
+          name: sp.name.replace(/教授|院士|博士/g, '').trim(),
+          hospital: sp.hospital,
+          tierCode: 'national',
+          roleLabel: sp.role || '全国学术带头人',
+          roleBasis: `${conf.abbreviation} 核心特邀讲者`,
+          scoreLabel: sp.scoreLabel || '重点讲者',
+          conf: conf.abbreviation,
+          talkTitle: sp.topic
+        }));
+
+        this.hotspotTopics.unshift({
+          id: newTopicId,
+          name: `【${conf.abbreviation} 新抓热点】${conf.topics.split('、')[0]}`,
+          domain: conf.domain,
+          boardName: `${conf.domain}最新会议专题`,
+          reportCount: conf.reportCount || 24,
+          paperCount: 2,
+          confLabels: `${conf.abbreviation}(${conf.reportCount || 24}条)`,
+          hasDomestic: conf.tierCode !== 'A',
+          hasIntl: conf.tierCode === 'A',
+          leaders: leaders.length ? leaders : [
+            { key: 'def-sp', name: '大会主讲专家', hospital: '国内重点三甲医院', tierCode: 'national', roleLabel: '全国学术带头人', roleBasis: conf.abbreviation + ' 专题讲者', scoreLabel: '', conf: conf.abbreviation, talkTitle: conf.topics }
+          ],
+          biomarkers: ['多组学分子分型 Panel', '外周血/体液外泌体转录组特征'],
+          sampleTalk: `${conf.abbreviation}: ${conf.topics.split('、')[0]}`,
+          sampleReports: [
+            { id: newTopicId + '-R1', conf: conf.abbreviation, code: '主旨报告', title: conf.topics.split('、')[0] + '多中心临床转化队列进展', date: conf.date.slice(0, 10) }
+          ],
+          cutIn: conf.cutIn
+        });
+      }
+
+      this.showToast(`已从【${conf.abbreviation}】日程成功抓取 ${conf.reportCount} 条报告与核心议题，并同步至【③ 会议热点主界面】！`, 'success');
+    },
+
+    ignoreConferenceScrape(conf) {
+      conf.topicScrapeStatus = 'ignored';
+      this.showToast(`已忽略【${conf.abbreviation}】的日程深抓，仅保留会议基础卡片`, 'info');
+    },
+
+    scrapeConferencePIs(conf) {
+      conf.piScrapeStatus = 'done';
+      let addedCount = 0;
+      for (const sp of (conf.speakers || [])) {
+        const cleanName = sp.name.replace(/教授|院士|主任|博士/g, '').trim();
+        const exists = this.piList.some(p => p.name.includes(cleanName));
+        if (!exists) {
+          this.piList.unshift({
+            id: 'PI-CONF-' + Date.now() + '-' + addedCount,
+            name: cleanName,
+            hospital: sp.hospital || '国内核心三甲医院',
+            department: conf.domain + '中心',
+            title: '主任医师 / 教授',
+            roleLabel: sp.role || '全国专科学术带头人',
+            roleCode: 'national',
+            sourceLabel: `来源: ${conf.abbreviation} 日程抓取`,
+            domain: conf.domain,
+            totalScore: null,
+            grade: null,
+            hasPartialRating: true,
+            scoreBadge: '调研中 · 方向28/30',
+            dimSummary: '研究28/30 (日程讲题已核 · 余项待补)',
+            dimensions: [
+              { name: '研究方向契合度', maximum: 30, score: 28, basis: `在【${conf.abbreviation}】报告《${sp.topic}》，高度契合多组学临床转化。` },
+              { name: '学术产出质量',   maximum: 25, score: null, basis: '待进一步核对近三年 PubMed 一作/通讯期刊档位；缺证不填0。' },
+              { name: '科研转化潜力',   maximum: 25, score: null, basis: '待进一步核对个人主持基金与开放队列条件；缺证不填0。' },
+              { name: '平台资源禀赋',   maximum: 20, score: null, basis: '待进一步核对所属实验室可调配资源；缺证不填0。' }
+            ],
+            ratingDate: new Date().toISOString().slice(0, 10),
+            headPiStatus: `${conf.abbreviation} 讲者线索`,
+            sources: [{ id: conf.id, title: `${conf.title} 官方日程讲者名录`, url: conf.officialUrl || '#' }],
+            capabilities: ['T10 临床队列验证', 'T03 单细胞/转录组'],
+            isAiRecommended: true,
+            research: `讲题：${sp.topic}`,
+            cutIn: sp.cutIn || conf.cutIn,
+            talks: [{ id: conf.id + '-TK', conf: conf.abbreviation, title: sp.topic }],
+            papers: [],
+            starred: true,
+            assignee: '华东一区 - 张敏',
+            taskStatus: '待派发',
+            syncedIntel: [],
+            syncedIntelCount: 0
+          });
+          addedCount++;
+        }
+      }
+      this.showToast(`已将【${conf.abbreviation}】的重点讲者 PI 分类写入【${conf.domain} · 作战地图 PI 库】！`, 'success');
+    },
+
+    simulateSchedulePublished(conf) {
+      conf.schedulePublished = true;
+      conf.topicScrapeStatus = 'pending';
+      conf.piScrapeStatus = 'pending';
+      conf.reportCount = 28;
+      this.scheduleSubTab = 'published';
+      this.showToast(`🔔 【${conf.abbreviation}】官方已发布详细日程！已自动转入“已发布日程”并生成议题抓取提醒！`, 'warning');
+    },
+
+    // Computed Conference Lists
     get filteredConferences() {
       const q = this.searchQuery.trim().toLowerCase();
       return this.conferences.filter(c => {
@@ -1043,21 +1313,62 @@ window.workbenchApp = function () {
       });
     },
 
+    get publishedConferences() {
+      return this.filteredConferences.filter(c => c.schedulePublished);
+    },
+
+    get unpublishedConferences() {
+      return this.filteredConferences.filter(c => !c.schedulePublished);
+    },
+
     get filteredAuditConferences() {
       const q = this.searchQuery.trim().toLowerCase();
       return this.auditConferences.filter(c => {
         const matchDomain = this.selectedDomain === '全部' || c.domain === this.selectedDomain;
         const matchTier = this.confTierFilter === 'all' || c.tierCode === this.confTierFilter;
-        const matchSearch = !q || [c.title, c.summary, c.city].join(' ').toLowerCase().includes(q);
+        const matchSearch = !q || [c.title, c.summary, c.city, c.sourceAnchor].join(' ').toLowerCase().includes(q);
         return matchDomain && matchTier && matchSearch;
       });
     },
 
-    get recommendedConferences() {
-      return this.conferences.filter(c => (c.tierCode === 'B' || c.tierCode === 'A') && c.speakers && c.speakers.length > 0);
+    // STAGE 3 Computed: Hotspot Topics & Boards
+    get availableBoards() {
+      const counts = {};
+      for (const t of this.hotspotTopics) {
+        if (this.selectedDomain !== '全部' && t.domain !== this.selectedDomain) continue;
+        counts[t.boardName] = (counts[t.boardName] || 0) + 1;
+      }
+      return Object.entries(counts).map(([name, count]) => ({ name, count }));
     },
 
-    // Filtered & Paged Literature
+    get filteredHotspotTopics() {
+      const q = this.searchQuery.trim().toLowerCase();
+      return this.hotspotTopics.filter(t => {
+        const matchDomain = this.selectedDomain === '全部' || t.domain === this.selectedDomain;
+        const matchBoard = this.selectedBoard === '全部' || t.boardName === this.selectedBoard;
+        const matchScope = this.hotspotScope === 'all'
+          || (this.hotspotScope === 'domestic' && t.hasDomestic)
+          || (this.hotspotScope === 'intl' && t.hasIntl);
+        const leaderNames = (t.leaders || []).map(l => l.name + ' ' + l.hospital + ' ' + l.talkTitle).join(' ');
+        const matchSearch = !q || [t.name, t.boardName, t.confLabels, leaderNames].join(' ').toLowerCase().includes(q);
+        return matchDomain && matchBoard && matchScope && matchSearch;
+      });
+    },
+
+    get topicTotalPages() {
+      return Math.max(1, Math.ceil(this.filteredHotspotTopics.length / this.topicPageSize));
+    },
+
+    get pagedHotspotTopics() {
+      const start = (this.topicPage - 1) * this.topicPageSize;
+      return this.filteredHotspotTopics.slice(start, start + this.topicPageSize);
+    },
+
+    get recommendedConferences() {
+      return this.conferences.filter(c => c.schedulePublished && (c.tierCode === 'B' || c.tierCode === 'A') && c.speakers && c.speakers.length > 0);
+    },
+
+    // Literature Computed
     get filteredLiterature() {
       const q = this.searchQuery.trim().toLowerCase();
       return this.literatureList.filter(l => {
@@ -1077,7 +1388,7 @@ window.workbenchApp = function () {
       return this.filteredLiterature.slice(start, start + this.litPageSize);
     },
 
-    // Filtered Pipelines
+    // Pipelines Computed
     get filteredPipelines() {
       const q = this.searchQuery.trim().toLowerCase();
       return this.pipelineList.filter(p => {
@@ -1087,7 +1398,7 @@ window.workbenchApp = function () {
       });
     },
 
-    // Filtered & Paged PIs
+    // PI Battle Map Computed
     get filteredPIs() {
       const q = this.searchQuery.trim().toLowerCase();
       return this.piList.filter(p => {
@@ -1099,8 +1410,6 @@ window.workbenchApp = function () {
           matchGrade = p.hasPartialRating;
         } else if (this.mapGradeFilter === 'ai') {
           matchGrade = p.isAiRecommended;
-        } else if (this.mapGradeFilter === 'rated') {
-          matchGrade = p.totalScore !== null || p.hasPartialRating || p.isAiRecommended;
         }
         const matchSearch = !q || [p.name, p.hospital, p.research, p.scoreBadge, p.roleLabel].join(' ').toLowerCase().includes(q);
         return matchDomain && matchGrade && matchSearch;
@@ -1129,7 +1438,6 @@ window.workbenchApp = function () {
       this.showToast(`【${pi.name}】跟进状态已更新为：${status}`, status === '已触达' ? 'success' : 'info');
     },
 
-    // Closed-Loop Sync: Sync Field Intel back to PI Profile in Battle Map
     syncIntelToPI(intelItem) {
       intelItem.synced = true;
       writeStore('clinical-workbench:intel-list:v2', this.intelList);
@@ -1143,7 +1451,6 @@ window.workbenchApp = function () {
           date: intelItem.date
         });
         targetPI.syncedIntelCount = targetPI.syncedIntel.length;
-        // If yellow partial rating or pending gap, enrich basis note
         if (targetPI.dimensions && targetPI.dimensions[0]) {
           targetPI.dimensions[0].basis += ` [一线回流核实：${intelItem.content}]`;
         }
@@ -1151,7 +1458,14 @@ window.workbenchApp = function () {
       this.showToast(`已将情报回流并校准【${intelItem.piName}】在作战地图中的四维档案！`, 'success');
     },
 
-    // Modals & Drawers Handlers
+    // Modals & Drawers
+    showTopicModal: false,
+    selectedTopic: null,
+    openTopicDetail(tp) {
+      this.selectedTopic = tp;
+      this.showTopicModal = true;
+    },
+
     showConferenceModal: false,
     selectedConf: null,
     openConferenceDetail(conf) {
