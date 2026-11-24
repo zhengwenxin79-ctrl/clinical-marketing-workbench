@@ -1,1 +1,1631 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>临床科研热点工作台</title><style>__STYLE__</style></head><body><header><div class="header-inner"><a class="brand" href="#topics"><b>研</b><span><strong>临床科研热点工作台</strong><small>会议 · 论文 · 研究方向</small></span></a><label class="domain-picker">研究领域<select id="domain"></select></label><form id="search-form"><input id="q" type="search" placeholder="搜索议题、指标、讲者或团队" aria-label="搜索当前模块"><button>搜索</button></form><div id="user-bar" style="display:flex;align-items:center;gap:10px;margin-left:auto;"></div></div></header><nav class="primary-nav" id="primary-nav" aria-label="主模块"></nav><main><div class="page-intro"><div><p class="eyebrow" id="eyebrow"></p><h1 id="title"></h1><p id="subtitle"></p></div><button id="method">来源与分类说明</button></div><nav class="domain-tabs" id="domain-tabs"><a id="topic-tab" class="active" href="#topics">研究议题</a><a href="../标志物视图/index.html">Biomarker</a></nav><div id="view"></div></main><footer>本地已有资料 · 未发布 · <a href="使用说明.md">工作台结构与使用说明</a></footer><dialog id="detail" aria-labelledby="detail-title"><div class="dialog-head"><h2 id="detail-title"></h2><button id="close" aria-label="关闭详情">关闭 ×</button></div><div id="detail-body"></div></dialog><script type="application/json" id="data">__DATA__</script><script>__DOMAIN_FRAMEWORKS__</script><script>__WEEK_APP__</script><script>__PI_APP__</script><script>__QUALITY_APP__</script><script>__SALES_APP__</script><script>__OVERVIEW_APP__</script><script>__APP__</script></body></html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>临床科研热点工作台 · 智能营销闭环平台</title>
+  <!-- Preserve legacy style injection placeholder disabled via media="not all" so Tailwind remains pure -->
+  <style id="legacy-styles" media="not all">__STYLE__</style>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background-color: #f8fafc;
+    }
+    [x-cloak] { display: none !important; }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+  </style>
+</head>
+<body class="text-slate-800 antialiased min-h-screen bg-slate-50 selection:bg-blue-500 selection:text-white"
+      x-data="workbenchApp()">
+
+  <!-- Toast Notification Container -->
+  <div class="fixed top-4 right-4 z-50 flex flex-col gap-2 pointer-events-none" x-cloak>
+    <template x-for="toast in toasts" :key="toast.id">
+      <div class="pointer-events-auto px-4 py-3 rounded-lg shadow-lg text-sm font-medium flex items-center gap-2 transition-all transform duration-300"
+           :class="{
+             'bg-emerald-600 text-white': toast.type === 'success',
+             'bg-blue-600 text-white': toast.type === 'info',
+             'bg-amber-600 text-white': toast.type === 'warning',
+             'bg-rose-600 text-white': toast.type === 'error'
+           }">
+        <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        <span x-text="toast.message"></span>
+      </div>
+    </template>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- LEVEL 1: HOME PORTAL VIEW (2x2 GRID)       -->
+  <!-- ========================================== -->
+  <div x-show="currentView === 'home'"
+       x-transition:enter="transition ease-out duration-300 transform"
+       x-transition:enter-start="opacity-0 scale-95"
+       x-transition:enter-end="opacity-100 scale-100"
+       class="min-h-screen flex flex-col justify-between">
+
+    <!-- Top Header -->
+    <header class="bg-white border-b border-slate-200 px-6 py-4 shadow-sm sticky top-0 z-30">
+      <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-blue-600 text-white font-bold flex items-center justify-center text-lg shadow-md shadow-blue-500/20">
+            研
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h1 class="font-bold text-slate-900 text-lg leading-tight">临床科研热点工作台</h1>
+              <span class="px-2 py-0.5 bg-blue-50 text-blue-700 border border-blue-200 rounded-full text-[11px] font-semibold">端到端闭环流水线</span>
+            </div>
+            <p class="text-xs text-slate-500">Clinical Research Intelligence &amp; Marketing Closed-Loop Platform</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 flex-wrap">
+          <!-- Global Domain Filter in Home -->
+          <div class="flex items-center gap-1.5 bg-slate-100 px-2.5 py-1.5 rounded-lg border border-slate-200 text-xs">
+            <span class="text-slate-500 font-medium">全局领域:</span>
+            <select x-model="selectedDomain" class="bg-transparent font-semibold text-slate-800 focus:outline-none cursor-pointer">
+              <option value="全部">全部六大领域</option>
+              <template x-for="d in domains" :key="d.name">
+                <option :value="d.name" x-text="d.name"></option>
+              </template>
+            </select>
+          </div>
+
+          <!-- Global Search Input -->
+          <div class="relative w-64 sm:w-72">
+            <input type="text"
+                   x-model="searchQuery"
+                   @keydown.enter="if(searchQuery.trim()) openModule('hotspots', 'academic', 'library')"
+                   placeholder="搜索会议、文献、管线或专家 PI..."
+                   class="w-full pl-9 pr-4 py-2 bg-slate-100 border border-slate-200 rounded-lg text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all">
+            <svg class="w-4 h-4 text-slate-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+          </div>
+
+          <div class="flex items-center gap-2 pl-2 border-l border-slate-200 text-xs text-slate-500">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span x-text="'底库已连接 (' + dbStats.reports + '报告 / ' + dbStats.primaryPapers + '主池论文)'"></span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Portal Content (Centered 2x2 Grid) -->
+    <main class="flex-1 max-w-7xl w-full mx-auto p-6 md:p-8 flex flex-col justify-center">
+      <!-- Top Pipeline Flow Bar -->
+      <div class="mb-6 bg-white rounded-2xl border border-slate-200/90 p-4 shadow-sm flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+        <div>
+          <div class="text-xs font-bold text-blue-600 uppercase tracking-wider">MARKET COMMAND CENTER · 四步业务主线</div>
+          <h2 class="text-xl font-bold text-slate-900 mt-0.5">欢迎使用临床科研营销工作台</h2>
+          <p class="text-slate-500 text-xs mt-0.5">点击下方 2×2 四大核心模块或子功能按钮直接进入对应作战工作区（支持会议四级定级与 PI 四维评分）</p>
+        </div>
+        <div class="flex items-center gap-2 flex-wrap text-xs font-semibold">
+          <button @click="openModule('hotspots', 'academic', 'library')" class="px-3 py-1.5 rounded-lg bg-blue-50 text-blue-700 border border-blue-200 hover:bg-blue-100 transition-all">① 🔥 热点追踪</button>
+          <span class="text-slate-300">&rarr;</span>
+          <button @click="openModule('map')" class="px-3 py-1.5 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100 transition-all">② 🗺️ 作战地图</button>
+          <span class="text-slate-300">&rarr;</span>
+          <button @click="openModule('tasks', 'conferences')" class="px-3 py-1.5 rounded-lg bg-purple-50 text-purple-700 border border-purple-200 hover:bg-purple-100 transition-all">③ 🎯 任务派发</button>
+          <span class="text-slate-300">&rarr;</span>
+          <button @click="openModule('closedloop', 'reports')" class="px-3 py-1.5 rounded-lg bg-amber-50 text-amber-700 border border-amber-200 hover:bg-amber-100 transition-all">④ 🚀 业务闭环</button>
+          <span class="text-[11px] text-slate-400 font-normal ml-1">（↺ 情报回流反哺 ② PI画像）</span>
+        </div>
+      </div>
+
+      <!-- 2x2 Card Grid (上面两个，下面两个) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Module Card 1: ① 热点追踪 -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm hover:shadow-md hover:border-blue-300 transition-all group flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-xl font-semibold">
+                  🔥
+                </div>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded">模块 ①</span>
+                    <h3 class="font-bold text-slate-900 text-lg group-hover:text-blue-600 transition-colors">热点追踪</h3>
+                  </div>
+                  <p class="text-xs text-slate-500 mt-0.5">学术会议（四级评估）、核心文献、药厂/CDE管线与课题基金</p>
+                </div>
+              </div>
+              <button @click="openModule('hotspots', 'academic', 'library')" class="text-xs font-semibold text-blue-600 hover:text-blue-700 flex items-center gap-1">
+                进入模块 &rarr;
+              </button>
+            </div>
+
+            <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+              聚合国际/国内学术会议（A级国际风向标 / B级重点关注 / C级常规关注 / D级低优先级）、160篇核心四刊复核主池文献、66项领域转化热点及药厂CDE管线动态。
+            </p>
+          </div>
+
+          <!-- Direct Sub-Entries -->
+          <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-2">
+            <button @click="openModule('hotspots', 'academic', 'library')"
+                    class="px-3 py-2 bg-slate-50 hover:bg-blue-50 text-slate-700 hover:text-blue-600 border border-slate-200 hover:border-blue-200 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5">
+              <span>🏛️ 学术会议库</span>
+              <span class="bg-blue-600 text-white px-1.5 py-0.5 rounded-full text-[10px]" x-text="conferences.length"></span>
+            </button>
+            <button @click="openModule('hotspots', 'academic', 'audit')"
+                    class="px-3 py-2 bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5">
+              <span>📝 会议审核</span>
+              <span class="bg-rose-600 text-white px-1.5 py-0.5 rounded-full text-[10px]" x-text="auditConferences.length"></span>
+            </button>
+            <button @click="openModule('hotspots', 'literature')"
+                    class="px-3 py-2 bg-slate-50 hover:bg-blue-50 text-slate-700 hover:text-blue-600 border border-slate-200 hover:border-blue-200 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5">
+              <span>📄 学术文献</span>
+              <span class="bg-slate-200 text-slate-700 px-1.5 py-0.5 rounded-full text-[10px]" x-text="literatureList.length"></span>
+            </button>
+            <button @click="openModule('hotspots', 'pipeline')"
+                    class="px-3 py-2 bg-slate-50 hover:bg-blue-50 text-slate-700 hover:text-blue-600 border border-slate-200 hover:border-blue-200 rounded-lg text-xs font-medium transition-all">
+              💊 药厂 / CDE管线
+            </button>
+            <button @click="openModule('hotspots', 'fund')"
+                    class="px-3 py-2 bg-slate-50 hover:bg-amber-50 text-slate-500 hover:text-amber-700 border border-slate-200 hover:border-amber-200 rounded-lg text-xs font-medium transition-all flex items-center gap-1">
+              <span>🏦 基金</span>
+              <span class="bg-amber-100 text-amber-700 text-[10px] px-1.5 py-0.2 rounded">待配置</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Module Card 2: ② 作战地图 -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm hover:shadow-md hover:border-blue-300 transition-all group flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl font-semibold">
+                  🗺️
+                </div>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">模块 ②</span>
+                    <h3 class="font-bold text-slate-900 text-lg group-hover:text-blue-600 transition-colors">作战地图</h3>
+                  </div>
+                  <p class="text-xs text-slate-500 mt-0.5">PI 专家库网络、四维合作评分 (V3.2) 与信息导入</p>
+                </div>
+              </div>
+              <button @click="openModule('map')" class="text-xs font-semibold text-blue-600 hover:text-blue-700 flex items-center gap-1">
+                进入模块 &rarr;
+              </button>
+            </div>
+
+            <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+              基于 <code class="bg-slate-100 px-1 py-0.5 rounded text-slate-700">clinical-research-v3</code> 四维评分标准（研究方向契合度30 / 学术产出质量25 / 科研转化潜力25 / 平台资源禀赋20）及学术角色依据，构建全国临床 PI 档案。
+            </p>
+          </div>
+
+          <!-- Direct Sub-Entries -->
+          <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-2">
+            <button @click="openModule('map')"
+                    class="px-3 py-2 bg-slate-50 hover:bg-blue-50 text-slate-700 hover:text-blue-600 border border-slate-200 hover:border-blue-200 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5">
+              <span>👥 PI 专家库 (含四维评级)</span>
+              <span class="bg-emerald-600 text-white px-1.5 py-0.5 rounded-full text-[10px]" x-text="piList.length"></span>
+            </button>
+            <button @click="openModule('map'); mapGradeFilter = 'rated'"
+                    class="px-3 py-2 bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5">
+              <span>⭐ 四维已评 &amp; AI推荐专家</span>
+              <span class="bg-blue-600 text-white px-1.5 py-0.5 rounded-full text-[10px]" x-text="piList.filter(p => p.totalScore !== null || p.isAiRecommended).length"></span>
+            </button>
+            <button @click="openModule('map'); openUploadModal()"
+                    class="px-3 py-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 rounded-lg text-xs font-medium transition-all flex items-center gap-1">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+              <span>PI 信息上传</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Module Card 3: ③ 任务派发 -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm hover:shadow-md hover:border-blue-300 transition-all group flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-xl font-semibold">
+                  🎯
+                </div>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs font-bold text-purple-700 bg-purple-50 px-2 py-0.5 rounded">模块 ③</span>
+                    <h3 class="font-bold text-slate-900 text-lg group-hover:text-blue-600 transition-colors">任务派发</h3>
+                  </div>
+                  <p class="text-xs text-slate-500 mt-0.5">会人联动：重点会议推荐（含本场重点 PI）与专家攻坚跟进</p>
+                </div>
+              </div>
+              <button @click="openModule('tasks', 'conferences')" class="text-xs font-semibold text-blue-600 hover:text-blue-700 flex items-center gap-1">
+                进入模块 &rarr;
+              </button>
+            </div>
+
+            <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+              以会带人、以人促会：自动拆解 A/B 级重点大会中的高分讲者 PI 与报告题目，匹配吉因加多组学合作能力项（T03/T10/T14）与定制破冰话术，一键派发给大区销售。
+            </p>
+          </div>
+
+          <!-- Direct Sub-Entries -->
+          <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-2">
+            <button @click="openModule('tasks', 'conferences')"
+                    class="px-3 py-2 bg-slate-50 hover:bg-blue-50 text-slate-700 hover:text-blue-600 border border-slate-200 hover:border-blue-200 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5">
+              <span>🎪 重点会议推荐</span>
+              <span class="bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded-full text-[10px]">含本场重点PI</span>
+            </button>
+            <button @click="openModule('tasks', 'pis')"
+                    class="px-3 py-2 bg-slate-50 hover:bg-blue-50 text-slate-700 hover:text-blue-600 border border-slate-200 hover:border-blue-200 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5">
+              <span>🎯 重点 PI 关注</span>
+              <span class="bg-amber-500 text-white px-1.5 py-0.5 rounded-full text-[10px]" x-text="piList.filter(p=>p.starred).length"></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Module Card 4: ④ 业务闭环 -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm hover:shadow-md hover:border-blue-300 transition-all group flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl font-semibold">
+                  🚀
+                </div>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded">模块 ④</span>
+                    <h3 class="font-bold text-slate-900 text-lg group-hover:text-blue-600 transition-colors">业务闭环</h3>
+                  </div>
+                  <p class="text-xs text-slate-500 mt-0.5">拜访跟进速递（销售日报）与客户画像校准（回流反哺 PI 库）</p>
+                </div>
+              </div>
+              <button @click="openModule('closedloop', 'reports')" class="text-xs font-semibold text-blue-600 hover:text-blue-700 flex items-center gap-1">
+                进入模块 &rarr;
+              </button>
+            </div>
+
+            <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+              回收一线销售学术拜访日报与客户真实课题需求（队列样本量、立项进展、体液标本条件），一键同步回流至【作战地图】校准 PI 四维画像。
+            </p>
+          </div>
+
+          <!-- Direct Sub-Entries -->
+          <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-2">
+            <button @click="openModule('closedloop', 'reports')"
+                    class="px-3 py-2 bg-slate-50 hover:bg-blue-50 text-slate-700 hover:text-blue-600 border border-slate-200 hover:border-blue-200 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5">
+              <span>📝 拜访跟进速递</span>
+              <span class="bg-slate-200 text-slate-700 px-1.5 py-0.5 rounded-full text-[10px]" x-text="visitReports.length"></span>
+            </button>
+            <button @click="openModule('closedloop', 'intel')"
+                    class="px-3 py-2 bg-slate-50 hover:bg-blue-50 text-slate-700 hover:text-blue-600 border border-slate-200 hover:border-blue-200 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5">
+              <span>🔄 客户画像校准</span>
+              <span class="bg-emerald-100 text-emerald-800 text-[10px] px-1.5 py-0.5 rounded-full" x-text="intelList.filter(i=>!i.synced).length + ' 待回流'"></span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="py-4 px-6 border-t border-slate-200 bg-white text-xs text-slate-400">
+      <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+        <span>吉因加 · 临床科研热点智能营销工作台 &copy; 2026 · 底层核心科研库只读保护已启用</span>
+        <div class="flex items-center gap-4">
+          <a href="../标志物视图/index.html" class="hover:text-blue-600">🧬 Biomarker 标志物库 &nearr;</a>
+          <a href="../论文视图/index.html" class="hover:text-blue-600">📚 原始文献分析视图 &nearr;</a>
+          <a href="会议审核入库.html" class="hover:text-blue-600">⚙️ 独立会议审核后台 &nearr;</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+
+  <!-- ========================================== -->
+  <!-- LEVEL 2: WORKSPACE VIEW (INSIDE MODULE)    -->
+  <!-- ========================================== -->
+  <div x-show="currentView === 'workspace'" x-cloak class="min-h-screen flex flex-col bg-slate-50">
+
+    <!-- Workspace Sticky Top Bar (56px) -->
+    <header class="bg-white border-b border-slate-200 px-4 h-14 sticky top-0 z-40 flex items-center justify-between shadow-sm">
+      <div class="flex items-center gap-3 overflow-x-auto">
+        <!-- Return Home Button -->
+        <button @click="goHome()"
+                class="px-2.5 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-semibold flex items-center gap-1 transition-all shrink-0">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+          返回四模块首页
+        </button>
+
+        <div class="h-4 w-px bg-slate-200 shrink-0"></div>
+
+        <!-- Platform Title -->
+        <div class="flex items-center gap-2 shrink-0">
+          <div class="w-6 h-6 rounded bg-blue-600 text-white font-bold flex items-center justify-center text-xs">研</div>
+          <span class="font-bold text-slate-900 text-sm hidden lg:inline">临床科研热点工作台</span>
+        </div>
+
+        <div class="h-4 w-px bg-slate-200 hidden md:block shrink-0"></div>
+
+        <!-- 4-Module Switcher -->
+        <nav class="flex items-center space-x-1 bg-slate-100 p-1 rounded-lg shrink-0">
+          <button @click="activeModule = 'hotspots'"
+                  :class="activeModule === 'hotspots' ? 'bg-white text-blue-600 shadow-sm font-semibold' : 'text-slate-600 hover:text-slate-900'"
+                  class="px-3 py-1 text-xs rounded-md transition-all">
+            ① 🔥 热点追踪
+          </button>
+          <button @click="activeModule = 'map'"
+                  :class="activeModule === 'map' ? 'bg-white text-blue-600 shadow-sm font-semibold' : 'text-slate-600 hover:text-slate-900'"
+                  class="px-3 py-1 text-xs rounded-md transition-all">
+            ② 🗺️ 作战地图
+          </button>
+          <button @click="activeModule = 'tasks'"
+                  :class="activeModule === 'tasks' ? 'bg-white text-blue-600 shadow-sm font-semibold' : 'text-slate-600 hover:text-slate-900'"
+                  class="px-3 py-1 text-xs rounded-md transition-all">
+            ③ 🎯 任务派发
+          </button>
+          <button @click="activeModule = 'closedloop'"
+                  :class="activeModule === 'closedloop' ? 'bg-white text-blue-600 shadow-sm font-semibold' : 'text-slate-600 hover:text-slate-900'"
+                  class="px-3 py-1 text-xs rounded-md transition-all">
+            ④ 🚀 业务闭环
+          </button>
+        </nav>
+      </div>
+
+      <!-- Right Search / Actions -->
+      <div class="flex items-center gap-3 shrink-0 ml-2">
+        <div class="relative w-44 sm:w-64">
+          <input type="text"
+                 x-model="searchQuery"
+                 placeholder="搜索会议、文献、PI、医院或议题..."
+                 class="w-full pl-8 pr-6 py-1.5 bg-slate-100 border border-slate-200 rounded-lg text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all">
+          <svg class="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+          <button x-show="searchQuery" @click="searchQuery = ''" class="absolute right-2 top-1.5 text-slate-400 hover:text-slate-600 text-xs">✕</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Workspace Main Container -->
+    <div class="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6">
+
+      <!-- ========================================== -->
+      <!-- MODULE 1: ① 热点追踪 MODULE                 -->
+      <!-- ========================================== -->
+      <div x-show="activeModule === 'hotspots'" class="space-y-4">
+
+        <!-- Sub-Nav Bar -->
+        <div class="bg-white rounded-xl border border-slate-200 p-2 sm:p-3 shadow-sm flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+          <div class="flex items-center gap-2 overflow-x-auto">
+            <button @click="hotspotTab = 'academic'; litPage = 1"
+                    :class="hotspotTab === 'academic' ? 'bg-blue-600 text-white font-semibold shadow-sm' : 'text-slate-600 hover:bg-slate-100'"
+                    class="px-4 py-2 rounded-lg text-sm transition-all whitespace-nowrap">
+              学术会议
+            </button>
+            <button @click="hotspotTab = 'literature'; litPage = 1"
+                    :class="hotspotTab === 'literature' ? 'bg-blue-600 text-white font-semibold shadow-sm' : 'text-slate-600 hover:bg-slate-100'"
+                    class="px-4 py-2 rounded-lg text-sm transition-all whitespace-nowrap flex items-center gap-1.5">
+              <span>学术文献</span>
+              <span class="text-[11px] px-1.5 py-0.2 rounded-full"
+                    :class="hotspotTab === 'literature' ? 'bg-blue-500 text-white' : 'bg-slate-100 text-slate-600'"
+                    x-text="literatureList.length"></span>
+            </button>
+            <button @click="hotspotTab = 'pipeline'"
+                    :class="hotspotTab === 'pipeline' ? 'bg-blue-600 text-white font-semibold shadow-sm' : 'text-slate-600 hover:bg-slate-100'"
+                    class="px-4 py-2 rounded-lg text-sm transition-all whitespace-nowrap">
+              药厂 / CDE管线
+            </button>
+            <button @click="hotspotTab = 'fund'"
+                    :class="hotspotTab === 'fund' ? 'bg-blue-600 text-white font-semibold shadow-sm' : 'text-slate-600 hover:bg-slate-100'"
+                    class="px-4 py-2 rounded-lg text-sm transition-all whitespace-nowrap flex items-center gap-1.5">
+              <span>基金</span>
+              <span class="bg-amber-100 text-amber-800 text-xs px-1.5 py-0.5 rounded font-normal">待配置</span>
+            </button>
+          </div>
+
+          <!-- Right Mode Switcher (Visible when Tab === 'academic') -->
+          <div x-show="hotspotTab === 'academic'" class="flex items-center gap-2 border-t sm:border-t-0 pt-2 sm:pt-0 border-slate-100">
+            <span class="text-xs text-slate-500 font-medium">模式：</span>
+            <div class="inline-flex rounded-lg bg-slate-100 p-1">
+              <button @click="academicMode = 'library'"
+                      :class="academicMode === 'library' ? 'bg-slate-900 text-white font-semibold shadow-sm' : 'text-slate-700 hover:text-slate-900'"
+                      class="px-3 py-1.5 rounded-md text-xs transition-all flex items-center gap-1.5">
+                <span>会议库</span>
+                <span class="text-slate-300 bg-slate-800/80 px-1.5 py-0.2 rounded-full text-[10px]" x-text="'(' + conferences.length + ')'"></span>
+              </button>
+              <button @click="academicMode = 'audit'"
+                      :class="academicMode === 'audit' ? 'bg-rose-50 text-rose-600 font-bold border border-rose-200' : 'text-slate-700 hover:text-rose-600'"
+                      class="px-3 py-1.5 rounded-md text-xs transition-all flex items-center gap-1.5">
+                <span>会议审核</span>
+                <span class="bg-rose-600 text-white px-1.5 py-0.2 rounded-full text-[10px]" x-text="auditConferences.length"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- DISEASE AREA DISTRIBUTION & FILTER BAR (六大疾病领域分配与动态占比) -->
+        <div x-show="hotspotTab !== 'fund'" class="bg-white rounded-xl border border-slate-200 p-3.5 shadow-sm space-y-3">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
+            <!-- Filter Pills -->
+            <div class="flex items-center gap-2 flex-wrap text-xs">
+              <span class="text-slate-500 font-medium mr-1">疾病领域：</span>
+
+              <button @click="selectedDomain = '全部'; litPage = 1"
+                      :class="selectedDomain === '全部' ? 'bg-slate-900 text-white font-semibold shadow-sm' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'"
+                      class="px-3 py-1.5 rounded-full transition-all flex items-center gap-1.5">
+                <span>全部</span>
+                <span class="opacity-75" x-text="getDomainCount('全部')"></span>
+              </button>
+
+              <template x-for="d in domains" :key="d.name">
+                <button @click="selectedDomain = d.name; litPage = 1"
+                        :class="selectedDomain === d.name ? 'ring-2 ring-offset-1 text-slate-900 font-semibold bg-white shadow-sm' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'"
+                        :style="selectedDomain === d.name ? 'ring-color:' + d.color : ''"
+                        class="px-3 py-1.5 rounded-full transition-all flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full" :style="'background-color:' + d.color"></span>
+                  <span x-text="d.name"></span>
+                  <span class="px-1.5 py-0.2 rounded-full text-[10px] bg-white border border-slate-200 text-slate-600"
+                        x-text="getDomainCount(d.name)"></span>
+                </button>
+              </template>
+            </div>
+
+            <!-- Conference Tier Filter when in academic tab -->
+            <div x-show="hotspotTab === 'academic'" class="flex items-center gap-1.5 text-xs shrink-0">
+              <span class="text-slate-400">会议评级:</span>
+              <select x-model="confTierFilter" class="bg-slate-50 border border-slate-200 rounded-lg px-2 py-1 text-xs font-medium text-slate-700 focus:outline-none">
+                <option value="all">全部等级 (A/B/C/D)</option>
+                <option value="A">🌐 A级 · 国际风向标</option>
+                <option value="B">🔥 B级 · 国内重点关注</option>
+                <option value="C">⭐ C级 · 国内常规关注</option>
+                <option value="D">💤 D级 · 低优先级</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Dynamic Visual Distribution Bar -->
+          <div class="pt-1">
+            <div class="h-2.5 w-full bg-slate-100 rounded-full overflow-hidden flex shadow-inner">
+              <template x-for="d in domains" :key="d.name">
+                <div :style="'width:' + getDomainPercentage(d.name) + '%; background-color:' + d.color"
+                     class="h-full transition-all duration-500 relative group cursor-pointer"
+                     @click="selectedDomain = d.name; litPage = 1">
+                  <div class="opacity-0 group-hover:opacity-100 pointer-events-none absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-[10px] py-1 px-2 rounded shadow-lg whitespace-nowrap z-30 transition-opacity">
+                    <span x-text="d.name"></span>: <span x-text="getDomainCount(d.name) + '项 (' + getDomainPercentage(d.name) + '%)'"></span>
+                  </div>
+                </div>
+              </template>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUB-TAB CONTENT 1: 学术会议 -->
+        <div x-show="hotspotTab === 'academic'">
+
+          <!-- Mode A: 会议库 (With Our 4-Tier Conference Assessment) -->
+          <div x-show="academicMode === 'library'" class="space-y-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <template x-for="item in filteredConferences" :key="item.id">
+                <div @click="openConferenceDetail(item)"
+                     class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:shadow-md hover:border-blue-300 transition-all flex flex-col justify-between cursor-pointer group">
+                  <div>
+                    <!-- Top Badges: Domain + Our 4-Tier Rating Badge -->
+                    <div class="flex items-start justify-between gap-2 mb-2.5">
+                      <span class="px-2.5 py-0.5 rounded-full text-xs font-medium text-white shrink-0"
+                            :style="'background-color:' + getDomainColor(item.domain)"
+                            x-text="item.domain"></span>
+                      <span class="text-xs font-semibold px-2 py-0.5 rounded border shrink-0"
+                            :class="{
+                              'bg-indigo-50 text-indigo-700 border-indigo-200': item.tierCode === 'A',
+                              'bg-rose-50 text-rose-700 border-rose-200': item.tierCode === 'B',
+                              'bg-emerald-50 text-emerald-700 border-emerald-200': item.tierCode === 'C',
+                              'bg-slate-100 text-slate-600 border-slate-200': item.tierCode === 'D'
+                            }"
+                            x-text="item.tierBadge"></span>
+                    </div>
+
+                    <!-- Full Conference Title (No ugly mid-word truncation) -->
+                    <h4 class="font-bold text-slate-900 text-base mb-1.5 group-hover:text-blue-600 transition-colors leading-snug"
+                        x-text="item.title"></h4>
+
+                    <p class="text-xs text-slate-500 mb-3 flex flex-wrap items-center gap-x-3 gap-y-1">
+                      <span>📅 <span x-text="item.date"></span></span>
+                      <span>📍 <span x-text="item.city"></span></span>
+                      <span x-show="item.reportCount > 0" class="text-blue-600 font-medium" x-text="'📊 ' + item.reportCount + '条报告'"></span>
+                    </p>
+
+                    <!-- Our Evaluation Basis & Topics Box -->
+                    <div class="text-xs text-slate-600 bg-slate-50 p-2.5 rounded-lg mb-2.5 border border-slate-100 space-y-1">
+                      <div class="line-clamp-2">
+                        <span class="font-semibold text-slate-800">定级依据：</span>
+                        <span x-text="item.tierBasis"></span>
+                      </div>
+                      <div class="line-clamp-2 pt-1 border-t border-slate-200/60">
+                        <span class="font-semibold text-blue-700">核心议题：</span>
+                        <span x-text="item.topics"></span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Single Clean Footer Row -->
+                  <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+                    <span class="text-xs text-slate-500 font-medium" x-text="item.speakers.length > 0 ? ('👥 ' + item.speakers.length + ' 位重点讲者 PI') : '📋 已入库学术档案'"></span>
+                    <span class="px-3 py-1.5 bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white rounded-lg text-xs font-semibold transition-all">
+                      查看学术档案 &rarr;
+                    </span>
+                  </div>
+                </div>
+              </template>
+            </div>
+
+            <div x-show="filteredConferences.length === 0" class="bg-white rounded-xl border border-slate-200 p-8 text-center text-slate-400 text-sm">
+              当前筛选条件下暂无匹配的学术会议数据
+            </div>
+          </div>
+
+          <!-- Mode B: 会议审核 (Audit Mode with Real Evaluation Criteria & Tier Picker) -->
+          <div x-show="academicMode === 'audit'" class="space-y-4">
+            <div class="bg-rose-50 border border-rose-200 rounded-xl p-3.5 flex flex-wrap items-center justify-between gap-2 text-xs text-rose-800">
+              <span class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-rose-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                <span><strong>会议定级口径：</strong>A级国际顶会（追前沿议题/免国内销售考核）、B级国内重点（优先到会/深拆PI）、C级常规关注（属地销售选择性拜访）、D级低优先级（手术/康复操作类）。</span>
+              </span>
+              <div class="flex items-center gap-3">
+                <span class="font-bold" x-text="'待审队列: ' + filteredAuditConferences.length + ' 场'"></span>
+                <a href="会议审核入库.html" class="underline font-semibold text-rose-700 hover:text-rose-900">打开高级审核与线上发布台 &nearr;</a>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <template x-for="item in filteredAuditConferences" :key="item.id">
+                <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm flex flex-col justify-between">
+                  <div>
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <div class="flex items-center gap-2">
+                        <span class="px-2.5 py-0.5 rounded-full text-xs font-medium text-white"
+                              :style="'background-color:' + getDomainColor(item.domain)"
+                              x-text="item.domain"></span>
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded border"
+                              :class="{
+                                'bg-indigo-50 text-indigo-700 border-indigo-200': item.tierCode === 'A',
+                                'bg-rose-50 text-rose-700 border-rose-200': item.tierCode === 'B',
+                                'bg-emerald-50 text-emerald-700 border-emerald-200': item.tierCode === 'C',
+                                'bg-slate-100 text-slate-600 border-slate-200': item.tierCode === 'D'
+                              }"
+                              x-text="getTierBadge(item.tierCode)"></span>
+                      </div>
+                      <span class="text-[11px] text-slate-400" x-text="'编号: ' + item.conferenceId"></span>
+                    </div>
+
+                    <h4 class="font-bold text-slate-900 text-base mb-1 leading-snug" x-text="item.title"></h4>
+                    <p class="text-xs text-slate-500 mb-2.5 flex items-center gap-3">
+                      <span>📅 <span x-text="item.date"></span></span>
+                      <span>📍 <span x-text="item.city"></span></span>
+                    </p>
+                    <div class="text-xs text-slate-600 bg-slate-50 p-3 rounded-lg mb-4 border border-slate-100 leading-relaxed">
+                      <span class="font-semibold text-slate-800">初评依据与分析：</span>
+                      <span x-text="item.summary"></span>
+                    </div>
+                  </div>
+
+                  <div class="pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2">
+                    <div class="flex items-center gap-1.5 text-xs">
+                      <span class="text-slate-500">核定等级:</span>
+                      <select x-model="item.tierCode" class="bg-slate-50 border border-slate-200 rounded px-2 py-1 text-xs font-semibold text-slate-800">
+                        <option value="A">A级 · 国际风向标</option>
+                        <option value="B">B级 · 重点关注</option>
+                        <option value="C">C级 · 常规关注</option>
+                        <option value="D">D级 · 低优先级</option>
+                      </select>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <button @click="rejectAudit(item.id)"
+                              class="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-medium transition-all">
+                        忽略 / 驳回
+                      </button>
+                      <button @click="approveAudit(item.id)"
+                              class="px-4 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-semibold shadow-sm transition-all flex items-center gap-1">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        批准入库并生成热点
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </template>
+            </div>
+
+            <div x-show="filteredAuditConferences.length === 0" class="bg-white rounded-xl border border-slate-200 p-8 text-center text-slate-400 text-sm">
+              当前领域下暂无待审核的学术会议
+            </div>
+          </div>
+
+        </div>
+
+        <!-- SUB-TAB CONTENT 2: 学术文献 (160 Real Primary Pool Papers + Option A Curated Specialty Papers) -->
+        <div x-show="hotspotTab === 'literature'" class="space-y-3">
+          <div class="bg-white rounded-xl border border-slate-200 px-4 py-2.5 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-600">
+            <div>
+              共匹配 <strong class="text-slate-900" x-text="filteredLiterature.length"></strong> 篇临床科研文献（含数据库核心四刊复核主池 <strong class="text-blue-600" x-text="dbStats.primaryPapers"></strong> 篇 + 专科精选演示文献）
+            </div>
+            <div class="flex items-center gap-2">
+              <span>数据源筛选：</span>
+              <button @click="litSourceFilter = 'all'; litPage = 1"
+                      :class="litSourceFilter === 'all' ? 'bg-slate-900 text-white font-semibold' : 'bg-slate-100 text-slate-600'"
+                      class="px-2.5 py-1 rounded">全部</button>
+              <button @click="litSourceFilter = 'real'; litPage = 1"
+                      :class="litSourceFilter === 'real' ? 'bg-blue-600 text-white font-semibold' : 'bg-slate-100 text-slate-600'"
+                      class="px-2.5 py-1 rounded">仅看数据库实证主池 (160)</button>
+            </div>
+          </div>
+
+          <template x-for="paper in pagedLiterature" :key="paper.id">
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-blue-200 transition-all flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div class="space-y-1.5 flex-1">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="px-2.5 py-0.5 rounded-full text-xs font-medium text-white"
+                        :style="'background-color:' + getDomainColor(paper.domain)"
+                        x-text="paper.domain"></span>
+                  <span class="px-2 py-0.5 rounded bg-blue-50 text-blue-700 text-xs font-semibold" x-text="paper.journal"></span>
+                  <span x-show="paper.typeLabel" class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 text-xs" x-text="paper.typeLabel"></span>
+                  <span x-show="paper.topicName" class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-medium" x-text="'议题: ' + paper.topicName"></span>
+                  <span class="text-xs text-slate-400" x-text="paper.pubDate"></span>
+                  <span x-show="!paper.isReal" class="px-2 py-0.5 rounded bg-amber-50 text-amber-700 border border-amber-200 text-[11px]">示例数据 · 专科管线待接入</span>
+                </div>
+                <h4 class="font-bold text-slate-900 text-base hover:text-blue-600 transition-colors leading-snug">
+                  <a :href="paper.sourceUrl || '#'" target="_blank" rel="noopener" x-text="paper.title"></a>
+                </h4>
+                <p class="text-xs text-slate-600 bg-slate-50 p-2.5 rounded-lg border border-slate-100 leading-relaxed" x-text="paper.abstract"></p>
+                <div class="text-xs text-slate-500 flex flex-wrap items-center gap-3">
+                  <span>作者 / 团队: <span class="text-slate-700 font-medium" x-text="paper.authors"></span></span>
+                  <span x-show="paper.pmid" class="text-slate-400" x-text="'PMID: ' + paper.pmid"></span>
+                </div>
+              </div>
+
+              <div class="flex md:flex-col items-center justify-between gap-2 shrink-0 border-t md:border-t-0 pt-2 md:pt-0 border-slate-100">
+                <span class="text-xs font-semibold px-2 py-1 rounded"
+                      :class="paper.isReal ? 'text-emerald-700 bg-emerald-50 border border-emerald-200' : 'text-amber-700 bg-amber-50'"
+                      x-text="paper.heat"></span>
+                <div class="flex items-center gap-1.5">
+                  <a x-show="paper.detailUrl" :href="paper.detailUrl" class="px-2.5 py-1.5 bg-blue-50 text-blue-600 hover:bg-blue-100 rounded-lg text-xs font-medium transition-all">
+                    证据详情
+                  </a>
+                  <button @click="showToast('已复制文献 DOI / 链接到剪贴板', 'success')"
+                          class="px-2.5 py-1.5 bg-slate-100 hover:bg-blue-50 hover:text-blue-600 rounded-lg text-xs font-medium transition-all">
+                    复制引文
+                  </button>
+                </div>
+              </div>
+            </div>
+          </template>
+
+          <!-- Literature Pagination -->
+          <div x-show="litTotalPages > 1" class="bg-white rounded-xl border border-slate-200 p-3 flex items-center justify-between text-xs">
+            <span class="text-slate-500" x-text="'第 ' + litPage + ' / ' + litTotalPages + ' 页（共 ' + filteredLiterature.length + ' 篇）'"></span>
+            <div class="flex items-center gap-2">
+              <button @click="if(litPage > 1) litPage--" :disabled="litPage <= 1"
+                      class="px-3 py-1.5 rounded border border-slate-200 bg-slate-50 hover:bg-slate-100 disabled:opacity-40 font-medium">
+                上一页
+              </button>
+              <button @click="if(litPage < litTotalPages) litPage++" :disabled="litPage >= litTotalPages"
+                      class="px-3 py-1.5 rounded border border-slate-200 bg-slate-50 hover:bg-slate-100 disabled:opacity-40 font-medium">
+                下一页
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUB-TAB CONTENT 3: 药厂 / CDE管线 (Option A) -->
+        <div x-show="hotspotTab === 'pipeline'" class="space-y-3">
+          <div class="bg-amber-50/80 border border-amber-200 rounded-xl px-4 py-2.5 flex items-center justify-between text-xs text-amber-800">
+            <span>💡 <strong>药厂 / CDE 临床管线监控（示例演示数据）：</strong>展示六大疾病领域重点新药临床试验与伴随诊断/多组学标志物开发商机；自动化 CDE 抓取管线将于下一阶段接通。</span>
+            <span class="px-2 py-0.5 bg-amber-100 rounded font-semibold shrink-0">方式A · 精选演示</span>
+          </div>
+
+          <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm">
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse text-xs">
+                <thead>
+                  <tr class="bg-slate-50 border-b border-slate-200 text-slate-600 font-semibold">
+                    <th class="py-3 px-4">药物/管线名称</th>
+                    <th class="py-3 px-4">研发药厂</th>
+                    <th class="py-3 px-4">疾病领域</th>
+                    <th class="py-3 px-4">适应症与多组学转化切入点</th>
+                    <th class="py-3 px-4">临床阶段</th>
+                    <th class="py-3 px-4">更新时间</th>
+                    <th class="py-3 px-4 text-right">操作</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100">
+                  <template x-for="pipe in filteredPipelines" :key="pipe.id">
+                    <tr class="hover:bg-slate-50/80 transition-colors">
+                      <td class="py-3.5 px-4 font-bold text-slate-900" x-text="pipe.name"></td>
+                      <td class="py-3.5 px-4 text-slate-700 font-medium" x-text="pipe.company"></td>
+                      <td class="py-3.5 px-4">
+                        <span class="px-2 py-0.5 rounded text-[11px] font-medium text-white"
+                              :style="'background-color:' + getDomainColor(pipe.domain)"
+                              x-text="pipe.domain"></span>
+                      </td>
+                      <td class="py-3.5 px-4 text-slate-600" x-text="pipe.indication"></td>
+                      <td class="py-3.5 px-4">
+                        <span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-amber-50 text-amber-700 border border-amber-200"
+                              x-text="pipe.phase"></span>
+                      </td>
+                      <td class="py-3.5 px-4 text-slate-400" x-text="pipe.date"></td>
+                      <td class="py-3.5 px-4 text-right">
+                        <button @click="openAssignModal(pipe.company + ' · ' + pipe.name + ' 管线合作研讨', pipe.cutIn)"
+                                class="text-blue-600 hover:text-blue-800 font-semibold">
+                          派发研讨 &rarr;
+                        </button>
+                      </td>
+                    </tr>
+                  </template>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUB-TAB CONTENT 4: 基金 (待配置) -->
+        <div x-show="hotspotTab === 'fund'" class="bg-white rounded-xl border border-slate-200 p-12 text-center shadow-sm">
+          <div class="w-16 h-16 bg-amber-50 text-amber-500 rounded-full flex items-center justify-center text-2xl mx-auto mb-4">
+            🏦
+          </div>
+          <h3 class="font-bold text-slate-900 text-lg mb-1">国家自然科学基金 (NSFC) 动态模块待配置</h3>
+          <p class="text-xs text-slate-500 max-w-md mx-auto mb-6 leading-relaxed">
+            该模块入口已预留，后续将接入国家自然科学基金医学部专项、省市级重大临床科研课题立项数据，并与【作战地图】中 PI 的“科研转化潜力（25分）”维度自动联动。
+          </p>
+          <button @click="showToast('已记录国家基金数据管线接入优先级', 'info')"
+                  class="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white rounded-lg text-xs font-semibold transition-all">
+            登记配置需求
+          </button>
+        </div>
+
+      </div>
+
+      <!-- ========================================== -->
+      <!-- MODULE 2: ② 作战地图 MODULE (With 4D Score)-->
+      <!-- ========================================== -->
+      <div x-show="activeModule === 'map'" class="space-y-4">
+        <!-- Map Top Filter Bar -->
+        <div class="bg-white rounded-xl border border-slate-200 p-3.5 shadow-sm space-y-3">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center gap-2 flex-wrap text-xs">
+              <span class="text-slate-500 font-medium">领域筛选：</span>
+              <button @click="mapDomain = '全部'; piPage = 1"
+                      :class="mapDomain === '全部' ? 'bg-slate-900 text-white font-semibold' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'"
+                      class="px-3 py-1.5 rounded-full transition-all">
+                全部 (<span x-text="piList.length"></span>)
+              </button>
+              <template x-for="d in domains" :key="d.name">
+                <button @click="mapDomain = d.name; piPage = 1"
+                        :class="mapDomain === d.name ? 'ring-2 ring-offset-1 font-semibold text-slate-900 bg-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'"
+                        :style="mapDomain === d.name ? 'ring-color:' + d.color : ''"
+                        class="px-3 py-1.5 rounded-full transition-all flex items-center gap-1">
+                  <span class="w-2 h-2 rounded-full" :style="'background-color:' + d.color"></span>
+                  <span x-text="d.name"></span>
+                  <span class="text-[10px] opacity-75" x-text="'(' + piList.filter(p=>p.domain===d.name).length + ')'"></span>
+                </button>
+              </template>
+            </div>
+
+            <button @click="openUploadModal()"
+                    class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-semibold shadow-sm transition-all flex items-center gap-1.5">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+              导入 PI 信息 (Excel/录入)
+            </button>
+          </div>
+
+          <!-- Second Row: Our 4D PI Scoring & Tier Filters -->
+          <div class="pt-2.5 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 text-xs">
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="text-slate-500 font-medium">四维评级筛选 (V3.2)：</span>
+              <button @click="mapGradeFilter = 'all'; piPage = 1"
+                      :class="mapGradeFilter === 'all' ? 'bg-blue-600 text-white font-semibold' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'"
+                      class="px-2.5 py-1 rounded-lg transition-all">
+                全部专家
+              </button>
+              <button @click="mapGradeFilter = 'complete'; piPage = 1"
+                      :class="mapGradeFilter === 'complete' ? 'bg-blue-600 text-white font-semibold' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'"
+                      class="px-2.5 py-1 rounded-lg transition-all">
+                ⭐ 四维完评 (B/C级 · 5人)
+              </button>
+              <button @click="mapGradeFilter = 'survey'; piPage = 1"
+                      :class="mapGradeFilter === 'survey' ? 'bg-blue-600 text-white font-semibold' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'"
+                      class="px-2.5 py-1 rounded-lg transition-all">
+                📋 四维调研中 (缺证待补 · 9人)
+              </button>
+              <button @click="mapGradeFilter = 'ai'; piPage = 1"
+                      :class="mapGradeFilter === 'ai' ? 'bg-blue-600 text-white font-semibold' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'"
+                      class="px-2.5 py-1 rounded-lg transition-all">
+                🔥 AI 明确合作推荐
+              </button>
+            </div>
+
+            <div class="text-[11px] text-slate-400">
+              评分准则：方向契合(30) + 学术产出(25) + 科研转化(25) + 平台资源(20) · 缺证维度保留待评不填0
+            </div>
+          </div>
+        </div>
+
+        <!-- PI Table -->
+        <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm">
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-xs">
+              <thead>
+                <tr class="bg-slate-50 border-b border-slate-200 text-slate-600 font-semibold">
+                  <th class="py-3 px-4">专家姓名</th>
+                  <th class="py-3 px-4">所属医院 / 机构</th>
+                  <th class="py-3 px-4">学术角色层级</th>
+                  <th class="py-3 px-4">四维合作评分 (V3.2)</th>
+                  <th class="py-3 px-4">疾病领域 &amp; 能力匹配</th>
+                  <th class="py-3 px-4">主要科研方向与讲题</th>
+                  <th class="py-3 px-4">重点关注</th>
+                  <th class="py-3 px-4 text-right">操作</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100">
+                <template x-for="pi in pagedPIs" :key="pi.id">
+                  <tr class="hover:bg-slate-50 transition-colors cursor-pointer" @click="openPIDrawer(pi)">
+                    <td class="py-3.5 px-4 font-bold text-slate-900">
+                      <div class="flex items-center gap-2">
+                        <div class="w-7 h-7 rounded-full bg-blue-50 text-blue-700 border border-blue-200 font-bold flex items-center justify-center text-xs shrink-0"
+                             x-text="pi.name.substring(0, 1)"></div>
+                        <div>
+                          <div class="flex items-center gap-1.5">
+                            <span x-text="pi.name"></span>
+                            <span x-show="pi.syncedIntelCount > 0" class="px-1.5 py-0.2 bg-emerald-100 text-emerald-800 rounded text-[10px] font-semibold">已回流校准</span>
+                          </div>
+                          <div class="text-[10px] text-slate-400 font-normal" x-text="pi.sourceLabel"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-3.5 px-4 text-slate-700 font-medium" x-text="pi.hospital"></td>
+                    <td class="py-3.5 px-4">
+                      <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 text-[11px] font-medium" x-text="pi.roleLabel"></span>
+                    </td>
+                    <td class="py-3.5 px-4">
+                      <!-- Our 4D Score Badge -->
+                      <div class="flex flex-col gap-0.5">
+                        <span class="px-2 py-0.5 rounded text-[11px] font-bold w-fit border"
+                              :class="{
+                                'bg-emerald-50 text-emerald-700 border-emerald-200': pi.grade === 'A' || pi.grade === 'B',
+                                'bg-blue-50 text-blue-700 border-blue-200': pi.grade === 'C',
+                                'bg-amber-50 text-amber-700 border-amber-200': pi.hasPartialRating,
+                                'bg-slate-50 text-slate-500 border-slate-200 font-normal': !pi.grade && !pi.hasPartialRating
+                              }"
+                              x-text="pi.scoreBadge"></span>
+                        <span x-show="pi.dimSummary" class="text-[10px] text-slate-400" x-text="pi.dimSummary"></span>
+                      </div>
+                    </td>
+                    <td class="py-3.5 px-4">
+                      <div class="flex flex-col gap-1">
+                        <span class="px-2 py-0.5 rounded text-[11px] font-medium text-white w-fit"
+                              :style="'background-color:' + getDomainColor(pi.domain)"
+                              x-text="pi.domain"></span>
+                        <div x-show="pi.capabilities && pi.capabilities.length" class="flex flex-wrap gap-1">
+                          <template x-for="cap in pi.capabilities" :key="cap">
+                            <span class="px-1.5 py-0.2 bg-purple-50 text-purple-700 border border-purple-200 rounded text-[10px] font-semibold" x-text="cap"></span>
+                          </template>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-3.5 px-4 text-slate-600 max-w-xs">
+                      <div class="line-clamp-2" x-text="pi.research"></div>
+                    </td>
+                    <td class="py-3.5 px-4" @click.stop>
+                      <button @click="togglePIStar(pi.id)"
+                              :class="pi.starred ? 'text-amber-600 bg-amber-50 border-amber-200 font-semibold' : 'text-slate-400 bg-slate-50 border-slate-200'"
+                              class="px-2.5 py-1 rounded border text-xs flex items-center gap-1 transition-all">
+                        <span x-text="pi.starred ? '★ 已关注' : '☆ 关注'"></span>
+                      </button>
+                    </td>
+                    <td class="py-3.5 px-4 text-right">
+                      <button @click.stop="openPIDrawer(pi)" class="px-2.5 py-1.5 bg-blue-50 text-blue-600 hover:bg-blue-600 hover:text-white rounded-lg font-semibold transition-all">
+                        四维画像 &rarr;
+                      </button>
+                    </td>
+                  </tr>
+                </template>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- PI Pagination -->
+          <div x-show="piTotalPages > 1" class="border-t border-slate-100 p-3 flex items-center justify-between text-xs">
+            <span class="text-slate-500" x-text="'第 ' + piPage + ' / ' + piTotalPages + ' 页（当前筛选共 ' + filteredPIs.length + ' 位专家）'"></span>
+            <div class="flex items-center gap-2">
+              <button @click="if(piPage > 1) piPage--" :disabled="piPage <= 1"
+                      class="px-3 py-1.5 rounded border border-slate-200 bg-slate-50 hover:bg-slate-100 disabled:opacity-40 font-medium">
+                上一页
+              </button>
+              <button @click="if(piPage < piTotalPages) piPage++" :disabled="piPage >= piTotalPages"
+                      class="px-3 py-1.5 rounded border border-slate-200 bg-slate-50 hover:bg-slate-100 disabled:opacity-40 font-medium">
+                下一页
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========================================== -->
+      <!-- MODULE 3: ③ 任务派发 MODULE (会人联动)       -->
+      <!-- ========================================== -->
+      <div x-show="activeModule === 'tasks'" class="space-y-4">
+        <!-- Sub-Tabs -->
+        <div class="bg-white rounded-xl border border-slate-200 p-2.5 shadow-sm flex flex-wrap items-center justify-between gap-2">
+          <div class="flex items-center gap-2">
+            <button @click="taskTab = 'conferences'"
+                    :class="taskTab === 'conferences' ? 'bg-blue-600 text-white font-semibold shadow-sm' : 'text-slate-600 hover:bg-slate-100'"
+                    class="px-4 py-1.5 rounded-lg text-xs transition-all">
+              🎪 重点会议推荐（以会带人 · 含本场重点PI）
+            </button>
+            <button @click="taskTab = 'pis'"
+                    :class="taskTab === 'pis' ? 'bg-blue-600 text-white font-semibold shadow-sm' : 'text-slate-600 hover:bg-slate-100'"
+                    class="px-4 py-1.5 rounded-lg text-xs transition-all flex items-center gap-1.5">
+              <span>🎯 重点 PI 关注（以人促会）</span>
+              <span class="px-1.5 py-0.2 rounded-full text-[10px]"
+                    :class="taskTab === 'pis' ? 'bg-blue-500 text-white' : 'bg-amber-100 text-amber-800'"
+                    x-text="piList.filter(p => p.starred).length"></span>
+            </button>
+          </div>
+          <span class="text-xs text-slate-400">自动匹配吉因加多组学能力项（T03/T10/T14）与定制破冰话术</span>
+        </div>
+
+        <!-- Task Sub-Tab 1: 重点会议推荐 (以会带人) -->
+        <div x-show="taskTab === 'conferences'" class="space-y-4">
+          <template x-for="conf in recommendedConferences" :key="conf.id">
+            <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm space-y-4">
+              <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-slate-100 pb-3.5">
+                <div>
+                  <div class="flex items-center gap-2 flex-wrap mb-1.5">
+                    <span class="px-2.5 py-0.5 rounded-full text-xs font-medium text-white"
+                          :style="'background-color:' + getDomainColor(conf.domain)"
+                          x-text="conf.domain"></span>
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded border"
+                          :class="{
+                            'bg-indigo-50 text-indigo-700 border-indigo-200': conf.tierCode === 'A',
+                            'bg-rose-50 text-rose-700 border-rose-200': conf.tierCode === 'B',
+                            'bg-emerald-50 text-emerald-700 border-emerald-200': conf.tierCode === 'C'
+                          }"
+                          x-text="conf.tierBadge"></span>
+                    <span class="text-xs text-slate-500" x-text="'📅 ' + conf.date + ' | 📍 ' + conf.city"></span>
+                  </div>
+                  <h3 class="font-bold text-slate-900 text-base" x-text="conf.title"></h3>
+                  <p class="text-xs text-slate-500 mt-1" x-text="'💡 参会策略与定级依据：' + conf.tierBasis"></p>
+                </div>
+                <button @click="openAssignModal(conf.title, conf.cutIn)"
+                        class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-semibold shadow-sm transition-all self-start md:self-auto shrink-0">
+                  派发本场攻坚任务 &rarr;
+                </button>
+              </div>
+
+              <!-- Embedded Speaker PI List with 4D Ratings -->
+              <div>
+                <h4 class="text-xs font-bold text-slate-500 mb-2.5 flex items-center justify-between">
+                  <span>👥 本场重点推荐拜访 PI 讲者、四维评级及切入讲题</span>
+                  <span class="text-[11px] font-normal text-blue-600">点击讲者卡片可打开四维画像或单独派发</span>
+                </h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  <template x-for="sp in conf.speakers" :key="sp.name + sp.topic">
+                    <div class="bg-slate-50 hover:bg-blue-50/40 p-3.5 rounded-xl border border-slate-200/80 flex flex-col justify-between gap-2 transition-all">
+                      <div>
+                        <div class="flex items-center justify-between gap-2 mb-1">
+                          <div class="font-bold text-slate-900 text-xs flex items-center gap-1.5">
+                            <span x-text="sp.name"></span>
+                            <span class="text-slate-500 font-normal" x-text="'(' + sp.hospital + ')'"></span>
+                          </div>
+                          <div class="flex items-center gap-1 shrink-0">
+                            <span x-show="sp.scoreLabel" class="text-[10px] bg-emerald-100 text-emerald-800 border border-emerald-200 px-1.5 py-0.5 rounded font-bold" x-text="sp.scoreLabel"></span>
+                            <span class="text-[10px] bg-blue-100 text-blue-800 px-2 py-0.5 rounded font-semibold" x-text="sp.role"></span>
+                          </div>
+                        </div>
+                        <div class="text-xs text-slate-700">🎤 报告题目: <span class="font-medium text-slate-900" x-text="sp.topic"></span></div>
+                        <div x-show="sp.cutIn" class="text-[11px] text-blue-700 bg-blue-50/80 px-2 py-1 rounded mt-1.5 border border-blue-100" x-text="'🎯 切入建议: ' + sp.cutIn"></div>
+                      </div>
+                      <div class="flex items-center justify-end gap-2 pt-1">
+                        <button x-show="sp.piId" @click="openPIById(sp.piId)" class="text-[11px] text-slate-600 hover:text-blue-600 font-medium">看四维画像</button>
+                        <button @click="openAssignModal(conf.abbreviation + ' · 拜访 ' + sp.name, sp.cutIn || conf.cutIn)"
+                                class="text-[11px] text-blue-600 hover:text-blue-800 font-semibold">
+                          定向派发此PI &rarr;
+                        </button>
+                      </div>
+                    </div>
+                  </template>
+                </div>
+              </div>
+            </div>
+          </template>
+        </div>
+
+        <!-- Task Sub-Tab 2: 重点 PI 关注 (以人促会) -->
+        <div x-show="taskTab === 'pis'" class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm">
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-xs">
+              <thead>
+                <tr class="bg-slate-50 border-b border-slate-200 text-slate-600 font-semibold">
+                  <th class="py-3 px-4">专家姓名</th>
+                  <th class="py-3 px-4">医院与学术角色</th>
+                  <th class="py-3 px-4">四维合作评级</th>
+                  <th class="py-3 px-4">疾病领域 &amp; 匹配能力</th>
+                  <th class="py-3 px-4">破冰切入点 &amp; 讲题</th>
+                  <th class="py-3 px-4">跟进责任销售</th>
+                  <th class="py-3 px-4">跟进状态</th>
+                  <th class="py-3 px-4 text-right">操作与状态切换</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100">
+                <template x-for="pi in piList.filter(p => p.starred)" :key="pi.id">
+                  <tr class="hover:bg-slate-50 transition-colors">
+                    <td class="py-3.5 px-4 font-bold text-slate-900 cursor-pointer hover:text-blue-600" @click="openPIDrawer(pi)" x-text="pi.name"></td>
+                    <td class="py-3.5 px-4 text-slate-700" x-text="pi.hospital + ' · ' + pi.roleLabel"></td>
+                    <td class="py-3.5 px-4">
+                      <span class="px-2 py-0.5 rounded text-[11px] font-bold border"
+                            :class="{
+                              'bg-emerald-50 text-emerald-700 border-emerald-200': pi.grade === 'A' || pi.grade === 'B',
+                              'bg-blue-50 text-blue-700 border-blue-200': pi.grade === 'C',
+                              'bg-amber-50 text-amber-700 border-amber-200': pi.hasPartialRating,
+                              'bg-slate-50 text-slate-500 border-slate-200': !pi.grade && !pi.hasPartialRating
+                            }"
+                            x-text="pi.scoreBadge"></span>
+                    </td>
+                    <td class="py-3.5 px-4">
+                      <span class="px-2 py-0.5 rounded text-[11px] font-medium text-white"
+                            :style="'background-color:' + getDomainColor(pi.domain)"
+                            x-text="pi.domain"></span>
+                    </td>
+                    <td class="py-3.5 px-4 text-slate-600 max-w-xs">
+                      <div class="line-clamp-2" x-text="pi.cutIn || pi.research"></div>
+                    </td>
+                    <td class="py-3.5 px-4 text-slate-700 font-medium" x-text="pi.assignee || '华东一区 - 张敏'"></td>
+                    <td class="py-3.5 px-4">
+                      <span class="px-2 py-0.5 rounded text-[11px] font-semibold"
+                            :class="{
+                              'bg-slate-100 text-slate-700': pi.taskStatus === '待派发',
+                              'bg-amber-100 text-amber-800': pi.taskStatus === '跟进中',
+                              'bg-emerald-100 text-emerald-800': pi.taskStatus === '已触达'
+                            }"
+                            x-text="pi.taskStatus || '跟进中'"></span>
+                    </td>
+                    <td class="py-3.5 px-4 text-right space-x-1 whitespace-nowrap">
+                      <button @click="openAssignModal(pi.name + ' 临床课题拜访', pi.cutIn, pi)" class="px-2 py-1 bg-blue-50 hover:bg-blue-100 text-blue-700 rounded text-[10px] font-semibold">派发任务</button>
+                      <button @click="updatePITaskStatus(pi, '跟进中')" class="px-2 py-1 bg-amber-50 hover:bg-amber-100 text-amber-700 rounded text-[10px] font-medium">跟进中</button>
+                      <button @click="updatePITaskStatus(pi, '已触达')" class="px-2 py-1 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 rounded text-[10px] font-medium">已触达</button>
+                    </td>
+                  </tr>
+                </template>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========================================== -->
+      <!-- MODULE 4: ④ 业务闭环 MODULE                 -->
+      <!-- ========================================== -->
+      <div x-show="activeModule === 'closedloop'" class="space-y-4">
+        <!-- Sub-Tabs -->
+        <div class="bg-white rounded-xl border border-slate-200 p-2.5 shadow-sm flex flex-wrap items-center justify-between gap-2">
+          <div class="flex items-center gap-2">
+            <button @click="loopTab = 'reports'"
+                    :class="loopTab === 'reports' ? 'bg-blue-600 text-white font-semibold shadow-sm' : 'text-slate-600 hover:bg-slate-100'"
+                    class="px-4 py-1.5 rounded-lg text-xs transition-all">
+              📝 拜访跟进速递（销售日报反馈）
+            </button>
+            <button @click="loopTab = 'intel'"
+                    :class="loopTab === 'intel' ? 'bg-blue-600 text-white font-semibold shadow-sm' : 'text-slate-600 hover:bg-slate-100'"
+                    class="px-4 py-1.5 rounded-lg text-xs transition-all flex items-center gap-1.5">
+              <span>🔄 客户画像校准（情报回流反哺 PI 库）</span>
+              <span class="px-1.5 py-0.2 rounded-full text-[10px]"
+                    :class="loopTab === 'intel' ? 'bg-blue-500 text-white' : 'bg-emerald-100 text-emerald-800'"
+                    x-text="intelList.filter(i=>!i.synced).length + ' 待回流'"></span>
+            </button>
+          </div>
+
+          <button @click="openDailyReportModal()"
+                  class="px-3.5 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-semibold shadow-sm transition-all flex items-center gap-1">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+            填报拜访跟进日报
+          </button>
+        </div>
+
+        <!-- Loop Sub-Tab 1: 拜访跟进速递 -->
+        <div x-show="loopTab === 'reports'" class="space-y-3">
+          <template x-for="rep in visitReports" :key="rep.id">
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm flex flex-col sm:flex-row sm:items-start justify-between gap-3">
+              <div class="space-y-1.5 flex-1">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="font-bold text-slate-900 text-sm" x-text="rep.repName"></span>
+                  <span class="text-xs text-slate-400" x-text="rep.date"></span>
+                  <span class="text-xs text-blue-700 bg-blue-50 border border-blue-200 px-2 py-0.5 rounded font-semibold cursor-pointer"
+                        @click="openPIByName(rep.piName)"
+                        x-text="'拜访专家: ' + rep.piName"></span>
+                  <span x-show="rep.qualityTag" class="text-[11px] bg-purple-50 text-purple-700 px-2 py-0.5 rounded border border-purple-200" x-text="rep.qualityTag"></span>
+                </div>
+                <div class="text-xs text-slate-700 bg-slate-50 p-3 rounded-lg border border-slate-100 leading-relaxed" x-text="rep.content"></div>
+                <div class="text-xs text-slate-500">下一步行动计划: <span class="text-slate-800 font-medium" x-text="rep.nextStep"></span></div>
+              </div>
+              <span class="px-2.5 py-1 rounded text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 shrink-0 self-start">已归档入库</span>
+            </div>
+          </template>
+        </div>
+
+        <!-- Loop Sub-Tab 2: 客户画像校准 -->
+        <div x-show="loopTab === 'intel'" class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm">
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-xs">
+              <thead>
+                <tr class="bg-slate-50 border-b border-slate-200 text-slate-600 font-semibold">
+                  <th class="py-3 px-4">关联 PI / 医院机构</th>
+                  <th class="py-3 px-4">校准维度 / 情报类型</th>
+                  <th class="py-3 px-4">一线核实情报与四维补证内容</th>
+                  <th class="py-3 px-4">上报时间</th>
+                  <th class="py-3 px-4">回流状态</th>
+                  <th class="py-3 px-4 text-right">操作</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100">
+                <template x-for="item in intelList" :key="item.id">
+                  <tr class="hover:bg-slate-50 transition-colors">
+                    <td class="py-3.5 px-4 font-bold text-slate-900 cursor-pointer hover:text-blue-600"
+                        @click="openPIByName(item.piName)"
+                        x-text="item.piName + ' (' + item.hospital + ')'"></td>
+                    <td class="py-3.5 px-4">
+                      <span class="px-2 py-0.5 rounded text-[11px] font-medium bg-purple-50 text-purple-700 border border-purple-200" x-text="item.type"></span>
+                    </td>
+                    <td class="py-3.5 px-4 text-slate-700 max-w-md leading-relaxed" x-text="item.content"></td>
+                    <td class="py-3.5 px-4 text-slate-400" x-text="item.date"></td>
+                    <td class="py-3.5 px-4">
+                      <span class="px-2 py-0.5 rounded text-[11px] font-semibold"
+                            :class="item.synced ? 'bg-emerald-50 text-emerald-700 border border-emerald-200' : 'bg-amber-50 text-amber-700 border border-amber-200'"
+                            x-text="item.synced ? '✓ 已回流至作战地图' : '待回流校准'"></span>
+                    </td>
+                    <td class="py-3.5 px-4 text-right">
+                      <button x-show="!item.synced"
+                              @click="syncIntelToPI(item)"
+                              class="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-semibold shadow-sm transition-all">
+                        一键回流至 PI 库
+                      </button>
+                      <button x-show="item.synced"
+                              @click="openPIByName(item.piName)"
+                              class="text-blue-600 hover:underline font-medium">
+                        查看已校准画像 &rarr;
+                      </button>
+                    </td>
+                  </tr>
+                </template>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ========================================== -->
+  <!-- MODALS & DRAWERS CONTAINER                 -->
+  <!-- ========================================== -->
+
+  <!-- Modal 1: Conference Detail Modal (With 4-Tier Basis & Giligene Cut-In) -->
+  <div x-show="showConferenceModal"
+       x-cloak
+       x-transition.opacity
+       class="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
+    <div @click.outside="showConferenceModal = false"
+         class="bg-white rounded-2xl max-w-2xl w-full p-6 shadow-2xl border border-slate-200 max-h-[90vh] overflow-y-auto space-y-4">
+      <template x-if="selectedConf">
+        <div>
+          <div class="flex items-start justify-between gap-2">
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="px-3 py-1 rounded-full text-xs font-semibold text-white"
+                    :style="'background-color:' + getDomainColor(selectedConf.domain)"
+                    x-text="selectedConf.domain"></span>
+              <span class="text-xs font-bold px-2.5 py-1 rounded-full border"
+                    :class="{
+                      'bg-indigo-50 text-indigo-700 border-indigo-200': selectedConf.tierCode === 'A',
+                      'bg-rose-50 text-rose-700 border-rose-200': selectedConf.tierCode === 'B',
+                      'bg-emerald-50 text-emerald-700 border-emerald-200': selectedConf.tierCode === 'C',
+                      'bg-slate-100 text-slate-600 border-slate-200': selectedConf.tierCode === 'D'
+                    }"
+                    x-text="selectedConf.tierBadge"></span>
+            </div>
+            <button @click="showConferenceModal = false" class="text-slate-400 hover:text-slate-600 text-lg">✕</button>
+          </div>
+
+          <h2 class="text-xl font-bold text-slate-900 mt-3 leading-snug" x-text="selectedConf.title"></h2>
+          <p class="text-xs text-slate-500 mt-1 flex flex-wrap items-center gap-3">
+            <span>📅 时间：<span x-text="selectedConf.date"></span></span>
+            <span>📍 地点：<span x-text="selectedConf.city"></span></span>
+            <span x-show="selectedConf.reportCount" class="text-blue-600 font-semibold" x-text="'📊 已收录报告：' + selectedConf.reportCount + ' 条'"></span>
+          </p>
+
+          <div class="pt-4 border-t border-slate-100 space-y-3 mt-3">
+            <div>
+              <h4 class="font-bold text-xs text-slate-700 uppercase tracking-wider mb-1">📋 市场部四级评估定级依据</h4>
+              <p class="text-xs text-slate-700 leading-relaxed bg-slate-50 p-3 rounded-lg border border-slate-200/80" x-text="selectedConf.tierBasis"></p>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-xs text-slate-700 uppercase tracking-wider mb-1">🔥 核心转化议题与 Biomarker 锚点</h4>
+              <p class="text-xs text-slate-700 leading-relaxed bg-blue-50/60 p-3 rounded-lg border border-blue-100" x-text="selectedConf.topics"></p>
+            </div>
+
+            <div x-show="selectedConf.cutIn">
+              <h4 class="font-bold text-xs text-slate-700 uppercase tracking-wider mb-1">💡 吉因加业务商业切入建议</h4>
+              <p class="text-xs text-emerald-800 leading-relaxed bg-emerald-50/70 p-3 rounded-lg border border-emerald-200" x-text="selectedConf.cutIn"></p>
+            </div>
+
+            <div x-show="selectedConf.speakers && selectedConf.speakers.length">
+              <h4 class="font-bold text-xs text-slate-700 uppercase tracking-wider pt-1 mb-2">👥 本场重点关联讲者 PI 与四维评分</h4>
+              <div class="space-y-2">
+                <template x-for="sp in selectedConf.speakers" :key="sp.name + sp.topic">
+                  <div class="p-3 border border-slate-200 rounded-lg flex items-center justify-between gap-2 text-xs hover:bg-slate-50">
+                    <div>
+                      <div class="flex items-center gap-2">
+                        <span class="font-bold text-slate-900" x-text="sp.name"></span>
+                        <span class="text-slate-500" x-text="'(' + sp.hospital + ')'"></span>
+                        <span x-show="sp.scoreLabel" class="px-1.5 py-0.2 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded font-bold text-[10px]" x-text="sp.scoreLabel"></span>
+                      </div>
+                      <div class="text-slate-700 mt-1" x-text="'🎤 ' + sp.topic"></div>
+                    </div>
+                    <span class="px-2 py-0.5 bg-blue-50 text-blue-700 font-semibold rounded shrink-0" x-text="sp.role"></span>
+                  </div>
+                </template>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2 mt-4">
+            <div class="flex items-center gap-2">
+              <a x-show="selectedConf.viewUrl && selectedConf.viewUrl !== '#'" :href="selectedConf.viewUrl" class="text-xs text-blue-600 hover:underline font-semibold">
+                打开全量报告分析专页 &nearr;
+              </a>
+              <a x-show="selectedConf.officialUrl && selectedConf.officialUrl !== '#'" :href="selectedConf.officialUrl" target="_blank" rel="noopener" class="text-xs text-slate-500 hover:underline">
+                官方来源链接 &nearr;
+              </a>
+            </div>
+            <div class="flex items-center gap-2">
+              <button @click="showConferenceModal = false" class="px-4 py-2 bg-slate-100 text-slate-700 text-xs font-semibold rounded-lg">关闭</button>
+              <button @click="openAssignModal(selectedConf.title, selectedConf.cutIn); showConferenceModal = false;" class="px-4 py-2 bg-blue-600 text-white text-xs font-semibold rounded-lg hover:bg-blue-700">派发本场跟进任务</button>
+            </div>
+          </div>
+        </div>
+      </template>
+    </div>
+  </div>
+
+  <!-- Modal 2: Task Assignment Modal (With Auto Pre-filled Giligene Icebreaker Script) -->
+  <div x-show="showAssignModal"
+       x-cloak
+       x-transition.opacity
+       class="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
+    <div @click.outside="showAssignModal = false"
+         class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-slate-200 space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-lg font-bold text-slate-900">🎯 派发学术跟进作战卡</h3>
+        <button @click="showAssignModal = false" class="text-slate-400 hover:text-slate-600">✕</button>
+      </div>
+      <p class="text-xs text-slate-500">目标会议 / 专家事项：<span class="font-bold text-slate-800" x-text="targetTaskTitle"></span></p>
+
+      <div class="space-y-3 text-xs">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block font-medium text-slate-700 mb-1">指派责任销售代表</label>
+            <select x-model="assignedRep" class="w-full p-2 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+              <template x-for="rep in salespeople" :key="rep.id">
+                <option :value="rep.label" x-text="rep.label"></option>
+              </template>
+            </select>
+          </div>
+          <div>
+            <label class="block font-medium text-slate-700 mb-1">建议触达时间窗 / 截止日期</label>
+            <input type="date" x-model="assignDueDate" class="w-full p-2 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-medium text-slate-700 mb-1">推荐吉因加合作切入点与破冰话术（已自动预填，可微调）</label>
+          <textarea rows="4" x-model="assignNote" class="w-full p-2.5 bg-blue-50/40 border border-blue-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 leading-relaxed text-slate-800"></textarea>
+        </div>
+      </div>
+
+      <div class="flex justify-end gap-2 pt-3 border-t border-slate-100">
+        <button @click="showAssignModal = false" class="px-4 py-2 bg-slate-100 text-slate-700 text-xs font-semibold rounded-lg">取消</button>
+        <button @click="confirmTaskAssign()" class="px-4 py-2 bg-blue-600 text-white text-xs font-semibold rounded-lg hover:bg-blue-700">确认派发至销售工作台</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Upload PI Modal -->
+  <div x-show="showUploadModal"
+       x-cloak
+       x-transition.opacity
+       class="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
+    <div @click.outside="showUploadModal = false"
+         class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-slate-200 space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-lg font-bold text-slate-900">导入 / 录入 PI 专家信息</h3>
+        <button @click="showUploadModal = false" class="text-slate-400 hover:text-slate-600">✕</button>
+      </div>
+
+      <div class="flex border-b border-slate-200 gap-4 text-xs font-semibold">
+        <button @click="uploadTab = 'batch'" :class="uploadTab === 'batch' ? 'border-b-2 border-blue-600 text-blue-600 pb-2' : 'text-slate-400 pb-2'">批量 Excel/CSV 导入</button>
+        <button @click="uploadTab = 'single'" :class="uploadTab === 'single' ? 'border-b-2 border-blue-600 text-blue-600 pb-2' : 'text-slate-400 pb-2'">单条手工录入</button>
+      </div>
+
+      <div x-show="uploadTab === 'batch'" class="space-y-3 text-xs">
+        <label class="block border-2 border-dashed border-slate-300 hover:border-blue-500 rounded-xl p-8 text-center bg-slate-50 cursor-pointer transition-all">
+          <input type="file" accept=".csv,.xlsx,.json" class="hidden" @change="handleBatchPIFile($event)">
+          <svg class="w-10 h-10 text-slate-400 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
+          <p class="font-semibold text-slate-700">点击选择或拖拽各专科 PI 名单表格文件至此</p>
+          <p class="text-slate-400 text-[11px] mt-1">支持 .csv, .json, .xlsx 格式（同院同名自动识别，缺证维度保留“待评”不填0）</p>
+        </label>
+      </div>
+
+      <div x-show="uploadTab === 'single'" class="space-y-3 text-xs">
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-medium text-slate-700 mb-1">专家姓名</label>
+            <input type="text" x-model="newPI.name" placeholder="例如：陈教授" class="w-full p-2 bg-slate-50 border border-slate-200 rounded-lg">
+          </div>
+          <div>
+            <label class="block font-medium text-slate-700 mb-1">疾病领域</label>
+            <select x-model="newPI.domain" class="w-full p-2 bg-slate-50 border border-slate-200 rounded-lg">
+              <template x-for="d in domains" :key="d.name">
+                <option :value="d.name" x-text="d.name"></option>
+              </template>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-medium text-slate-700 mb-1">医院及科室</label>
+          <input type="text" x-model="newPI.hospital" placeholder="医院 + 科室" class="w-full p-2 bg-slate-50 border border-slate-200 rounded-lg">
+        </div>
+
+        <div>
+          <label class="block font-medium text-slate-700 mb-1">核心科研方向与转化线索</label>
+          <input type="text" x-model="newPI.research" placeholder="核心科研方向/研究课题" class="w-full p-2 bg-slate-50 border border-slate-200 rounded-lg">
+        </div>
+      </div>
+
+      <div class="flex justify-end gap-2 pt-3 border-t border-slate-100">
+        <button @click="showUploadModal = false" class="px-4 py-2 bg-slate-100 text-slate-700 text-xs font-semibold rounded-lg">取消</button>
+        <button @click="submitUploadPI()" class="px-4 py-2 bg-emerald-600 text-white text-xs font-semibold rounded-lg hover:bg-emerald-700">保存入库</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4: Daily Visit Report Modal -->
+  <div x-show="showDailyReportModal"
+       x-cloak
+       x-transition.opacity
+       class="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
+    <div @click.outside="showDailyReportModal = false"
+         class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-slate-200 space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-lg font-bold text-slate-900">📝 填报学术拜访日报</h3>
+        <button @click="showDailyReportModal = false" class="text-slate-400 hover:text-slate-600">✕</button>
+      </div>
+
+      <div class="space-y-3 text-xs">
+        <div>
+          <label class="block font-medium text-slate-700 mb-1">拜访专家 PI</label>
+          <select x-model="newReport.piName" class="w-full p-2 bg-slate-50 border border-slate-200 rounded-lg">
+            <template x-for="pi in piList.slice(0, 40)" :key="pi.id">
+              <option :value="pi.name" x-text="pi.name + ' (' + pi.hospital + ' · ' + pi.scoreBadge + ')'"></option>
+            </template>
+          </select>
+        </div>
+
+        <div>
+          <label class="block font-medium text-slate-700 mb-1">拜访沟通要点与客户科研需求</label>
+          <textarea x-model="newReport.content" rows="3" placeholder="记录客户对多组学/转录组/蛋白组检测的兴趣点、队列样本情况或立项计划..." class="w-full p-2 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+        </div>
+
+        <div>
+          <label class="block font-medium text-slate-700 mb-1">是否同步生成【客户画像校准】回流条？</label>
+          <label class="flex items-center gap-2 text-slate-600 cursor-pointer">
+            <input type="checkbox" x-model="newReport.createIntel" class="rounded text-blue-600">
+            <span>同时提取为待回流客户情报，用于校准作战地图 PI 四维画像</span>
+          </label>
+        </div>
+
+        <div>
+          <label class="block font-medium text-slate-700 mb-1">后续跟进计划</label>
+          <input type="text" x-model="newReport.nextStep" placeholder="下一步技术支持或方案寄送计划" class="w-full p-2 bg-slate-50 border border-slate-200 rounded-lg">
+        </div>
+      </div>
+
+      <div class="flex justify-end gap-2 pt-3 border-t border-slate-100">
+        <button @click="showDailyReportModal = false" class="px-4 py-2 bg-slate-100 text-slate-700 text-xs font-semibold rounded-lg">取消</button>
+        <button @click="submitDailyReport()" class="px-4 py-2 bg-blue-600 text-white text-xs font-semibold rounded-lg hover:bg-blue-700">提交日报</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide-Over Drawer: PI Full 4D Profile (clinical-research-v3 V3.2) -->
+  <div x-show="showPIDrawer"
+       x-cloak
+       x-transition:enter="transition ease-in-out duration-300"
+       x-transition:enter-start="translate-x-full"
+       x-transition:enter-end="translate-x-0"
+       x-transition:leave="transition ease-in-out duration-300"
+       x-transition:leave-start="translate-x-0"
+       x-transition:leave-end="translate-x-full"
+       class="fixed inset-y-0 right-0 z-50 w-full max-w-lg bg-white shadow-2xl border-l border-slate-200 p-6 overflow-y-auto space-y-5">
+    <template x-if="selectedPI">
+      <div>
+        <!-- Drawer Header -->
+        <div class="flex items-start justify-between border-b border-slate-100 pb-4">
+          <div class="flex items-center gap-3">
+            <div class="w-11 h-11 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center text-base shrink-0"
+                 x-text="selectedPI.name.substring(0, 1)"></div>
+            <div>
+              <div class="flex items-center gap-2 flex-wrap">
+                <h3 class="font-bold text-slate-900 text-lg" x-text="selectedPI.name"></h3>
+                <span class="px-2 py-0.5 rounded text-xs font-bold border"
+                      :class="{
+                        'bg-emerald-50 text-emerald-700 border-emerald-200': selectedPI.grade === 'A' || selectedPI.grade === 'B',
+                        'bg-blue-50 text-blue-700 border-blue-200': selectedPI.grade === 'C',
+                        'bg-amber-50 text-amber-700 border-amber-200': selectedPI.hasPartialRating,
+                        'bg-slate-100 text-slate-600 border-slate-200': !selectedPI.grade && !selectedPI.hasPartialRating
+                      }"
+                      x-text="selectedPI.scoreBadge"></span>
+              </div>
+              <p class="text-xs text-slate-600 font-medium mt-0.5" x-text="selectedPI.hospital"></p>
+              <p class="text-[11px] text-slate-400 mt-0.5" x-text="selectedPI.roleLabel + ' · ' + (selectedPI.headPiStatus || '课题PI身份按证据核定')"></p>
+            </div>
+          </div>
+          <button @click="showPIDrawer = false" class="text-slate-400 hover:text-slate-600 text-xl font-bold">✕</button>
+        </div>
+
+        <div class="space-y-4 pt-3 text-xs">
+          <!-- Domain & Capabilities -->
+          <div class="flex items-center justify-between flex-wrap gap-2">
+            <div class="flex items-center gap-2">
+              <span class="text-slate-400">疾病领域:</span>
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold text-white"
+                    :style="'background-color:' + getDomainColor(selectedPI.domain)"
+                    x-text="selectedPI.domain"></span>
+            </div>
+            <div x-show="selectedPI.capabilities && selectedPI.capabilities.length" class="flex items-center gap-1 flex-wrap">
+              <template x-for="cap in selectedPI.capabilities" :key="cap">
+                <span class="px-2 py-0.5 bg-purple-50 text-purple-700 border border-purple-200 rounded font-semibold text-[11px]" x-text="cap"></span>
+              </template>
+            </div>
+          </div>
+
+          <!-- 4D Rating Box (clinical-research-v3 V3.2) -->
+          <div class="bg-slate-50 rounded-xl p-4 border border-slate-200/90 space-y-3">
+            <div class="flex items-center justify-between">
+              <h4 class="font-bold text-slate-900 text-xs">📊 四维合作评级明细 (clinical-research-v3 V3.2)</h4>
+              <span class="text-[11px] text-slate-400" x-text="selectedPI.ratingDate ? ('核验日: ' + selectedPI.ratingDate) : '缺证不填0'"></span>
+            </div>
+
+            <div class="space-y-2.5">
+              <template x-for="dim in selectedPI.dimensions" :key="dim.name">
+                <div class="bg-white p-2.5 rounded-lg border border-slate-200/70 space-y-1">
+                  <div class="flex items-center justify-between text-xs">
+                    <span class="font-semibold text-slate-800" x-text="dim.name"></span>
+                    <span class="font-bold"
+                          :class="dim.score !== null ? 'text-blue-600' : 'text-amber-600'"
+                          x-text="dim.score !== null ? (dim.score + ' / ' + dim.maximum + ' 分') : ('待评 (满分' + dim.maximum + ')')"></span>
+                  </div>
+                  <div class="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
+                    <div class="h-full bg-blue-600 rounded-full transition-all"
+                         :style="'width:' + (dim.score !== null ? Math.round((dim.score / dim.maximum) * 100) : 0) + '%'"></div>
+                  </div>
+                  <p class="text-[11px] text-slate-500 leading-relaxed" x-text="dim.basis || '当前原始资料尚未覆盖该维度，保留待评，不填0分。'"></p>
+                </div>
+              </template>
+            </div>
+
+            <!-- Official Evidence Links -->
+            <div x-show="selectedPI.sources && selectedPI.sources.length" class="pt-2 border-t border-slate-200/80 space-y-1">
+              <div class="font-semibold text-slate-700 text-[11px]">🔗 可溯源官方核验证据链：</div>
+              <template x-for="src in selectedPI.sources" :key="src.id">
+                <div class="text-[11px] text-slate-600 flex items-start justify-between gap-2">
+                  <a :href="src.url" target="_blank" rel="noopener" class="text-blue-600 hover:underline font-medium" x-text="'[' + src.id + '] ' + src.title + ' ↗'"></a>
+                </div>
+              </template>
+            </div>
+          </div>
+
+          <!-- Giligene Cut-In & Research Direction -->
+          <div>
+            <span class="text-slate-500 font-bold block mb-1">💡 研究方向与吉因加合作切入建议</span>
+            <div class="text-slate-700 bg-blue-50/50 p-3 rounded-xl border border-blue-100 space-y-1.5 leading-relaxed">
+              <div class="font-semibold text-slate-900" x-text="selectedPI.research"></div>
+              <div x-show="selectedPI.cutIn" class="text-blue-800" x-text="selectedPI.cutIn"></div>
+            </div>
+          </div>
+
+          <!-- Synced Field Intelligence (Closed-loop feedback from Module 4) -->
+          <div x-show="selectedPI.syncedIntel && selectedPI.syncedIntel.length">
+            <span class="text-emerald-700 font-bold block mb-1">🔄 销售一线回流校准记录（来自 ④ 业务闭环）</span>
+            <div class="space-y-1.5">
+              <template x-for="intel in selectedPI.syncedIntel" :key="intel.id">
+                <div class="p-2.5 bg-emerald-50 border border-emerald-200 rounded-lg text-emerald-900 text-xs">
+                  <div class="font-semibold" x-text="'[' + intel.type + '] ' + intel.date"></div>
+                  <div class="mt-0.5" x-text="intel.content"></div>
+                </div>
+              </template>
+            </div>
+          </div>
+
+          <!-- Linked Talks & Papers from Real DB -->
+          <div x-show="selectedPI.talks && selectedPI.talks.length">
+            <span class="text-slate-500 font-bold block mb-1">🎤 关联学术会议报告 (<span x-text="selectedPI.talks.length"></span>)</span>
+            <ul class="space-y-1.5 text-slate-600">
+              <template x-for="tk in selectedPI.talks" :key="tk.id">
+                <li class="p-2 bg-slate-50 rounded-lg border border-slate-100">
+                  <span class="font-semibold text-blue-700" x-text="tk.conf + ' · '"></span>
+                  <span class="text-slate-800 font-medium" x-text="tk.title"></span>
+                </li>
+              </template>
+            </ul>
+          </div>
+
+          <div x-show="selectedPI.papers && selectedPI.papers.length">
+            <span class="text-slate-500 font-bold block mb-1">📄 关联高分发表论文 (<span x-text="selectedPI.papers.length"></span>)</span>
+            <ul class="space-y-1.5 text-slate-600">
+              <template x-for="pp in selectedPI.papers" :key="pp.title">
+                <li class="p-2 bg-slate-50 rounded-lg border border-slate-100">
+                  <span class="font-semibold text-emerald-700" x-text="pp.journal + ' (' + pp.date + ') · '"></span>
+                  <span class="text-slate-800" x-text="pp.title"></span>
+                </li>
+              </template>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pt-5 border-t border-slate-100 flex gap-2 mt-4">
+          <button @click="togglePIStar(selectedPI.id)"
+                  :class="selectedPI.starred ? 'bg-amber-100 text-amber-800 border border-amber-300' : 'bg-slate-100 text-slate-700'"
+                  class="flex-1 py-2.5 rounded-lg text-xs font-semibold transition-all">
+            <span x-text="selectedPI.starred ? '★ 已列入重点关注' : '☆ 加入重点关注'"></span>
+          </button>
+          <button @click="openAssignModal(selectedPI.name + ' 临床课题拜访', selectedPI.cutIn, selectedPI); showPIDrawer = false"
+                  class="flex-1 py-2.5 bg-blue-600 text-white rounded-lg text-xs font-semibold hover:bg-blue-700 transition-all">
+            派发拜访任务 &rarr;
+          </button>
+        </div>
+      </div>
+    </template>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- EMBEDDED REAL DATABASE & SUBMODULES        -->
+  <!-- ========================================== -->
+  <script type="application/json" id="data">__DATA__</script>
+  <script>__DOMAIN_FRAMEWORKS__</script>
+  <script>__WEEK_APP__</script>
+  <script>__PI_APP__</script>
+  <script>__QUALITY_APP__</script>
+  <script>__SALES_APP__</script>
+  <script>__OVERVIEW_APP__</script>
+  <script>__APP__</script>
+  <!-- Alpine.js CDN -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</body>
+</html>
