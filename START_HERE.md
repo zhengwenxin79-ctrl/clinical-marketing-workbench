@@ -1,14 +1,20 @@
 # Antigravity 开发交接入口
 
-版本日期：2026-11-19。请先完整解压，再把整个文件夹作为开发工作区打开。当前开发入口是workbench，旧版资料只用于参考。
+> 📌 **最新交接文档**：请优先阅读 [docs/开发与维护交接手册.md](docs/开发与维护交接手册.md)（2026-11-24 更新，包含双工作台架构、在研项目摸底、钉钉与 WorkBuddy 自动同步闭环及完整 Runbook）。
+
+版本日期：2026-11-24（已升级双端工作台与钉钉自动流）。请先完整解压，再把整个文件夹作为开发工作区打开。当前开发入口是workbench，旧版资料只用于参考。
 
 ## 第一次接手
 
-1. 阅读本文件、AGENTS.md和handoff/00_当前状态.md。
-2. 发送handoff/prompts/首次接手.txt给Antigravity，首次只执行P00。
-3. 在项目根运行 `python3 tools/verify_package.py --check-manifest`；Windows用 `py -3 -X utf8 tools/verify_package.py --check-manifest`。
-4. 打开 `打开工作台.html`。市场入口为workbench/领域工作台/index.html#market，销售入口为同文件#sales。
-5. 浏览开发计划后，每次只推进一个阶段，完成后更新handoff/STATE.json和交付记录。
+1. 阅读本文件、[docs/开发与维护交接手册.md](docs/开发与维护交接手册.md) 和 handoff/00_当前状态.md。
+2. 打开 `打开工作台.html`。
+   - 市场部总台：`workbench/领域工作台/index.html`（2×2 四大模块：热点追踪/作战地图/任务派发/业务闭环）
+   - 销售工作台：`workbench/领域工作台/销售工作台.html`（独立战区商机卡、极简列表与在研项目摸底）
+3. 验证与构建命令：
+   - 一键静态生成：`py -3 -X utf8 tools/export_pages.py`
+   - 一键回归测试：`py -3 -X utf8 tools/test_regression.py`
+4. 钉钉与 WorkBuddy 自动化包：
+   - 见 `dist/dingtalk/dingtalk_full_baseline.csv` 与 `dist/dingtalk/dingtalk_weekly_delta.csv`。
 
 ## 先记住这几个位置
 
