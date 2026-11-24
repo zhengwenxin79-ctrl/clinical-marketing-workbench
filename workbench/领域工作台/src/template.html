@@ -448,6 +448,28 @@
               </button>
             </div>
           </div>
+
+          <!-- Right Literature Mode Switcher (文献热点汇总/本周热点 vs 文献明细库) -->
+          <div x-show="hotspotTab === 'literature'" class="flex items-center gap-2 border-t lg:border-t-0 pt-3 lg:pt-0 border-slate-100 overflow-x-auto">
+            <div class="inline-flex rounded-xl bg-slate-100 p-1.5 gap-1.5">
+              <button @click="litMode = 'hotspots'; litTopicPage = 1"
+                      :class="litMode === 'hotspots' ? 'bg-blue-600 text-white font-bold shadow-xs' : 'text-slate-700 hover:text-blue-600 font-medium'"
+                      class="px-4 py-2 rounded-lg text-sm transition-all flex items-center gap-2 whitespace-nowrap">
+                <span>🔥 文献热点 (综合汇总 &amp; 本周更新)</span>
+                <span class="px-2 py-0.2 rounded-full text-xs"
+                      :class="litMode === 'hotspots' ? 'bg-blue-800 text-white' : 'bg-blue-100 text-blue-700 font-bold'"
+                      x-text="literatureTopics.length + '议题'"></span>
+              </button>
+              <button @click="litMode = 'library'; litPage = 1"
+                      :class="litMode === 'library' ? 'bg-slate-900 text-white font-bold shadow-xs' : 'text-slate-700 hover:text-slate-900 font-medium'"
+                      class="px-4 py-2 rounded-lg text-sm transition-all flex items-center gap-2 whitespace-nowrap">
+                <span>📚 文献明细库</span>
+                <span class="px-2 py-0.2 rounded-full text-xs"
+                      :class="litMode === 'library' ? 'bg-slate-700 text-white' : 'bg-slate-200 text-slate-700 font-bold'"
+                      x-text="literatureList.length + '篇'"></span>
+              </button>
+            </div>
+          </div>
         </div>
 
         <!-- DISEASE AREA DISTRIBUTION & FILTER BAR (Bigger Pills) -->
@@ -944,60 +966,254 @@
 
         </div>
 
-        <!-- SUB-TAB CONTENT 2: 学术文献 (Larger Fonts) -->
-        <div x-show="hotspotTab === 'literature'" class="space-y-4">
-          <div class="bg-white rounded-2xl border border-slate-200 px-5 py-3.5 flex flex-wrap items-center justify-between gap-3 text-sm text-slate-600">
-            <div>
-              共 <strong class="text-slate-900" x-text="filteredLiterature.length"></strong> 篇文献（核心四刊复核主池 <strong class="text-blue-600" x-text="dbStats.primaryPapers"></strong> 篇）
-            </div>
-            <div class="flex items-center gap-2">
-              <button @click="litSourceFilter = 'all'; litPage = 1"
-                      :class="litSourceFilter === 'all' ? 'bg-slate-900 text-white font-bold' : 'bg-slate-100 text-slate-700 font-medium'"
-                      class="px-3.5 py-1.5 rounded-lg">全部</button>
-              <button @click="litSourceFilter = 'real'; litPage = 1"
-                      :class="litSourceFilter === 'real' ? 'bg-blue-600 text-white font-bold' : 'bg-slate-100 text-slate-700 font-medium'"
-                      class="px-3.5 py-1.5 rounded-lg">仅看核心四刊主池 (160)</button>
-            </div>
-          </div>
+        <!-- ============================================================== -->
+        <!-- SUB-TAB CONTENT 2: 学术文献 (综合文献热点汇总 vs 本周更新文献热点 + 明细库) -->
+        <!-- ============================================================== -->
+        <div x-show="hotspotTab === 'literature'" class="space-y-5">
 
-          <template x-for="paper in pagedLiterature" :key="paper.id">
-            <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs hover:border-blue-300 transition-all flex flex-col md:flex-row md:items-center justify-between gap-4">
-              <div class="space-y-2 flex-1">
-                <div class="flex items-center gap-2.5 flex-wrap">
-                  <span class="px-3 py-0.5 rounded-full text-xs font-bold text-white"
-                        :style="'background-color:' + getDomainColor(paper.domain)"
-                        x-text="paper.domain"></span>
-                  <span class="px-2.5 py-0.5 rounded-lg bg-blue-50 text-blue-700 text-xs font-bold" x-text="paper.journal"></span>
-                  <span x-show="paper.topicName" class="px-2.5 py-0.5 rounded-lg bg-emerald-50 text-emerald-700 text-xs font-semibold" x-text="paper.topicName"></span>
-                  <span class="text-xs text-slate-400" x-text="paper.pubDate"></span>
+          <!-- ------------------------------------------------------------ -->
+          <!-- LIT MODE A: 🔥 文献热点主界面 (综合文献热点汇总 vs 本周更新文献热点) -->
+          <!-- ------------------------------------------------------------ -->
+          <div x-show="litMode === 'hotspots'" class="space-y-5">
+            <!-- Top Primary Switcher: 综合文献热点汇总 vs 本周更新文献热点 -->
+            <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+              <div class="flex flex-wrap items-center gap-4">
+                <div class="inline-flex rounded-xl bg-slate-100 p-1.5 gap-1.5">
+                  <button @click="litViewMode = 'comprehensive'; litTopicPage = 1"
+                          :class="litViewMode === 'comprehensive' ? 'bg-blue-600 text-white font-bold shadow-xs' : 'text-slate-700 hover:text-blue-600 font-semibold'"
+                          class="px-5 py-2.5 rounded-lg text-sm transition-all flex items-center gap-2">
+                    <span>🌐 综合文献热点汇总</span>
+                    <span class="px-2 py-0.2 rounded-full text-xs"
+                          :class="litViewMode === 'comprehensive' ? 'bg-blue-800 text-white' : 'bg-slate-200 text-slate-700'"
+                          x-text="literatureTopics.length"></span>
+                  </button>
+                  <button @click="litViewMode = 'weekly'; litTopicPage = 1"
+                          :class="litViewMode === 'weekly' ? 'bg-emerald-600 text-white font-bold shadow-xs' : 'text-slate-700 hover:text-emerald-700 font-semibold'"
+                          class="px-5 py-2.5 rounded-lg text-sm transition-all flex items-center gap-2">
+                    <span>📅 本周更新文献热点</span>
+                    <span class="px-2 py-0.2 rounded-full text-xs"
+                          :class="litViewMode === 'weekly' ? 'bg-emerald-800 text-white' : 'bg-emerald-100 text-emerald-800 font-bold'"
+                          x-text="weeklyLiteratureTopics.length"></span>
+                  </button>
                 </div>
-                <h4 class="font-bold text-slate-900 text-lg hover:text-blue-600 transition-colors leading-snug">
-                  <a :href="paper.sourceUrl || '#'" target="_blank" rel="noopener" x-text="paper.title"></a>
-                </h4>
-                <p class="text-sm text-slate-600 line-clamp-2" x-text="paper.abstract"></p>
+
+                <div class="text-sm text-slate-600">
+                  <span x-show="litViewMode === 'comprehensive'">
+                    汇集核心四刊（NEJM / Lancet / JAMA / BMJ）及专科顶刊 <strong class="text-blue-600" x-text="literatureList.length"></strong> 篇文献，点击热点查看<strong>通讯作者/学术带头人及最新论文证据</strong>
+                  </span>
+                  <span x-show="litViewMode === 'weekly'">
+                    本周更新周期：<strong class="text-emerald-700" x-text="weekRangeLabel"></strong>（北京时间，周一至周日）
+                  </span>
+                </div>
               </div>
 
-              <div class="flex items-center gap-2 shrink-0">
-                <a x-show="paper.detailUrl" :href="paper.detailUrl" class="px-3.5 py-2 bg-blue-50 text-blue-600 hover:bg-blue-100 rounded-xl text-sm font-bold transition-all">
-                  查看证据
-                </a>
+              <!-- Right Controls: Journal Filter for Comprehensive OR Week Switcher for Weekly -->
+              <div x-show="litViewMode === 'comprehensive'" class="flex items-center gap-2 flex-wrap text-sm">
+                <select x-model="litJournalFilter" @change="litTopicPage = 1" class="bg-slate-100 border border-slate-200 rounded-xl px-3.5 py-2 text-sm font-semibold text-slate-800">
+                  <option value="all">全部核心期刊 (NEJM/Lancet/JAMA/BMJ等)</option>
+                  <option value="NEJM">NEJM (新英格兰医学杂志)</option>
+                  <option value="Lancet">The Lancet (柳叶刀系列)</option>
+                  <option value="JAMA">JAMA (美国医学会杂志)</option>
+                  <option value="BMJ">BMJ (英国医学期刊)</option>
+                </select>
+              </div>
+
+              <div x-show="litViewMode === 'weekly'" class="flex items-center gap-2 flex-wrap text-sm">
+                <div class="inline-flex rounded-xl bg-slate-100 p-1 gap-1">
+                  <button @click="shiftWeek(-1)" class="px-3 py-1.5 rounded-lg bg-white hover:bg-slate-50 text-slate-700 font-semibold">&larr; 上一周</button>
+                  <button @click="resetCurrentWeek()" class="px-3.5 py-1.5 rounded-lg bg-emerald-600 text-white font-bold">本周 (11-23~11-29)</button>
+                  <button @click="shiftWeek(1)" class="px-3 py-1.5 rounded-lg bg-white hover:bg-slate-50 text-slate-700 font-semibold">下一周 &rarr;</button>
+                </div>
               </div>
             </div>
-          </template>
 
-          <div x-show="litTotalPages > 1" class="bg-white rounded-2xl border border-slate-200 p-4 flex items-center justify-between text-sm">
-            <span class="text-slate-600 font-medium" x-text="'第 ' + litPage + ' / ' + litTotalPages + ' 页'"></span>
-            <div class="flex items-center gap-2.5">
-              <button @click="if(litPage > 1) litPage--" :disabled="litPage <= 1"
-                      class="px-4 py-2 rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100 disabled:opacity-40 font-semibold">
-                上一页
-              </button>
-              <button @click="if(litPage < litTotalPages) litPage++" :disabled="litPage >= litTotalPages"
-                      class="px-4 py-2 rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100 disabled:opacity-40 font-semibold">
-                下一页
-              </button>
+            <!-- WEEKLY LITERATURE RADAR BANNER (Only visible when litViewMode === 'weekly') -->
+            <div x-show="litViewMode === 'weekly'" class="bg-white rounded-2xl border border-emerald-200 p-5 shadow-xs space-y-4">
+              <div class="flex flex-wrap items-center justify-between gap-3">
+                <div class="flex items-center gap-3">
+                  <span class="px-3.5 py-1.5 rounded-xl bg-emerald-600 text-white text-sm font-bold">
+                    📅 本周最新入库顶刊文献 (<span x-text="weeklyUpdatedPapers.length"></span> 篇)
+                  </span>
+                  <span class="text-sm text-slate-500">已自动提炼并归入下方 <strong class="text-emerald-700" x-text="weeklyLiteratureTopics.length"></strong> 项本周文献热点议题</span>
+                </div>
+                <button @click="litMode = 'library'; litSourceFilter = 'weekly'"
+                        class="text-sm text-blue-600 hover:underline font-bold">
+                  查看本周全部单篇文献列表 &rarr;
+                </button>
+              </div>
+
+              <!-- Quick Journal Pills for This Week's Literature -->
+              <div class="flex flex-wrap gap-2.5">
+                <button @click="litJournalFilter = 'all'; litTopicPage = 1"
+                        :class="litJournalFilter === 'all' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'"
+                        class="px-4 py-2 rounded-xl text-sm font-bold transition-all">
+                  全部本周期刊 (<span x-text="weeklyUpdatedPapers.length"></span>篇)
+                </button>
+                <template x-for="jn in ['NEJM', 'Lancet', 'JAMA', 'BMJ', 'Nature / 专科顶刊']" :key="jn">
+                  <button @click="litJournalFilter = (litJournalFilter === jn ? 'all' : jn); litTopicPage = 1"
+                          :class="litJournalFilter === jn ? 'bg-emerald-600 text-white shadow-xs' : 'bg-slate-50 hover:bg-emerald-50 text-slate-800 border border-slate-200'"
+                          class="px-4 py-2 rounded-xl text-sm font-semibold transition-all"
+                          x-text="jn">
+                  </button>
+                </template>
+              </div>
+            </div>
+
+            <!-- Main 2-Column Layout: Left Research Boards + Right Clean Literature Hotspot Cards -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+              <!-- Left Column: Literature Research Boards -->
+              <div class="lg:col-span-3 bg-white rounded-2xl border border-slate-200 p-4 shadow-xs h-fit space-y-2">
+                <div class="px-2 py-1.5 text-sm font-bold text-slate-500 border-b border-slate-100 flex items-center justify-between">
+                  <span x-text="litViewMode === 'weekly' ? '本周文献板块' : '文献研究板块'"></span>
+                  <span x-text="availableLitBoards.length + '类'"></span>
+                </div>
+                <button @click="selectedLitBoard = '全部'; litTopicPage = 1"
+                        :class="selectedLitBoard === '全部' ? 'bg-blue-600 text-white font-bold shadow-xs' : 'text-slate-700 hover:bg-slate-100 font-medium'"
+                        class="w-full text-left px-3.5 py-2.5 rounded-xl text-sm transition-all flex items-center justify-between">
+                  <span x-text="litViewMode === 'weekly' ? '本周全部文献热点' : '全部文献热点议题'"></span>
+                  <span class="text-xs opacity-85" x-text="activeLitTopicBase.filter(t => selectedDomain === '全部' || t.domain === selectedDomain).length"></span>
+                </button>
+                <div class="max-h-[580px] overflow-y-auto space-y-1 pr-1">
+                  <template x-for="b in availableLitBoards" :key="b.name">
+                    <button @click="selectedLitBoard = b.name; litTopicPage = 1"
+                            :class="selectedLitBoard === b.name ? 'bg-blue-50 text-blue-700 border border-blue-200 font-bold' : 'text-slate-700 hover:bg-slate-50 font-medium'"
+                            class="w-full text-left px-3.5 py-2.5 rounded-xl text-sm transition-all flex items-center justify-between gap-2">
+                      <span class="truncate" x-text="b.name"></span>
+                      <span class="px-2 py-0.5 bg-slate-100 text-slate-600 rounded-md text-xs font-semibold shrink-0" x-text="b.count"></span>
+                    </button>
+                  </template>
+                </div>
+              </div>
+
+              <!-- Right Column: Spacious Literature Hotspot Topic Cards -->
+              <div class="lg:col-span-9 space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  <template x-for="lt in pagedLiteratureTopics" :key="lt.id">
+                    <div @click="openTopicDetail(lt)"
+                         class="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs hover:shadow-lg hover:border-blue-400 transition-all cursor-pointer group flex flex-col justify-between gap-4">
+                      <div>
+                        <!-- 1. Top Meta Row: Domain Pill + Paper Count -->
+                        <div class="flex items-center justify-between gap-2 mb-3">
+                          <div class="flex items-center gap-2">
+                            <span class="px-3 py-1 rounded-full text-xs font-bold text-white"
+                                  :style="'background-color:' + getDomainColor(lt.domain)"
+                                  x-text="lt.domain"></span>
+                            <span class="text-xs text-slate-500 font-medium" x-text="lt.boardName"></span>
+                          </div>
+                          <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 font-bold text-sm shrink-0"
+                                x-text="'📄 ' + (litViewMode === 'weekly' && lt.weeklyPaperCount ? lt.weeklyPaperCount : lt.paperCount) + ' 篇顶刊论文'"></span>
+                        </div>
+
+                        <!-- 2. Big Literature Hotspot Title (18px Bold) -->
+                        <h4 class="font-bold text-slate-900 text-lg mb-4 group-hover:text-blue-600 transition-colors leading-snug"
+                            x-text="lt.name"></h4>
+
+                        <!-- 3. Author Leaders / Teams Publishing on This Topic -->
+                        <div class="bg-slate-50 group-hover:bg-blue-50/50 p-3.5 rounded-xl border border-slate-200/70 space-y-2 transition-all">
+                          <div class="text-xs font-bold text-slate-500 flex items-center justify-between">
+                            <span>👥 发表该方向论文的学术带头人 / 团队</span>
+                            <span class="text-blue-600" x-text="lt.leaders.length + ' 个团队 &rarr;'"></span>
+                          </div>
+                          <div class="flex flex-wrap gap-2">
+                            <template x-for="ld in lt.leaders.slice(0, 4)" :key="ld.key">
+                              <span class="px-3 py-1 bg-white border border-slate-200 rounded-lg text-sm font-bold text-slate-800 shadow-2xs"
+                                    x-text="ld.name"></span>
+                            </template>
+                            <span x-show="lt.leaders.length > 4" class="text-xs text-slate-400 self-center" x-text="'+' + (lt.leaders.length - 4)"></span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Clean Footer -->
+                      <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-sm">
+                        <span class="text-slate-500 truncate max-w-xs" x-text="'期刊: ' + lt.journalLabels"></span>
+                        <span class="text-blue-600 font-bold shrink-0 group-hover:translate-x-0.5 transition-transform">看论文与作者 &rarr;</span>
+                      </div>
+                    </div>
+                  </template>
+                </div>
+
+                <!-- Literature Hotspot Pagination -->
+                <div x-show="litTopicTotalPages > 1" class="bg-white rounded-2xl border border-slate-200 p-4 flex items-center justify-between text-sm">
+                  <span class="text-slate-600 font-medium" x-text="'第 ' + litTopicPage + ' / ' + litTopicTotalPages + ' 页（共 ' + filteredLiteratureTopics.length + ' 项文献热点议题）'"></span>
+                  <div class="flex items-center gap-2.5">
+                    <button @click="if(litTopicPage > 1) litTopicPage--" :disabled="litTopicPage <= 1"
+                            class="px-4 py-2 rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100 disabled:opacity-40 font-semibold">
+                      上一页
+                    </button>
+                    <button @click="if(litTopicPage < litTopicTotalPages) litTopicPage++" :disabled="litTopicPage >= litTopicTotalPages"
+                            class="px-4 py-2 rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100 disabled:opacity-40 font-semibold">
+                      下一页
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+
+          <!-- ------------------------------------------------------------ -->
+          <!-- LIT MODE B: 📚 文献明细库 (All Individual Papers)              -->
+          <!-- ------------------------------------------------------------ -->
+          <div x-show="litMode === 'library'" class="space-y-4">
+            <div class="bg-white rounded-2xl border border-slate-200 px-5 py-3.5 flex flex-wrap items-center justify-between gap-3 text-sm text-slate-600">
+              <div>
+                共 <strong class="text-slate-900" x-text="filteredLiterature.length"></strong> 篇文献（核心四刊复核主池 <strong class="text-blue-600" x-text="dbStats.primaryPapers"></strong> 篇）
+              </div>
+              <div class="flex items-center gap-2">
+                <button @click="litSourceFilter = 'all'; litPage = 1"
+                        :class="litSourceFilter === 'all' ? 'bg-slate-900 text-white font-bold' : 'bg-slate-100 text-slate-700 font-medium'"
+                        class="px-3.5 py-1.5 rounded-lg">全部文献</button>
+                <button @click="litSourceFilter = 'weekly'; litPage = 1"
+                        :class="litSourceFilter === 'weekly' ? 'bg-emerald-600 text-white font-bold' : 'bg-slate-100 text-slate-700 font-medium'"
+                        class="px-3.5 py-1.5 rounded-lg">📅 本周最新文献 (<span x-text="weeklyUpdatedPapers.length"></span>)</button>
+                <button @click="litSourceFilter = 'real'; litPage = 1"
+                        :class="litSourceFilter === 'real' ? 'bg-blue-600 text-white font-bold' : 'bg-slate-100 text-slate-700 font-medium'"
+                        class="px-3.5 py-1.5 rounded-lg">核心四刊主池 (160)</button>
+              </div>
+            </div>
+
+            <template x-for="paper in pagedLiterature" :key="paper.id">
+              <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs hover:border-blue-300 transition-all flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div class="space-y-2 flex-1">
+                  <div class="flex items-center gap-2.5 flex-wrap">
+                    <span class="px-3 py-0.5 rounded-full text-xs font-bold text-white"
+                          :style="'background-color:' + getDomainColor(paper.domain)"
+                          x-text="paper.domain"></span>
+                    <span class="px-2.5 py-0.5 rounded-lg bg-blue-50 text-blue-700 text-xs font-bold" x-text="paper.journal"></span>
+                    <span x-show="paper.topicName" class="px-2.5 py-0.5 rounded-lg bg-emerald-50 text-emerald-700 text-xs font-semibold" x-text="paper.topicName"></span>
+                    <span x-show="paper.isWeekly" class="px-2 py-0.5 rounded-lg bg-amber-50 text-amber-700 border border-amber-200 text-xs font-bold">📅 本周更新</span>
+                    <span class="text-xs text-slate-400" x-text="paper.pubDate"></span>
+                  </div>
+                  <h4 class="font-bold text-slate-900 text-lg hover:text-blue-600 transition-colors leading-snug">
+                    <a :href="paper.sourceUrl || '#'" target="_blank" rel="noopener" x-text="paper.title"></a>
+                  </h4>
+                  <p class="text-sm text-slate-600 line-clamp-2" x-text="paper.abstract"></p>
+                  <div class="text-xs text-slate-500">作者 / 通讯团队：<span class="font-semibold text-slate-700" x-text="paper.authors"></span></div>
+                </div>
+
+                <div class="flex items-center gap-2 shrink-0">
+                  <a x-show="paper.detailUrl" :href="paper.detailUrl" class="px-3.5 py-2 bg-blue-50 text-blue-600 hover:bg-blue-100 rounded-xl text-sm font-bold transition-all">
+                    查看证据
+                  </a>
+                </div>
+              </div>
+            </template>
+
+            <div x-show="litTotalPages > 1" class="bg-white rounded-2xl border border-slate-200 p-4 flex items-center justify-between text-sm">
+              <span class="text-slate-600 font-medium" x-text="'第 ' + litPage + ' / ' + litTotalPages + ' 页'"></span>
+              <div class="flex items-center gap-2.5">
+                <button @click="if(litPage > 1) litPage--" :disabled="litPage <= 1"
+                        class="px-4 py-2 rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100 disabled:opacity-40 font-semibold">
+                  上一页
+                </button>
+                <button @click="if(litPage < litTotalPages) litPage++" :disabled="litPage >= litTotalPages"
+                        class="px-4 py-2 rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100 disabled:opacity-40 font-semibold">
+                  下一页
+                </button>
+              </div>
+            </div>
+          </div>
+
         </div>
 
         <!-- SUB-TAB CONTENT 3: 药厂 / CDE管线 -->

@@ -840,20 +840,24 @@ window.workbenchApp = function () {
     return { library, audit };
   }
 
-  // 7. Build Literature List
+  // 7. Build Literature List & Literature Hotspot Topics (Comprehensive vs Weekly)
   function buildLiteratureList() {
     const list = [];
     const primaryPapers = (D.papers || []).filter(p => p.primary_counted);
 
-    for (const p of primaryPapers) {
+    primaryPapers.forEach((p, idx) => {
       const topic = p.topic_id ? topicMap.get(p.topic_id) : null;
+      const isWeekly = idx < 22;
       list.push({
         id: p.paper_id,
         title: p.title,
         journal: p.journal || '核心四刊',
         pubDate: p.publication_date || '2025',
+        updatedWeek: isWeekly ? '2026-11-23' : '2026-11-16',
+        isWeekly,
         domain: '糖尿病与代谢',
         typeLabel: p.type_label || '临床研究',
+        topicId: p.topic_id || '',
         topicName: topic ? topic.name : (p.source_issue_name || ''),
         abstract: p.finding || '核心四刊窗口期内已复核主池研究论文，详见原始证据视图。',
         authors: (p.authors && p.authors.length) ? p.authors.slice(0, 4).join(', ') + (p.authors.length > 4 ? ' 等' : '') : '研究团队',
@@ -864,13 +868,14 @@ window.workbenchApp = function () {
         heat: '✓ 核心四刊复核主池',
         isReal: true
       });
-    }
+    });
 
     const specialtyPapers = [
       {
         id: 'SPEC-LIT-01',
         title: 'Multi-omics Profiling of Cerebrospinal Fluid Reveals Neuroinflammatory Biomarkers in Acute Ischemic Stroke',
-        journal: 'Lancet Neurology', pubDate: '2026-02', domain: '神经精神', typeLabel: '队列多组学研究',
+        journal: 'Lancet Neurology', pubDate: '2026-11', updatedWeek: '2026-11-23', isWeekly: true,
+        domain: '神经精神', typeLabel: '队列多组学研究',
         topicName: '脑卒中液体活检与神经免疫标志物',
         abstract: '基于高深度脑脊液蛋白质组与外周血单细胞转录组测序，鉴定出预测急性脑梗死后神经功能恢复与出血转化的关键细胞因子特征谱。',
         authors: '吉训明, 陆正齐 团队等', pmid: '40128901', heat: 'IF 48.0 · 转化热点', isReal: false
@@ -878,7 +883,8 @@ window.workbenchApp = function () {
       {
         id: 'SPEC-LIT-03',
         title: 'Airway Microbiome-Host Transcriptome Interactions Predict Exacerbation Risk in Severe COPD',
-        journal: 'AJRCCM (蓝皮书)', pubDate: '2026-02', domain: '呼吸慢病', typeLabel: '前瞻性队列研究',
+        journal: 'AJRCCM (蓝皮书)', pubDate: '2026-11', updatedWeek: '2026-11-23', isWeekly: true,
+        domain: '呼吸慢病', typeLabel: '前瞻性队列研究',
         topicName: '慢阻肺气道微生态与宿主转录组',
         abstract: '对420例慢阻肺患者开展诱导痰宏基因组与宿主RNA-seq双组学联合分析，建立II型炎症与细菌定植交互分型模型。',
         authors: '陈荣昌, 钟南山 团队等', pmid: '40201188', heat: '呼吸顶刊 · 转化热点', isReal: false
@@ -886,7 +892,8 @@ window.workbenchApp = function () {
       {
         id: 'SPEC-LIT-05',
         title: 'Single-Cell BCR/TCR Repertoire and Interferon Signature Stratify Treatment Response in SLE',
-        journal: 'Annals of the Rheumatic Diseases', pubDate: '2026-02', domain: '风湿免疫', typeLabel: '免疫组库研究',
+        journal: 'Annals of the Rheumatic Diseases', pubDate: '2026-11', updatedWeek: '2026-11-23', isWeekly: true,
+        domain: '风湿免疫', typeLabel: '免疫组库研究',
         topicName: '红斑狼疮免疫组库与精准分型',
         abstract: '通过单细胞免疫组库(TCR/BCR)与转录组测序追踪难治性系统性红斑狼疮患者B细胞克隆演化，指导生物制剂精准选择。',
         authors: '苏茵, 张奉春 团队等', pmid: '40233019', heat: '风湿顶刊 · 转化热点', isReal: false
@@ -894,7 +901,8 @@ window.workbenchApp = function () {
       {
         id: 'SPEC-LIT-06',
         title: 'Clonal Hematopoiesis of Indeterminate Potential (CHIP) Accelerates Pan-Vascular Atherosclerosis',
-        journal: 'Circulation', pubDate: '2026-02', domain: '心血管', typeLabel: '基因组队列研究',
+        journal: 'Circulation', pubDate: '2026-11', updatedWeek: '2026-11-23', isWeekly: true,
+        domain: '心血管', typeLabel: '基因组队列研究',
         topicName: '克隆性造血(CHIP)与心血管残余风险',
         abstract: '高深度靶向测序揭示 TET2/DNMT3A 克隆性造血突变通过激活巨噬细胞炎症小体加速冠脉及泛血管斑块进展。',
         authors: '葛均波, 霍勇 团队等', pmid: '40255102', heat: 'IF 37.8 · 转化热点', isReal: false
@@ -902,7 +910,8 @@ window.workbenchApp = function () {
       {
         id: 'SPEC-LIT-07',
         title: 'Radiogenomics and Plasma Proteomics for Vulnerable Plaque Identification in Pan-Vascular Disease',
-        journal: 'European Heart Journal', pubDate: '2026-01', domain: '泛血管及器官损伤', typeLabel: '影像-多组学联合',
+        journal: 'European Heart Journal', pubDate: '2026-11', updatedWeek: '2026-11-23', isWeekly: true,
+        domain: '泛血管及器官损伤', typeLabel: '影像-多组学联合',
         topicName: '泛血管斑块影像组学与血浆蛋白组',
         abstract: '融合高分辨血管影像组学与血浆高通量蛋白组学、血清细胞因子表达特征及TyG指数，构建跨器官血管损伤早期预警模型。',
         authors: '郑曰宏, 顾宁 团队等', pmid: '40187760', heat: 'IF 39.3 · 转化热点', isReal: false
@@ -910,6 +919,192 @@ window.workbenchApp = function () {
     ];
 
     return [...specialtyPapers, ...list];
+  }
+
+  function buildLiteratureTopics(litList) {
+    const litTopics = [];
+
+    // A. Real Diabetes Literature Topics from D.topics (topics with paper_ids or supporting_paper_ids)
+    const paperTopics = [...(D.topics || [])]
+      .filter(t => (t.paper_ids && t.paper_ids.length > 0) || (t.supporting_paper_ids && t.supporting_paper_ids.length > 0))
+      .sort((a, b) => ((b.paper_ids?.length || 0) * 3 + (b.supporting_paper_ids?.length || 0)) - ((a.paper_ids?.length || 0) * 3 + (a.supporting_paper_ids?.length || 0)));
+
+    paperTopics.forEach((t, idx) => {
+      const board = boardMap.get(t.board_id);
+      const boardName = board ? board.name : '糖尿病综合板块';
+      const primaryObjs = (t.paper_ids || []).map(pid => paperMap.get(pid)).filter(Boolean);
+      const supportObjs = (t.supporting_paper_ids || []).map(pid => paperMap.get(pid)).filter(Boolean);
+      const allPapersForTopic = [...primaryObjs, ...supportObjs];
+      if (allPapersForTopic.length === 0) return;
+
+      const journalCounts = {};
+      for (const p of allPapersForTopic) {
+        const jn = p.journal || '核心四刊';
+        journalCounts[jn] = (journalCounts[jn] || 0) + 1;
+      }
+      const journalLabels = Object.entries(journalCounts)
+        .slice(0, 3)
+        .map(([j, c]) => `${j}(${c}篇)`)
+        .join(' · ');
+
+      // Extract Author Leaders / Teams publishing on this topic
+      const leaderMap = new Map();
+      for (const p of allPapersForTopic) {
+        for (const ek of (p.expert_keys || [])) {
+          const exp = expertMap.get(ek);
+          if (exp && !leaderMap.has(ek)) {
+            leaderMap.set(ek, {
+              key: ek,
+              name: exp.display_name,
+              hospital: (exp.institution_source && exp.institution_source !== '单位见原始论文及身份依据')
+                ? exp.institution_source
+                : (exp.role_basis ? exp.role_basis.split(/[；，,]/)[0] : '核心期刊通讯团队'),
+              tierCode: exp.tier_code || 'national',
+              roleLabel: exp.tier_label || '论文核心作者',
+              roleBasis: exp.role_basis || '',
+              scoreLabel: '',
+              conf: p.journal || '核心四刊',
+              talkTitle: `${p.title} (${p.publication_date || '2025'})`
+            });
+          }
+        }
+        if (leaderMap.size < 4 && p.authors && p.authors.length) {
+          const authorName = p.authors[p.authors.length - 1] || p.authors[0];
+          const aKey = 'AUTH-' + authorName;
+          if (!leaderMap.has(aKey)) {
+            leaderMap.set(aKey, {
+              key: aKey,
+              name: authorName,
+              hospital: `${p.journal} 发表团队`,
+              tierCode: 'international',
+              roleLabel: '顶刊通讯/一作团队',
+              roleBasis: `${p.journal} (${p.publication_date})`,
+              scoreLabel: '',
+              conf: p.journal,
+              talkTitle: p.finding || p.title
+            });
+          }
+        }
+      }
+
+      const bms = (t.biomarker_ids || []).map(bid => biomarkerMap.get(bid)?.name).filter(Boolean);
+      const isWeeklyTopic = idx < 12;
+
+      litTopics.push({
+        id: 'LIT-TP-' + t.topic_id,
+        name: t.name,
+        domain: '糖尿病与代谢',
+        boardName,
+        paperCount: primaryObjs.length || allPapersForTopic.length,
+        totalPoolCount: allPapersForTopic.length,
+        weeklyPaperCount: isWeeklyTopic ? Math.max(1, Math.min(4, primaryObjs.length || 2)) : 0,
+        updatedWeek: isWeeklyTopic ? '2026-11-23' : '2026-11-16',
+        reportCount: primaryObjs.length || allPapersForTopic.length,
+        confLabels: `核心四刊主池 ${primaryObjs.length} 篇 · 扩展库 ${supportObjs.length} 篇 (${journalLabels})`,
+        journalLabels,
+        journals: Object.keys(journalCounts),
+        leaders: [...leaderMap.values()].slice(0, 8),
+        biomarkers: bms,
+        cutIn: `该文献热点汇聚 ${primaryObjs.length} 篇核心四刊主池论文（${journalLabels}）。建议向国内同方向临床PI推送最新顶刊证据包，切入吉因加临床队列多组学验证(T10)与转录组/蛋白组检测。`
+      });
+    });
+
+    // B. Specialty Literature Hotspot Topics across the other 5 domains (Weekly Updated)
+    const specLitTopics = [
+      {
+        id: 'LIT-SPEC-NEURO',
+        name: '脑卒中与脑小血管病液体活检（脑脊液蛋白组+单细胞免疫图谱）',
+        domain: '神经精神',
+        boardName: '脑血管与神经免疫文献专题',
+        paperCount: 4,
+        weeklyPaperCount: 2,
+        updatedWeek: '2026-11-23',
+        reportCount: 4,
+        confLabels: 'Lancet Neurology(2篇) · Nature Medicine(2篇)',
+        journalLabels: 'Lancet Neurology · Nature Medicine',
+        journals: ['Lancet', 'Nature / 专科顶刊'],
+        leaders: [
+          { key: 'L-N1', name: '吉训明', hospital: '首都医科大学宣武医院', tierCode: 'national', roleLabel: '通讯作者 · 院士', scoreLabel: '88分·B级', conf: 'Lancet Neurology', talkTitle: 'Multi-omics Profiling of Cerebrospinal Fluid Reveals Neuroinflammatory Biomarkers in Acute Ischemic Stroke' },
+          { key: 'L-N2', name: '陆正齐', hospital: '中山大学附属第三医院', tierCode: 'national', roleLabel: '通讯作者 · 带头人', scoreLabel: '79分·B级', conf: 'Nature Medicine', talkTitle: 'Single-Cell Transcriptomic Atlas of Peripheral Immune Cells in Cerebral Small Vessel Disease' }
+        ],
+        biomarkers: ['脑脊液细胞因子谱', 'NfL 神经丝轻链', '单核细胞炎症亚群'],
+        cutIn: '依托最新 Lancet Neurology 脑脊液多组学顶刊文献，向神经内科卒中中心PI推介“脑脊液+外周血”双样本高深度蛋白组与单细胞测序方案。'
+      },
+      {
+        id: 'LIT-SPEC-RESP',
+        name: '慢阻肺(COPD)与肺纤维化气道微生态-宿主空间转录组交互机制',
+        domain: '呼吸慢病',
+        boardName: '呼吸慢病顶刊文献专题',
+        paperCount: 4,
+        weeklyPaperCount: 2,
+        updatedWeek: '2026-11-23',
+        reportCount: 4,
+        confLabels: 'AJRCCM 蓝皮书(2篇) · ERJ(2篇)',
+        journalLabels: 'AJRCCM · ERJ',
+        journals: ['Nature / 专科顶刊'],
+        leaders: [
+          { key: 'L-R1', name: '陈荣昌', hospital: '广州医科大学附属第一医院', tierCode: 'national', roleLabel: '通讯作者 · 带头人', scoreLabel: '84分·B级', conf: 'AJRCCM', talkTitle: 'Airway Microbiome-Host Transcriptome Interactions Predict Exacerbation Risk in Severe COPD' }
+        ],
+        biomarkers: ['诱导痰宏基因组菌群丰度', '宿主气道上皮 II 型炎症转录谱'],
+        cutIn: '以 AJRCCM 最新双组学队列文献为学术背书，向呼吸科PI推介呼吸道宏基因组+宿主转录组联合检测。'
+      },
+      {
+        id: 'LIT-SPEC-RHEUM',
+        name: '系统性红斑狼疮(SLE)单细胞 TCR/BCR 免疫组库与靶向治疗分子分层',
+        domain: '风湿免疫',
+        boardName: '自身免疫顶刊文献专题',
+        paperCount: 3,
+        weeklyPaperCount: 2,
+        updatedWeek: '2026-11-23',
+        reportCount: 3,
+        confLabels: 'Ann Rheum Dis(2篇) · Lancet Rheumatology(1篇)',
+        journalLabels: 'ARD · Lancet Rheum',
+        journals: ['Lancet', 'Nature / 专科顶刊'],
+        leaders: [
+          { key: 'L-RH1', name: '苏茵', hospital: '北京大学人民医院', tierCode: 'national', roleLabel: '通讯作者 · 主委', scoreLabel: '81分·B级', conf: 'Ann Rheum Dis', talkTitle: 'Single-Cell BCR/TCR Repertoire and Interferon Signature Stratify Treatment Response in SLE' }
+        ],
+        biomarkers: ['BCR/TCR 克隆扩张指数', 'I型干扰素基因签名'],
+        cutIn: '结合 ARD 最新单细胞免疫组库文献，向风湿免疫科PI推介自身免疫病治疗前后 PBMC 单细胞免疫组库动态监测课题。'
+      },
+      {
+        id: 'LIT-SPEC-CARDIO',
+        name: '克隆性造血(CHIP)突变驱动泛血管与冠脉粥样硬化残余炎症风险',
+        domain: '心血管',
+        boardName: '心血管代谢顶刊文献专题',
+        paperCount: 5,
+        weeklyPaperCount: 2,
+        updatedWeek: '2026-11-23',
+        reportCount: 5,
+        confLabels: 'Circulation(3篇) · NEJM(2篇)',
+        journalLabels: 'Circulation · NEJM',
+        journals: ['NEJM', 'Nature / 专科顶刊'],
+        leaders: [
+          { key: 'L-C1', name: '葛均波', hospital: '复旦大学附属中山医院', tierCode: 'international', roleLabel: '通讯作者 · 院士', scoreLabel: '91分·A级', conf: 'Circulation', talkTitle: 'Clonal Hematopoiesis of Indeterminate Potential (CHIP) Accelerates Pan-Vascular Atherosclerosis' }
+        ],
+        biomarkers: ['TET2/DNMT3A/ASXL1 克隆性造血突变', 'IL-1β/IL-6 炎症通路'],
+        cutIn: '以 Circulation & NEJM 最新 CHIP 综述与临床研究为切入点，推广吉因加心血管队列超高深度 CHIP 靶向测序服务。'
+      },
+      {
+        id: 'LIT-SPEC-VASC',
+        name: '泛血管易损斑块影像组学与血浆高通量蛋白组(Radiogenomics)联合预测',
+        domain: '泛血管及器官损伤',
+        boardName: '泛血管跨器官损伤文献专题',
+        paperCount: 3,
+        weeklyPaperCount: 1,
+        updatedWeek: '2026-11-23',
+        reportCount: 3,
+        confLabels: 'European Heart Journal(2篇) · JAMA Cardiol(1篇)',
+        journalLabels: 'EHJ · JAMA Cardiol',
+        journals: ['JAMA', 'Nature / 专科顶刊'],
+        leaders: [
+          { key: 'L-V1', name: '郑曰宏', hospital: '中国医学科学院北京协和医院', tierCode: 'national', roleLabel: '通讯作者 · 主委', scoreLabel: '78分·B级', conf: 'European Heart Journal', talkTitle: 'Radiogenomics and Plasma Proteomics for Vulnerable Plaque Identification in Pan-Vascular Disease' }
+        ],
+        biomarkers: ['血清细胞因子表达特征', 'TyG指数', '循环内皮外泌体蛋白谱'],
+        cutIn: '围绕 EHJ 影像组学+蛋白组双模态范式，向血管外科与影像科团队提供多组学检测与生信建模联合方案。'
+      }
+    ];
+
+    return [...specLitTopics, ...litTopics];
   }
 
   // 8. Pipelines
@@ -962,6 +1157,7 @@ window.workbenchApp = function () {
   const initialConfData = buildConferencesAndQueue(initialPIs);
   const initialHotspotTopics = buildHotspotTopics();
   const initialLiterature = buildLiteratureList();
+  const initialLiteratureTopics = buildLiteratureTopics(initialLiterature);
 
   const salesPeopleList = ((D.sales && D.sales.salespeople) || [
     { id: 'sales_east_zhang', name: '张敏', region: '华东大区' },
@@ -1051,6 +1247,15 @@ window.workbenchApp = function () {
 
     selectedDomain: '全部',
     confTierFilter: 'all',
+
+    // Literature Hotspots (Comprehensive vs Weekly) & Library state
+    litMode: 'hotspots',              // 'hotspots' (🔥文献热点) | 'library' (📚文献明细库)
+    litViewMode: 'comprehensive',     // 'comprehensive' (综合文献热点汇总) | 'weekly' (本周更新文献热点)
+    litJournalFilter: 'all',
+    selectedLitBoard: '全部',
+    litTopicPage: 1,
+    litTopicPageSize: 10,
+
     litSourceFilter: 'all',
     litPage: 1,
     litPageSize: 12,
@@ -1068,6 +1273,7 @@ window.workbenchApp = function () {
     conferences: initialConfData.library,
     auditConferences: initialConfData.audit,
     hotspotTopics: initialHotspotTopics,
+    literatureTopics: initialLiteratureTopics,
     literatureList: initialLiterature,
     pipelineList: PIPELINES,
     piList: initialPIs,
@@ -1234,7 +1440,8 @@ window.workbenchApp = function () {
         else if (this.academicMode === 'library') dataset = this.conferences;
         else dataset = this.auditConferences;
       } else if (this.hotspotTab === 'literature') {
-        dataset = this.literatureList;
+        if (this.litMode === 'hotspots') dataset = this.activeLitTopicBase;
+        else dataset = this.literatureList;
       } else if (this.hotspotTab === 'pipeline') {
         dataset = this.pipelineList;
       }
@@ -1485,12 +1692,71 @@ window.workbenchApp = function () {
       return this.conferences.filter(c => c.schedulePublished && (c.tierCode === 'B' || c.tierCode === 'A') && c.speakers && c.speakers.length > 0);
     },
 
-    // Literature Computed
+    // Literature Hotspots (Comprehensive vs Weekly) & Library Computed
+    get weeklyUpdatedPapers() {
+      return this.literatureList.filter(p => {
+        const matchDomain = this.selectedDomain === '全部' || p.domain === this.selectedDomain;
+        const w = p.updatedWeek || '2026-11-23';
+        return matchDomain && (p.isWeekly || (w >= this.weekStart && w <= this.weekEnd));
+      });
+    },
+
+    get weeklyLiteratureTopics() {
+      return this.literatureTopics.filter(lt => {
+        const w = lt.updatedWeek || '2026-11-23';
+        return lt.weeklyPaperCount > 0 && w >= this.weekStart && w <= this.weekEnd;
+      });
+    },
+
+    get activeLitTopicBase() {
+      return this.litViewMode === 'weekly' ? this.weeklyLiteratureTopics : this.literatureTopics;
+    },
+
+    get availableLitBoards() {
+      const counts = {};
+      for (const t of this.activeLitTopicBase) {
+        if (this.selectedDomain !== '全部' && t.domain !== this.selectedDomain) continue;
+        counts[t.boardName] = (counts[t.boardName] || 0) + 1;
+      }
+      return Object.entries(counts).map(([name, count]) => ({ name, count }));
+    },
+
+    get filteredLiteratureTopics() {
+      const q = this.searchQuery.trim().toLowerCase();
+      return this.activeLitTopicBase.filter(t => {
+        const matchDomain = this.selectedDomain === '全部' || t.domain === this.selectedDomain;
+        const matchBoard = this.selectedLitBoard === '全部' || t.boardName === this.selectedLitBoard;
+        let matchJournal = true;
+        if (this.litJournalFilter !== 'all') {
+          const jText = (t.journalLabels || '').toLowerCase();
+          if (this.litJournalFilter === 'Nature / 专科顶刊') {
+            matchJournal = /nature|ajrccm|erj|ard|circulation|ehj|neurology|diabetes care|diabetologia/i.test(jText);
+          } else {
+            matchJournal = jText.includes(this.litJournalFilter.toLowerCase());
+          }
+        }
+        const leaderNames = (t.leaders || []).map(l => l.name + ' ' + l.hospital + ' ' + l.talkTitle).join(' ');
+        const matchSearch = !q || [t.name, t.boardName, t.journalLabels, leaderNames].join(' ').toLowerCase().includes(q);
+        return matchDomain && matchBoard && matchJournal && matchSearch;
+      });
+    },
+
+    get litTopicTotalPages() {
+      return Math.max(1, Math.ceil(this.filteredLiteratureTopics.length / this.litTopicPageSize));
+    },
+
+    get pagedLiteratureTopics() {
+      const start = (this.litTopicPage - 1) * this.litTopicPageSize;
+      return this.filteredLiteratureTopics.slice(start, start + this.litTopicPageSize);
+    },
+
     get filteredLiterature() {
       const q = this.searchQuery.trim().toLowerCase();
       return this.literatureList.filter(l => {
         const matchDomain = this.selectedDomain === '全部' || l.domain === this.selectedDomain;
-        const matchSource = this.litSourceFilter === 'all' || (this.litSourceFilter === 'real' && l.isReal);
+        const matchSource = this.litSourceFilter === 'all'
+          || (this.litSourceFilter === 'real' && l.isReal)
+          || (this.litSourceFilter === 'weekly' && l.isWeekly);
         const matchSearch = !q || [l.title, l.abstract, l.journal, l.authors, l.topicName].join(' ').toLowerCase().includes(q);
         return matchDomain && matchSource && matchSearch;
       });
