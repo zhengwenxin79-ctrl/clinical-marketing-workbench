@@ -542,16 +542,25 @@ window.workbenchApp = function () {
     return [...specialtyTopics, ...topicsList];
   }
 
-  // 6. Gold-Standard Conference Items (With Source Anchors, Schedule Status & Two-Stage Scrape State)
+  // 6. Gold-Standard Conference Items (With Real Source Links, Schedule URLs, Venues, Contacts & Two-Stage Scrape State from 06_官方评级金标准参考_20261123周度.csv)
   const GOLD_CONFERENCE_ITEMS = [
     // Already fully scraped (Topics + PIs done)
     {
       queue_id: 'ref-intl-001', conference_id: 'ADA2026', review_status: 'approved', tier_code: 'A',
       field_id: 'diabetes', conference_name: '86th Scientific Sessions of the American Diabetes Association (ADA 2026)',
       abbreviation: 'ADA 2026', start_date: '2026-06-05', end_date: '2026-06-08', city: 'New Orleans, LA (国际)',
+      venue: 'Ernest N. Morial Convention Center, New Orleans, LA',
+      contacts: 'ADA Scientific Sessions Registration & Abstract Committee (professional.diabetes.org)',
       source_anchor: 'I01 国际顶会锚点 · ADA Scientific Sessions 官网',
       schedule_published: true, topic_scrape_status: 'done', pi_scrape_status: 'done',
       official_url: 'https://professional.diabetes.org/scientific-sessions',
+      schedule_url: 'https://www.abstractsonline.com/SR/Diabetes/FinalProgram.asp',
+      schedule_status_note: '已获取：会前完整程序册 242 个专场、2,539 条学术报告已全量入库。',
+      source_links: [
+        { label: '📅 官方在线日程程序册', url: 'https://www.abstractsonline.com/SR/Diabetes/FinalProgram.asp', type: 'schedule' },
+        { label: '🌐 ADA 大会官网', url: 'https://professional.diabetes.org/scientific-sessions', type: 'official' },
+        { label: '📊 本站2539条报告专页', url: '../会议视图/ada.html', type: 'internal' }
+      ],
       view_url: '../会议视图/ada.html',
       report_count: 2539,
       review_note: '【国际风向标 · A级】全球糖尿病与代谢最高级别学术盛会（入库2,539条学术报告、覆盖56个研究议题）。重点提取国际前沿多组学转化热点与领军PI，免国内销售参会考核。',
@@ -566,9 +575,19 @@ window.workbenchApp = function () {
       queue_id: 'REV-858b77bbe70b', conference_id: 'CDS2026', review_status: 'approved', tier_code: 'B',
       field_id: 'diabetes', conference_name: '中华医学会糖尿病学分会第二十八次全国学术会议 (CDS 2026)',
       abbreviation: 'CDS 2026', start_date: '2026-11-25', end_date: '2026-11-28', city: '厦门',
+      venue: '厦门国际会议展览中心',
+      contacts: '中华医学会学术会务部 / 钛会务平台组委会（cds26.tiemeeting.com）',
       source_anchor: 'O04 中华医学会糖尿病学分会 · 钛会务微官网 (cds26.tiemeeting.com)',
       schedule_published: true, topic_scrape_status: 'done', pi_scrape_status: 'done',
-      official_url: 'https://cds2026.cma.org.cn/schedule-v2',
+      official_url: 'https://cds26.tiemeeting.com/CN',
+      schedule_url: 'https://cds26.tiemeeting.com/CN/Program/Details',
+      schedule_status_note: '已获取：钛会务官方在线日程 797 项、606 条学术报告及 533 位讲者身份已全量入库。',
+      source_links: [
+        { label: '📅 钛会务官方日程页', url: 'https://cds26.tiemeeting.com/CN/Program/Details', type: 'schedule' },
+        { label: '🌐 CDS26 微官网首页', url: 'https://cds26.tiemeeting.com/CN', type: 'official' },
+        { label: '👥 讲者学术简历库', url: 'https://cds26.tiemeeting.com/CN/Programme/Speaker?uid=WnD6j', type: 'speaker' },
+        { label: '📊 本站606条报告专页', url: '../会议视图/index.html', type: 'internal' }
+      ],
       view_url: '../会议视图/index.html',
       report_count: 606,
       review_note: '【国内重点关注 · B级】中华医学会糖尿病学分会年度最高规格全国年会（完整日程606条学术报告、58个复核议题、533位讲者身份、14位专家完成四维深度调研）。优先到会、深拆讲者PI、定向派发销售拜访。',
@@ -586,16 +605,26 @@ window.workbenchApp = function () {
       queue_id: 'ref-20261123-001', conference_id: 'CACP2026', review_status: 'approved', tier_code: 'B',
       field_id: 'respiratory', conference_name: '中国医师协会 2026 呼吸医师年会暨第 25 届中国呼吸医师大会（CACP 2026）',
       abbreviation: 'CACP 2026', start_date: '2026-11-26', end_date: '2026-11-29', city: '长沙',
-      source_anchor: 'O12 中国医师协会呼吸医师分会 · cacpchina.org',
+      venue: '长沙·北辰国际会议中心（开福区新河街道湘江北路三段 1500 号 A3 区）',
+      contacts: '注册投稿 蒋涛 13269983172；订房 郭新月 13718329616、辛美玉 15010876306；企业参会 孟谨 13522054642；学术会务部 李晓明 010-63313635',
+      source_anchor: 'O12 中国医师协会呼吸医师分会 · cacp2026.cnconf.com',
       schedule_published: true, topic_scrape_status: 'pending', pi_scrape_status: 'pending',
       official_url: 'http://www.cacpchina.org/',
+      schedule_url: 'https://cacp2026.cnconf.com/msite/main/cn',
+      schedule_status_note: '部分获取：大会日程已公布，已读 5 场主旨发言、22 个大会报告清单及 PCCM 学组场次框架（王辰院士《探索共病的医疗模式》、陈荣昌教授 Lancet Commission 慢阻肺成果）。',
+      source_links: [
+        { label: '📅 会议微站与日程入口', url: 'https://cacp2026.cnconf.com/msite/main/cn', type: 'schedule' },
+        { label: '📋 日程亮点清单 (医学界)', url: 'https://www.yxj.org.cn/detailPage?articleId=511789', type: 'notice' },
+        { label: '🌐 大会官网 (cacpchina)', url: 'http://www.cacpchina.org/', type: 'official' }
+      ],
       view_url: '#',
       report_count: 42,
-      review_note: '【国内重点关注 · B级】中国医师协会呼吸医师分会主办，湘雅二院、湘雅医院协办。呼吸领域全国性核心年会，慢阻肺病与肺血管病均为六大领域正题，举办地长沙为重点覆盖城市。',
-      topics: '慢阻肺(COPD)三联治疗与早期气道重塑分子分型、重症哮喘II型炎症生物制剂应答标志物(IL-4R/TSLP)、呼吸感染宏基因组与宿主免疫反应',
-      cut_in: '围绕呼吸慢病急性加重队列，向参会呼吸科主任推介“气道微生态宏基因组 + 宿主外周血/痰液转录组”双维度标志物挖掘方案。',
+      review_note: '【国内重点关注 · B级】中国医师协会、中国医师协会呼吸医师分会主办，湖南省医师协会承办，湘雅二院、湘雅医院协办。呼吸领域全国性核心年会，5场主旨发言、22个大会报告，举办地长沙为重点覆盖城市。',
+      topics: '王辰院士《探索共病的医疗模式》、陈荣昌教授《中国慢阻肺病 Lancet Commission 成果》、慢阻肺(COPD)三联治疗与早期气道重塑分子分型、重症哮喘II型炎症标志物(IL-4R/TSLP)、呼吸感染宏基因组与宿主免疫反应',
+      cut_in: '围绕呼吸慢病与共病队列，向参会呼吸科主任推介“气道微生态宏基因组 + 宿主外周血/痰液转录组”双维度标志物挖掘方案。',
       speakers: [
-        { name: '陈荣昌 教授', hospital: '广州医科大学附属第一医院', role: '大会特邀报告', topic: '慢阻肺早期分子分型与精准干预策略', scoreLabel: '84分 · B级', piId: 'SPEC-RESP-01', cutIn: '国家呼吸医学中心核心专家，重点沟通慢阻肺多中心队列宿主转录组测序合作。' },
+        { name: '王辰 院士', hospital: '中国医学科学院北京协和医学院 / 中日友好医院', role: '主旨报告', topic: '探索共病的医疗模式（慢阻肺与泛血管多器官共病队列）', scoreLabel: '全国学术领军', cutIn: '国家呼吸医学中心领军体系，重点关注慢阻肺与泛血管共病大队列多组学转化方向。' },
+        { name: '陈荣昌 教授', hospital: '广州医科大学附属第一医院', role: '大会特邀报告', topic: '中国慢阻肺病 Lancet Commission 成果与早期分子分型干预策略', scoreLabel: '84分 · B级', piId: 'SPEC-RESP-01', cutIn: '国家呼吸医学中心核心专家，重点沟通慢阻肺多中心队列宿主转录组测序合作。' },
         { name: '罗红 教授', hospital: '中南大学湘雅二医院', role: '东道主主席', topic: '呼吸危重症与气道慢病临床转化队列建设', scoreLabel: '全国学术带头人', cutIn: '湘雅二院本地东道主团队，样本库资源丰富，适合会期现场拜访对接。' }
       ]
     },
@@ -603,13 +632,21 @@ window.workbenchApp = function () {
       queue_id: 'ref-20261123-002', conference_id: 'CHINASTROKE2026', review_status: 'approved', tier_code: 'B',
       field_id: 'neurology', conference_name: '2026 年中国脑卒中大会',
       abbreviation: '中国脑卒中大会 2026', start_date: '2026-11-27', end_date: '2026-11-29', city: '北京',
+      venue: '北京·国家会议中心 I 期 C 区（朝阳区天辰东路 7 号）',
+      contacts: '注册 赵老师 18611880023；住宿 袁老师 18611887459；组委会 陈老师 010-83199104、18519301337',
       source_anchor: 'S09 国家神经疾病医学中心 · 美迪康微官网 (2026ncz.sciconf.cn)',
       schedule_published: true, topic_scrape_status: 'done', pi_scrape_status: 'pending',
       official_url: 'https://2026ncz.sciconf.cn',
+      schedule_url: 'https://2026ncz.sciconf.cn/cn/web/program/40943',
+      schedule_status_note: '部分获取：美迪康日程页已确认会期、会场及 20 余个分会场设置，含百篇优秀论文与获奖征文展示专场。',
+      source_links: [
+        { label: '📅 大会在线日程页 (sciconf)', url: 'https://2026ncz.sciconf.cn/cn/web/program/40943', type: 'schedule' },
+        { label: '🌐 大会微站与注册链接', url: 'https://2026ncz.sciconf.cn', type: 'official' }
+      ],
       view_url: '#',
       report_count: 36,
-      review_note: '【国内重点关注 · B级】国家卫健委百万减残工程专委会、中国医学科学院、国家神经疾病医学中心主办，吉训明院士任大会主席。设20余个分会场，覆盖脑血管病最新进展，北京为重点覆盖城市。',
-      topics: '急性缺血性卒中再灌注损伤免疫微环境、颅内动脉粥样硬化斑块不稳定性多组学标志物、脑小血管病认知障碍早筛Panel',
+      review_note: '【国内重点关注 · B级】国家卫健委百万减残工程专委会、中国医学科学院、国家神经疾病医学中心主办，吉训明院士任大会主席。设20余个分会场与百篇优秀论文展示，北京为重点覆盖城市。',
+      topics: '急性缺血性卒中再灌注损伤免疫微环境、卒中分型与病因筛查标志物、颅内动脉粥样硬化斑块不稳定性多组学标志物、脑小血管病认知障碍早筛Panel',
       cut_in: '重点锁定国家神经疾病医学中心及各省卒中中心带头人，切入卒中队列血浆外泌体 miRNA/lncRNA 与高深度蛋白质组学检测。',
       speakers: [
         { name: '吉训明 院士', hospital: '首都医科大学宣武医院', role: '大会主席', topic: '中国脑卒中百万减残工程与临床转化医学新范式', scoreLabel: '88分 · B级', piId: 'SPEC-NEURO-01', cutIn: '国家级卒中队列牵头人，推荐切入多中心液体活检标志物验证平台(T10)。' }
@@ -619,58 +656,120 @@ window.workbenchApp = function () {
       queue_id: 'ref-20261123-003', conference_id: 'CONF-2026-003', review_status: 'approved', tier_code: 'B',
       field_id: 'neurology', conference_name: '第二十九届中山神经病学学术论坛·2026',
       abbreviation: '中山神经病学论坛', start_date: '2026-11-27', end_date: '2026-11-29', city: '广州',
-      source_anchor: 'O06 广东省脑科学应用学会 / 中华神经科杂志渠道',
+      venue: '广州（日程页标：3 楼宴会厅 1／2、会议室 1、多功能厅）',
+      contacts: '广东省脑科学应用学会秘书处 李立、欧荞菲 020-87332686、020-33976261；邮箱 gdbsaa@163.com',
+      source_anchor: 'O06 广东省脑科学应用学会 · 互会科技日程页 (hoohui.com.cn)',
       schedule_published: true, topic_scrape_status: 'pending', pi_scrape_status: 'pending',
-      official_url: 'https://cma.org.cn/meeting/conf_2026_003',
+      official_url: 'http://gdbsaa.com/DynamicList',
+      schedule_url: 'https://www.hoohui.com.cn/cms/app/new-100/newSchedule.jsp?mid=2132',
+      schedule_status_note: '已获取：已读 11-27 分会场一至五、11-28 分会场三（认知障碍早诊早治）与分会场五逐时讲题；是本周检测相关度最高的临床会议。',
+      source_links: [
+        { label: '📅 互会科技完整日程页', url: 'https://www.hoohui.com.cn/cms/app/new-100/newSchedule.jsp?mid=2132', type: 'schedule' },
+        { label: '📄 会议通知与日程详情', url: 'https://www.hoohui.com.cn/cms/app/new-100/show-schedule.jsp?id=44775&mid=2132', type: 'notice' },
+        { label: '🌐 广东省脑科学应用学会', url: 'http://gdbsaa.com/DynamicList', type: 'official' }
+      ],
       view_url: '#',
       report_count: 28,
-      review_note: '【国内重点关注 · B级】广东省脑科学应用学会主办、《中国神经精神疾病杂志》协办，设 Neuroscience Day 青年科研征文，主线为神经病学基础与临床研究，不是单纯继续教育。',
-      topics: '神经免疫疾病(MS/NMOSD)单细胞免疫组库、脑小血管病与神经退行性疾病脑脊液Biomarker、青年神经科医师国自然科研转化设计',
-      cut_in: '针对 Neuroscience Day 青年科研征文讲者与华南神经科PI，提供“单细胞测序+临床小队列验证”快速发表高分SCI整体解决方案。',
+      review_note: '【国内重点关注 · B级】广东省脑科学应用学会主办、《中国神经精神疾病杂志》编辑部协办，设 Neuroscience Day 青年科研征文。含纪勇《血检诊断AD：现在与未来》、范玉华《脑小血管病认知障碍治疗与IGF-1机制》，直接对口检测业务。',
+      topics: '纪勇《血检诊断 AD：现在与未来》、范玉华《IGF-1 在脑小血管病中的作用》、张健《轴索变性在缺血性卒中脑保护中的机制》、神经免疫疾病(MS/NMOSD)单细胞免疫组库、Neuroscience Day 青年科研转化',
+      cut_in: '血检诊断AD与脑小血管病标志物直接对口检测业务！针对认知障碍与神经保护专场讲者及华南神经科PI，提供“外周血/脑脊液蛋白组+单细胞测序”高分SCI转化方案。',
       speakers: [
-        { name: '陆正齐 教授', hospital: '中山大学附属第三医院', role: '大会主席', topic: '脑小血管病免疫炎症机制与生物标志物探索', scoreLabel: '79分 · B级', piId: 'SPEC-NEURO-02', cutIn: '华南神经免疫领军专家，直接切入脑脊液单细胞转录组与免疫组库测序。' }
+        { name: '陆正齐 教授', hospital: '中山大学附属第三医院', role: '大会主席', topic: '脑小血管病免疫炎症机制与生物标志物探索', scoreLabel: '79分 · B级', piId: 'SPEC-NEURO-02', cutIn: '华南神经免疫领军专家，直接切入脑脊液单细胞转录组与免疫组库测序。' },
+        { name: '范玉华 教授', hospital: '中山大学附属第一医院', role: '专题讲者 (11-27/28)', topic: '脑小血管病认知障碍治疗的探索 & IGF-1 在脑小血管病中的作用', scoreLabel: '华南核心PI', cutIn: '连续两场脑小血管病专题报告，重点切入脑小血管病认知队列血浆蛋白组与外泌体检测。' },
+        { name: '纪勇 教授', hospital: '天津市环湖医院 / 北京天坛医院认知团队', role: '专题讲者 (11-28 14:00)', topic: '血检诊断 AD：现在与未来', scoreLabel: 'AD血检对口专家', cutIn: '直接报告《血检诊断AD》，与吉因加血液生物标志物及多组学早筛产品高度契合。' }
       ]
     },
     {
       queue_id: 'ref-20261123-004', conference_id: 'CONF-2026-004', review_status: 'approved', tier_code: 'B',
       field_id: 'cardiovascular', conference_name: '第五届泛血管医学大会（PMC 2026）',
       abbreviation: 'PMC 2026 泛血管大会', start_date: '2026-11-27', end_date: '2026-11-29', city: '南京',
-      source_anchor: 'S18 泛血管医学专业委员会官网锚点',
+      venue: '南京·白金汉爵大酒店',
+      contacts: '承办单位 南京医科大学第二附属医院（执行主席 周祥）',
+      source_anchor: 'S18 泛血管医学专业委员会 · 泛闻心声官方日程通知',
       schedule_published: true, topic_scrape_status: 'done', pi_scrape_status: 'done',
-      official_url: 'https://cma.org.cn/meeting/conf_2026_004',
+      official_url: 'https://www.drvoice.cn/v2/meetings',
+      schedule_url: 'http://mp.weixin.qq.com/s?__biz=MzA5Mjg3OTA4MQ==&mid=2651671451&idx=4&sn=30566e796d6d41ef6bdc4df198f6433f',
+      schedule_status_note: '已获取：已读 11-27 三个前置论坛、11-28 开幕式（葛均波、钱菊英、孔祥清、黄恺、李红良、陈琪）及 20 个论坛框架。',
+      source_links: [
+        { label: '📅 泛闻心声官方日程通知', url: 'http://mp.weixin.qq.com/s?__biz=MzA5Mjg3OTA4MQ==&mid=2651671451&idx=4&sn=30566e796d6d41ef6bdc4df198f6433f', type: 'schedule' },
+        { label: '🌐 严道医声网会议专区', url: 'https://www.drvoice.cn/v2/meetings', type: 'official' }
+      ],
       view_url: '#',
       report_count: 32,
-      review_note: '【国内重点关注 · B级】名誉主席葛均波、王建安、吉训明、顾宁四位院士；大会主席霍勇、孔祥清、袁祖贻、钱菊英等。国内唯一的泛血管综合性品牌年会，南京为覆盖城市。',
-      topics: '泛血管动脉粥样硬化跨器官免疫代谢机制、糖心肾共病(CKM)多组学风险分层、血管内皮衰老与克隆性造血(CHIP)基因检测',
-      cut_in: '泛血管大会汇聚心内、神内、内分泌、肾内跨学科大PI，重点推广吉因加 CHIP（克隆性造血驱动基因）靶向测序与血浆蛋白组泛血管早筛方案。',
+      review_note: '【国内重点关注 · B级】江苏省老年医学学会主办、南医大二附院承办。名誉主席葛均波、王建安、吉训明、顾宁四位院士；大会主席霍勇、孔祥清、袁祖贻、钱菊英、黄恺、陈琪等。设代谢、血脂、血管衰老、泛血管影像等20个论坛。',
+      topics: '葛均波《泛血管疾病：启示、实践与未来战略》、钱菊英《泛血管疾病的筛查和管理指南解读》、孔祥清《高血压调控新机制及临床转化》、黄恺《人工智能与 CKM 管理》、陈琪《缺血性心脏损伤中单核巨噬细胞的修复转变》',
+      cut_in: '避开单纯冠脉介入手术演示时段，优先锁定血管衰老、代谢、血脂、泛血管影像与创新转化论坛大PI，推广吉因加 CHIP（克隆性造血驱动基因）靶向测序与单细胞/血浆蛋白组方案。',
       speakers: [
-        { name: '葛均波 院士', hospital: '复旦大学附属中山医院', role: '名誉主席', topic: '泛血管医学学科发展与多学科交叉转化展望', scoreLabel: '91分 · A级', piId: 'SPEC-CARDIO-01', cutIn: '重点对接中山医院泛血管研究团队，推介 CHIP 基因检测与空间转录组方案。' },
-        { name: '霍勇 教授', hospital: '北京大学第一医院', role: '大会主席', topic: '中国心血管代谢共病队列与精准预防体系', scoreLabel: '全国学术带头人', cutIn: '围绕心血管代谢大队列推介高通量靶向代谢组与蛋白组验证。' }
+        { name: '葛均波 院士', hospital: '复旦大学附属中山医院', role: '名誉主席 / 开幕主旨', topic: '泛血管疾病：启示、实践与未来战略', scoreLabel: '91分 · A级', piId: 'SPEC-CARDIO-01', cutIn: '重点对接中山医院泛血管研究团队，推介 CHIP 基因检测与空间转录组方案。' },
+        { name: '霍勇 教授', hospital: '北京大学第一医院', role: '大会主席', topic: '中国心血管代谢共病队列与精准预防体系', scoreLabel: '全国学术带头人', cutIn: '围绕心血管代谢大队列推介高通量靶向代谢组与蛋白组验证。' },
+        { name: '孔祥清 教授', hospital: '南京医科大学第一附属医院（江苏省人民医院）', role: '大会主席 / 开幕报告', topic: '高血压调控新机制及临床转化', scoreLabel: '华东领军PI', cutIn: '南京本地心血管领军专家，围绕高血压调控新机制切入靶器官损伤多组学测序。' },
+        { name: '陈琪 教授', hospital: '南京医科大学', role: '大会主席 / 开幕报告', topic: '缺血性心脏损伤中单核巨噬细胞的修复转变', scoreLabel: '单细胞高契合PI', cutIn: '讲题直接聚焦《单核巨噬细胞的修复转变》，完美契合单细胞转录组+空间转录组测序(T03)。' }
       ]
     },
     {
       queue_id: 'ref-20261123-005', conference_id: 'CONF-2026-005', review_status: 'approved', tier_code: 'B',
       field_id: 'rheumatology', conference_name: '北京医学会风湿病学分会第 26 届学术年会',
       abbreviation: '北京风湿年会 2026', start_date: '2026-11-27', end_date: '2026-11-28', city: '北京',
+      venue: '北京·国际饭店会议中心',
+      contacts: '会务组 赵帅举 18500057895；邮箱 guxh0117@163.com；资料 www.bjyxh.org.cn',
       source_anchor: 'O01 北京医学会风湿病学分会官网 (bjyxh.org.cn)',
       schedule_published: true, topic_scrape_status: 'done', pi_scrape_status: 'pending',
       official_url: 'https://www.bjyxh.org.cn/News/Detail/8003',
+      schedule_url: 'https://www.bjyxh.org.cn/News/Detail/8003',
+      schedule_status_note: '部分获取：已取得北京医学会正式通知与五大专场设置（基础科研培训专场、临床科研专场、高分论文专场等）。',
+      source_links: [
+        { label: '📄 北京医学会官方通知与议程框架', url: 'https://www.bjyxh.org.cn/News/Detail/8003', type: 'schedule' },
+        { label: '🔗 康迅网会议详情转载', url: 'http://www.ikangxun.com/details/21642', type: 'notice' }
+      ],
       view_url: '#',
       report_count: 22,
-      review_note: '【国内重点关注 · B级】北京大学人民医院协办，大会主席苏茵，学委会含王迁、朱剑、张文、张卓莉等。设基础科研培训专场、临床科研专场、高分论文专场，主线含科研训练，北京客户密度极高。',
-      topics: '关节炎与消化系统损害黏膜免疫互作、系统性红斑狼疮(SLE)干扰素特征基因谱、风湿免疫病B细胞/T细胞受体(BCR/TCR)免疫组库',
-      cut_in: '借会内“基础科研与高分论文专场”契机，向北京各大三甲风湿科中青年科研骨干推广 TCR/BCR 免疫组库测序及 Olink/质谱蛋白组服务。',
+      review_note: '【国内重点关注 · B级】北京大学人民医院协办，大会主席苏茵，学委会含王迁、朱剑、刘燕鹰、李彩凤、何菁、张文、张卓莉。设基础科研培训专场、临床科研专场、高分论文专场，北京客户密度极高。',
+      topics: '关节炎与消化系统损害黏膜免疫互作、基础免疫学与风湿病交叉报告、年度基础科研突破复盘、风湿免疫病B细胞/T细胞受体(BCR/TCR)免疫组库',
+      cut_in: '借会内“基础科研培训专场与高分论文专场”契机，向北京各大三甲风湿科中青年科研骨干推广 TCR/BCR 免疫组库测序及 Olink/质谱蛋白组服务。',
       speakers: [
-        { name: '苏茵 教授', hospital: '北京大学人民医院', role: '大会主席', topic: '自身免疫病靶向诊疗与临床转化新进展', scoreLabel: '81分 · B级', piId: 'SPEC-RHEUM-01', cutIn: '主委单位科研需求明确，重点切入风湿免疫队列单细胞+免疫组库联检。' }
+        { name: '苏茵 教授', hospital: '北京大学人民医院', role: '大会主席', topic: '关节炎与消化系统损害免疫机制及自身免疫病靶向转化新进展', scoreLabel: '81分 · B级', piId: 'SPEC-RHEUM-01', cutIn: '主委单位科研需求明确，重点切入风湿免疫队列单细胞+免疫组库联检。' }
+      ]
+    },
+    {
+      queue_id: 'ref-20261123-010', conference_id: 'CONF-2026-010', review_status: 'approved', tier_code: 'C',
+      field_id: 'rheumatology', conference_name: '浙江省中医药学会 2026 年风湿病分会学术年会',
+      abbreviation: '浙江风湿病年会 2026', start_date: '2026-11-28', end_date: '2026-11-30', city: '杭州',
+      venue: '杭州·之江饭店（拱墅区莫干路 188-200 号）',
+      contacts: '浙江省中医药学会 王老师 19143558280；风湿病分会 俞老师 13777810067',
+      source_anchor: 'O16 浙江省中医药学会官方微信通知 (20个大会报告清单)',
+      schedule_published: true, topic_scrape_status: 'done', pi_scrape_status: 'pending',
+      official_url: 'http://www.zjszyyxh.com',
+      schedule_url: 'http://mp.weixin.qq.com/s?__biz=MzA4MDA0NTE4MA==&mid=2650457257&idx=5&sn=05d774027fb37d22ed58c718eb1ec1c2',
+      schedule_status_note: '已获取：已完整读取全部 20 个大会报告题目与讲者单位（含痛风大数据队列真实世界研究、干燥病2026 EULAR进展、难治性狼疮性肾炎等）。',
+      source_links: [
+        { label: '📅 官方20个大会报告完整日程单', url: 'http://mp.weixin.qq.com/s?__biz=MzA4MDA0NTE4MA==&mid=2650457257&idx=5&sn=05d774027fb37d22ed58c718eb1ec1c2', type: 'schedule' },
+        { label: '🌐 浙江省中医药学会官网', url: 'http://www.zjszyyxh.com', type: 'official' }
+      ],
+      view_url: '#',
+      report_count: 20,
+      review_note: '【国内常规关注 · C级】已获取全部20个大会报告题目与讲者单位。无国医大师思想流派空谈，全为痛风大数据队列、干燥综合征、难治性狼疮性肾炎及IIT随机对照试验设计，杭州覆盖城市。',
+      topics: '何东仪《基于大数据痛风队列的中西医结合真实世界研究》、李涯松《血清维生素 D 检测与临床问题解读》、孙莉《干燥病 2026 EULAR 研究进展和治疗新格局》、陈盛《难治性狼疮性肾炎的治疗进展》',
+      cut_in: '直接围绕何东仪教授《大数据痛风队列》、陈盛教授《难治性狼疮性肾炎》切入尿酸代谢与肾脏损伤多组学队列检测。',
+      speakers: [
+        { name: '何东仪 教授', hospital: '上海市光华中西医结合医院', role: '大会报告', topic: '基于大数据痛风队列的中西医结合真实世界研究', scoreLabel: '痛风队列牵头PI', cutIn: '拥有成熟大数据痛风队列，可直接对接尿酸代谢组学与并发症标志物检测。' },
+        { name: '陈盛 教授', hospital: '上海交通大学医学院附属仁济医院', role: '大会报告', topic: '难治性狼疮性肾炎的治疗进展', scoreLabel: '仁济风湿核心PI', cutIn: '围绕难治性狼疮性肾炎切入肾脏组织空间转录组与外周血免疫组库测序。' }
       ]
     },
     {
       queue_id: 'ref-intl-002', conference_id: 'RSNA2026', review_status: 'approved', tier_code: 'A',
       field_id: 'vascular', conference_name: 'Radiological Society of North America 112th Scientific Assembly (RSNA 2026)',
       abbreviation: 'RSNA 2026', start_date: '2026-11-29', end_date: '2026-12-03', city: 'Chicago, IL (国际)',
+      venue: 'McCormick Place, Chicago, IL',
+      contacts: 'RSNA Annual Meeting Program Committee (rsna.org)',
       source_anchor: 'I08 国际顶会锚点 · RSNA 官方程序 (rsna.org)',
       schedule_published: true, topic_scrape_status: 'done', pi_scrape_status: 'done',
       official_url: 'https://www.rsna.org/annual-meeting',
+      schedule_url: 'https://www.rsna.org/annual-meeting/program',
+      schedule_status_note: '已获取：血管影像组学与多模态分子影像转化专题已入库。',
+      source_links: [
+        { label: '📅 RSNA 官方在线议程', url: 'https://www.rsna.org/annual-meeting/program', type: 'schedule' },
+        { label: '🌐 RSNA 大会官网', url: 'https://www.rsna.org/annual-meeting', type: 'official' }
+      ],
       view_url: '#',
       report_count: 18,
       review_note: '【国际风向标 · A级】全球放射与医学影像顶级盛会，重点追踪泛血管斑块影像组学与液体活检多组学(Radiogenomics)交叉转化热点。',
@@ -685,11 +784,18 @@ window.workbenchApp = function () {
       queue_id: 'REV-956faa75ca08', conference_id: 'CAGGPD2026', review_status: 'approved', tier_code: 'B',
       field_id: 'neurology', conference_name: '中国老年学和老年医学学会脑疾病分会 2026 年会暨中国帕金森联盟第八届年会',
       abbreviation: '帕金森联盟年会 2026', start_date: '2026-12-18', end_date: '2026-12-20', city: '南昌',
-      source_anchor: 'O07 中国帕金森联盟官方公众号第一轮通知',
+      venue: '南昌·前湖迎宾馆',
+      contacts: '中国老年学和老年医学学会脑疾病分会秘书处 / 中国帕金森联盟会务组',
+      source_anchor: 'O07 中国帕金森联盟官方公众号通知',
       schedule_published: false, topic_scrape_status: 'pending', pi_scrape_status: 'pending',
-      official_url: '#',
+      official_url: 'http://mp.weixin.qq.com/s?__biz=MzU0MDcyMzcwOA==&mid=2247490190&idx=1&sn=8d3675db7eedbd9a19bad70a44fc4dd5',
+      schedule_url: 'http://mp.weixin.qq.com/s?__biz=MzU0MDcyMzcwOA==&mid=2247490190&idx=1&sn=8d3675db7eedbd9a19bad70a44fc4dd5',
+      schedule_status_note: '待出详细日程：已获取官方微信会议通知链接，监控锚点每日巡检分论坛详细讲者日程更新。',
+      source_links: [
+        { label: '📄 官方微信会议通知原文', url: 'http://mp.weixin.qq.com/s?__biz=MzU0MDcyMzcwOA==&mid=2247490190&idx=1&sn=8d3675db7eedbd9a19bad70a44fc4dd5', type: 'notice' }
+      ],
       report_count: 0,
-      review_note: '【已入库 · 待出详细日程】官方目前已发布第一轮征文与会期通知，尚未放出分论坛具体讲题与讲者日程表。监控锚点正每日巡检，待日程发布后自动触发议题与PI抓取。',
+      review_note: '【已入库 · 待出详细日程】官方目前已发布征文与会期微信通知，监控锚点正每日巡检，点击“模拟官方刚发布日程”即可直接读取两日完整讲题。',
       topics: '帕金森病及运动障碍疾病 α-突触核蛋白种子扩增检测(SAA)、神经退行性疾病外周血与脑脊液多组学早筛',
       cut_in: '待详细日程发布后，锁定帕金森联盟核心委员，切入神经退行性疾病外泌体转录组与蛋白组队列验证。'
     },
@@ -697,9 +803,16 @@ window.workbenchApp = function () {
       queue_id: 'REV-4e9e256334f2', conference_id: 'CSE2027-SPRING', review_status: 'approved', tier_code: 'B',
       field_id: 'diabetes', conference_name: '中华医学会内分泌学分会 2026 代谢病前沿转化冬季研讨会',
       abbreviation: 'CSE 代谢病转化研讨会', start_date: '2026-12-22', end_date: '2026-12-24', city: '广州',
+      venue: '广州·白云国际会议中心',
+      contacts: '中华医学会内分泌学分会会务组 (cse2026.sciconf.cn)',
       source_anchor: 'O03 中华医学会内分泌学分会 (cse2026.sciconf.cn)',
       schedule_published: false, topic_scrape_status: 'pending', pi_scrape_status: 'pending',
       official_url: 'https://cse2026.sciconf.cn/',
+      schedule_url: 'https://cse2026.sciconf.cn/',
+      schedule_status_note: '待出详细日程：美迪康微官网已建站并发布第一轮通知，详细学术日程表待上线。',
+      source_links: [
+        { label: '🌐 CSE 美迪康微官网首页', url: 'https://cse2026.sciconf.cn/', type: 'official' }
+      ],
       report_count: 0,
       review_note: '【已入库 · 待出详细日程】中华医学会内分泌学分会官方微官网已建站并发布会议预告，详细学术日程表尚未公布。',
       topics: '内分泌罕见病与单基因糖尿病全外显子组测序(WES)、肥胖与脂肪肝多组学分子分型',
@@ -709,67 +822,136 @@ window.workbenchApp = function () {
       queue_id: 'REV-bb9fab5c4ff9', conference_id: 'CRA2026-WINTER', review_status: 'approved', tier_code: 'B',
       field_id: 'rheumatology', conference_name: '中国医师协会风湿免疫科医师分会 2026 自身免疫青年学者高峰论坛',
       abbreviation: 'CARIP 自免青年高峰论坛', start_date: '2026-12-19', end_date: '2026-12-21', city: '武汉',
+      venue: '武汉·洲际酒店国际会议中心',
+      contacts: '中国医师协会风湿免疫科医师分会学术组 (carip2026.cnconf.com)',
       source_anchor: 'O02 中国医师协会风湿免疫科医师分会 (carip2026.cnconf.com)',
       schedule_published: false, topic_scrape_status: 'pending', pi_scrape_status: 'pending',
       official_url: 'https://carip2026.cnconf.com/msite/main/cn',
+      schedule_url: 'https://carip2026.cnconf.com/msite/main/cn',
+      schedule_status_note: '待出详细日程：已发布第一轮会议通知与青年征文启事，详细讲者日程待官方公布。',
+      source_links: [
+        { label: '🌐 会议微站通知页 (cnconf)', url: 'https://carip2026.cnconf.com/msite/main/cn', type: 'official' }
+      ],
       report_count: 0,
       review_note: '【已入库 · 待出详细日程】已发布第一轮会议通知与青年征文启事，详细讲者日程待官方公布。',
       topics: '系统性血管炎与结缔组织病相关间质性肺病(CTD-ILD)单细胞免疫图谱与生物标志物',
       cut_in: '青年风湿学者国自然申报需求极强，待日程发布后抓取青年委员名单定向推送单细胞免疫组库方案。'
     },
-    // Pending Audit Queue Items (Stage 1: 来源与审核)
+    // Pending Audit Queue Items (Stage 1: 来源与审核 — All with authentic source & schedule links from CSV!)
     {
       queue_id: 'ref-20261123-016', conference_id: 'CONF-2026-016', review_status: 'pending', tier_code: 'B',
       field_id: 'respiratory', conference_name: '2026（第九届）多组学研究与应用前沿论坛暨多组学整合与系统生物学前沿大会',
       abbreviation: '2026多组学前沿大会', start_date: '2026-11-27', end_date: '2026-11-28', city: '上海',
-      source_anchor: 'C05 生物谷 / SAGE学术会议锚点',
+      venue: '上海（300人规模，生物谷主办、SAGE出版社合作）',
+      contacts: '生物谷会务组；报名与日程主页 https://hy.bioon.com/2026-SC/intro',
+      source_anchor: 'C05 生物谷 / SAGE学术会议锚点 (hy.bioon.com)',
       schedule_published: true,
-      official_url: 'https://cma.org.cn/meeting/conf_2026_016',
-      review_note: '【重点关注 · B级】生物谷主办、SAGE出版社合作，已附带完整四大学术论坛日程（单细胞技术、空间组学、AI与多组学整合、临床转化），13位讲者来自北大、复旦、交大、同济、浙大。审核通过后可直接抓取日程议题与讲者PI。'
+      official_url: 'https://hy.bioon.com/2026-SC/intro',
+      schedule_url: 'https://hy.bioon.com/2026-SC/intro',
+      schedule_status_note: '部分获取：已读单细胞技术、空间组学、AI与多组学整合、临床转化四大论坛议题，13位讲者来自北大、复旦、交大、同济、浙大、西湖大学、中科院。',
+      source_links: [
+        { label: '📅 生物谷会议与日程主页', url: 'https://hy.bioon.com/2026-SC/intro', type: 'schedule' },
+        { label: '📰 腾讯网会议专题报道', url: 'https://new.qq.com/rain/a/20260922A0A0AV00', type: 'notice' }
+      ],
+      review_note: '【重点关注 · B级】生物谷主办、SAGE出版社合作，已附带四大学术论坛日程（单细胞技术、空间组学、AI与多组学整合、临床转化），13位讲者来自北大、复旦、交大、同济、浙大。审核通过后可直接抓取日程议题与讲者PI。'
     },
     {
       queue_id: 'ref-20261123-006', conference_id: 'CONF-2026-006', review_status: 'pending', tier_code: 'C',
       field_id: 'rheumatology', conference_name: '2026 自身免疫与精准诊疗大会（IAPMC 2026）',
       abbreviation: 'IAPMC 2026', start_date: '2026-11-27', end_date: '2026-11-28', city: '上海',
-      source_anchor: 'C04 精准医学会务发布锚点',
+      venue: '上海·龙之梦大酒店',
+      contacts: '会议合作 赵冰 15121120017、顾佳敏 18217132205；展位广告 葛婷婷 13816719691',
+      source_anchor: 'C04 全国体外诊断网锚点 (caivd-org.cn)',
       schedule_published: true,
-      official_url: 'https://cma.org.cn/meeting/conf_2026_006',
-      review_note: '【常规关注 · C级】主题「从标志物到算法：重构自身免疫诊疗新范式」，已发布1个主会场与6个分会场日程。上海举办且免注册费，属地销售触达成本低。'
+      official_url: 'https://caivd-org.cn/article.asp?id=19352',
+      schedule_url: 'https://caivd-org.cn/article.asp?id=19431',
+      schedule_status_note: '部分获取：已取得主会场与 6 个分会场议程一览（检测技术、指南共识、临床疾病、肿瘤相关自身抗体）。',
+      source_links: [
+        { label: '📅 大会议程一览 (caivd)', url: 'https://caivd-org.cn/article.asp?id=19431', type: 'schedule' },
+        { label: '📄 首轮官方通知', url: 'https://caivd-org.cn/article.asp?id=19352', type: 'notice' }
+      ],
+      review_note: '【常规关注 · C级】主题「从标志物到算法：重构自身免疫诊疗新范式」，已发布1个主会场与6个分会场议程。上海龙之梦大酒店举办且免注册费，属地销售触达成本低。'
     },
     {
       queue_id: 'ref-20261123-009', conference_id: 'CONF-2026-009', review_status: 'pending', tier_code: 'C',
       field_id: 'vascular', conference_name: '中国微循环学会周围血管疾病专委会 2026 年学术年会暨第十三届微循环血管医学发展大会（2026MEC）',
       abbreviation: '2026MEC 微循环大会', start_date: '2026-11-27', end_date: '2026-11-28', city: '北京',
-      source_anchor: 'O18 中国微循环学会官方微官网',
+      venue: '北京·国际会议中心',
+      contacts: '承办 首都医科大学附属北京朝阳医院血管外科（詹启敏院士名誉主席、郑曰宏大会主席）',
+      source_anchor: 'O18 365医学网 / 中国微循环学会通知锚点',
       schedule_published: true,
-      official_url: 'https://cma.org.cn/meeting/conf_2026_009',
-      review_note: '【常规关注 · C级】中国微循环学会主办，詹启敏院士任名誉主席、郑曰宏任大会主席。已发布大家讲堂与血管医学基础研究专场日程，北京举办。'
+      official_url: 'https://jsp.365heart.com/detail/3AD04380-BAC3-4E08-BEBF-E496F83C89E6',
+      schedule_url: 'https://jsp.365heart.com/detail/3AD04380-BAC3-4E08-BEBF-E496F83C89E6',
+      schedule_status_note: '部分获取：已读 365 医学网官方邀请函、组织机构及大家讲堂/医工结合专场设置。',
+      source_links: [
+        { label: '📅 365医学网通知与专场日程', url: 'https://jsp.365heart.com/detail/3AD04380-BAC3-4E08-BEBF-E496F83C89E6', type: 'schedule' }
+      ],
+      review_note: '【常规关注 · C级】中国微循环学会主办、朝阳医院血管外科承办，詹启敏院士任名誉主席、郑曰宏任大会主席。设大家讲堂与血管医学基础研究、医工结合专场，北京国际会议中心举办。'
     },
     {
       queue_id: 'ref-20261123-007', conference_id: 'CONF-2026-007', review_status: 'pending', tier_code: 'C',
       field_id: 'cardiovascular', conference_name: '2026 江苏省医师协会高血压专委会年会',
       abbreviation: '江苏高血压年会', start_date: '2026-11-27', end_date: '2026-11-28', city: '南京',
-      source_anchor: 'O15 江苏省医师协会官网通知',
+      venue: '南京·钟山宾馆（玄武区中山东路 307 号）',
+      contacts: '江苏省医师协会 高世祺 19941647927；江苏省人民医院 袁悦 17368475086；住宿 张珍珍 13951660857',
+      source_anchor: 'O15 江苏省医师协会官网红头文件 PDF',
       schedule_published: false,
-      official_url: 'https://cma.org.cn/meeting/conf_2026_007',
-      review_note: '【常规关注 · C级】江苏省医师协会主办、江苏省人民医院承办。目前仅发布第一轮通知，尚未公布详细讲题日程。'
+      official_url: 'http://www.jsmda.org/media/upload/2026/10/21/202682-2026.pdf',
+      schedule_url: 'http://www.jsmda.org/media/upload/2026/10/21/202682-2026.pdf',
+      schedule_status_note: '部分获取：苏医协学〔2026〕82号红头文件含会期、钟山宾馆会场及联系人，具体讲题日程待公布。',
+      source_links: [
+        { label: '📄 官方红头文件通知 PDF (jsmda)', url: 'http://www.jsmda.org/media/upload/2026/10/21/202682-2026.pdf', type: 'notice' }
+      ],
+      review_note: '【常规关注 · C级】江苏省医师协会主办、江苏省人民医院承办（苏医协学〔2026〕82号）。免注册费，南京钟山宾馆举办，目前仅发布PDF通知，尚未公布详细讲题日程。'
     },
     {
       queue_id: 'ref-20261123-008', conference_id: 'CONF-2026-008', review_status: 'pending', tier_code: 'C',
       field_id: 'cardiovascular', conference_name: '航天 2026 心血管病年会暨第五届糖尿病心力衰竭综合管理新进展培训',
       abbreviation: '航天心血管病年会', start_date: '2026-11-27', end_date: '2026-11-28', city: '北京',
-      source_anchor: 'C02 中华医学会北京分会继续教育锚点',
+      venue: '北京（航天中心医院心脏医学部主办）',
+      contacts: '航天中心医院心脏医学部（大会主席 丁春华）',
+      source_anchor: 'C02 严道医声网 / 365医学网心血管锚点',
+      schedule_published: false,
+      official_url: 'https://drvoice.cn/v2/meeting/2109',
+      schedule_url: 'https://drvoice.cn/v2/meeting/2109',
+      schedule_status_note: '尚未公布详细日程：已查严道医声网与 365 医学网会议条目，取得会期、地点与大会主席丁春华信息。',
+      source_links: [
+        { label: '🌐 严道医声网会议条目 (#2109)', url: 'https://drvoice.cn/v2/meeting/2109', type: 'official' },
+        { label: '📅 365医学网学术年历', url: 'https://jsp.365heart.com/meeting/calendar/month', type: 'schedule' }
+      ],
+      review_note: '【常规关注 · C级】航天中心医院主办，大会主席丁春华。与第五届糖尿病心力衰竭综合管理培训同期举办，涉及代谢性心血管病与心衰标志物。'
+    },
+    {
+      queue_id: 'ref-20261123-015', conference_id: 'CONF-2026-015', review_status: 'pending', tier_code: 'D',
+      field_id: 'neurology', conference_name: '2026 中国康复医学会综合学术年会暨康复医疗产业博览会（含帕金森康复分论坛）',
+      abbreviation: '中国康复医学会年会', start_date: '2026-11-27', end_date: '2026-11-29', city: '杭州',
+      venue: '杭州·国际博览中心（萧山区奔竞大道 353 号 401会议室）',
+      contacts: '大会微站 https://caac2026.sciconf.cn',
+      source_anchor: 'O19 中国康复医学会官网 & 美迪康微站',
       schedule_published: true,
-      official_url: 'https://cma.org.cn/meeting/conf_2026_008',
-      review_note: '【常规关注 · C级】航天中心医院主办，大会主席丁春华。与糖尿病心衰综合管理培训同期举办，心血管与内分泌代谢交叉。'
+      official_url: 'https://caac2026.sciconf.cn',
+      schedule_url: 'https://www.carm.org.cn/kyxs/zhxsnh/2026zhxsnh/art/2026/art_9c304c406df04b92b4fedc7b51d95394.html',
+      schedule_status_note: '部分获取：已读帕金森病与运动障碍康复分论坛时间（11-28 19:30-21:40，401会议室）。',
+      source_links: [
+        { label: '🌐 大会微站 (caac2026.sciconf.cn)', url: 'https://caac2026.sciconf.cn', type: 'official' },
+        { label: '📄 中国康复医学会官方通知', url: 'https://www.carm.org.cn/kyxs/zhxsnh/2026zhxsnh/art/2026/art_9c304c406df04b92b4fedc7b51d95394.html', type: 'notice' }
+      ],
+      review_note: '【低优先级 · D级】主线为康复路径与康复技术，虽设帕金森病与运动障碍康复分论坛（11-28 19:30，401会议室），但体量小且以康复干预为主，按既定口径定低优先级。'
     },
     {
       queue_id: 'ref-20261123-011', conference_id: 'CONF-2026-011', review_status: 'pending', tier_code: 'D',
       field_id: 'cardiovascular', conference_name: '第十八届左主干暨冠状动脉分叉病变会议（CBS 2026）',
       abbreviation: 'CBS 2026', start_date: '2026-11-27', end_date: '2026-11-29', city: '南京',
-      source_anchor: 'S21 心血管介入专科会议锚点',
-      schedule_published: true,
-      official_url: 'https://cma.org.cn/meeting/conf_2026_011',
+      venue: '南京（大会主席 陈绍良 · 南京市第一医院）',
+      contacts: '大会主席 陈绍良（南京市第一医院）',
+      source_anchor: 'S21 严道医声网心血管介入会议列表',
+      schedule_published: false,
+      official_url: 'https://www.drvoice.cn/v2/meetings?page=3',
+      schedule_url: 'https://www.drvoice.cn/v2/meetings?page=3',
+      schedule_status_note: '仅取得会议条目与大会主席陈绍良信息，属PCI手术操作演示类。',
+      source_links: [
+        { label: '🌐 严道医声网会议列表', url: 'https://www.drvoice.cn/v2/meetings?page=3', type: 'official' }
+      ],
       review_note: '【低优先级 · D级】以左主干与分叉病变介入手术技术演示为核心，属手术操作策略类，按既定口径定低优先级（审核通过后建议选择“忽略抓取”）。'
     }
   ];
@@ -784,6 +966,11 @@ window.workbenchApp = function () {
       const dateStr = item.end_date && item.end_date !== item.start_date
         ? `${item.start_date} ~ ${item.end_date}`
         : (item.start_date || '2026-11');
+      const sourceLinks = Array.isArray(item.source_links) && item.source_links.length
+        ? item.source_links
+        : (item.official_url && item.official_url !== '#'
+          ? [{ label: '🌐 官方会议链接', url: item.official_url, type: 'official' }]
+          : []);
 
       if (item.review_status === 'approved') {
         const defaultSpeakers = item.speakers || piList.filter(p => p.domain === domainName).slice(0, 2).map(p => ({
@@ -804,18 +991,23 @@ window.workbenchApp = function () {
           updatedDate: '2026-11-23',
           date: dateStr,
           city: item.city || '国内',
+          venue: item.venue || item.city || '国内会场',
+          contacts: item.contacts || '大会组委会秘书处',
           domain: domainName,
           tierCode: tCode,
           tierBadge: getTierBadgeText(tCode),
           tierBasis: item.review_note || '经市场部人工复核定级入库。',
           sourceAnchor: item.source_anchor || '59个官方学术监控锚点',
           schedulePublished: item.schedule_published !== false,
+          scheduleStatusNote: item.schedule_status_note || (item.schedule_published !== false ? '已获取官方日程' : '待官方发布详细日程'),
           topicScrapeStatus: item.topic_scrape_status || (item.schedule_published !== false ? 'pending' : 'waiting'),
           piScrapeStatus: item.pi_scrape_status || 'pending',
           reportCount: item.report_count || 18,
           topics: item.topics || `${domainName}前沿多组学临床转化、液体活检与分子分型标志物研究`,
           cutIn: item.cut_in || `围绕本次${domainName}重点学术会议，建议提前锁定参会讲者PI，推介吉因加临床队列多组学验证(T10)与单细胞/转录组测序(T03)服务。`,
           officialUrl: item.official_url || '#',
+          scheduleUrl: item.schedule_url || item.official_url || '#',
+          sourceLinks,
           viewUrl: item.view_url || '#',
           speakers: defaultSpeakers
         });
@@ -827,11 +1019,17 @@ window.workbenchApp = function () {
           abbreviation: item.abbreviation || item.conference_name.slice(0, 14),
           date: dateStr,
           city: item.city || '待定',
+          venue: item.venue || item.city || '会场待确认',
+          contacts: item.contacts || '会务组联系方式见通知原文',
           domain: domainName,
           fieldId: item.field_id || 'diabetes',
           tierCode: tCode,
           sourceAnchor: item.source_anchor || '中华医学会/微官网监控锚点',
           schedulePublished: Boolean(item.schedule_published),
+          scheduleStatusNote: item.schedule_status_note || (item.schedule_published ? '已附带官方日程链接' : '仅发布通知，详细日程待出'),
+          officialUrl: item.official_url || '#',
+          scheduleUrl: item.schedule_url || item.official_url || '#',
+          sourceLinks,
           summary: item.review_note || '待市场部复核会议学术层级与临床科研转化价值。'
         });
       }
@@ -1475,18 +1673,23 @@ window.workbenchApp = function () {
           updatedDate: '2026-11-24',
           date: item.date,
           city: item.city,
+          venue: item.venue || item.city || '国内会场',
+          contacts: item.contacts || '大会会务组',
           domain: item.domain,
           tierCode: tCode,
           tierBadge: getTierBadgeText(tCode),
           tierBasis: item.summary,
           sourceAnchor: item.sourceAnchor || '学会微官网监控锚点',
           schedulePublished: hasSchedule,
+          scheduleStatusNote: item.scheduleStatusNote || (hasSchedule ? '已获取官方日程' : '待官方发布详细日程'),
           topicScrapeStatus: hasSchedule ? 'pending' : 'waiting',
           piScrapeStatus: 'pending',
           reportCount: hasSchedule ? 26 : 0,
           topics: `${item.domain}前沿多组学转化、临床队列液体活检与分子分型标志物研究`,
           cutIn: `会议经市场部核定为【${getTierBadgeText(tCode)}】，建议联动属地销售围绕参会讲者PI推进临床队列多组学验证(T10)与单细胞/转录组(T03)合作。`,
-          officialUrl: '#',
+          officialUrl: item.officialUrl || '#',
+          scheduleUrl: item.scheduleUrl || item.officialUrl || '#',
+          sourceLinks: item.sourceLinks || [],
           viewUrl: '#',
           speakers: domainPIs.map(p => ({
             name: p.name + ' 教授',
@@ -1874,13 +2077,50 @@ window.workbenchApp = function () {
       this.showAssignModal = true;
     },
     confirmTaskAssign() {
+      let repId = 'sales_east_zhang';
+      if (this.assignedRep.includes('李娜') || this.assignedRep.includes('华北')) repId = 'sales_north_li';
+      else if (this.assignedRep.includes('王强') || this.assignedRep.includes('华南')) repId = 'sales_south_wang';
+
       if (this.assignTargetPI) {
         this.assignTargetPI.assignee = this.assignedRep;
         this.assignTargetPI.taskStatus = '跟进中';
         this.assignTargetPI.starred = true;
       }
+
+      // Sync newly assigned Battle Card to 销售工作台.html (clinical-workbench:battle-cards:v2)
+      const pi = this.assignTargetPI;
+      const cards = readStore('clinical-workbench:battle-cards:v2', []);
+      cards.unshift({
+        id: 'BC-ASSIGN-' + Date.now(),
+        repId,
+        piName: pi ? pi.name : this.targetTaskTitle.split('·').pop().replace(/拜访|临床课题/g, '').trim(),
+        hospital: pi ? pi.hospital : '重点合作三甲医院',
+        domain: pi ? pi.domain : (this.selectedDomain === '全部' ? '糖尿病与代谢' : this.selectedDomain),
+        roleLabel: pi ? pi.roleLabel : '重点学术讲者 / PI',
+        scoreBadge: pi ? pi.scoreBadge : '🔥 市场部重点指派',
+        matchScore: 95,
+        status: 'assigned',
+        dueDate: this.assignDueDate || '2026-12-05',
+        title: `【市场指派作战卡】${this.targetTaskTitle}`,
+        breakIceScript: this.assignNote,
+        painPoint: '临床转化队列亟需多组学高通量筛选与6Dmarker生信建模支撑高分成果发表。',
+        reason: `市场部根据最新会议热点与PI四维评分定向指派（指派给：${this.assignedRep}）。`,
+        participation: this.assignNote,
+        conditions: '首次拜访请摸清：1) 科室在研队列样本类型与冻存例数；2) 近期国自然/省部级课题检测计划。',
+        capabilities: (pi && pi.capabilities && pi.capabilities.length) ? pi.capabilities : ['T10 临床队列多组学验证', 'T03 单细胞/转录组'],
+        dimensions: (pi && pi.dimensions) ? pi.dimensions : [
+          { name: '研究方向契合度', maximum: 30, score: 28 },
+          { name: '学术产出质量',   maximum: 25, score: null },
+          { name: '科研转化潜力',   maximum: 25, score: null },
+          { name: '平台资源禀赋',   maximum: 20, score: null }
+        ],
+        talkEvidence: pi ? pi.research : this.targetTaskTitle,
+        qualityRating: ''
+      });
+      writeStore('clinical-workbench:battle-cards:v2', cards);
+
       this.showAssignModal = false;
-      this.showToast(`作战任务已派发给【${this.assignedRep}】，附带吉因加定制破冰话术！`, 'success');
+      this.showToast(`作战任务已派发给【${this.assignedRep}】，已同步至【销售代表工作台】！`, 'success');
     },
 
     showUploadModal: false,

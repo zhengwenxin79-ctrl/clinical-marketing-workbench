@@ -101,6 +101,12 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
             </svg>
           </div>
+
+          <a href="销售工作台.html"
+             class="px-4 py-2 bg-slate-900 hover:bg-blue-600 text-white rounded-xl text-sm font-bold shadow-xs transition-all flex items-center gap-1.5">
+            <span>🏃 销售代表工作台</span>
+            <span>&nearr;</span>
+          </a>
         </div>
       </div>
     </header>
@@ -377,6 +383,11 @@
           </svg>
           <button x-show="searchQuery" @click="searchQuery = ''" class="absolute right-2.5 top-2 text-slate-400 hover:text-slate-600 text-sm">✕</button>
         </div>
+        <a href="销售工作台.html"
+           class="px-3.5 py-2 bg-slate-900 hover:bg-blue-600 text-white rounded-xl text-xs font-bold transition-all shrink-0 hidden sm:flex items-center gap-1">
+          <span>🏃 销售代表台</span>
+          <span>&nearr;</span>
+        </a>
       </div>
     </header>
 
@@ -581,11 +592,24 @@
                     </div>
 
                     <h4 class="font-bold text-slate-900 text-lg mb-2 leading-snug" x-text="item.title"></h4>
-                    <p class="text-sm text-slate-500 mb-3 flex items-center gap-4">
+                    <p class="text-sm text-slate-500 mb-3 flex flex-wrap items-center gap-4">
                       <span>📅 <span x-text="item.date"></span></span>
-                      <span>📍 <span x-text="item.city"></span></span>
+                      <span>📍 <span x-text="item.venue || item.city"></span></span>
                     </p>
-                    <p class="text-sm text-slate-600 bg-slate-50 p-3.5 rounded-xl border border-slate-100 line-clamp-2" x-text="item.summary"></p>
+                    <p class="text-sm text-slate-600 bg-slate-50 p-3.5 rounded-xl border border-slate-100 line-clamp-2 mb-3" x-text="item.summary"></p>
+
+                    <!-- Direct Clickable Source & Schedule Links from Gold-Standard Excel/CSV -->
+                    <div x-show="item.sourceLinks && item.sourceLinks.length" class="flex flex-wrap items-center gap-2">
+                      <span class="text-xs font-bold text-slate-400">🔗 会议来源与日程链接：</span>
+                      <template x-for="lnk in item.sourceLinks" :key="lnk.url">
+                        <a :href="lnk.url" target="_blank" rel="noopener"
+                           class="inline-flex items-center gap-1 px-3 py-1 rounded-lg text-xs font-bold border transition-all"
+                           :class="lnk.type === 'schedule' ? 'bg-blue-50 text-blue-700 border-blue-200 hover:bg-blue-600 hover:text-white' : 'bg-slate-100 text-slate-700 border-slate-200 hover:bg-slate-800 hover:text-white'">
+                          <span x-text="lnk.label"></span>
+                          <span>&nearr;</span>
+                        </a>
+                      </template>
+                    </div>
                   </div>
 
                   <div class="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
@@ -666,9 +690,21 @@
                       <span class="text-xs text-slate-400" x-text="'📅 ' + item.date + ' · ' + item.city"></span>
                     </div>
 
-                    <h4 class="font-bold text-slate-900 text-lg mb-3 hover:text-blue-600 cursor-pointer leading-snug"
+                    <h4 class="font-bold text-slate-900 text-lg mb-2.5 hover:text-blue-600 cursor-pointer leading-snug"
                         @click="openConferenceDetail(item)"
                         x-text="item.title"></h4>
+
+                    <!-- Direct Clickable Schedule & Source Links Bar -->
+                    <div x-show="item.sourceLinks && item.sourceLinks.length" class="flex flex-wrap items-center gap-2 mb-3.5">
+                      <template x-for="lnk in item.sourceLinks" :key="lnk.url">
+                        <a :href="lnk.url" target="_blank" rel="noopener"
+                           class="inline-flex items-center gap-1 px-3 py-1 rounded-lg text-xs font-bold border transition-all"
+                           :class="lnk.type === 'schedule' ? 'bg-blue-50 text-blue-700 border-blue-200 hover:bg-blue-600 hover:text-white' : 'bg-slate-100 text-slate-700 border-slate-200 hover:bg-slate-800 hover:text-white'">
+                          <span x-text="lnk.label"></span>
+                          <span>&nearr;</span>
+                        </a>
+                      </template>
+                    </div>
 
                     <!-- STATE 1: 提醒抓取日程议题 -->
                     <div x-show="item.topicScrapeStatus === 'pending'"
@@ -755,13 +791,27 @@
                       </span>
                     </div>
 
-                    <h4 class="font-bold text-slate-900 text-lg mb-2" x-text="item.title"></h4>
-                    <p class="text-sm text-slate-500 mb-3" x-text="'📅 ' + item.date + ' · 📍 ' + item.city"></p>
+                    <h4 class="font-bold text-slate-900 text-lg mb-2 hover:text-blue-600 cursor-pointer"
+                        @click="openConferenceDetail(item)"
+                        x-text="item.title"></h4>
+                    <p class="text-sm text-slate-500 mb-2.5" x-text="'📅 ' + item.date + ' · 📍 ' + (item.venue || item.city)"></p>
+
+                    <!-- Direct Clickable Notice / Micro-site Links for Unpublished Schedule Conferences -->
+                    <div x-show="item.sourceLinks && item.sourceLinks.length" class="flex flex-wrap items-center gap-2 mb-3">
+                      <template x-for="lnk in item.sourceLinks" :key="lnk.url">
+                        <a :href="lnk.url" target="_blank" rel="noopener"
+                           class="inline-flex items-center gap-1 px-3 py-1 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 border border-slate-200 hover:bg-slate-800 hover:text-white transition-all">
+                          <span x-text="lnk.label"></span>
+                          <span>&nearr;</span>
+                        </a>
+                      </template>
+                    </div>
+
                     <p class="text-sm text-slate-600 bg-slate-50 p-3.5 rounded-xl border border-slate-100 line-clamp-2" x-text="item.tierBasis"></p>
                   </div>
 
-                  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-                    <span class="text-xs text-slate-400">监控锚点自动追踪日程发布</span>
+                  <div class="pt-4 border-t border-slate-100 flex items-center justify-between gap-2">
+                    <span class="text-xs text-slate-400 truncate max-w-xs" x-text="'📡 ' + item.sourceAnchor"></span>
                     <button @click="simulateSchedulePublished(item)"
                             class="px-4 py-2 bg-amber-500 hover:bg-amber-600 text-white rounded-xl text-sm font-bold shadow-xs transition-all">
                       🔔 模拟官方刚发布日程
@@ -1449,7 +1499,20 @@
                           x-text="conf.tierBadge"></span>
                     <span class="text-sm text-slate-500" x-text="'📅 ' + conf.date + ' · 📍 ' + conf.city"></span>
                   </div>
-                  <h3 class="font-bold text-slate-900 text-xl" x-text="conf.title"></h3>
+                  <h3 class="font-bold text-slate-900 text-xl hover:text-blue-600 cursor-pointer"
+                      @click="openConferenceDetail(conf)"
+                      x-text="conf.title"></h3>
+                  <!-- Clickable Schedule & Official Links in Module 3 Task Dispatch -->
+                  <div x-show="conf.sourceLinks && conf.sourceLinks.length" class="flex flex-wrap items-center gap-2 mt-2.5">
+                    <template x-for="lnk in conf.sourceLinks" :key="lnk.url">
+                      <a :href="lnk.url" target="_blank" rel="noopener"
+                         class="inline-flex items-center gap-1 px-3 py-1 rounded-lg text-xs font-bold border transition-all"
+                         :class="lnk.type === 'schedule' ? 'bg-blue-50 text-blue-700 border-blue-200 hover:bg-blue-600 hover:text-white' : 'bg-slate-100 text-slate-700 border-slate-200 hover:bg-slate-800 hover:text-white'">
+                        <span x-text="lnk.label"></span>
+                        <span>&nearr;</span>
+                      </a>
+                    </template>
+                  </div>
                 </div>
                 <button @click="openAssignModal(conf.title, conf.cutIn)"
                         class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-sm font-bold shadow-xs transition-all self-start md:self-auto shrink-0">
@@ -1739,9 +1802,45 @@
           </div>
 
           <h2 class="text-2xl font-bold text-slate-900 mt-3 leading-snug" x-text="selectedConf.title"></h2>
-          <p class="text-sm text-slate-500 mt-1" x-text="'📅 ' + selectedConf.date + ' · 📍 ' + selectedConf.city"></p>
+          <p class="text-sm text-slate-500 mt-1" x-text="'📅 ' + selectedConf.date + ' · 📍 ' + (selectedConf.venue || selectedConf.city)"></p>
 
           <div class="pt-4 border-t border-slate-100 space-y-4 mt-4 text-sm">
+            <!-- Section 0: 会议来源、日程链接与会务信息 (From 06_官方评级金标准参考_20261123周度.csv) -->
+            <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200 space-y-3">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <h4 class="font-bold text-slate-900 text-base">📡 会议来源、日程链接与会务详情</h4>
+                <span class="text-xs font-bold px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-slate-700"
+                      x-text="selectedConf.sourceAnchor"></span>
+              </div>
+
+              <!-- Clickable Source & Schedule Buttons -->
+              <div x-show="selectedConf.sourceLinks && selectedConf.sourceLinks.length" class="flex flex-wrap gap-2.5">
+                <template x-for="lnk in selectedConf.sourceLinks" :key="lnk.url">
+                  <a :href="lnk.url" target="_blank" rel="noopener"
+                     class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-sm font-bold border shadow-2xs transition-all"
+                     :class="lnk.type === 'schedule' ? 'bg-blue-600 text-white border-blue-600 hover:bg-blue-700' : 'bg-white text-slate-800 border-slate-300 hover:border-blue-500 hover:text-blue-600'">
+                    <span x-text="lnk.label"></span>
+                    <span>&nearr;</span>
+                  </a>
+                </template>
+              </div>
+
+              <div class="grid grid-cols-1 gap-2 pt-1 text-sm text-slate-700">
+                <div x-show="selectedConf.scheduleStatusNote" class="bg-white p-3 rounded-xl border border-slate-200/80">
+                  <span class="font-bold text-slate-900">🗓️ 日程获取状态：</span>
+                  <span x-text="selectedConf.scheduleStatusNote"></span>
+                </div>
+                <div x-show="selectedConf.venue" class="bg-white p-3 rounded-xl border border-slate-200/80">
+                  <span class="font-bold text-slate-900">📍 具体会议场馆：</span>
+                  <span x-text="selectedConf.venue"></span>
+                </div>
+                <div x-show="selectedConf.contacts" class="bg-white p-3 rounded-xl border border-slate-200/80">
+                  <span class="font-bold text-slate-900">☎️ 注册/参展/会务联系人：</span>
+                  <span x-text="selectedConf.contacts"></span>
+                </div>
+              </div>
+            </div>
+
             <div>
               <h4 class="font-bold text-slate-800 mb-1">📋 四级评估定级依据</h4>
               <p class="text-slate-700 bg-slate-50 p-3.5 rounded-xl border border-slate-200/80" x-text="selectedConf.tierBasis"></p>
