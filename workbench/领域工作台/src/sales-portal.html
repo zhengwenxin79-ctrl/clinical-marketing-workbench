@@ -3,32 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>销售代表作战工作台 · 吉因加临床科研智能营销</title>
+  <title>销售代表工作台 · 吉因加临床科研营销</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", sans-serif;
-      background-color: #f1f5f9;
+      background-color: #f8fafc;
       font-size: 15px;
       line-height: 1.6;
     }
     [x-cloak] { display: none !important; }
-    ::-webkit-scrollbar { width: 8px; height: 8px; }
-    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
     ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-    ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
   </style>
 </head>
-<body class="text-slate-800 antialiased min-h-screen bg-slate-100/80 selection:bg-blue-600 selection:text-white"
+<body class="text-slate-800 antialiased min-h-screen bg-slate-50 selection:bg-blue-600 selection:text-white"
       x-data="salesPortalApp()">
 
   <!-- Toast Container -->
-  <div class="fixed top-5 right-5 z-50 flex flex-col gap-2.5 pointer-events-none" x-cloak>
+  <div class="fixed top-5 right-5 z-50 flex flex-col gap-2 pointer-events-none" x-cloak>
     <template x-for="toast in toasts" :key="toast.id">
-      <div class="pointer-events-auto px-5 py-3.5 rounded-xl shadow-xl text-sm font-bold flex items-center gap-2.5 transition-all"
+      <div class="pointer-events-auto px-5 py-3 rounded-xl shadow-lg text-sm font-bold flex items-center gap-2 transition-all"
            :class="{
-             'bg-emerald-600 text-white': toast.type === 'success',
-             'bg-blue-600 text-white': toast.type === 'info',
+             'bg-slate-900 text-white': toast.type === 'success' || toast.type === 'info',
              'bg-amber-600 text-white': toast.type === 'warning',
              'bg-rose-600 text-white': toast.type === 'error'
            }">
@@ -38,334 +36,274 @@
   </div>
 
   <!-- ========================================== -->
-  <!-- TOP HEADER: SALES IDENTITY & TERRITORY     -->
+  <!-- CLEAN SINGLE TOP BAR (All-in-One Nav)      -->
   <!-- ========================================== -->
-  <header class="bg-slate-900 text-white px-6 py-4 shadow-md sticky top-0 z-40">
-    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
-      <div class="flex items-center gap-3.5">
-        <div class="w-11 h-11 rounded-xl bg-blue-600 text-white font-extrabold flex items-center justify-center text-xl shadow-md">
+  <header class="bg-white border-b border-slate-200 px-6 h-16 sticky top-0 z-40 flex items-center justify-between">
+    <div class="flex items-center gap-6">
+      <!-- Brand -->
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-blue-600 text-white font-bold flex items-center justify-center text-base shadow-xs">
           销
         </div>
-        <div>
-          <div class="flex items-center gap-2.5">
-            <h1 class="font-bold text-white text-xl tracking-tight">销售代表作战工作台</h1>
-            <span class="px-2.5 py-0.5 bg-blue-500/20 text-blue-300 border border-blue-400/30 rounded-full text-xs font-bold">一线拜访与客情攻坚</span>
-          </div>
-          <p class="text-xs text-slate-400 mt-0.5" x-text="'当前管辖战区：' + currentRep.territoryDesc"></p>
-        </div>
+        <span class="font-bold text-slate-900 text-lg tracking-tight">销售代表工作台</span>
       </div>
 
-      <div class="flex items-center gap-3 flex-wrap">
-        <!-- Sales Representative Identity Switcher -->
-        <div class="flex items-center gap-2 bg-slate-800 px-3.5 py-2 rounded-xl border border-slate-700 text-sm">
-          <span class="text-slate-400">👤 当前销售代表:</span>
-          <select x-model="currentRepId" @change="onRepChange()" class="bg-transparent font-bold text-white focus:outline-none cursor-pointer">
-            <template x-for="rep in reps" :key="rep.id">
-              <option :value="rep.id" class="text-slate-900" x-text="rep.label"></option>
-            </template>
-          </select>
-        </div>
+      <!-- 3 Clean Primary Tabs -->
+      <nav class="flex items-center gap-1.5 bg-slate-100 p-1.5 rounded-xl">
+        <button @click="activeTab = 'cards'"
+                :class="activeTab === 'cards' ? 'bg-white text-blue-600 shadow-xs font-bold' : 'text-slate-600 hover:text-slate-900 font-medium'"
+                class="px-4 py-1.5 rounded-lg text-sm transition-all flex items-center gap-2">
+          <span>🎯 商机作战卡</span>
+          <span class="px-2 py-0.2 rounded-full text-xs"
+                :class="activeTab === 'cards' ? 'bg-blue-50 text-blue-600 font-bold' : 'bg-slate-200 text-slate-600'"
+                x-text="myBattleCards.length"></span>
+        </button>
 
-        <!-- Global Search -->
-        <div class="relative w-56 sm:w-64">
-          <input type="text"
-                 x-model="searchQuery"
-                 placeholder="搜索PI姓名、医院、讲题..."
-                 class="w-full pl-9 pr-4 py-2 bg-slate-800 border border-slate-700 rounded-xl text-sm text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
-          <svg class="w-4 h-4 text-slate-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-          </svg>
-        </div>
+        <button @click="activeTab = 'territory'"
+                :class="activeTab === 'territory' ? 'bg-white text-blue-600 shadow-xs font-bold' : 'text-slate-600 hover:text-slate-900 font-medium'"
+                class="px-4 py-1.5 rounded-lg text-sm transition-all flex items-center gap-2">
+          <span>📍 本战区 PI 库</span>
+          <span class="px-2 py-0.2 rounded-full text-xs"
+                :class="activeTab === 'territory' ? 'bg-blue-50 text-blue-600 font-bold' : 'bg-slate-200 text-slate-600'"
+                x-text="myTerritoryPIs.length"></span>
+        </button>
 
-        <!-- Switch back to Market 2x2 Main Workbench -->
-        <a href="index.html"
-           class="px-4 py-2 bg-white/10 hover:bg-white/20 text-white border border-white/15 rounded-xl text-sm font-bold transition-all flex items-center gap-1.5">
-          <span>🏢 市场部 2×2 主工作台</span>
-          <span>&nearr;</span>
-        </a>
+        <button @click="activeTab = 'feedback'"
+                :class="activeTab === 'feedback' ? 'bg-white text-blue-600 shadow-xs font-bold' : 'text-slate-600 hover:text-slate-900 font-medium'"
+                class="px-4 py-1.5 rounded-lg text-sm transition-all flex items-center gap-2">
+          <span>📝 拜访日报</span>
+          <span class="px-2 py-0.2 rounded-full text-xs"
+                :class="activeTab === 'feedback' ? 'bg-blue-50 text-blue-600 font-bold' : 'bg-slate-200 text-slate-600'"
+                x-text="myFeedbacks.length"></span>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Right Controls: Rep Switcher + Back to Market -->
+    <div class="flex items-center gap-3">
+      <div class="flex items-center gap-2 bg-slate-100 px-3.5 py-1.5 rounded-xl text-sm">
+        <span class="text-slate-400">👤</span>
+        <select x-model="currentRepId" @change="onRepChange()" class="bg-transparent font-bold text-slate-800 focus:outline-none cursor-pointer">
+          <template x-for="rep in reps" :key="rep.id">
+            <option :value="rep.id" x-text="rep.label"></option>
+          </template>
+        </select>
       </div>
+
+      <a href="index.html"
+         class="px-3.5 py-1.5 bg-slate-900 hover:bg-blue-600 text-white rounded-xl text-sm font-semibold transition-all">
+        🏢 市场主台 &nearr;
+      </a>
     </div>
   </header>
 
   <!-- ========================================== -->
-  <!-- MAIN CONTAINER                             -->
+  <!-- MAIN WORKSPACE (Spacious, Low Visual Noise)-->
   <!-- ========================================== -->
-  <main class="max-w-7xl w-full mx-auto p-6 space-y-6">
-
-    <!-- Top 3 Navigation / KPI Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-      <!-- Tab Card 1: 我的商机作战卡 -->
-      <div @click="activeTab = 'cards'"
-           :class="activeTab === 'cards' ? 'border-blue-600 ring-2 ring-blue-500/20 bg-white' : 'border-slate-200 bg-white/90 hover:border-blue-300'"
-           class="rounded-2xl p-5 border shadow-xs cursor-pointer transition-all flex items-center justify-between">
-        <div class="flex items-center gap-4">
-          <div class="w-13 h-13 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center text-2xl font-bold p-3">
-            🎯
-          </div>
-          <div>
-            <div class="text-xs font-bold text-blue-600 uppercase">TAB 01 · 核心弹药包</div>
-            <h2 class="text-lg font-bold text-slate-900">我的商机作战卡</h2>
-            <p class="text-xs text-slate-500">含破冰话术、科研痛点与切入方案</p>
-          </div>
-        </div>
-        <div class="text-right">
-          <div class="text-2xl font-extrabold text-blue-600" x-text="myBattleCards.length"></div>
-          <div class="text-xs text-slate-400 font-medium">张待跟进</div>
-        </div>
-      </div>
-
-      <!-- Tab Card 2: 本战区高潜 PI 库 -->
-      <div @click="activeTab = 'territory'"
-           :class="activeTab === 'territory' ? 'border-emerald-600 ring-2 ring-emerald-500/20 bg-white' : 'border-slate-200 bg-white/90 hover:border-emerald-300'"
-           class="rounded-2xl p-5 border shadow-xs cursor-pointer transition-all flex items-center justify-between">
-        <div class="flex items-center gap-4">
-          <div class="w-13 h-13 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl font-bold p-3">
-            📍
-          </div>
-          <div>
-            <div class="text-xs font-bold text-emerald-600 uppercase">TAB 02 · 辖区活地图</div>
-            <h2 class="text-lg font-bold text-slate-900">本战区高潜 PI 库</h2>
-            <p class="text-xs text-slate-500">支持自主一键生成作战卡与收藏</p>
-          </div>
-        </div>
-        <div class="text-right">
-          <div class="text-2xl font-extrabold text-emerald-600" x-text="myTerritoryPIs.length"></div>
-          <div class="text-xs text-slate-400 font-medium">位辖区专家</div>
-        </div>
-      </div>
-
-      <!-- Tab Card 3: 拜访日报与支持反馈 -->
-      <div @click="activeTab = 'feedback'"
-           :class="activeTab === 'feedback' ? 'border-amber-600 ring-2 ring-amber-500/20 bg-white' : 'border-slate-200 bg-white/90 hover:border-amber-300'"
-           class="rounded-2xl p-5 border shadow-xs cursor-pointer transition-all flex items-center justify-between">
-        <div class="flex items-center gap-4">
-          <div class="w-13 h-13 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-2xl font-bold p-3">
-            📝
-          </div>
-          <div>
-            <div class="text-xs font-bold text-amber-600 uppercase">TAB 03 · 一线回流</div>
-            <h2 class="text-lg font-bold text-slate-900">我的拜访日报与反馈</h2>
-            <p class="text-xs text-slate-500">结构化记录客户需求与公司支持</p>
-          </div>
-        </div>
-        <div class="text-right">
-          <div class="text-2xl font-extrabold text-amber-600" x-text="myFeedbacks.length"></div>
-          <div class="text-xs text-slate-400 font-medium">条沟通记录</div>
-        </div>
-      </div>
-    </div>
+  <main class="max-w-7xl w-full mx-auto px-6 py-6">
 
     <!-- ========================================================== -->
-    <!-- TAB 1: 🎯 我的商机作战卡 (BATTLE CARDS & CONFERENCE PUSH)    -->
+    <!-- TAB 1: 🎯 商机作战卡 (Minimalist Left List + Right Detail)   -->
     <!-- ========================================================== -->
-    <div x-show="activeTab === 'cards'" class="space-y-6">
+    <div x-show="activeTab === 'cards'" class="space-y-5">
 
-      <!-- Top Banner: 本周市场部定向推荐会议 (Territory Filtered) -->
-      <div class="bg-white rounded-2xl border border-blue-200 p-5 shadow-xs space-y-3.5">
-        <div class="flex flex-wrap items-center justify-between gap-2">
-          <div class="flex items-center gap-2.5">
-            <span class="px-2.5 py-1 bg-blue-600 text-white rounded-lg text-xs font-bold">📢 市场部重点会议协同</span>
-            <h3 class="font-bold text-slate-900 text-base">本周推荐您重点参会 / 会期拜访讲者 PI</h3>
+      <!-- Compact 1-Line Collapsible Conference Reminder Bar -->
+      <div class="bg-white rounded-2xl border border-slate-200 px-5 py-3.5 shadow-2xs">
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <div class="flex items-center gap-3 flex-wrap text-sm">
+            <span class="px-2.5 py-0.5 bg-blue-50 text-blue-700 rounded-md font-bold text-xs">📢 本周重点参会</span>
+            <template x-for="cp in myConferencePushes" :key="cp.id">
+              <span class="font-semibold text-slate-800 flex items-center gap-1.5">
+                <span x-text="cp.shortName"></span>
+                <span class="text-xs text-slate-400" x-text="'(' + cp.city + ' · ' + cp.date + ')'"></span>
+              </span>
+            </template>
           </div>
-          <span class="text-xs text-slate-500" x-text="'已按【' + currentRep.region + '】为您匹配 ' + myConferencePushes.length + ' 场重点大会'"></span>
+          <button @click="showConfPush = !showConfPush"
+                  class="text-sm text-blue-600 hover:text-blue-800 font-bold">
+            <span x-text="showConfPush ? '收起会议指引 ↑' : '查看参会 PI 与认领 (' + myConferencePushes.length + '场) ↓'"></span>
+          </button>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Expanded Conference Cards (Hidden by default so screen stays clean!) -->
+        <div x-show="showConfPush" x-transition class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 mt-3.5 border-t border-slate-100">
           <template x-for="cp in myConferencePushes" :key="cp.id">
-            <div class="bg-slate-50 rounded-xl p-4 border border-slate-200/90 flex flex-col justify-between gap-3">
-              <div>
-                <div class="flex items-center justify-between gap-2 mb-1.5">
-                  <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-rose-50 text-rose-700 border border-rose-200" x-text="cp.tierBadge"></span>
-                  <span class="text-xs text-slate-500 font-medium" x-text="'📅 ' + cp.date + ' · 📍 ' + cp.city"></span>
-                </div>
-                <h4 class="font-bold text-slate-900 text-base mb-1.5" x-text="cp.title"></h4>
-                <p class="text-sm text-slate-600 mb-2" x-text="'💡 市场指引：' + cp.marketNote"></p>
-                <div class="flex flex-wrap gap-1.5">
-                  <span class="text-xs text-slate-400 self-center">本场必见PI:</span>
-                  <template x-for="sp in cp.speakers" :key="sp">
-                    <span class="px-2.5 py-0.5 bg-white border border-slate-200 rounded-md text-xs font-bold text-slate-800" x-text="sp"></span>
-                  </template>
-                </div>
+            <div class="bg-slate-50 rounded-xl p-4 border border-slate-200/80 flex items-center justify-between gap-4">
+              <div class="space-y-1">
+                <div class="font-bold text-slate-900 text-base" x-text="cp.title"></div>
+                <div class="text-xs text-slate-500" x-text="'📅 ' + cp.date + ' · 📍 ' + cp.city + ' · 必见PI：' + cp.speakers.join('、')"></div>
               </div>
-              <div class="flex items-center justify-between pt-2.5 border-t border-slate-200/60">
-                <span class="text-xs text-blue-600 font-semibold" x-text="cp.claimed ? '✓ 已认领参会任务' : '建议提前预约茶歇/会后拜访'"></span>
-                <button @click="claimConference(cp)"
-                        :disabled="cp.claimed"
-                        :class="cp.claimed ? 'bg-emerald-100 text-emerald-700' : 'bg-blue-600 hover:bg-blue-700 text-white'"
-                        class="px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all">
-                  <span x-text="cp.claimed ? '✓ 已认领跟进' : '📌 认领参会跟进'"></span>
-                </button>
-              </div>
+              <button @click="claimConference(cp)"
+                      :disabled="cp.claimed"
+                      :class="cp.claimed ? 'bg-emerald-100 text-emerald-700' : 'bg-blue-600 hover:bg-blue-700 text-white'"
+                      class="px-3.5 py-2 rounded-xl text-xs font-bold shrink-0 transition-all">
+                <span x-text="cp.claimed ? '✓ 已认领' : '📌 认领参会'"></span>
+              </button>
             </div>
           </template>
         </div>
       </div>
 
-      <!-- Main Battle Card Workspace: Left Card List (4 cols) + Right Battle Card Detail (8 cols) -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <!-- Main Split Layout: Left Customer List (3 cols) + Right Clean Battle Card (9 cols) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
 
-        <!-- Left Column: My Battle Card List -->
+        <!-- Left Column: Ultra-Clean Customer List (Name + Score + Hospital + Short Topic) -->
         <div class="lg:col-span-4 space-y-3">
           <div class="flex items-center justify-between px-1">
-            <span class="text-sm font-bold text-slate-700" x-text="currentRep.name + ' 的商机作战卡 (' + myBattleCards.length + ')'"></span>
-            <select x-model="cardStatusFilter" class="bg-white border border-slate-200 rounded-lg px-2.5 py-1 text-xs font-semibold text-slate-700">
+            <span class="text-sm font-bold text-slate-500">待跟进专家列表</span>
+            <select x-model="cardStatusFilter" class="bg-transparent text-sm font-semibold text-slate-600 focus:outline-none cursor-pointer">
               <option value="all">全部状态</option>
-              <option value="assigned">待破冰接触</option>
+              <option value="assigned">待接触</option>
               <option value="in_progress">跟进中</option>
               <option value="contacted">已触达</option>
             </select>
           </div>
 
-          <div class="space-y-3">
+          <div class="space-y-2.5">
             <template x-for="card in myBattleCards" :key="card.id">
               <div @click="selectedCardId = card.id"
-                   :class="selectedCard && selectedCard.id === card.id ? 'border-blue-600 ring-2 ring-blue-500/20 bg-white shadow-md' : 'border-slate-200 bg-white hover:border-blue-300 shadow-xs'"
-                   class="p-5 rounded-2xl border cursor-pointer transition-all space-y-2.5">
-                <div class="flex items-center justify-between gap-2">
-                  <span class="px-2.5 py-0.5 rounded-md text-xs font-bold"
+                   :class="selectedCard && selectedCard.id === card.id ? 'border-blue-600 bg-white shadow-md ring-2 ring-blue-500/15' : 'border-slate-200/90 bg-white hover:border-slate-300'"
+                   class="p-4 rounded-2xl border cursor-pointer transition-all">
+                <!-- Row 1: Big PI Name + Score Badge + Status Dot -->
+                <div class="flex items-center justify-between gap-2 mb-1.5">
+                  <div class="flex items-center gap-2">
+                    <span class="font-bold text-slate-900 text-lg" x-text="card.piName"></span>
+                    <span class="px-2 py-0.5 rounded-md text-xs font-bold bg-slate-100 text-slate-700" x-text="card.scoreBadge"></span>
+                  </div>
+                  <span class="px-2.5 py-0.5 rounded-full text-xs font-bold"
                         :class="{
-                          'bg-amber-50 text-amber-700 border border-amber-200': card.status === 'assigned',
-                          'bg-blue-50 text-blue-700 border border-blue-200': card.status === 'in_progress',
-                          'bg-emerald-50 text-emerald-700 border border-emerald-200': card.status === 'contacted'
+                          'bg-amber-50 text-amber-700': card.status === 'assigned',
+                          'bg-blue-50 text-blue-700': card.status === 'in_progress',
+                          'bg-emerald-50 text-emerald-700': card.status === 'contacted'
                         }"
                         x-text="getStatusLabel(card.status)"></span>
-                  <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md" x-text="card.scoreBadge"></span>
                 </div>
 
-                <h4 class="font-bold text-slate-900 text-base leading-snug" x-text="card.title"></h4>
-                <p class="text-sm text-slate-600 font-medium" x-text="'🏥 ' + card.hospital"></p>
+                <!-- Row 2: Hospital -->
+                <div class="text-sm text-slate-600 font-medium truncate" x-text="card.hospital"></div>
 
-                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
-                  <span x-text="'建议时间窗: ' + (card.dueDate || '本周内')"></span>
-                  <span x-show="card.qualityRating" class="text-blue-600 font-bold" x-text="'评价: ' + card.qualityRating"></span>
+                <!-- Row 3: Short Topic Tag -->
+                <div class="mt-2.5 flex items-center justify-between text-xs text-slate-400">
+                  <span class="px-2 py-0.5 bg-slate-50 text-slate-600 rounded border border-slate-200/70 font-medium truncate max-w-[200px]"
+                        x-text="card.shortTopic"></span>
+                  <span x-text="card.dueDate + ' 截止'"></span>
                 </div>
               </div>
             </template>
           </div>
         </div>
 
-        <!-- Right Column: Full Battle Card Detail (7 Core Sections from Original Sales Workbench, Clean Big Font!) -->
+        <!-- Right Column: Clean, Spacious Battle Card Detail (No Harsh Rainbow Boxes!) -->
         <div class="lg:col-span-8">
           <template x-if="selectedCard">
-            <div class="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden">
+            <div class="bg-white rounded-3xl border border-slate-200/90 shadow-xs p-7 md:p-8 space-y-7">
 
-              <!-- 1. Deep Navy Battle Card Hero Header -->
-              <div class="bg-gradient-to-br from-slate-900 to-blue-950 text-white p-6 space-y-3">
-                <div class="flex flex-wrap items-center justify-between gap-3">
-                  <div class="flex items-center gap-2.5 flex-wrap">
-                    <span class="px-3 py-1 bg-rose-600 text-white rounded-lg text-xs font-extrabold tracking-wide shadow-xs">
-                      🎯 商机作战卡 BATTLE CARD
-                    </span>
-                    <span class="px-3 py-1 bg-sky-500/20 text-sky-300 border border-sky-400/30 rounded-lg text-xs font-bold"
-                          x-text="'匹配度 ' + (selectedCard.matchScore || 95) + '%'"></span>
-                    <span class="px-3 py-1 bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 rounded-lg text-xs font-bold"
-                          x-text="'PI四维评分: ' + selectedCard.scoreBadge"></span>
+              <!-- 1. Clean Header: PI Profile + Primary Action Button -->
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-100">
+                <div class="flex items-center gap-4">
+                  <div class="w-14 h-14 rounded-2xl bg-blue-600 text-white font-bold flex items-center justify-center text-2xl shrink-0 shadow-sm"
+                       x-text="selectedCard.piName.substring(0, 1)"></div>
+                  <div>
+                    <div class="flex items-center gap-2.5 flex-wrap">
+                      <h2 class="text-2xl font-bold text-slate-900" x-text="selectedCard.piName"></h2>
+                      <span class="px-3 py-0.5 rounded-full text-xs font-bold text-white"
+                            :style="'background-color:' + getDomainColor(selectedCard.domain)"
+                            x-text="selectedCard.domain"></span>
+                      <span class="px-2.5 py-0.5 rounded-lg text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-200"
+                            x-text="'四维评分 ' + selectedCard.scoreBadge"></span>
+                    </div>
+                    <p class="text-base text-slate-600 font-medium mt-1" x-text="selectedCard.hospital + ' · ' + selectedCard.roleLabel"></p>
                   </div>
-                  <button @click="openFeedbackModal(selectedCard)"
-                          class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-sm font-bold shadow-md transition-all">
-                    📝 记录本次拜访跟进
+                </div>
+
+                <button @click="openFeedbackModal(selectedCard)"
+                        class="px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl text-sm font-bold shadow-sm transition-all shrink-0 self-start sm:self-center">
+                  📝 填写拜访反馈
+                </button>
+              </div>
+
+              <!-- 2. Core Focus: 破冰话术 (Clean Soft Card, Large Readable Text) -->
+              <div class="space-y-2.5">
+                <div class="flex items-center justify-between">
+                  <span class="text-sm font-bold text-slate-500 uppercase tracking-wider">💬 01 · 推荐微信 / 面访破冰话术</span>
+                  <button @click="copyIceBreaker(selectedCard.breakIceScript)"
+                          class="px-3.5 py-1.5 bg-blue-50 hover:bg-blue-600 text-blue-600 hover:text-white rounded-xl text-xs font-bold transition-all">
+                    📋 一键复制话术
                   </button>
                 </div>
-
-                <h2 class="text-2xl font-bold text-white leading-snug" x-text="selectedCard.title"></h2>
-
-                <div class="flex flex-wrap items-center gap-5 text-sm text-blue-200 pt-1">
-                  <span>👨‍⚕️ 目标专家：<strong class="text-white" x-text="selectedCard.piName + ' (' + selectedCard.hospital + ')'"></strong></span>
-                  <span>📅 建议破冰窗口：<strong class="text-amber-300" x-text="selectedCard.dueDate || '会前/本周内'"></strong></span>
-                  <span>🏷️ 领域：<strong class="text-white" x-text="selectedCard.domain"></strong></span>
-                </div>
+                <div class="bg-slate-50 border border-slate-200/90 rounded-2xl p-5 text-slate-800 text-base leading-relaxed font-medium"
+                     x-text="selectedCard.breakIceScript"></div>
               </div>
 
-              <!-- Battle Card Body -->
-              <div class="p-6 space-y-5">
-
-                <!-- 2. 🟢 建议破冰话术 (Green Highlight Box + One-Click Copy) -->
-                <div class="bg-emerald-50/70 border border-emerald-200 border-l-4 border-l-emerald-600 rounded-xl p-5 space-y-2.5">
-                  <div class="flex items-center justify-between gap-2">
-                    <h3 class="font-bold text-emerald-950 text-base flex items-center gap-2">
-                      <span>💬 建议破冰话术（微信预约 / 门诊或会场茶歇交谈提纲）</span>
-                    </h3>
-                    <button @click="copyIceBreaker(selectedCard.breakIceScript)"
-                            class="px-3.5 py-1.5 bg-white hover:bg-emerald-600 hover:text-white text-emerald-700 border border-emerald-300 rounded-lg text-xs font-bold transition-all shadow-2xs">
-                      📋 一键复制破冰话术
-                    </button>
-                  </div>
-                  <p class="text-base text-emerald-950 bg-white p-4 rounded-xl border border-dashed border-emerald-300 leading-relaxed font-medium"
-                     x-text="selectedCard.breakIceScript"></p>
-                </div>
-
-                <!-- 3. 🔴 专家研究卡点与切入痛点 (Red Alert Box) -->
-                <div class="bg-rose-50/60 border border-rose-200 border-l-4 border-l-rose-600 rounded-xl p-5 space-y-2">
-                  <h3 class="font-bold text-rose-950 text-base">💡 专家研究卡点与为什么值得现在拜访</h3>
-                  <p class="text-sm text-rose-900 font-semibold" x-text="'🔥 核心痛点：' + selectedCard.painPoint"></p>
-                  <p class="text-sm text-slate-700 leading-relaxed" x-text="'📌 学术切入契机：' + selectedCard.reason"></p>
-                </div>
-
-                <!-- 4. 🔵 吉因加技术切入方案 & 进院必核实 3 件事 (Blue Box) -->
-                <div class="bg-blue-50/50 border border-blue-200 border-l-4 border-l-blue-600 rounded-xl p-5 space-y-3">
-                  <div class="flex flex-wrap items-center justify-between gap-2">
-                    <h3 class="font-bold text-blue-950 text-base">🧬 吉因加可参与环节与匹配产品能力</h3>
-                    <div class="flex flex-wrap gap-1.5">
-                      <template x-for="cap in selectedCard.capabilities" :key="cap">
-                        <span class="px-2.5 py-1 bg-blue-600 text-white rounded-lg text-xs font-bold" x-text="cap"></span>
-                      </template>
-                    </div>
-                  </div>
-                  <p class="text-sm text-slate-800 font-medium leading-relaxed" x-text="selectedCard.participation"></p>
-                  <div class="bg-white p-3.5 rounded-xl border border-blue-100 text-sm text-slate-700">
-                    <strong class="text-blue-900">📋 首次进院交流必摸清条件：</strong>
-                    <span x-text="selectedCard.conditions"></span>
-                  </div>
-                </div>
-
-                <!-- 5. ⚪ 目标 PI 四维合作评分与学术证据链 -->
-                <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 space-y-3">
-                  <div class="flex items-center justify-between">
-                    <h3 class="font-bold text-slate-900 text-base">👨‍⚕️ 目标 PI 四维评分明细 &amp; 学术证据</h3>
-                    <span class="text-xs text-slate-500" x-text="selectedCard.roleLabel"></span>
-                  </div>
-                  <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                    <template x-for="dim in selectedCard.dimensions" :key="dim.name">
-                      <div class="bg-white p-3 rounded-xl border border-slate-200/80">
-                        <div class="text-xs text-slate-500" x-text="dim.name"></div>
-                        <div class="text-base font-extrabold mt-0.5"
-                             :class="dim.score !== null ? 'text-blue-600' : 'text-amber-600'"
-                             x-text="dim.score !== null ? (dim.score + ' / ' + dim.maximum) : '待拜访摸底'"></div>
-                      </div>
+              <!-- 3. Two-Column Key Points: 为什么找他 & 进院必问 3 件事 (Short Bullet Tags!) -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <!-- Left Box: 切入契机与痛点 -->
+                <div class="bg-slate-50/70 rounded-2xl p-5 border border-slate-200/70 space-y-3">
+                  <div class="text-sm font-bold text-slate-500">💡 02 · 切入契机与专家痛点</div>
+                  <div class="text-base font-bold text-slate-900" x-text="selectedCard.shortTopic"></div>
+                  <p class="text-sm text-slate-600 leading-relaxed" x-text="selectedCard.painPoint"></p>
+                  <div class="pt-1 flex flex-wrap gap-2">
+                    <template x-for="cap in selectedCard.capabilities" :key="cap">
+                      <span class="px-3 py-1 bg-blue-50 text-blue-700 border border-blue-200/80 rounded-lg text-xs font-bold" x-text="'匹配武器: ' + cap"></span>
                     </template>
                   </div>
-                  <div class="text-sm text-slate-700 pt-1">
-                    <strong>🎤 关联大会报告 / 论文证据：</strong>
-                    <span x-text="selectedCard.talkEvidence"></span>
-                  </div>
                 </div>
 
-                <!-- 6. 🟣 推荐有用性评价 (Feedback to Marketing) -->
-                <div class="bg-purple-50/50 border border-purple-200 rounded-xl p-4 flex flex-wrap items-center justify-between gap-3">
-                  <div>
-                    <div class="font-bold text-purple-950 text-sm">📣 评价市场部推送的这张作战卡是否有用？</div>
-                    <div class="text-xs text-purple-700">您的评价将直接反馈给市场部用于校准后续推荐准确度</div>
-                  </div>
-                  <div class="flex items-center gap-2 flex-wrap">
-                    <button @click="rateBattleCard(selectedCard, '👍 很有用 (方向准/有课题)')"
-                            :class="selectedCard.qualityRating?.includes('很有用') ? 'bg-emerald-600 text-white' : 'bg-white text-slate-700 border border-slate-200 hover:bg-emerald-50'"
-                            class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all">
-                      👍 很有用
-                    </button>
-                    <button @click="rateBattleCard(selectedCard, '🤔 暂不确定 (待接触核实)')"
-                            :class="selectedCard.qualityRating?.includes('暂不确定') ? 'bg-amber-600 text-white' : 'bg-white text-slate-700 border border-slate-200 hover:bg-amber-50'"
-                            class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all">
-                      🤔 暂不确定
-                    </button>
-                    <button @click="rateBattleCard(selectedCard, '👎 不适用 (非课题PI/方向不符)')"
-                            :class="selectedCard.qualityRating?.includes('不适用') ? 'bg-rose-600 text-white' : 'bg-white text-slate-700 border border-slate-200 hover:bg-rose-50'"
-                            class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all">
-                      👎 不适用
-                    </button>
-                  </div>
+                <!-- Right Box: 首次进院必摸清 3 件事 (Checklist instead of paragraph!) -->
+                <div class="bg-slate-50/70 rounded-2xl p-5 border border-slate-200/70 space-y-3">
+                  <div class="text-sm font-bold text-slate-500">📋 03 · 本次拜访必摸清 3 件事</div>
+                  <ul class="space-y-2.5 text-sm text-slate-700 font-medium">
+                    <template x-for="(chk, idx) in selectedCard.checklist" :key="idx">
+                      <li class="flex items-start gap-2.5 bg-white px-3.5 py-2.5 rounded-xl border border-slate-200/60">
+                        <span class="w-5 h-5 rounded-full bg-blue-50 text-blue-600 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5" x-text="idx + 1"></span>
+                        <span x-text="chk"></span>
+                      </li>
+                    </template>
+                  </ul>
                 </div>
-
               </div>
+
+              <!-- 4. Minimalist 4D Score Strip & Conference Talk Evidence -->
+              <div class="pt-2 border-t border-slate-100 space-y-4">
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                  <span class="text-sm font-bold text-slate-500">📊 04 · 专家四维合作评分 &amp; 近期讲题证据</span>
+                  <span class="text-xs text-slate-400" x-text="'🎤 ' + selectedCard.talkEvidence"></span>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                  <template x-for="dim in selectedCard.dimensions" :key="dim.name">
+                    <div class="bg-slate-50 px-4 py-3 rounded-xl border border-slate-200/70 flex items-center justify-between">
+                      <span class="text-xs text-slate-500 font-medium" x-text="dim.name.slice(0, 4)"></span>
+                      <span class="text-sm font-extrabold"
+                            :class="dim.score !== null ? 'text-slate-900' : 'text-amber-600'"
+                            x-text="dim.score !== null ? (dim.score + '/' + dim.maximum) : '待摸底'"></span>
+                    </div>
+                  </template>
+                </div>
+              </div>
+
+              <!-- 5. Lightweight Footer: One-Click Card Quality Rating -->
+              <div class="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 text-sm">
+                <span class="text-slate-400">这张推荐卡对您拜访有帮助吗？</span>
+                <div class="flex items-center gap-2">
+                  <button @click="rateBattleCard(selectedCard, '👍 很有用')"
+                          :class="selectedCard.qualityRating?.includes('很有用') ? 'bg-emerald-600 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'"
+                          class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all">
+                    👍 很有用
+                  </button>
+                  <button @click="rateBattleCard(selectedCard, '🤔 暂不确定')"
+                          :class="selectedCard.qualityRating?.includes('暂不确定') ? 'bg-amber-600 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'"
+                          class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all">
+                    🤔 暂不确定
+                  </button>
+                  <button @click="rateBattleCard(selectedCard, '👎 不适用')"
+                          :class="selectedCard.qualityRating?.includes('不适用') ? 'bg-rose-600 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'"
+                          class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all">
+                    👎 不适用
+                  </button>
+                </div>
+              </div>
+
             </div>
           </template>
         </div>
@@ -375,66 +313,65 @@
 
 
     <!-- ========================================================== -->
-    <!-- TAB 2: 📍 本战区高潜 PI 库 (TERRITORY HIGH-POTENTIAL PIS)  -->
+    <!-- TAB 2: 📍 本战区 PI 库 (Clean 2-Col Territory Cards)        -->
     <!-- ========================================================== -->
     <div x-show="activeTab === 'territory'" class="space-y-5">
-      <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs flex flex-wrap items-center justify-between gap-4">
-        <div>
-          <h3 class="font-bold text-slate-900 text-lg" x-text="'📍 ' + currentRep.region + ' · 重点三甲医院 PI 客情档案库'"></h3>
-          <p class="text-sm text-slate-500" x-text="'覆盖省份/城市：' + currentRep.territoryDesc + ' · 支持自主一键生成商机作战卡'"></p>
-        </div>
-        <div class="flex items-center gap-2 text-sm">
+      <div class="bg-white rounded-2xl border border-slate-200 px-6 py-4 shadow-2xs flex flex-wrap items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
           <button @click="territoryFilter = 'all'"
                   :class="territoryFilter === 'all' ? 'bg-slate-900 text-white font-bold' : 'bg-slate-100 text-slate-700 font-medium'"
-                  class="px-4 py-2 rounded-xl transition-all">
-            本战区全部 (<span x-text="myTerritoryPIs.length"></span>)
+                  class="px-4 py-2 rounded-xl text-sm transition-all">
+            本战区全部专家 (<span x-text="myTerritoryPIs.length"></span>)
           </button>
           <button @click="territoryFilter = 'fav'"
                   :class="territoryFilter === 'fav' ? 'bg-amber-500 text-white font-bold' : 'bg-slate-100 text-slate-700 font-medium'"
-                  class="px-4 py-2 rounded-xl transition-all">
-            ★ 我收藏的重点客情 (<span x-text="myTerritoryPIs.filter(p => p.starred).length"></span>)
+                  class="px-4 py-2 rounded-xl text-sm transition-all">
+            ★ 重点收藏 (<span x-text="myTerritoryPIs.filter(p => p.starred).length"></span>)
           </button>
+        </div>
+
+        <div class="relative w-64">
+          <input type="text"
+                 x-model="searchQuery"
+                 placeholder="搜索姓名或医院..."
+                 class="w-full pl-9 pr-4 py-2 bg-slate-100 border border-slate-200 rounded-xl text-sm focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue-500">
+          <svg class="w-4 h-4 text-slate-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
         </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         <template x-for="pi in filteredTerritoryPIs" :key="pi.id">
-          <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs hover:shadow-md hover:border-emerald-400 transition-all flex flex-col justify-between gap-4">
+          <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-2xs hover:shadow-md hover:border-blue-300 transition-all flex flex-col justify-between gap-5">
             <div>
               <div class="flex items-start justify-between gap-2 mb-3">
-                <div class="flex items-center gap-3">
-                  <div class="w-11 h-11 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-extrabold flex items-center justify-center text-base">
-                    <span x-text="pi.name.substring(0, 1)"></span>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h4 class="font-bold text-slate-900 text-xl" x-text="pi.name"></h4>
+                    <span class="px-2.5 py-0.5 rounded-full text-xs font-bold text-white"
+                          :style="'background-color:' + getDomainColor(pi.domain)"
+                          x-text="pi.domain"></span>
                   </div>
-                  <div>
-                    <div class="flex items-center gap-2">
-                      <h4 class="font-bold text-slate-900 text-lg" x-text="pi.name"></h4>
-                      <span class="px-2.5 py-0.5 rounded-full text-xs font-bold text-white"
-                            :style="'background-color:' + getDomainColor(pi.domain)"
-                            x-text="pi.domain"></span>
-                    </div>
-                    <p class="text-sm text-slate-600 font-medium" x-text="'🏥 ' + pi.hospital"></p>
-                  </div>
+                  <p class="text-sm text-slate-500 font-medium mt-1" x-text="pi.hospital"></p>
                 </div>
-                <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 shrink-0"
+                <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 shrink-0"
                       x-text="pi.scoreBadge"></span>
               </div>
 
-              <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200/70 text-sm text-slate-700 space-y-1">
-                <div class="font-bold text-slate-900" x-text="'🎖️ ' + pi.roleLabel"></div>
-                <div class="line-clamp-2" x-text="'🎤 近期动态：' + pi.research"></div>
-              </div>
+              <p class="text-sm text-slate-600 line-clamp-2 bg-slate-50 p-3 rounded-xl border border-slate-100"
+                 x-text="pi.research"></p>
             </div>
 
-            <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-3">
-              <button @click="pi.starred = !pi.starred; showToast(pi.starred ? '已加入重点客情收藏' : '已取消收藏', 'info')"
-                      :class="pi.starred ? 'bg-amber-50 text-amber-700 border-amber-200 font-bold' : 'bg-slate-50 text-slate-600 border-slate-200'"
-                      class="px-4 py-2 rounded-xl border text-sm transition-all">
-                <span x-text="pi.starred ? '★ 已收藏客情' : '☆ 收藏客情'"></span>
+            <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-100">
+              <button @click="pi.starred = !pi.starred"
+                      :class="pi.starred ? 'text-amber-600 bg-amber-50 border-amber-200 font-bold' : 'text-slate-400 bg-slate-50 border-slate-200'"
+                      class="px-3 py-2 rounded-xl border text-xs transition-all">
+                <span x-text="pi.starred ? '★ 已收藏' : '☆ 收藏'"></span>
               </button>
               <button @click="generateBattleCardFromPI(pi)"
-                      class="flex-1 py-2.5 px-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-sm font-bold shadow-xs transition-all">
-                🎯 一键生成我的商机作战卡 &rarr;
+                      class="flex-1 py-2 px-3 bg-blue-50 hover:bg-blue-600 text-blue-600 hover:text-white rounded-xl text-xs font-bold transition-all">
+                🎯 生成作战卡 &rarr;
               </button>
             </div>
           </div>
@@ -444,48 +381,34 @@
 
 
     <!-- ========================================================== -->
-    <!-- TAB 3: 📝 我的拜访日报与支持反馈 (STRUCTURED FEEDBACK)     -->
+    <!-- TAB 3: 📝 拜访日报 (Clean Timeline Cards)                   -->
     <!-- ========================================================== -->
     <div x-show="activeTab === 'feedback'" class="space-y-5">
-      <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs flex flex-wrap items-center justify-between gap-4">
-        <div>
-          <h3 class="font-bold text-slate-900 text-lg">📝 我的结构化拜访日报与市场部协同记录</h3>
-          <p class="text-sm text-slate-500">提交的客户样本队列底数与公司支持需求，将实时同步至市场部 2×2 主工作台【④ 业务闭环】</p>
-        </div>
+      <div class="flex items-center justify-between">
+        <h3 class="font-bold text-slate-900 text-lg">我的拜访记录（已实时同步市场部）</h3>
         <button @click="openFeedbackModal(selectedCard || myBattleCards[0])"
                 class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-sm font-bold shadow-xs transition-all">
-          + 新增结构化拜访反馈
+          + 新增拜访日报
         </button>
       </div>
 
-      <div class="space-y-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
         <template x-for="fb in myFeedbacks" :key="fb.id">
-          <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs space-y-4">
-            <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-3.5">
-              <div class="flex items-center gap-3 flex-wrap">
-                <span class="px-3 py-1 rounded-lg bg-blue-600 text-white text-xs font-bold" x-text="fb.contactStatusLabel || '已接触面访'"></span>
-                <span class="font-bold text-slate-900 text-lg" x-text="'拜访专家：' + fb.piName"></span>
-                <span class="text-sm text-slate-500" x-text="fb.hospital || ''"></span>
-                <span class="text-sm text-slate-400" x-text="'📅 ' + fb.date"></span>
+          <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-2xs space-y-3.5">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <span class="font-bold text-slate-900 text-lg" x-text="fb.piName"></span>
+                <span class="text-sm text-slate-500" x-text="fb.hospital"></span>
               </div>
-              <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
-                ✓ 已同步至市场部闭环库
-              </span>
+              <span class="text-xs text-slate-400" x-text="fb.date"></span>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-              <div class="bg-slate-50 p-4 rounded-xl border border-slate-200/70">
-                <div class="font-bold text-slate-800 mb-1">🔬 客户关注的临床研究问题</div>
-                <p class="text-slate-700" x-text="fb.need || fb.content"></p>
-              </div>
-              <div class="bg-blue-50/50 p-4 rounded-xl border border-blue-100">
-                <div class="font-bold text-blue-900 mb-1">🧪 摸清的样本队列与项目阶段</div>
-                <p class="text-blue-950" x-text="fb.cohort || '已核实科室具备临床随访队列与冻存标本'"></p>
-              </div>
-              <div class="bg-amber-50/60 p-4 rounded-xl border border-amber-200">
-                <div class="font-bold text-amber-900 mb-1">🤝 需要公司提供的支持 &amp; 下一步</div>
-                <p class="text-amber-950" x-text="(fb.support ? fb.support + ' · ' : '') + '下一步：' + fb.nextStep"></p>
-              </div>
+            <p class="text-sm text-slate-700 bg-slate-50 p-4 rounded-xl border border-slate-100 leading-relaxed"
+               x-text="fb.cohort || fb.content"></p>
+
+            <div class="flex items-center justify-between text-xs pt-1">
+              <span class="text-slate-500 font-medium" x-text="'下一步：' + fb.nextStep"></span>
+              <span class="text-emerald-600 font-bold">✓ 已同步市场部</span>
             </div>
           </div>
         </template>
@@ -502,61 +425,46 @@
        x-transition.opacity
        class="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-xs flex items-center justify-center p-4">
     <div @click.outside="showFeedbackModal = false"
-         class="bg-white rounded-2xl max-w-2xl w-full p-7 shadow-2xl border border-slate-200 max-h-[92vh] overflow-y-auto space-y-5">
+         class="bg-white rounded-3xl max-w-xl w-full p-7 shadow-2xl border border-slate-200 space-y-5">
       <div class="flex items-center justify-between border-b border-slate-100 pb-4">
-        <div>
-          <h3 class="text-xl font-bold text-slate-900">📝 记录结构化拜访跟进反馈</h3>
-          <p class="text-sm text-slate-500 mt-0.5">保存后将实时同步至市场部 2×2 工作台【业务闭环 &amp; 客户画像校准】</p>
-        </div>
+        <h3 class="text-xl font-bold text-slate-900">📝 记录拜访反馈</h3>
         <button @click="fillDemoFeedback()"
                 type="button"
-                class="px-3.5 py-1.5 bg-purple-50 hover:bg-purple-100 text-purple-700 border border-purple-200 rounded-xl text-xs font-bold transition-all">
-          ✨ 一键填入演示反馈
+                class="px-3.5 py-1.5 bg-blue-50 hover:bg-blue-100 text-blue-600 rounded-xl text-xs font-bold transition-all">
+          ✨ 一键填入演示内容
         </button>
       </div>
 
       <div class="space-y-4 text-sm">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="grid grid-cols-2 gap-4">
           <div>
-            <label class="block font-bold text-slate-700 mb-1.5">拜访目标专家 PI</label>
+            <label class="block font-bold text-slate-700 mb-1.5">拜访专家 PI</label>
             <input type="text" x-model="fbForm.piName" class="w-full p-2.5 bg-slate-100 border border-slate-200 rounded-xl font-bold text-slate-900">
           </div>
           <div>
-            <label class="block font-bold text-slate-700 mb-1.5">接触状态 *</label>
+            <label class="block font-bold text-slate-700 mb-1.5">接触状态</label>
             <select x-model="fbForm.contactStatusLabel" class="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl font-semibold">
               <option value="已接触面访">🟢 已接触面访</option>
               <option value="微信/电话已约访">🔵 微信/电话已约访</option>
               <option value="等待专家回复">🟡 等待专家回复</option>
-              <option value="暂缓跟进">⚪ 暂缓跟进</option>
             </select>
           </div>
         </div>
 
         <div>
-          <label class="block font-bold text-slate-700 mb-1.5">1. 客户当前关注的研究问题 / 学术兴趣点 *</label>
-          <textarea rows="2" x-model="fbForm.need" placeholder="例如：对大会报告提到的 DKD 早期转录组与血浆蛋白质组联合建模很感兴趣..." class="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl"></textarea>
+          <label class="block font-bold text-slate-700 mb-1.5">1. 摸清的样本队列底数与合作意向（同步回流校准市场部 PI 画像）</label>
+          <textarea rows="3" x-model="fbForm.cohort" placeholder="例如：已冻存 320 例配对血浆与尿液样本，省自然在研，对转录组+蛋白组感兴趣..." class="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl"></textarea>
         </div>
 
         <div>
-          <label class="block font-bold text-slate-700 mb-1.5">2. 摸清的样本、队列例数与项目阶段（将回流校准作战地图 PI 四维画像）*</label>
-          <textarea rows="2" x-model="fbForm.cohort" placeholder="例如：课题组已冻存 320 例配对血浆与尿液样本，省自然/国自然项目在研，拟 Q4 启动检测..." class="w-full p-3 bg-blue-50/40 border border-blue-200 rounded-xl"></textarea>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label class="block font-bold text-slate-700 mb-1.5">3. 需要公司医学部 / 生信提供的支持</label>
-            <input type="text" x-model="fbForm.support" placeholder="例如：需提供 200 例蛋白组+转录组初筛报价与质控SOP" class="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl">
-          </div>
-          <div>
-            <label class="block font-bold text-slate-700 mb-1.5">4. 下一步跟进计划 *</label>
-            <input type="text" x-model="fbForm.nextStep" placeholder="例如：下周二携医学支持二次进院汇报方案" class="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl">
-          </div>
+          <label class="block font-bold text-slate-700 mb-1.5">2. 需要公司支持 &amp; 下一步计划</label>
+          <input type="text" x-model="fbForm.nextStep" placeholder="例如：下周二携医学支持提交 200 例多组学初筛方案与报价" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl">
         </div>
       </div>
 
       <div class="flex justify-end gap-3 pt-4 border-t border-slate-100">
         <button @click="showFeedbackModal = false" class="px-5 py-2.5 bg-slate-100 text-slate-700 text-sm font-bold rounded-xl">取消</button>
-        <button @click="submitFeedback()" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold rounded-xl shadow-md">保存并同步至市场部</button>
+        <button @click="submitFeedback()" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold rounded-xl">保存并同步市场部</button>
       </div>
     </div>
   </div>
@@ -588,24 +496,21 @@
           id: 'sales_east_zhang',
           name: '张敏',
           region: '华东战区',
-          label: '华东战区 - 张敏',
-          territoryDesc: '上海、江苏、浙江、安徽、福建、山东重点三甲医院',
+          label: '华东战区 · 张敏',
           kw: /上海|瑞金|中山|华山|第六人民|仁济|复旦|同济|江苏|南京|鼓楼|浙江|杭州|浙大|安徽|中国科学技术大学|山东|齐鲁|厦门|福建/
         },
         {
           id: 'sales_north_li',
           name: '李娜',
           region: '华北战区',
-          label: '华北战区 - 李娜',
-          territoryDesc: '北京、天津、河北、山西、辽宁等北方重点三甲医院',
+          label: '华北战区 · 李娜',
           kw: /北京|协和|北大|北京大学|宣武|天坛|阜外|安贞|中日友好|解放军总医院|301|天津|河北|山西|中国医学科学院/
         },
         {
           id: 'sales_south_wang',
           name: '王强',
-          region: '华南与中西部战区',
-          label: '华南与中西部战区 - 王强',
-          territoryDesc: '广东、湖南、湖北、四川、重庆、贵州等华南中西部三甲医院',
+          region: '华南与中西战区',
+          label: '华南战区 · 王强',
           kw: /广东|广州|深圳|中山大学|南方医|广医|湖南|长沙|湘雅|中南大学|湖北|武汉|同济|协和|四川|华西|重庆|贵州/
         }
       ];
@@ -624,7 +529,6 @@
         } catch (e) {}
       }
 
-      // Build Initial Battle Cards combining 4D-rated PIs and Specialist PIs
       const DEFAULT_BATTLE_CARDS = [
         {
           id: 'BC-WANGWEIQING',
@@ -632,26 +536,27 @@
           piName: '王卫庆',
           hospital: '上海交通大学医学院附属瑞金医院',
           domain: '糖尿病与代谢',
-          roleLabel: '全国学术带头人 · 中华医学会内分泌学分会核心领军',
+          roleLabel: '全国学术带头人',
           scoreBadge: '82分 · B级',
-          matchScore: 96,
           status: 'in_progress',
-          dueDate: '2026-11-28',
-          title: '【高优商机作战卡】王卫庆教授团队 · 代谢疾病大规模队列多组学分型与微血管并发症验证',
-          breakIceScript: '“王主任您好！拜读了您在 CDS 2026 大会上关于【内分泌代谢病国家医学中心大规模队列与多组学转化实践】的学术报告，非常受启发。我们吉因加近期在代谢疾病大队列中结合 6Dmarker 多组学整合算法（转录组+高深度血浆蛋白组），协助多家国家医学中心完成了生物标志物分型与顶刊文章转化。想约您或团队课题骨干15分钟汇报下案例，看能否配合瑞金队列开展多组学验证子课题？”',
-          painPoint: '拥有全国顶尖内分泌代谢大型人群队列，但常规临床生化指标难以支撑 CNS / 四大刊级别分子分型机制深度，急需高稳定性的大规模样本蛋白质组+转录组联合建模与生信支持。',
-          reason: '在 CDS 2026 及 ADA 2026 连续发表大型代谢队列转化主旨报告，研究方向契合度满分(30/30)，平台资源完备(17/20)。',
-          participation: '切入吉因加 T10（临床大队列多组学整合验证）与 T14（高深度血液蛋白质组学检测），提供从样本质控、多组学测序到6Dmarker机器学习建模的一站式科研服务。',
-          conditions: '首次拜访需确认：1) 本期拟启动子队列的样本基质（血浆/血清/组织）与例数；2) 是否需要联合生信团队驻场建模。',
-          capabilities: ['T10 临床队列多组学验证', 'T14 高通量蛋白质组', 'T03 单细胞/转录组'],
+          dueDate: '11-28',
+          shortTopic: '代谢大队列多组学分型',
+          breakIceScript: '“王主任您好！拜读了您在 CDS 2026 大会上关于【瑞金代谢大队列多组学转化】的报告。吉因加近期结合 6Dmarker 算法（转录组+高深度血浆蛋白组），协助多家国家医学中心完成了标志物分型与顶刊发表，想约您或课题骨干 15 分钟汇报下案例！”',
+          painPoint: '拥有顶尖代谢人群大队列，常规生化指标难以支撑顶刊机制深度，需大规模样本蛋白组+转录组联合建模。',
+          capabilities: ['T10 队列多组学建模', 'T14 高通量蛋白组'],
+          checklist: [
+            '摸清本期拟启动子队列的样本类型（血浆/组织）与例数',
+            '确认微血管并发症随访终点数据是否已整理完毕',
+            '了解是否需要吉因加生信工程师驻场联合建模'
+          ],
           dimensions: [
             { name: '研究方向契合度', maximum: 30, score: 30 },
             { name: '学术产出质量',   maximum: 25, score: 17 },
             { name: '科研转化潜力',   maximum: 25, score: 18 },
             { name: '平台资源禀赋',   maximum: 20, score: 17 }
           ],
-          talkEvidence: '[CDS 2026 大会报告] 内分泌代谢病国家医学中心大规模队列与多组学转化实践',
-          qualityRating: '👍 很有用 (方向准/有课题)'
+          talkEvidence: 'CDS 2026 大会报告：内分泌代谢病国家医学中心大规模队列与多组学转化实践',
+          qualityRating: '👍 很有用'
         },
         {
           id: 'BC-ZHANGXUELI',
@@ -659,80 +564,83 @@
           piName: '张学礼',
           hospital: '上海市第六人民医院',
           domain: '糖尿病与代谢',
-          roleLabel: '全国学术带头人 · 代谢微血管并发症专家',
+          roleLabel: '全国专科学术带头人',
           scoreBadge: '77分 · B级',
-          matchScore: 94,
           status: 'assigned',
-          dueDate: '2026-11-30',
-          title: '【商机作战卡】张学礼教授团队 · 糖尿病微血管并发症（视网膜/肾脏）多组学标志物鉴识',
-          breakIceScript: '“张教授您好，关注到您在 CDS 2026 专题分享的【糖尿病微血管并发症视网膜与肾脏多组学生物标志物鉴识】课题。吉因加在微量体液（房水、玻璃体液、尿液外泌体及配对血浆）超敏蛋白组与转录组建库上有非常成熟的实测数据，很希望能为您手头的微血管共病队列提供多组学初筛与验证支持！”',
-          painPoint: '微血管并发症（DR/DKD）早期缺乏高特异性的无创体液分子标志物，且微量临床样本常规建库失败率高。',
-          reason: '四维评分 77分·B级（方向契合度 28/30），近期正筹备微血管并发症临床转化专项，需求明确。',
-          participation: '推荐 T14（微量体液高深度蛋白质组）+ T03（外泌体转录组测序），先以 50~100 例发现队列切入。',
-          conditions: '需向团队核实：目前视网膜与肾病共病队列的配对血浆/尿液冻存例数及明年国自然申报时间表。',
-          capabilities: ['T14 高通量蛋白质组', 'T03 转录组分析', 'T10 临床队列验证'],
+          dueDate: '11-30',
+          shortTopic: '微血管并发症体液标志物',
+          breakIceScript: '“张教授您好，关注到您在 CDS 2026 分享的【糖尿病微血管并发症视网膜与肾脏多组学标志物】课题。吉因加在微量体液（房水、尿液外泌体及配对血浆）超敏蛋白组与转录组建库上有成熟实测数据，希望能为您手头的共病队列提供初筛支持！”',
+          painPoint: '微血管并发症早期缺乏高特异性无创体液分子标志物，且微量样本常规建库失败率高。',
+          capabilities: ['T14 微量体液蛋白组', 'T03 外泌体转录组'],
+          checklist: [
+            '核实视网膜与肾病共病队列的配对血浆/尿液冻存例数',
+            '确认能否先以 50~100 例发现队列做预实验初筛',
+            '了解团队明年国自然面上项目申报时间表'
+          ],
           dimensions: [
             { name: '研究方向契合度', maximum: 30, score: 28 },
             { name: '学术产出质量',   maximum: 25, score: 17 },
             { name: '科研转化潜力',   maximum: 25, score: 16 },
             { name: '平台资源禀赋',   maximum: 20, score: 16 }
           ],
-          talkEvidence: '[CDS 2026 专题报告] 糖尿病微血管并发症视网膜与肾脏多组学生物标志物鉴识',
+          talkEvidence: 'CDS 2026 专题报告：糖尿病微血管并发症视网膜与肾脏多组学生物标志物鉴识',
           qualityRating: ''
         },
         {
           id: 'BC-HUANGBIN',
           repId: 'sales_east_zhang',
           piName: '黄斌',
-          hospital: '中国科学技术大学附属第一医院（安徽省立医院）',
+          hospital: '中国科大附一院（安徽省立医院）',
           domain: '糖尿病与代谢',
-          roleLabel: '高潜青年课题负责人 · 省自然青年项目主持',
+          roleLabel: '青年课题PI · 省自然主持',
           scoreBadge: '62分 · C级',
-          matchScore: 91,
           status: 'contacted',
-          dueDate: '2026-11-26',
-          title: '【商机作战卡】黄斌博士课题组 · DKD早期损伤标志物筛选、转录组特征与临床验证',
-          breakIceScript: '“黄老师您好，听了您在 CDS 2026 口头报告 OR_003 关于【DKD早期损伤标志物筛选、转录组特征与临床人群验证】的分享非常精彩！针对您正在推进的省自然青年基金与 DKD 早期队列，吉因加有专门针对肾病尿液外泌体与外周血转录组的标准化转化包，想跟您对一下具体体液样本的建库参数。”',
-          painPoint: '青年 PI 手握省自然基金与临床人群数据（Journal of Diabetes 2025 一作），急需高性价比的转录组实验验证数据冲刺下一篇二区/一区论文及国自然青年项目。',
-          reason: 'CDS 2026 口头报告 OR_003 直接涉及转录组与临床指标验证，研究方向契合度高达 28/30。',
-          participation: '以 T03（尿液/血液转录组测序）+ T10（临床指标联合建模）切入中小型验证队列。',
-          conditions: '核实省自然项目剩余检测预算及已冻存的 DKD 早期患者配对体液样本量。',
+          dueDate: '11-26',
+          shortTopic: 'DKD早期损伤转录组验证',
+          breakIceScript: '“黄老师您好，听了您在 CDS 2026 口头报告 OR_003 关于【DKD早期损伤标志物与转录组验证】的分享非常精彩！针对您的省自然青年项目，吉因加有专门针对肾病尿液外泌体与外周血转录组的标准化转化包，想跟您对一下具体样本的建库参数。”',
+          painPoint: '青年 PI 手握省自然基金与临床队列（J Diabetes 2025 一作），急需高性价比转录组验证数据冲刺下一篇高分文章。',
           capabilities: ['T03 转录组测序', 'T10 临床指标验证'],
+          checklist: [
+            '核实已冻存 DKD 早期患者的配对尿液与血浆样本量',
+            '确认省自然青年基金剩余检测经费预算',
+            '寄送尿液外泌体建库质控 SOP'
+          ],
           dimensions: [
             { name: '研究方向契合度', maximum: 30, score: 28 },
             { name: '学术产出质量',   maximum: 25, score: 11 },
             { name: '科研转化潜力',   maximum: 25, score: 11 },
             { name: '平台资源禀赋',   maximum: 20, score: 12 }
           ],
-          talkEvidence: '[CDS 2026 口头报告 OR_003] DKD早期损伤标志物筛选、转录组特征与临床验证 (J Diabetes 2025 IF 5.9)',
-          qualityRating: '👍 很有用 (方向准/有课题)'
+          talkEvidence: 'CDS 2026 口头报告 OR_003：DKD早期损伤标志物筛选、转录组特征与临床验证',
+          qualityRating: '👍 很有用'
         },
         {
           id: 'BC-JIXUNMING',
           repId: 'sales_north_li',
           piName: '吉训明',
-          hospital: '首都医科大学宣武医院 / 国家神经疾病医学中心',
+          hospital: '首都医科大学宣武医院',
           domain: '神经精神',
-          roleLabel: '院士 · 2026中国脑卒中大会主席',
+          roleLabel: '院士 · 脑卒中大会主席',
           scoreBadge: '88分 · B级',
-          matchScore: 97,
           status: 'in_progress',
-          dueDate: '2026-11-27',
-          title: '【高优商机作战卡】吉训明院士团队 · 急性缺血性脑卒中神经保护与多中心液体活检转化队列',
-          breakIceScript: '“主任/老师您好，借 2026 中国脑卒中大会在北京召开契机，特向团队请教！我们关注到国家神经疾病医学中心正在推进急性卒中再灌注损伤与脑保护多中心队列。吉因加在外周血及脑脊液微量核酸、外泌体转录组与高深度蛋白质组联检上有全国多中心临床中心服务经验，希望能为卒中分型子课题提供标准化组学检测支持！”',
-          painPoint: '国家级卒中多中心队列样本量极大，需要具备医疗级质控体系（CAP/CLIA标准）的多组学中心实验室保障跨中心批次一致性。',
-          reason: '11月27日—29日北京举办2026中国脑卒中大会，主场作战，适合会期直接对接团队分管科研秘书与青年PI。',
-          participation: '推介 T10（全国多中心临床队列标准化建库与6Dmarker建模）+ T14（脑脊液/血浆高深度蛋白组）。',
-          conditions: '通过核心学术秘书摸清各分中心标本汇集进度与2027年度重点研发计划子课题分包需求。',
-          capabilities: ['T10 多中心临床队列验证', 'T14 蛋白质组', 'T03 单细胞/转录组'],
+          dueDate: '11-27',
+          shortTopic: '急性脑卒中多中心液体活检',
+          breakIceScript: '“老师您好，借 2026 中国脑卒中大会在北京召开契机向团队请教！吉因加在外周血及脑脊液微量核酸、外泌体转录组与高深度蛋白组联检上有全国多中心临床服务经验，希望能为急性卒中再灌注损伤分型子课题提供标准化组学检测支持！”',
+          painPoint: '国家级卒中多中心队列样本量大，需具备高标准质控体系的中心实验室保障跨中心批次一致性。',
+          capabilities: ['T10 多中心队列验证', 'T14 脑脊液/血浆蛋白组'],
+          checklist: [
+            '在 11-27 北京脑卒中大会现场对接分管学术秘书',
+            '摸清首批拟启动液体活检标志物筛选的样本例数',
+            '确认 2027 重点研发计划子课题合作意向'
+          ],
           dimensions: [
             { name: '研究方向契合度', maximum: 30, score: 29 },
             { name: '学术产出质量',   maximum: 25, score: 23 },
             { name: '科研转化潜力',   maximum: 25, score: 18 },
             { name: '平台资源禀赋',   maximum: 20, score: 18 }
           ],
-          talkEvidence: '[2026中国脑卒中大会 主旨报告] 中国脑卒中百万减残工程与临床转化医学新范式',
-          qualityRating: '👍 很有用 (方向准/有课题)'
+          talkEvidence: '2026中国脑卒中大会主旨：中国脑卒中百万减残工程与临床转化医学新范式',
+          qualityRating: '👍 很有用'
         },
         {
           id: 'BC-SUYIN',
@@ -740,153 +648,109 @@
           piName: '苏茵',
           hospital: '北京大学人民医院',
           domain: '风湿免疫',
-          roleLabel: '北京医学会风湿病学分会主委 · 大会主席',
+          roleLabel: '北京风湿分会主委',
           scoreBadge: '81分 · B级',
-          matchScore: 93,
           status: 'assigned',
-          dueDate: '2026-11-28',
-          title: '【商机作战卡】苏茵教授团队 · 自身免疫病(RA/SLE)单细胞免疫组库(TCR/BCR)与新型标志物',
-          breakIceScript: '“苏主任您好！祝贺北京医学会风湿病学分会第26届学术年会盛大召开。看到今年大会专门设立了【基础科研培训与高分论文专场】，特别契合我们吉因加近期在风湿自免领域推出的 PBMC 单细胞转录组 + TCR/BCR 免疫组库联检方案，想在会后向您和科室青年骨干汇报几个发在 ARD 上的免疫组库案例。”',
-          painPoint: '风湿免疫病异质性极强，传统自身抗体难以预测靶向生物制剂耐药与复发，急需单细胞免疫组库解析致病性 B/T 细胞克隆。',
-          reason: '11月27-28日北京风湿年会主委单位，特设高分论文与临床科研专场，科室青年医师国自然转化需求极旺。',
-          participation: '切入 T03（单细胞转录组 + TCR/BCR 免疫组库测序）与 T14（自身免疫炎症细胞因子蛋白组）。',
-          conditions: '确认科室青年医师国自然申报选题方向及现有 PBMC 活细胞冻存标本数量。',
-          capabilities: ['T03 单细胞+TCR/BCR免疫组库', 'T14 蛋白质组'],
+          dueDate: '11-28',
+          shortTopic: '自免病单细胞免疫组库',
+          breakIceScript: '“苏主任您好！祝贺北京风湿病学年会召开。看到今年专门设立了【高分论文与基础科研专场】，特别契合吉因加在自免领域的 PBMC 单细胞转录组 + TCR/BCR 免疫组库联检方案，想在会后向您和科室青年骨干汇报几个 ARD 发表案例。”',
+          painPoint: '风湿免疫病异质性强，急需单细胞 TCR/BCR 免疫组库解析致病性克隆演化。',
+          capabilities: ['T03 单细胞+免疫组库', 'T14 炎症蛋白组'],
+          checklist: [
+            '摸清科室青年医师明年国自然申报选题方向',
+            '确认现有 SLE/RA 患者 PBMC 活细胞冻存数量',
+            '邀约参加科室会后学术沙龙'
+          ],
           dimensions: [
             { name: '研究方向契合度', maximum: 30, score: 28 },
             { name: '学术产出质量',   maximum: 25, score: 19 },
             { name: '科研转化潜力',   maximum: 25, score: 18 },
             { name: '平台资源禀赋',   maximum: 20, score: 16 }
           ],
-          talkEvidence: '[北京医学会风湿病学年会 主会场] 自身免疫病靶向诊疗与临床转化新进展',
+          talkEvidence: '北京风湿病学年会主会场：自身免疫病靶向诊疗与临床转化新进展',
           qualityRating: ''
         },
         {
           id: 'BC-CHENRONGCHANG',
           repId: 'sales_south_wang',
           piName: '陈荣昌',
-          hospital: '广州医科大学附属第一医院 / 深圳呼吸疾病研究所',
+          hospital: '广州医科大学附属第一医院',
           domain: '呼吸慢病',
-          roleLabel: '全国学术带头人 · 呼吸慢病领军专家',
+          roleLabel: '全国呼吸学术带头人',
           scoreBadge: '84分 · B级',
-          matchScore: 95,
           status: 'in_progress',
-          dueDate: '2026-11-28',
-          title: '【高优商机作战卡】陈荣昌教授团队 · 慢阻肺(COPD)气道微生态与宿主免疫转录组双组学分型',
-          breakIceScript: '“陈主任您好，在长沙 CACP 2026 呼吸医师大会上聆听了您关于【慢阻肺早期分子分型与精准干预策略】的报告！针对慢阻肺急性加重期的气道微生态与宿主免疫互作，吉因加打通了【同一份诱导痰/灌洗液标本同时完成宏基因组+宿主转录组】的双组学建库流程，非常希望能为您牵头的慢阻肺队列提供测序与分型建模支持！”',
-          painPoint: '呼吸道标本（诱导痰/BALF）宿主背景高、微生物丰度低，分开建库耗费样本且难以做微生态-宿主基因共表达网络分析。',
-          reason: 'CACP 2026 中国呼吸医师大会（11月26-29日·长沙）特邀主旨讲者，四维评分 84分·B级。',
-          participation: '推介 T03（呼吸道宏基因组+宿主转录组双组学联检）+ T10（慢阻肺多中心临床分型验证）。',
-          conditions: '核实团队在研慢阻肺队列的诱导痰/BALF及配对外周血样本存量。',
-          capabilities: ['T03 宏基因组+宿主转录组', 'T10 临床队列验证'],
+          dueDate: '11-28',
+          shortTopic: '慢阻肺微生态+宿主转录组',
+          breakIceScript: '“陈主任您好，在长沙 CACP 呼吸大会上聆听了您关于【慢阻肺早期分子分型】的报告！吉因加打通了【同一份诱导痰/灌洗液同时完成宏基因组+宿主转录组】的双组学流程，非常希望能为您牵头的慢阻肺队列提供测序与分型支持！”',
+          painPoint: '呼吸道标本宿主背景高，分开建库耗费样本且难以做微生态-宿主共表达分析。',
+          capabilities: ['T03 宏基因组+宿主转录组', 'T10 队列验证'],
+          checklist: [
+            '在长沙呼吸年会现场拜访团队核心课题秘书',
+            '核实慢阻肺急性加重队列的诱导痰/BALF存量',
+            '提供呼吸道双组学联检实测质控报告'
+          ],
           dimensions: [
             { name: '研究方向契合度', maximum: 30, score: 28 },
             { name: '学术产出质量',   maximum: 25, score: 20 },
             { name: '科研转化潜力',   maximum: 25, score: 19 },
             { name: '平台资源禀赋',   maximum: 20, score: 17 }
           ],
-          talkEvidence: '[CACP 2026 中国呼吸医师大会] 慢阻肺早期分子分型与精准干预策略',
-          qualityRating: '👍 很有用 (方向准/有课题)'
-        },
-        {
-          id: 'BC-DAJINGJING',
-          repId: 'sales_south_wang',
-          piName: '达静静',
-          hospital: '贵州省人民医院',
-          domain: '糖尿病与代谢',
-          roleLabel: '区域/专科学术带头人 · DKD队列负责人',
-          scoreBadge: '74分 · C级',
-          matchScore: 92,
-          status: 'assigned',
-          dueDate: '2026-11-30',
-          title: '【商机作战卡】达静静教授团队 · 糖尿病肾病(DKD)临床进展队列转录组与代谢物联合预测模型',
-          breakIceScript: '“达主任您好，拜读了您在 CDS 2026 上的口头报告【糖尿病肾病临床进展队列的转录组与代谢物联合预测模型】！我们吉因加在西南地区协助多家三甲肾内与内分泌团队完成了肾活检组织空间转录组及尿液外泌体多组学队列转化，想跟您探讨下咱们贵州省医 DKD 随访队列二期验证的合作可能。”',
-          painPoint: '西南区域重点三甲医院拥有高质量临床随访队列与省部级基金支持，但本地缺乏高水平多组学生信建模与验证平台。',
-          reason: 'CDS 2026 口头报告讲者，四维评分 74分·C级（研究方向契合度 28/30，科研转化潜力 17/25）。',
-          participation: '推荐 T03（肾脏组织/尿液外泌体转录组）+ T10（多组学预后模型构建）。',
-          conditions: '沟通确认现有 DKD 随访队列二期样本入组规模及2027年地区科学基金/面上项目申报计划。',
-          capabilities: ['T03 转录组分析', 'T10 临床队列建模'],
-          dimensions: [
-            { name: '研究方向契合度', maximum: 30, score: 28 },
-            { name: '学术产出质量',   maximum: 25, score: 15 },
-            { name: '科研转化潜力',   maximum: 25, score: 17 },
-            { name: '平台资源禀赋',   maximum: 20, score: 14 }
-          ],
-          talkEvidence: '[CDS 2026 口头报告] 糖尿病肾病临床进展队列的转录组与代谢物联合预测模型',
-          qualityRating: ''
+          talkEvidence: 'CACP 2026 呼吸大会：慢阻肺早期分子分型与精准干预策略',
+          qualityRating: '👍 很有用'
         }
       ];
 
       const CONFERENCE_PUSHES = [
         {
-          id: 'CP-CDS2026',
-          repId: 'sales_east_zhang',
+          id: 'CP-CDS2026', repId: 'sales_east_zhang',
+          shortName: 'CDS 2026 糖尿病全国年会',
           title: '中华医学会糖尿病学分会第二十八次全国学术会议 (CDS 2026)',
-          tierBadge: '🔥 B级 · 国内重点年会',
-          date: '2026-11-25 ~ 11-28',
-          city: '厦门',
-          marketNote: '重点锁定内分泌代谢队列与 DKD 早期损伤分论坛，会期集中拜访华东区参会讲者 PI。',
-          speakers: ['王卫庆 (瑞金·82分)', '张学礼 (六院·77分)', '黄斌 (安徽省立·62分)'],
+          date: '11-25~11-28', city: '厦门',
+          speakers: ['王卫庆 (瑞金)', '张学礼 (六院)', '黄斌 (安徽省立)'],
           claimed: true
         },
         {
-          id: 'CP-PMC2026',
-          repId: 'sales_east_zhang',
+          id: 'CP-PMC2026', repId: 'sales_east_zhang',
+          shortName: 'PMC 2026 泛血管大会',
           title: '第五届泛血管医学大会（PMC 2026）',
-          tierBadge: '🔥 B级 · 国内重点年会',
-          date: '2026-11-27 ~ 11-29',
-          city: '南京',
-          marketNote: '葛均波院士等领衔，泛血管跨学科大PI齐聚南京，重点推介 CHIP 克隆性造血靶向测序与大队列蛋白组。',
-          speakers: ['葛均波 (中山医院·91分)', '顾宁 (南京鼓楼医院)'],
+          date: '11-27~11-29', city: '南京',
+          speakers: ['葛均波 (中山医院)', '顾宁 (鼓楼医院)'],
           claimed: false
         },
         {
-          id: 'CP-STROKE2026',
-          repId: 'sales_north_li',
+          id: 'CP-STROKE2026', repId: 'sales_north_li',
+          shortName: '2026 中国脑卒中大会',
           title: '2026 年中国脑卒中大会',
-          tierBadge: '🔥 B级 · 国内重点年会',
-          date: '2026-11-27 ~ 11-29',
-          city: '北京',
-          marketNote: '吉训明院士任大会主席，北京主场作战，重点对接宣武、天坛及华北各卒中中心带头人。',
-          speakers: ['吉训明 (宣武医院·88分)', '惠汝太 (阜外医院·66分)'],
+          date: '11-27~11-29', city: '北京',
+          speakers: ['吉训明 (宣武医院)', '惠汝太 (阜外医院)'],
           claimed: true
         },
         {
-          id: 'CP-BJRA2026',
-          repId: 'sales_north_li',
+          id: 'CP-BJRA2026', repId: 'sales_north_li',
+          shortName: '北京风湿病学年会',
           title: '北京医学会风湿病学分会第 26 届学术年会',
-          tierBadge: '🔥 B级 · 国内重点年会',
-          date: '2026-11-27 ~ 11-28',
-          city: '北京',
-          marketNote: '特设基础科研与高分论文专场，北京各大三甲风湿科主任与青年学者云集，重点推单细胞 TCR/BCR 免疫组库。',
-          speakers: ['苏茵 (北大人民·81分)', '王迁 (北京协和)'],
+          date: '11-27~11-28', city: '北京',
+          speakers: ['苏茵 (北大人民)', '王迁 (北京协和)'],
           claimed: false
         },
         {
-          id: 'CP-CACP2026',
-          repId: 'sales_south_wang',
-          title: '中国医师协会 2026 呼吸医师年会暨第 25 届中国呼吸医师大会 (CACP 2026)',
-          tierBadge: '🔥 B级 · 国内重点年会',
-          date: '2026-11-26 ~ 11-29',
-          city: '长沙',
-          marketNote: '湘雅二院、湘雅医院协办，华南与中南呼吸科主任全员到场，重点推气道微生态+宿主转录组双组学方案。',
-          speakers: ['陈荣昌 (广医一院·84分)', '罗红 (湘雅二院)'],
+          id: 'CP-CACP2026', repId: 'sales_south_wang',
+          shortName: 'CACP 2026 中国呼吸医师大会',
+          title: '中国医师协会 2026 呼吸医师年会 (CACP 2026)',
+          date: '11-26~11-29', city: '长沙',
+          speakers: ['陈荣昌 (广医一院)', '罗红 (湘雅二院)'],
           claimed: true
         },
         {
-          id: 'CP-ZSNEURO2026',
-          repId: 'sales_south_wang',
+          id: 'CP-ZSNEURO2026', repId: 'sales_south_wang',
+          shortName: '中山神经病学论坛',
           title: '第二十九届中山神经病学学术论坛·2026',
-          tierBadge: '🔥 B级 · 国内重点年会',
-          date: '2026-11-27 ~ 11-29',
-          city: '广州',
-          marketNote: '设 Neuroscience Day 青年科研征文，重点拜访中山系医院神经科青年骨干与主讲教授。',
-          speakers: ['陆正齐 (中山三院·79分)'],
+          date: '11-27~11-29', city: '广州',
+          speakers: ['陆正齐 (中山三院)'],
           claimed: false
         }
       ];
 
-      // Build Territory PI Pool from Real Database (D.pi_ratings + D.experts)
       function buildTerritoryPool() {
         const pool = [];
         const added = new Set();
@@ -919,8 +783,8 @@
             name: r.name,
             hospital: inst,
             domain: '糖尿病与代谢',
-            roleLabel: r.head_pi_status || '临床科研专家',
-            scoreBadge: Number.isFinite(r.total_score) ? `${r.total_score}分 · ${r.grade}级` : '四维调研中 (方向已核)',
+            roleLabel: '临床科研专家',
+            scoreBadge: Number.isFinite(r.total_score) ? `${r.total_score}分 · ${r.grade}级` : '调研中',
             research: (r.dimensions && r.dimensions[0] && r.dimensions[0].basis) || '糖尿病与代谢临床转化队列研究',
             repId,
             starred: Number.isFinite(r.total_score)
@@ -944,8 +808,8 @@
             hospital: inst,
             domain: '糖尿病与代谢',
             roleLabel: exp.tier_label || '全国学术带头人',
-            scoreBadge: exp.tier_code === 'international' ? '👑 国际级学者' : '🏛️ 全国学术带头人',
-            research: firstTalk ? `[${firstTalk.conference_id}] ${firstTalk.title}` : (exp.role_basis || '内分泌与代谢临床转化研究'),
+            scoreBadge: exp.tier_code === 'international' ? '国际学者' : '全国带头人',
+            research: firstTalk ? `${firstTalk.conference_id}：${firstTalk.title}` : (exp.role_basis || '内分泌与代谢临床转化研究'),
             repId,
             starred: false
           });
@@ -955,8 +819,24 @@
         return pool;
       }
 
-      const initialCards = readStore('clinical-workbench:battle-cards:v2', DEFAULT_BATTLE_CARDS);
-      const initialTerritoryPIs = buildTerritoryPool();
+      // Merge stored battle cards with clean fields
+      const rawStoredCards = readStore('clinical-workbench:battle-cards:v2', null);
+      const initialCards = Array.isArray(rawStoredCards) && rawStoredCards.length
+        ? rawStoredCards.map(c => {
+            const def = DEFAULT_BATTLE_CARDS.find(d => d.id === c.id || d.piName === c.piName);
+            return {
+              ...(def || {}),
+              ...c,
+              shortTopic: c.shortTopic || (def && def.shortTopic) || (c.domain + '多组学课题'),
+              checklist: c.checklist || (def && def.checklist) || [
+                '摸清科室现有队列样本类型与冻存例数',
+                '确认随访终点与近期检测需求',
+                '了解2027国自然或专项申报时间表'
+              ]
+            };
+          })
+        : DEFAULT_BATTLE_CARDS;
+
       const defaultFeedbacks = [
         {
           id: 'vr1',
@@ -964,13 +844,11 @@
           repName: '张敏 (华东战区)',
           date: '2026-11-23',
           piName: '王卫庆',
-          hospital: '上海交通大学医学院附属瑞金医院',
+          hospital: '上海瑞金医院',
           contactStatusLabel: '已接触面访',
-          need: '围绕 CDS 2026 大会报告沟通了瑞金内分泌代谢队列的多组学检测需求，对大规模样本血浆蛋白质组与转录组验证(T10/T14)表示明确兴趣。',
-          cohort: '国家医学中心拥有数千例长期随访代谢队列，本期拟挑选 300 例微血管并发症进展亚组开展多组学建模。',
-          support: '需吉因加医学支持与生信团队下周二前出具《代谢队列多组学联合验证技术方案》及报价单。',
-          content: '围绕 CDS 2026 大会报告沟通了瑞金内分泌代谢队列的多组学检测需求，王教授团队对大规模临床样本的转录组与血浆蛋白质组验证(T10/T14)表示明确兴趣。',
-          nextStep: '下周二前协同吉因加医学技术支持提交《代谢队列多组学联合验证技术方案》'
+          cohort: '围绕 CDS 2026 大会报告沟通了瑞金代谢队列需求，拟挑 300 例微血管并发症进展亚组开展血浆蛋白组与转录组验证(T10/T14)。',
+          content: '围绕 CDS 2026 大会报告沟通了瑞金代谢队列需求，拟挑 300 例微血管并发症进展亚组开展血浆蛋白组与转录组验证(T10/T14)。',
+          nextStep: '下周二前提交《代谢队列多组学联合验证方案》'
         },
         {
           id: 'vr2',
@@ -978,41 +856,26 @@
           repName: '张敏 (华东战区)',
           date: '2026-11-22',
           piName: '黄斌',
-          hospital: '中国科学技术大学附属第一医院（安徽省立医院）',
+          hospital: '安徽省立医院',
           contactStatusLabel: '已接触面访',
-          need: '针对 CDS 2026 口头报告 OR_003（DKD早期损伤与转录组验证）寻求高性价比的独立验证队列多组学检测服务。',
-          cohort: '一线核实：省自然青年基金在研，手头已冻存 320 例具备完整随访的 DKD 早期患者配对尿液与血浆标本。',
-          support: '寄送尿液外泌体 RNA 建库质控 SOP 及 100 例初筛优惠方案。',
-          content: '针对 CDS 2026 口头报告 OR_003（DKD早期损伤与转录组验证）进行了会前拜访，核实其省自然青年基金课题手头已有 320 例具备完整随访的 DKD 尿液与血浆配对标本。',
-          nextStep: '已将标本可用性回传至市场部【客户画像校准】，准备寄送尿液外泌体建库质控SOP'
-        },
-        {
-          id: 'vr3',
-          repId: 'sales_north_li',
-          repName: '李娜 (华北战区)',
-          date: '2026-11-22',
-          piName: '吉训明',
-          hospital: '首都医科大学宣武医院',
-          contactStatusLabel: '微信/电话已约访',
-          need: '急性脑卒中再灌注损伤多中心队列的外周血与脑脊液液体活检 Biomarker 筛选子课题合作。',
-          cohort: '百万减残工程多中心卒中样本库已完备，拟在 11-27 北京脑卒中大会期间敲定首批 200 例验证样本。',
-          support: '协调医学部神经专科负责人于 11月27日 北京脑卒中大会茶歇现场对接。',
-          content: '跟进 2026 中国脑卒中大会主会场议程，与团队学术秘书对接了急性脑卒中多中心外周血 Biomarker 筛选子课题合作意向。',
-          nextStep: '11月27日北京脑卒中大会茶歇时段安排吉因加医学部负责人现场深度对接'
+          cohort: '省自然青年基金在研，已冻存 320 例具备完整随访的 DKD 早期患者配对尿液与血浆标本，拟 Q4 启动转录组验证。',
+          content: '省自然青年基金在研，已冻存 320 例具备完整随访的 DKD 早期患者配对尿液与血浆标本，拟 Q4 启动转录组验证。',
+          nextStep: '寄送尿液外泌体建库质控 SOP'
         }
       ];
 
       return {
         reps: REPS,
         currentRepId: 'sales_east_zhang',
-        activeTab: 'cards', // 'cards' | 'territory' | 'feedback'
+        activeTab: 'cards',
+        showConfPush: false,
         cardStatusFilter: 'all',
         territoryFilter: 'all',
         searchQuery: '',
 
         battleCards: initialCards,
         conferencePushes: CONFERENCE_PUSHES,
-        territoryPIs: initialTerritoryPIs,
+        territoryPIs: buildTerritoryPool(),
         feedbacks: readStore('clinical-workbench:visit-reports:v2', defaultFeedbacks),
 
         selectedCardId: initialCards[0]?.id || '',
@@ -1023,7 +886,7 @@
           this.toasts.push({ id, message, type });
           setTimeout(() => {
             this.toasts = this.toasts.filter(t => t.id !== id);
-          }, 3200);
+          }, 3000);
         },
 
         get currentRep() {
@@ -1033,7 +896,7 @@
         onRepChange() {
           const first = this.myBattleCards[0];
           if (first) this.selectedCardId = first.id;
-          this.showToast(`已切换至【${this.currentRep.label}】专属战区工作台`, 'info');
+          this.showToast(`已切换至：${this.currentRep.label}`, 'info');
         },
 
         getDomainColor(domainName) {
@@ -1041,8 +904,8 @@
         },
 
         getStatusLabel(st) {
-          const map = { assigned: '🎯 待破冰接触', in_progress: '🔥 持续跟进中', contacted: '✓ 已面访触达' };
-          return map[st] || '🔥 跟进中';
+          const map = { assigned: '待接触', in_progress: '跟进中', contacted: '已触达' };
+          return map[st] || '跟进中';
         },
 
         get myConferencePushes() {
@@ -1050,12 +913,10 @@
         },
 
         get myBattleCards() {
-          const q = this.searchQuery.trim().toLowerCase();
           return this.battleCards.filter(c => {
             const matchRep = !c.repId || c.repId === this.currentRepId || (c.assignee && c.assignee.includes(this.currentRep.name));
             const matchStatus = this.cardStatusFilter === 'all' || c.status === this.cardStatusFilter;
-            const matchSearch = !q || [c.title, c.piName, c.hospital, c.domain].join(' ').toLowerCase().includes(q);
-            return matchRep && matchStatus && matchSearch;
+            return matchRep && matchStatus;
           });
         },
 
@@ -1082,25 +943,25 @@
 
         claimConference(cp) {
           cp.claimed = true;
-          this.showToast(`已成功认领【${cp.title}】参会跟进任务！`, 'success');
+          this.showToast(`✓ 已认领【${cp.shortName}】参会跟进`, 'success');
         },
 
         copyIceBreaker(text) {
           if (navigator.clipboard && navigator.clipboard.writeText) {
             navigator.clipboard.writeText(text).then(() => {
-              this.showToast('✓ 建议破冰话术已复制到剪贴板，可直接粘贴至微信或拜访备忘！', 'success');
+              this.showToast('✓ 破冰话术已复制，可直接粘贴发送！', 'success');
             }).catch(() => {
-              this.showToast('✓ 建议破冰话术已准备好！', 'success');
+              this.showToast('✓ 破冰话术已复制！', 'success');
             });
           } else {
-            this.showToast('✓ 建议破冰话术已复制到剪贴板！', 'success');
+            this.showToast('✓ 破冰话术已复制！', 'success');
           }
         },
 
         rateBattleCard(card, ratingText) {
           card.qualityRating = ratingText;
           writeStore('clinical-workbench:battle-cards:v2', this.battleCards);
-          this.showToast(`已向市场部反馈卡片质量评价：${ratingText}`, 'info');
+          this.showToast(`已反馈评价：${ratingText}`, 'info');
         },
 
         generateBattleCardFromPI(pi) {
@@ -1108,7 +969,7 @@
           if (existing) {
             this.selectedCardId = existing.id;
             this.activeTab = 'cards';
-            this.showToast(`【${pi.name}】已有商机作战卡，已为您直接打开！`, 'info');
+            this.showToast(`已打开【${pi.name}】作战卡`, 'info');
             return;
           }
           const newCard = {
@@ -1119,16 +980,17 @@
             domain: pi.domain,
             roleLabel: pi.roleLabel,
             scoreBadge: pi.scoreBadge,
-            matchScore: 93,
             status: 'assigned',
-            dueDate: '2026-12-05',
-            title: `【高优商机作战卡】${pi.name}教授课题组 · ${pi.domain}多组学转化与标志物建模`,
-            breakIceScript: `“${pi.name}主任您好，非常关注您在【${pi.research}】方向的研究成果！我们吉因加近期在类似临床队列中结合 6Dmarker 多组学整合算法（T10）与高通量蛋白组/转录组技术，协助多家三甲医院产出了高分临床转化文章。想约您15分钟汇报下相关案例，看能否配合您手头的临床队列开展多组学标志物验证？”`,
-            painPoint: `${pi.hospital}${pi.name}教授团队聚焦临床转化，受限于常规临床检验维度单一，需要高通量多组学数据与专业生信建模支撑高分文章发表。`,
-            reason: `本战区重点三甲医院高潜学术带头人（${pi.scoreBadge}），近期学术活跃度高，转化诉求明确。`,
-            participation: '推荐结合吉因加 T10（6Dmarker多组学队列验证）及 T03/T14（单细胞转录组/高深度蛋白质组），提供一站式科研合作。',
-            conditions: '首次拜访需摸清：1) 科室现有随访队列样本类型与冻存例数；2) 2027年国自然或省部级课题申报规划。',
-            capabilities: ['T10 临床队列多组学验证', 'T03 单细胞/转录组', 'T14 高通量蛋白质组'],
+            dueDate: '12-05',
+            shortTopic: `${pi.domain}多组学队列转化`,
+            breakIceScript: `“${pi.name}主任您好，非常关注您在【${pi.research}】方向的研究！吉因加近期结合 6Dmarker 多组学算法（T10）与高通量蛋白组/转录组技术，协助多家三甲医院产出了高分转化成果，想约您 15 分钟汇报下案例！”`,
+            painPoint: '临床转化队列受限于常规生化指标维度单一，需要高通量多组学数据与生信建模支撑高分论文产出。',
+            capabilities: ['T10 队列多组学验证', 'T03 单细胞/转录组'],
+            checklist: [
+              '摸清科室现有随访队列样本类型与冻存例数',
+              '确认近期是否有样本初筛与生信建模需求',
+              '了解2027年国自然或省部级课题申报规划'
+            ],
             dimensions: [
               { name: '研究方向契合度', maximum: 30, score: 28 },
               { name: '学术产出质量',   maximum: 25, score: null },
@@ -1142,19 +1004,16 @@
           writeStore('clinical-workbench:battle-cards:v2', this.battleCards);
           this.selectedCardId = newCard.id;
           this.activeTab = 'cards';
-          this.showToast(`已为【${pi.name}】生成专属商机作战卡并生成定制破冰话术！`, 'success');
+          this.showToast(`✓ 已生成【${pi.name}】专属作战卡`, 'success');
         },
 
-        // Structured Feedback Modal
         showFeedbackModal: false,
         fbForm: {
           cardId: '',
           piName: '',
           hospital: '',
           contactStatusLabel: '已接触面访',
-          need: '',
           cohort: '',
-          support: '',
           nextStep: ''
         },
 
@@ -1164,9 +1023,7 @@
             piName: card ? card.piName : '王卫庆',
             hospital: card ? card.hospital : '重点合作三甲医院',
             contactStatusLabel: '已接触面访',
-            need: '',
             cohort: '',
-            support: '',
             nextStep: ''
           };
           this.showFeedbackModal = true;
@@ -1175,15 +1032,13 @@
         fillDemoFeedback() {
           const name = this.fbForm.piName || '专家';
           this.fbForm.contactStatusLabel = '已接触面访';
-          this.fbForm.need = `${name}教授团队对我们推介的多组学队列验证方案（T10/T03）非常感兴趣，希望能结合大会报告课题尽快启动首批标志物筛选。`;
-          this.fbForm.cohort = `一线核实：科室已冻存 260 例具备完整临床随访终点的配对血浆与组织/体液样本，课题经费充足，计划下季度初出初步生信分析结果。`;
-          this.fbForm.support = `请市场部与医学部协助准备 200 例高深度蛋白组+转录组联合建库报价单，并安排生信工程师参与下周线上答疑。`;
-          this.fbForm.nextStep = `下周三携技术支持二次进院敲定样本寄送批次与合同细节`;
+          this.fbForm.cohort = `一线核实：${name}教授团队已冻存 260 例具备完整随访终点的配对血浆与体液样本，对 T10 多组学队列验证很感兴趣，拟下月启动初筛。`;
+          this.fbForm.nextStep = `下周三携医学部同事二次进院提交 200 例蛋白组+转录组报价方案`;
         },
 
         submitFeedback() {
-          if (!this.fbForm.need && !this.fbForm.cohort) {
-            this.showToast('请填写客户关注的研究问题或摸清的样本队列情况', 'error');
+          if (!this.fbForm.cohort) {
+            this.showToast('请填写摸清的样本队列底数与合作意向', 'error');
             return;
           }
           const today = new Date().toISOString().slice(0, 10);
@@ -1195,31 +1050,26 @@
             piName: this.fbForm.piName,
             hospital: this.fbForm.hospital,
             contactStatusLabel: this.fbForm.contactStatusLabel,
-            qualityTag: `${this.fbForm.contactStatusLabel} · ${this.fbForm.hospital}`,
-            need: this.fbForm.need,
             cohort: this.fbForm.cohort,
-            support: this.fbForm.support,
-            content: `【研究需求】${this.fbForm.need} 【样本与阶段】${this.fbForm.cohort}` + (this.fbForm.support ? ` 【需公司支持】${this.fbForm.support}` : ''),
+            content: this.fbForm.cohort,
             nextStep: this.fbForm.nextStep || '协同医学技术支持持续跟进'
           };
 
           this.feedbacks.unshift(newFb);
           writeStore('clinical-workbench:visit-reports:v2', this.feedbacks);
 
-          // Also push to Market Workbench's Customer Profile Calibration Queue (intel-list:v2)
           const intelList = readStore('clinical-workbench:intel-list:v2', []);
           intelList.unshift({
             id: 'intel_' + Date.now(),
             piName: this.fbForm.piName,
             hospital: this.fbForm.hospital,
-            type: '销售一线摸底 · 样本队列与支持需求',
-            content: `${this.fbForm.cohort}（关注问题：${this.fbForm.need}）`,
+            type: '销售拜访摸底 · 样本队列核实',
+            content: this.fbForm.cohort,
             date: today,
             synced: false
           });
           writeStore('clinical-workbench:intel-list:v2', intelList);
 
-          // Update card status
           const card = this.battleCards.find(c => c.id === this.fbForm.cardId || c.piName === this.fbForm.piName);
           if (card) {
             card.status = 'contacted';
@@ -1227,7 +1077,7 @@
           }
 
           this.showFeedbackModal = false;
-          this.showToast('✓ 拜访反馈已保存，并已实时同步至市场部 2×2 主工作台【业务闭环 & 画像校准】！', 'success');
+          this.showToast('✓ 拜访反馈已保存并同步至市场部主台！', 'success');
         }
       };
     };
