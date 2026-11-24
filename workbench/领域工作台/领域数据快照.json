@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_on": "2026-11-24T15:04:14+08:00",
+    "generated_on": "2026-11-24T15:24:50+08:00",
     "database_sha256": "645adc48a9af2eb67a9df04a0f4990fce706a5a4fcf2fe467c8e2372f0e78568",
     "read_only": true,
     "new_collection": false,
@@ -148505,25 +148505,25 @@
       "version": "conference-change-log:v1",
       "connection_status": "connected",
       "timezone": "Asia/Shanghai",
-      "last_synced_at": "2026-11-24T04:20:20.758489+00:00",
+      "last_synced_at": "2026-11-24T07:23:22.352702+00:00",
       "events": [
         {
-          "event_id": "EVT-1ce4feecec91",
+          "event_id": "EVT-4a13c70996f6",
           "conference_id": "AHA-CARDIO-2026",
           "event_kind": "first_seen",
           "summary": "市场部复核通过新学术会议：American Heart Association Scientific Sessions 2026",
-          "observed_at": "2026-11-24T04:20:20.749766+00:00",
+          "observed_at": "2026-11-24T07:23:22.345178+00:00",
           "source_published_on": "2026-11-14",
           "source_url": "https://professional.heart.org/scientific-sessions",
           "review_status": "approved",
           "field_id": "cardiovascular"
         },
         {
-          "event_id": "EVT-6ed8761918f8",
+          "event_id": "EVT-fa785737eec0",
           "conference_id": "CDS2026",
           "event_kind": "source_update",
           "summary": "会议日程更新：中华医学会糖尿病学分会第二十八次全国学术会议 (CDS 2026 - Updated)",
-          "observed_at": "2026-11-24T04:20:20.735897+00:00",
+          "observed_at": "2026-11-24T07:23:22.331417+00:00",
           "source_published_on": "2026-11-25",
           "source_url": "https://cds2026.cma.org.cn/schedule-v2",
           "review_status": "approved",
@@ -148532,7 +148532,7 @@
       ],
       "checks": [
         {
-          "checked_at": "2026-11-24T04:20:20.758489+00:00",
+          "checked_at": "2026-11-24T07:23:22.352702+00:00",
           "status": "complete",
           "notes": "会议更新库已成功同步 2 条经市场部审核批准的会议事件。"
         }

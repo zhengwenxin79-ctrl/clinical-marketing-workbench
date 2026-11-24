@@ -81,13 +81,14 @@ def export_all():
             shutil.copy2(src, DIST / page_name)
             print(f"  -> Copied {page_name} to dist/.")
 
-    # 5. Copy conference review page
-    review_html = domain_wb / "会议审核入库.html"
-    if review_html.is_file():
-        shutil.copy2(review_html, DIST / "会议审核入库.html")
-        (DIST / "workbench/领域工作台").mkdir(parents=True, exist_ok=True)
-        shutil.copy2(review_html, DIST / "workbench/领域工作台/会议审核入库.html")
-        print("  -> Copied 会议审核入库.html to dist/ and dist/workbench/领域工作台/.")
+    # 5. Copy conference review page & dedicated sales portal page
+    for sub_page in ["会议审核入库.html", "销售工作台.html"]:
+        sub_html = domain_wb / sub_page
+        if sub_html.is_file():
+            shutil.copy2(sub_html, DIST / sub_page)
+            (DIST / "workbench/领域工作台").mkdir(parents=True, exist_ok=True)
+            shutil.copy2(sub_html, DIST / "workbench/领域工作台" / sub_page)
+            print(f"  -> Copied {sub_page} to dist/ and dist/workbench/领域工作台/.")
 
     # 6. Copy full view suites to BOTH dist/workbench/ and dist/ root to guarantee zero 404s
     view_folders = [
