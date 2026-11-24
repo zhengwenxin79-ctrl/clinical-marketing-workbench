@@ -397,6 +397,8 @@ window.workbenchApp = function () {
         boardName,
         reportCount: reports.length,
         paperCount: (t.paper_ids || []).length,
+        confCounts,
+        confIds: Object.keys(confCounts),
         confLabels,
         hasDomestic: Boolean(confCounts['CDS2026']),
         hasIntl: Boolean(confCounts['ADA2026']),
@@ -425,6 +427,8 @@ window.workbenchApp = function () {
         boardName: '脑血管病与卒中转化',
         reportCount: 24,
         paperCount: 3,
+        confCounts: { CHINASTROKE2026: 16, 'CONF-2026-003': 8 },
+        confIds: ['CHINASTROKE2026', 'CONF-2026-003'],
         confLabels: '2026中国脑卒中大会(16条) · 中山神经病学论坛(8条)',
         hasDomestic: true,
         hasIntl: false,
@@ -447,6 +451,8 @@ window.workbenchApp = function () {
         boardName: '气道慢病与微生态组学',
         reportCount: 19,
         paperCount: 2,
+        confCounts: { CACP2026: 19 },
+        confIds: ['CACP2026'],
         confLabels: 'CACP 2026中国呼吸医师大会(19条)',
         hasDomestic: true,
         hasIntl: false,
@@ -469,6 +475,8 @@ window.workbenchApp = function () {
         boardName: '自身免疫与免疫组库',
         reportCount: 16,
         paperCount: 2,
+        confCounts: { 'CONF-2026-005': 16 },
+        confIds: ['CONF-2026-005'],
         confLabels: '北京医学会风湿病学年会(16条)',
         hasDomestic: true,
         hasIntl: false,
@@ -490,6 +498,8 @@ window.workbenchApp = function () {
         boardName: '泛血管与心血管代谢',
         reportCount: 28,
         paperCount: 4,
+        confCounts: { 'CONF-2026-004': 18, 'AHA-CARDIO-2026': 10 },
+        confIds: ['CONF-2026-004', 'AHA-CARDIO-2026'],
         confLabels: 'PMC 2026泛血管大会(18条) · AHA 2026(10条)',
         hasDomestic: true,
         hasIntl: true,
@@ -511,6 +521,8 @@ window.workbenchApp = function () {
         boardName: '微循环与泛血管影像组学',
         reportCount: 18,
         paperCount: 2,
+        confCounts: { RSNA2026: 12, 'CONF-2026-009': 6 },
+        confIds: ['RSNA2026', 'CONF-2026-009'],
         confLabels: 'RSNA 2026(12条) · 2026MEC微循环大会(6条)',
         hasDomestic: true,
         hasIntl: true,
@@ -787,6 +799,9 @@ window.workbenchApp = function () {
           id: item.conference_id,
           title: item.conference_name,
           abbreviation: item.abbreviation || item.conference_name.slice(0, 14),
+          startDate: item.start_date || '2026-11-25',
+          endDate: item.end_date || item.start_date || '2026-11-28',
+          updatedDate: '2026-11-23',
           date: dateStr,
           city: item.city || '国内',
           domain: domainName,
@@ -1018,6 +1033,14 @@ window.workbenchApp = function () {
     scheduleSubTab: 'published', // 'published' (已发布日程) | 'unpublished' (未发布日程)
     showAnchorsPanel: false,
 
+    // Comprehensive vs Weekly Conference Hotspots state
+    hotspotViewMode: 'comprehensive', // 'comprehensive' (综合会议热点) | 'weekly' (本周会议热点)
+    weekStart: '2026-11-23',
+    weekEnd: '2026-11-29',
+    weeklySubTab: 'occurring',        // 'occurring' (本周召开) | 'updates' (本周新收录/日程更新)
+    weeklyFocusConf: 'all',
+    weeklyReportFormat: 'talks',
+
     hotspotScope: 'all',      // 'all' | 'domestic' | 'intl'
     selectedBoard: '全部',
     topicPage: 1,
@@ -1117,10 +1140,97 @@ window.workbenchApp = function () {
       return this.conferences.filter(c => c.schedulePublished && (c.topicScrapeStatus === 'pending' || (c.topicScrapeStatus === 'done' && c.piScrapeStatus === 'pending'))).length;
     },
 
+    get weekRangeLabel() {
+      return `${this.weekStart} — ${this.weekEnd}`;
+    },
+
+    shiftWeek(deltaWeeks) {
+      const addDays = (dStr, n) => {
+        const ms = Date.parse(dStr + 'T00:00:00Z') + n * 86400000;
+        return new Date(ms).toISOString().slice(0, 10);
+      };
+      this.weekStart = addDays(this.weekStart, deltaWeeks * 7);
+      this.weekEnd = addDays(this.weekStart, 6);
+      this.weeklyFocusConf = 'all';
+      this.topicPage = 1;
+    },
+
+    resetCurrentWeek() {
+      this.weekStart = '2026-11-23';
+      this.weekEnd = '2026-11-29';
+      this.weeklyFocusConf = 'all';
+      this.topicPage = 1;
+    },
+
+    get weeklyOccurringConferences() {
+      return this.conferences.filter(c => {
+        if (!c.schedulePublished) return false;
+        const matchDomain = this.selectedDomain === '全部' || c.domain === this.selectedDomain;
+        const s = c.startDate || '2026-11-25';
+        const e = c.endDate || s;
+        return matchDomain && s <= this.weekEnd && e >= this.weekStart;
+      });
+    },
+
+    get weeklyUpdatedConferences() {
+      return this.conferences.filter(c => {
+        const matchDomain = this.selectedDomain === '全部' || c.domain === this.selectedDomain;
+        const u = c.updatedDate || '2026-11-23';
+        return matchDomain && u >= this.weekStart && u <= this.weekEnd;
+      });
+    },
+
+    get weeklyActiveConferences() {
+      return this.weeklySubTab === 'occurring'
+        ? this.weeklyOccurringConferences
+        : this.weeklyUpdatedConferences;
+    },
+
+    get weeklyHotspotTopics() {
+      const activeConfs = this.weeklyActiveConferences;
+      const activeIds = new Set(
+        this.weeklyFocusConf === 'all'
+          ? activeConfs.map(c => c.id)
+          : [this.weeklyFocusConf]
+      );
+      if (activeIds.size === 0) return [];
+
+      const formatRatio = this.weeklyReportFormat === 'posters' ? 0.35 : (this.weeklyReportFormat === 'all' ? 1.15 : 1);
+      const list = [];
+
+      for (const tp of this.hotspotTopics) {
+        const counts = tp.confCounts || {};
+        const matchedEntries = Object.entries(counts).filter(([cid]) => activeIds.has(cid));
+        if (matchedEntries.length === 0) continue;
+
+        const rawSum = matchedEntries.reduce((acc, [, cnt]) => acc + cnt, 0);
+        const weeklyCount = Math.max(1, Math.round(rawSum * formatRatio));
+        const weeklyLabels = matchedEntries
+          .map(([cid, cnt]) => {
+            const confObj = this.conferences.find(c => c.id === cid);
+            const name = confObj ? confObj.abbreviation : cid;
+            return `${name}(${Math.max(1, Math.round(cnt * formatRatio))}条)`;
+          })
+          .join(' · ');
+
+        list.push({
+          ...tp,
+          weeklyReportCount: weeklyCount,
+          weeklyConfLabels: weeklyLabels
+        });
+      }
+
+      return list.sort((a, b) => (b.weeklyReportCount || 0) - (a.weeklyReportCount || 0));
+    },
+
+    get activeModeTopicBase() {
+      return this.hotspotViewMode === 'weekly' ? this.weeklyHotspotTopics : this.hotspotTopics;
+    },
+
     getDomainCount(domainName) {
       let dataset = [];
       if (this.hotspotTab === 'academic') {
-        if (this.academicMode === 'hotspots') dataset = this.hotspotTopics;
+        if (this.academicMode === 'hotspots') dataset = this.activeModeTopicBase;
         else if (this.academicMode === 'library') dataset = this.conferences;
         else dataset = this.auditConferences;
       } else if (this.hotspotTab === 'literature') {
@@ -1148,10 +1258,14 @@ window.workbenchApp = function () {
         const hasSchedule = Boolean(item.schedulePublished);
         const domainPIs = this.piList.filter(p => p.domain === item.domain).slice(0, 2);
 
+        const startParts = String(item.date || '').split('~').map(x => x.trim());
         const newConf = {
           id: item.conferenceId || ('CONF-APP-' + Date.now()),
           title: item.title,
           abbreviation: item.abbreviation || item.title.slice(0, 14),
+          startDate: startParts[0] || '2026-11-27',
+          endDate: startParts[1] || startParts[0] || '2026-11-28',
+          updatedDate: '2026-11-24',
           date: item.date,
           city: item.city,
           domain: item.domain,
@@ -1221,6 +1335,8 @@ window.workbenchApp = function () {
           boardName: `${conf.domain}最新会议专题`,
           reportCount: conf.reportCount || 24,
           paperCount: 2,
+          confCounts: { [conf.id]: conf.reportCount || 24 },
+          confIds: [conf.id],
           confLabels: `${conf.abbreviation}(${conf.reportCount || 24}条)`,
           hasDomestic: conf.tierCode !== 'A',
           hasIntl: conf.tierCode === 'A',
@@ -1334,7 +1450,7 @@ window.workbenchApp = function () {
     // STAGE 3 Computed: Hotspot Topics & Boards
     get availableBoards() {
       const counts = {};
-      for (const t of this.hotspotTopics) {
+      for (const t of this.activeModeTopicBase) {
         if (this.selectedDomain !== '全部' && t.domain !== this.selectedDomain) continue;
         counts[t.boardName] = (counts[t.boardName] || 0) + 1;
       }
@@ -1343,10 +1459,11 @@ window.workbenchApp = function () {
 
     get filteredHotspotTopics() {
       const q = this.searchQuery.trim().toLowerCase();
-      return this.hotspotTopics.filter(t => {
+      return this.activeModeTopicBase.filter(t => {
         const matchDomain = this.selectedDomain === '全部' || t.domain === this.selectedDomain;
         const matchBoard = this.selectedBoard === '全部' || t.boardName === this.selectedBoard;
-        const matchScope = this.hotspotScope === 'all'
+        const matchScope = this.hotspotViewMode === 'weekly'
+          || this.hotspotScope === 'all'
           || (this.hotspotScope === 'domestic' && t.hasDomestic)
           || (this.hotspotScope === 'intl' && t.hasIntl);
         const leaderNames = (t.leaders || []).map(l => l.name + ' ' + l.hospital + ' ' + l.talkTitle).join(' ');
