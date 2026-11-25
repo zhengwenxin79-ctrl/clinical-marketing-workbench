@@ -185,14 +185,14 @@ window.workbenchApp = function () {
         detailedGrants: [
           {
             title: '国家自然科学基金重点专项 (主持)',
-            name: ${name}团队：基于多组学图谱的疾病发生机制与靶点发掘,
+            name: `${name}团队：基于多组学图谱的疾病发生机制与靶点发掘`,
             period: '在研 · 2024-2028',
             budget: '¥800~1,500 万',
             demand: '外周血液体活检、cfRNA微量测序与单细胞转录组建模'
           },
           {
             title: '国家重点研发计划子课题 / 省部级转化专项',
-            name: ${name}团队：前瞻性专科临床队列样本验证与分子标志物转化研究,
+            name: `${name}团队：前瞻性专科临床队列样本验证与分子标志物转化研究`,
             period: '在研 · 2025-2029',
             budget: '¥300~500 万',
             demand: '前瞻性多中心队列随访质控、多模态标志物临床验证'
@@ -1811,7 +1811,7 @@ window.workbenchApp = function () {
             existingPI.conferencesAttended.push(conf.abbreviation);
           }
           if (!existingPI.sources) existingPI.sources = [];
-          existingPI.sources.push({ id: conf.id, title: ${conf.title} 官方日程讲者名录, url: conf.officialUrl || '#' });
+          existingPI.sources.push({ id: conf.id, title: `${conf.title} 官方日程讲者名录`, url: conf.officialUrl || '#' });
           const confCount = existingPI.conferencesAttended.length;
           existingPI.sourceLabel = 跨  场重点会议: ;
           if (!existingPI.capabilities) existingPI.capabilities = [];
@@ -1819,7 +1819,7 @@ window.workbenchApp = function () {
           if (!existingPI.capabilities.includes('T03 单细胞/转录组')) existingPI.capabilities.push('T03 单细胞/转录组');
           if (!existingPI.capabilities.includes('T01 cfRNA液体活检')) existingPI.capabilities.push('T01 cfRNA液体活检');
           if (!existingPI.research.includes(sp.topic)) {
-            existingPI.research = ${existingPI.research}；【最新】;
+            existingPI.research = `${existingPI.research}；【最新日程】${sp.topic}`;
           }
           mergedCount++;
         } else {
@@ -1859,11 +1859,11 @@ window.workbenchApp = function () {
             syncedIntel: [],
             syncedIntelCount: 0,
             ratingDate: new Date().toISOString().slice(0, 10),
-            headPiStatus: ${conf.abbreviation} 讲者线索,
-            sourceLabel: 来源:  日程抓取,
-            sources: [{ id: conf.id, title: ${conf.title} 官方日程讲者名录, url: conf.officialUrl || '#' }],
+            headPiStatus: `${conf.abbreviation} 讲者线索`,
+            sourceLabel: `来源: ${conf.abbreviation} 日程抓取`,
+            sources: [{ id: conf.id, title: `${conf.title} 官方日程讲者名录`, url: conf.officialUrl || '#' }],
             isAiRecommended: true,
-            research: 讲题：,
+            research: `讲题：${sp.topic}`,,
             starred: true,
             assignee: '华东一区 - 张敏',
             taskStatus: '待派发'
