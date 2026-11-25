@@ -150,9 +150,14 @@ window.workbenchApp = function () {
             ? `结合专家【${dims[0].basis}】切入，推荐匹配吉因加临床队列多组学验证(T10)与转录组/单细胞测序(T03)。`
             : '建议围绕专家近期会议报告与临床队列样本条件，沟通多组学标志物发现与验证合作。';
 
+      const confsAttended = (talks && talks.length)
+        ? Array.from(new Set(talks.map(t => t.conf).filter(Boolean)))
+        : ['CDS2026'];
       return {
         id: key,
         name,
+        conferencesAttended: confsAttended,
+        conference_tags: confsAttended,
         hospital,
         department: '内分泌与代谢科',
         title: (expert && expert.tier_label) || '主任医师 / 教授',
@@ -204,7 +209,7 @@ window.workbenchApp = function () {
 
     const specialtyPIs = [
       {
-        id: 'SPEC-NEURO-01', name: '吉训明', hospital: '首都医科大学宣武医院 / 国家神经疾病医学中心',
+        id: 'SPEC-NEURO-01', name: '吉训明', conferencesAttended: ['中国脑卒中大会2026', 'AHA心血管国际峰会'], conference_tags: ['中国脑卒中大会2026', 'AHA心血管国际峰会'], hospital: '首都医科大学宣武医院 / 国家神经疾病医学中心',
         roleLabel: '院士 · 全国学术带头人', sourceLabel: '来源: 2026中国脑卒中大会主席', domain: '神经精神',
         totalScore: 88, grade: 'B', hasPartialRating: false,
         scoreBadge: '88分 · B级 (专科试评)', dimSummary: '研究29/30 · 学术23/25 · 科研18/25 · 平台18/20',
@@ -2125,6 +2130,27 @@ window.workbenchApp = function () {
       // Sync newly assigned Battle Card to 销售工作台.html (clinical-workbench:battle-cards:v2)
       const pi = this.assignTargetPI;
       const cards = readStore('clinical-workbench:battle-cards:v2', []);
+      
+      // Build authentic squat info from talks or conference tracks
+      let squatConference = '近期重点学术年会';
+      let squatTopic = '临床多组学标志物队列验证研究';
+      let squatDate = this.assignDueDate || '2026-12-05';
+      let squatVenue = '主会场报告厅';
+      if (pi && pi.talks && pi.talks.length) {
+        squatConference = pi.talks[0].conf || squatConference;
+        squatTopic = pi.talks[0].title || squatTopic;
+      }
+      if (pi && pi.conferencesAttended && pi.conferencesAttended.length) {
+        squatConference = pi.conferencesAttended[0];
+      }
+      const squatInfo = {
+        conference: squatConference,
+        topic: squatTopic,
+        date: squatDate,
+        venue: squatVenue,
+        actionAdvice: `建议销售代表于【${squatConference}】会议现场蹲点，提前30分钟在演讲会场侧方等候，围绕议题《${squatTopic}》现场破冰！`
+      };
+
       cards.unshift({
         id: 'BC-ASSIGN-' + Date.now(),
         repId,
@@ -2138,9 +2164,17 @@ window.workbenchApp = function () {
         dueDate: this.assignDueDate || '2026-12-05',
         title: `【市场指派作战卡】${this.targetTaskTitle}`,
         breakIceScript: this.assignNote,
-        painPoint: '临床转化队列亟需多组学高通量筛选与6Dmarker生信建模支撑高分成果发表。',
+        painPoint: `专家在近期【${squatConference}】发表重要讲题，其临床转化队列亟需多组学高通量筛选与生信建模支撑高分成果发表。`,
         reason: `市场部根据最新会议热点与PI四维评分定向指派（指派给：${this.assignedRep}）。`,
         participation: this.assignNote,
+        squatInfo: squatInfo,
+        talkEvidence: `${squatConference} · 《${squatTopic}》`,
+        shortTopic: `议题：${squatTopic}`,
+        checklist: [
+          `在【${squatConference}】现场对接专家或其核心随行学术秘书`,
+          `摸清近期拟开展多组学研究的临床样本类型（血浆/组织/体液）与冻存例数`,
+          `推介吉因加多组学标志物验证方案与生信分析支持，约定会后院内深入拜访`
+        ],
         conditions: '首次拜访请摸清：1) 科室在研队列样本类型与冻存例数；2) 近期国自然/省部级课题检测计划。',
         capabilities: (pi && pi.capabilities && pi.capabilities.length) ? pi.capabilities : ['T10 临床队列多组学验证', 'T03 单细胞/转录组'],
         dimensions: (pi && pi.dimensions) ? pi.dimensions : [

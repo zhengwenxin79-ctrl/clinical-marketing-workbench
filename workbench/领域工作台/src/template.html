@@ -1432,6 +1432,12 @@
                         <div>
                           <div class="flex items-center gap-2">
                             <span class="font-bold text-slate-900 text-base" x-text="pi.name"></span>
+                            <template x-if="pi.conferencesAttended && pi.conferencesAttended.length > 1">
+                              <span class="px-2 py-0.5 bg-purple-50 text-purple-700 border border-purple-200 rounded-md text-xs font-bold flex items-center gap-1 shadow-2xs"
+                                    :title="'多会议活跃专家：' + pi.conferencesAttended.join(' · ')">
+                                <span>🏷️ 跨</span><span x-text="pi.conferencesAttended.length"></span><span>会</span>
+                              </span>
+                            </template>
                             <span x-show="pi.syncedIntelCount > 0" class="px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded-md text-xs font-bold">已回流校准</span>
                           </div>
                           <div class="text-sm text-slate-500" x-text="pi.hospital"></div>
@@ -1596,7 +1602,17 @@
               <tbody class="divide-y divide-slate-100">
                 <template x-for="pi in piList.filter(p => p.starred)" :key="pi.id">
                   <tr class="hover:bg-slate-50 transition-colors">
-                    <td class="py-4 px-5 font-bold text-slate-900 text-base cursor-pointer hover:text-blue-600" @click="openPIDrawer(pi)" x-text="pi.name"></td>
+                    <td class="py-4 px-5 font-bold text-slate-900 text-base cursor-pointer hover:text-blue-600" @click="openPIDrawer(pi)">
+                      <div class="flex items-center gap-1.5 flex-wrap">
+                        <span x-text="pi.name"></span>
+                        <template x-if="pi.conferencesAttended && pi.conferencesAttended.length > 1">
+                          <span class="px-1.5 py-0.2 rounded text-[10px] font-bold bg-purple-50 text-purple-700 border border-purple-200"
+                                :title="'跨会活跃：' + pi.conferencesAttended.join('、')">
+                            <span x-text="'跨' + pi.conferencesAttended.length + '会'"></span>
+                          </span>
+                        </template>
+                      </div>
+                    </td>
                     <td class="py-4 px-5 text-slate-700" x-text="pi.hospital"></td>
                     <td class="py-4 px-5">
                       <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-200" x-text="pi.scoreBadge"></span>
@@ -1914,6 +1930,18 @@
         <button @click="showAssignModal = false" class="text-slate-400 hover:text-slate-600 text-xl">✕</button>
       </div>
       <p class="text-sm text-slate-500">目标事项：<span class="font-bold text-slate-800" x-text="targetTaskTitle"></span></p>
+      
+      <!-- 现场蹲点指引提示卡 -->
+      <template x-if="assignTargetPI && assignTargetPI.conferencesAttended && assignTargetPI.conferencesAttended.length">
+        <div class="bg-amber-50/80 border border-amber-200 rounded-xl p-3 text-xs text-amber-900 space-y-1">
+          <div class="font-bold flex items-center gap-1.5 text-amber-800">
+            <span>📍 专家会议蹲点提醒</span>
+            <span class="px-1.5 py-0.2 rounded bg-amber-200/70 text-amber-900 text-[10px]" x-text="'涉及 ' + assignTargetPI.conferencesAttended.length + ' 场重点会议'"></span>
+          </div>
+          <div>参会轨迹：<span class="font-semibold" x-text="assignTargetPI.conferencesAttended.join(' · ')"></span></div>
+          <div class="text-amber-700">将自动装配【现场蹲点锦囊】随商机卡派发至销售工作台，辅助一线现场精准破冰。</div>
+        </div>
+      </template>
 
       <div class="space-y-4 text-sm">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
