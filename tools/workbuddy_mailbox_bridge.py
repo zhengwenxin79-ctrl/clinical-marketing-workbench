@@ -116,7 +116,7 @@ def list_outbox_artifacts(since_ts):
     if not os.path.exists(OUTBOX_DIR):
         return found
     for name in os.listdir(OUTBOX_DIR):
-        if name in ('progress.json', 'progress.json.tmp'):
+        if name in ('progress.json', 'progress.json.tmp') or name.endswith(('_stdout.log', '_stderr.log', '_receipt.json')):
             continue
         full = os.path.join(OUTBOX_DIR, name)
         if os.path.isfile(full) and os.path.getmtime(full) >= since_ts - 2:
@@ -186,51 +186,63 @@ def run_codebuddy_worker(task_id, task_payload, cli_path):
         stdout_text, stderr_text, return_code = "", "", -1
 
         for attempt in range(1, max_attempts + 1):
-            proc = subprocess.Popen(
-                cmd,
-                cwd=BASE_DIR,
-                env=env,
-                stdout=subprocess.PIPE,
-                stderr=subprocess.PIPE,
-                text=True,
-                encoding='utf-8',
-                errors='replace'
-            )
+            stdout_log_path = os.path.join(OUTBOX_DIR, f"{task_id}_stdout.log")
+            stderr_log_path = os.path.join(OUTBOX_DIR, f"{task_id}_stderr.log")
+            with open(stdout_log_path, 'w', encoding='utf-8') as out_f, open(stderr_log_path, 'w', encoding='utf-8') as err_f:
+                proc = subprocess.Popen(
+                    cmd,
+                    cwd=BASE_DIR,
+                    env=env,
+                    stdout=out_f,
+                    stderr=err_f,
+                    stdin=subprocess.DEVNULL
+                )
 
-            attempt_tag = f"（第 {attempt}/{max_attempts} 次尝试）" if attempt > 1 else ""
-            logs.append(f"[{time.strftime('%H:%M:%S')}] ✅ CodeBuddy 进程已启动 (PID: {proc.pid}){attempt_tag}，正在联网检索与筛选会议...")
-            write_progress({
-                "task_id": task_id,
-                "status": "running",
-                "percent": 22,
-                "message": f"CodeBuddy 正在后台真实执行联网检索与初评（PID: {proc.pid}）{attempt_tag}...",
-                "active_skill": active_skill,
-                "pid": proc.pid,
-                "logs": list(logs)
-            })
+                attempt_tag = f"（第 {attempt}/{max_attempts} 次尝试）" if attempt > 1 else ""
+                logs.append(f"[{time.strftime('%H:%M:%S')}] ✅ CodeBuddy 进程已启动 (PID: {proc.pid}){attempt_tag}，正在联网检索与筛选会议...")
+                write_progress({
+                    "task_id": task_id,
+                    "status": "running",
+                    "percent": 22,
+                    "message": f"CodeBuddy 正在后台真实执行联网检索与初评（PID: {proc.pid}）{attempt_tag}...",
+                    "active_skill": active_skill,
+                    "pid": proc.pid,
+                    "logs": list(logs)
+                })
 
-            last_heartbeat = 0
-            while proc.poll() is None:
-                elapsed = int(time.time() - start_ts)
-                if elapsed - last_heartbeat >= 5:
-                    last_heartbeat = elapsed
-                    pct = min(88, 22 + int(elapsed * 0.6))
-                    if elapsed in (10, 30, 60, 120, 180):
-                        logs.append(f"[{time.strftime('%H:%M:%S')}] ⏳ Agent 正在持续执行中（已耗时 {elapsed} 秒），请耐心等待检索与评级完成...")
-                    write_progress({
-                        "task_id": task_id,
-                        "status": "running",
-                        "percent": pct,
-                        "message": f"CodeBuddy 正在后台真实执行《会议收集评级》（已耗时 {elapsed} 秒）...",
-                        "active_skill": active_skill,
-                        "pid": proc.pid,
-                        "elapsed_seconds": elapsed,
-                        "logs": list(logs[-30:])
-                    })
-                time.sleep(1)
+                last_heartbeat = 0
+                max_timeout_sec = 900  # 15 分钟安全超时上限
+                while proc.poll() is None:
+                    elapsed = int(time.time() - start_ts)
+                    if elapsed >= max_timeout_sec:
+                        proc.kill()
+                        logs.append(f"[{time.strftime('%H:%M:%S')}] ⚠️ 运行超过 {max_timeout_sec} 秒安全上限，已自动终止进程")
+                        break
+                    if elapsed - last_heartbeat >= 5:
+                        last_heartbeat = elapsed
+                        pct = min(88, 22 + int(elapsed * 0.4))
+                        if elapsed in (10, 30, 60, 120, 180, 300, 480):
+                            logs.append(f"[{time.strftime('%H:%M:%S')}] ⏳ Agent 正在持续执行中（已耗时 {elapsed} 秒），请耐心等待检索与评级完成...")
+                        write_progress({
+                            "task_id": task_id,
+                            "status": "running",
+                            "percent": pct,
+                            "message": f"CodeBuddy 正在后台真实执行《会议收集评级》（已耗时 {elapsed} 秒）...",
+                            "active_skill": active_skill,
+                            "pid": proc.pid,
+                            "elapsed_seconds": elapsed,
+                            "logs": list(logs[-30:])
+                        })
+                    time.sleep(1)
 
-            stdout_text, stderr_text = proc.communicate()
-            return_code = proc.returncode
+                proc.wait()
+                return_code = proc.returncode
+
+            with open(stdout_log_path, 'r', encoding='utf-8', errors='replace') as f:
+                stdout_text = f.read()
+            with open(stderr_log_path, 'r', encoding='utf-8', errors='replace') as f:
+                stderr_text = f.read()
+
             is_tls_502 = (not stdout_text.strip()) and ('502' in (stderr_text or '') or 'TLS' in (stderr_text or '') or 'disconnected' in (stderr_text or ''))
 
             if is_tls_502 and attempt < max_attempts:
