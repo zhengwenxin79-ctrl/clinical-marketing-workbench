@@ -1632,8 +1632,8 @@ window.workbenchApp = function () {
     domains: DOMAINS,
     salespeople: salesPeopleList,
 
-    conferences: initialConfData.library,
-    auditConferences: initialConfData.audit,
+    conferences: readStore('clinical-workbench:conferences:v1', initialConfData.library),
+    auditConferences: readStore('clinical-workbench:audit-conferences:v1', initialConfData.audit),
     hotspotTopics: initialHotspotTopics,
     literatureTopics: initialLiteratureTopics,
     literatureList: initialLiterature,
@@ -1870,6 +1870,8 @@ window.workbenchApp = function () {
           }))
         };
         this.conferences.unshift(newConf);
+        writeStore('clinical-workbench:conferences:v1', this.conferences);
+        writeStore('clinical-workbench:audit-conferences:v1', this.auditConferences);
 
         if (hasSchedule) {
           this.scheduleSubTab = 'published';
@@ -1883,6 +1885,7 @@ window.workbenchApp = function () {
 
     rejectAudit(id) {
       this.auditConferences = this.auditConferences.filter(c => c.id !== id);
+      writeStore('clinical-workbench:audit-conferences:v1', this.auditConferences);
       this.showToast('已驳回/忽略该待审会议', 'info');
     },
 
@@ -2540,12 +2543,27 @@ window.workbenchApp = function () {
 3. 自动提取【会议来源链接】与【在线日程链接（schedule_url）】，区分“已发布日程”与“未发布日程”，给出 A/B/C/D 四级初评及评级依据。
 4. 完成后保存至 crawled_batches/ 或导出 CSV/JSON 上传至工作台【① 来源与审核】。`,
 
-    openCrawlModal() {
-      this.isCrawling = false;
-      this.crawlProgress = 0;
-      this.crawlStatusText = '';
-      this.crawlLogs = [];
+    async openCrawlModal() {
       this.showCrawlModal = true;
+      try {
+        const res = await fetch('http://127.0.0.1:8899/api/mailbox/progress');
+        const data = await res.json();
+        if (data && data.is_running) {
+          this.isCrawling = true;
+          this.crawlProgress = typeof data.percent === 'number' ? data.percent : 15;
+          this.crawlStatusText = data.message || '后台任务正在执行中...';
+          this.crawlLogs = Array.isArray(data.logs) ? data.logs : [];
+          this.pollMailboxProgress();
+          return;
+        }
+      } catch (e) {
+        // bridge offline, keep clean modal state
+      }
+      if (!this.isCrawling) {
+        this.crawlProgress = 0;
+        this.crawlStatusText = '';
+        this.crawlLogs = [];
+      }
     },
 
     copyWorkBuddyPrompt() {
@@ -2843,6 +2861,11 @@ window.workbenchApp = function () {
           summary: remark || `【表格导入 · ${tierCode}级】${title}（地点：${rawVenue}）`
         });
         addedCount++;
+      }
+
+      if (addedCount > 0 || linkCount > 0) {
+        writeStore('clinical-workbench:audit-conferences:v1', this.auditConferences);
+        writeStore('clinical-workbench:conferences:v1', this.conferences);
       }
 
       return { addedCount, linkCount, totalParsed: items.length };
