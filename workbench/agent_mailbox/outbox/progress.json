@@ -1,11 +1,12 @@
 {
-  "task_id": "TASK-1795573449",
+  "task_id": "TASK-1795583465",
   "status": "dispatched",
   "percent": 5,
   "message": "工单已送达 inbox/task.json，等待 Agent 处理...",
+  "active_skill": "D:\\Users\\skills\\conference-collection-rating\\SKILL.md",
   "logs": [
-    "[10:24:09] 工单 TASK-1795573449 已写入信箱",
-    "[10:24:09] 绑定专属 Skill: 会议收集评级 (v1.1)",
-    "[10:24:09] 目标领域: 6 大临床慢病方向"
+    "[13:11:05] 工单 TASK-1795583465 已写入信箱",
+    "[13:11:05] 绑定通用 Skill 路径: D:\\Users\\skills\\conference-collection-rating\\SKILL.md",
+    "[13:11:05] 目标领域: 6 大临床慢病方向"
   ]
 }

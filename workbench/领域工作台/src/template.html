@@ -1505,19 +1505,106 @@
       <div x-show="activeModule === 'tasks'" class="space-y-5">
         <div class="bg-white rounded-2xl border border-slate-200 p-3.5 shadow-xs flex flex-wrap items-center justify-between gap-3">
           <div class="flex items-center gap-2.5">
+            <button @click="taskTab = 'flow'"
+                    :class="taskTab === 'flow' ? 'bg-blue-600 text-white font-bold shadow-xs' : 'text-slate-600 hover:bg-slate-100 font-semibold'"
+                    class="px-5 py-2.5 rounded-xl text-sm transition-all flex items-center gap-2">
+              <span>📋 商机流转跟踪看板</span>
+              <span class="px-2 py-0.2 rounded-full text-xs"
+                    :class="taskTab === 'flow' ? 'bg-blue-500 text-white' : 'bg-blue-100 text-blue-800 font-bold'"
+                    x-text="(battleCards || []).length"></span>
+            </button>
             <button @click="taskTab = 'conferences'"
                     :class="taskTab === 'conferences' ? 'bg-blue-600 text-white font-bold shadow-xs' : 'text-slate-600 hover:bg-slate-100 font-semibold'"
                     class="px-5 py-2.5 rounded-xl text-sm transition-all">
-              🎪 重点会议推荐（含本场重点 PI）
+              🎪 重点会议推荐
             </button>
             <button @click="taskTab = 'pis'"
                     :class="taskTab === 'pis' ? 'bg-blue-600 text-white font-bold shadow-xs' : 'text-slate-600 hover:bg-slate-100 font-semibold'"
                     class="px-5 py-2.5 rounded-xl text-sm transition-all flex items-center gap-2">
-              <span>🎯 重点 PI 关注</span>
+              <span>🎯 重点关注 PI 池</span>
               <span class="px-2 py-0.2 rounded-full text-xs"
-                    :class="taskTab === 'pis' ? 'bg-blue-500 text-white' : 'bg-amber-100 text-amber-800'"
+                    :class="taskTab === 'pis' ? 'bg-blue-500 text-white' : 'bg-amber-100 text-amber-800 font-bold'"
                     x-text="piList.filter(p => p.starred).length"></span>
             </button>
+          </div>
+        </div>
+
+                <!-- TAB 0: 📋 商机流转跟踪看板 (统一经典医疗蓝 · 极简低噪 · 点击弹窗钻取) -->
+        <div x-show="taskTab === 'flow'" class="space-y-4">
+          
+          <!-- 1. 顶部紧凑指标条 (统一经典医疗蓝) -->
+          <div class="bg-white rounded-2xl border border-blue-100 p-4 shadow-xs">
+            <div class="flex items-center justify-between pb-3 border-b border-blue-50 flex-wrap gap-2">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span>
+                <span class="text-sm font-black text-slate-900">🎯 商机流转与协同闭环总览</span>
+                <span class="text-xs text-blue-600 font-medium">覆盖全国 3 大销售战区</span>
+              </div>
+              <div class="flex items-center gap-4 text-xs font-bold">
+                <span class="text-slate-600">总派发 <strong class="text-blue-600 font-black text-sm" x-text="taskKPIs.total"></strong></span>
+                <span class="text-slate-600">待跟进 <strong class="text-blue-500 font-black text-sm" x-text="taskKPIs.pending"></strong></span>
+                <span class="text-slate-600">已反馈 <strong class="text-blue-700 font-black text-sm" x-text="taskKPIs.contacted"></strong></span>
+                <span class="px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200/60 text-xs font-bold" x-text="'闭环率 ' + taskKPIs.rate + '%'"></span>
+              </div>
+            </div>
+
+            <!-- 快速状态过滤胶囊 (蓝白相间) -->
+            <div class="flex items-center justify-between pt-3 text-xs flex-wrap gap-2">
+              <div class="flex items-center gap-1.5">
+                <button @click="taskFilterStatus = 'all'"
+                        :class="taskFilterStatus === 'all' ? 'bg-blue-600 text-white font-bold shadow-xs' : 'bg-blue-50/60 text-blue-700 hover:bg-blue-100 font-medium'"
+                        class="px-3.5 py-1.5 rounded-lg transition-all" x-text="'全部 (' + taskKPIs.total + ')'"></button>
+                <button @click="taskFilterStatus = 'pending'"
+                        :class="taskFilterStatus === 'pending' ? 'bg-blue-600 text-white font-bold shadow-xs' : 'bg-blue-50/60 text-blue-700 hover:bg-blue-100 font-medium'"
+                        class="px-3.5 py-1.5 rounded-lg transition-all" x-text="'⏳ 待跟进 (' + taskKPIs.pending + ')'"></button>
+                <button @click="taskFilterStatus = 'contacted'"
+                        :class="taskFilterStatus === 'contacted' ? 'bg-blue-600 text-white font-bold shadow-xs' : 'bg-blue-50/60 text-blue-700 hover:bg-blue-100 font-medium'"
+                        class="px-3.5 py-1.5 rounded-lg transition-all" x-text="'✓ 已反馈 (' + taskKPIs.contacted + ')'"></button>
+              </div>
+              <span class="text-xs text-slate-400">💡 点击任意卡片可弹窗查看详细摸底情报与 PI 全息画像</span>
+            </div>
+          </div>
+
+          <!-- 2. 极致精简卡片流 (统一度量衡的科技蓝灰色调) -->
+          <div class="space-y-2.5">
+            <template x-for="card in filteredBattleCards" :key="card.id">
+              <div @click="openTaskDetail(card)"
+                   class="bg-white rounded-xl border p-3.5 flex items-center justify-between gap-3 cursor-pointer shadow-2xs hover:border-blue-500 hover:shadow-xs transition-all"
+                   :class="card.status === 'contacted' ? 'border-blue-200/90' : 'border-slate-200'">
+                
+                <div class="flex items-center gap-3.5">
+                  <div class="w-10 h-10 rounded-xl font-extrabold flex items-center justify-center text-sm shadow-xs shrink-0"
+                       :class="card.status === 'contacted' ? 'bg-blue-600 text-white' : 'bg-blue-50 text-blue-700 border border-blue-200/60'"
+                       x-text="card.piName ? card.piName.substring(0, 1) : '专'">
+                  </div>
+                  <div>
+                    <div class="flex items-center gap-2 flex-wrap">
+                      <span class="font-bold text-sm text-slate-900" x-text="card.piName"></span>
+                      <span class="text-xs text-slate-500" x-text="card.hospital + ' · ' + (card.domain || '专科')"></span>
+                      <template x-if="card.conferencesAttended && card.conferencesAttended.length > 1">
+                        <span class="px-1.5 py-0.2 rounded text-[10px] font-bold bg-blue-50 text-blue-700 border border-blue-200"
+                              x-text="'跨 ' + card.conferencesAttended.length + ' 会'"></span>
+                      </template>
+                    </div>
+                    <div class="text-xs mt-1 font-medium"
+                         :class="card.status === 'contacted' ? 'text-blue-700' : 'text-slate-500'">
+                      <span x-text="card.status === 'contacted' ? ('✓ 拜访已完成 · ' + (card.feedback ? card.feedback.slice(0, 36) + '...' : '已摸清在研项目与样本')) : ('📍 现场蹲点：' + ((card.squatInfo && card.squatInfo.conference) ? card.squatInfo.conference : '近期专科顶会现场'))"></span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-3 shrink-0 text-right">
+                  <div>
+                    <span class="px-2.5 py-0.5 rounded-full text-xs font-bold"
+                          :class="card.status === 'contacted' ? 'bg-blue-100 text-blue-800 border border-blue-200' : 'bg-slate-100 text-slate-600 border border-slate-200'"
+                          x-text="card.status === 'contacted' ? '✓ 已反馈' : '⏳ 待跟进'">
+                    </span>
+                    <div class="text-[11px] text-slate-400 mt-0.5 font-mono" x-text="(card.repName || '责任销售') + ' · ' + (card.dueDate || '跟进中')"></div>
+                  </div>
+                  <span class="text-blue-400 text-xs font-bold">&rarr;</span>
+                </div>
+              </div>
+            </template>
           </div>
         </div>
 
@@ -1912,6 +1999,71 @@
               <button @click="showConferenceModal = false" class="px-5 py-2.5 bg-slate-100 text-slate-700 text-sm font-bold rounded-xl">关闭</button>
               <button @click="openAssignModal(selectedConf.title, selectedConf.cutIn); showConferenceModal = false;" class="px-5 py-2.5 bg-blue-600 text-white text-sm font-bold rounded-xl hover:bg-blue-700">派发跟进任务</button>
             </div>
+          </div>
+        </div>
+      </template>
+    </div>
+  </div>
+
+    <!-- Modal 2.5: 📌 商机跟进进度与情报详情 Modal (统一蓝白色调) -->
+  <div x-show="showTaskDetailModal"
+       x-cloak
+       x-transition.opacity
+       class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
+    <div @click.outside="showTaskDetailModal = false"
+         class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-blue-200 space-y-4 text-sm">
+      <template x-if="taskSelectedCard">
+        <div class="space-y-4">
+          <!-- Modal 头部 -->
+          <div class="flex items-start justify-between pb-3 border-b border-slate-100">
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="text-xl font-black text-slate-900" x-text="taskSelectedCard.piName"></h3>
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-blue-50 text-blue-700 border border-blue-200"
+                      x-text="taskSelectedCard.scoreBadge || '重点商机'"></span>
+              </div>
+              <p class="text-xs text-slate-500 mt-1" x-text="taskSelectedCard.hospital + ' · ' + (taskSelectedCard.domain || '专科领域')"></p>
+            </div>
+            <button @click="showTaskDetailModal = false" class="text-slate-400 hover:text-slate-600 text-xl font-bold">✕</button>
+          </div>
+
+          <!-- 跟进进度与现场蹲点信息 -->
+          <div class="bg-blue-50/50 p-4 rounded-xl border border-blue-100 space-y-2.5">
+            <div class="flex items-center justify-between text-xs">
+              <span class="px-2.5 py-0.5 rounded-full font-bold"
+                    :class="taskSelectedCard.status === 'contacted' ? 'bg-blue-100 text-blue-800 border border-blue-200' : 'bg-slate-100 text-slate-700 border border-slate-200'"
+                    x-text="taskSelectedCard.status === 'contacted' ? '✓ 拜访已完成' : '⏳ 待拜访摸底'"></span>
+              <span class="text-slate-400 font-mono text-xs" x-text="(taskSelectedCard.repName || '责任销售') + ' · ' + (taskSelectedCard.dueDate || '跟进中')"></span>
+            </div>
+
+            <div class="text-xs text-slate-600">
+              <span class="text-blue-600 font-bold">📍 现场蹲点窗口：</span>
+              <span class="font-semibold text-slate-900" x-text="(taskSelectedCard.squatInfo && taskSelectedCard.squatInfo.conference) ? (taskSelectedCard.squatInfo.conference + ' · ' + (taskSelectedCard.squatInfo.venue || '主会场')) : '近期专科顶会现场报告厅'"></span>
+            </div>
+
+            <div class="p-3 rounded-lg bg-white border border-blue-100/80">
+              <span class="text-xs text-blue-600 block mb-1 font-bold">一线拜访反馈 / 摸底要点记录：</span>
+              <p class="text-xs leading-relaxed text-slate-800 font-medium"
+                 x-text="taskSelectedCard.feedback || taskSelectedCard.conditions || '销售正在推进医院面访或会议现场破冰，暂未回流正式日报。'"></p>
+            </div>
+          </div>
+
+          <!-- 推荐破冰切入点话术 -->
+          <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs space-y-1">
+            <span class="text-slate-500 font-bold block">💬 指派破冰切入点：</span>
+            <p class="text-slate-700 leading-relaxed" x-text="taskSelectedCard.breakIceScript || '围绕专家近期会议报告与临床样本条件切入多组学验证合作。'"></p>
+          </div>
+
+          <!-- 快捷操作按钮 -->
+          <div class="flex items-center justify-between pt-2 border-t border-slate-100">
+            <button @click="drilldownToPIDrawer(taskSelectedCard.piName)"
+                    class="text-xs text-blue-600 font-bold hover:underline flex items-center gap-1">
+              <span>📋 钻取查看 21 列全息档案详情</span>
+              <span>&rarr;</span>
+            </button>
+            <button @click="showTaskDetailModal = false" class="px-5 py-2 rounded-xl bg-blue-600 text-white text-xs font-bold hover:bg-blue-700 shadow-xs">
+              关闭
+            </button>
           </div>
         </div>
       </template>

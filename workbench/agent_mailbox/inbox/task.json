@@ -1,9 +1,9 @@
 {
-  "task_id": "TASK-1795573449",
+  "task_id": "TASK-1795583465",
   "skill_name": "conference-collection-rating",
-  "skill_file": "C:\\Users\\geneplus\\WorkBuddy\\2026-11-06-16-31-58\\_input\\会议收集评级\\SKILL.md",
-  "scope": "all_59",
-  "target_week": "下周",
+  "skill_file": "D:\\Users\\skills\\conference-collection-rating\\SKILL.md",
+  "scope": "domain_focus",
+  "target_week": "2026-11-30 ~ 2026-12-06",
   "domains": [
     "内分泌",
     "心血管",
@@ -12,7 +12,7 @@
     "自免",
     "泛血管"
   ],
-  "created_at": "2026-11-25 10:24:09",
+  "created_at": "2026-11-25 13:11:05",
   "status": "pending_execution",
-  "instruction_for_workbuddy": "请加载技能 [C:\\Users\\geneplus\\WorkBuddy\\2026-11-06-16-31-58\\_input\\会议收集评级\\SKILL.md]，严格按口径收集 内分泌,心血管,神经精神,慢阻肺,自免,泛血管 领域的最新会议，排除硬性降档会议，输出 Excel 并将结果写入 latest_result.json"
+  "instruction_for_workbuddy": "请加载技能 [D:\\Users\\skills\\conference-collection-rating\\SKILL.md]，严格按口径收集 内分泌,心血管,神经精神,慢阻肺,自免,泛血管 领域的最新会议，排除硬性降档会议，输出 Excel 并将结果写入 latest_result.json"
 }

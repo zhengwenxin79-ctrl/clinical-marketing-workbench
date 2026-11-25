@@ -1374,6 +1374,147 @@ window.workbenchApp = function () {
     }
   ];
 
+    const DEFAULT_BATTLE_CARDS = [
+    {
+      id: 'BC-GEJUNBO',
+      repId: 'sales_east_zhang',
+      repName: '华东区 - 张敏',
+      piName: '葛均波',
+      hospital: '复旦大学附属中山医院',
+      domain: '心血管',
+      roleLabel: '院士 · 全国学术带头人',
+      scoreBadge: '91分 · A级大咖',
+      status: 'contacted',
+      dueDate: '11-24',
+      shortTopic: '泛血管动脉粥样硬化队列',
+      conferencesAttended: ['第五届泛血管医学大会(PMC)', '东方心脏病学会议(OCC)', 'ACC国际峰会'],
+      squatInfo: {
+        conference: '第五届泛血管医学大会 (PMC)',
+        venue: '主会场报告厅',
+        topic: '《泛血管医学学科发展与多学科交叉转化展望》',
+        actionAdvice: '建议提前30分钟在演讲会场侧方等候，围绕议题现场破冰！'
+      },
+      feedback: '【在研课题】国自然重大专项拟启动外周血标志物盲筛；【样本底数】已冻存前瞻性斑块患者血浆 600 例，双方已约定下周进行技术交流会。',
+      feedbackDate: '2026-11-24',
+      breakIceScript: '“葛院士您好，拜读了您在近期【PMC 2026】上关于泛血管医学交叉转化的主旨报告。关注到团队正在推进大样本队列建设，吉因加在微量外周血 cfRNA 液体活检与单细胞空间转录组方向有完备的自动化质控体系，希望能为团队提供多组学数据建模支持...”'
+    },
+    {
+      id: 'BC-JIXUNMING',
+      repId: 'sales_north_li',
+      repName: '华北区 - 李娜',
+      piName: '吉训明',
+      hospital: '首都医科大学宣武医院 / 国家神经疾病医学中心',
+      domain: '神经精神',
+      roleLabel: '院士 · 全国学术带头人',
+      scoreBadge: '88分 · B级大咖',
+      status: 'assigned',
+      dueDate: '11-28',
+      shortTopic: '脑卒中百万减残临床队列',
+      conferencesAttended: ['中国脑卒中大会2026', 'AHA心血管国际峰会'],
+      squatInfo: {
+        conference: '2026中国脑卒中大会',
+        venue: '主会场报告厅侧方',
+        topic: '《中国脑卒中百万减残工程与临床转化医学新范式》',
+        actionAdvice: '在宣武医院/大会现场对接学术秘书，摸清拟启动液体活检的样本底数。'
+      },
+      feedback: '【待摸底要点】1) 卒中外周血样本例数；2) 2027重点研发计划子课题合作意向；目前等待现场碰面。',
+      feedbackDate: '待回流',
+      breakIceScript: '“吉院士您好，关注到宣武医院在脑血管病多组学转化上的前沿布局，吉因加在脑脊液及外周血微量核酸多组学标志物筛选有成熟方案...”'
+    },
+    {
+      id: 'BC-CHENRONGCHANG',
+      repId: 'sales_south_wang',
+      repName: '华南区 - 王强',
+      piName: '陈荣昌',
+      hospital: '广州医科大学附属第一医院 / 深圳呼吸疾病研究所',
+      domain: '呼吸慢病',
+      roleLabel: '全国学术带头人',
+      scoreBadge: '84分 · B级大咖',
+      status: 'assigned',
+      dueDate: '11-30',
+      shortTopic: '慢阻肺气道微生态与转录组',
+      conferencesAttended: ['CACP中国呼吸医师大会', 'CTS中华呼吸年会'],
+      squatInfo: {
+        conference: 'CACP 2026 中国呼吸医师大会',
+        venue: '长沙国际会议中心 · 分会场 A',
+        topic: '《慢阻肺早期分子分型与精准干预策略》',
+        actionAdvice: '在长沙呼吸年会期间拜访，推介吉因加双组学联检科研方案。'
+      },
+      feedback: '【待摸底要点】慢阻肺急性加重队列 BALF/诱导痰样本存量，核实检测计划。',
+      feedbackDate: '待回流',
+      breakIceScript: '“陈主任您好，拜读了您在 CACP 2026 上关于慢阻肺早期分子分型的报告，吉因加呼吸道微生态+宿主转录组双组学方案非常契合团队需求...”'
+    },
+    {
+      id: 'BC-SUYIN',
+      repId: 'sales_north_li',
+      repName: '华北区 - 李娜',
+      piName: '苏茵',
+      hospital: '北京大学人民医院',
+      domain: '风湿免疫',
+      roleLabel: '全国专科学术带头人',
+      scoreBadge: '81分 · B级',
+      status: 'contacted',
+      dueDate: '11-23',
+      shortTopic: '自身免疫病PBMC单细胞图谱',
+      conferencesAttended: ['北京风湿病学年会2026', '全国风湿免疫学术大会'],
+      squatInfo: {
+        conference: '北京医学会风湿病学分会第26届学术年会',
+        venue: '主会场 3楼报告厅',
+        topic: '《自身免疫病靶向诊疗与临床转化新进展》',
+        actionAdvice: '结合大会高分论文专场切入 PBMC 单细胞与高通量蛋白组学检测。'
+      },
+      feedback: '【在研课题】狼疮及类风湿PBMC单细胞测序已立项；【样本底数】门诊已沉淀初发未用药队列 180 例，已提交科研检测报价。',
+      feedbackDate: '2026-11-23',
+      breakIceScript: '“苏主任您好，关注到北京风湿年会“高分论文专场”，吉因加单细胞转录组+免疫组库可为团队提供一站式生信分析...”'
+    },
+    {
+      id: 'BC-LUZHENGQI',
+      repId: 'sales_south_wang',
+      repName: '华南区 - 王强',
+      piName: '陆正齐',
+      hospital: '中山大学附属第三医院',
+      domain: '神经精神',
+      roleLabel: '全国专科学术带头人',
+      scoreBadge: '79分 · B级',
+      status: 'assigned',
+      dueDate: '12-02',
+      shortTopic: '脑小血管病免疫炎症微环境',
+      conferencesAttended: ['中山神经学术论坛2026', '中国脑血管病大会'],
+      squatInfo: {
+        conference: '第二十九届中山神经病学学术论坛',
+        venue: '广州白云国际会议中心',
+        topic: '《脑小血管病免疫炎症机制与生物标志物探索》',
+        actionAdvice: '针对神经免疫队列切入单细胞转录组测序服务。'
+      },
+      feedback: '【待摸底要点】随访队列样本外送伦理与经费执行进度。',
+      feedbackDate: '待回流',
+      breakIceScript: '“陆主任您好，关注到团队在脑小血管病外周免疫细胞图谱的研究，吉因加单细胞转录组方案能够提供高质控支持...”'
+    },
+    {
+      id: 'BC-ZHENGYUEHONG',
+      repId: 'sales_north_li',
+      repName: '华北区 - 李娜',
+      piName: '郑曰宏',
+      hospital: '中国医学科学院北京协和医院',
+      domain: '泛血管及器官损伤',
+      roleLabel: '全国专科学术带头人',
+      scoreBadge: '78分 · B级',
+      status: 'contacted',
+      dueDate: '11-22',
+      shortTopic: '糖尿病周围血管病变微循环',
+      conferencesAttended: ['2026MEC微循环血管大会', '中国血管外科年会'],
+      squatInfo: {
+        conference: '2026MEC 微循环血管医学发展大会',
+        venue: '北京分会场 B',
+        topic: '《微循环与周围血管疾病基础转化研究进展》',
+        actionAdvice: '依托血管医学专场切入内皮损伤循环 cfDNA/RNA 检测。'
+      },
+      feedback: '【在研课题】血管外科内皮损伤分子机制专项在研；【样本底数】血浆及下肢截肢血管标本库 150 例；已预约院内科室拜访。',
+      feedbackDate: '2026-11-22',
+      breakIceScript: '“郑主任您好，拜读了您在 2026MEC 上关于周围血管基础转化的报告，吉因加在微循环内皮损伤 cfRNA 液体活检方面拥有成熟平台...”'
+    }
+  ];
+
   const initialPIs = buildPIList();
   const initialConfData = buildConferencesAndQueue(initialPIs);
   const initialHotspotTopics = buildHotspotTopics();
@@ -1500,6 +1641,10 @@ window.workbenchApp = function () {
     piList: initialPIs,
     visitReports: readStore('clinical-workbench:visit-reports:v2', defaultVisitReports),
     intelList: readStore('clinical-workbench:intel-list:v2', defaultIntelList),
+    battleCards: readStore('clinical-workbench:battle-cards:v2', DEFAULT_BATTLE_CARDS),
+    taskFilterStatus: 'all',
+    taskSelectedCard: null,
+    showTaskDetailModal: false,
 
     init() {
       const applyHash = () => {
@@ -2123,6 +2268,30 @@ window.workbenchApp = function () {
     assignDueDate: '2026-12-05',
     assignNote: '',
     assignTargetPI: null,
+        get filteredBattleCards() {
+      return (this.battleCards || []).filter(c => {
+        if (this.taskFilterStatus === 'all') return true;
+        if (this.taskFilterStatus === 'pending') return c.status === 'assigned' || c.status === 'in_progress';
+        if (this.taskFilterStatus === 'contacted') return c.status === 'contacted';
+        return true;
+      });
+    },
+    get taskKPIs() {
+      const cards = this.battleCards || [];
+      const total = cards.length;
+      const contacted = cards.filter(c => c.status === 'contacted').length;
+      const pending = cards.filter(c => c.status === 'assigned' || c.status === 'in_progress').length;
+      const rate = total > 0 ? Math.round((contacted / total) * 100) : 0;
+      return { total, contacted, pending, rate };
+    },
+    openTaskDetail(card) {
+      this.taskSelectedCard = card;
+      this.showTaskDetailModal = true;
+    },
+    drilldownToPIDrawer(piName) {
+      this.showTaskDetailModal = false;
+      this.openPIByName(piName);
+    },
     openAssignModal(title, defaultCutIn = '', targetPI = null) {
       this.targetTaskTitle = title;
       this.assignTargetPI = targetPI;
