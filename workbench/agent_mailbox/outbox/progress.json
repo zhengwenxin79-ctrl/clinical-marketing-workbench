@@ -1,0 +1,11 @@
+{
+  "task_id": "TASK-1795573449",
+  "status": "dispatched",
+  "percent": 5,
+  "message": "工单已送达 inbox/task.json，等待 Agent 处理...",
+  "logs": [
+    "[10:24:09] 工单 TASK-1795573449 已写入信箱",
+    "[10:24:09] 绑定专属 Skill: 会议收集评级 (v1.1)",
+    "[10:24:09] 目标领域: 6 大临床慢病方向"
+  ]
+}

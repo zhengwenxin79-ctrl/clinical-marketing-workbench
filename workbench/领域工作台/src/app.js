@@ -2400,24 +2400,33 @@ window.workbenchApp = function () {
       }
     },
 
+    copySkillMailboxPrompt() {
+      const prompt = `请加载专属技能【C:\\Users\\geneplus\\WorkBuddy\\2026-11-06-16-31-58\\_input\\会议收集评级\\SKILL.md】，读取工单【workbench/agent_mailbox/inbox/task.json】，严格按照吉因加六大领域口径进行全网深度会议与日程采集，并将最新进度写入 workbench/agent_mailbox/outbox/progress.json。`;
+      navigator.clipboard.writeText(prompt);
+      this.showToast('📋 已复制专属 Skill 信箱执行指令！可直接粘贴至 WorkBuddy 发送', 'success');
+    },
+
     async startWorkBuddyCrawl() {
-      // 若已配置 Token 且本地网关可用，尝试静默下发全自动任务
-      if (this.workbuddyApiStatus.configured) {
-        try {
-          const res = await fetch('http://127.0.0.1:8899/api/workbuddy/trigger', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              prompt: `你是一个临床科研营销情报自动化 Agent。请立即执行最新会议与日程抓取任务，范围：${this.crawlScope}。清洗完毕后运行 python tools/export_pages.py 并提交更新。`
-            })
-          });
-          const data = await res.json();
-          if (data.success) {
-            this.showToast('🚀 已成功通过 OpenAPI 向本地 WorkBuddy 客户端静默下发抓取指令！', 'success');
+      // 做法二：信箱工单机制 (Mailbox IPC) 自动派发
+      try {
+        const res = await fetch('http://127.0.0.1:8899/api/mailbox/dispatch', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            scope: this.crawlScope,
+            target_week: this.crawlTargetWeek,
+            domains: ['内分泌', '心血管', '神经精神', '慢阻肺', '自免', '泛血管']
+          })
+        });
+        const data = await res.json();
+        if (data.success) {
+          this.showToast('📬 工单已成功送达 inbox/task.json！绑定技能【会议收集评级】', 'success');
+          if (data.copy_prompt) {
+            navigator.clipboard.writeText(data.copy_prompt);
           }
-        } catch (e) {
-          console.log('OpenAPI bridge offline, fallback to simulation & local buffer');
         }
+      } catch (e) {
+        console.log('Mailbox bridge offline, local file simulation active');
       }
 
       if (this.isCrawling) return;
