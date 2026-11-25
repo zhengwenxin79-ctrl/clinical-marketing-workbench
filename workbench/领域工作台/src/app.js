@@ -1813,7 +1813,7 @@ window.workbenchApp = function () {
           if (!existingPI.sources) existingPI.sources = [];
           existingPI.sources.push({ id: conf.id, title: `${conf.title} 官方日程讲者名录`, url: conf.officialUrl || '#' });
           const confCount = existingPI.conferencesAttended.length;
-          existingPI.sourceLabel = 跨  场重点会议: ;
+          existingPI.sourceLabel = `跨 ${confCount} 场重点会议: ${existingPI.conferencesAttended.join(' + ')}`;
           if (!existingPI.capabilities) existingPI.capabilities = [];
           if (!existingPI.capabilities.includes('T10 临床队列验证')) existingPI.capabilities.push('T10 临床队列验证');
           if (!existingPI.capabilities.includes('T03 单细胞/转录组')) existingPI.capabilities.push('T03 单细胞/转录组');
@@ -1833,14 +1833,14 @@ window.workbenchApp = function () {
             domain: conf.domain,
             roleLabel: sp.role || '全国专科学术带头人',
             roleCode: 'national',
-            researchInterests: 重点讲题：《》；多组学标志物转化应用,
+            researchInterests: `重点讲题：《${sp.topic}》；多组学标志物转化应用`,
             totalScore: null,
             grade: null,
             hasPartialRating: true,
             scoreBadge: '调研中 · 方向28/30',
             dimSummary: '研究28/30 (日程讲题已核 · 余项待补)',
             dimensions: [
-              { name: '研究方向契合度', maximum: 30, score: 28, basis: 在【】报告《》，高度契合多组学临床转化。 },
+              { name: '研究方向契合度', maximum: 30, score: 28, basis: `在【${conf.abbreviation}】报告《${sp.topic}》，高度契合多组学临床转化。` },
               { name: '学术产出质量',   maximum: 25, score: null, basis: '待进一步核对近三年 PubMed 一作/通讯期刊档位；缺证不填0。' },
               { name: '科研转化潜力',   maximum: 25, score: null, basis: '待进一步核对个人主持基金与开放队列条件；缺证不填0。' },
               { name: '平台资源禀赋',   maximum: 20, score: null, basis: '待进一步核对所属实验室可调配资源；缺证不填0。' }
@@ -1853,8 +1853,8 @@ window.workbenchApp = function () {
             papers: [],
             productMatches: ['T10 临床队列验证', 'T03 单细胞/转录组', 'T01 cfRNA液体活检'],
             capabilities: ['T10 临床队列验证', 'T03 单细胞/转录组', 'T01 cfRNA液体活检'],
-            commercialCutIn: sp.cutIn || conf.cutIn || 围绕【】议题《》，推介cfRNA/单细胞科研方案与前瞻队列验证合作。,
-            cutIn: sp.cutIn || conf.cutIn || 围绕【】议题《》，推介cfRNA/单细胞科研方案与前瞻队列验证合作。,
+            commercialCutIn: sp.cutIn || conf.cutIn || `围绕【${conf.abbreviation}】议题《${sp.topic}》，推介cfRNA/单细胞科研方案与前瞻队列验证合作。`,
+            cutIn: sp.cutIn || conf.cutIn || `围绕【${conf.abbreviation}】议题《${sp.topic}》，推介cfRNA/单细胞科研方案与前瞻队列验证合作。`,
             fieldIntelCount: 0,
             syncedIntel: [],
             syncedIntelCount: 0,
@@ -1863,7 +1863,7 @@ window.workbenchApp = function () {
             sourceLabel: `来源: ${conf.abbreviation} 日程抓取`,
             sources: [{ id: conf.id, title: `${conf.title} 官方日程讲者名录`, url: conf.officialUrl || '#' }],
             isAiRecommended: true,
-            research: `讲题：${sp.topic}`,,
+            research: `讲题：${sp.topic}`,
             starred: true,
             assignee: '华东一区 - 张敏',
             taskStatus: '待派发'
@@ -1871,9 +1871,9 @@ window.workbenchApp = function () {
           addedCount++;
         }
       }
-      let msg = 已处理【】重点讲者：;
-      if (addedCount > 0) msg += 新入库  位专家；;
-      if (mergedCount > 0) msg += 智能合并  位跨会议学者轨迹！;
+      let msg = `已处理【${conf.abbreviation}】重点讲者：`;
+      if (addedCount > 0) msg += `新入库 ${addedCount} 位专家；`;
+      if (mergedCount > 0) msg += `智能合并 ${mergedCount} 位跨会议学者轨迹！`;
       this.showToast(msg, 'success');
     },
 
