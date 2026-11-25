@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # WorkBuddy / CodeBuddy CLI 真实自动执行信箱网关 (Mailbox IPC + Headless CLI Runner)
-# 收到网页派单后立即在后台真实拉起 codebuddy -p 执行专属 Skill，实时回传进度与产出文件
+# 架构：CodeBuddy CLI 专注只读 Skill + 联网检索核实 + 输出结构化 JSON；
+#       Python 网关负责确定性落盘（latest_result.json + UTF-8 BOM Excel 兼容 CSV）与网页实时推送，
+#       彻底规避无头模式 Write/Bash 权限拦截与 Windows 64KB 管道死锁。
 
 import os
+import re
 import sys
+import csv
 import json
 import time
 import shutil
@@ -21,9 +25,9 @@ TASK_FILE = os.path.join(INBOX_DIR, 'task.json')
 PROGRESS_FILE = os.path.join(OUTBOX_DIR, 'progress.json')
 RESULT_FILE = os.path.join(OUTBOX_DIR, 'latest_result.json')
 
-# 通用 Skill 路径候选列表（优先使用 D:\Users\ 标准安装目录）
-D_USERS_SKILL_PATH = r"D:\Users\skills\conference-collection-rating\SKILL.md"
+# 优先使用工作区内部相对路径，确保 CodeBuddy CLI Read 工具 100% 拥有权限且绝不乱码
 PROJECT_SKILL_PATH = os.path.join(BASE_DIR, 'skills', 'conference-collection-rating', 'SKILL.md')
+D_USERS_SKILL_PATH = r"D:\Users\skills\conference-collection-rating\SKILL.md"
 LEGACY_LOCAL_SKILL_PATH = r"C:\Users\geneplus\WorkBuddy\2026-11-06-16-31-58\_input\会议收集评级\SKILL.md"
 
 _run_lock = threading.Lock()
@@ -32,14 +36,14 @@ _current_task_id = None
 
 
 def get_active_skill_path():
-    """获取当前可用的 Skill 路径"""
+    """优先返回工作区内的 Skill 路径（如本地 D:\\Users\\skills 更新则自动同步进工作区）"""
+    if os.path.exists(PROJECT_SKILL_PATH):
+        return PROJECT_SKILL_PATH
     if os.path.exists(D_USERS_SKILL_PATH):
         return D_USERS_SKILL_PATH
-    if os.path.exists(PROJECT_SKILL_PATH):
-        return os.path.abspath(PROJECT_SKILL_PATH)
     if os.path.exists(LEGACY_LOCAL_SKILL_PATH):
         return LEGACY_LOCAL_SKILL_PATH
-    return D_USERS_SKILL_PATH
+    return PROJECT_SKILL_PATH
 
 
 def find_codebuddy_cli():
@@ -53,8 +57,7 @@ def find_codebuddy_cli():
     for p in candidates:
         if p and os.path.exists(p):
             return p
-    which_hit = shutil.which('codebuddy') or shutil.which('codebuddy.cmd')
-    return which_hit
+    return shutil.which('codebuddy') or shutil.which('codebuddy.cmd')
 
 
 def ensure_dirs():
@@ -104,14 +107,92 @@ def extract_cli_summary(stdout_text):
                     if texts:
                         return "\n".join(texts)
         elif isinstance(parsed, dict):
-            return str(parsed.get('result') or parsed.get('message') or stdout_text[:1000])
+            return str(parsed.get('result') or parsed.get('message') or stdout_text[:2000])
     except Exception:
         pass
-    return stdout_text.strip()[-1500:]
+    return stdout_text.strip()[-4000:]
+
+
+def extract_items_from_summary(summary_text):
+    """从 CodeBuddy 的最终回复文本中提取结构化会议 JSON 数组"""
+    if not summary_text:
+        return []
+    # 1. 优先匹配 ```json ... ``` 代码块
+    blocks = re.findall(r'```(?:json)?\s*([\s\S]*?)```', summary_text, flags=re.IGNORECASE)
+    for blk in reversed(blocks):
+        blk = blk.strip()
+        if not blk:
+            continue
+        try:
+            obj = json.loads(blk)
+            if isinstance(obj, list):
+                return obj
+            if isinstance(obj, dict):
+                items = obj.get('items') or obj.get('conferences') or obj.get('data')
+                if isinstance(items, list):
+                    return items
+        except Exception:
+            continue
+
+    # 2. 兜底匹配裸 JSON 对象中的 "items": [...]
+    m = re.search(r'\{\s*"items"\s*:\s*\[[\s\S]*?\]\s*\}', summary_text)
+    if m:
+        try:
+            obj = json.loads(m.group(0))
+            if isinstance(obj.get('items'), list):
+                return obj['items']
+        except Exception:
+            pass
+    return []
+
+
+def save_artifacts_from_items(task_id, items, target_week):
+    """由 Python 网关确定性落盘 latest_result.json 与 Excel 可直接打开的 UTF-8 BOM CSV"""
+    ensure_dirs()
+    created = []
+    if not items:
+        return created
+
+    # 1. 写入 latest_result.json（供网页前端一键自动导入）
+    result_obj = {
+        "task_id": task_id,
+        "target_week": target_week,
+        "generated_at": time.strftime('%Y-%m-%d %H:%M:%S'),
+        "count": len(items),
+        "items": items
+    }
+    with open(RESULT_FILE, 'w', encoding='utf-8') as f:
+        json.dump(result_obj, f, ensure_ascii=False, indent=2)
+    created.append(RESULT_FILE)
+
+    # 2. 写入 Excel 兼容 CSV (utf-8-sig 带 BOM，微软 Excel 双击打开中文绝不乱码)
+    stamp = time.strftime('%Y%m%d_%H%M')
+    csv_path = os.path.join(OUTBOX_DIR, f"会议收集评级_{stamp}.csv")
+    headers = ['会议名称', '领域大类', '会议时间', '会议地点', '联系人', '优先级', '备注', 'official_url', 'schedule_url']
+    with open(csv_path, 'w', encoding='utf-8-sig', newline='') as f:
+        writer = csv.DictWriter(f, fieldnames=headers, extrasaction='ignore')
+        writer.writeheader()
+        for it in items:
+            if not isinstance(it, dict):
+                continue
+            row = {
+                '会议名称': it.get('会议名称') or it.get('title') or it.get('conference_name') or '',
+                '领域大类': it.get('领域大类') or it.get('domain') or '',
+                '会议时间': it.get('会议时间') or it.get('date') or '',
+                '会议地点': it.get('会议地点') or it.get('venue') or it.get('city') or '',
+                '联系人': it.get('联系人') or it.get('contacts') or '',
+                '优先级': it.get('优先级') or it.get('priority') or '常规关注',
+                '备注': it.get('备注') or it.get('summary') or it.get('review_note') or '',
+                'official_url': it.get('official_url') or '',
+                'schedule_url': it.get('schedule_url') or ''
+            }
+            writer.writerow(row)
+    created.append(csv_path)
+    return created
 
 
 def list_outbox_artifacts(since_ts):
-    """扫描 outbox 目录中本次任务新生成的 Excel/CSV/JSON 文件"""
+    """扫描 outbox 目录中本次任务新生成的 Excel/CSV/JSON 交付产物"""
     found = []
     if not os.path.exists(OUTBOX_DIR):
         return found
@@ -125,13 +206,14 @@ def list_outbox_artifacts(since_ts):
 
 
 def run_codebuddy_worker(task_id, task_payload, cli_path):
-    """后台线程：真实调用 codebuddy -p 执行会议采集与评级 Skill，并实时刷新进度"""
+    """后台线程：真实调用 codebuddy -p 联网执行 Skill，由 Python 网关负责确定性落盘"""
     global _is_running, _current_task_id
     start_ts = time.time()
     active_skill = task_payload['skill_file']
+    rel_skill = 'skills/conference-collection-rating/SKILL.md'
     domains_str = '、'.join(task_payload.get('domains', []))
-    scope = task_payload.get('scope', 'all_59')
-    target_week = task_payload.get('target_week', '下一自然周')
+    scope = task_payload.get('scope', 'upcoming_week')
+    target_week = task_payload.get('target_week', '2026-11-30 ~ 2026-12-06')
 
     scope_desc = {
         'all_59': '全量 59 个官方学会与 6 大会务微站锚点 + 全网补充检索',
@@ -140,20 +222,38 @@ def run_codebuddy_worker(task_id, task_payload, cli_path):
     }.get(scope, scope)
 
     prompt = (
-        f"请严格阅读并遵循技能文件 `{active_skill}`（及其同级 references 目录下的组织与渠道表、核心会议系列表）执行本次会议收集与初评任务。\n"
-        f"本次工单编号：{task_id}\n"
-        f"巡检范围：{scope_desc}\n"
-        f"覆盖领域：{domains_str}\n"
-        f"目标周期：{target_week}\n"
-        f"交付要求：\n"
-        f"1. 按技能口径完成会议收集、排除硬性不收录与降档项，并核实最新链接与日程状态；\n"
-        f"2. 将结果 Excel（或 CSV）保存到 `{OUTBOX_DIR}` 目录，同时将结构化会议列表写入 `{RESULT_FILE}`（JSON 格式，包含 `items` 数组，每项尽量含 `会议名称`、`领域大类`、`会议时间`、`会议地点`、`联系人`、`优先级`、`备注`、`schedule_url`、`official_url` 字段）；\n"
-        f"3. 完成后简要汇报本次收集的会议总数、重点关注场次以及输出文件路径。"
+        f"请先使用 Read 工具读取当前工作区内的技能规范 `{rel_skill}` 及其同级目录 `skills/conference-collection-rating/references/组织与渠道表.md`、`skills/conference-collection-rating/references/核心会议系列表.md`。\n"
+        f"然后严格按技能口径，使用 WebSearch / WebFetch 执行本次会议收集与初评：\n"
+        f"- 工单编号：{task_id}\n"
+        f"- 巡检范围：{scope_desc}\n"
+        f"- 覆盖领域：{domains_str}\n"
+        f"- 目标周期：{target_week}\n\n"
+        f"【重要输出要求（请务必遵守）】：\n"
+        f"1. **无需调用 Write / Bash / PowerShell 创建任何文件**（外层网关会自动为你落盘生成 Excel/CSV 并导入工作台）。\n"
+        f"2. 请在最终回复的末尾，**必须输出一个标准 JSON 代码块（```json ... ```）**，格式如下：\n"
+        f"```json\n"
+        f"{{\n"
+        f"  \"items\": [\n"
+        f"    {{\n"
+        f"      \"会议名称\": \"完整会议名称\",\n"
+        f"      \"领域大类\": \"内分泌/心血管/神经精神/慢阻肺/自免/泛血管之一\",\n"
+        f"      \"会议时间\": \"MM-DD 至 MM-DD\",\n"
+        f"      \"会议地点\": \"城市·具体场馆\",\n"
+        f"      \"联系人\": \"会务联系或主办方\",\n"
+        f"      \"优先级\": \"重点关注 / 常规关注 / 低优先级\",\n"
+        f"      \"备注\": \"（评级依据）...（日程状态）...（来源）...\",\n"
+        f"      \"official_url\": \"https://...\",\n"
+        f"      \"schedule_url\": \"https://...\"\n"
+        f"    }}\n"
+        f"  ]\n"
+        f"}}\n"
+        f"```\n"
+        f"只收录真实核实到的线下会议，确保 JSON 语法 100% 合法。"
     )
 
     logs = [
         f"[{time.strftime('%H:%M:%S')}] 📬 工单 {task_id} 已写入 inbox/task.json",
-        f"[{time.strftime('%H:%M:%S')}] 🎯 绑定专属技能: {active_skill}",
+        f"[{time.strftime('%H:%M:%S')}] 🎯 绑定工作区内 Skill: {rel_skill}",
         f"[{time.strftime('%H:%M:%S')}] 🚀 正在拉起本地 CodeBuddy CLI ({os.path.basename(cli_path)})..."
     ]
 
@@ -161,13 +261,13 @@ def run_codebuddy_worker(task_id, task_payload, cli_path):
         "task_id": task_id,
         "status": "running",
         "percent": 12,
-        "message": "正在启动 CodeBuddy CLI 并加载《会议收集评级》Skill...",
+        "message": "正在启动 CodeBuddy CLI 并读取《会议收集评级》Skill...",
         "active_skill": active_skill,
         "started_at": time.strftime('%Y-%m-%d %H:%M:%S'),
         "logs": list(logs)
     })
 
-    # 清理本地代理环境变量，避免拦截腾讯云 wb.tencentbuddy.com 的 HTTPS 连接
+    # 清理代理环境变量，避免拦截腾讯云 wb.tencentbuddy.com 的 HTTPS 连接
     env = os.environ.copy()
     for k in ('HTTP_PROXY', 'HTTPS_PROXY', 'http_proxy', 'https_proxy', 'ALL_PROXY', 'all_proxy'):
         env.pop(k, None)
@@ -211,7 +311,7 @@ def run_codebuddy_worker(task_id, task_payload, cli_path):
                 })
 
                 last_heartbeat = 0
-                max_timeout_sec = 900  # 15 分钟安全超时上限
+                max_timeout_sec = 900
                 while proc.poll() is None:
                     elapsed = int(time.time() - start_ts)
                     if elapsed >= max_timeout_sec:
@@ -261,10 +361,13 @@ def run_codebuddy_worker(task_id, task_payload, cli_path):
 
         elapsed = int(time.time() - start_ts)
         summary = extract_cli_summary(stdout_text)
-        artifacts = list_outbox_artifacts(start_ts)
         has_real_error = (return_code != 0) or (not summary.strip() and bool((stderr_text or '').strip()))
 
-        # 保存完整执行回执
+        # 由 Python 网关直接解析 JSON 并确定性落盘 CSV + latest_result.json
+        parsed_items = extract_items_from_summary(summary) if not has_real_error else []
+        created_artifacts = save_artifacts_from_items(task_id, parsed_items, target_week) if parsed_items else []
+        artifacts = sorted(set(list_outbox_artifacts(start_ts) + created_artifacts))
+
         receipt_path = os.path.join(OUTBOX_DIR, f"{task_id}_receipt.json")
         with open(receipt_path, 'w', encoding='utf-8') as f:
             json.dump({
@@ -272,6 +375,7 @@ def run_codebuddy_worker(task_id, task_payload, cli_path):
                 "return_code": return_code,
                 "has_real_error": has_real_error,
                 "elapsed_seconds": elapsed,
+                "parsed_count": len(parsed_items),
                 "summary": summary,
                 "stderr": (stderr_text or '')[-1500:],
                 "artifacts": artifacts,
@@ -284,28 +388,19 @@ def run_codebuddy_worker(task_id, task_payload, cli_path):
             with open(TASK_FILE, 'w', encoding='utf-8') as f:
                 json.dump(task_payload, f, ensure_ascii=False, indent=2)
 
-            logs.append(f"[{time.strftime('%H:%M:%S')}] 🎉 CodeBuddy 执行完成！（共耗时 {elapsed} 秒）")
+            logs.append(f"[{time.strftime('%H:%M:%S')}] 🎉 CodeBuddy 执行完成！（共耗时 {elapsed} 秒，解析到 {len(parsed_items)} 场会议）")
             if artifacts:
-                logs.append(f"[{time.strftime('%H:%M:%S')}] 📁 已生成产物文件: {', '.join(os.path.basename(a) for a in artifacts)}")
+                logs.append(f"[{time.strftime('%H:%M:%S')}] 📁 已自动落盘产物: {', '.join(os.path.basename(a) for a in artifacts)}")
             if summary:
-                first_lines = [ln.strip() for ln in summary.splitlines() if ln.strip()][:5]
+                first_lines = [ln.strip() for ln in summary.splitlines() if ln.strip() and not ln.strip().startswith('```')][:4]
                 for ln in first_lines:
                     logs.append(f"📝 {ln[:140]}")
-
-            parsed_items = []
-            if os.path.exists(RESULT_FILE) and os.path.getmtime(RESULT_FILE) >= start_ts - 2:
-                try:
-                    with open(RESULT_FILE, 'r', encoding='utf-8') as rf:
-                        rj = json.load(rf)
-                        parsed_items = rj if isinstance(rj, list) else (rj.get('items') or rj.get('conferences') or [])
-                except Exception:
-                    pass
 
             write_progress({
                 "task_id": task_id,
                 "status": "done",
                 "percent": 100,
-                "message": f"✅ CodeBuddy 真实执行完成！（耗时 {elapsed} 秒，产物 {len(artifacts)} 个）",
+                "message": f"✅ 抓取完成！共解析 {len(parsed_items)} 场会议，落盘产物 {len(artifacts)} 个（耗时 {elapsed} 秒）",
                 "active_skill": active_skill,
                 "elapsed_seconds": elapsed,
                 "summary": summary,
@@ -418,8 +513,8 @@ class MailboxBridgeHandler(BaseHTTPRequestHandler):
 
                 cli_path = find_codebuddy_cli()
                 task_id = f"TASK-{int(time.time())}"
-                scope = body.get('scope', 'all_59')
-                target_week = body.get('target_week', '下周')
+                scope = body.get('scope', 'upcoming_week')
+                target_week = body.get('target_week', '2026-11-30 ~ 2026-12-06')
                 domains = body.get('domains', ['内分泌', '心血管', '神经精神', '慢阻肺', '自免', '泛血管'])
                 active_skill = get_active_skill_path()
 
@@ -431,8 +526,7 @@ class MailboxBridgeHandler(BaseHTTPRequestHandler):
                     "target_week": target_week,
                     "domains": domains,
                     "created_at": time.strftime('%Y-%m-%d %H:%M:%S'),
-                    "status": "running" if cli_path else "pending_execution",
-                    "instruction_for_workbuddy": f"请加载技能 [{active_skill}]，严格按口径收集 {','.join(domains)} 领域的最新会议，排除硬性降档会议，输出 Excel 并将结果写入 latest_result.json"
+                    "status": "running" if cli_path else "pending_execution"
                 }
 
                 with open(TASK_FILE, 'w', encoding='utf-8') as f:
@@ -460,7 +554,7 @@ class MailboxBridgeHandler(BaseHTTPRequestHandler):
                         "task_id": task_id,
                         "status": "dispatched",
                         "percent": 5,
-                        "message": "未检测到 codebuddy CLI，工单已写入 inbox/task.json，请手动在 WorkBuddy 中执行",
+                        "message": "未检测到 codebuddy CLI，工单已写入 inbox/task.json",
                         "active_skill": active_skill,
                         "logs": [f"[{time.strftime('%H:%M:%S')}] 工单已写入 inbox/task.json（未找到 codebuddy.cmd）"]
                     })
@@ -469,8 +563,7 @@ class MailboxBridgeHandler(BaseHTTPRequestHandler):
                         "success": True,
                         "auto_executed": False,
                         "task_id": task_id,
-                        "message": "未检测到 codebuddy CLI，已降级为手动工单模式",
-                        "copy_prompt": f"执行工单任务：请读取 workbench/agent_mailbox/inbox/task.json，严格按照已配置的技能《会议收集评级》（路径：{active_skill}）执行全网深度会议与日程采集并产出结果。"
+                        "message": "未检测到 codebuddy CLI，已降级为手动工单模式"
                     }, ensure_ascii=False).encode('utf-8'))
 
         elif self.path == '/api/mailbox/update_progress':
