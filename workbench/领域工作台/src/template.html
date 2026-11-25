@@ -2273,16 +2273,54 @@
           </div>
         </div>
 
-        <!-- Option B: Direct WorkBuddy Prompt Copy -->
-        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2.5">
+        <!-- 方案 B: Local Assistant API 全自动静默下发配置 -->
+        <div class="bg-indigo-50/60 p-4 rounded-xl border border-indigo-200 space-y-3">
           <div class="flex items-center justify-between">
-            <span class="font-bold text-slate-800">2. WorkBuddy 客户端联动指令包（可选）</span>
-            <button @click="copyWorkBuddyPrompt()"
-                    class="px-3.5 py-1.5 bg-white hover:bg-blue-50 text-blue-600 border border-blue-200 rounded-lg text-xs font-bold transition-all">
-              📋 一键复制采集提示词
+            <div class="flex items-center gap-2">
+              <span class="text-base">🚀</span>
+              <span class="font-bold text-indigo-950">方案 B：开放平台 Local Assistant API (全自动静默唤起)</span>
+            </div>
+            <span class="text-xs px-2.5 py-0.5 rounded-full font-bold"
+                  :class="workbuddyApiStatus.configured ? 'bg-emerald-100 text-emerald-800 border border-emerald-300' : 'bg-slate-200 text-slate-600'"
+                  x-text="workbuddyApiStatus.configured ? '● API 已就绪' : '○ 未配置 Token'"></span>
+          </div>
+          <p class="text-xs text-indigo-900 leading-relaxed">
+            支持通过 WorkBuddy 开放平台官方 <code class="bg-indigo-100 px-1 py-0.5 rounded text-indigo-800">Local Assistant API</code>，从网页直接向你电脑上的 WorkBuddy 客户端静默下发任务并执行。
+          </p>
+
+          <div class="flex items-center gap-2">
+            <input type="password"
+                   x-model="workbuddyTokenInput"
+                   placeholder="请输入 WorkBuddy OpenAPI Access Token (Bearer ...)"
+                   class="flex-1 bg-white border border-indigo-200 rounded-lg px-3 py-2 text-xs font-mono focus:outline-hidden focus:border-indigo-500">
+            <button @click="saveWorkBuddyApiToken()"
+                    class="px-3.5 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-lg transition-all shrink-0">
+              保存配置
             </button>
           </div>
-          <p class="text-xs text-slate-500">如在外部 WorkBuddy 客户端执行深度全网搜索，可点击复制上方标准 ABCD 评级提示词；WorkBuddy 采集完成后推送到 GitHub 或导出 CSV 即可自动入列。</p>
+
+          <div class="flex items-center justify-between text-[11px] text-indigo-700 pt-1">
+            <span>💡 本地代理服务: 127.0.0.1:8899 (<code class="font-mono">tools/workbuddy_bridge.py</code>)</span>
+            <button @click="testWorkBuddyApiOnline()" class="hover:underline font-bold">🔍 检测客户端连通性</button>
+          </div>
+        </div>
+
+        <!-- 备选降级方案: URL Scheme 唤醒 + 提示词一键复制 -->
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2.5">
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-slate-800">备选方案：手动/URL Scheme 客户端跳转</span>
+            <div class="flex items-center gap-2">
+              <a href="workbuddy://home"
+                 class="px-3 py-1 bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 rounded-lg text-xs font-bold transition-all">
+                🔗 唤醒客户端
+              </a>
+              <button @click="copyWorkBuddyPrompt()"
+                      class="px-3 py-1 bg-white hover:bg-blue-50 text-blue-600 border border-blue-200 rounded-lg text-xs font-bold transition-all">
+                📋 复制提示词
+              </button>
+            </div>
+          </div>
+          <p class="text-xs text-slate-500">如未配置云端 Token，可点击「唤醒客户端」打开 WorkBuddy 首页，粘贴标准采集提示词即可在独立会话中运行。</p>
         </div>
       </div>
 

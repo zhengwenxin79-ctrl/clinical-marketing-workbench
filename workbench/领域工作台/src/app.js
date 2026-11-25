@@ -230,7 +230,7 @@ window.workbenchApp = function () {
         starred: true, assignee: '华北区 - 李娜', taskStatus: '跟进中', syncedIntel: [], syncedIntelCount: 0
       },
       {
-        id: 'SPEC-NEURO-02', name: '陆正齐', hospital: '中山大学附属第三医院',
+        id: 'SPEC-NEURO-02', name: '陆正齐', conferencesAttended: ['中山神经学术论坛2026', '中国脑血管病大会'], conference_tags: ['中山神经学术论坛2026', '中国脑血管病大会'], hospital: '中山大学附属第三医院',
         roleLabel: '全国专科学术带头人', sourceLabel: '来源: 第二十九届中山神经病学学术论坛', domain: '神经精神',
         totalScore: 79, grade: 'B', hasPartialRating: false,
         scoreBadge: '79分 · B级 (专科试评)', dimSummary: '研究27/30 · 学术18/25 · 科研18/25 · 平台16/20',
@@ -250,7 +250,7 @@ window.workbenchApp = function () {
         papers: [], starred: true, assignee: '华南区 - 王强', taskStatus: '跟进中', syncedIntel: [], syncedIntelCount: 0
       },
       {
-        id: 'SPEC-RESP-01', name: '陈荣昌', hospital: '广州医科大学附属第一医院 / 深圳呼吸疾病研究所',
+        id: 'SPEC-RESP-01', name: '陈荣昌', conferencesAttended: ['CACP中国呼吸医师大会', 'CTS中华呼吸年会'], conference_tags: ['CACP中国呼吸医师大会', 'CTS中华呼吸年会'], hospital: '广州医科大学附属第一医院 / 深圳呼吸疾病研究所',
         roleLabel: '全国学术带头人', sourceLabel: '来源: CACP 2026 中国呼吸医师大会', domain: '呼吸慢病',
         totalScore: 84, grade: 'B', hasPartialRating: false,
         scoreBadge: '84分 · B级 (专科试评)', dimSummary: '研究28/30 · 学术20/25 · 科研19/25 · 平台17/20',
@@ -270,7 +270,7 @@ window.workbenchApp = function () {
         papers: [], starred: true, assignee: '华南区 - 王强', taskStatus: '跟进中', syncedIntel: [], syncedIntelCount: 0
       },
       {
-        id: 'SPEC-RHEUM-01', name: '苏茵', hospital: '北京大学人民医院',
+        id: 'SPEC-RHEUM-01', name: '苏茵', conferencesAttended: ['北京风湿病学年会2026', '全国风湿免疫学术大会'], conference_tags: ['北京风湿病学年会2026', '全国风湿免疫学术大会'], hospital: '北京大学人民医院',
         roleLabel: '全国专科学术带头人', sourceLabel: '来源: 北京医学会风湿病学分会第26届年会主席', domain: '风湿免疫',
         totalScore: 81, grade: 'B', hasPartialRating: false,
         scoreBadge: '81分 · B级 (专科试评)', dimSummary: '研究28/30 · 学术19/25 · 科研18/25 · 平台16/20',
@@ -290,7 +290,7 @@ window.workbenchApp = function () {
         papers: [], starred: true, assignee: '华北区 - 李娜', taskStatus: '待派发', syncedIntel: [], syncedIntelCount: 0
       },
       {
-        id: 'SPEC-CARDIO-01', name: '葛均波', hospital: '复旦大学附属中山医院',
+        id: 'SPEC-CARDIO-01', name: '葛均波', conferencesAttended: ['第五届泛血管医学大会(PMC)', '东方心脏病学会议(OCC)', 'ACC国际峰会'], conference_tags: ['第五届泛血管医学大会(PMC)', '东方心脏病学会议(OCC)', 'ACC国际峰会'], hospital: '复旦大学附属中山医院',
         roleLabel: '院士 · 国际/全国学术带头人', sourceLabel: '来源: 第五届泛血管医学大会名誉主席', domain: '心血管',
         totalScore: 91, grade: 'A', hasPartialRating: false,
         scoreBadge: '91分 · A级 (专科试评)', dimSummary: '研究29/30 · 学术24/25 · 科研20/25 · 平台18/20',
@@ -310,7 +310,7 @@ window.workbenchApp = function () {
         papers: [], starred: true, assignee: '华东一区 - 张敏', taskStatus: '跟进中', syncedIntel: [], syncedIntelCount: 0
       },
       {
-        id: 'SPEC-VASC-01', name: '郑曰宏', hospital: '中国医学科学院北京协和医院',
+        id: 'SPEC-VASC-01', name: '郑曰宏', conferencesAttended: ['2026MEC微循环血管大会', '中国血管外科年会'], conference_tags: ['2026MEC微循环血管大会', '中国血管外科年会'], hospital: '中国医学科学院北京协和医院',
         roleLabel: '全国专科学术带头人', sourceLabel: '来源: 2026MEC 微循环血管医学大会主席', domain: '泛血管及器官损伤',
         totalScore: 78, grade: 'B', hasPartialRating: false,
         scoreBadge: '78分 · B级 (专科试评)', dimSummary: '研究26/30 · 学术18/25 · 科研18/25 · 平台16/20',
@@ -2321,6 +2321,9 @@ window.workbenchApp = function () {
     // 8. Conference Collection 3-Way Console (WorkBuddy Crawl / Schedule / Excel Upload)
     // =========================================================================
     showCrawlModal: false,
+    workbuddyTokenInput: localStorage.getItem('clinical-workbench:workbuddy-token') || '',
+    workbuddyApiStatus: { configured: Boolean(localStorage.getItem('clinical-workbench:workbuddy-token')), online: false },
+
     showScheduleModal: false,
     showConfExcelModal: false,
 
@@ -2363,7 +2366,60 @@ window.workbenchApp = function () {
       this.showToast('已复制 WorkBuddy 专项采集提示词与 59 锚点指令！可直接粘贴给 WorkBuddy 执行。', 'success');
     },
 
-    startWorkBuddyCrawl() {
+    async saveWorkBuddyApiToken() {
+      const token = (this.workbuddyTokenInput || '').trim();
+      localStorage.setItem('clinical-workbench:workbuddy-token', token);
+      this.workbuddyApiStatus.configured = Boolean(token);
+      
+      // 尝试通知本地网关
+      try {
+        await fetch('http://127.0.0.1:8899/api/workbuddy/config', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ access_token: token })
+        });
+        this.showToast('WorkBuddy OpenAPI Token 已保存并同步至本地网关！', 'success');
+      } catch (e) {
+        this.showToast('Token 已保存在浏览器本地（本地网关 127.0.0.1:8899 未启动）', 'info');
+      }
+    },
+
+    async testWorkBuddyApiOnline() {
+      try {
+        const res = await fetch('http://127.0.0.1:8899/api/workbuddy/status');
+        const data = await res.json();
+        if (data.online) {
+          this.workbuddyApiStatus.online = true;
+          this.showToast('✅ 连通成功！检测到本地 WorkBuddy 客户端在线！', 'success');
+        } else {
+          this.workbuddyApiStatus.online = false;
+          this.showToast('⚠️ 本地客户端未在线或 Token 权限不足: ' + (data.message || ''), 'warning');
+        }
+      } catch (e) {
+        this.showToast('未检测到本地网关服务，请运行 tools/workbuddy_bridge.py', 'warning');
+      }
+    },
+
+    async startWorkBuddyCrawl() {
+      // 若已配置 Token 且本地网关可用，尝试静默下发全自动任务
+      if (this.workbuddyApiStatus.configured) {
+        try {
+          const res = await fetch('http://127.0.0.1:8899/api/workbuddy/trigger', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              prompt: `你是一个临床科研营销情报自动化 Agent。请立即执行最新会议与日程抓取任务，范围：${this.crawlScope}。清洗完毕后运行 python tools/export_pages.py 并提交更新。`
+            })
+          });
+          const data = await res.json();
+          if (data.success) {
+            this.showToast('🚀 已成功通过 OpenAPI 向本地 WorkBuddy 客户端静默下发抓取指令！', 'success');
+          }
+        } catch (e) {
+          console.log('OpenAPI bridge offline, fallback to simulation & local buffer');
+        }
+      }
+
       if (this.isCrawling) return;
       this.isCrawling = true;
       this.crawlProgress = 12;
