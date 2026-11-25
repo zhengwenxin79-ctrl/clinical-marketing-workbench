@@ -1,8 +1,8 @@
 {
   "result": "generated",
   "database_sha256": "645adc48a9af2eb67a9df04a0f4990fce706a5a4fcf2fe467c8e2372f0e78568",
-  "html_sha256": "68c0bf78df352b1915acfca3fd8c78370488342ffcf32f91d3f4e605c58ea754",
-  "snapshot_sha256": "cfaf6adccc8da862dcb161a7a6331d39acc313b71aeb8fd3ffe870d868a3d5f0",
+  "html_sha256": "f87deabe75393f7ebb42c28999dc125f1283fc46b06089c1a66bbe4e9f2e8a3f",
+  "snapshot_sha256": "740a4b0516598161115be5bbb7ee6c475f6231bc4edc88437255ecaf5e4a2554",
   "counts": {
     "boards": 12,
     "topics": 66,

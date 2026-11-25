@@ -13,7 +13,10 @@
 3. 验证与构建命令：
    - 一键静态生成：`py -3 -X utf8 tools/export_pages.py`
    - 一键回归测试：`py -3 -X utf8 tools/test_regression.py`
-4. 钉钉与 WorkBuddy 自动化包：
+4. 启动 WorkBuddy 信箱工单中继 (通用 Skill 调度)：
+   - `python tools/workbuddy_mailbox_bridge.py`
+   - 内置通用技能：`skills/conference-collection-rating/SKILL.md`（试用前直接支持跨机器自动寻址）
+5. 钉钉与 WorkBuddy 自动化包：
    - 见 `dist/dingtalk/dingtalk_full_baseline.csv` 与 `dist/dingtalk/dingtalk_weekly_delta.csv`。
 
 ## 先记住这几个位置
@@ -24,7 +27,8 @@
 | handoff | 当前事实、架构、任务卡、状态、接手提示词和验收记录 |
 | tools | 可迁移的离线核验、隔离构建、预览和浏览器验收工具 |
 | docs | 给mentor看的六页Word框架说明，含六张页面截图 |
-| collector / skills | WorkBuddy既有八入口采集工作区与Skill、四维评级Skill |
+| collector / skills | WorkBuddy既有八入口采集工作区与Skill、四维评级Skill、会议收集评级通用Skill |
+| workbench/agent_mailbox | WorkBuddy 信箱工单中继目录 (inbox 任务派发 / outbox 进度回传) |
 | reference | 公司能力、整体方案、原讨论及旧页面参考，不作当前入口 |
 | 糖尿病热点知识地图 | 原PI评级与来源材料，保留相对目录供当前页面回查 |
 
