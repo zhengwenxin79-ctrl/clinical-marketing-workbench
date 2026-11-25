@@ -2,10 +2,10 @@
 # -*- coding: utf-8 -*-
 """
 WorkBuddy 信箱机制（Mailbox IPC）调度中继服务
-支持通用化 Skill 寻址：
-1. 优先使用项目内置独立副本：`skills/conference-collection-rating/SKILL.md`（任何人拉取仓库即可直接使用）
-2. 兼容本地 WorkBuddy 用户自定义安装路径：`C:\\Users\\...\\WorkBuddy\\...\\会议收集评级\\SKILL.md`
-3. 自动生成跨机器兼容的相对路径/绝对路径工单
+支持通用化 Skill 寻址（优先 D:\Users\ 规范）：
+1. 优先使用通用安装路径：`D:\\Users\\skills\\conference-collection-rating\\SKILL.md`
+2. 兼容项目内置独立副本：`skills/conference-collection-rating/SKILL.md`
+3. 兼容本地 WorkBuddy 用户临时目录：`C:\\Users\\...\\WorkBuddy\\...\\会议收集评级\\SKILL.md`
 4. 零依赖，纯 Python 标准库
 """
 
@@ -24,17 +24,20 @@ TASK_FILE = os.path.join(INBOX_DIR, 'task.json')
 PROGRESS_FILE = os.path.join(OUTBOX_DIR, 'progress.json')
 RESULT_FILE = os.path.join(OUTBOX_DIR, 'latest_result.json')
 
-# 通用 Skill 路径候选列表（优先使用仓库内通用路径，兜底本地 WorkBuddy 路径）
+# 通用 Skill 路径候选列表（优先使用 D:\Users\ 标准安装目录）
+D_USERS_SKILL_PATH = r"D:\Users\skills\conference-collection-rating\SKILL.md"
 PROJECT_SKILL_PATH = os.path.join(BASE_DIR, 'skills', 'conference-collection-rating', 'SKILL.md')
 LEGACY_LOCAL_SKILL_PATH = r"C:\Users\geneplus\WorkBuddy\2026-11-06-16-31-58\_input\会议收集评级\SKILL.md"
 
 def get_active_skill_path():
     """获取当前可用的 Skill 路径，确保无论在哪台机器上运行都能找到对应文件"""
+    if os.path.exists(D_USERS_SKILL_PATH):
+        return D_USERS_SKILL_PATH
     if os.path.exists(PROJECT_SKILL_PATH):
         return os.path.abspath(PROJECT_SKILL_PATH)
     if os.path.exists(LEGACY_LOCAL_SKILL_PATH):
         return LEGACY_LOCAL_SKILL_PATH
-    return os.path.abspath(PROJECT_SKILL_PATH)
+    return D_USERS_SKILL_PATH
 
 def ensure_dirs():
     os.makedirs(INBOX_DIR, exist_ok=True)
@@ -108,19 +111,17 @@ class MailboxBridgeHandler(BaseHTTPRequestHandler):
             domains = body.get('domains', ['内分泌', '心血管', '神经精神', '慢阻肺', '自免', '泛血管'])
 
             active_skill = get_active_skill_path()
-            rel_skill = os.path.relpath(active_skill, BASE_DIR) if active_skill.startswith(BASE_DIR) else active_skill
 
             task_payload = {
                 "task_id": task_id,
                 "skill_name": "conference-collection-rating",
                 "skill_file": active_skill,
-                "skill_relative_file": rel_skill,
                 "scope": scope,
                 "target_week": target_week,
                 "domains": domains,
                 "created_at": time.strftime('%Y-%m-%d %H:%M:%S'),
                 "status": "pending_execution",
-                "instruction_for_workbuddy": f"请加载技能 [{rel_skill}]，严格按口径收集 {','.join(domains)} 领域的最新会议，排除硬性降档会议，输出 Excel 并将结果写入 latest_result.json"
+                "instruction_for_workbuddy": f"请加载技能 [{active_skill}]，严格按口径收集 {','.join(domains)} 领域的最新会议，排除硬性降档会议，输出 Excel 并将结果写入 latest_result.json"
             }
 
             with open(TASK_FILE, 'w', encoding='utf-8') as f:
@@ -134,7 +135,7 @@ class MailboxBridgeHandler(BaseHTTPRequestHandler):
                 "active_skill": active_skill,
                 "logs": [
                     f"[{time.strftime('%H:%M:%S')}] 工单 {task_id} 已写入信箱",
-                    f"[{time.strftime('%H:%M:%S')}] 绑定通用 Skill 路径: {rel_skill}",
+                    f"[{time.strftime('%H:%M:%S')}] 绑定通用 Skill 路径: {active_skill}",
                     f"[{time.strftime('%H:%M:%S')}] 目标领域: {len(domains)} 大临床慢病方向"
                 ]
             }
@@ -148,7 +149,7 @@ class MailboxBridgeHandler(BaseHTTPRequestHandler):
                 "message": "工单已成功写入 inbox！",
                 "skill": "conference-collection-rating",
                 "active_skill_path": active_skill,
-                "copy_prompt": f"执行工单任务：请读取 workbench/agent_mailbox/inbox/task.json，严格按照已配置的技能《会议收集评级》（路径：{rel_skill}）执行全网深度会议与日程采集并产出结果。"
+                "copy_prompt": f"执行工单任务：请读取 workbench/agent_mailbox/inbox/task.json，严格按照已配置的技能《会议收集评级》（路径：{active_skill}）执行全网深度会议与日程采集并产出结果。"
             }, ensure_ascii=False).encode('utf-8'))
 
         elif self.path == '/api/mailbox/update_progress':

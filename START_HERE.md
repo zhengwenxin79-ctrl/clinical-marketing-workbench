@@ -15,7 +15,7 @@
    - 一键回归测试：`py -3 -X utf8 tools/test_regression.py`
 4. 启动 WorkBuddy 信箱工单中继 (通用 Skill 调度)：
    - `python tools/workbuddy_mailbox_bridge.py`
-   - 内置通用技能：`skills/conference-collection-rating/SKILL.md`（试用前直接支持跨机器自动寻址）
+   - 通用技能标准克隆路径：`D:\Users\skills\conference-collection-rating\SKILL.md`（自动寻址，开箱即用）
 5. 钉钉与 WorkBuddy 自动化包：
    - 见 `dist/dingtalk/dingtalk_full_baseline.csv` 与 `dist/dingtalk/dingtalk_weekly_delta.csv`。
 
