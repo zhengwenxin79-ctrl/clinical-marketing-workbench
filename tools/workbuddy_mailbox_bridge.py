@@ -221,34 +221,12 @@ def run_codebuddy_worker(task_id, task_payload, cli_path):
         'domain_focus': '重点追查尚未发布日程的已入库会议日程更新与补充会议'
     }.get(scope, scope)
 
+    # 注意：Windows .cmd 批处理传参遇到换行符会截断后续内容，因此 prompt 必须是严格单行！
     prompt = (
-        f"请先使用 Read 工具读取当前工作区内的技能规范 `{rel_skill}` 及其同级目录 `skills/conference-collection-rating/references/组织与渠道表.md`、`skills/conference-collection-rating/references/核心会议系列表.md`。\n"
-        f"然后严格按技能口径，使用 WebSearch / WebFetch 执行本次会议收集与初评：\n"
-        f"- 工单编号：{task_id}\n"
-        f"- 巡检范围：{scope_desc}\n"
-        f"- 覆盖领域：{domains_str}\n"
-        f"- 目标周期：{target_week}\n\n"
-        f"【重要输出要求（请务必遵守）】：\n"
-        f"1. **无需调用 Write / Bash / PowerShell 创建任何文件**（外层网关会自动为你落盘生成 Excel/CSV 并导入工作台）。\n"
-        f"2. 请在最终回复的末尾，**必须输出一个标准 JSON 代码块（```json ... ```）**，格式如下：\n"
-        f"```json\n"
-        f"{{\n"
-        f"  \"items\": [\n"
-        f"    {{\n"
-        f"      \"会议名称\": \"完整会议名称\",\n"
-        f"      \"领域大类\": \"内分泌/心血管/神经精神/慢阻肺/自免/泛血管之一\",\n"
-        f"      \"会议时间\": \"MM-DD 至 MM-DD\",\n"
-        f"      \"会议地点\": \"城市·具体场馆\",\n"
-        f"      \"联系人\": \"会务联系或主办方\",\n"
-        f"      \"优先级\": \"重点关注 / 常规关注 / 低优先级\",\n"
-        f"      \"备注\": \"（评级依据）...（日程状态）...（来源）...\",\n"
-        f"      \"official_url\": \"https://...\",\n"
-        f"      \"schedule_url\": \"https://...\"\n"
-        f"    }}\n"
-        f"  ]\n"
-        f"}}\n"
-        f"```\n"
-        f"只收录真实核实到的线下会议，确保 JSON 语法 100% 合法。"
+        f"请立刻执行会议收集与初评任务（不要停下来反问）："
+        f"第一步，用 Read 工具读取工作区内的 {rel_skill} 及 references/组织与渠道表.md、references/核心会议系列表.md；"
+        f"第二步，严格按技能口径，用 WebSearch/WebFetch 检索【{domains_str}】领域在目标周期【{target_week}】（范围：{scope_desc}）的真实国内线下会议，排除硬性不收录项并按10个覆盖城市定级；"
+        f"第三步，不需要调用 Write/Bash/PowerShell 写文件（由外层网关自动落盘），请直接在最终回复末尾输出一个标准 JSON 代码块（以 ```json 开头、``` 结尾），顶层格式为 {{\"items\": [{{\"会议名称\": \"\", \"领域大类\": \"\", \"会议时间\": \"MM-DD 至 MM-DD\", \"会议地点\": \"城市·场馆\", \"联系人\": \"\", \"优先级\": \"重点关注/常规关注/低优先级\", \"备注\": \"（评级依据）...（日程状态）...（来源）...\", \"official_url\": \"https://...\", \"schedule_url\": \"https://...\"}}]}}，确保 JSON 合法。"
     )
 
     logs = [
