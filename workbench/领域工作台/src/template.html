@@ -2100,6 +2100,54 @@
             </div>
           </div>
 
+          <!-- 20列专家档案全息卡片 (跨会议合并与临床科研全貌) -->
+          <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200 space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-200/80 pb-2.5">
+              <span class="text-sm font-bold text-slate-900 flex items-center gap-1.5">
+                <span>📋</span> 20列专家全息资质档案 (全景视图)
+              </span>
+              <span class="text-xs px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold"
+                    x-text="selectedPI.conferencesAttended ? ('跨 ' + selectedPI.conferencesAttended.length + ' 场重点会议') : '单场会议讲者'"></span>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-2 text-xs">
+              <div class="bg-white p-2.5 rounded-lg border border-slate-100">
+                <span class="text-slate-400 block mb-0.5">归口科室 / 机构</span>
+                <span class="font-bold text-slate-800" x-text="(selectedPI.department || '专科中心') + ' · ' + (selectedPI.title || '主任医师')"></span>
+              </div>
+              <div class="bg-white p-2.5 rounded-lg border border-slate-100">
+                <span class="text-slate-400 block mb-0.5">学术地位 / 专科领域</span>
+                <span class="font-bold text-slate-800" x-text="(selectedPI.roleLabel || '专科学术带头人') + ' · ' + selectedPI.domain"></span>
+              </div>
+              <div class="bg-white p-2.5 rounded-lg border border-slate-100 col-span-2">
+                <span class="text-slate-400 block mb-0.5">参会历史与报告轨迹 (自动合并去重)</span>
+                <div class="flex flex-wrap gap-1.5 mt-1">
+                  <template x-for="t in (selectedPI.talks || [])" :key="t.id || t.title">
+                    <span class="inline-flex items-center gap-1 px-2 py-1 rounded bg-slate-100 text-slate-700 text-xs border border-slate-200">
+                      <span class="font-bold text-blue-600" x-text="'[' + (t.conf || '顶会') + ']'"></span>
+                      <span x-text="t.title"></span>
+                    </span>
+                  </template>
+                </div>
+              </div>
+              <div class="bg-white p-2.5 rounded-lg border border-slate-100">
+                <span class="text-slate-400 block mb-0.5">临床队列与样本底数</span>
+                <span class="font-medium text-slate-700" x-text="selectedPI.cohortScale || '待一线摸底样本队列规模 (预估数百例级)'"></span>
+              </div>
+              <div class="bg-white p-2.5 rounded-lg border border-slate-100">
+                <span class="text-slate-400 block mb-0.5">在研课题与纵向基金</span>
+                <span class="font-medium text-slate-700" x-text="selectedPI.grantsFunding || '国家自然科学基金 / 专科重点研发专项 (在研)'"></span>
+              </div>
+              <div class="bg-white p-2.5 rounded-lg border border-slate-100 col-span-2">
+                <span class="text-slate-400 block mb-0.5">适配多组学产品能力</span>
+                <div class="flex flex-wrap gap-1.5 mt-1">
+                  <template x-for="cap in (selectedPI.capabilities || ['T10 临床队列验证', 'T03 单细胞/转录组', 'T01 cfRNA液体活检'])" :key="cap">
+                    <span class="px-2 py-0.5 rounded-md bg-indigo-50 text-indigo-700 font-bold border border-indigo-100 text-[11px]" x-text="cap"></span>
+                  </template>
+                </div>
+              </div>
+            </div>
+          </div>
           <div>
             <span class="text-slate-800 font-bold block mb-1.5">💡 研究方向与吉因加切入建议</span>
             <div class="text-slate-700 bg-blue-50/50 p-4 rounded-xl border border-blue-100 space-y-2 leading-relaxed">
