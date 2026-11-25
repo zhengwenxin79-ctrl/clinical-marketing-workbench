@@ -178,7 +178,7 @@ def run_codebuddy_worker(task_id, task_payload, cli_path):
         cli_path,
         '-p', prompt,
         '--output-format', 'json',
-        '--permission-mode', 'auto'
+        '--permission-mode', 'bypassPermissions'
     ]
 
     try:
