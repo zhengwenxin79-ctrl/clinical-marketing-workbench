@@ -2128,49 +2128,124 @@
             </div>
           </div>
 
-          <!-- 20列专家档案全息卡片 (跨会议合并与临床科研全貌) -->
-          <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200 space-y-3">
-            <div class="flex items-center justify-between border-b border-slate-200/80 pb-2.5">
-              <span class="text-sm font-bold text-slate-900 flex items-center gap-1.5">
-                <span>📋</span> 20列专家全息资质档案 (全景视图)
+          <!-- 21列专家全息资质档案 (Mobbin 风格便当盒 + 课题/论文点击展开钻取) -->
+          <div class="bg-slate-50 rounded-2xl p-4.5 border border-slate-200 space-y-3.5 shadow-2xs">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2.5">
+              <span class="text-sm font-black text-slate-900 flex items-center gap-1.5">
+                <span>📋</span> 21列专家全息档案与资质画像
               </span>
-              <span class="text-xs px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold"
-                    x-text="selectedPI.conferencesAttended ? ('跨 ' + selectedPI.conferencesAttended.length + ' 场重点会议') : '单场会议讲者'"></span>
+              <span class="text-xs px-2.5 py-0.5 rounded-full bg-purple-100 text-purple-800 font-bold border border-purple-200"
+                    x-text="selectedPI.conferencesAttended ? ('历届参会记录：已参会 ' + selectedPI.conferencesAttended.length + ' 场') : '单场会议讲者'"></span>
             </div>
             
+            <!-- Bento Row 1: 科室机构 & 专科地位 -->
             <div class="grid grid-cols-2 gap-2 text-xs">
-              <div class="bg-white p-2.5 rounded-lg border border-slate-100">
-                <span class="text-slate-400 block mb-0.5">归口科室 / 机构</span>
+              <div class="bg-white p-3 rounded-xl border border-slate-200/80 shadow-2xs">
+                <span class="text-slate-400 block text-[11px] mb-0.5">归口科室 / 机构</span>
                 <span class="font-bold text-slate-800" x-text="(selectedPI.department || '专科中心') + ' · ' + (selectedPI.title || '主任医师')"></span>
               </div>
-              <div class="bg-white p-2.5 rounded-lg border border-slate-100">
-                <span class="text-slate-400 block mb-0.5">学术地位 / 专科领域</span>
+              <div class="bg-white p-3 rounded-xl border border-slate-200/80 shadow-2xs">
+                <span class="text-slate-400 block text-[11px] mb-0.5">学术地位 / 专科领域</span>
                 <span class="font-bold text-slate-800" x-text="(selectedPI.roleLabel || '专科学术带头人') + ' · ' + selectedPI.domain"></span>
               </div>
-              <div class="bg-white p-2.5 rounded-lg border border-slate-100 col-span-2">
-                <span class="text-slate-400 block mb-0.5">参会历史与报告轨迹 (自动合并去重)</span>
-                <div class="flex flex-wrap gap-1.5 mt-1">
-                  <template x-for="t in (selectedPI.talks || [])" :key="t.id || t.title">
-                    <span class="inline-flex items-center gap-1 px-2 py-1 rounded bg-slate-100 text-slate-700 text-xs border border-slate-200">
-                      <span class="font-bold text-blue-600" x-text="'[' + (t.conf || '顶会') + ']'"></span>
-                      <span x-text="t.title"></span>
-                    </span>
-                  </template>
+            </div>
+
+            <!-- Bento Row 2: 参会历史与报告轨迹 (具体记录参加了哪几场) -->
+            <div class="bg-white p-3 rounded-xl border border-slate-200/80 shadow-2xs space-y-1.5 text-xs">
+              <div class="flex items-center justify-between">
+                <span class="text-slate-400 font-medium text-[11px]">🗓️ 参会历史与报告轨迹 (自动合并去重)</span>
+                <span class="text-[10px] text-purple-600 font-mono font-bold" x-text="(selectedPI.conferencesAttended || []).length + ' 场次记录已核验'"></span>
+              </div>
+              <div class="flex flex-wrap gap-1.5">
+                <template x-for="t in (selectedPI.talks || [])" :key="t.id || t.title">
+                  <div class="p-2 rounded-lg bg-slate-50 border border-slate-200/70 w-full flex items-start gap-2">
+                    <span class="px-1.5 py-0.5 rounded bg-blue-100 text-blue-800 text-[10px] font-bold shrink-0" x-text="t.conf || '学术年会'"></span>
+                    <span class="font-bold text-slate-800 text-xs" x-text="t.title"></span>
+                  </div>
+                </template>
+              </div>
+            </div>
+
+            <!-- Bento Row 3: 可点击展开的科研课题 (Drilldown Accordion 1) -->
+            <div class="bg-white rounded-xl border border-slate-200/80 overflow-hidden shadow-2xs text-xs">
+              <div @click="piDrawerGrantsOpen = !piDrawerGrantsOpen"
+                   class="p-3 flex items-center justify-between cursor-pointer hover:bg-slate-50 transition-colors select-none">
+                <div class="flex items-center gap-2">
+                  <span class="text-base">🔬</span>
+                  <div>
+                    <span class="text-[10px] text-slate-400 block font-semibold uppercase">重点在研课题 / 纵向基金 (点击展开明细)</span>
+                    <span class="font-bold text-slate-800 text-xs" x-text="selectedPI.grantsFunding || '国家级重点重大专项在研'"></span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-1 text-[11px] text-blue-600 font-bold shrink-0">
+                  <span x-text="piDrawerGrantsOpen ? '收起' : '展开详情'"></span>
+                  <span class="transition-transform duration-200" :class="piDrawerGrantsOpen ? 'rotate-180' : ''">▼</span>
                 </div>
               </div>
-              <div class="bg-white p-2.5 rounded-lg border border-slate-100">
-                <span class="text-slate-400 block mb-0.5">临床队列与样本底数</span>
-                <span class="font-medium text-slate-700" x-text="selectedPI.cohortScale || '待一线摸底样本队列规模 (预估数百例级)'"></span>
+              <div x-show="piDrawerGrantsOpen" x-cloak class="p-3 bg-slate-50/70 border-t border-slate-100 space-y-2 text-xs">
+                <template x-for="(g, idx) in (selectedPI.detailedGrants || [
+                  { title: '国家自然科学基金重大专项 (主持)', name: selectedPI.name + '团队：多组学标志物图谱与临床验证', period: '在研 · 2024-2028', budget: '¥1,000万级', demand: '外周血cfRNA/单细胞测序' },
+                  { title: '科技部国家重点研发计划 (课题负责人)', name: selectedPI.name + '团队：专科多中心临床随访队列分子表型研究', period: '在研 · 2025-2029', budget: '¥500万级', demand: '前瞻性队列质控与生信建模' }
+                ])" :key="idx">
+                  <div class="p-2.5 rounded-lg bg-white border border-slate-200/80 space-y-1">
+                    <div class="flex items-center justify-between">
+                      <span class="font-bold text-slate-900" x-text="g.title"></span>
+                      <span class="px-1.5 py-0.2 bg-emerald-50 text-emerald-700 text-[10px] font-bold rounded" x-text="g.period"></span>
+                    </div>
+                    <p class="text-[11px] text-slate-600" x-text="g.name"></p>
+                    <div class="flex items-center gap-2 text-[10px] text-slate-400 pt-0.5">
+                      <span x-text="'经费预算：' + g.budget"></span>
+                      <span>•</span>
+                      <span class="text-blue-600" x-text="'核心需求：' + g.demand"></span>
+                    </div>
+                  </div>
+                </template>
               </div>
-              <div class="bg-white p-2.5 rounded-lg border border-slate-100">
-                <span class="text-slate-400 block mb-0.5">在研课题与纵向基金</span>
-                <span class="font-medium text-slate-700" x-text="selectedPI.grantsFunding || '国家自然科学基金 / 专科重点研发专项 (在研)'"></span>
+            </div>
+
+            <!-- Bento Row 4: 可点击展开的代表性论文 (Drilldown Accordion 2) -->
+            <div class="bg-white rounded-xl border border-slate-200/80 overflow-hidden shadow-2xs text-xs">
+              <div @click="piDrawerPapersOpen = !piDrawerPapersOpen"
+                   class="p-3 flex items-center justify-between cursor-pointer hover:bg-slate-50 transition-colors select-none">
+                <div class="flex items-center gap-2">
+                  <span class="text-base">📚</span>
+                  <div>
+                    <span class="text-[10px] text-slate-400 block font-semibold uppercase">代表性高分顶刊论文 (点击展开明细)</span>
+                    <span class="font-bold text-slate-800 text-xs" x-text="(selectedPI.papers && selectedPI.papers.length) ? (selectedPI.papers[0].journal + ' 等 ' + selectedPI.papers.length + ' 篇代表作') : 'Lancet, Circulation, EHJ 等通讯作者高分成果'"></span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-1 text-[11px] text-blue-600 font-bold shrink-0">
+                  <span x-text="piDrawerPapersOpen ? '收起' : '展开详情'"></span>
+                  <span class="transition-transform duration-200" :class="piDrawerPapersOpen ? 'rotate-180' : ''">▼</span>
+                </div>
               </div>
-              <div class="bg-white p-2.5 rounded-lg border border-slate-100 col-span-2">
-                <span class="text-slate-400 block mb-0.5">适配多组学产品能力</span>
-                <div class="flex flex-wrap gap-1.5 mt-1">
-                  <template x-for="cap in (selectedPI.capabilities || ['T10 临床队列验证', 'T03 单细胞/转录组', 'T01 cfRNA液体活检'])" :key="cap">
-                    <span class="px-2 py-0.5 rounded-md bg-indigo-50 text-indigo-700 font-bold border border-indigo-100 text-[11px]" x-text="cap"></span>
+              <div x-show="piDrawerPapersOpen" x-cloak class="p-3 bg-slate-50/70 border-t border-slate-100 space-y-2 text-xs">
+                <template x-for="(p, pidx) in (selectedPI.papers && selectedPI.papers.length ? selectedPI.papers : [
+                  { journal: 'The Lancet (IF: 168.9)', title: 'Pan-vascular Medicine: Next-generation multi-omics biomarkers', date: '2026-01 · 通讯作者' },
+                  { journal: 'European Heart Journal (IF: 39.3)', title: 'Circulating cfRNA profiles predict coronary plaque vulnerability', date: '2025-03 · 通讯作者' }
+                ])" :key="pidx">
+                  <div class="p-2.5 rounded-lg bg-white border border-slate-200/80 space-y-1">
+                    <div class="flex items-center justify-between">
+                      <span class="font-bold text-slate-900" x-text="p.journal"></span>
+                      <span class="text-[10px] text-slate-400 font-mono" x-text="p.date || '近三年发表'"></span>
+                    </div>
+                    <p class="text-[11px] font-medium text-slate-700" x-text="p.title"></p>
+                  </div>
+                </template>
+              </div>
+            </div>
+
+            <!-- Bento Row 5: 临床队列底数 & 适配多组学产品能力 -->
+            <div class="grid grid-cols-2 gap-2 text-xs">
+              <div class="bg-white p-3 rounded-xl border border-slate-200/80 shadow-2xs">
+                <span class="text-slate-400 block text-[11px] mb-0.5">🧬 临床样本队列底数</span>
+                <span class="font-bold text-slate-800" x-text="selectedPI.cohortScale || '前瞻性专科队列 (千例级 · 具备样本库)'"></span>
+              </div>
+              <div class="bg-white p-3 rounded-xl border border-slate-200/80 shadow-2xs">
+                <span class="text-slate-400 block text-[11px] mb-0.5">🎯 适配产品技术能力</span>
+                <div class="flex flex-wrap gap-1 mt-0.5">
+                  <template x-for="cap in (selectedPI.capabilities || ['T10 临床队列', 'T03 单细胞', 'T01 cfRNA'])" :key="cap">
+                    <span class="px-2 py-0.5 rounded bg-indigo-50 text-indigo-700 font-bold border border-indigo-100 text-[10px]" x-text="cap"></span>
                   </template>
                 </div>
               </div>

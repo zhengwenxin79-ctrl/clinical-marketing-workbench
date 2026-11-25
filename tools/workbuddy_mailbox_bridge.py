@@ -1,13 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-WorkBuddy 信箱机制（Mailbox IPC）调度中继服务
-支持通用化 Skill 寻址（优先 D:\Users\ 规范）：
-1. 优先使用通用安装路径：`D:\\Users\\skills\\conference-collection-rating\\SKILL.md`
-2. 兼容项目内置独立副本：`skills/conference-collection-rating/SKILL.md`
-3. 兼容本地 WorkBuddy 用户临时目录：`C:\\Users\\...\\WorkBuddy\\...\\会议收集评级\\SKILL.md`
-4. 零依赖，纯 Python 标准库
-"""
+# WorkBuddy 信箱机制（Mailbox IPC）调度中继服务
+# 支持通用化 Skill 寻址（优先 D:/Users/ 规范）
 
 import os
 import sys
@@ -56,7 +50,6 @@ class MailboxBridgeHandler(BaseHTTPRequestHandler):
         self._set_headers(200)
 
     def do_GET(self):
-        # 1. 查询当前进度 (Happy 式进度轮询)
         if self.path.startswith('/api/mailbox/progress'):
             ensure_dirs()
             if os.path.exists(PROGRESS_FILE):
@@ -77,7 +70,6 @@ class MailboxBridgeHandler(BaseHTTPRequestHandler):
                 "logs": []
             }, ensure_ascii=False).encode('utf-8'))
 
-        # 2. 查询最新采集结果
         elif self.path.startswith('/api/mailbox/result'):
             if os.path.exists(RESULT_FILE):
                 try:

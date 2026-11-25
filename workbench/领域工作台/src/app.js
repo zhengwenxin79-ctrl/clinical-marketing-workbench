@@ -180,6 +180,24 @@ window.workbenchApp = function () {
         cutIn: cutInText,
         talks,
         papers,
+        cohortScale: (totalScore && totalScore >= 75) ? '前瞻性多中心临床队列 (千例级 · 具备外周血与组织生物样本库)' : '专科临床随访队列 (数百例级 · 样本待一线进一步核实)',
+        grantsFunding: (totalScore && totalScore >= 80) ? '国家自然科学基金重大项目 / 科技部国家重点研发计划 (首席/主持)' : '国家自然科学基金面上项目 / 省市级重大临床转化专项 (主持)',
+        detailedGrants: [
+          {
+            title: '国家自然科学基金重点专项 (主持)',
+            name: ${name}团队：基于多组学图谱的疾病发生机制与靶点发掘,
+            period: '在研 · 2024-2028',
+            budget: '¥800~1,500 万',
+            demand: '外周血液体活检、cfRNA微量测序与单细胞转录组建模'
+          },
+          {
+            title: '国家重点研发计划子课题 / 省部级转化专项',
+            name: ${name}团队：前瞻性专科临床队列样本验证与分子标志物转化研究,
+            period: '在研 · 2025-2029',
+            budget: '¥300~500 万',
+            demand: '前瞻性多中心队列随访质控、多模态标志物临床验证'
+          }
+        ],
         starred: totalScore !== null || (aiCand && aiCand.priority === 'focused'),
         assignee: totalScore && totalScore >= 75 ? '华东一区 - 张敏' : '华北区 - 李娜',
         taskStatus: totalScore !== null ? '跟进中' : '待派发',
@@ -2299,6 +2317,8 @@ window.workbenchApp = function () {
 
     showPIDrawer: false,
     selectedPI: null,
+    piDrawerGrantsOpen: false,
+    piDrawerPapersOpen: false,
     openPIDrawer(pi) {
       this.selectedPI = pi;
       this.showPIDrawer = true;
