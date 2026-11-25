@@ -2590,13 +2590,67 @@ window.workbenchApp = function () {
     },
 
     copySkillMailboxPrompt() {
-      const prompt = `请加载专属技能【C:\\Users\\geneplus\\WorkBuddy\\2026-11-06-16-31-58\\_input\\会议收集评级\\SKILL.md】，读取工单【workbench/agent_mailbox/inbox/task.json】，严格按照吉因加六大领域口径进行全网深度会议与日程采集，并将最新进度写入 workbench/agent_mailbox/outbox/progress.json。`;
-      navigator.clipboard.writeText(prompt);
+      const prompt = `请加载专属技能【D:\\Users\\skills\\conference-collection-rating\\SKILL.md】，读取工单【workbench/agent_mailbox/inbox/task.json】，严格按照吉因加六大领域口径进行全网深度会议与日程采集，并将最新进度写入 workbench/agent_mailbox/outbox/progress.json。`;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(prompt);
+      }
       this.showToast('📋 已复制专属 Skill 信箱执行指令！可直接粘贴至 WorkBuddy 发送', 'success');
     },
 
+    _crawlPollTimer: null,
+
+    stopCrawlPolling() {
+      if (this._crawlPollTimer) {
+        clearInterval(this._crawlPollTimer);
+        this._crawlPollTimer = null;
+      }
+    },
+
+    pollMailboxProgress() {
+      this.stopCrawlPolling();
+      this._crawlPollTimer = setInterval(async () => {
+        try {
+          const res = await fetch('http://127.0.0.1:8899/api/mailbox/progress');
+          const data = await res.json();
+          if (typeof data.percent === 'number') this.crawlProgress = data.percent;
+          if (data.message) this.crawlStatusText = data.message;
+          if (Array.isArray(data.logs) && data.logs.length) this.crawlLogs = data.logs;
+
+          if (data.status === 'done') {
+            this.stopCrawlPolling();
+            this.isCrawling = false;
+            this.crawlProgress = 100;
+            const nowStr = new Date().toISOString().slice(0, 16).replace('T', ' ');
+            this.lastCrawlTime = nowStr;
+            writeStore('clinical-workbench:last-crawl-time', nowStr);
+
+            let added = 0;
+            if (Array.isArray(data.result_items) && data.result_items.length > 0) {
+              const ingestRes = this.ingestConferenceItemsFromRows(data.result_items);
+              added = ingestRes.addedCount;
+            }
+            const artifactCount = Array.isArray(data.artifacts) ? data.artifacts.length : 0;
+            this.showToast(`✅ CodeBuddy 真实抓取完成！新增入列 ${added} 场会议，生成产物文件 ${artifactCount} 个（见 outbox 目录）`, 'success');
+          } else if (data.status === 'failed') {
+            this.stopCrawlPolling();
+            this.isCrawling = false;
+            this.showToast(`❌ 抓取执行失败：${data.error || data.message || '请查看日志'}`, 'error');
+          }
+        } catch (err) {
+          this.stopCrawlPolling();
+          this.isCrawling = false;
+          this.crawlStatusText = '⚠️ 与本地网关 127.0.0.1:8899 连接断开';
+        }
+      }, 2000);
+    },
+
     async startWorkBuddyCrawl() {
-      // 做法二：信箱工单机制 (Mailbox IPC) 自动派发
+      if (this.isCrawling) return;
+      this.isCrawling = true;
+      this.crawlProgress = 5;
+      this.crawlStatusText = '正在连接本地信箱网关 (127.0.0.1:8899) 并拉起 CodeBuddy CLI...';
+      this.crawlLogs = ['📡 正在向本地信箱网关派发真实抓取工单...'];
+
       try {
         const res = await fetch('http://127.0.0.1:8899/api/mailbox/dispatch', {
           method: 'POST',
@@ -2608,127 +2662,43 @@ window.workbenchApp = function () {
           })
         });
         const data = await res.json();
-        if (data.success) {
-          this.showToast('📬 工单已成功送达 inbox/task.json！绑定技能【会议收集评级】', 'success');
-          if (data.copy_prompt) {
+        if (data.success && data.auto_executed) {
+          this.crawlProgress = 12;
+          this.crawlStatusText = data.message || '🚀 已真实拉起本地 CodeBuddy CLI 自动执行...';
+          this.crawlLogs = [
+            `📬 工单 ${data.task_id} 已写入 workbench/agent_mailbox/inbox/task.json`,
+            `🚀 已启动本地 CodeBuddy CLI 自动执行《会议收集评级》技能，实时回传进度中...`
+          ];
+          this.showToast(data.message || '🚀 已真实拉起 CodeBuddy CLI 自动抓取！', 'success');
+          this.pollMailboxProgress();
+        } else if (data.success && data.already_running) {
+          this.crawlStatusText = data.message;
+          this.showToast(data.message, 'info');
+          this.pollMailboxProgress();
+        } else if (data.success) {
+          this.isCrawling = false;
+          this.crawlProgress = 5;
+          this.crawlStatusText = data.message || '工单已写入 inbox/task.json（未检测到 CLI，需手动粘贴执行）';
+          this.crawlLogs = [this.crawlStatusText];
+          if (data.copy_prompt && navigator.clipboard && navigator.clipboard.writeText) {
             navigator.clipboard.writeText(data.copy_prompt);
           }
+          this.showToast(this.crawlStatusText, 'warning');
+        } else {
+          this.isCrawling = false;
+          this.crawlStatusText = '❌ 派单失败：' + (data.message || '未知错误');
+          this.showToast(this.crawlStatusText, 'error');
         }
       } catch (e) {
-        console.log('Mailbox bridge offline, local file simulation active');
-      }
-
-      if (this.isCrawling) return;
-      this.isCrawling = true;
-      this.crawlProgress = 12;
-      this.crawlStatusText = '正在连接 59 个学会官网与 6 大会务微站锚点...';
-      this.crawlLogs = [
-        '📡 [00:01] 已加载 19 个中华医学会/医师协会专科分会锚点 & 6 大会务平台 (sciconf / tiemeeting / cnconf / hoohui)...'
-      ];
-
-      setTimeout(() => {
-        this.crawlProgress = 45;
-        this.crawlStatusText = '正在检索最新会议通知、微站日程页与红头文件 PDF...';
-        this.crawlLogs.push('🔍 [00:02] 巡检美迪康 (sciconf.cn) 与钛会务 (tiemeeting.com)：发现 3 场新上线/更新日程的专科会议...');
-      }, 650);
-
-      setTimeout(() => {
-        this.crawlProgress = 78;
-        this.crawlStatusText = '正在执行吉因加 A/B/C/D 四级初评与重复会议去重...';
-        this.crawlLogs.push('🧠 [00:03] 已自动提取在线日程链接 (schedule_url)、具体场馆地址与会务组联系方式，完成去重比对...');
-      }, 1350);
-
-      setTimeout(() => {
-        this.crawlProgress = 100;
         this.isCrawling = false;
-        const nowStr = new Date().toISOString().slice(0, 16).replace('T', ' ');
-        this.lastCrawlTime = nowStr;
-        writeStore('clinical-workbench:last-crawl-time', nowStr);
-
-        // Discover new high-value crawled items and push to auditConferences if not present
-        const discovered = [
-          {
-            id: 'WB-CRAWL-' + Date.now() + '-1',
-            conferenceId: 'CONF-2026-WB01',
-            title: '2026 中华医学会呼吸病学分会慢性气道疾病多组学转化高峰论坛',
-            abbreviation: 'CTS 慢性气道多组学论坛',
-            date: '2026-12-04 ~ 2026-12-06',
-            city: '广州',
-            venue: '广州·越秀国际会议中心 3楼宴会厅',
-            contacts: '会务秘书处 陈老师 020-83339912；微站报名 cts-airway2026.sciconf.cn',
-            domain: '呼吸慢病',
-            fieldId: 'respiratory',
-            tierCode: 'B',
-            sourceAnchor: 'O11 中华医学会呼吸病学分会 · 美迪康微站自动抓取',
-            schedulePublished: true,
-            scheduleStatusNote: 'WorkBuddy 自动抓取：已识别 4 个气道慢病单细胞与宏基因组专场日程（共 26 个报告讲题）。',
-            officialUrl: 'https://cts-airway2026.sciconf.cn',
-            scheduleUrl: 'https://cts-airway2026.sciconf.cn/cn/web/program',
-            sourceLinks: [
-              { label: '📅 自动抓取在线日程页 (sciconf)', url: 'https://cts-airway2026.sciconf.cn/cn/web/program', type: 'schedule' },
-              { label: '🌐 大会微站首页', url: 'https://cts-airway2026.sciconf.cn', type: 'official' }
-            ],
-            summary: '【WorkBuddy 自动初评 · B级重点关注】广州医科大学附属第一医院国家呼吸医学中心协办，含慢阻肺与重症哮喘单细胞/空间转录组及气道微生态宏基因组专场，已附完整日程链接。'
-          },
-          {
-            id: 'WB-CRAWL-' + Date.now() + '-2',
-            conferenceId: 'CONF-2026-WB02',
-            title: '2026 中国卒中学会脑血管病精准医学与生物标志物年会',
-            abbreviation: 'CSA 脑血管标志物年会',
-            date: '2026-12-05 ~ 2026-12-06',
-            city: '北京',
-            venue: '北京·国家会议中心二期',
-            contacts: '中国卒中学会学术部 010-57983210',
-            domain: '神经精神',
-            fieldId: 'neurology',
-            tierCode: 'B',
-            sourceAnchor: 'S10 中国卒中学会官网锚点自动抓取',
-            schedulePublished: true,
-            scheduleStatusNote: 'WorkBuddy 自动抓取：已发布主旨论坛与脑脊液/外周血液体活检分论坛日程。',
-            officialUrl: 'https://csa-biomarker2026.tiemeeting.com/CN',
-            scheduleUrl: 'https://csa-biomarker2026.tiemeeting.com/CN/Program/Details',
-            sourceLinks: [
-              { label: '📅 钛会务在线日程页', url: 'https://csa-biomarker2026.tiemeeting.com/CN/Program/Details', type: 'schedule' },
-              { label: '🌐 大会微官网', url: 'https://csa-biomarker2026.tiemeeting.com/CN', type: 'official' }
-            ],
-            summary: '【WorkBuddy 自动初评 · B级重点关注】聚焦缺血性脑卒中与脑小血管病外泌体转录组、血浆蛋白组早筛标志物及队列转化，北京核心覆盖城市。'
-          },
-          {
-            id: 'WB-CRAWL-' + Date.now() + '-3',
-            conferenceId: 'CONF-2026-WB03',
-            title: '2026 长三角泛血管代谢与糖心肾共病(CKM)多学科论坛',
-            abbreviation: '长三角 CKM 共病论坛',
-            date: '2026-12-11 ~ 2026-12-12',
-            city: '上海',
-            venue: '上海·国际会议中心',
-            contacts: '上海医学会内分泌与心血管联合筹备组',
-            domain: '泛血管及器官损伤',
-            fieldId: 'vascular',
-            tierCode: 'B',
-            sourceAnchor: 'S19 长三角泛血管联盟微官网锚点',
-            schedulePublished: false,
-            scheduleStatusNote: 'WorkBuddy 自动抓取：刚发布第一轮征文与会期通知，详细日程尚未上线（已加入自动追踪）。',
-            officialUrl: 'https://ckm2026.cnconf.com/msite/main/cn',
-            scheduleUrl: 'https://ckm2026.cnconf.com/msite/main/cn',
-            sourceLinks: [
-              { label: '📄 第一轮会议通知微站', url: 'https://ckm2026.cnconf.com/msite/main/cn', type: 'notice' }
-            ],
-            summary: '【WorkBuddy 自动初评 · B级重点关注】汇聚瑞金、中山、仁济内分泌与心内、肾内专家，聚焦糖心肾共病(CKM)队列多组学与 CHIP 克隆性造血检测。'
-          }
+        this.crawlProgress = 0;
+        this.crawlStatusText = '❌ 无法连接本地信箱网关 (127.0.0.1:8899)，请先运行 python tools/workbuddy_mailbox_bridge.py';
+        this.crawlLogs = [
+          '❌ 本地网关 127.0.0.1:8899 未启动，无法拉起 CodeBuddy CLI。',
+          '💡 请在终端运行：python tools/workbuddy_mailbox_bridge.py'
         ];
-
-        let added = 0;
-        for (const d of discovered) {
-          if (!this.auditConferences.some(c => c.title === d.title) && !this.conferences.some(c => c.title === d.title)) {
-            this.auditConferences.unshift(d);
-            added++;
-          }
-        }
-
-        this.crawlStatusText = `✅ 抓取完成！本次新增发现 ${added} 场高相关学术会议（含日程链接），已推入【① 来源与审核】列表！`;
-        this.crawlLogs.push(`🎉 [00:04] 采集完毕：新增 ${added} 场待审核会议，全部附带真实来源与日程链接！`);
-        this.showToast(`WorkBuddy 自动抓取完成：新增 ${added} 场会议进入【① 来源与审核】！`, 'success');
-      }, 2100);
+        this.showToast('本地信箱网关未启动，无法执行真实抓取', 'error');
+      }
     },
 
     openScheduleModal() {
