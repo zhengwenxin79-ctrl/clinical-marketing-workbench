@@ -339,72 +339,200 @@
 
 
     <!-- ========================================================== -->
-    <!-- TAB 2: 📍 本战区 PI 库 (Clean 2-Col Territory Cards)        -->
+    <!-- TAB 2: 📍 本战区 PI 库 (定制化跨院筛选与批量导出) -->
     <!-- ========================================================== -->
     <div x-show="activeTab === 'territory'" class="space-y-5">
-      <div class="bg-white rounded-2xl border border-slate-200 px-6 py-4 shadow-2xs flex flex-wrap items-center justify-between gap-4">
-        <div class="flex items-center gap-3">
-          <button @click="territoryFilter = 'all'"
-                  :class="territoryFilter === 'all' ? 'bg-slate-900 text-white font-bold' : 'bg-slate-100 text-slate-700 font-medium'"
-                  class="px-4 py-2 rounded-xl text-sm transition-all">
-            本战区全部专家 (<span x-text="myTerritoryPIs.length"></span>)
-          </button>
-          <button @click="territoryFilter = 'fav'"
-                  :class="territoryFilter === 'fav' ? 'bg-amber-500 text-white font-bold' : 'bg-slate-100 text-slate-700 font-medium'"
-                  class="px-4 py-2 rounded-xl text-sm transition-all">
-            ★ 重点收藏 (<span x-text="myTerritoryPIs.filter(p => p.starred).length"></span>)
-          </button>
+      <!-- 1. 顶层筛选控制栏 (医院 / 领域 / 评级 / 收藏 / 搜索) -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-2xs space-y-4">
+        <!-- 行 1: 快速多维筛选 -->
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <div class="flex flex-wrap items-center gap-2.5">
+            <!-- 医院跨院筛选 -->
+            <div class="flex items-center gap-1.5 bg-slate-50 px-3 py-1.5 rounded-xl border border-slate-200">
+              <span class="text-xs font-bold text-slate-500">🏥 医院:</span>
+              <select x-model="selectedHospital" class="bg-transparent text-xs font-bold text-slate-800 focus:outline-none cursor-pointer">
+                <option value="all">全部管辖医院</option>
+                <template x-for="h in territoryHospitalList" :key="h.name">
+                  <option :value="h.name" x-text="h.name + ' (' + h.count + '位)'"></option>
+                </template>
+              </select>
+            </div>
+
+            <!-- 专科领域筛选 -->
+            <div class="flex items-center gap-1.5 bg-slate-50 px-3 py-1.5 rounded-xl border border-slate-200">
+              <span class="text-xs font-bold text-slate-500">🔬 领域:</span>
+              <select x-model="selectedDomain" class="bg-transparent text-xs font-bold text-slate-800 focus:outline-none cursor-pointer">
+                <option value="all">全部专科领域</option>
+                <option value="糖尿病与代谢">糖尿病与代谢</option>
+                <option value="心血管与泛血管">心血管与泛血管</option>
+                <option value="神经精神">神经精神</option>
+                <option value="呼吸慢病">呼吸慢病</option>
+                <option value="风湿免疫">风湿免疫</option>
+              </select>
+            </div>
+
+            <!-- 合作评级筛选 -->
+            <div class="flex items-center gap-1.5 bg-slate-50 px-3 py-1.5 rounded-xl border border-slate-200">
+              <span class="text-xs font-bold text-slate-500">⭐ 评级:</span>
+              <select x-model="selectedGrade" class="bg-transparent text-xs font-bold text-slate-800 focus:outline-none cursor-pointer">
+                <option value="all">全部评级</option>
+                <option value="A">A级 · 头部大咖 (≥90分)</option>
+                <option value="B">B级 · 重点骨干 (75-89分)</option>
+                <option value="C">C级 · 青年PI (60-74分)</option>
+                <option value="pending">调研中待补充</option>
+              </select>
+            </div>
+
+            <!-- 收藏切换按钮 -->
+            <button @click="territoryFilter = (territoryFilter === 'fav' ? 'all' : 'fav')"
+                    :class="territoryFilter === 'fav' ? 'bg-amber-500 text-white font-bold border-amber-500' : 'bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100'"
+                    class="px-3 py-1.5 rounded-xl border text-xs font-medium transition-all flex items-center gap-1">
+              <span x-text="territoryFilter === 'fav' ? '★ 已过滤: 重点收藏' : '☆ 仅看收藏'"></span>
+            </button>
+          </div>
+
+          <!-- 右侧实时检索框 -->
+          <div class="relative w-64">
+            <input type="text"
+                   x-model="searchQuery"
+                   placeholder="搜索姓名、医院、科室、课题..."
+                   class="w-full pl-9 pr-4 py-2 bg-slate-100 border border-slate-200 rounded-xl text-xs font-medium focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue-500">
+            <svg class="w-4 h-4 text-slate-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+          </div>
         </div>
 
-        <div class="relative w-64">
-          <input type="text"
-                 x-model="searchQuery"
-                 placeholder="搜索姓名或医院..."
-                 class="w-full pl-9 pr-4 py-2 bg-slate-100 border border-slate-200 rounded-xl text-sm focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue-500">
-          <svg class="w-4 h-4 text-slate-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-          </svg>
+        <!-- 行 2: 批量勾选与一键导出管理条 (纯蓝清爽) -->
+        <div class="bg-blue-50/70 rounded-xl px-4 py-2.5 border border-blue-100 flex flex-wrap items-center justify-between gap-3">
+          <!-- 左侧勾选控制 -->
+          <div class="flex items-center gap-3 text-xs">
+            <label class="flex items-center gap-2 cursor-pointer select-none font-bold text-slate-700">
+              <input type="checkbox"
+                     :checked="isAllSelected"
+                     @change="toggleSelectAll($event.target.checked)"
+                     class="w-4 h-4 text-blue-600 rounded border-slate-300 focus:ring-blue-500 cursor-pointer">
+              <span>全选本筛选结果 (共 <span class="text-blue-700 font-extrabold" x-text="filteredTerritoryPIs.length"></span> 位)</span>
+            </label>
+            
+            <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-extrabold bg-blue-600 text-white shadow-2xs">
+              已勾选 <span x-text="selectedPICount"></span> 位
+            </span>
+
+            <button x-show="selectedPICount > 0"
+                    @click="onlyShowSelected = !onlyShowSelected"
+                    :class="onlyShowSelected ? 'bg-blue-200 text-blue-900 font-bold' : 'text-blue-700 hover:underline'"
+                    class="px-2 py-0.5 rounded text-xs transition-all">
+              <span x-text="onlyShowSelected ? '✓ 正在只看已勾选' : '仅看已勾选'"></span>
+            </button>
+
+            <button x-show="selectedPICount > 0"
+                    @click="clearSelection()"
+                    class="text-slate-400 hover:text-slate-600 transition-all">
+              清空勾选
+            </button>
+          </div>
+
+          <!-- 右侧导出按钮组 (核心亮点) -->
+          <div class="flex items-center gap-2">
+            <button x-show="selectedPICount > 0"
+                    @click="batchStarSelected()"
+                    class="px-3 py-1.5 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 rounded-xl text-xs font-bold transition-all flex items-center gap-1 shadow-2xs">
+              <span>⭐</span> 批量收藏
+            </button>
+
+            <!-- 一键导出 CSV / Excel -->
+            <button @click="exportSelectedPIsToCSV()"
+                    class="px-4 py-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white rounded-xl text-xs font-extrabold shadow-sm shadow-blue-500/25 transition-all flex items-center gap-1.5 cursor-pointer">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+              </svg>
+              <span x-text="selectedPICount > 0 ? '📥 一键导出所选 ' + selectedPICount + ' 位专家清单 (Excel/CSV)' : '📥 导出当前筛选专家清单 (Excel/CSV)'"></span>
+            </button>
+          </div>
         </div>
       </div>
 
+      <!-- 2. PI 专家卡片网格 -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         <template x-for="pi in filteredTerritoryPIs" :key="pi.id">
-          <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-2xs hover:shadow-md hover:border-blue-300 transition-all flex flex-col justify-between gap-5">
+          <div class="bg-white rounded-2xl border p-5 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between gap-4 relative"
+               :class="pi.checked ? 'border-blue-500 ring-2 ring-blue-500/25 bg-blue-50/15' : 'border-slate-200 hover:border-blue-300'">
+            
             <div>
-              <div class="flex items-start justify-between gap-2 mb-3">
-                <div>
-                  <div class="flex items-center gap-2">
-                    <h4 class="font-bold text-slate-900 text-xl" x-text="pi.name"></h4>
-                    <span class="px-2.5 py-0.5 rounded-full text-xs font-bold text-white"
-                          :style="'background-color:' + getDomainColor(pi.domain)"
-                          x-text="pi.domain"></span>
+              <!-- 头部：复选框 + 姓名 + 领域 + 评分 -->
+              <div class="flex items-start justify-between gap-2 mb-2.5">
+                <div class="flex items-start gap-2.5">
+                  <!-- 勾选框 -->
+                  <input type="checkbox"
+                         x-model="pi.checked"
+                         class="w-4 h-4 text-blue-600 rounded border-slate-300 focus:ring-blue-500 cursor-pointer mt-1">
+                  <div>
+                    <div class="flex items-center gap-2 flex-wrap">
+                      <h4 class="font-bold text-slate-900 text-lg cursor-pointer hover:text-blue-600 transition-colors"
+                          @click="openPIDetailModal(pi)"
+                          x-text="pi.name"></h4>
+                      <span class="px-2 py-0.5 rounded-full text-[11px] font-bold text-white shrink-0"
+                            :style="'background-color:' + getDomainColor(pi.domain)"
+                            x-text="pi.domain"></span>
+                    </div>
+                    <p class="text-xs text-slate-500 font-medium mt-0.5" x-text="pi.hospital + (pi.department ? ' · ' + pi.department : '')"></p>
                   </div>
-                  <p class="text-sm text-slate-500 font-medium mt-1" x-text="pi.hospital"></p>
                 </div>
-                <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 shrink-0"
-                      x-text="pi.scoreBadge"></span>
+
+                <div class="flex flex-col items-end gap-1 shrink-0">
+                  <span class="px-2.5 py-1 rounded-lg text-xs font-bold shrink-0"
+                        :class="pi.score >= 90 ? 'bg-amber-100 text-amber-900 border border-amber-200' : (pi.score >= 75 ? 'bg-blue-100 text-blue-900 border border-blue-200' : 'bg-slate-100 text-slate-700')"
+                        x-text="pi.scoreBadge"></span>
+                  <span x-show="pi.conferencesAttended"
+                        class="px-2 py-0.5 rounded text-[10px] font-bold bg-purple-50 text-purple-700 border border-purple-200 shrink-0">
+                    跨 <span x-text="pi.conferencesAttended"></span> 会议
+                  </span>
+                </div>
               </div>
 
-              <p class="text-sm text-slate-600 line-clamp-2 bg-slate-50 p-3 rounded-xl border border-slate-100"
-                 x-text="pi.research"></p>
+              <!-- 课题与队列底数要点 (进院必读要点) -->
+              <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 space-y-1.5 text-xs">
+                <div class="flex items-start gap-1.5 text-slate-700">
+                  <span class="font-bold text-slate-500 shrink-0">🔬 课题:</span>
+                  <span class="line-clamp-1 font-medium" x-text="pi.grants || pi.research"></span>
+                </div>
+                <div class="flex items-start gap-1.5 text-slate-700">
+                  <span class="font-bold text-slate-500 shrink-0">🧬 队列:</span>
+                  <span class="line-clamp-1 font-medium text-slate-600" x-text="pi.cohort || '专科临床标本队列 (血浆/组织/体液)'"></span>
+                </div>
+              </div>
+
+              <!-- 适配技术标签 -->
+              <div class="flex flex-wrap gap-1 mt-2.5">
+                <template x-for="cap in (pi.capabilities || ['T10 临床队列', 'T03 组学测序'])" :key="cap">
+                  <span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-blue-50 text-blue-700 border border-blue-100" x-text="cap"></span>
+                </template>
+              </div>
             </div>
 
-            <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-100">
+            <!-- 底部操作区 -->
+            <div class="flex items-center justify-between gap-2 pt-2.5 border-t border-slate-100">
               <button @click="pi.starred = !pi.starred"
                       :class="pi.starred ? 'text-amber-600 bg-amber-50 border-amber-200 font-bold' : 'text-slate-400 bg-slate-50 border-slate-200'"
-                      class="px-3 py-2 rounded-xl border text-xs transition-all">
+                      class="px-2.5 py-1.5 rounded-xl border text-xs transition-all flex items-center gap-1">
                 <span x-text="pi.starred ? '★ 已收藏' : '☆ 收藏'"></span>
               </button>
+
+              <button @click="openPIDetailModal(pi)"
+                      class="px-2.5 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition-all">
+                全息卡 &rarr;
+              </button>
+
               <button @click="generateBattleCardFromPI(pi)"
-                      class="flex-1 py-2 px-3 bg-blue-50 hover:bg-blue-600 text-blue-600 hover:text-white rounded-xl text-xs font-bold transition-all">
-                🎯 生成作战卡 &rarr;
+                      class="flex-1 py-1.5 px-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold transition-all shadow-2xs">
+                🎯 派发作战卡
               </button>
             </div>
           </div>
         </template>
       </div>
     </div>
-
 
     <!-- ========================================================== -->
     <!-- TAB 3: 📝 拜访日报 (Clean Timeline Cards)                   -->
@@ -513,6 +641,128 @@
     </div>
   </div>
 
+  <!-- ========================================================== -->
+  <!-- PI Holographic Pass Modal (Mobbin Style)                    -->
+  <!-- ========================================================== -->
+  <div x-show="showPIDetailModal"
+       x-cloak
+       x-transition.opacity
+       class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto">
+    <div @click.outside="showPIDetailModal = false"
+         class="bg-white rounded-3xl max-w-2xl w-full shadow-2xl border border-slate-200 overflow-hidden my-8">
+      
+      <template x-if="selectedPIModal">
+        <div>
+          <!-- 1. Header: 头部个人名片与跨会高亮徽章 -->
+          <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-indigo-950 p-6 text-white relative">
+            <button @click="showPIDetailModal = false"
+                    class="absolute top-5 right-5 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-all cursor-pointer">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+              </svg>
+            </button>
+
+            <div class="flex items-start justify-between gap-4 pr-8">
+              <div class="flex items-center gap-4">
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 text-white font-extrabold text-2xl flex items-center justify-center shadow-lg ring-4 ring-white/10 shrink-0"
+                     x-text="selectedPIModal.name.substring(0, 1)">
+                </div>
+                <div class="space-y-1">
+                  <div class="flex items-center gap-2.5 flex-wrap">
+                    <h2 class="text-2xl font-black tracking-tight" x-text="selectedPIModal.name"></h2>
+                    <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-400/20 text-amber-300 border border-amber-400/30"
+                          x-text="selectedPIModal.roleLabel || '全国专科学术带头人'">
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30"
+                          x-text="selectedPIModal.scoreBadge">
+                    </span>
+                  </div>
+                  <p class="text-xs text-slate-300 font-medium" x-text="selectedPIModal.hospital + ' · ' + (selectedPIModal.department || '专科中心')"></p>
+                </div>
+              </div>
+
+              <div x-show="selectedPIModal.conferencesAttended"
+                   class="bg-purple-500/20 border border-purple-400/40 rounded-2xl px-3.5 py-2 text-center shrink-0">
+                <span class="text-[10px] text-purple-200 uppercase tracking-widest block font-bold">参会活跃度</span>
+                <span class="text-base font-black text-purple-300">跨 <span x-text="selectedPIModal.conferencesAttended"></span> 场会议</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Body: 便当盒网格 (科研资质底数) -->
+          <div class="p-6 space-y-4 bg-slate-50/50 max-h-[65vh] overflow-y-auto">
+            <!-- Section 1: 参会历史与现场讲题 -->
+            <div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-2xs space-y-2.5">
+              <span class="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
+                <span>🗓️</span> 现场讲题与近期学术产出
+              </span>
+              <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-100 flex items-start gap-2.5 text-xs">
+                <span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold shrink-0" x-text="selectedPIModal.domain"></span>
+                <div>
+                  <span class="font-bold text-slate-800" x-text="selectedPIModal.research"></span>
+                  <div class="text-slate-400 text-[11px] mt-0.5">来源：近期全国专科学术年会 / 官方学术大会讲者名录</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 2: 科研资质与临床队列底数 2x2 网格 -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+              <div class="bg-white p-3.5 rounded-2xl border border-slate-200 shadow-2xs space-y-1">
+                <span class="text-slate-400 font-medium flex items-center gap-1"><span>🔬</span> 重点在研课题 / 基金</span>
+                <p class="font-bold text-slate-800 text-xs leading-relaxed" x-text="selectedPIModal.grants || '国家自然科学基金重大专项 / 重点研发计划在研'"></p>
+              </div>
+              <div class="bg-white p-3.5 rounded-2xl border border-slate-200 shadow-2xs space-y-1">
+                <span class="text-slate-400 font-medium flex items-center gap-1"><span>🧬</span> 临床样本队列底数</span>
+                <p class="font-bold text-slate-800 text-xs leading-relaxed" x-text="selectedPIModal.cohort || '专科多中心临床标本随访队列 (>1000例 血浆+组织)'"></p>
+              </div>
+              <div class="bg-white p-3.5 rounded-2xl border border-slate-200 shadow-2xs space-y-1">
+                <span class="text-slate-400 font-medium flex items-center gap-1"><span>📚</span> 代表性学术产出</span>
+                <p class="font-bold text-slate-800 text-xs leading-relaxed">Lancet / Circulation / J Clin Invest 通讯作者多篇顶刊成果</p>
+              </div>
+              <div class="bg-white p-3.5 rounded-2xl border border-slate-200 shadow-2xs space-y-1">
+                <span class="text-slate-400 font-medium flex items-center gap-1"><span>🎯</span> 适配产品技术能力</span>
+                <div class="flex flex-wrap gap-1 mt-1">
+                  <template x-for="c in (selectedPIModal.capabilities || ['T10 临床队列', 'T03 组学测序', 'T14 蛋白组'])" :key="c">
+                    <span class="px-2 py-0.5 bg-blue-50 text-blue-700 font-bold rounded text-[11px]" x-text="c"></span>
+                  </template>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 3: 推荐商业切入点与破冰话术 -->
+            <div class="bg-gradient-to-r from-blue-50/80 to-indigo-50/80 rounded-2xl p-4 border border-blue-200/70 space-y-2">
+              <div class="flex items-center justify-between text-xs font-bold text-blue-900">
+                <span class="flex items-center gap-1.5"><span>💡</span> 推荐拜访破冰话术与切入点</span>
+                <button @click="copyIceBreaker(selectedPIModal.iceBreaker || selectedPIModal.breakIceScript)" class="text-blue-600 hover:text-blue-800 text-xs cursor-pointer">📋 复制话术</button>
+              </div>
+              <p class="text-xs text-blue-950 leading-relaxed font-medium" x-text="selectedPIModal.iceBreaker || selectedPIModal.breakIceScript || ('“' + selectedPIModal.name + '主任您好，拜读了您在近期专科年会上的精彩报告！吉因加在微量样本高通量多组学建库与队列建模上有完备成熟的质控体系，希望能为团队提供技术支持！”')">
+              </p>
+            </div>
+          </div>
+
+          <!-- 3. Footer: 操作栏 -->
+          <div class="bg-white p-4 border-t border-slate-200 flex items-center justify-between gap-3">
+            <button @click="selectedPIModal.starred = !selectedPIModal.starred"
+                    :class="selectedPIModal.starred ? 'bg-amber-50 text-amber-700 border-amber-300' : 'bg-slate-50 text-slate-700 border-slate-200'"
+                    class="px-4 py-2 rounded-xl border text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer">
+              <span x-text="selectedPIModal.starred ? '★ 已重点关注' : '☆ 加入重点关注'"></span>
+            </button>
+            <div class="flex items-center gap-2">
+              <button @click="window.print()"
+                      class="px-4 py-2 rounded-xl border border-slate-200 text-slate-700 text-xs font-bold hover:bg-slate-50 transition-all flex items-center gap-1.5 cursor-pointer">
+                <span>🖨️</span> 打印身份卡
+              </button>
+              <button @click="generateBattleCardFromPI(selectedPIModal); showPIDetailModal = false;"
+                      class="px-5 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-md shadow-blue-500/20 transition-all flex items-center gap-1.5 cursor-pointer">
+                <span>🎯</span> 派发作战卡 &rarr;
+              </button>
+            </div>
+          </div>
+        </div>
+      </template>
+    </div>
+  </div>
+
   <!-- Embedded Database Snapshot -->
   <script type="application/json" id="data">__DATA__</script>
   <script>__PI_APP__</script>
@@ -573,21 +823,61 @@
         } catch (e) {}
       }
 
-      const DEFAULT_BATTLE_CARDS = [
+            const DEFAULT_BATTLE_CARDS = [
+        {
+          id: 'BC-GEJUNBO',
+          repId: 'sales_east_zhang',
+          piName: '葛均波',
+          hospital: '复旦大学附属中山医院',
+          department: '心血管内科 / 泛血管中心',
+          domain: '心血管与泛血管',
+          roleLabel: '院士 · 学术带头人',
+          scoreBadge: '91分 · A级',
+          score: 91,
+          grade: 'A',
+          conferencesAttended: 3,
+          status: 'in_progress',
+          dueDate: '11-28',
+          shortTopic: '泛血管医学多组学转化',
+          breakIceScript: '“葛院士您好，拜读了您在近期【PMC 2026】上关于泛血管医学交叉转化的主旨报告。关注到团队正在推进大样本队列建设，吉因加在微量外周血 cfRNA 液体活检与单细胞空间转录组方向有完备的自动化质控体系，希望能为团队提供多组学数据建模支持！”',
+          painPoint: '泛血管队列跨多学科中心，外周血微量核酸与蛋白组建库质控要求严苛，需标准化中心实验室协同。',
+          capabilities: ['T10 临床队列', 'T03 单细胞转录组', 'T01 cfRNA液体活检'],
+          grants: '国家自然科学基金重大专项 / 泛血管重点研发计划',
+          cohort: '泛血管动脉粥样硬化队列 (>2000例 血浆+组织)',
+          checklist: [
+            '核实泛血管多学科交叉队列首批样本冻存例数与类型',
+            '确认微量 cfRNA 与空间转录组预实验初筛排期',
+            '了解2027年国家重点研发计划子课题联合申报规划'
+          ],
+          dimensions: [
+            { name: '研究方向契合度', maximum: 30, score: 29 },
+            { name: '学术产出质量',   maximum: 25, score: 24 },
+            { name: '科研转化潜力',   maximum: 25, score: 20 },
+            { name: '平台资源禀赋',   maximum: 20, score: 18 }
+          ],
+          talkEvidence: 'PMC 2026 名誉主席报告：泛血管医学学科发展与多学科交叉转化展望',
+          qualityRating: '👍 很有用'
+        },
         {
           id: 'BC-WANGWEIQING',
           repId: 'sales_east_zhang',
           piName: '王卫庆',
           hospital: '上海交通大学医学院附属瑞金医院',
+          department: '内分泌代谢科 / 国家代谢中心',
           domain: '糖尿病与代谢',
           roleLabel: '全国学术带头人',
           scoreBadge: '82分 · B级',
+          score: 82,
+          grade: 'B',
+          conferencesAttended: 2,
           status: 'in_progress',
           dueDate: '11-28',
           shortTopic: '代谢大队列多组学分型',
           breakIceScript: '“王主任您好！拜读了您在 CDS 2026 大会上关于【瑞金代谢大队列多组学转化】的报告。吉因加近期结合 6Dmarker 算法（转录组+高深度血浆蛋白组），协助多家国家医学中心完成了标志物分型与顶刊发表，想约您或课题骨干 15 分钟汇报下案例！”',
           painPoint: '拥有顶尖代谢人群大队列，常规生化指标难以支撑顶刊机制深度，需大规模样本蛋白组+转录组联合建模。',
-          capabilities: ['T10 队列多组学建模', 'T14 高通量蛋白组'],
+          capabilities: ['T10 队列多组学建模', 'T14 高通量蛋白组', 'T03 转录组测序'],
+          grants: '国家重点研发计划「四大慢病」代谢专项 + 国自然重点',
+          cohort: '瑞金代谢大队列微血管并发症亚组 (>3000例 血浆+尿液)',
           checklist: [
             '摸清本期拟启动子队列的样本类型（血浆/组织）与例数',
             '确认微血管并发症随访终点数据是否已整理完毕',
@@ -607,15 +897,21 @@
           repId: 'sales_east_zhang',
           piName: '张学礼',
           hospital: '上海市第六人民医院',
+          department: '内分泌代谢科',
           domain: '糖尿病与代谢',
           roleLabel: '全国专科学术带头人',
           scoreBadge: '77分 · B级',
+          score: 77,
+          grade: 'B',
+          conferencesAttended: 1,
           status: 'assigned',
           dueDate: '11-30',
           shortTopic: '微血管并发症体液标志物',
           breakIceScript: '“张教授您好，关注到您在 CDS 2026 分享的【糖尿病微血管并发症视网膜与肾脏多组学标志物】课题。吉因加在微量体液（房水、尿液外泌体及配对血浆）超敏蛋白组与转录组建库上有成熟实测数据，希望能为您手头的共病队列提供初筛支持！”',
           painPoint: '微血管并发症早期缺乏高特异性无创体液分子标志物，且微量样本常规建库失败率高。',
-          capabilities: ['T14 微量体液蛋白组', 'T03 外泌体转录组'],
+          capabilities: ['T14 微量体液蛋白组', 'T03 外泌体转录组', 'T10 队列验证'],
+          grants: '上海市科委重大临床专项 / 国自然面上项目在研',
+          cohort: '微血管并发症视网膜与肾病队列 (800例 房水+尿液+血浆)',
           checklist: [
             '核实视网膜与肾病共病队列的配对血浆/尿液冻存例数',
             '确认能否先以 50~100 例发现队列做预实验初筛',
@@ -631,19 +927,59 @@
           qualityRating: ''
         },
         {
+          id: 'BC-ZHENGYUEHONG',
+          repId: 'sales_east_zhang',
+          piName: '郑曰宏',
+          hospital: '浙江大学医学院附属第一医院',
+          department: '泌尿外科 / 肾移植中心',
+          domain: '心血管与泛血管',
+          roleLabel: '省重点学科带头人',
+          scoreBadge: '78分 · B级',
+          score: 78,
+          grade: 'B',
+          conferencesAttended: 1,
+          status: 'assigned',
+          dueDate: '11-29',
+          shortTopic: '肾损伤微量体液标志物',
+          breakIceScript: '“郑主任您好，关注到您在泛血管与器官损伤大会上的专题报告。吉因加在尿液及外周血微量游离核酸、外泌体 RNA-Seq 方面有非常成熟的质控线，希望能为团队的急慢性缺血肾损伤队列提供初筛检测支持！”',
+          painPoint: '急慢性缺血再灌注肾损伤需高灵敏早期标志物，传统血清肌酐滞后性大。',
+          capabilities: ['T01 cfRNA液体活检', 'T03 外泌体转录组', 'T10 队列验证'],
+          grants: '浙江省重点研发计划 / 国家自然科学基金面上',
+          cohort: '缺血再灌注急性肾损伤临床标本队列 (600例 尿液+穿刺组织)',
+          checklist: [
+            '对接团队分管标本库科研秘书',
+            '核实拟启动转录组初筛的尿液离心上清存量',
+            '提交微量尿液核酸提取质量控制报告'
+          ],
+          dimensions: [
+            { name: '研究方向契合度', maximum: 30, score: 27 },
+            { name: '学术产出质量',   maximum: 25, score: 18 },
+            { name: '科研转化潜力',   maximum: 25, score: 17 },
+            { name: '平台资源禀赋',   maximum: 20, score: 16 }
+          ],
+          talkEvidence: 'PMC 2026 专题报告：急性缺血再灌注肾损伤体液分子标记物筛选与临床验证',
+          qualityRating: ''
+        },
+        {
           id: 'BC-HUANGBIN',
           repId: 'sales_east_zhang',
           piName: '黄斌',
-          hospital: '中国科大附一院（安徽省立医院）',
+          hospital: '中国科学技术大学附属第一医院（安徽省立医院）',
+          department: '内分泌代谢科 / 肾脏病科',
           domain: '糖尿病与代谢',
           roleLabel: '青年课题PI · 省自然主持',
           scoreBadge: '62分 · C级',
+          score: 62,
+          grade: 'C',
+          conferencesAttended: 1,
           status: 'contacted',
           dueDate: '11-26',
           shortTopic: 'DKD早期损伤转录组验证',
           breakIceScript: '“黄老师您好，听了您在 CDS 2026 口头报告 OR_003 关于【DKD早期损伤标志物与转录组验证】的分享非常精彩！针对您的省自然青年项目，吉因加有专门针对肾病尿液外泌体与外周血转录组的标准化转化包，想跟您对一下具体样本的建库参数。”',
           painPoint: '青年 PI 手握省自然基金与临床队列（J Diabetes 2025 一作），急需高性价比转录组验证数据冲刺下一篇高分文章。',
           capabilities: ['T03 转录组测序', 'T10 临床指标验证'],
+          grants: '安徽省自然科学基金青年项目《DKD早期损伤标志物》',
+          cohort: 'DKD 早期微量白蛋白尿患者配对标本 (320例 尿液+血浆)',
           checklist: [
             '核实已冻存 DKD 早期患者的配对尿液与血浆样本量',
             '确认省自然青年基金剩余检测经费预算',
@@ -663,15 +999,21 @@
           repId: 'sales_north_li',
           piName: '吉训明',
           hospital: '首都医科大学宣武医院',
+          department: '神经内科 / 国家神经疾病医学中心',
           domain: '神经精神',
           roleLabel: '院士 · 脑卒中大会主席',
           scoreBadge: '88分 · B级',
+          score: 88,
+          grade: 'B',
+          conferencesAttended: 2,
           status: 'in_progress',
           dueDate: '11-27',
           shortTopic: '急性脑卒中多中心液体活检',
-          breakIceScript: '“老师您好，借 2026 中国脑卒中大会在北京召开契机向团队请教！吉因加在外周血及脑脊液微量核酸、外泌体转录组与高深度蛋白组联检上有全国多中心临床服务经验，希望能为急性卒中再灌注损伤分型子课题提供标准化组学检测支持！”',
+          breakIceScript: '“吉院士您好，借 2026 中国脑卒中大会在北京召开契机向团队请教！吉因加在外周血及脑脊液微量核酸、外泌体转录组与高深度蛋白组联检上有全国多中心临床服务经验，希望能为急性卒中再灌注损伤分型子课题提供标准化组学检测支持！”',
           painPoint: '国家级卒中多中心队列样本量大，需具备高标准质控体系的中心实验室保障跨中心批次一致性。',
-          capabilities: ['T10 多中心队列验证', 'T14 脑脊液/血浆蛋白组'],
+          capabilities: ['T10 多中心队列验证', 'T14 脑脊液/血浆蛋白组', 'T03 外泌体转录组'],
+          grants: '科技创新2030「脑科学」重大项目 / 国家百万减残工程',
+          cohort: '急性卒中再灌注多中心临床队列 (>1500例 血浆+脑脊液)',
           checklist: [
             '在 11-27 北京脑卒中大会现场对接分管学术秘书',
             '摸清首批拟启动液体活检标志物筛选的样本例数',
@@ -687,19 +1029,59 @@
           qualityRating: '👍 很有用'
         },
         {
+          id: 'BC-HUIRUTAI',
+          repId: 'sales_north_li',
+          piName: '惠汝太',
+          hospital: '中国医学科学院阜外医院',
+          department: '高血压科 / 心血管基因组中心',
+          domain: '心血管与泛血管',
+          roleLabel: '心血管基因组著名专家',
+          scoreBadge: '86分 · B级',
+          score: 86,
+          grade: 'B',
+          conferencesAttended: 1,
+          status: 'assigned',
+          dueDate: '11-30',
+          shortTopic: '难治性高血压多组学分型',
+          breakIceScript: '“惠教授您好，关注到团队在心血管大会上关于【难治性高血压单细胞多组学与遗传靶点】的最新分享。吉因加在高深度靶向 DNA 测序及单细胞多组学联检上有多年积累，非常希望为您手头的难治性高血压队列提供生信建模支持！”',
+          painPoint: '难治性高血压病因复杂，需结合遗传基因组突变与单细胞多组学表型开展深度因果解析。',
+          capabilities: ['T10 临床队列', 'T03 单细胞测序', 'T01 靶向测序'],
+          grants: '国家自然科学基金重点项目 / 阜外临床医学专项',
+          cohort: '难治性高血压遗传表型队列 (1200例 血液DNA+血浆)',
+          checklist: [
+            '摸清高血压科样本库已完成靶向测序的样本比例',
+            '核实是否需结合血浆蛋白组做双组学验证',
+            '邀约团队核心生信骨干开展闭门技术交流'
+          ],
+          dimensions: [
+            { name: '研究方向契合度', maximum: 30, score: 28 },
+            { name: '学术产出质量',   maximum: 25, score: 22 },
+            { name: '科研转化潜力',   maximum: 25, score: 18 },
+            { name: '平台资源禀赋',   maximum: 20, score: 18 }
+          ],
+          talkEvidence: '阜外心血管学术年会报告：难治性高血压精准分子分型与基因组转化前沿',
+          qualityRating: ''
+        },
+        {
           id: 'BC-SUYIN',
           repId: 'sales_north_li',
           piName: '苏茵',
           hospital: '北京大学人民医院',
+          department: '风湿免疫科',
           domain: '风湿免疫',
           roleLabel: '北京风湿分会主委',
           scoreBadge: '81分 · B级',
+          score: 81,
+          grade: 'B',
+          conferencesAttended: 1,
           status: 'assigned',
           dueDate: '11-28',
           shortTopic: '自免病单细胞免疫组库',
           breakIceScript: '“苏主任您好！祝贺北京风湿病学年会召开。看到今年专门设立了【高分论文与基础科研专场】，特别契合吉因加在自免领域的 PBMC 单细胞转录组 + TCR/BCR 免疫组库联检方案，想在会后向您和科室青年骨干汇报几个 ARD 发表案例。”',
           painPoint: '风湿免疫病异质性强，急需单细胞 TCR/BCR 免疫组库解析致病性克隆演化。',
           capabilities: ['T03 单细胞+免疫组库', 'T14 炎症蛋白组'],
+          grants: '国家自然科学基金面上 / 北京市科委重大课题',
+          cohort: '类风湿关节炎与红斑狼疮队列 (650例 PBMC+滑膜液)',
           checklist: [
             '摸清科室青年医师明年国自然申报选题方向',
             '确认现有 SLE/RA 患者 PBMC 活细胞冻存数量',
@@ -715,19 +1097,59 @@
           qualityRating: ''
         },
         {
+          id: 'BC-WANGQIAN',
+          repId: 'sales_north_li',
+          piName: '王迁',
+          hospital: '中国医学科学院北京协和医院',
+          department: '风湿免疫科',
+          domain: '风湿免疫',
+          roleLabel: '协和学术骨干 · 青年博导',
+          scoreBadge: '79分 · B级',
+          score: 79,
+          grade: 'B',
+          conferencesAttended: 1,
+          status: 'assigned',
+          dueDate: '11-29',
+          shortTopic: '红斑狼疮微量血浆蛋白组',
+          breakIceScript: '“王教授您好，关注到您在北京风湿年会上的报告。吉因加在微量血浆高深度蛋白组（4D-DIA）与转录组联检方面具有高重复性质控表现，希望能为您手头的 SLE 队列提供精准验证服务！”',
+          painPoint: '系统性红斑狼疮活动度评估缺乏动态灵敏蛋白靶点，微量样本常规建库质控要求高。',
+          capabilities: ['T14 微量蛋白组', 'T03 转录组测序', 'T10 临床队列'],
+          grants: '国自然面上项目 / 协和中央高校基本科研业务专项',
+          cohort: 'SLE 活动度与器官受累队列 (450例 配对血浆+外周血)',
+          checklist: [
+            '核实团队目前标本冻存批次与质控标准',
+            '确认能否提供 30 例测试样本先做 DIA 深度评估',
+            '沟通协和专项科研经费使用节点'
+          ],
+          dimensions: [
+            { name: '研究方向契合度', maximum: 30, score: 27 },
+            { name: '学术产出质量',   maximum: 25, score: 18 },
+            { name: '科研转化潜力',   maximum: 25, score: 17 },
+            { name: '平台资源禀赋',   maximum: 20, score: 17 }
+          ],
+          talkEvidence: '北京风湿年会大会发言：SLE 器官损伤早期预警蛋白标志物多中心筛选',
+          qualityRating: ''
+        },
+        {
           id: 'BC-CHENRONGCHANG',
           repId: 'sales_south_wang',
           piName: '陈荣昌',
           hospital: '广州医科大学附属第一医院',
+          department: '呼吸与危重症医学科 / 国家呼吸医学中心',
           domain: '呼吸慢病',
           roleLabel: '全国呼吸学术带头人',
           scoreBadge: '84分 · B级',
+          score: 84,
+          grade: 'B',
+          conferencesAttended: 2,
           status: 'in_progress',
           dueDate: '11-28',
           shortTopic: '慢阻肺微生态+宿主转录组',
           breakIceScript: '“陈主任您好，在长沙 CACP 呼吸大会上聆听了您关于【慢阻肺早期分子分型】的报告！吉因加打通了【同一份诱导痰/灌洗液同时完成宏基因组+宿主转录组】的双组学流程，非常希望能为您牵头的慢阻肺队列提供测序与分型支持！”',
           painPoint: '呼吸道标本宿主背景高，分开建库耗费样本且难以做微生态-宿主共表达分析。',
-          capabilities: ['T03 宏基因组+宿主转录组', 'T10 队列验证'],
+          capabilities: ['T03 宏基因组+宿主转录组', 'T10 队列验证', 'T14 炎症蛋白组'],
+          grants: '国家重点研发计划慢阻肺专项 + 国自然重点项目',
+          cohort: '慢阻肺早期分子分型大队列 (>800例 诱导痰+外周血)',
           checklist: [
             '在长沙呼吸年会现场拜访团队核心课题秘书',
             '核实慢阻肺急性加重队列的诱导痰/BALF存量',
@@ -741,6 +1163,74 @@
           ],
           talkEvidence: 'CACP 2026 呼吸大会：慢阻肺早期分子分型与精准干预策略',
           qualityRating: '👍 很有用'
+        },
+        {
+          id: 'BC-LUZHENGQI',
+          repId: 'sales_south_wang',
+          piName: '陆正齐',
+          hospital: '中山大学附属第三医院',
+          department: '神经内科 / 华南脑血管中心',
+          domain: '神经精神',
+          roleLabel: '华南神经学科带头人',
+          scoreBadge: '83分 · B级',
+          score: 83,
+          grade: 'B',
+          conferencesAttended: 2,
+          status: 'assigned',
+          dueDate: '11-29',
+          shortTopic: '脑小血管病体液多组学',
+          breakIceScript: '“陆主任您好，拜读了您在中山神经论坛上关于【脑小血管病血脑屏障损伤体液靶标】的报告。吉因加在外周血微量外泌体转录组与超敏蛋白组方向有成熟多中心服务流程，希望能为团队的华南卒中队列提供组学支持！”',
+          painPoint: '脑小血管病发病隐匿，外周血标志物丰度低，亟需超高灵敏度检测技术支撑。',
+          capabilities: ['T03 外泌体转录组', 'T14 超敏蛋白组', 'T10 临床队列'],
+          grants: '广东省重点领域研发计划 / 国自然面上项目在研',
+          cohort: '华南脑小血管病与认知障碍队列 (700例 血浆+脑脊液)',
+          checklist: [
+            '在中山论坛期间拜访陆主任随行博后与科研秘书',
+            '确认首期 100 例样本外泌体转录组建库排期',
+            '对接中山三院科研经费报销标准'
+          ],
+          dimensions: [
+            { name: '研究方向契合度', maximum: 30, score: 28 },
+            { name: '学术产出质量',   maximum: 25, score: 19 },
+            { name: '科研转化潜力',   maximum: 25, score: 18 },
+            { name: '平台资源禀赋',   maximum: 20, score: 18 }
+          ],
+          talkEvidence: '中山神经论坛大会主旨：脑小血管病体液分子标记物与早期干预新路径',
+          qualityRating: ''
+        },
+        {
+          id: 'BC-LUOHONG',
+          repId: 'sales_south_wang',
+          piName: '罗红',
+          hospital: '中南大学湘雅二医院',
+          department: '呼吸与危重症医学科',
+          domain: '呼吸慢病',
+          roleLabel: '湖南呼吸病学主委',
+          scoreBadge: '76分 · B级',
+          score: 76,
+          grade: 'B',
+          conferencesAttended: 1,
+          status: 'assigned',
+          dueDate: '11-30',
+          shortTopic: '气道微生态与炎症标志物',
+          breakIceScript: '“罗主任您好，关注到您在呼吸年会上的专题分享。吉因加在气道微生态宏基因组与炎症蛋白因子谱联检上有成熟标准化服务包，希望能为您手头的哮喘/慢阻肺重叠队列提供科研协助！”',
+          painPoint: '微生态宏基因组与宿主蛋白标志物联合生信建模难度大，需要跨学科支持。',
+          capabilities: ['T03 微生态测序', 'T14 炎症多因子', 'T10 队列验证'],
+          grants: '湖南省自然科学基金重点项目 / 湘雅二院临床转化专项',
+          cohort: '气道慢性炎症临床标本库 (500例 诱导痰+配对血清)',
+          checklist: [
+            '了解湘雅二院呼吸微生态课题组近期立项进展',
+            '确认标本库痰液前处理与质控离心流程',
+            '提供针对微生态-宿主共表达的定制生信分析大纲'
+          ],
+          dimensions: [
+            { name: '研究方向契合度', maximum: 30, score: 27 },
+            { name: '学术产出质量',   maximum: 25, score: 17 },
+            { name: '科研转化潜力',   maximum: 25, score: 16 },
+            { name: '平台资源禀赋',   maximum: 20, score: 16 }
+          ],
+          talkEvidence: 'CACP 2026 分会发言：重症哮喘与慢阻肺气道微生态特征及生物靶标研究',
+          qualityRating: ''
         }
       ];
 
@@ -795,7 +1285,7 @@
         }
       ];
 
-      function buildTerritoryPool() {
+            function buildTerritoryPool() {
         const pool = [];
         const added = new Set();
         const reportMap = new Map((D.reports || []).map(r => [r.report_id, r]));
@@ -805,12 +1295,23 @@
             id: bc.id,
             name: bc.piName,
             hospital: bc.hospital,
+            department: bc.department || '专科中心/内科',
             domain: bc.domain,
             roleLabel: bc.roleLabel,
+            score: bc.score || (bc.scoreBadge ? parseInt(bc.scoreBadge) : 80),
             scoreBadge: bc.scoreBadge,
-            research: bc.talkEvidence,
+            grade: bc.grade || (bc.scoreBadge && bc.scoreBadge.includes('A') ? 'A' : (bc.scoreBadge && bc.scoreBadge.includes('B') ? 'B' : 'C')),
+            conferencesAttended: bc.conferencesAttended || 1,
+            research: bc.talkEvidence || bc.shortTopic,
+            grants: bc.grants,
+            cohort: bc.cohort,
+            capabilities: bc.capabilities || ['T10 临床队列', 'T03 组学测序', 'T14 蛋白组'],
+            breakIceScript: bc.breakIceScript,
+            iceBreaker: bc.breakIceScript,
+            checklist: bc.checklist,
             repId: bc.repId,
-            starred: true
+            starred: true,
+            checked: false
           });
           added.add(bc.piName);
         }
@@ -822,16 +1323,32 @@
           if (REPS[1].kw.test(inst)) repId = 'sales_north_li';
           else if (REPS[2].kw.test(inst)) repId = 'sales_south_wang';
 
+          const scoreNum = Number.isFinite(r.total_score) ? r.total_score : 70;
+          const gradeStr = r.grade || (scoreNum >= 90 ? 'A' : (scoreNum >= 75 ? 'B' : (scoreNum >= 60 ? 'C' : '调研中')));
+          const researchStr = (r.dimensions && r.dimensions[0] && r.dimensions[0].basis) || '糖尿病与代谢临床转化队列研究';
+          const grantsStr = (r.dimensions && r.dimensions[2] && r.dimensions[2].basis) || '国家自然科学基金 / 省部级重点临床专项在研';
+
           pool.push({
             id: r.person_key,
             name: r.name,
             hospital: inst,
+            department: '内分泌代谢科',
             domain: '糖尿病与代谢',
             roleLabel: '临床科研专家',
-            scoreBadge: Number.isFinite(r.total_score) ? `${r.total_score}分 · ${r.grade}级` : '调研中',
-            research: (r.dimensions && r.dimensions[0] && r.dimensions[0].basis) || '糖尿病与代谢临床转化队列研究',
+            score: scoreNum,
+            scoreBadge: Number.isFinite(r.total_score) ? `${r.total_score}分 · ${gradeStr}级` : '调研中',
+            grade: gradeStr,
+            conferencesAttended: 1,
+            research: researchStr,
+            grants: grantsStr,
+            cohort: '糖尿病与代谢并发症临床标本队列 (>800例 血浆+体液)',
+            capabilities: ['T10 临床队列', 'T03 转录组测序', 'T14 蛋白组'],
+            breakIceScript: `“${r.name}主任您好！关注到您在专科年会上的研究成果，吉因加在代谢疾病队列多组学与高通量建库上有成熟服务方案，想向您汇报下近期成果！”`,
+            iceBreaker: `“${r.name}主任您好！关注到您在专科年会上的研究成果，吉因加在代谢疾病队列多组学与高通量建库上有成熟服务方案，想向您汇报下近期成果！”`,
+            checklist: ['1. 摸清样本类型与冻存例数', '2. 确认随访终点与近期检测需求', '3. 了解申报规划与经费时间表'],
             repId,
-            starred: Number.isFinite(r.total_score)
+            starred: Number.isFinite(r.total_score),
+            checked: false
           });
           added.add(r.name);
         }
@@ -846,16 +1363,31 @@
           else if (REPS[2].kw.test(inst)) repId = 'sales_south_wang';
 
           const firstTalk = (exp.report_ids || []).map(id => reportMap.get(id)).find(Boolean);
+          const isIntl = exp.tier_code === 'international';
+          const scoreNum = isIntl ? 92 : 80;
+          const gradeStr = isIntl ? 'A' : 'B';
+
           pool.push({
             id: exp.key,
             name: exp.display_name,
             hospital: inst,
+            department: '专科医疗中心',
             domain: '糖尿病与代谢',
             roleLabel: exp.tier_label || '全国学术带头人',
-            scoreBadge: exp.tier_code === 'international' ? '国际学者' : '全国带头人',
+            score: scoreNum,
+            scoreBadge: isIntl ? '92分 · A级' : '80分 · B级',
+            grade: gradeStr,
+            conferencesAttended: 1,
             research: firstTalk ? `${firstTalk.conference_id}：${firstTalk.title}` : (exp.role_basis || '内分泌与代谢临床转化研究'),
+            grants: '国家重点研发计划 / 国家自然科学基金重大专项',
+            cohort: '专科临床标本随访队列 (>1000例 血浆+组织)',
+            capabilities: ['T10 临床队列', 'T03 组学测序', 'T14 蛋白组'],
+            breakIceScript: `“${exp.display_name}教授您好！拜读了您近期的学术报告，吉因加在队列高深度多组学建模上有完备经验，希望能为您手头的临床队列提供初筛支持！”`,
+            iceBreaker: `“${exp.display_name}教授您好！拜读了您近期的学术报告，吉因加在队列高深度多组学建模上有完备经验，希望能为您手头的临床队列提供初筛支持！”`,
+            checklist: ['1. 摸清样本类型与冻存例数', '2. 确认随访终点与近期检测需求', '3. 了解申报规划与经费时间表'],
             repId,
-            starred: false
+            starred: false,
+            checked: false
           });
           added.add(exp.display_name);
         }
@@ -957,6 +1489,14 @@
         territoryFilter: 'all',
         searchQuery: '',
 
+        // Stage 3: Multi-dimensional Filter State
+        selectedHospital: 'all',
+        selectedDomain: 'all',
+        selectedGrade: 'all',
+        onlyShowSelected: false,
+        selectedPIModal: null,
+        showPIDetailModal: false,
+
         battleCards: initialCards,
         conferencePushes: CONFERENCE_PUSHES,
         territoryPIs: buildTerritoryPool(),
@@ -1012,13 +1552,154 @@
           return this.territoryPIs.filter(p => p.repId === this.currentRepId);
         },
 
+        // Stage 3: Dynamic Hospital List for Current Rep
+        get territoryHospitalList() {
+          const map = new Map();
+          for (const p of this.myTerritoryPIs) {
+            if (!p.hospital) continue;
+            map.set(p.hospital, (map.get(p.hospital) || 0) + 1);
+          }
+          return Array.from(map.entries())
+            .map(([name, count]) => ({ name, count }))
+            .sort((a, b) => b.count - a.count);
+        },
+
+        // Stage 3: Multi-dimensional Composite Filtering
         get filteredTerritoryPIs() {
           const q = this.searchQuery.trim().toLowerCase();
           return this.myTerritoryPIs.filter(p => {
+            // 1. 医院过滤
+            const matchHospital = this.selectedHospital === 'all' || p.hospital === this.selectedHospital;
+            // 2. 领域过滤
+            const matchDomain = this.selectedDomain === 'all' || p.domain === this.selectedDomain;
+            // 3. 评级过滤
+            let matchGrade = true;
+            if (this.selectedGrade === 'A') matchGrade = (p.score >= 90) || (p.grade === 'A');
+            else if (this.selectedGrade === 'B') matchGrade = (p.score >= 75 && p.score < 90) || (p.grade === 'B');
+            else if (this.selectedGrade === 'C') matchGrade = (p.score >= 60 && p.score < 75) || (p.grade === 'C');
+            else if (this.selectedGrade === 'pending') matchGrade = !p.score || p.grade === '调研中' || (p.scoreBadge && p.scoreBadge.includes('调研中'));
+            // 4. 收藏过滤
             const matchFav = this.territoryFilter === 'all' || (this.territoryFilter === 'fav' && p.starred);
-            const matchSearch = !q || [p.name, p.hospital, p.research, p.domain].join(' ').toLowerCase().includes(q);
-            return matchFav && matchSearch;
+            // 5. 关键词检索 (姓名、医院、科室、课题、领域)
+            const matchSearch = !q || [p.name, p.hospital, p.department, p.research, p.domain, p.grants].join(' ').toLowerCase().includes(q);
+            // 6. 仅看已勾选过滤
+            const matchOnlySelected = !this.onlyShowSelected || p.checked;
+
+            return matchHospital && matchDomain && matchGrade && matchFav && matchSearch && matchOnlySelected;
           });
+        },
+
+        // Stage 3: Checkbox & Batch Selection Controls
+        get selectedPICount() {
+          return this.filteredTerritoryPIs.filter(p => p.checked).length;
+        },
+
+        get isAllSelected() {
+          return this.filteredTerritoryPIs.length > 0 && this.filteredTerritoryPIs.every(p => p.checked);
+        },
+
+        toggleSelectAll(checked) {
+          this.filteredTerritoryPIs.forEach(p => { p.checked = checked; });
+        },
+
+        clearSelection() {
+          this.myTerritoryPIs.forEach(p => { p.checked = false; });
+          this.onlyShowSelected = false;
+          this.showToast('已清空勾选', 'info');
+        },
+
+        batchStarSelected() {
+          const selected = this.filteredTerritoryPIs.filter(p => p.checked);
+          if (!selected.length) return;
+          selected.forEach(p => { p.starred = true; });
+          this.showToast(`✓ 已将 ${selected.length} 位专家批量加入重点收藏！`, 'success');
+        },
+
+        openPIDetailModal(pi) {
+          this.selectedPIModal = pi;
+          this.showPIDetailModal = true;
+        },
+
+        // Stage 3: One-Click Excel/CSV Export with Zero-Garble UTF-8 BOM
+        exportSelectedPIsToCSV() {
+          const selectedList = this.filteredTerritoryPIs.filter(p => p.checked);
+          const targetList = selectedList.length > 0 ? selectedList : this.filteredTerritoryPIs;
+
+          if (!targetList || targetList.length === 0) {
+            this.showToast('当前筛选条件下没有可导出的专家数据', 'error');
+            return;
+          }
+
+          const headers = [
+            '序号',
+            '专家姓名',
+            '所在医院',
+            '专科科室',
+            '学术地位/职称',
+            '专科领域',
+            '四维合作评分',
+            '合作评级',
+            '参会活跃度',
+            '现场讲题/近期学术产出',
+            '重点在研课题/基金',
+            '临床样本队列底数',
+            '适配产品技术能力',
+            '推荐进院破冰话术',
+            '拜访排查清单(Checklist)',
+            '负责战区与代表',
+            '导出日期'
+          ];
+
+          const escapeCSV = (val) => {
+            if (val === null || val === undefined) return '""';
+            const str = String(val).replace(/"/g, '""');
+            return `"${str}"`;
+          };
+
+          const todayStr = new Date().toISOString().slice(0, 10);
+          const repLabel = `${this.currentRep.region} · ${this.currentRep.name}`;
+
+          const rows = targetList.map((pi, index) => {
+            const caps = Array.isArray(pi.capabilities) ? pi.capabilities.join('; ') : (pi.capabilities || 'T10 临床队列; T03 组学测序');
+            const chk = Array.isArray(pi.checklist) ? pi.checklist.join('; ') : (pi.checklist || '1. 核实样本冻存例数; 2. 确认随访终点; 3. 了解申报规划');
+            const conf = pi.conferencesAttended ? `跨 ${pi.conferencesAttended} 场会议` : (pi.conference_tags ? pi.conference_tags.join('; ') : '近期全国专科年会');
+            const scoreVal = pi.score !== undefined && pi.score !== null ? `${pi.score}分` : (pi.scoreBadge || '调研中');
+            const gradeVal = pi.grade || (pi.score >= 90 ? 'A级 (学术大咖)' : (pi.score >= 75 ? 'B级 (重点骨干)' : (pi.score >= 60 ? 'C级 (青年PI)' : '调研中')));
+
+            return [
+              escapeCSV(index + 1),
+              escapeCSV(pi.name),
+              escapeCSV(pi.hospital),
+              escapeCSV(pi.department || '专科中心/内科'),
+              escapeCSV(pi.roleLabel || '全国专科学术带头人'),
+              escapeCSV(pi.domain),
+              escapeCSV(scoreVal),
+              escapeCSV(gradeVal),
+              escapeCSV(conf),
+              escapeCSV(pi.research || pi.talkEvidence || '专科临床转化与多组学队列研究'),
+              escapeCSV(pi.grants || '国家自然科学基金重点专项 / 重点研发计划在研'),
+              escapeCSV(pi.cohort || '专科临床随访队列 (>1000例 血浆+组织)'),
+              escapeCSV(caps),
+              escapeCSV(pi.iceBreaker || pi.breakIceScript || `“${pi.name}主任您好，拜读了您在近期专科年会上的报告，吉因加在队列多组学与高通量建库上有完备经验，希望能为团队提供技术支持！”`),
+              escapeCSV(chk),
+              escapeCSV(repLabel),
+              escapeCSV(todayStr)
+            ].join(',');
+          });
+
+          const csvContent = '\uFEFF' + [headers.map(escapeCSV).join(','), ...rows].join('\r\n');
+          const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          const fileName = `战区PI进院拜访清单_${this.currentRep.region}_${this.currentRep.name}_${todayStr.replace(/-/g, '')}.csv`;
+          a.download = fileName;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+
+          this.showToast(`✓ 已成功导出 ${targetList.length} 位专家拜访清单 (Excel/CSV)！可直接用 Excel 打开或打印进院。`, 'success');
         },
 
         get myFeedbacks() {

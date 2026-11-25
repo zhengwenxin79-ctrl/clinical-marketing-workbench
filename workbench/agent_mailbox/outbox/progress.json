@@ -1,12 +1,20 @@
 {
-  "task_id": "TASK-1795583465",
-  "status": "dispatched",
-  "percent": 5,
-  "message": "工单已送达 inbox/task.json，等待 Agent 处理...",
+  "task_id": "TASK-1795597009",
+  "status": "running",
+  "percent": 88,
+  "message": "CodeBuddy 正在后台真实执行《会议收集评级》（已耗时 245 秒）...",
   "active_skill": "D:\\Users\\skills\\conference-collection-rating\\SKILL.md",
+  "pid": 9248,
+  "elapsed_seconds": 245,
   "logs": [
-    "[13:11:05] 工单 TASK-1795583465 已写入信箱",
-    "[13:11:05] 绑定通用 Skill 路径: D:\\Users\\skills\\conference-collection-rating\\SKILL.md",
-    "[13:11:05] 目标领域: 6 大临床慢病方向"
+    "[16:56:49] 📬 工单 TASK-1795597009 已写入 inbox/task.json",
+    "[16:56:49] 🎯 绑定专属技能: D:\\Users\\skills\\conference-collection-rating\\SKILL.md",
+    "[16:56:49] 🚀 正在拉起本地 CodeBuddy CLI (codebuddy.cmd)...",
+    "[16:56:49] ✅ CodeBuddy 进程已启动 (PID: 9248)，正在联网检索与筛选会议...",
+    "[16:56:59] ⏳ Agent 正在持续执行中（已耗时 10 秒），请耐心等待检索与评级完成...",
+    "[16:57:19] ⏳ Agent 正在持续执行中（已耗时 30 秒），请耐心等待检索与评级完成...",
+    "[16:57:49] ⏳ Agent 正在持续执行中（已耗时 60 秒），请耐心等待检索与评级完成...",
+    "[16:58:49] ⏳ Agent 正在持续执行中（已耗时 120 秒），请耐心等待检索与评级完成...",
+    "[16:59:49] ⏳ Agent 正在持续执行中（已耗时 180 秒），请耐心等待检索与评级完成..."
   ]
 }
