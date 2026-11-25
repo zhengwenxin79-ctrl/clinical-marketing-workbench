@@ -182,70 +182,91 @@ def run_codebuddy_worker(task_id, task_payload, cli_path):
     ]
 
     try:
-        proc = subprocess.Popen(
-            cmd,
-            cwd=BASE_DIR,
-            env=env,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            text=True,
-            encoding='utf-8',
-            errors='replace'
-        )
+        max_attempts = 2
+        stdout_text, stderr_text, return_code = "", "", -1
 
-        logs.append(f"[{time.strftime('%H:%M:%S')}] ✅ CodeBuddy 进程已启动 (PID: {proc.pid})，正在联网检索与筛选会议...")
-        write_progress({
-            "task_id": task_id,
-            "status": "running",
-            "percent": 22,
-            "message": f"CodeBuddy 正在后台真实执行联网检索与初评（PID: {proc.pid}）...",
-            "active_skill": active_skill,
-            "pid": proc.pid,
-            "logs": list(logs)
-        })
+        for attempt in range(1, max_attempts + 1):
+            proc = subprocess.Popen(
+                cmd,
+                cwd=BASE_DIR,
+                env=env,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True,
+                encoding='utf-8',
+                errors='replace'
+            )
 
-        # 心跳轮询直到子进程结束（真实反映耗时，不伪造 100%）
-        last_heartbeat = 0
-        while proc.poll() is None:
-            elapsed = int(time.time() - start_ts)
-            # 每 5 秒刷新一次真实心跳进度（上限 88%，真实完成后才到 100%）
-            if elapsed - last_heartbeat >= 5:
-                last_heartbeat = elapsed
-                pct = min(88, 22 + int(elapsed * 0.6))
-                if elapsed in (10, 30, 60, 120, 180):
-                    logs.append(f"[{time.strftime('%H:%M:%S')}] ⏳ Agent 正在持续执行中（已耗时 {elapsed} 秒），请耐心等待检索与评级完成...")
+            attempt_tag = f"（第 {attempt}/{max_attempts} 次尝试）" if attempt > 1 else ""
+            logs.append(f"[{time.strftime('%H:%M:%S')}] ✅ CodeBuddy 进程已启动 (PID: {proc.pid}){attempt_tag}，正在联网检索与筛选会议...")
+            write_progress({
+                "task_id": task_id,
+                "status": "running",
+                "percent": 22,
+                "message": f"CodeBuddy 正在后台真实执行联网检索与初评（PID: {proc.pid}）{attempt_tag}...",
+                "active_skill": active_skill,
+                "pid": proc.pid,
+                "logs": list(logs)
+            })
+
+            last_heartbeat = 0
+            while proc.poll() is None:
+                elapsed = int(time.time() - start_ts)
+                if elapsed - last_heartbeat >= 5:
+                    last_heartbeat = elapsed
+                    pct = min(88, 22 + int(elapsed * 0.6))
+                    if elapsed in (10, 30, 60, 120, 180):
+                        logs.append(f"[{time.strftime('%H:%M:%S')}] ⏳ Agent 正在持续执行中（已耗时 {elapsed} 秒），请耐心等待检索与评级完成...")
+                    write_progress({
+                        "task_id": task_id,
+                        "status": "running",
+                        "percent": pct,
+                        "message": f"CodeBuddy 正在后台真实执行《会议收集评级》（已耗时 {elapsed} 秒）...",
+                        "active_skill": active_skill,
+                        "pid": proc.pid,
+                        "elapsed_seconds": elapsed,
+                        "logs": list(logs[-30:])
+                    })
+                time.sleep(1)
+
+            stdout_text, stderr_text = proc.communicate()
+            return_code = proc.returncode
+            is_tls_502 = (not stdout_text.strip()) and ('502' in (stderr_text or '') or 'TLS' in (stderr_text or '') or 'disconnected' in (stderr_text or ''))
+
+            if is_tls_502 and attempt < max_attempts:
+                logs.append(f"[{time.strftime('%H:%M:%S')}] ⚠️ 腾讯云连接出现临时 TLS 波动 (502)，3 秒后自动重试...")
                 write_progress({
                     "task_id": task_id,
                     "status": "running",
-                    "percent": pct,
-                    "message": f"CodeBuddy 正在后台真实执行《会议收集评级》（已耗时 {elapsed} 秒）...",
+                    "percent": 20,
+                    "message": "遇到临时网络波动 (502)，正在自动重试...",
                     "active_skill": active_skill,
-                    "pid": proc.pid,
-                    "elapsed_seconds": elapsed,
                     "logs": list(logs[-30:])
                 })
-            time.sleep(1)
+                time.sleep(3)
+                continue
+            break
 
-        stdout_text, stderr_text = proc.communicate()
         elapsed = int(time.time() - start_ts)
         summary = extract_cli_summary(stdout_text)
         artifacts = list_outbox_artifacts(start_ts)
+        has_real_error = (return_code != 0) or (not summary.strip() and bool((stderr_text or '').strip()))
 
         # 保存完整执行回执
         receipt_path = os.path.join(OUTBOX_DIR, f"{task_id}_receipt.json")
         with open(receipt_path, 'w', encoding='utf-8') as f:
             json.dump({
                 "task_id": task_id,
-                "return_code": proc.returncode,
+                "return_code": return_code,
+                "has_real_error": has_real_error,
                 "elapsed_seconds": elapsed,
                 "summary": summary,
-                "stderr": (stderr_text or '')[-1000:],
+                "stderr": (stderr_text or '')[-1500:],
                 "artifacts": artifacts,
                 "finished_at": time.strftime('%Y-%m-%d %H:%M:%S')
             }, f, ensure_ascii=False, indent=2)
 
-        if proc.returncode == 0:
-            # 更新 task.json 状态为 done
+        if not has_real_error:
             task_payload['status'] = 'done'
             task_payload['finished_at'] = time.strftime('%Y-%m-%d %H:%M:%S')
             with open(TASK_FILE, 'w', encoding='utf-8') as f:
@@ -255,11 +276,10 @@ def run_codebuddy_worker(task_id, task_payload, cli_path):
             if artifacts:
                 logs.append(f"[{time.strftime('%H:%M:%S')}] 📁 已生成产物文件: {', '.join(os.path.basename(a) for a in artifacts)}")
             if summary:
-                first_lines = [ln.strip() for ln in summary.splitlines() if ln.strip()][:4]
+                first_lines = [ln.strip() for ln in summary.splitlines() if ln.strip()][:5]
                 for ln in first_lines:
                     logs.append(f"📝 {ln[:140]}")
 
-            # 检查是否有结构化会议 JSON 可供前端直接导入
             parsed_items = []
             if os.path.exists(RESULT_FILE) and os.path.getmtime(RESULT_FILE) >= start_ts - 2:
                 try:
@@ -282,13 +302,13 @@ def run_codebuddy_worker(task_id, task_payload, cli_path):
                 "logs": list(logs[-40:])
             })
         else:
-            err_msg = (stderr_text or summary or f"退出码 {proc.returncode}").strip()[:300]
-            logs.append(f"[{time.strftime('%H:%M:%S')}] ❌ CodeBuddy 执行失败: {err_msg}")
+            err_msg = (stderr_text or summary or f"退出码 {return_code}").strip()[:350]
+            logs.append(f"[{time.strftime('%H:%M:%S')}] ❌ CodeBuddy 执行中断/失败: {err_msg}")
             write_progress({
                 "task_id": task_id,
                 "status": "failed",
                 "percent": 100,
-                "message": f"❌ 执行失败（退出码 {proc.returncode}）：{err_msg[:100]}",
+                "message": f"❌ 执行失败（耗时 {elapsed} 秒）：{err_msg[:120]}",
                 "active_skill": active_skill,
                 "elapsed_seconds": elapsed,
                 "error": err_msg,
