@@ -1987,6 +1987,80 @@ window.workbenchApp = function () {
       this.showToast(`📥 已成功导出 ${targets.length} 场会议（按 A>B>C>D 排序），可用 Excel 直接打开！`, 'success');
     },
 
+    // 已批准审核后会议（② 日程分流 & 抓取）勾选导出 Excel
+    selectedApprovedIds: [],
+
+    toggleApprovedSelect(id) {
+      if (this.selectedApprovedIds.includes(id)) {
+        this.selectedApprovedIds = this.selectedApprovedIds.filter(x => x !== id);
+      } else {
+        this.selectedApprovedIds = [...this.selectedApprovedIds, id];
+      }
+    },
+
+    toggleSelectAllApproved() {
+      const visibleIds = this.filteredConferences.map(c => c.id);
+      if (this.selectedApprovedIds.length > 0 && this.selectedApprovedIds.length === visibleIds.length) {
+        this.selectedApprovedIds = [];
+      } else {
+        this.selectedApprovedIds = [...visibleIds];
+      }
+    },
+
+    exportApprovedConferencesToExcel(exportAll = false) {
+      const rank = { A: 1, B: 2, C: 3, D: 4 };
+      const tierLabelMap = { A: 'A级 · 核心必参', B: 'B级 · 重点关注', C: 'C级 · 常规关注', D: 'D级 · 低优先级' };
+      const targets = exportAll
+        ? [...this.filteredConferences]
+        : this.filteredConferences.filter(c => this.selectedApprovedIds.includes(c.id));
+
+      if (!targets.length) {
+        this.showToast('请先勾选至少 1 场已批准的会议！', 'warning');
+        return;
+      }
+
+      targets.sort((a, b) => (rank[a.tierCode] || 5) - (rank[b.tierCode] || 5));
+
+      const esc = (v) => {
+        const s = String(v == null ? '' : v).replace(/\r?\n/g, ' ');
+        return (s.includes(',') || s.includes('"')) ? `"${s.replace(/"/g, '""')}"` : s;
+      };
+
+      const headers = ['序号', '优先级', '会议名称', '领域大类', '会议时间', '会议地点', '联系人', '日程状态', '官方链接', '日程链接', '评级依据与重点方向'];
+      const rows = [headers.join(',')];
+      targets.forEach((c, idx) => {
+        const schedUrl = c.scheduleUrl && c.scheduleUrl !== '#' ? c.scheduleUrl : '';
+        const offUrl = c.officialUrl && c.officialUrl !== '#' ? c.officialUrl : '';
+        rows.push([
+          idx + 1,
+          tierLabelMap[c.tierCode] || (c.tierCode || 'B级'),
+          c.title || '',
+          c.domain || '',
+          c.date || '',
+          c.venue || c.city || '',
+          c.contacts || '',
+          c.schedulePublished ? '已发布日程' : '未发布日程',
+          offUrl,
+          schedUrl,
+          c.tierBasis || c.summary || c.topics || ''
+        ].map(esc).join(','));
+      });
+
+      const csvContent = '\uFEFF' + rows.join('\r\n');
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      const dateTag = new Date().toISOString().slice(0, 10).replace(/-/g, '');
+      a.href = url;
+      a.download = `已批准会议清单_${dateTag}_${targets.length}场.csv`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+
+      this.showToast(`📥 已成功导出 ${targets.length} 场已批准审核会议（按 A>B>C>D 排序）！`, 'success');
+    },
+
     // STAGE 2 Actions: Scrape Topics from Schedule / Ignore Scrape / Scrape PIs / Simulate Schedule Release
     scrapeConferenceTopics(conf) {
       conf.topicScrapeStatus = 'done';

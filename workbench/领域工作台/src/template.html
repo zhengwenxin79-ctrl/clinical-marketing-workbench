@@ -728,16 +728,44 @@
                         x-text="unpublishedConferences.length"></span>
                 </button>
               </div>
+              <!-- 已批准会议勾选导出工具栏 -->
+              <div class="flex items-center gap-2.5 flex-wrap">
+                <button @click="toggleSelectAllApproved()"
+                        class="px-3.5 py-2 rounded-xl text-sm font-bold border transition-all"
+                        :class="selectedApprovedIds.length > 0 && selectedApprovedIds.length === filteredConferences.length ? 'bg-emerald-50 text-emerald-700 border-emerald-300' : 'bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100'">
+                  <span x-text="selectedApprovedIds.length > 0 && selectedApprovedIds.length === filteredConferences.length ? '☑ 取消全选' : '☐ 全选已批准'"></span>
+                </button>
+                <span class="text-sm text-slate-600 font-medium">
+                  已选 <strong class="text-emerald-600" x-text="selectedApprovedIds.length"></strong> / <span x-text="filteredConferences.length"></span> 场
+                </span>
+                <button @click="exportApprovedConferencesToExcel(false)"
+                        :disabled="selectedApprovedIds.length === 0"
+                        class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 disabled:opacity-40 disabled:cursor-not-allowed text-white rounded-xl text-sm font-bold shadow-xs transition-all">
+                  📥 导出所选已批准会议 (Excel)
+                </button>
+                <button @click="exportApprovedConferencesToExcel(true)"
+                        class="px-3.5 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-sm font-semibold transition-all">
+                  导出全部已批准
+                </button>
+              </div>
             </div>
 
             <!-- Section A: 已发布日程会议 -->
             <div x-show="scheduleSubTab === 'published'" class="grid grid-cols-1 md:grid-cols-2 gap-5">
               <template x-for="item in publishedConferences" :key="item.id">
                 <div class="bg-white rounded-2xl border p-6 shadow-xs flex flex-col justify-between gap-4 transition-all"
-                     :class="item.topicScrapeStatus === 'pending' ? 'border-amber-400 ring-2 ring-amber-100' : 'border-slate-200'">
+                     :class="selectedApprovedIds.includes(item.id) ? 'border-emerald-400 ring-2 ring-emerald-100' : (item.topicScrapeStatus === 'pending' ? 'border-amber-400 ring-2 ring-amber-100' : 'border-slate-200')">
                   <div>
                     <div class="flex items-center justify-between gap-2 mb-3">
                       <div class="flex items-center gap-2 flex-wrap">
+                        <label class="inline-flex items-center gap-1.5 cursor-pointer select-none px-2 py-1 rounded-lg border transition-all"
+                               :class="selectedApprovedIds.includes(item.id) ? 'bg-emerald-50 border-emerald-300 text-emerald-700' : 'bg-slate-50 border-slate-200 text-slate-500 hover:bg-slate-100'">
+                          <input type="checkbox"
+                                 :checked="selectedApprovedIds.includes(item.id)"
+                                 @change="toggleApprovedSelect(item.id)"
+                                 class="w-4 h-4 rounded text-emerald-600 cursor-pointer">
+                          <span class="text-xs font-bold" x-text="selectedApprovedIds.includes(item.id) ? '已选' : '选择'"></span>
+                        </label>
                         <span class="px-3 py-1 rounded-full text-xs font-bold text-white"
                               :style="'background-color:' + getDomainColor(item.domain)"
                               x-text="item.domain"></span>
@@ -843,12 +871,23 @@
             <!-- Section B: 未发布日程会议 -->
             <div x-show="scheduleSubTab === 'unpublished'" class="grid grid-cols-1 md:grid-cols-2 gap-5">
               <template x-for="item in unpublishedConferences" :key="item.id">
-                <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs flex flex-col justify-between gap-4">
+                <div class="bg-white rounded-2xl border p-6 shadow-xs flex flex-col justify-between gap-4 transition-all"
+                     :class="selectedApprovedIds.includes(item.id) ? 'border-emerald-400 ring-2 ring-emerald-100' : 'border-slate-200'">
                   <div>
                     <div class="flex items-center justify-between gap-2 mb-3">
-                      <span class="px-3 py-1 rounded-full text-xs font-bold text-white"
-                            :style="'background-color:' + getDomainColor(item.domain)"
-                            x-text="item.domain"></span>
+                      <div class="flex items-center gap-2 flex-wrap">
+                        <label class="inline-flex items-center gap-1.5 cursor-pointer select-none px-2 py-1 rounded-lg border transition-all"
+                               :class="selectedApprovedIds.includes(item.id) ? 'bg-emerald-50 border-emerald-300 text-emerald-700' : 'bg-slate-50 border-slate-200 text-slate-500 hover:bg-slate-100'">
+                          <input type="checkbox"
+                                 :checked="selectedApprovedIds.includes(item.id)"
+                                 @change="toggleApprovedSelect(item.id)"
+                                 class="w-4 h-4 rounded text-emerald-600 cursor-pointer">
+                          <span class="text-xs font-bold" x-text="selectedApprovedIds.includes(item.id) ? '已选' : '选择'"></span>
+                        </label>
+                        <span class="px-3 py-1 rounded-full text-xs font-bold text-white"
+                              :style="'background-color:' + getDomainColor(item.domain)"
+                              x-text="item.domain"></span>
+                      </div>
                       <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-50 text-amber-700 border border-amber-200">
                         ⏳ 未发布详细日程
                       </span>
@@ -870,7 +909,7 @@
                       </template>
                     </div>
 
-                    <p class="text-sm text-slate-600 bg-slate-50 p-3.5 rounded-xl border border-slate-100 line-clamp-2" x-text="item.tierBasis"></p>
+                    <p class="text-sm text-slate-600 bg-slate-50 p-3.5 rounded-xl border border-slate-100 leading-relaxed whitespace-pre-line break-words" x-text="item.tierBasis"></p>
                   </div>
 
                   <div class="pt-4 border-t border-slate-100 flex items-center justify-between gap-2">
