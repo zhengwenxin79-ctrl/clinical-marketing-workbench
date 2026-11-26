@@ -163,22 +163,70 @@ def priority_sort_key(item):
     return 5
 
 
+def _norm_conf_name(item):
+    if not isinstance(item, dict):
+        return ''
+    name = str(item.get('会议名称') or item.get('title') or item.get('conference_name') or '')
+    return re.sub(r'[\s（()）【】\[\]·\-—_、，,]+', '', name).lower()
+
+
+def merge_same_week_items(new_items, target_week):
+    """同周自动合并去重（只增不减）：保留同目标周已抓到的会议，并用新数据补全链接/备注/联系人"""
+    merged_map = {}
+    ordered_keys = []
+
+    # 1. 加载同目标周历史底稿
+    if os.path.exists(RESULT_FILE):
+        try:
+            with open(RESULT_FILE, 'r', encoding='utf-8') as f:
+                old_obj = json.load(f)
+            if isinstance(old_obj, dict) and old_obj.get('target_week') == target_week:
+                for it in (old_obj.get('items') or []):
+                    k = _norm_conf_name(it)
+                    if k and k not in merged_map:
+                        merged_map[k] = dict(it)
+                        ordered_keys.append(k)
+        except Exception:
+            pass
+
+    # 2. 合并本轮新抓到的会议（已有则补全空字段/更新备注，新增则追加）
+    newly_added = 0
+    for it in (new_items or []):
+        k = _norm_conf_name(it)
+        if not k:
+            continue
+        if k in merged_map:
+            existing = merged_map[k]
+            for field, val in it.items():
+                if val and (not existing.get(field) or field in ('优先级', 'schedule_url', 'official_url')):
+                    existing[field] = val
+        else:
+            merged_map[k] = dict(it)
+            ordered_keys.append(k)
+            newly_added += 1
+
+    merged_list = [merged_map[k] for k in ordered_keys]
+    merged_list = sorted(merged_list, key=priority_sort_key)
+    return merged_list, newly_added
+
+
 def save_artifacts_from_items(task_id, items, target_week):
-    """由 Python 网关确定性落盘 latest_result.json 与 Excel 可直接打开的 UTF-8 BOM CSV（按优先级 A>B>C>D 排序）"""
+    """由 Python 网关确定性落盘 latest_result.json 与 Excel 可直接打开的 UTF-8 BOM CSV（同周合并去重 + A>B>C>D 排序）"""
     ensure_dirs()
     created = []
     if not items:
-        return created
+        return created, [], 0
 
-    items = sorted(items, key=priority_sort_key)
+    merged_items, newly_added = merge_same_week_items(items, target_week)
 
     # 1. 写入 latest_result.json（供网页前端一键自动导入）
     result_obj = {
         "task_id": task_id,
         "target_week": target_week,
         "generated_at": time.strftime('%Y-%m-%d %H:%M:%S'),
-        "count": len(items),
-        "items": items
+        "count": len(merged_items),
+        "newly_added": newly_added,
+        "items": merged_items
     }
     with open(RESULT_FILE, 'w', encoding='utf-8') as f:
         json.dump(result_obj, f, ensure_ascii=False, indent=2)
@@ -191,7 +239,7 @@ def save_artifacts_from_items(task_id, items, target_week):
     with open(csv_path, 'w', encoding='utf-8-sig', newline='') as f:
         writer = csv.DictWriter(f, fieldnames=headers, extrasaction='ignore')
         writer.writeheader()
-        for it in items:
+        for it in merged_items:
             if not isinstance(it, dict):
                 continue
             row = {
@@ -207,7 +255,7 @@ def save_artifacts_from_items(task_id, items, target_week):
             }
             writer.writerow(row)
     created.append(csv_path)
-    return created
+    return created, merged_items, newly_added
 
 
 def list_outbox_artifacts(since_ts):
@@ -360,9 +408,12 @@ def run_codebuddy_worker(task_id, task_payload, cli_path):
         summary = extract_cli_summary(stdout_text)
         has_real_error = (return_code != 0) or (not summary.strip() and bool((stderr_text or '').strip()))
 
-        # 由 Python 网关直接解析 JSON 并确定性落盘 CSV + latest_result.json
+        # 由 Python 网关直接解析 JSON、同周自动合并去重并确定性落盘 CSV + latest_result.json
         parsed_items = extract_items_from_summary(summary) if not has_real_error else []
-        created_artifacts = save_artifacts_from_items(task_id, parsed_items, target_week) if parsed_items else []
+        if parsed_items:
+            created_artifacts, merged_items, newly_added = save_artifacts_from_items(task_id, parsed_items, target_week)
+        else:
+            created_artifacts, merged_items, newly_added = [], [], 0
         artifacts = sorted(set(list_outbox_artifacts(start_ts) + created_artifacts))
 
         receipt_path = os.path.join(OUTBOX_DIR, f"{task_id}_receipt.json")
@@ -373,6 +424,8 @@ def run_codebuddy_worker(task_id, task_payload, cli_path):
                 "has_real_error": has_real_error,
                 "elapsed_seconds": elapsed,
                 "parsed_count": len(parsed_items),
+                "merged_count": len(merged_items),
+                "newly_added": newly_added,
                 "summary": summary,
                 "stderr": (stderr_text or '')[-1500:],
                 "artifacts": artifacts,
@@ -385,7 +438,7 @@ def run_codebuddy_worker(task_id, task_payload, cli_path):
             with open(TASK_FILE, 'w', encoding='utf-8') as f:
                 json.dump(task_payload, f, ensure_ascii=False, indent=2)
 
-            logs.append(f"[{time.strftime('%H:%M:%S')}] 🎉 CodeBuddy 执行完成！（共耗时 {elapsed} 秒，解析到 {len(parsed_items)} 场会议）")
+            logs.append(f"[{time.strftime('%H:%M:%S')}] 🎉 CodeBuddy 执行完成！（耗时 {elapsed} 秒，本轮抓到 {len(parsed_items)} 场，同周去重合并后共 {len(merged_items)} 场，新增 {newly_added} 场）")
             if artifacts:
                 logs.append(f"[{time.strftime('%H:%M:%S')}] 📁 已自动落盘产物: {', '.join(os.path.basename(a) for a in artifacts)}")
             if summary:
@@ -397,12 +450,12 @@ def run_codebuddy_worker(task_id, task_payload, cli_path):
                 "task_id": task_id,
                 "status": "done",
                 "percent": 100,
-                "message": f"✅ 抓取完成！共解析 {len(parsed_items)} 场会议，落盘产物 {len(artifacts)} 个（耗时 {elapsed} 秒）",
+                "message": f"✅ 抓取完成！同周合并共 {len(merged_items)} 场（本轮新增 {newly_added} 场），落盘产物 {len(artifacts)} 个（耗时 {elapsed} 秒）",
                 "active_skill": active_skill,
                 "elapsed_seconds": elapsed,
                 "summary": summary,
                 "artifacts": artifacts,
-                "result_items": parsed_items,
+                "result_items": merged_items,
                 "logs": list(logs[-40:])
             })
         else:
