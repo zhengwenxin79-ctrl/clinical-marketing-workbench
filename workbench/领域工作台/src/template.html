@@ -604,12 +604,46 @@
               </div>
             </div>
 
+            <!-- 勾选会议导出 Excel 工具栏 -->
+            <div class="bg-white rounded-2xl border border-slate-200 px-5 py-3.5 shadow-xs flex flex-wrap items-center justify-between gap-3">
+              <div class="flex items-center gap-3 flex-wrap">
+                <button @click="toggleSelectAllAudit()"
+                        class="px-3.5 py-2 rounded-xl text-sm font-bold border transition-all"
+                        :class="selectedAuditIds.length > 0 && selectedAuditIds.length === filteredAuditConferences.length ? 'bg-emerald-50 text-emerald-700 border-emerald-300' : 'bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100'">
+                  <span x-text="selectedAuditIds.length > 0 && selectedAuditIds.length === filteredAuditConferences.length ? '☑ 取消全选' : '☐ 全选当前列表'"></span>
+                </button>
+                <span class="text-sm text-slate-600 font-medium">
+                  已勾选 <strong class="text-emerald-600" x-text="selectedAuditIds.length"></strong> / <span x-text="filteredAuditConferences.length"></span> 场会议
+                </span>
+              </div>
+              <div class="flex items-center gap-2.5 flex-wrap">
+                <button @click="exportSelectedAuditToExcel(false)"
+                        :disabled="selectedAuditIds.length === 0"
+                        class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 disabled:opacity-40 disabled:cursor-not-allowed text-white rounded-xl text-sm font-bold shadow-xs transition-all">
+                  📥 导出所选会议 (Excel)
+                </button>
+                <button @click="exportSelectedAuditToExcel(true)"
+                        class="px-3.5 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-sm font-semibold transition-all">
+                  导出当前全部
+                </button>
+              </div>
+            </div>
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
               <template x-for="item in filteredAuditConferences" :key="item.id">
-                <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs flex flex-col justify-between gap-4 hover:border-rose-300 transition-all">
+                <div class="bg-white rounded-2xl border p-6 shadow-xs flex flex-col justify-between gap-4 transition-all"
+                     :class="selectedAuditIds.includes(item.id) ? 'border-emerald-400 ring-2 ring-emerald-100' : 'border-slate-200 hover:border-rose-300'">
                   <div>
                     <div class="flex items-center justify-between gap-2 flex-wrap mb-3">
                       <div class="flex items-center gap-2 flex-wrap">
+                        <label class="inline-flex items-center gap-1.5 cursor-pointer select-none px-2 py-1 rounded-lg border transition-all"
+                               :class="selectedAuditIds.includes(item.id) ? 'bg-emerald-50 border-emerald-300 text-emerald-700' : 'bg-slate-50 border-slate-200 text-slate-500 hover:bg-slate-100'">
+                          <input type="checkbox"
+                                 :checked="selectedAuditIds.includes(item.id)"
+                                 @change="toggleAuditSelect(item.id)"
+                                 class="w-4 h-4 rounded text-emerald-600 cursor-pointer">
+                          <span class="text-xs font-bold" x-text="selectedAuditIds.includes(item.id) ? '已选' : '选择'"></span>
+                        </label>
                         <span class="px-3 py-1 rounded-full text-xs font-bold text-white"
                               :style="'background-color:' + getDomainColor(item.domain)"
                               x-text="item.domain"></span>
