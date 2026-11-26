@@ -7,6 +7,7 @@ Export Complete DingTalk Knowledge Base Multi-Table Suite:
 4. dingtalk_battle_cards.csv / .json: Commercial opportunity & field visit battle cards.
 5. dingtalk_full_baseline.csv / dingtalk_weekly_delta.csv: Baseline & weekly delta sync packages.
 """
+import os
 import csv
 import json
 import re
@@ -617,18 +618,20 @@ def build_pi_table():
         }
     ]
 
-    # 动态加载真实大表 (587 人) 并与精调核心专家去重融合
-    real_pis = load_real_pis_from_xlsx()
-    if real_pis:
-        curated_names = {p["姓名（讲者）"] for p in pis}
-        for rp in real_pis:
-            if rp["姓名（讲者）"] not in curated_names:
-                curated_names.add(rp["姓名（讲者）"])
-                rp["序号"] = len(pis) + 1
-                pis.append(rp)
-        # 统一重新编排序号
-        for idx, p in enumerate(pis, 1):
-            p["序号"] = idx
+    # 动态加载真实大表 (可选开关：默认保持精炼 10 人基线快速跑通流程；设置 EXPORT_FULL_POOL=1 时全量导出 590 人)
+    export_full = os.environ.get("EXPORT_FULL_POOL", "0") == "1"
+    if export_full:
+        real_pis = load_real_pis_from_xlsx()
+        if real_pis:
+            curated_names = {p["姓名（讲者）"] for p in pis}
+            for rp in real_pis:
+                if rp["姓名（讲者）"] not in curated_names:
+                    curated_names.add(rp["姓名（讲者）"])
+                    rp["序号"] = len(pis) + 1
+                    pis.append(rp)
+            # 统一重新编排序号
+            for idx, p in enumerate(pis, 1):
+                p["序号"] = idx
 
     headers = [
         "序号", "姓名（讲者）", "单位", "医院所在城市", "科室", "职务",
@@ -771,10 +774,35 @@ def build_capabilities_table():
             "销售拜访话术与切入建议": "针对肾移植中心带头人（如陈江华、张克勤等），切入无创分子活检与药物减量多中心临床科研合作。"
         }
     }
-    for cap in capabilities:
-        cid = cap.get("能力编号")
-        if cid in detailed_map:
-            cap.update(detailed_map[cid])
+    
+    export_full = os.environ.get("EXPORT_FULL_POOL", "0") == "1"
+    if not export_full:
+        # 默认模式：保持精炼 9 项核心产品武器库，便于轻量敏捷跑通全流程
+        capabilities = []
+        for cid, info in detailed_map.items():
+            cat = '临床检测产品/试剂盒' if cid.startswith('P') else '前沿技术平台'
+            status = '已确认 · 获批 NMPA 注册证' if cid == 'P01' else ('待核实 · 本地资料' if cid == 'P06' else '已确认 · 核心主力平台')
+            entry = {
+                "能力编号": cid,
+                "类别": cat,
+                "产品/技术名称": info["产品/技术名称"],
+                "确认状态": status,
+                "技术原理与服务定位": f"针对临床痛点提供自主研发多组学及分子检测解决方案（{info['产品/技术名称']}）",
+                "适用样本类型": info["适用样本类型"],
+                "解决的临床科研痛点": info["解决的临床科研痛点"],
+                "匹配疾病专科领域": info["匹配疾病专科领域"],
+                "核心匹配研究问题": info["核心匹配研究问题"],
+                "推荐产品技术组合": info["推荐产品技术组合"],
+                "典型顶刊合作发表范式": info["典型顶刊合作发表范式"],
+                "销售拜访话术与切入建议": info["销售拜访话术与切入建议"]
+            }
+            capabilities.append(entry)
+    else:
+        # 全量模式：融入底表全部 36 项能力
+        for cap in capabilities:
+            cid = cap.get("能力编号")
+            if cid in detailed_map:
+                cap.update(detailed_map[cid])
 
     headers = [
         "能力编号", "类别", "产品/技术名称", "确认状态", "技术原理与服务定位",
