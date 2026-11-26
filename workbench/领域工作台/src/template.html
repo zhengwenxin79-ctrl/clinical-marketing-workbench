@@ -1463,7 +1463,9 @@
                       <span class="text-xs font-semibold text-slate-500" x-text="lit.journal + ' · ' + lit.pubDate"></span>
                     </div>
 
-                    <h4 class="font-bold text-slate-900 text-base leading-snug" x-text="lit.title"></h4>
+                    <h4 @click="openLitDetail(lit)"
+                        class="font-bold text-slate-900 hover:text-indigo-600 cursor-pointer text-base leading-snug transition-colors"
+                        x-text="lit.title"></h4>
 
                     <p class="text-sm text-slate-600 leading-relaxed bg-slate-50 p-3.5 rounded-xl border border-slate-100" x-text="lit.abstract || lit.topicName"></p>
 
@@ -1479,13 +1481,19 @@
                     </div>
                   </div>
 
-                  <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-                    <div class="flex items-center gap-2">
-                      <span class="px-2 py-0.5 rounded-full text-white font-bold" :style="'background-color:' + getDomainColor(lit.domain)" x-text="lit.domain"></span>
-                      <span x-text="lit.authors || '核心科研团队'"></span>
+                  <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2 text-xs text-slate-500">
+                    <div class="flex items-center gap-2 min-w-0">
+                      <span class="px-2 py-0.5 rounded-full text-white font-bold shrink-0" :style="'background-color:' + getDomainColor(lit.domain)" x-text="lit.domain"></span>
+                      <span class="truncate" x-text="lit.authors || '核心科研团队'"></span>
                     </div>
-                    <a x-show="lit.sourceUrl && lit.sourceUrl !== '#'" :href="lit.sourceUrl" target="_blank" rel="noopener"
-                       class="text-indigo-600 hover:underline font-bold">查看原文 &nearr;</a>
+                    <div class="flex items-center gap-2.5 shrink-0">
+                      <button @click="openLitDetail(lit)"
+                              class="px-2.5 py-1 rounded-lg bg-indigo-50 hover:bg-indigo-600 text-indigo-700 hover:text-white font-bold transition-all">
+                        查看详情 &rarr;
+                      </button>
+                      <a :href="getLitExternalUrl(lit)" target="_blank" rel="noopener"
+                         class="text-slate-600 hover:text-indigo-600 hover:underline font-bold">PubMed/原文 &nearr;</a>
+                    </div>
                   </div>
                 </div>
               </template>
@@ -2119,12 +2127,17 @@
             </div>
             <div class="space-y-2">
               <template x-for="lp in getRelatedLiteratureForTopic(selectedTopic).papers" :key="lp.id">
-                <div class="bg-white rounded-xl p-3 border border-indigo-100 space-y-1">
-                  <div class="flex items-center justify-between gap-2 text-xs">
-                    <span class="font-bold text-indigo-700" x-text="lp.journal + ' · ' + lp.pubDate"></span>
+                <div @click="openLitDetail(lp)"
+                     class="bg-white hover:border-indigo-400 cursor-pointer rounded-xl p-3 border border-indigo-100 space-y-1.5 transition-all">
+                  <div class="flex items-center justify-between gap-2 flex-wrap text-xs">
+                    <div class="flex items-center gap-1.5 flex-wrap">
+                      <span class="font-bold text-indigo-700" x-text="lp.journal + ' · ' + lp.pubDate"></span>
+                      <span class="px-2 py-0.5 rounded bg-blue-50 text-blue-700 font-bold" x-text="lp.matchLevel"></span>
+                    </div>
                     <span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 font-bold" x-text="lp.stage"></span>
                   </div>
-                  <div class="text-sm font-bold text-slate-900 leading-snug" x-text="lp.title"></div>
+                  <div class="text-sm font-bold text-slate-900 hover:text-indigo-600 leading-snug" x-text="lp.title"></div>
+                  <div class="text-xs text-indigo-700/90 font-medium" x-show="lp.matchReason" x-text="'🔗 联动依据：' + lp.matchReason"></div>
                   <div class="text-xs text-slate-600 leading-relaxed" x-text="lp.abstract || lp.salesPitch"></div>
                 </div>
               </template>
@@ -2237,12 +2250,17 @@
               </div>
               <div class="space-y-2">
                 <template x-for="lp in getRelatedLiteratureForConf(selectedConf).papers" :key="lp.id">
-                  <div class="bg-white rounded-xl p-3 border border-indigo-100 space-y-1">
-                    <div class="flex items-center justify-between gap-2 text-xs">
-                      <span class="font-bold text-indigo-700" x-text="lp.journal + ' · ' + lp.pubDate"></span>
+                  <div @click="openLitDetail(lp)"
+                       class="bg-white hover:border-indigo-400 cursor-pointer rounded-xl p-3 border border-indigo-100 space-y-1.5 transition-all">
+                    <div class="flex items-center justify-between gap-2 flex-wrap text-xs">
+                      <div class="flex items-center gap-1.5 flex-wrap">
+                        <span class="font-bold text-indigo-700" x-text="lp.journal + ' · ' + lp.pubDate"></span>
+                        <span class="px-2 py-0.5 rounded bg-blue-50 text-blue-700 font-bold" x-text="lp.matchLevel"></span>
+                      </div>
                       <span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 font-bold" x-text="lp.stage"></span>
                     </div>
-                    <div class="text-sm font-bold text-slate-900 leading-snug" x-text="lp.title"></div>
+                    <div class="text-sm font-bold text-slate-900 hover:text-indigo-600 leading-snug" x-text="lp.title"></div>
+                    <div class="text-xs text-indigo-700/90 font-medium" x-show="lp.matchReason" x-text="'🔗 联动依据：' + lp.matchReason"></div>
                     <div class="text-xs text-slate-600 leading-relaxed" x-text="lp.abstract || lp.salesPitch"></div>
                   </div>
                 </template>
@@ -2260,6 +2278,105 @@
               <button @click="showConferenceModal = false" class="px-5 py-2.5 bg-slate-100 text-slate-700 text-sm font-bold rounded-xl">关闭</button>
               <button @click="openAssignModal(selectedConf.title, selectedConf.cutIn); showConferenceModal = false;" class="px-5 py-2.5 bg-blue-600 text-white text-sm font-bold rounded-xl hover:bg-blue-700">派发跟进任务</button>
             </div>
+          </div>
+        </div>
+      </template>
+    </div>
+  </div>
+
+  <!-- Modal 1.5: 🧬 文献详情 & 临床转化评估 Modal -->
+  <div x-show="showLitDetailModal"
+       x-cloak
+       x-transition.opacity
+       class="fixed inset-0 z-[60] bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
+    <div @click.outside="showLitDetailModal = false"
+         class="bg-white rounded-2xl max-w-2xl w-full p-6 shadow-2xl border border-indigo-200 max-h-[88vh] overflow-y-auto">
+      <template x-if="selectedLit">
+        <div class="space-y-4">
+          <!-- Header -->
+          <div class="flex items-start justify-between gap-4 border-b border-slate-100 pb-4">
+            <div class="space-y-2">
+              <div class="flex items-center gap-1.5 flex-wrap">
+                <template x-for="pt in (selectedLit.productTags || [])" :key="pt">
+                  <button @click="jumpToProductLiterature(pt)"
+                          class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-600 hover:text-white transition-all"
+                          x-text="'🧬 ' + pt"></button>
+                </template>
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-bold"
+                      :class="selectedLit.appType === '临床转化应用' ? 'bg-emerald-50 text-emerald-700 border border-emerald-200' : 'bg-amber-50 text-amber-700 border border-amber-200'"
+                      x-text="selectedLit.stage || selectedLit.appType || '临床转化应用'"></span>
+                <span x-show="selectedLit.isWeekly"
+                      class="px-2 py-0.5 rounded-full text-xs font-bold bg-rose-50 text-rose-700 border border-rose-200">⚡ 近7天最新</span>
+              </div>
+              <h3 class="text-lg font-extrabold text-slate-900 leading-snug" x-text="selectedLit.title"></h3>
+              <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-slate-500">
+                <span class="font-bold text-indigo-700" x-text="selectedLit.journal || '核心医学期刊'"></span>
+                <span>·</span>
+                <span x-text="selectedLit.pubDate || '近期发表'"></span>
+                <span>·</span>
+                <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-semibold" x-text="selectedLit.domain || '跨领域'"></span>
+                <template x-if="selectedLit.pmid">
+                  <span class="font-mono text-slate-500" x-text="'PMID: ' + selectedLit.pmid"></span>
+                </template>
+              </div>
+              <div x-show="selectedLit.authors" class="text-xs text-slate-500">
+                <span class="font-semibold text-slate-700">作者/团队：</span>
+                <span x-text="selectedLit.authors"></span>
+              </div>
+            </div>
+            <button @click="showLitDetailModal = false" class="text-slate-400 hover:text-slate-600 text-xl font-bold shrink-0">✕</button>
+          </div>
+
+          <!-- 关联评估依据（从议题/会议联动点开时显示） -->
+          <div x-show="selectedLit.matchLevel || selectedLit.matchReason"
+               class="bg-blue-50/70 border border-blue-200 rounded-xl p-3.5 space-y-1">
+            <div class="flex items-center justify-between gap-2 flex-wrap">
+              <span class="text-xs font-extrabold text-blue-900">🔗 会议/议题与文献联动评估</span>
+              <span x-show="selectedLit.matchLevel"
+                    class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-blue-600 text-white"
+                    x-text="selectedLit.matchLevel + (selectedLit.matchScore ? '（匹配分 ' + selectedLit.matchScore + '）' : '')"></span>
+            </div>
+            <p class="text-xs text-blue-800 leading-relaxed" x-text="selectedLit.matchReason"></p>
+          </div>
+
+          <!-- 文献摘要与核心临床发现 -->
+          <div class="space-y-1.5">
+            <h4 class="text-xs font-extrabold text-slate-800 uppercase tracking-wider">📄 核心研究内容与临床转化价值</h4>
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 text-sm text-slate-700 leading-relaxed whitespace-pre-line"
+                 x-text="selectedLit.abstract || '该文献收录于临床转化文献底库，可点击下方按钮直达 PubMed / 期刊原文页面查看完整 PDF 与数据图表。'"></div>
+          </div>
+
+          <!-- 吉因加产品应用 & 销售切入话术 -->
+          <div x-show="selectedLit.salesPitch"
+               class="bg-emerald-50/70 border border-emerald-200 rounded-xl p-4 space-y-2">
+            <div class="flex items-center justify-between gap-2">
+              <h4 class="text-xs font-extrabold text-emerald-900">💡 吉因加产品切入话术（可直接发给 PI）</h4>
+              <button @click="copySalesPitch(selectedLit.salesPitch)"
+                      class="px-2.5 py-1 rounded-lg bg-white hover:bg-emerald-600 hover:text-white text-emerald-700 border border-emerald-200 text-xs font-bold transition-all">
+                📋 一键复制话术
+              </button>
+            </div>
+            <p class="text-sm text-emerald-900 leading-relaxed" x-text="selectedLit.salesPitch"></p>
+          </div>
+
+          <!-- 关联底库议题（如有） -->
+          <div x-show="selectedLit.topicName" class="text-xs text-slate-500 flex items-center gap-2">
+            <span class="font-bold text-slate-700">📌 归属底库议题：</span>
+            <span class="px-2.5 py-0.5 rounded-lg bg-slate-100 text-slate-700 font-medium" x-text="selectedLit.topicName"></span>
+          </div>
+
+          <!-- Footer Actions -->
+          <div class="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
+            <a :href="getLitExternalUrl(selectedLit)"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-bold shadow-xs transition-all">
+              🔗 前往 PubMed / 期刊原文 ↗
+            </a>
+            <button @click="showLitDetailModal = false"
+                    class="px-5 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-bold rounded-xl transition-all">
+              关闭
+            </button>
           </div>
         </div>
       </template>

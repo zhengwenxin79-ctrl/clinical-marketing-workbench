@@ -2553,9 +2553,25 @@ window.workbenchApp = function () {
       this.showToast('📋 已复制销售切入话术，可直接发送给 PI 或填入拜访卡片！', 'success');
     },
 
+    showLitDetailModal: false,
+    selectedLit: null,
+    openLitDetail(lit) {
+      this.selectedLit = lit;
+      this.showLitDetailModal = true;
+    },
+
+    getLitExternalUrl(lit) {
+      if (!lit) return '#';
+      if (lit.detailUrl && lit.detailUrl !== '#') return lit.detailUrl;
+      if (lit.sourceUrl && lit.sourceUrl !== '#') return lit.sourceUrl;
+      if (lit.pmid && /^\d+$/.test(String(lit.pmid))) return `https://pubmed.ncbi.nlm.nih.gov/${lit.pmid}/`;
+      return `https://pubmed.ncbi.nlm.nih.gov/?term=${encodeURIComponent(lit.title || '')}`;
+    },
+
     jumpToProductLiterature(productTag) {
       this.showTopicModal = false;
       this.showConferenceModal = false;
+      this.showLitDetailModal = false;
       this.currentView = 'workspace';
       this.activeModule = 'hotspots';
       this.hotspotTab = 'literature';
@@ -2571,18 +2587,52 @@ window.workbenchApp = function () {
       const all = this.allProductLiterature;
       const kw = `${tp.name || ''} ${tp.boardName || ''} ${tp.summary || ''} ${tp.cutIn || ''}`.toLowerCase();
 
+      const terms = [
+        'cfrna', '外泌体', '甲基化', 'gm-seq', 'chip', '克隆性造血', '单细胞', '时空', '免疫组库', 'v(d)j',
+        '卒中', '脑血管', '阿尔茨海默', '认知障碍', '帕金森', '慢阻肺', 'copd', '哮喘',
+        '狼疮', 'sle', '类风湿', '糖尿病', 'dkd', '肾病', '代谢', '泛血管', '斑块', '心衰', '高血压', '肺动脉高压'
+      ];
+
       const scored = all.map(p => {
         let score = 0;
-        if (tp.id && p.topicId && p.topicId === tp.id) score += 100;
-        if (tp.domain && p.domain === tp.domain) score += 20;
-        const pText = `${p.title || ''} ${p.topicName || ''} ${p.abstract || ''}`.toLowerCase();
-        const terms = ['cfrna', '外泌体', '甲基化', 'chip', '单细胞', '时空', '免疫组库', '卒中', '阿尔茨海默', 'ad', '慢阻肺', 'copd', '狼疮', 'sle', '糖尿病', 'dkd', '泛血管', '斑块', '肾病', '神经'];
+        const reasons = [];
+        const isExactTopic = Boolean(tp.id && p.topicId && p.topicId === tp.id);
+        const isSameDomain = Boolean(tp.domain && p.domain === tp.domain);
+
+        if (isExactTopic) {
+          score += 100;
+          reasons.push('同底库精确议题');
+        }
+        if (isSameDomain) {
+          score += 20;
+          reasons.push(`同属【${p.domain}】`);
+        }
+
+        // 严格防跨领域误关联：既不同议题也不同领域时直接排除
+        if (!isExactTopic && !isSameDomain) return { p, score: 0 };
+
+        const pText = `${p.title || ''} ${p.topicName || ''} ${p.abstract || ''} ${(p.productTags || []).join(' ')}`.toLowerCase();
+        const hitTerms = [];
         for (const t of terms) {
-          if (kw.includes(t) && pText.includes(t)) score += 15;
+          if (kw.includes(t) && pText.includes(t)) {
+            score += 15;
+            hitTerms.push(t);
+          }
+        }
+        if (hitTerms.length) {
+          reasons.push(`共现【${hitTerms.slice(0, 3).join(' / ')}】`);
         }
         if (p.appType === '临床转化应用') score += 5;
         if (p.isWeekly) score += 3;
-        return { p, score };
+
+        const matchLevel = isExactTopic
+          ? '强关联 · 同底库议题'
+          : (hitTerms.length > 0 ? '高相关 · 同领域+病种/技术命中' : '同领域参考');
+
+        return {
+          p: { ...p, matchScore: score, matchLevel, matchReason: reasons.join(' + ') },
+          score
+        };
       }).filter(x => x.score >= 20).sort((a, b) => b.score - a.score);
 
       const topPapers = scored.slice(0, 3).map(x => x.p);
