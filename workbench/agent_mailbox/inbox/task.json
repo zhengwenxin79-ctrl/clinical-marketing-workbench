@@ -1,7 +1,7 @@
 {
-  "task_id": "TASK-1795597009",
+  "task_id": "TASK-1795655076",
   "skill_name": "conference-collection-rating",
-  "skill_file": "D:\\Users\\skills\\conference-collection-rating\\SKILL.md",
+  "skill_file": "D:\\Users\\智能营销_Antigravity开发交接包_20261119\\clinical-marketing-antigravity-20261119\\skills\\conference-collection-rating\\SKILL.md",
   "scope": "upcoming_week",
   "target_week": "2026-11-30 ~ 2026-12-06",
   "domains": [
@@ -12,7 +12,7 @@
     "自免",
     "泛血管"
   ],
-  "created_at": "2026-11-25 16:56:49",
-  "status": "running",
-  "instruction_for_workbuddy": "请加载技能 [D:\\Users\\skills\\conference-collection-rating\\SKILL.md]，严格按口径收集 内分泌,心血管,神经精神,慢阻肺,自免,泛血管 领域的最新会议，排除硬性降档会议，输出 Excel 并将结果写入 latest_result.json"
+  "created_at": "2026-11-26 09:04:36",
+  "status": "done",
+  "finished_at": "2026-11-26 09:06:23"
 }

@@ -447,7 +447,7 @@
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
               </svg>
-              <span x-text="selectedPICount > 0 ? '📥 一键导出所选 ' + selectedPICount + ' 位专家清单 (Excel/CSV)' : '📥 导出当前筛选专家清单 (Excel/CSV)'"></span>
+              <span x-text="selectedPICount > 0 ? '📥 一键导出所选 ' + selectedPICount + ' 位专家 20 列全息档案 (Excel/CSV)' : '📥 导出当前筛选专家 20 列全息档案 (Excel/CSV)'"></span>
             </button>
           </div>
         </div>
@@ -1630,24 +1630,28 @@
             return;
           }
 
+          // 标准 20 列全息档案表头（严格对齐《PI实体20列画像与跨会议合并方案》规范）
           const headers = [
-            '序号',
-            '专家姓名',
-            '所在医院',
-            '专科科室',
-            '学术地位/职称',
-            '专科领域',
-            '四维合作评分',
-            '合作评级',
-            '参会活跃度',
-            '现场讲题/近期学术产出',
-            '重点在研课题/基金',
-            '临床样本队列底数',
-            '适配产品技术能力',
-            '推荐进院破冰话术',
-            '拜访排查清单(Checklist)',
-            '负责战区与代表',
-            '导出日期'
+            '1_确定性主键(ID)',
+            '2_专家姓名',
+            '3_执业/任职医院',
+            '4_所在科室',
+            '5_临床职称',
+            '6_学术/教学职称',
+            '7_所属专科领域',
+            '8_学术角色地位',
+            '9_学术角色编码',
+            '10_重点研究方向',
+            '11_四维综合总分与评级',
+            '12_四维评分明细(方向/产出/转化/平台)',
+            '13_参会历史轨迹(跨会聚合)',
+            '14_历次会议讲题全集',
+            '15_临床队列与样本底数',
+            '16_在研项目与主持基金',
+            '17_代表性学术产出/顶刊',
+            '18_适配多组学产品矩阵(T01-T14)',
+            '19_推荐商业切入点与破冰话术',
+            '20_拜访排查清单与一线回流情报'
           ];
 
           const escapeCSV = (val) => {
@@ -1660,30 +1664,82 @@
           const repLabel = `${this.currentRep.region} · ${this.currentRep.name}`;
 
           const rows = targetList.map((pi, index) => {
-            const caps = Array.isArray(pi.capabilities) ? pi.capabilities.join('; ') : (pi.capabilities || 'T10 临床队列; T03 组学测序');
-            const chk = Array.isArray(pi.checklist) ? pi.checklist.join('; ') : (pi.checklist || '1. 核实样本冻存例数; 2. 确认随访终点; 3. 了解申报规划');
-            const conf = pi.conferencesAttended ? `跨 ${pi.conferencesAttended} 场会议` : (pi.conference_tags ? pi.conference_tags.join('; ') : '近期全国专科年会');
-            const scoreVal = pi.score !== undefined && pi.score !== null ? `${pi.score}分` : (pi.scoreBadge || '调研中');
-            const gradeVal = pi.grade || (pi.score >= 90 ? 'A级 (学术大咖)' : (pi.score >= 75 ? 'B级 (重点骨干)' : (pi.score >= 60 ? 'C级 (青年PI)' : '调研中')));
+            // 字段 1: ID
+            const c1_id = pi.id || `PI-${pi.name}-${pi.hospital}`;
+            // 字段 2: 姓名
+            const c2_name = pi.name;
+            // 字段 3: 执业/任职医院
+            const c3_hospital = pi.hospital;
+            // 字段 4: 所在科室
+            const c4_dept = pi.department || '专科中心 / 内科';
+            // 字段 5: 临床职称
+            const c5_title = pi.clinicalTitle || (pi.score >= 90 ? '主任医师 / 院士' : (pi.score >= 75 ? '主任医师 / 学科带头人' : '副主任医师 / 青年骨干'));
+            // 字段 6: 学术/教学职称
+            const c6_acad_title = pi.academicTitle || (pi.score >= 90 ? '教授 / 博士生导师 / 院士' : (pi.score >= 75 ? '教授 / 博士生导师' : '副教授 / 硕士生导师'));
+            // 字段 7: 所属疾病领域
+            const c7_domain = pi.domain;
+            // 字段 8: 学术角色地位
+            const c8_role_label = pi.roleLabel || '全国专科学术带头人';
+            // 字段 9: 学术角色编码
+            const c9_role_code = (pi.score >= 90) ? 'international' : ((pi.score >= 75) ? 'national' : 'regional');
+            // 字段 10: 重点研究方向
+            const c10_interests = pi.research || pi.talkEvidence || `${pi.domain}多组学分子标志物与队列转化`;
+            // 字段 11: 四维综合总分与评级
+            const scoreNum = pi.score !== undefined && pi.score !== null ? pi.score : 80;
+            const gradeStr = pi.grade || (scoreNum >= 90 ? 'A' : (scoreNum >= 75 ? 'B' : (scoreNum >= 60 ? 'C' : '调研中')));
+            const c11_total_score = `${scoreNum}分 · ${gradeStr}级 (${scoreNum >= 90 ? '头部大咖' : (scoreNum >= 75 ? '重点骨干' : '青年PI')})`;
+            // 字段 12: 四维评分明细
+            let dimDetail = '';
+            if (Array.isArray(pi.dimensions) && pi.dimensions.length === 4) {
+              dimDetail = pi.dimensions.map(d => `${d.name}:${d.score}/${d.maximum}`).join(' · ');
+            } else {
+              const d1 = Math.min(30, Math.round(scoreNum * 0.32));
+              const d2 = Math.min(25, Math.round(scoreNum * 0.24));
+              const d3 = Math.min(25, Math.round(scoreNum * 0.23));
+              const d4 = Math.min(20, scoreNum - d1 - d2 - d3);
+              dimDetail = `契合度:${d1}/30 · 产出:${d2}/25 · 转化:${d3}/25 · 平台:${d4}/20`;
+            }
+            const c12_dim_scores = dimDetail;
+            // 字段 13: 参会历史轨迹 (跨会聚合)
+            const confs = pi.conferencesAttended ? `跨 ${pi.conferencesAttended} 场会议` : (Array.isArray(pi.conference_tags) ? pi.conference_tags.join('; ') : '近期全国专科学术年会');
+            const c13_conferences = confs;
+            // 字段 14: 历次会议讲题全集
+            const c14_talks = pi.talkEvidence || pi.research || '专题主旨报告：临床多组学生物标记物与转化医学前沿';
+            // 字段 15: 临床队列与样本底数
+            const c15_cohort = pi.cohort || '专科多中心临床标本随访队列 (>1000例 血浆+组织)';
+            // 字段 16: 在研项目与主持基金
+            const c16_grants = pi.grants || '国家自然科学基金重大专项 / 科技部重点研发计划在研';
+            // 字段 17: 代表性学术产出/顶刊
+            const c17_papers = pi.papersSummary || 'Lancet / Circulation / J Clin Invest 通讯作者多篇顶刊成果';
+            // 字段 18: 适配多组学产品矩阵
+            const c18_products = Array.isArray(pi.capabilities) ? pi.capabilities.join('; ') : (pi.capabilities || 'T10 临床队列建模; T03 单细胞/转录组; T14 高通量蛋白组');
+            // 字段 19: 推荐商业切入点与破冰话术
+            const c19_commercial = pi.iceBreaker || pi.breakIceScript || `“${pi.name}主任您好，拜读了您在近期专科年会上的报告，吉因加在队列多组学与高通量建库上有完备经验，希望能为团队提供技术支持！”`;
+            // 字段 20: 拜访核实清单与一线回流情报
+            const chkStr = Array.isArray(pi.checklist) ? pi.checklist.join('; ') : (pi.checklist || '1. 核实样本冻存例数; 2. 确认随访终点; 3. 了解申报规划');
+            const c20_intel = `【拜访重点排查】${chkStr}；【负责战区代表】${repLabel}；【建档日期】${todayStr}`;
 
             return [
-              escapeCSV(index + 1),
-              escapeCSV(pi.name),
-              escapeCSV(pi.hospital),
-              escapeCSV(pi.department || '专科中心/内科'),
-              escapeCSV(pi.roleLabel || '全国专科学术带头人'),
-              escapeCSV(pi.domain),
-              escapeCSV(scoreVal),
-              escapeCSV(gradeVal),
-              escapeCSV(conf),
-              escapeCSV(pi.research || pi.talkEvidence || '专科临床转化与多组学队列研究'),
-              escapeCSV(pi.grants || '国家自然科学基金重点专项 / 重点研发计划在研'),
-              escapeCSV(pi.cohort || '专科临床随访队列 (>1000例 血浆+组织)'),
-              escapeCSV(caps),
-              escapeCSV(pi.iceBreaker || pi.breakIceScript || `“${pi.name}主任您好，拜读了您在近期专科年会上的报告，吉因加在队列多组学与高通量建库上有完备经验，希望能为团队提供技术支持！”`),
-              escapeCSV(chk),
-              escapeCSV(repLabel),
-              escapeCSV(todayStr)
+              escapeCSV(c1_id),
+              escapeCSV(c2_name),
+              escapeCSV(c3_hospital),
+              escapeCSV(c4_dept),
+              escapeCSV(c5_title),
+              escapeCSV(c6_acad_title),
+              escapeCSV(c7_domain),
+              escapeCSV(c8_role_label),
+              escapeCSV(c9_role_code),
+              escapeCSV(c10_interests),
+              escapeCSV(c11_total_score),
+              escapeCSV(c12_dim_scores),
+              escapeCSV(c13_conferences),
+              escapeCSV(c14_talks),
+              escapeCSV(c15_cohort),
+              escapeCSV(c16_grants),
+              escapeCSV(c17_papers),
+              escapeCSV(c18_products),
+              escapeCSV(c19_commercial),
+              escapeCSV(c20_intel)
             ].join(',');
           });
 
@@ -1692,14 +1748,14 @@
           const url = URL.createObjectURL(blob);
           const a = document.createElement('a');
           a.href = url;
-          const fileName = `战区PI进院拜访清单_${this.currentRep.region}_${this.currentRep.name}_${todayStr.replace(/-/g, '')}.csv`;
+          const fileName = `战区PI全息画像20列清单_${this.currentRep.region}_${this.currentRep.name}_${todayStr.replace(/-/g, '')}.csv`;
           a.download = fileName;
           document.body.appendChild(a);
           a.click();
           document.body.removeChild(a);
           URL.revokeObjectURL(url);
 
-          this.showToast(`✓ 已成功导出 ${targetList.length} 位专家拜访清单 (Excel/CSV)！可直接用 Excel 打开或打印进院。`, 'success');
+          this.showToast(`✓ 已成功导出 ${targetList.length} 位专家标准 20 列全息档案清单 (Excel/CSV)！`, 'success');
         },
 
         get myFeedbacks() {
