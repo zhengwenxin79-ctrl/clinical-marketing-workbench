@@ -2135,6 +2135,191 @@ window.workbenchApp = function () {
     },
 
     // STAGE 2 Actions: Scrape Topics from Schedule / Ignore Scrape / Scrape PIs / Simulate Schedule Release
+    isScheduleReady(conf) {
+      if (!conf) return false;
+      const note = String(conf.scheduleStatusNote || conf.summary || conf.review_note || '').toLowerCase();
+      if (/尚未找到|未公布|待发布|待确认|待核实|具体科研讲题待补|部分获取/.test(note)) return false;
+      if (conf.schedulePublished === false) return false;
+      if (conf.scheduleUrl && conf.scheduleUrl !== '#' && conf.scheduleUrl !== conf.officialUrl) return true;
+      if (conf.sourceLinks && conf.sourceLinks.some(l => l.type === 'schedule' && !l.label.includes('未公布') && !l.label.includes('待发布'))) return true;
+      return false;
+    },
+
+    getScheduleLinkLabel(conf) {
+      if (!this.isScheduleReady(conf)) return '🌐 会议主页（详细日程未公布）';
+      return '📅 官方详细日程 ↗';
+    },
+
+    showScheduleScrapeModal: false,
+    selectedScrapeConf: null,
+    scheduleScrapeMode: 'auto', // 'auto' | 'paste'
+    scheduleScrapePastedText: '',
+    isScheduleScraping: false,
+    scheduleScrapeProgress: {
+      percent: 0,
+      message: '',
+      logs: []
+    },
+    _schedPollTimer: null,
+
+    openScheduleScrapeModal(conf) {
+      this.selectedScrapeConf = conf;
+      this.scheduleScrapeMode = 'auto';
+      this.scheduleScrapePastedText = '';
+      this.isScheduleScraping = false;
+      this.scheduleScrapeProgress = {
+        percent: 0,
+        message: '准备就绪，可选择启动 Agent 联网深搜或粘贴日程文本解析',
+        logs: []
+      };
+      this.showScheduleScrapeModal = true;
+    },
+
+    async startScheduleDeepScrape(isManual = false) {
+      if (this.isScheduleScraping || !this.selectedScrapeConf) return;
+      const conf = this.selectedScrapeConf;
+      this.isScheduleScraping = true;
+      this.scheduleScrapeProgress = {
+        percent: 15,
+        message: isManual ? '正在智能解析投喂的日程文本...' : `正在拉起 CodeBuddy CLI 定向深搜【${conf.title}】已公布学术日程...`,
+        logs: [
+          `[${new Date().toLocaleTimeString()}] 🚀 日程深抓任务启动（会议：${conf.title}，模式：${isManual ? '投喂文本解析' : '联网深搜'}）`
+        ]
+      };
+
+      try {
+        const payload = {
+          conference_id: conf.id,
+          conference_name: conf.title,
+          domain: conf.domain,
+          official_url: conf.officialUrl || '',
+          schedule_url: conf.scheduleUrl || conf.officialUrl || '',
+          pasted_text: isManual ? (this.scheduleScrapePastedText || '') : ''
+        };
+
+        const res = await fetch('http://127.0.0.1:8899/api/mailbox/dispatch-schedule-deep-scrape', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await res.json();
+        if (!data.success) {
+          this.isScheduleScraping = false;
+          this.scheduleScrapeProgress.message = '❌ 启动失败：' + (data.message || '网关响应错误');
+          this.showToast(this.scheduleScrapeProgress.message, 'error');
+          return;
+        }
+
+        if (this._schedPollTimer) clearInterval(this._schedPollTimer);
+        this._schedPollTimer = setInterval(async () => {
+          try {
+            const pRes = await fetch('http://127.0.0.1:8899/api/mailbox/progress');
+            const pd = await pRes.json();
+            if (pd.task_type === 'schedule_deep_scrape') {
+              this.scheduleScrapeProgress.percent = pd.percent || 20;
+              this.scheduleScrapeProgress.message = pd.message || '';
+              if (pd.logs && pd.logs.length) {
+                this.scheduleScrapeProgress.logs = pd.logs;
+              }
+
+              if (pd.status === 'done') {
+                clearInterval(this._schedPollTimer);
+                this._schedPollTimer = null;
+                this.isScheduleScraping = false;
+
+                const schedData = pd.schedule_data || {};
+                this.applyScrapedScheduleData(conf, schedData);
+              } else if (pd.status === 'failed') {
+                clearInterval(this._schedPollTimer);
+                this._schedPollTimer = null;
+                this.isScheduleScraping = false;
+                this.showToast('❌ 日程深抓未成功：' + (pd.error || pd.message || ''), 'error');
+              }
+            }
+          } catch (err) {
+            // keep polling
+          }
+        }, 1500);
+
+      } catch (err) {
+        this.isScheduleScraping = false;
+        this.scheduleScrapeProgress.message = '❌ 无法连接 8899 网关，请确认本地服务已启动';
+        this.showToast('无法连接 8899 网关，已保底完成基础议题入库', 'warning');
+        this.scrapeConferenceTopics(conf);
+        this.scrapeConferencePIs(conf);
+        setTimeout(() => { this.showScheduleScrapeModal = false; }, 1000);
+      }
+    },
+
+    applyScrapedScheduleData(conf, schedData) {
+      const topics = schedData.topics || [];
+      const speakers = schedData.speakers || [];
+      const schedStatus = schedData.schedule_status || '已公布详细日程';
+
+      conf.topicScrapeStatus = 'done';
+      conf.schedulePublished = (schedStatus === '已公布详细日程');
+      conf.scheduleStatusNote = schedStatus;
+      if (schedData.detailed_schedule_url && schedData.detailed_schedule_url !== '#') {
+        conf.scheduleUrl = schedData.detailed_schedule_url;
+      }
+      if (topics.length) {
+        conf.topics = topics.map(t => t.name).join('、');
+        conf.reportCount = Math.max(conf.reportCount || 0, topics.length * 6);
+      }
+      if (speakers.length) {
+        conf.speakers = speakers;
+      }
+
+      topics.forEach((tp, idx) => {
+        const tid = `TP-DEEP-${conf.id}-${idx}`;
+        if (!this.hotspotTopics.some(t => t.name === tp.name || t.id === tid)) {
+          this.hotspotTopics.unshift({
+            id: tid,
+            name: `【${conf.abbreviation || conf.title}】${tp.name}`,
+            domain: conf.domain,
+            boardName: `${conf.domain}前沿专题`,
+            reportCount: 8,
+            paperCount: 2,
+            confCounts: { [conf.id]: 8 },
+            confIds: [conf.id],
+            confLabels: `${conf.abbreviation || conf.title}(8条)`,
+            hasDomestic: true,
+            hasIntl: false,
+            leaders: (speakers || []).slice(0, 3).map((sp, sidx) => ({
+              key: `${conf.id}-SPK-${sidx}`,
+              name: sp.name,
+              hospital: sp.hospital,
+              tierCode: 'national',
+              roleLabel: sp.role || '全国学术带头人',
+              roleBasis: `${conf.title} 特邀讲者`,
+              scoreLabel: '重点讲者',
+              conf: conf.abbreviation || conf.title,
+              talkTitle: sp.topic || tp.sampleTalk || tp.name
+            })),
+            biomarkers: ['多组学分子分型 Panel', '外周血/组织转录组特征'],
+            sampleTalk: tp.sampleTalk || tp.name,
+            sampleReports: [
+              { id: tid + '-R1', conf: conf.abbreviation || conf.title, code: '学术报告', title: tp.sampleTalk || tp.name, date: conf.date ? conf.date.slice(0, 10) : '2026-11' }
+            ],
+            cutIn: conf.cutIn || `围绕【${conf.title}】${tp.name}，切入吉因加多组学临床转化与队列验证方案。`
+          });
+        }
+      });
+
+      if (speakers.length) {
+        this.scrapeConferencePIs(conf);
+      } else {
+        this.scrapeConferenceTopics(conf);
+      }
+
+      writeStore('clinical-workbench:conferences:v1', this.conferences);
+      this.showToast(`🎉【${conf.title}】日程深抓成功！已入库 ${topics.length} 个核心专题与 ${speakers.length} 位讲者 PI！`, 'success');
+      setTimeout(() => {
+        this.showScheduleScrapeModal = false;
+      }, 1000);
+    },
+
     scrapeConferenceTopics(conf) {
       conf.topicScrapeStatus = 'done';
       if (!conf.reportCount) conf.reportCount = 24;

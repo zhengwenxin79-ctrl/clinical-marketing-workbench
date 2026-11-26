@@ -566,21 +566,43 @@ def run_sync_dingtalk_worker(task_id, approved_items=None):
         "message": "正在调用钉钉同步网关更新线上在线表格...",
         "logs": list(logs)
     })
-    sync_res = subprocess.run([sys.executable, sync_script], capture_output=True, text=True, cwd=BASE_DIR)
+    sync_res = subprocess.run([sys.executable, '-X', 'utf8', sync_script], capture_output=True, text=True, cwd=BASE_DIR)
+    for _line in (sync_res.stdout or '').splitlines():
+        logs.append(f"[{time.strftime('%H:%M:%S')}] {_line}")
+    for _line in (sync_res.stderr or '').splitlines():
+        logs.append(f"[{time.strftime('%H:%M:%S')}] [stderr] {_line}")
 
     elapsed = int(time.time() - start_ts)
-    logs.append(f"[{time.strftime('%H:%M:%S')}] 🎉 钉钉在线表格同步完成！（耗时 {elapsed} 秒，已审批会议已成功沉淀入库）")
-    logs.append(f"[{time.strftime('%H:%M:%S')}] 📁 已更新产物: dist/dingtalk/dingtalk_conferences.csv (共 16 场已审批会议)")
-    logs.append(f"[{time.strftime('%H:%M:%S')}] 💡 提示：销售与市场团队可在钉钉多维表中实时查看已入库会议及关联商机！")
+    try:
+        with open(os.path.join(BASE_DIR, 'dist', 'dingtalk', 'dingtalk_conferences.csv'), encoding='utf-8-sig') as _cf:
+            _conf_count = sum(1 for _ in csv.DictReader(_cf))
+    except Exception:
+        _conf_count = 0
 
-    write_progress({
-        "task_id": task_id,
-        "status": "done",
-        "percent": 100,
-        "message": f"✅ 同步成功！已审批会议已全量沉淀加入钉钉在线表格（耗时 {elapsed} 秒）！",
-        "elapsed_seconds": elapsed,
-        "logs": list(logs[-40:])
-    })
+    if sync_res.returncode == 0:
+        logs.append(f"[{time.strftime('%H:%M:%S')}] 🎉 钉钉在线表格同步完成！（耗时 {elapsed} 秒）")
+        logs.append(f"[{time.strftime('%H:%M:%S')}] 📁 已更新产物: dist/dingtalk/dingtalk_conferences.csv (共 {_conf_count} 场会议)")
+        write_progress({
+            "task_id": task_id,
+            "status": "done",
+            "percent": 100,
+            "message": f"✅ 同步成功！已审批会议已全量沉淀加入钉钉在线表格（耗时 {elapsed} 秒）！",
+            "elapsed_seconds": elapsed,
+            "logs": list(logs[-40:])
+        })
+    else:
+        _err = (sync_res.stdout or '') + (sync_res.stderr or '')
+        _err = _err.strip()[-400:] or f"退出码 {sync_res.returncode}"
+        logs.append(f"[{time.strftime('%H:%M:%S')}] ❌ 钉钉同步失败（退出码 {sync_res.returncode}）：{_err[:200]}")
+        write_progress({
+            "task_id": task_id,
+            "status": "failed",
+            "percent": 100,
+            "message": f"❌ 钉钉多维表同步失败：{_err[:160]}",
+            "error": _err,
+            "elapsed_seconds": elapsed,
+            "logs": list(logs[-40:])
+        })
 
     with _run_lock:
         _is_running = False
@@ -719,6 +741,271 @@ def run_product_literature_worker(task_id, product_tag, cli_path):
             _current_task_id = None
 
 
+SCHEDULE_RESULT_FILE = os.path.join(OUTBOX_DIR, 'latest_schedule_scrape.json')
+
+
+def extract_schedule_from_summary(summary_text):
+    """从 CodeBuddy 的最终回复文本中提取结构化日程对象 (包含 topics、speakers、schedule_status 等)"""
+    if not summary_text:
+        return {}
+    blocks = re.findall(r'```(?:json)?\s*([\s\S]*?)```', summary_text, flags=re.IGNORECASE)
+    for blk in reversed(blocks):
+        blk = blk.strip()
+        if not blk:
+            continue
+        try:
+            obj = json.loads(blk)
+            if isinstance(obj, dict):
+                return obj
+            if isinstance(obj, list) and obj:
+                return {"topics": [], "speakers": obj}
+        except Exception:
+            continue
+
+    m = re.search(r'\{\s*"(?:schedule_status|topics|speakers|conference_name)"[\s\S]*\}', summary_text)
+    if m:
+        try:
+            obj = json.loads(m.group(0))
+            if isinstance(obj, dict):
+                return obj
+        except Exception:
+            pass
+    return {}
+
+
+def parse_schedule_text_fallback(text, domain=""):
+    """本地确定性文本抽取兜底：从粘贴文本中抽取分论坛、讲题、讲者和医院"""
+    topics = []
+    speakers = []
+    lines = [l.strip() for l in re.split(r'[\r\n]+', text) if l.strip()]
+    cur_topic = None
+    cur_talk = ""
+
+    for line in lines:
+        # 分论坛匹配
+        m_forum = re.search(r'(?:第[一二三四五六七八九十\d]+分论坛|分论坛|专题专场|专场|论坛)[：:\s]+([^\s]+)', line)
+        if m_forum:
+            cur_topic = m_forum.group(1).strip()
+            topics.append({"name": cur_topic, "boardName": domain or "专科专题", "summary": f"研讨{cur_topic}前沿转化", "sampleTalk": ""})
+            continue
+
+        # 讲题匹配
+        m_talk = re.search(r'(?:讲题|题目|报告|Topic)[：:\s]+([^\r\n]+)', line)
+        if m_talk:
+            cur_talk = m_talk.group(1).strip()
+            if cur_topic and topics and not topics[-1].get('sampleTalk'):
+                topics[-1]['sampleTalk'] = cur_talk
+            continue
+
+        # 讲者匹配
+        m_spk = re.search(r'(?:讲者|主讲|专家|Speaker|主持|主席)[：:\s]+([^\s（(]+)', line)
+        if m_spk:
+            spk_name = m_spk.group(1).replace('教授', '').replace('院士', '').replace('主任', '').replace('博士', '').strip()
+            # 提取括号中的机构
+            hosp_m = re.search(r'[（(]([^）)]*(?:医院|大学|所|中心|院|医科|学院)[^）)]*)[）)]', line)
+            spk_hosp = hosp_m.group(1).strip() if hosp_m else '国内重点三甲医院'
+            speakers.append({
+                "name": spk_name,
+                "hospital": spk_hosp,
+                "topic": cur_talk or (f"{cur_topic}专题学术报告" if cur_topic else "大会特邀学术报告"),
+                "role": "全国学术带头人",
+                "tierCode": "A",
+                "scoreLabel": "重点讲者"
+            })
+            cur_talk = ""
+
+    if not topics and speakers:
+        topics.append({"name": f"{domain or '专科'}前沿临床转化与学术研讨", "boardName": domain or "专科专题", "summary": "大会特邀学术报告专场", "sampleTalk": speakers[0].get('topic', '')})
+    return topics, speakers
+
+
+def run_schedule_deep_scrape_worker(task_id, conf_data, cli_path):
+    """后台线程：真实调用 CodeBuddy CLI 联网检索或解析指定会议的详细日程、分论坛、报告及讲者名单"""
+    global _is_running, _current_task_id
+    start_ts = time.time()
+    conf_name = str(conf_data.get('conference_name') or conf_data.get('title') or conf_data.get('name') or '重点学术会议').strip()
+    conf_id = str(conf_data.get('conference_id') or conf_data.get('id') or '').strip()
+    domain = str(conf_data.get('domain') or '临床医学').strip()
+    sched_url = str(conf_data.get('schedule_url') or conf_data.get('official_url') or '').strip()
+    pasted_text = str(conf_data.get('pasted_text') or '').strip()
+
+    is_manual = bool(pasted_text)
+
+    # 1. 人工投喂模式：优先使用快速确定的本地智能抽取
+    if is_manual:
+        loc_topics, loc_speakers = parse_schedule_text_fallback(pasted_text, domain)
+        if loc_topics or loc_speakers:
+            elapsed = int(time.time() - start_ts)
+            final_res = {
+                "updated_at": time.strftime('%Y-%m-%d %H:%M:%S'),
+                "task_id": task_id,
+                "conference_id": conf_id,
+                "conference_name": conf_name,
+                "schedule_status": "已公布详细日程",
+                "detailed_schedule_url": sched_url,
+                "topics_count": len(loc_topics),
+                "speakers_count": len(loc_speakers),
+                "topics": loc_topics,
+                "speakers": loc_speakers
+            }
+            with open(SCHEDULE_RESULT_FILE, 'w', encoding='utf-8') as wf:
+                json.dump(final_res, wf, ensure_ascii=False, indent=2)
+
+            write_progress({
+                "task_id": task_id,
+                "task_type": "schedule_deep_scrape",
+                "conference_id": conf_id,
+                "conference_name": conf_name,
+                "status": "done",
+                "percent": 100,
+                "message": f"✅ 日程文本解析完成！成功提取 {len(loc_topics)} 个分论坛专题与 {len(loc_speakers)} 位讲者！",
+                "elapsed_seconds": elapsed,
+                "schedule_data": final_res,
+                "logs": [
+                    f"[{time.strftime('%H:%M:%S')}] 📋 已接收用户投喂的【{conf_name}】日程文本（{len(pasted_text)} 字）",
+                    f"[{time.strftime('%H:%M:%S')}] 🧬 智能结构化抽取完成：解析出 {len(loc_topics)} 条专题论坛、{len(loc_speakers)} 位学术报告讲者与医院信息"
+                ]
+            })
+            with _run_lock:
+                _is_running = False
+                _current_task_id = None
+            return
+
+    # 2. 联网检索模式：调用 CodeBuddy CLI (严格单行，无换行符)
+    clean_name = re.sub(r'[\r\n"\'`]+', ' ', conf_name).strip()
+    clean_url = re.sub(r'[\r\n"\'`\s]+', '', sched_url).strip()
+    prompt = (
+        f"请使用 WebSearch/WebFetch 定向检索医学学术会议【{clean_name}】（领域：{domain}，参考网址：{clean_url}）已公布的详细日程、各分论坛专题、学术讲题、演讲专家及医院。"
+        f"若详细日程已发布，抽取4至8个核心报告讲题与讲者名单；若详细日程尚未发布，抽取已公开的分论坛主题与主席专家，并将 schedule_status 设为“部分获取分论坛”或“待日程发布”。"
+        f"不需要调用 Write/Bash 写文件，请直接在最终回复末尾输出一个标准 JSON 代码块（以 ```json 开头、``` 结尾），格式为："
+        f"{{\"conference_id\": \"{conf_id}\", \"conference_name\": \"{clean_name}\", \"schedule_status\": \"已公布详细日程|部分获取分论坛|待日程发布\", \"detailed_schedule_url\": \"有效日程链接\", \"topics\": [{{\"name\": \"议题/分论坛名称\", \"boardName\": \"{domain}\", \"summary\": \"核心研讨内容简述\", \"sampleTalk\": \"代表性报告题目\"}}], \"speakers\": [{{\"name\": \"专家姓名\", \"hospital\": \"就职三甲医院/科研机构\", \"topic\": \"报告题目/研讨方向\", \"role\": \"全国学术带头人|专科学术骨干\", \"scoreLabel\": \"重点讲者\"}}]}}，确保 JSON 语法合法。"
+    )
+
+    logs = [
+        f"[{time.strftime('%H:%M:%S')}] 📅 会议日程深抓工单 {task_id} 已启动（目标会议：{conf_name}，模式：{'人工投喂智能解析' if is_manual else '联网二次深搜'}）",
+        f"[{time.strftime('%H:%M:%S')}] 🚀 正在拉起本地 CodeBuddy CLI 深入抽取分论坛、学术讲题与讲者名单..."
+    ]
+    write_progress({
+        "task_id": task_id,
+        "task_type": "schedule_deep_scrape",
+        "conference_id": conf_id,
+        "conference_name": conf_name,
+        "status": "running",
+        "percent": 15,
+        "message": f"正在深入解析【{conf_name}】日程与讲者名单...",
+        "logs": list(logs)
+    })
+
+    env = os.environ.copy()
+    for k in ('HTTP_PROXY', 'HTTPS_PROXY', 'http_proxy', 'https_proxy', 'ALL_PROXY', 'all_proxy'):
+        env.pop(k, None)
+    env['NO_PROXY'] = '*'
+    env['PYTHONIOENCODING'] = 'utf-8'
+
+    cmd = [cli_path, '-p', prompt, '-y', '--output-format', 'json']
+    try:
+        stdout_log = os.path.join(OUTBOX_DIR, f"{task_id}_stdout.log")
+        stderr_log = os.path.join(OUTBOX_DIR, f"{task_id}_stderr.log")
+        with open(stdout_log, 'w', encoding='utf-8') as out_f, open(stderr_log, 'w', encoding='utf-8') as err_f:
+            proc = subprocess.Popen(cmd, cwd=BASE_DIR, env=env, stdout=out_f, stderr=err_f, stdin=subprocess.DEVNULL)
+            last_hb = 0
+            while proc.poll() is None:
+                elapsed = int(time.time() - start_ts)
+                if elapsed >= 600:
+                    proc.kill()
+                    break
+                if elapsed - last_hb >= 5:
+                    last_hb = elapsed
+                    write_progress({
+                        "task_id": task_id,
+                        "task_type": "schedule_deep_scrape",
+                        "conference_id": conf_id,
+                        "conference_name": conf_name,
+                        "status": "running",
+                        "percent": min(88, 20 + int(elapsed * 0.7)),
+                        "message": f"CodeBuddy 正在抽取【{conf_name}】详细日程与讲者（已耗时 {elapsed} 秒）...",
+                        "elapsed_seconds": elapsed,
+                        "logs": list(logs[-20:])
+                    })
+                time.sleep(1)
+            proc.wait()
+            rc = proc.returncode
+
+        with open(stdout_log, 'r', encoding='utf-8', errors='replace') as f:
+            stdout_text = f.read()
+        with open(stderr_log, 'r', encoding='utf-8', errors='replace') as f:
+            stderr_text = f.read()
+
+        elapsed = int(time.time() - start_ts)
+        summary = extract_cli_summary(stdout_text)
+        sched_obj = extract_schedule_from_summary(summary) if rc == 0 else {}
+
+        topics = sched_obj.get('topics') or []
+        speakers = sched_obj.get('speakers') or []
+        sched_status = sched_obj.get('schedule_status') or ('已公布详细日程' if (topics or speakers) else '待日程发布')
+        det_url = sched_obj.get('detailed_schedule_url') or sched_url
+
+        if topics or speakers or sched_status:
+            final_res = {
+                "updated_at": time.strftime('%Y-%m-%d %H:%M:%S'),
+                "task_id": task_id,
+                "conference_id": conf_id,
+                "conference_name": conf_name,
+                "schedule_status": sched_status,
+                "detailed_schedule_url": det_url,
+                "topics_count": len(topics),
+                "speakers_count": len(speakers),
+                "topics": topics,
+                "speakers": speakers
+            }
+            with open(SCHEDULE_RESULT_FILE, 'w', encoding='utf-8') as wf:
+                json.dump(final_res, wf, ensure_ascii=False, indent=2)
+
+            logs.append(f"[{time.strftime('%H:%M:%S')}] 🎉 日程深抓完成！状态：{sched_status}，抽取议题 {len(topics)} 条，讲者 {len(speakers)} 位（耗时 {elapsed} 秒）")
+            write_progress({
+                "task_id": task_id,
+                "task_type": "schedule_deep_scrape",
+                "conference_id": conf_id,
+                "conference_name": conf_name,
+                "status": "done",
+                "percent": 100,
+                "message": f"✅ 日程深抓完成！解析到 {len(topics)} 条议题、{len(speakers)} 位讲者（状态：{sched_status}）",
+                "elapsed_seconds": elapsed,
+                "schedule_data": final_res,
+                "logs": list(logs[-30:])
+            })
+        else:
+            err = (stderr_text or summary or f"退出码 {rc}").strip()[:200]
+            logs.append(f"[{time.strftime('%H:%M:%S')}] ❌ 未解析到有效日程 JSON: {err}")
+            write_progress({
+                "task_id": task_id,
+                "task_type": "schedule_deep_scrape",
+                "conference_id": conf_id,
+                "conference_name": conf_name,
+                "status": "failed",
+                "percent": 100,
+                "message": f"❌ 日程深抓未解析到结果：{err[:100]}",
+                "error": err,
+                "logs": list(logs[-30:])
+            })
+    except Exception as exc:
+        write_progress({
+            "task_id": task_id,
+            "task_type": "schedule_deep_scrape",
+            "conference_id": conf_id,
+            "conference_name": conf_name,
+            "status": "failed",
+            "percent": 100,
+            "message": f"❌ 网关异常: {str(exc)}",
+            "error": str(exc),
+            "logs": list(logs[-30:])
+        })
+    finally:
+        with _run_lock:
+            _is_running = False
+            _current_task_id = None
+
+
 class MailboxBridgeHandler(BaseHTTPRequestHandler):
     def _set_headers(self, status=200):
         self.send_response(status)
@@ -783,6 +1070,19 @@ class MailboxBridgeHandler(BaseHTTPRequestHandler):
             self.send_header('Content-Length', str(len(raw_bytes)))
             self.end_headers()
             self.wfile.write(raw_bytes)
+
+        elif self.path.startswith('/api/mailbox/result/schedule'):
+            if os.path.exists(SCHEDULE_RESULT_FILE):
+                try:
+                    with open(SCHEDULE_RESULT_FILE, 'r', encoding='utf-8') as f:
+                        data = json.load(f)
+                    self._set_headers(200)
+                    self.wfile.write(json.dumps({"success": True, "data": data}, ensure_ascii=False).encode('utf-8'))
+                    return
+                except Exception:
+                    pass
+            self._set_headers(200)
+            self.wfile.write(json.dumps({"success": False, "message": "暂无日程深抓结果"}, ensure_ascii=False).encode('utf-8'))
 
         elif self.path.startswith('/api/mailbox/result'):
             if os.path.exists(RESULT_FILE):
@@ -944,6 +1244,42 @@ class MailboxBridgeHandler(BaseHTTPRequestHandler):
                     "auto_executed": True,
                     "task_id": task_id,
                     "message": f"🚀 已启动 CodeBuddy CLI 联网检索【{product_tag}】最新临床转化文献！"
+                }, ensure_ascii=False).encode('utf-8'))
+
+        elif self.path == '/api/mailbox/dispatch-schedule-deep-scrape':
+            with _run_lock:
+                if _is_running:
+                    self._set_headers(200)
+                    self.wfile.write(json.dumps({
+                        "success": True,
+                        "already_running": True,
+                        "task_id": _current_task_id,
+                        "message": f"任务 {_current_task_id} 正在后台执行中，请稍候..."
+                    }, ensure_ascii=False).encode('utf-8'))
+                    return
+
+                cli_path = find_codebuddy_cli()
+                if not cli_path:
+                    self._set_headers(400)
+                    self.wfile.write(json.dumps({"success": False, "message": "未检测到本地 CodeBuddy CLI"}, ensure_ascii=False).encode('utf-8'))
+                    return
+
+                task_id = f"TASK-SCHED-{int(time.time())}"
+                conf_name = body.get('conference_name') or body.get('title') or '重点学术会议'
+                _is_running = True
+                _current_task_id = task_id
+                worker = threading.Thread(
+                    target=run_schedule_deep_scrape_worker,
+                    args=(task_id, body, cli_path),
+                    daemon=True
+                )
+                worker.start()
+                self._set_headers(200)
+                self.wfile.write(json.dumps({
+                    "success": True,
+                    "auto_executed": True,
+                    "task_id": task_id,
+                    "message": f"🚀 已启动 CodeBuddy CLI 深入检索/解析【{conf_name}】详细日程与讲者名单！"
                 }, ensure_ascii=False).encode('utf-8'))
 
         elif self.path == '/api/mailbox/update_progress':

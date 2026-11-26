@@ -791,6 +791,9 @@
                                 'bg-slate-100 text-slate-600 border-slate-200': item.tierCode === 'D'
                               }"
                               x-text="item.tierBadge"></span>
+                        <span class="text-xs font-bold px-2 py-0.5 rounded-full"
+                              :class="isScheduleReady(item) ? 'bg-emerald-50 text-emerald-700 border border-emerald-200' : 'bg-amber-50 text-amber-700 border border-amber-200'"
+                              x-text="isScheduleReady(item) ? '✓ 详细日程已就绪' : '⏳ 待详细日程公布'"></span>
                       </div>
                       <span class="text-xs text-slate-400" x-text="'📅 ' + item.date + ' · ' + item.city"></span>
                     </div>
@@ -804,8 +807,8 @@
                       <template x-for="lnk in item.sourceLinks" :key="lnk.url">
                         <a :href="lnk.url" target="_blank" rel="noopener"
                            class="inline-flex items-center gap-1 px-3 py-1 rounded-lg text-xs font-bold border transition-all"
-                           :class="lnk.type === 'schedule' ? 'bg-blue-50 text-blue-700 border-blue-200 hover:bg-blue-600 hover:text-white' : 'bg-slate-100 text-slate-700 border-slate-200 hover:bg-slate-800 hover:text-white'">
-                          <span x-text="lnk.label"></span>
+                           :class="lnk.type === 'schedule' ? (isScheduleReady(item) ? 'bg-blue-50 text-blue-700 border-blue-200 hover:bg-blue-600 hover:text-white' : 'bg-amber-50 text-amber-700 border-amber-200 hover:bg-amber-600 hover:text-white') : 'bg-slate-100 text-slate-700 border-slate-200 hover:bg-slate-800 hover:text-white'">
+                          <span x-text="lnk.type === 'schedule' ? (!isScheduleReady(item) ? '🌐 会议主页（详细日程未公布）' : lnk.label) : lnk.label"></span>
                           <span>&nearr;</span>
                         </a>
                       </template>
@@ -814,12 +817,14 @@
                     <!-- STATE 1: 提醒抓取日程议题 -->
                     <div x-show="item.topicScrapeStatus === 'pending'"
                          class="bg-amber-50 border border-amber-200 rounded-xl p-4 space-y-3">
-                      <div class="text-sm font-bold text-amber-900 flex items-center gap-2">
-                        <span class="w-2.5 h-2.5 rounded-full bg-amber-500 animate-ping"></span>
-                        🔔 官方日程已发布：是否抓取本会研究议题？
+                      <div class="text-sm font-bold text-amber-900 flex items-center justify-between flex-wrap gap-2">
+                        <div class="flex items-center gap-2">
+                          <span class="w-2.5 h-2.5 rounded-full bg-amber-500 animate-ping"></span>
+                          <span x-text="isScheduleReady(item) ? '🔔 官方详细日程已就绪：是否抽取本会学术议题与讲者？' : '⏳ 官方详细日程尚在发布筹备中：可联网深搜或投喂日程文本'"></span>
+                        </div>
                       </div>
                       <div class="flex items-center gap-3">
-                        <button @click="scrapeConferenceTopics(item)"
+                        <button @click="openScheduleScrapeModal(item)"
                                 class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-sm font-bold shadow-xs transition-all">
                           ⚡ 一键从日程抓取议题
                         </button>
@@ -849,7 +854,7 @@
                            class="bg-blue-50 border border-blue-200 rounded-xl p-4 flex flex-wrap items-center justify-between gap-3">
                         <span class="text-sm font-bold text-blue-900">👥 是否进一步抓取讲者 PI 归入专家库？</span>
                         <div class="flex items-center gap-2">
-                          <button @click="scrapeConferencePIs(item)"
+                          <button @click="openScheduleScrapeModal(item)"
                                   class="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-sm font-bold shadow-xs transition-all">
                             🎯 抓取讲者 PI 入库
                           </button>
@@ -858,6 +863,7 @@
                             暂不抓
                           </button>
                         </div>
+                      </div>
                       </div>
 
                       <div x-show="item.piScrapeStatus === 'done'"
@@ -2375,6 +2381,113 @@
             </a>
             <button @click="showLitDetailModal = false"
                     class="px-5 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-bold rounded-xl transition-all">
+              关闭
+            </button>
+          </div>
+        </div>
+      </template>
+    </div>
+  </div>
+
+  <!-- Modal 1.8: 📅 会议日程深抓与讲者抽取 Modal (双通道：联网深搜 / 人工投喂) -->
+  <div x-show="showScheduleScrapeModal"
+       x-cloak
+       x-transition.opacity
+       class="fixed inset-0 z-[60] bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
+    <div @click.outside="if (!isScheduleScraping) showScheduleScrapeModal = false"
+         class="bg-white rounded-2xl max-w-xl w-full p-6 shadow-2xl border border-blue-200 max-h-[90vh] overflow-y-auto space-y-4">
+      <template x-if="selectedScrapeConf">
+        <div class="space-y-4">
+          <!-- 头部 -->
+          <div class="flex items-start justify-between gap-3 border-b border-slate-100 pb-3">
+            <div>
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-bold text-white"
+                      :style="'background-color:' + getDomainColor(selectedScrapeConf.domain)"
+                      x-text="selectedScrapeConf.domain"></span>
+                <span class="text-xs font-bold px-2 py-0.5 rounded-full"
+                      :class="isScheduleReady(selectedScrapeConf) ? 'bg-emerald-50 text-emerald-700 border border-emerald-200' : 'bg-amber-50 text-amber-700 border border-amber-200'"
+                      x-text="isScheduleReady(selectedScrapeConf) ? '✓ 详细日程已就绪' : '⏳ 待详细日程公布'"></span>
+              </div>
+              <h3 class="text-lg font-black text-slate-900 mt-1 leading-snug" x-text="selectedScrapeConf.title"></h3>
+              <p class="text-xs text-slate-500 mt-0.5" x-text="'📅 会期：' + selectedScrapeConf.date + ' · 地点：' + (selectedScrapeConf.venue || selectedScrapeConf.city)"></p>
+            </div>
+            <button @click="if (!isScheduleScraping) showScheduleScrapeModal = false" class="text-slate-400 hover:text-slate-600 text-xl font-bold">✕</button>
+          </div>
+
+          <!-- 双通道模式选择 Tab -->
+          <div class="flex rounded-xl bg-slate-100 p-1 text-xs font-bold">
+            <button @click="scheduleScrapeMode = 'auto'"
+                    class="flex-1 py-2 rounded-lg transition-all"
+                    :class="scheduleScrapeMode === 'auto' ? 'bg-white text-blue-700 shadow-xs' : 'text-slate-600 hover:text-slate-900'">
+              🌐 通道 A：Agent 联网二次深搜
+            </button>
+            <button @click="scheduleScrapeMode = 'paste'"
+                    class="flex-1 py-2 rounded-lg transition-all"
+                    :class="scheduleScrapeMode === 'paste' ? 'bg-white text-blue-700 shadow-xs' : 'text-slate-600 hover:text-slate-900'">
+              📝 通道 B：投喂日程文本/微官网内容
+            </button>
+          </div>
+
+          <!-- 通道 A 内容 -->
+          <div x-show="scheduleScrapeMode === 'auto'" class="space-y-3">
+            <div class="bg-blue-50/60 border border-blue-200 rounded-xl p-3.5 text-xs text-blue-900 leading-relaxed space-y-1">
+              <div class="font-bold">💡 联网深搜说明：</div>
+              <p>系统将调度本地 CodeBuddy CLI 深入检索该会议已公开的详细学术日程、各分论坛专题、报告题目与讲者医院信息。</p>
+              <div class="text-slate-600 font-mono text-[11px] truncate" x-text="'目标网址：' + (selectedScrapeConf.scheduleUrl || selectedScrapeConf.officialUrl || '全网医学会议库定向追踪')"></div>
+            </div>
+            <button @click="startScheduleDeepScrape(false)"
+                    :disabled="isScheduleScraping"
+                    class="w-full py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white font-bold text-sm shadow-xs transition-all flex items-center justify-center gap-2">
+              <span x-show="!isScheduleScraping">🚀 立即启动 Agent 联网深搜</span>
+              <span x-show="isScheduleScraping">⏳ 正在联网深入检索中...</span>
+            </button>
+          </div>
+
+          <!-- 通道 B 内容 -->
+          <div x-show="scheduleScrapeMode === 'paste'" class="space-y-3">
+            <div class="bg-emerald-50/60 border border-emerald-200 rounded-xl p-3 text-xs text-emerald-900 leading-relaxed">
+              💡 针对<b>微信小程序、PDF长图或闭门会议</b>等静态网页抓取不到的日程，可直接从会议微官网或微信群通知中复制文本粘贴在此处，系统将自动结构化清洗出分论坛、讲题、讲者和所在医院。
+            </div>
+            <textarea x-model="scheduleScrapePastedText"
+                      rows="6"
+                      placeholder="在此直接粘贴日程文本，例如：&#10;第一分论坛：心血管代谢与泛血管健康&#10;讲题：泛血管动脉粥样硬化微环境单细胞空间组学&#10;讲者：葛均波 院士（复旦大学附属中山医院）&#10;第二分论坛：心衰前沿与精准转化&#10;讲题：心力衰竭患者血浆外泌体转录组预后模型&#10;讲者：张健 教授（中国医学科学院阜发医院）"
+                      class="w-full p-3 text-xs border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 font-mono leading-relaxed bg-slate-50/50"></textarea>
+            <button @click="startScheduleDeepScrape(true)"
+                    :disabled="isScheduleScraping || !scheduleScrapePastedText.trim()"
+                    class="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50 text-white font-bold text-sm shadow-xs transition-all flex items-center justify-center gap-2">
+              <span x-show="!isScheduleScraping">⚡ 智能解析日程文本并一键入库</span>
+              <span x-show="isScheduleScraping">⏳ 正在结构化解析中...</span>
+            </button>
+          </div>
+
+          <!-- 实时进度与日志区 -->
+          <div x-show="isScheduleScraping || (scheduleScrapeProgress.logs && scheduleScrapeProgress.logs.length)"
+               class="bg-slate-900 text-slate-100 rounded-xl p-3.5 space-y-2 text-xs font-mono">
+            <div class="flex items-center justify-between text-slate-300">
+              <span class="font-bold flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>执行进度</span>
+              </span>
+              <span class="text-emerald-400 font-bold" x-text="scheduleScrapeProgress.percent + '%'"></span>
+            </div>
+            <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+              <div class="bg-gradient-to-r from-blue-500 to-emerald-400 h-full transition-all duration-300"
+                   :style="'width: ' + scheduleScrapeProgress.percent + '%'"></div>
+            </div>
+            <div class="text-slate-300 font-semibold" x-text="scheduleScrapeProgress.message"></div>
+            <div class="max-h-28 overflow-y-auto space-y-0.5 text-[11px] text-slate-400 border-t border-slate-800 pt-1.5">
+              <template x-for="(log, idx) in scheduleScrapeProgress.logs" :key="idx">
+                <div class="leading-relaxed" x-text="log"></div>
+              </template>
+            </div>
+          </div>
+
+          <!-- 底部关闭 -->
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-end">
+            <button @click="showScheduleScrapeModal = false"
+                    :disabled="isScheduleScraping"
+                    class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl transition-all">
               关闭
             </button>
           </div>
