@@ -2525,6 +2525,7 @@ window.workbenchApp = function () {
     crawlProgress: 0,
     crawlStatusText: '',
     crawlLogs: [],
+    latestCrawlCsvName: '',
     lastCrawlTime: readStore('clinical-workbench:last-crawl-time', '2026-11-24 08:30'),
 
     scheduleConfig: readStore('clinical-workbench:crawl-schedule:v1', {
@@ -2548,12 +2549,22 @@ window.workbenchApp = function () {
       try {
         const res = await fetch('http://127.0.0.1:8899/api/mailbox/progress');
         const data = await res.json();
+        if (data && data.latest_csv_name) {
+          this.latestCrawlCsvName = data.latest_csv_name;
+        }
         if (data && data.is_running) {
           this.isCrawling = true;
           this.crawlProgress = typeof data.percent === 'number' ? data.percent : 15;
           this.crawlStatusText = data.message || '后台任务正在执行中...';
           this.crawlLogs = Array.isArray(data.logs) ? data.logs : [];
           this.pollMailboxProgress();
+          return;
+        }
+        if (data && data.status === 'done' && data.latest_csv_name) {
+          this.isCrawling = false;
+          this.crawlProgress = 100;
+          this.crawlStatusText = data.message || '上次抓取已完成，可直接下载最新表格';
+          this.crawlLogs = Array.isArray(data.logs) ? data.logs : [];
           return;
         }
       } catch (e) {
@@ -2564,6 +2575,11 @@ window.workbenchApp = function () {
         this.crawlStatusText = '';
         this.crawlLogs = [];
       }
+    },
+
+    downloadLatestCrawlExcel() {
+      window.open('http://127.0.0.1:8899/api/mailbox/download/latest', '_blank');
+      this.showToast(`📥 正在下载 ${this.latestCrawlCsvName || '最新抓取表格'}，下载后用 Excel 直接打开即可！`, 'success');
     },
 
     copyWorkBuddyPrompt() {
@@ -2633,6 +2649,7 @@ window.workbenchApp = function () {
           if (typeof data.percent === 'number') this.crawlProgress = data.percent;
           if (data.message) this.crawlStatusText = data.message;
           if (Array.isArray(data.logs) && data.logs.length) this.crawlLogs = data.logs;
+          if (data.latest_csv_name) this.latestCrawlCsvName = data.latest_csv_name;
 
           if (data.status === 'done') {
             this.stopCrawlPolling();

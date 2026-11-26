@@ -14,6 +14,7 @@ import time
 import shutil
 import threading
 import subprocess
+import urllib.parse
 from http.server import HTTPServer, BaseHTTPRequestHandler
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -447,8 +448,40 @@ class MailboxBridgeHandler(BaseHTTPRequestHandler):
             data = read_progress()
             data['is_running'] = _is_running
             data['cli_ready'] = bool(find_codebuddy_cli())
+            # 附带最新生成的 CSV/Excel 文件名，方便前端一键下载
+            csv_files = sorted(
+                [n for n in os.listdir(OUTBOX_DIR) if n.endswith(('.csv', '.xlsx'))],
+                key=lambda n: os.path.getmtime(os.path.join(OUTBOX_DIR, n)),
+                reverse=True
+            )
+            data['latest_csv_name'] = csv_files[0] if csv_files else ''
             self._set_headers(200)
             self.wfile.write(json.dumps(data, ensure_ascii=False).encode('utf-8'))
+
+        elif self.path.startswith('/api/mailbox/download/latest'):
+            ensure_dirs()
+            csv_files = sorted(
+                [n for n in os.listdir(OUTBOX_DIR) if n.endswith(('.csv', '.xlsx'))],
+                key=lambda n: os.path.getmtime(os.path.join(OUTBOX_DIR, n)),
+                reverse=True
+            )
+            if not csv_files:
+                self._set_headers(404)
+                self.wfile.write(json.dumps({"error": "outbox 中暂无可下载的表格文件"}, ensure_ascii=False).encode('utf-8'))
+                return
+            fname = csv_files[0]
+            fpath = os.path.join(OUTBOX_DIR, fname)
+            with open(fpath, 'rb') as f:
+                raw_bytes = f.read()
+            self.send_response(200)
+            content_type = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' if fname.endswith('.xlsx') else 'text/csv; charset=utf-8'
+            self.send_header('Content-Type', content_type)
+            self.send_header('Access-Control-Allow-Origin', '*')
+            encoded_name = urllib.parse.quote(fname)
+            self.send_header('Content-Disposition', f"attachment; filename=\"conference_crawl.csv\"; filename*=UTF-8''{encoded_name}")
+            self.send_header('Content-Length', str(len(raw_bytes)))
+            self.end_headers()
+            self.wfile.write(raw_bytes)
 
         elif self.path.startswith('/api/mailbox/result'):
             if os.path.exists(RESULT_FILE):
