@@ -2364,7 +2364,37 @@
                 </div>
               </div>
 
-              <!-- 2列并排：临床队列底数 & 适配多组学产品能力 -->
+              <!-- 展开式：近三年学术活动与学会任职 (第 10 列：近三年学术活动) -->
+            <div class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-2xs">
+              <div @click="piDrawerActivitiesOpen = !piDrawerActivitiesOpen"
+                   class="p-4 flex items-center justify-between cursor-pointer hover:bg-slate-50 transition-colors select-none">
+                <div class="flex items-center gap-2.5">
+                  <span class="text-lg">🏛️</span>
+                  <div>
+                    <span class="text-[10px] text-slate-400 uppercase block font-semibold">学会任职与共识执笔 (近三年学术活动 · 点击展开)</span>
+                    <span class="font-bold text-slate-800 text-sm" x-text="selectedPI.academicActivities || '中华医学会专科分会副主委 / 指南共识执笔人'"></span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-1 text-xs text-blue-600 font-bold">
+                  <span x-text="piDrawerActivitiesOpen ? '收起' : '展开详情'"></span>
+                  <span class="transition-transform duration-200" :class="piDrawerActivitiesOpen ? 'rotate-180' : ''">▼</span>
+                </div>
+              </div>
+              <div x-show="piDrawerActivitiesOpen" x-cloak class="p-4 bg-slate-50 border-t border-slate-100 space-y-2 text-xs">
+                <div class="p-3 rounded-xl bg-white border border-slate-200/80 space-y-1.5">
+                  <div class="flex items-start gap-2">
+                    <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-[10px] font-bold rounded shrink-0 mt-0.5">学会任职</span>
+                    <span class="font-bold text-slate-900 leading-relaxed" x-text="selectedPI.societyRoles || '中华医学会专科分会副主任委员 / 亚太专科学会执委；国家重点实验室主任'"></span>
+                  </div>
+                  <div class="flex items-start gap-2 pt-1.5 border-t border-slate-100 text-slate-600">
+                    <span class="px-2 py-0.5 bg-amber-50 text-amber-800 text-[10px] font-bold rounded shrink-0 mt-0.5">指南共识</span>
+                    <span class="leading-relaxed" x-text="selectedPI.guidelines || '以第一执笔人牵头制定多部国家级专科诊疗指南与专家共识，推动多中心队列标准化建设'"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2列并排：临床队列底数 & 适配多组学产品能力 -->
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
                 <div class="bg-white p-3.5 rounded-2xl border border-slate-200/80 shadow-2xs space-y-1">
                   <span class="text-slate-400 font-medium">🧬 临床样本队列底数</span>

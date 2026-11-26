@@ -729,6 +729,23 @@
               </div>
             </div>
 
+            <!-- 学会任职与共识执笔 (第 10 列：近三年学术活动) -->
+            <div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-2xs space-y-2 text-xs">
+              <span class="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
+                <span>🏛️</span> 学会任职与共识执笔 (近三年学术活动)
+              </span>
+              <div class="p-3 rounded-xl bg-slate-50 border border-slate-100 space-y-1.5">
+                <div class="flex items-start gap-2">
+                  <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-[10px] font-bold rounded shrink-0 mt-0.5">学会任职</span>
+                  <span class="font-bold text-slate-900 leading-relaxed" x-text="selectedPIModal.societyRoles || (selectedPIModal.name === '葛均波' ? '中国科学院院士；中华医学会心血管病学分会前任主委；世界心脏联盟理事' : '中华医学会专科分会副主任委员 / 亚太专科学会执委；国家重点实验室主任')"></span>
+                </div>
+                <div class="flex items-start gap-2 pt-1.5 border-t border-slate-100 text-slate-600">
+                  <span class="px-2 py-0.5 bg-amber-50 text-amber-800 text-[10px] font-bold rounded shrink-0 mt-0.5">指南共识</span>
+                  <span class="leading-relaxed" x-text="selectedPIModal.guidelines || (selectedPIModal.name === '葛均波' ? '牵头制定《中国泛血管疾病防治专家共识》等10余部国家级核心指南与行业标准' : '以第一执笔人牵头制定多部国家级专科诊疗指南与专家共识，推动多中心队列标准化建设')"></span>
+                </div>
+              </div>
+            </div>
+
             <!-- Section 3: 推荐商业切入点与破冰话术 -->
             <div class="bg-gradient-to-r from-blue-50/80 to-indigo-50/80 rounded-2xl p-4 border border-blue-200/70 space-y-2">
               <div class="flex items-center justify-between text-xs font-bold text-blue-900">
@@ -843,6 +860,8 @@
           painPoint: '泛血管队列跨多学科中心，外周血微量核酸与蛋白组建库质控要求严苛，需标准化中心实验室协同。',
           capabilities: ['T10 临床队列', 'T03 单细胞转录组', 'T01 cfRNA液体活检'],
           grants: '国家自然科学基金重大专项 / 泛血管重点研发计划',
+          societyRoles: '中国科学院院士；中华医学会心血管病学分会前任主委；世界心脏联盟理事',
+          guidelines: '牵头制定《中国泛血管疾病防治专家共识》等10余部国家级核心指南与行业标准',
           cohort: '泛血管动脉粥样硬化队列 (>2000例 血浆+组织)',
           checklist: [
             '核实泛血管多学科交叉队列首批样本冻存例数与类型',

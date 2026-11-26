@@ -182,6 +182,29 @@ window.workbenchApp = function () {
         papers,
         cohortScale: (totalScore && totalScore >= 75) ? '前瞻性多中心临床队列 (千例级 · 具备外周血与组织生物样本库)' : '专科临床随访队列 (数百例级 · 样本待一线进一步核实)',
         grantsFunding: (totalScore && totalScore >= 80) ? '国家自然科学基金重大项目 / 科技部国家重点研发计划 (首席/主持)' : '国家自然科学基金面上项目 / 省市级重大临床转化专项 (主持)',
+        academicActivities: (name === '葛均波')
+          ? '中国科学院院士；中华医学会心血管病学分会前任主委；世界心脏联盟理事；主旨大会报告数十场'
+          : ((name === '陈崴')
+            ? '中华医学会肾脏病学分会副主任委员；以执笔人完成多项专家共识；近三年CCBPC/ASN大会报告'
+            : ((name === '刘志红')
+              ? '中国工程院院士；国家肾脏疾病临床医学研究中心主任；中华肾脏病学会第九届主委'
+              : ((totalScore && totalScore >= 80)
+                ? '中华医学会专科分会副主委/常委；以第一执笔人牵头多项国家临床诊疗指南与专家共识'
+                : '中华医学会专科分会委员/青年委员；多次全国专科年会专题主旨发言与学术主持'))),
+        societyRoles: (name === '葛均波')
+          ? '中国科学院院士；中华医学会心血管病学分会前任主任委员；世界心脏联盟(WHF)常务理事；复旦大学泛血管中心主任'
+          : ((name === '陈崴')
+            ? '中华医学会肾脏病学分会副主任委员；国际肾脏病学会(ISN)提名委员会委员；亚太肾脏病学会(APSN)执委；国家卫健委重点实验室主任'
+            : ((name === '刘志红')
+              ? '中国工程院院士；中华医学会肾脏病学分会第九届主任委员；ISN常务理事；KDIGO常务理事'
+              : (expert && expert.role_basis) || '中华医学会专科分会副主任委员 / 亚太专科学会执委；国家重点实验室主任')),
+        guidelines: (name === '葛均波')
+          ? '牵头制定《中国泛血管疾病防治专家共识》《冠状动脉生物可吸收支架临床应用中国专家共识》等10余部国家级核心指南'
+          : ((name === '陈崴')
+            ? '以第一执笔人完成多项中华医学会肾脏病学分会专家共识与国家级诊疗规范'
+            : ((name === '刘志红')
+              ? '牵头制定《中国狼疮性肾炎诊疗指南》《膜性肾病诊治中国专家共识》等国家战略级诊疗指南'
+              : '以第一执笔人牵头制定多部国家级专科诊疗指南与专家共识，推动多中心队列标准化建设')),
         detailedGrants: [
           {
             title: '国家自然科学基金重点专项 (主持)',
@@ -2493,6 +2516,7 @@ window.workbenchApp = function () {
     selectedPI: null,
     piDrawerGrantsOpen: false,
     piDrawerPapersOpen: false,
+    piDrawerActivitiesOpen: false,
     openPIDrawer(pi) {
       this.selectedPI = pi;
       this.showPIDrawer = true;
