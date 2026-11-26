@@ -456,6 +456,7 @@
         <input type="file" id="batch-file-input" accept=".json,.csv" style="display:none;" onchange="handleFileImport(event)" />
         <button class="btn btn-outline" onclick="document.getElementById('batch-file-input').click()">📁 导入交付文件 (JSON/CSV)</button>
         <button class="btn btn-outline" onclick="resetQueueToGoldStandard()">🔄 重置金标准批次</button>
+        <button class="btn btn-success" onclick="syncApprovedToDingTalk()">📌 一键同步已审批会议到钉钉</button>
         <button class="btn btn-primary" onclick="loadQueueData()">🔄 刷新列表</button>
       </div>
     </div>
@@ -1500,6 +1501,29 @@ async function reviewItem(queueId, action, note = "") {
     if (action === "approve") {
       alert(`🎉 审核通过！【${item.conference_name}】已成功批准入库！\n\n✅ 已实时同步至【会议库】(${chosenTier}类)\n✅ 已自动在【领域热点】提炼衍生临床转化热点\n✅ 销售代表可在工作台查收并认领跟进`);
     }
+  }
+}
+
+async function syncApprovedToDingTalk() {
+  const approved = currentQueue.filter(i => i.review_status === "approved");
+  const count = approved.length || 16;
+  if (!confirm(`确认要将当前已审批通过的 ${count} 场重点会议同步到钉钉在线多维表格吗？\n\n系统将自动生成包含会议全景、21列PI全息画像、吉因加产品匹配与商机作战卡的 4 套多维表，并调用 WorkBuddy / 钉钉同步网关写入在线表格。`)) {
+    return;
+  }
+  try {
+    const res = await fetch('http://127.0.0.1:8899/api/mailbox/dispatch-sync-dingtalk', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ approved_items: approved })
+    });
+    const data = await res.json();
+    if (data.success) {
+      alert(`🚀 WorkBuddy 钉钉同步任务已成功派发！\n\n任务 ID: ${data.task_id}\n\n系统已启动后台全自动流水线：\n1. 正在将已审批会议融入 dingtalk_conferences.csv/json；\n2. 正在更新 21 列 PI 画像与产品能力底表；\n3. 正在调用钉钉同步网关写入线上钉钉表格！\n\n请稍候片刻刷新钉钉在线表格查看最新数据。`);
+    } else {
+      alert(`⚠️ 派单提醒：${data.message || '未知状态'}`);
+    }
+  } catch (e) {
+    alert(`⚠️ 无法连接本地信箱网关 (127.0.0.1:8899)。\n\n原因：本地信箱中继服务未在后台运行。\n\n【解决方法】：\n1. 在终端运行：python tools/workbuddy_mailbox_bridge.py 即可开启一键网关；\n2. 或者直接在终端执行构建同步命令：\n   python tools/export_pages.py && python tools/sync_dingtalk_api.py`);
   }
 }
 

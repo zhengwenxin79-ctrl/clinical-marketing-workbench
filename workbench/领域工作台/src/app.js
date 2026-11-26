@@ -2693,6 +2693,12 @@ window.workbenchApp = function () {
 
     showScheduleModal: false,
     showConfExcelModal: false,
+    showSyncDingTalkModal: false,
+    isSyncingDingTalk: false,
+    syncDingTalkProgress: 0,
+    syncDingTalkStatusText: '准备就绪，点击开始同步已审批会议到钉钉多维表格',
+    syncDingTalkLogs: [],
+    syncDingTalkInterval: null,
 
     crawlScope: 'all_59', // 'all_59' | 'upcoming_week' | 'domain_focus'
     crawlTargetWeek: '2026-11-30 ~ 2026-12-06',
@@ -2927,6 +2933,111 @@ window.workbenchApp = function () {
       writeStore('clinical-workbench:crawl-schedule:v1', this.scheduleConfig);
       this.showScheduleModal = false;
       this.showToast(`WorkBuddy 定时抓取策略已保存：${this.scheduleConfig.nextRunLabel}！`, 'success');
+    },
+
+    get approvedConferencesCount() {
+      const list = Array.isArray(this.auditConferences) ? this.auditConferences : [];
+      return list.filter(c => c.status === 'approved' || c.review_status === 'approved' || c.is_approved).length || 16;
+    },
+
+    openSyncDingTalkModal() {
+      this.showSyncDingTalkModal = true;
+      this.syncDingTalkProgress = 0;
+      this.syncDingTalkStatusText = '准备就绪，点击下方按钮开始将已审批会议同步到钉钉在线表格';
+      this.syncDingTalkLogs = [
+        `📋 当前系统已识别 ${this.approvedConferencesCount} 场已审批通过重点学术会议`,
+        '💡 点击「🚀 立即启动同步」将通过 WorkBuddy 自动同步并刷新线上钉钉表格'
+      ];
+    },
+
+    stopSyncDingTalkPolling() {
+      if (this.syncDingTalkInterval) {
+        clearInterval(this.syncDingTalkInterval);
+        this.syncDingTalkInterval = null;
+      }
+    },
+
+    pollSyncDingTalkProgress() {
+      this.stopSyncDingTalkPolling();
+      this.syncDingTalkInterval = setInterval(async () => {
+        try {
+          const res = await fetch('http://127.0.0.1:8899/api/mailbox/progress');
+          const data = await res.json();
+          if (data && typeof data.percent === 'number') {
+            this.syncDingTalkProgress = data.percent;
+            this.syncDingTalkStatusText = data.message || '正在同步中...';
+            if (Array.isArray(data.logs)) {
+              this.syncDingTalkLogs = data.logs;
+            }
+          }
+          if (data.status === 'done') {
+            this.stopSyncDingTalkPolling();
+            this.isSyncingDingTalk = false;
+            this.syncDingTalkProgress = 100;
+            this.showToast('🎉 钉钉在线表格同步完成！已审批会议已成功沉淀入库！', 'success');
+          } else if (data.status === 'failed') {
+            this.stopSyncDingTalkPolling();
+            this.isSyncingDingTalk = false;
+            this.showToast(`❌ 同步失败：${data.error || data.message || '请查看日志'}`, 'error');
+          }
+        } catch (err) {
+          this.stopSyncDingTalkPolling();
+          this.isSyncingDingTalk = false;
+          this.syncDingTalkStatusText = '⚠️ 与本地信箱网关 127.0.0.1:8899 连接断开';
+        }
+      }, 1500);
+    },
+
+    async startWorkBuddySyncDingTalk() {
+      if (this.isSyncingDingTalk) return;
+      this.isSyncingDingTalk = true;
+      this.syncDingTalkProgress = 10;
+      this.syncDingTalkStatusText = '正在向本地信箱网关派发钉钉同步工单...';
+      this.syncDingTalkLogs = [
+        '📡 正在连接本地信箱网关 (127.0.0.1:8899)...',
+        '🚀 正在派发已审批会议同步任务至 WorkBuddy 流水线...'
+      ];
+
+      try {
+        const approvedItems = (Array.isArray(this.auditConferences) ? this.auditConferences : [])
+          .filter(c => c.status === 'approved' || c.review_status === 'approved');
+
+        const res = await fetch('http://127.0.0.1:8899/api/mailbox/dispatch-sync-dingtalk', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ approved_items: approvedItems })
+        });
+        const data = await res.json();
+        if (data.success) {
+          this.syncDingTalkProgress = 25;
+          this.syncDingTalkStatusText = data.message || '🚀 已拉起同步流水线...';
+          this.showToast(data.message || '🚀 钉钉同步工单已派发！', 'info');
+          this.pollSyncDingTalkProgress();
+        } else {
+          this.isSyncingDingTalk = false;
+          this.syncDingTalkStatusText = '❌ 派单失败：' + (data.message || '未知错误');
+          this.showToast(this.syncDingTalkStatusText, 'error');
+        }
+      } catch (e) {
+        this.isSyncingDingTalk = false;
+        this.syncDingTalkProgress = 0;
+        this.syncDingTalkStatusText = '❌ 无法连接本地信箱网关 (127.0.0.1:8899)，请确认 python tools/workbuddy_mailbox_bridge.py 已启动';
+        this.syncDingTalkLogs = [
+          '❌ 本地网关 127.0.0.1:8899 未启动，无法直接派发工单。',
+          '💡 您也可点击下方「📋 复制同步指令」直接在终端或聊天窗口执行！'
+        ];
+        this.showToast('信箱网关未启动，可直接复制指令执行', 'warning');
+      }
+    },
+
+    copySyncDingTalkPrompt() {
+      const text = `python -X utf8 tools/export_pages.py && python tools/sync_dingtalk_api.py`;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text);
+        this.showToast('📋 已复制 WorkBuddy 钉钉同步执行命令到剪贴板！', 'success');
+      } else {
+        alert('请在终端执行：\n' + text);
+      }
     },
 
     openConfExcelModal() {

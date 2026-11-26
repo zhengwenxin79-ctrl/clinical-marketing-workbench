@@ -566,6 +566,12 @@
                     <span>⚡ 一键让 WorkBuddy 抓取会议</span>
                   </button>
 
+                  <!-- Button 1b: One-Click Sync Approved to DingTalk -->
+                  <button @click="openSyncDingTalkModal()"
+                          class="px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-sm font-bold shadow-xs transition-all flex items-center gap-2">
+                    <span>📌 一键同步已审批会议到钉钉</span>
+                  </button>
+
                   <!-- Button 2: Scheduled Auto-Crawl Config -->
                   <button @click="openScheduleModal()"
                           class="px-4 py-2.5 rounded-xl text-sm font-bold border transition-all flex items-center gap-2"
@@ -2666,6 +2672,90 @@
                   :disabled="isCrawling"
                   class="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white text-sm font-bold rounded-xl shadow-xs transition-all">
             <span x-text="isCrawling ? '🔄 正在巡检抓取中...' : '🚀 立即启动 WorkBuddy 抓取'"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5b: 📌 WorkBuddy 同步已审批会议到钉钉多维表格 Modal -->
+  <div x-show="showSyncDingTalkModal"
+       x-cloak
+       x-transition.opacity
+       class="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-xs flex items-center justify-center p-4">
+    <div @click.outside="showSyncDingTalkModal = false"
+         class="bg-white rounded-2xl max-w-2xl w-full p-7 shadow-2xl border border-slate-200 space-y-5 max-h-[90vh] overflow-y-auto">
+      
+      <div class="flex items-start justify-between gap-3">
+        <div>
+          <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">DINGTALK REAL-TIME SYNC</span>
+          <h3 class="text-xl font-bold text-slate-900 mt-0.5">📌 一键同步已审批会议到钉钉在线表格</h3>
+        </div>
+        <button @click="showSyncDingTalkModal = false" class="text-slate-400 hover:text-slate-600 text-xl font-bold">✕</button>
+      </div>
+
+      <div class="space-y-4 text-sm">
+        <!-- 概览卡片 -->
+        <div class="bg-emerald-50/70 p-4 rounded-xl border border-emerald-200 flex items-center justify-between">
+          <div>
+            <div class="font-bold text-emerald-950 text-base">已审批通过重点会议入库池</div>
+            <div class="text-xs text-emerald-700 mt-0.5">自动匹配吉因加产品与技术能力库，生成 21 列商机作战关联并推送到钉钉在线表格</div>
+          </div>
+          <div class="text-right">
+            <span class="text-2xl font-black text-emerald-700" x-text="approvedConferencesCount"></span>
+            <span class="text-xs text-emerald-600 font-bold ml-1">场会议已入库</span>
+          </div>
+        </div>
+
+        <!-- 进度条与状态 -->
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2.5">
+          <div class="flex items-center justify-between text-xs font-bold text-slate-700">
+            <span x-text="syncDingTalkStatusText"></span>
+            <span class="font-mono text-emerald-600" x-text="syncDingTalkProgress + '%'"></span>
+          </div>
+          <div class="w-full bg-slate-200 h-2.5 rounded-full overflow-hidden">
+            <div class="bg-emerald-600 h-full rounded-full transition-all duration-300"
+                 :style="'width: ' + syncDingTalkProgress + '%'"></div>
+          </div>
+          <!-- 实时日志窗 -->
+          <div class="bg-slate-900 text-slate-100 rounded-xl p-3.5 text-xs font-mono space-y-1.5 max-h-36 overflow-y-auto">
+            <template x-for="lg in syncDingTalkLogs" :key="lg">
+              <div x-text="lg"></div>
+            </template>
+          </div>
+        </div>
+
+        <!-- 调度与凭据指引 -->
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2 text-xs text-slate-600">
+          <div class="flex items-center justify-between font-bold text-slate-800">
+            <span>钉钉多维表格联动方式：</span>
+            <span class="text-emerald-700 font-mono">OpenAPI 直连 / 自动化定时同步 / Webhook 群通知</span>
+          </div>
+          <p>• <strong>已审批会议底表</strong>：<code class="text-slate-800 font-mono">dist/dingtalk/dingtalk_conferences.csv</code>（含会场、规模、参会大咖与蹲点建议）</p>
+          <p>• <strong>双向关联沉淀</strong>：自动在多维表中打通会议 ➔ PI 21列画像 ➔ 吉因加产品武器 ➔ 销售作战卡。</p>
+        </div>
+
+        <!-- 快捷操作区 -->
+        <div class="flex items-center justify-between pt-1">
+          <a href="workbuddy://home"
+             class="px-3 py-1.5 bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 rounded-lg text-xs font-bold transition-all shadow-2xs">
+            🔗 唤醒 WorkBuddy 客户端
+          </a>
+          <button @click="copySyncDingTalkPrompt()"
+                  class="px-3.5 py-1.5 bg-slate-800 hover:bg-slate-900 text-white rounded-lg text-xs font-bold transition-all shadow-2xs">
+            📋 复制同步执行命令
+          </button>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+        <span class="text-xs text-slate-400">已审批会议全量沉淀 · 双向关联自动补齐 · 零代码即刻入库</span>
+        <div class="flex items-center gap-3">
+          <button @click="showSyncDingTalkModal = false" class="px-5 py-2.5 bg-slate-100 text-slate-700 text-sm font-bold rounded-xl">关闭</button>
+          <button @click="startWorkBuddySyncDingTalk()"
+                  :disabled="isSyncingDingTalk"
+                  class="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50 text-white text-sm font-bold rounded-xl shadow-xs transition-all">
+            <span x-text="isSyncingDingTalk ? '🔄 正在同步钉钉表格中...' : '🚀 立即启动同步到钉钉'"></span>
           </button>
         </div>
       </div>

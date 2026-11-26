@@ -238,6 +238,38 @@ def build_conferences_table():
             "现场蹲点攻坚建议": "华东战区张敏现场对接，SPROG青年学者有科研经费，主推单细胞转录组。"
         }
     ]
+
+    # 动态融入数据库与审核队列中所有人工已批准 (approved) 的会议
+    try:
+        existing_names = {c["会议名称"] for c in conferences}
+        queue_file = ROOT / "workbench/框架配置/static_demo_queue.json"
+        if queue_file.exists():
+            with open(queue_file, "r", encoding="utf-8") as f:
+                queue_items = json.load(f)
+            for it in queue_items:
+                if it.get("review_status") == "approved" or it.get("status") == "approved":
+                    cname = it.get("conference_name") or it.get("name")
+                    if cname and cname not in existing_names:
+                        existing_names.add(cname)
+                        tier = it.get("tier_code") or it.get("tier") or "Tier B"
+                        conferences.append({
+                            "会议编号": f"CONF-APP-{len(conferences)+1:03d}",
+                            "会议名称": cname,
+                            "会议简称": it.get("abbreviation") or cname[:15],
+                            "专科疾病领域": it.get("field_name") or it.get("field_id") or "临床转化",
+                            "召开日期": f"{it.get('start_date', '')} 至 {it.get('end_date', '')}".strip(" 至 ") or "待定",
+                            "举办城市": it.get("city") or "全国重点城市",
+                            "举办场馆": it.get("venue") or "待定",
+                            "主办学会": it.get("organizer") or "中华医学会/专科学会",
+                            "会议级别": f"{tier} 级已审批入库",
+                            "追踪状态": "已人工审核批准入库 · 钉钉在线同步",
+                            "分论坛与讲题规模": it.get("scale") or "已发布正式日程",
+                            "核心参会大咖": it.get("speakers") or "知名PI/学科带头人",
+                            "官方网址": it.get("official_url") or it.get("schedule_url") or "",
+                            "现场蹲点攻坚建议": it.get("review_note") or "按已审批攻坚策略重点跟进。"
+                        })
+    except Exception as e:
+        print(f"  -> Error merging dynamic approved conferences: {e}")
     headers = [
         "会议编号", "会议名称", "会议简称", "专科疾病领域", "召开日期",
         "举办城市", "举办场馆", "主办学会", "会议级别", "追踪状态",

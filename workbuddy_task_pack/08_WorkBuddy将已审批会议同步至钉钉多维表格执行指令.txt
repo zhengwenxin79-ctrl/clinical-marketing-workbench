@@ -1,0 +1,30 @@
+# ==============================================================================
+# WorkBuddy 专项执行指令：将已审批会议全量同步至钉钉在线多维表格
+# 使用方法：全选复制本提示词，粘贴给 WorkBuddy 执行，或通过工作台“📌 一键同步已审批会议到钉钉”自动触发
+# ==============================================================================
+
+【任务目标】
+将当前系统/工作台中所有经过人工审核并批准入库（review_status = 'approved'）的临床学术会议，
+全自动同步写入钉钉在线多维表格（Aitable），并自动关联 21 列 PI 全息档案与吉因加产品技术武器库。
+
+【执行步骤与命令（终端执行）】
+1. 提取所有已审批会议并动态生成钉钉四套多维表（会议全景库、PI 21列画像库、产品能力库、商机作战卡）：
+   ```bash
+   python -X utf8 tools/export_pages.py
+   ```
+
+2. 调用钉钉自动化同步网关（写入钉钉多维表 OpenAPI 或发送群机器人更新卡片）：
+   ```bash
+   python tools/sync_dingtalk_api.py
+   ```
+
+3. 产物确认：
+   - 会议表路径：`dist/dingtalk/dingtalk_conferences.csv`（包含已批准会议与最新议程）
+   - PI全息大表：`dist/dingtalk/dingtalk_pi_database_21col.csv`（含学会任职/共识执笔/参会场次）
+   - 产品能力表：`dist/dingtalk/dingtalk_products_capabilities.csv`（T01-T17 / P01-P11）
+   - 商机作战卡：`dist/dingtalk/dingtalk_battle_cards.csv`（关联会议+PI+产品+销售）
+
+【已审批会议判定金标准】
+- 来源：`workbench/框架配置/static_demo_queue.json` 及 `conference_updates.db`
+- 状态标记：`review_status == 'approved'`
+- 优先级：保留人工复核确认的评级（Tier A / Tier B / Tier C）与攻坚建议
