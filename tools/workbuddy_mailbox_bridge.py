@@ -587,6 +587,138 @@ def run_sync_dingtalk_worker(task_id, approved_items=None):
         _current_task_id = None
 
 
+LIT_RESULT_FILE = os.path.join(OUTBOX_DIR, 'latest_product_lit.json')
+
+
+def run_product_literature_worker(task_id, product_tag, cli_path):
+    """后台线程：真实调用 CodeBuddy CLI 联网检索指定产品的最新非肿瘤临床转化与科研应用文献"""
+    global _is_running, _current_task_id
+    start_ts = time.time()
+    prod_desc = product_tag if product_tag and product_tag != '全部' else 'cfRNA液体活检、GM-seq血液甲基化/cfDNA细胞溯源、单细胞测序、时空组学、单细胞免疫组库V(D)J'
+
+    # 严格单行 prompt，避免 Windows .cmd 换行截断
+    prompt = (
+        f"请立刻使用 WebSearch 检索 2025-2026 年在 Nature/Science/Cell/Lancet/NEJM/JAMA/Circulation/Diabetes Care/Nature Medicine/Immunity 等顶刊发表的、"
+        f"聚焦【{prod_desc}】在非肿瘤六大临床领域（糖尿病与代谢、神经精神AD/卒中、呼吸慢病COPD、风湿免疫SLE/RA、心血管/CHIP、泛血管及器官损伤）的最新临床转化与科研应用代表性论文（5至8篇）。"
+        f"不需要调用 Write/Bash 写文件，请直接在最终回复末尾输出一个标准 JSON 代码块（以 ```json 开头、``` 结尾），格式为 "
+        f"{{\"items\": [{{\"title\": \"英文或中英文标题\", \"journal\": \"期刊名\", \"pubDate\": \"2025或2026-MM\", \"domain\": \"六大领域之一\", \"productTag\": \"cfRNA / 外泌体|GM-seq 甲基化|单细胞测序|Stereo-seq 时空组学|免疫组库 V(D)J之一\", \"appType\": \"临床转化应用|科研机制应用\", \"stage\": \"早筛转化应用|多中心队列验证|科研机制发现\", \"takeaway\": \"一句话核心临床发现与样本规模\", \"salesPitch\": \"吉因加对应产品销售切入话术\", \"url\": \"https://...\"}}]}}，确保 JSON 语法合法。"
+    )
+
+    logs = [
+        f"[{time.strftime('%H:%M:%S')}] 🧬 产品应用文献工单 {task_id} 已启动（方向：{prod_desc}）",
+        f"[{time.strftime('%H:%M:%S')}] 🚀 正在拉起本地 CodeBuddy CLI 检索 2025-2026 顶刊转化文献..."
+    ]
+    write_progress({
+        "task_id": task_id,
+        "task_type": "product_literature",
+        "status": "running",
+        "percent": 15,
+        "message": f"正在联网检索【{product_tag or '全产品'}】最新临床转化与应用文献...",
+        "logs": list(logs)
+    })
+
+    env = os.environ.copy()
+    for k in ('HTTP_PROXY', 'HTTPS_PROXY', 'http_proxy', 'https_proxy', 'ALL_PROXY', 'all_proxy'):
+        env.pop(k, None)
+    env['NO_PROXY'] = '*'
+    env['PYTHONIOENCODING'] = 'utf-8'
+
+    cmd = [cli_path, '-p', prompt, '-y', '--output-format', 'json']
+    try:
+        stdout_log = os.path.join(OUTBOX_DIR, f"{task_id}_stdout.log")
+        stderr_log = os.path.join(OUTBOX_DIR, f"{task_id}_stderr.log")
+        with open(stdout_log, 'w', encoding='utf-8') as out_f, open(stderr_log, 'w', encoding='utf-8') as err_f:
+            proc = subprocess.Popen(cmd, cwd=BASE_DIR, env=env, stdout=out_f, stderr=err_f, stdin=subprocess.DEVNULL)
+            last_hb = 0
+            while proc.poll() is None:
+                elapsed = int(time.time() - start_ts)
+                if elapsed >= 600:
+                    proc.kill()
+                    break
+                if elapsed - last_hb >= 5:
+                    last_hb = elapsed
+                    write_progress({
+                        "task_id": task_id,
+                        "task_type": "product_literature",
+                        "status": "running",
+                        "percent": min(88, 20 + int(elapsed * 0.6)),
+                        "message": f"CodeBuddy 正在检索【{product_tag or '全产品'}】最新顶刊应用文献（已耗时 {elapsed} 秒）...",
+                        "elapsed_seconds": elapsed,
+                        "logs": list(logs[-20:])
+                    })
+                time.sleep(1)
+            proc.wait()
+            rc = proc.returncode
+
+        with open(stdout_log, 'r', encoding='utf-8', errors='replace') as f:
+            stdout_text = f.read()
+        with open(stderr_log, 'r', encoding='utf-8', errors='replace') as f:
+            stderr_text = f.read()
+
+        elapsed = int(time.time() - start_ts)
+        summary = extract_cli_summary(stdout_text)
+        items = extract_items_from_summary(summary) if rc == 0 else []
+
+        if items:
+            # 合并保存到 latest_product_lit.json
+            existing = []
+            if os.path.exists(LIT_RESULT_FILE):
+                try:
+                    with open(LIT_RESULT_FILE, 'r', encoding='utf-8') as rf:
+                        old_j = json.load(rf)
+                        existing = old_j.get('items', []) if isinstance(old_j, dict) else []
+                except Exception:
+                    pass
+            seen = {str(x.get('title', '')).strip().lower() for x in existing}
+            added = 0
+            for it in items:
+                t = str(it.get('title', '')).strip().lower()
+                if t and t not in seen:
+                    existing.insert(0, it)
+                    seen.add(t)
+                    added += 1
+            with open(LIT_RESULT_FILE, 'w', encoding='utf-8') as wf:
+                json.dump({"updated_at": time.strftime('%Y-%m-%d %H:%M:%S'), "count": len(existing), "items": existing}, wf, ensure_ascii=False, indent=2)
+
+            logs.append(f"[{time.strftime('%H:%M:%S')}] 🎉 抓取完成！新增 {added} 篇产品最新应用文献（耗时 {elapsed} 秒）")
+            write_progress({
+                "task_id": task_id,
+                "task_type": "product_literature",
+                "status": "done",
+                "percent": 100,
+                "message": f"✅ 产品文献抓取完成！新增 {added} 篇（耗时 {elapsed} 秒）",
+                "elapsed_seconds": elapsed,
+                "lit_items": items,
+                "logs": list(logs[-30:])
+            })
+        else:
+            err = (stderr_text or summary or f"退出码 {rc}").strip()[:200]
+            logs.append(f"[{time.strftime('%H:%M:%S')}] ❌ 未解析到文献 JSON: {err}")
+            write_progress({
+                "task_id": task_id,
+                "task_type": "product_literature",
+                "status": "failed",
+                "percent": 100,
+                "message": f"❌ 产品文献抓取未解析到结果：{err[:100]}",
+                "error": err,
+                "logs": list(logs[-30:])
+            })
+    except Exception as exc:
+        write_progress({
+            "task_id": task_id,
+            "task_type": "product_literature",
+            "status": "failed",
+            "percent": 100,
+            "message": f"❌ 网关异常: {str(exc)}",
+            "error": str(exc),
+            "logs": list(logs[-30:])
+        })
+    finally:
+        with _run_lock:
+            _is_running = False
+            _current_task_id = None
+
+
 class MailboxBridgeHandler(BaseHTTPRequestHandler):
     def _set_headers(self, status=200):
         self.send_response(status)
@@ -776,6 +908,42 @@ class MailboxBridgeHandler(BaseHTTPRequestHandler):
                     "auto_executed": True,
                     "task_id": task_id,
                     "message": "🚀 已成功拉起 WorkBuddy 钉钉在线表格同步流水线！"
+                }, ensure_ascii=False).encode('utf-8'))
+
+        elif self.path == '/api/mailbox/dispatch-literature':
+            with _run_lock:
+                if _is_running:
+                    self._set_headers(200)
+                    self.wfile.write(json.dumps({
+                        "success": True,
+                        "already_running": True,
+                        "task_id": _current_task_id,
+                        "message": f"任务 {_current_task_id} 正在后台执行中，请稍候..."
+                    }, ensure_ascii=False).encode('utf-8'))
+                    return
+
+                cli_path = find_codebuddy_cli()
+                if not cli_path:
+                    self._set_headers(400)
+                    self.wfile.write(json.dumps({"success": False, "message": "未检测到本地 CodeBuddy CLI"}, ensure_ascii=False).encode('utf-8'))
+                    return
+
+                task_id = f"TASK-LIT-{int(time.time())}"
+                product_tag = body.get('product', 'cfRNA / 外泌体')
+                _is_running = True
+                _current_task_id = task_id
+                worker = threading.Thread(
+                    target=run_product_literature_worker,
+                    args=(task_id, product_tag, cli_path),
+                    daemon=True
+                )
+                worker.start()
+                self._set_headers(200)
+                self.wfile.write(json.dumps({
+                    "success": True,
+                    "auto_executed": True,
+                    "task_id": task_id,
+                    "message": f"🚀 已启动 CodeBuddy CLI 联网检索【{product_tag}】最新临床转化文献！"
                 }, ensure_ascii=False).encode('utf-8'))
 
         elif self.path == '/api/mailbox/update_progress':

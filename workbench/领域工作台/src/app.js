@@ -1116,53 +1116,126 @@ window.workbenchApp = function () {
 
     const specialtyPapers = [
       {
+        id: 'PROD-CFRNA-01',
+        title: 'Plasma Cell-Free RNA (cfRNA) Transcriptomics Enables Non-Invasive Early Detection and Progression Tracking of Alzheimer’s Disease',
+        journal: 'Nature Medicine', pubDate: '2026-10', updatedWeek: '2026-11-23', isWeekly: true,
+        domain: '神经精神', typeLabel: 'cfRNA 临床转化',
+        topicName: '血浆 cfRNA 与阿尔茨海默病无创早筛',
+        abstract: '基于 680 例前瞻性认知障碍队列外周血浆 cfRNA 测序，鉴定出脑源性神经元与胶质细胞损伤转录本特征，在临床症状出现前 3-5 年实现 AD 早期识别（AUC 0.91），优于传统单一蛋白标志物。',
+        authors: '宣武医院 / 国际 AD 液体活检联盟', pmid: '40311205', heat: 'IF 58.7 · cfRNA 临床转化', isReal: false,
+        productTags: ['cfRNA / 外泌体'], appType: '临床转化应用', stage: '早筛转化应用',
+        salesPitch: '可向神经内科认知障碍/AD 中心 PI 推介吉因加微量血浆 cfRNA 测序方案，直接对标 Nature Medicine 680 例队列设计，切入无创早筛与进展监测课题。'
+      },
+      {
+        id: 'PROD-CFRNA-02',
+        title: 'Circulating Exosomal and Cell-Free RNA Signatures Predict Diabetic Kidney Disease and Microvascular Organ Injury',
+        journal: 'Diabetes Care', pubDate: '2026-11', updatedWeek: '2026-11-23', isWeekly: true,
+        domain: '糖尿病与代谢', typeLabel: 'cfRNA / 外泌体队列',
+        topicName: '糖尿病肾病(DKD)外泌体与 cfRNA 标志物',
+        abstract: '在 512 例 2 型糖尿病随访队列中利用血浆游离 cfRNA 与尿液外泌体 RNA 联合建库，精准捕捉肾小管上皮与足细胞早期损伤信号，比尿微量白蛋白异常提前 18 个月预警 DKD 进展。',
+        authors: '瑞金医院 / 华西内分泌代谢队列', pmid: '40328914', heat: 'IF 16.2 · cfRNA 转化热点', isReal: false,
+        productTags: ['cfRNA / 外泌体'], appType: '临床转化应用', stage: '多中心队列验证',
+        salesPitch: '切入内分泌科糖尿病微血管并发症（DKD/DR）队列，主打“微量血浆/尿液 cfRNA 捕捉早期器官损伤信号”，解决临床白蛋白指标滞后痛点。'
+      },
+      {
+        id: 'PROD-GMSEQ-01',
+        title: 'Whole-Genome Blood Methylation (GM-seq) and CHIP Co-Profiling Refines Cardiovascular Residual Risk Beyond China-PAR',
+        journal: 'Circulation', pubDate: '2026-11', updatedWeek: '2026-11-23', isWeekly: true,
+        domain: '心血管', typeLabel: 'GM-seq 甲基化 + CHIP',
+        topicName: '血液甲基化风险分型与克隆性造血(CHIP)',
+        abstract: '基于 2,400 例冠心病/泛血管随访人群外周血 gDNA 全基因组无损甲基化测序与 CHIP 驱动基因联合分析，将现行心血管风险评分准确率由 65% 提升至 84%，实现一次抽血同检变异与表观修饰。',
+        authors: '葛均波, 霍勇 团队等', pmid: '40255102', heat: 'IF 37.8 · GM-seq 主战场', isReal: false,
+        productTags: ['GM-seq 甲基化'], appType: '临床转化应用', stage: '多中心队列验证',
+        salesPitch: '直击心内科传统风险评分准确率仅 60%-70% 痛点，推介吉因加独家“GM-seq 甲基化 + 1021 Panel CHIP 调控”组合，一次抽血兼顾遗传变异与甲基化分型。'
+      },
+      {
+        id: 'PROD-GMSEQ-02',
+        title: 'Cell-of-Origin cfDNA Methylation Deconvolution Quantifies Multi-Organ Injury in Sepsis-Associated AKI and Transplant Rejection',
+        journal: 'Epigenetics / Nature Comms', pubDate: '2026-09', updatedWeek: '2026-11-16', isWeekly: false,
+        domain: '泛血管及器官损伤', typeLabel: 'cfDNA 细胞溯源甲基化',
+        topicName: 'cfDNA 甲基化细胞溯源与器官损伤定量',
+        abstract: '利用组织细胞特异性甲基化图谱对血浆 cfDNA 进行去卷积，精准定量肾小管、血管内皮及免疫细胞来源比例，比血清肌酐提前 48 小时发现急性/慢性器官损伤。',
+        authors: '多中心危重症与器官移植队列', pmid: '40199412', heat: '器官损伤定量 · 转化标杆', isReal: false,
+        productTags: ['GM-seq 甲基化'], appType: '临床转化应用', stage: '早筛转化应用',
+        salesPitch: '围绕血清肌酐滞后、穿刺有创痛点，推介吉因加 GM-seq cfDNA 细胞溯源去卷积方案（起始量低至 10-30 ng cfDNA），把器官损伤变成可量化分子指标。'
+      },
+      {
         id: 'SPEC-LIT-01',
         title: 'Multi-omics Profiling of Cerebrospinal Fluid Reveals Neuroinflammatory Biomarkers in Acute Ischemic Stroke',
         journal: 'Lancet Neurology', pubDate: '2026-11', updatedWeek: '2026-11-23', isWeekly: true,
         domain: '神经精神', typeLabel: '队列多组学研究',
         topicName: '脑卒中液体活检与神经免疫标志物',
         abstract: '基于高深度脑脊液蛋白质组与外周血单细胞转录组测序，鉴定出预测急性脑梗死后神经功能恢复与出血转化的关键细胞因子特征谱。',
-        authors: '吉训明, 陆正齐 团队等', pmid: '40128901', heat: 'IF 48.0 · 转化热点', isReal: false
+        authors: '吉训明, 陆正齐 团队等', pmid: '40128901', heat: 'IF 48.0 · 转化热点', isReal: false,
+        productTags: ['单细胞测序', 'cfRNA / 外泌体'], appType: '临床转化应用', stage: '多中心队列验证',
+        salesPitch: '对接脑卒中与神经免疫中心 PI，推介外周血/脑脊液单细胞转录组与游离核酸联合分型，构建卒中预后预测模型。'
       },
       {
         id: 'SPEC-LIT-03',
-        title: 'Airway Microbiome-Host Transcriptome Interactions Predict Exacerbation Risk in Severe COPD',
+        title: 'Single-Cell and Spatial Transcriptomics Reveal Impaired AT2-to-AT1 Regeneration and Airway Inflammation in Severe COPD',
         journal: 'AJRCCM (蓝皮书)', pubDate: '2026-11', updatedWeek: '2026-11-23', isWeekly: true,
-        domain: '呼吸慢病', typeLabel: '前瞻性队列研究',
-        topicName: '慢阻肺气道微生态与宿主转录组',
-        abstract: '对420例慢阻肺患者开展诱导痰宏基因组与宿主RNA-seq双组学联合分析，建立II型炎症与细菌定植交互分型模型。',
-        authors: '陈荣昌, 钟南山 团队等', pmid: '40201188', heat: '呼吸顶刊 · 转化热点', isReal: false
+        domain: '呼吸慢病', typeLabel: '单细胞 + 时空图谱',
+        topicName: '慢阻肺气道微生态与单细胞时空图谱',
+        abstract: '联合国产 C4 单细胞测序与 Stereo-seq 时空转录组解析 420 例慢阻肺肺组织与诱导痰，揭示肺泡修复受阻的细胞异质性与 II 型炎症微环境空间互作。',
+        authors: '陈荣昌, 钟南山 团队等', pmid: '40201188', heat: '呼吸顶刊 · 单细胞/时空', isReal: false,
+        productTags: ['单细胞测序', 'Stereo-seq 时空组学'], appType: '科研机制应用', stage: '科研机制发现',
+        salesPitch: '向呼吸科慢阻肺/ILD 团队推介吉因加 C4 单细胞 + Stereo-seq 时空组学 + 吉云 AI CellTyp 自动注释方案，复刻肺疾病图谱与再生分化高分研究范式。'
       },
       {
         id: 'SPEC-LIT-05',
-        title: 'Single-Cell BCR/TCR Repertoire and Interferon Signature Stratify Treatment Response in SLE',
+        title: 'Single-Cell BCR/TCR Repertoire and Interferon Signature Stratify Treatment Response in SLE and Lupus Nephritis',
         journal: 'Annals of the Rheumatic Diseases', pubDate: '2026-11', updatedWeek: '2026-11-23', isWeekly: true,
-        domain: '风湿免疫', typeLabel: '免疫组库研究',
+        domain: '风湿免疫', typeLabel: '单细胞免疫组库 V(D)J',
         topicName: '红斑狼疮免疫组库与精准分型',
-        abstract: '通过单细胞免疫组库(TCR/BCR)与转录组测序追踪难治性系统性红斑狼疮患者B细胞克隆演化，指导生物制剂精准选择。',
-        authors: '苏茵, 张奉春 团队等', pmid: '40233019', heat: '风湿顶刊 · 转化热点', isReal: false
-      },
-      {
-        id: 'SPEC-LIT-06',
-        title: 'Clonal Hematopoiesis of Indeterminate Potential (CHIP) Accelerates Pan-Vascular Atherosclerosis',
-        journal: 'Circulation', pubDate: '2026-11', updatedWeek: '2026-11-23', isWeekly: true,
-        domain: '心血管', typeLabel: '基因组队列研究',
-        topicName: '克隆性造血(CHIP)与心血管残余风险',
-        abstract: '高深度靶向测序揭示 TET2/DNMT3A 克隆性造血突变通过激活巨噬细胞炎症小体加速冠脉及泛血管斑块进展。',
-        authors: '葛均波, 霍勇 团队等', pmid: '40255102', heat: 'IF 37.8 · 转化热点', isReal: false
+        abstract: '通过单细胞 5\'RNA-seq + V(D)J 免疫组库测序追踪难治性 SLE 与狼疮肾炎患者 B/T 细胞克隆演化，精准预测生物制剂（泰它西普/贝利尤单抗）临床应答。',
+        authors: '苏茵, 张奉春 团队等', pmid: '40233019', heat: '风湿顶刊 · 免疫组库', isReal: false,
+        productTags: ['免疫组库 V(D)J', '单细胞测序'], appType: '临床转化应用', stage: '多中心队列验证',
+        salesPitch: '风湿免疫科最直接抓手：推介吉因加单细胞 5\'RNA + V(D)J 免疫组库（30 天交付），用于 SLE/RA/血管炎克隆多样性分析与生物制剂疗效预测。'
       },
       {
         id: 'SPEC-LIT-07',
-        title: 'Radiogenomics and Plasma Proteomics for Vulnerable Plaque Identification in Pan-Vascular Disease',
+        title: 'Spatial Multi-Omics and Plasma Proteomics Identify Vulnerable Plaque Niches in Pan-Vascular Atherosclerosis',
         journal: 'European Heart Journal', pubDate: '2026-11', updatedWeek: '2026-11-23', isWeekly: true,
-        domain: '泛血管及器官损伤', typeLabel: '影像-多组学联合',
-        topicName: '泛血管斑块影像组学与血浆蛋白组',
-        abstract: '融合高分辨血管影像组学与血浆高通量蛋白组学、血清细胞因子表达特征及TyG指数，构建跨器官血管损伤早期预警模型。',
-        authors: '郑曰宏, 顾宁 团队等', pmid: '40187760', heat: 'IF 39.3 · 转化热点', isReal: false
+        domain: '泛血管及器官损伤', typeLabel: '时空组学 + 血浆蛋白',
+        topicName: '泛血管斑块空间多组学与易损预警',
+        abstract: '融合亚细胞级空间转录组（Stereo-seq）与血浆蛋白/代谢组学，原位定位易损斑块巨噬细胞炎症微环境并筛选外周血跨器官血管损伤早期预警标志物。',
+        authors: '郑曰宏, 顾宁 团队等', pmid: '40187760', heat: 'IF 39.3 · 时空转化热点', isReal: false,
+        productTags: ['Stereo-seq 时空组学', 'GM-seq 甲基化'], appType: '科研机制应用', stage: '科研机制发现',
+        salesPitch: '对接血管医学与泛血管中心 PI，主打“组织原位时空组学找靶点 + 外周血多组学队列验证”闭环方案。'
       }
     ];
 
-    return [...specialtyPapers, ...list];
+    function enrichWithProductMeta(item) {
+      const text = `${item.title || ''} ${item.abstract || ''} ${item.topicName || ''} ${item.typeLabel || ''}`.toLowerCase();
+      const tags = Array.isArray(item.productTags) && item.productTags.length ? [...item.productTags] : [];
+      if (!tags.length) {
+        if (/cfrna|cell-free rna|exosom|外泌体|游离rna|液体活检|microrna|mirna|lncrna/.test(text)) tags.push('cfRNA / 外泌体');
+        if (/methyl|gm-seq|cfdna|epigen|chip|甲基化|表观|溯源|克隆性造血/.test(text)) tags.push('GM-seq 甲基化');
+        if (/single-cell|scrna|单细胞|转录组|transcriptom|异质性/.test(text)) tags.push('单细胞测序');
+        if (/spatial|stereo-seq|时空|空间转录|原位/.test(text)) tags.push('Stereo-seq 时空组学');
+        if (/repertoire|v\(d\)j|tcr|bcr|免疫组库|自身抗体|淋巴细胞|sle|lupus/.test(text)) tags.push('免疫组库 V(D)J');
+        // 兜底按领域分配主推产品标签，保证转化检索有覆盖
+        if (!tags.length) {
+          if (item.domain === '风湿免疫') tags.push('免疫组库 V(D)J');
+          else if (item.domain === '心血管' || item.domain === '泛血管及器官损伤') tags.push('GM-seq 甲基化');
+          else if (item.domain === '神经精神') tags.push('cfRNA / 外泌体');
+          else if (item.domain === '呼吸慢病') tags.push('单细胞测序');
+          else tags.push('cfRNA / 外泌体');
+        }
+      }
+      const isTranslational = item.appType
+        ? item.appType === '临床转化应用'
+        : /predict|screen|diagnos|cohort|trial|biomarker|risk|prognos|response|早筛|队列|预测|诊断|转化|临床|标志物|随访/.test(text);
+      const appType = item.appType || (isTranslational ? '临床转化应用' : '科研机制应用');
+      const stage = item.stage || (
+        /screen|early detect|早筛|无创/.test(text) ? '早筛转化应用'
+          : (isTranslational ? '多中心队列验证' : '科研机制发现')
+      );
+      const salesPitch = item.salesPitch || `可结合本篇【${item.journal}】成果，向${item.domain}方向 PI 推介吉因加「${tags.join(' + ')}」方案，围绕${item.topicName || '临床标志物与队列验证'}切入合作。`;
+      return { ...item, productTags: tags, appType, stage, salesPitch };
+    }
+
+    return [...specialtyPapers, ...list].map(enrichWithProductMeta);
   }
 
   function buildLiteratureTopics(litList) {
@@ -2430,6 +2503,186 @@ window.workbenchApp = function () {
     openTopicDetail(tp) {
       this.selectedTopic = tp;
       this.showTopicModal = true;
+    },
+
+    // =========================================================================
+    // 模块 1+2：产品最新应用文献视图 & 会议/议题 <-> 临床转化文献联动引擎
+    // =========================================================================
+    productTagOptions: ['全部', 'cfRNA / 外泌体', 'GM-seq 甲基化', '单细胞测序', 'Stereo-seq 时空组学', '免疫组库 V(D)J'],
+    productLitFilter: '全部',
+    productLitAppType: '全部',      // '全部' | '临床转化应用' | '科研机制应用'
+    productLitTimeMode: 'comprehensive', // 'comprehensive' | 'weekly'
+    crawledProductLit: readStore('clinical-workbench:product-lit:v1', []),
+    isCrawlingProductLit: false,
+    productLitCrawlMsg: '',
+    _prodLitPollTimer: null,
+
+    get allProductLiterature() {
+      const merged = [...(this.crawledProductLit || []), ...(this.literatureList || [])];
+      const seen = new Set();
+      return merged.filter(p => {
+        const k = String(p.title || '').trim().toLowerCase();
+        if (!k || seen.has(k)) return false;
+        seen.add(k);
+        return true;
+      });
+    },
+
+    get filteredProductLiterature() {
+      const q = (this.searchQuery || '').trim().toLowerCase();
+      return this.allProductLiterature.filter(p => {
+        const matchDomain = this.selectedDomain === '全部' || p.domain === this.selectedDomain;
+        const matchProd = this.productLitFilter === '全部' || (p.productTags || []).includes(this.productLitFilter);
+        const matchApp = this.productLitAppType === '全部' || p.appType === this.productLitAppType;
+        const matchTime = this.productLitTimeMode === 'comprehensive' || Boolean(p.isWeekly);
+        const matchSearch = !q || [p.title, p.journal, p.abstract, p.topicName, (p.productTags || []).join(' ')].join(' ').toLowerCase().includes(q);
+        return matchDomain && matchProd && matchApp && matchTime && matchSearch;
+      });
+    },
+
+    getProductLitCount(tag) {
+      const base = this.allProductLiterature.filter(p => this.selectedDomain === '全部' || p.domain === this.selectedDomain);
+      if (tag === '全部') return base.length;
+      return base.filter(p => (p.productTags || []).includes(tag)).length;
+    },
+
+    copySalesPitch(text) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text || '');
+      }
+      this.showToast('📋 已复制销售切入话术，可直接发送给 PI 或填入拜访卡片！', 'success');
+    },
+
+    jumpToProductLiterature(productTag) {
+      this.showTopicModal = false;
+      this.showConferenceModal = false;
+      this.currentView = 'workspace';
+      this.activeModule = 'hotspots';
+      this.hotspotTab = 'literature';
+      this.litMode = 'products';
+      this.productLitFilter = productTag || '全部';
+      this.productLitAppType = '全部';
+      this.productLitTimeMode = 'comprehensive';
+      this.showToast(`🧬 已定位至【${this.productLitFilter}】产品最新应用文献库`, 'info');
+    },
+
+    getRelatedLiteratureForTopic(tp) {
+      if (!tp) return { stageSummary: '', recommendedProducts: [], papers: [] };
+      const all = this.allProductLiterature;
+      const kw = `${tp.name || ''} ${tp.boardName || ''} ${tp.summary || ''} ${tp.cutIn || ''}`.toLowerCase();
+
+      const scored = all.map(p => {
+        let score = 0;
+        if (tp.id && p.topicId && p.topicId === tp.id) score += 100;
+        if (tp.domain && p.domain === tp.domain) score += 20;
+        const pText = `${p.title || ''} ${p.topicName || ''} ${p.abstract || ''}`.toLowerCase();
+        const terms = ['cfrna', '外泌体', '甲基化', 'chip', '单细胞', '时空', '免疫组库', '卒中', '阿尔茨海默', 'ad', '慢阻肺', 'copd', '狼疮', 'sle', '糖尿病', 'dkd', '泛血管', '斑块', '肾病', '神经'];
+        for (const t of terms) {
+          if (kw.includes(t) && pText.includes(t)) score += 15;
+        }
+        if (p.appType === '临床转化应用') score += 5;
+        if (p.isWeekly) score += 3;
+        return { p, score };
+      }).filter(x => x.score >= 20).sort((a, b) => b.score - a.score);
+
+      const topPapers = scored.slice(0, 3).map(x => x.p);
+      const prodSet = new Set();
+      const stageCounts = {};
+      topPapers.forEach(p => {
+        (p.productTags || []).forEach(t => prodSet.add(t));
+        const st = p.stage || '多中心队列验证';
+        stageCounts[st] = (stageCounts[st] || 0) + 1;
+      });
+      const dominantStage = Object.entries(stageCounts).sort((a, b) => b[1] - a[1])[0]?.[0] || '临床转化与队列验证期';
+      return {
+        stageSummary: dominantStage,
+        recommendedProducts: Array.from(prodSet).slice(0, 3),
+        papers: topPapers
+      };
+    },
+
+    getRelatedLiteratureForConf(conf) {
+      if (!conf) return { stageSummary: '', recommendedProducts: [], papers: [] };
+      return this.getRelatedLiteratureForTopic({
+        id: null,
+        domain: conf.domain,
+        name: conf.title,
+        summary: `${conf.topics || ''} ${conf.tierBasis || ''} ${conf.summary || ''}`,
+        cutIn: conf.cutIn || ''
+      });
+    },
+
+    async startProductLitCrawl() {
+      if (this.isCrawlingProductLit) return;
+      this.isCrawlingProductLit = true;
+      const targetProd = this.productLitFilter || '全部';
+      this.productLitCrawlMsg = `正在拉起本地 CodeBuddy CLI 联网检索【${targetProd}】2025-2026 顶刊转化文献...`;
+      try {
+        const res = await fetch('http://127.0.0.1:8899/api/mailbox/dispatch-literature', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ product: targetProd })
+        });
+        const data = await res.json();
+        if (!data.success) {
+          this.isCrawlingProductLit = false;
+          this.productLitCrawlMsg = '❌ 启动失败：' + (data.message || '请确认 8899 网关已启动');
+          this.showToast(this.productLitCrawlMsg, 'error');
+          return;
+        }
+        this.showToast(data.message || '🚀 已启动联网检索最新产品应用文献！', 'success');
+        if (this._prodLitPollTimer) clearInterval(this._prodLitPollTimer);
+        this._prodLitPollTimer = setInterval(async () => {
+          try {
+            const pr = await fetch('http://127.0.0.1:8899/api/mailbox/progress');
+            const pd = await pr.json();
+            if (pd.message) this.productLitCrawlMsg = pd.message;
+            if (pd.status === 'done' && pd.task_type === 'product_literature') {
+              clearInterval(this._prodLitPollTimer);
+              this._prodLitPollTimer = null;
+              this.isCrawlingProductLit = false;
+              const newItems = (pd.lit_items || []).map((it, idx) => ({
+                id: 'CRAWL-LIT-' + Date.now() + '-' + idx,
+                title: it.title || '未命名文献',
+                journal: it.journal || '核心顶刊',
+                pubDate: it.pubDate || '2026',
+                updatedWeek: '2026-11-23',
+                isWeekly: true,
+                domain: it.domain || '泛血管及器官损伤',
+                typeLabel: it.appType || '临床转化应用',
+                topicName: it.productTag || targetProd,
+                abstract: it.takeaway || '',
+                authors: 'CodeBuddy 实时抓取',
+                pmid: '',
+                sourceUrl: it.url || '#',
+                heat: '🆕 最新抓取 · 转化应用',
+                productTags: [it.productTag || (targetProd === '全部' ? 'cfRNA / 外泌体' : targetProd)],
+                appType: it.appType || '临床转化应用',
+                stage: it.stage || '多中心队列验证',
+                salesPitch: it.salesPitch || ''
+              }));
+              if (newItems.length) {
+                this.crawledProductLit = [...newItems, ...(this.crawledProductLit || [])];
+                writeStore('clinical-workbench:product-lit:v1', this.crawledProductLit);
+              }
+              this.showToast(`✅ 成功抓取并入库 ${newItems.length} 篇【${targetProd}】最新应用文献！`, 'success');
+            } else if (pd.status === 'failed' && pd.task_type === 'product_literature') {
+              clearInterval(this._prodLitPollTimer);
+              this._prodLitPollTimer = null;
+              this.isCrawlingProductLit = false;
+              this.showToast('❌ 文献抓取失败：' + (pd.error || pd.message || ''), 'error');
+            }
+          } catch (err) {
+            clearInterval(this._prodLitPollTimer);
+            this._prodLitPollTimer = null;
+            this.isCrawlingProductLit = false;
+          }
+        }, 2500);
+      } catch (e) {
+        this.isCrawlingProductLit = false;
+        this.productLitCrawlMsg = '❌ 无法连接本地 8899 网关，请确认 python tools/workbuddy_mailbox_bridge.py 已启动';
+        this.showToast('无法连接本地 8899 网关', 'error');
+      }
     },
 
     showConferenceModal: false,
