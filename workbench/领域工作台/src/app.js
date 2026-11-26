@@ -2034,15 +2034,16 @@ window.workbenchApp = function () {
       this.showToast(`🔔 【${conf.abbreviation}】官方已发布详细日程！已自动转入“已发布日程”并生成议题抓取提醒！`, 'warning');
     },
 
-    // Computed Conference Lists
+    // Computed Conference Lists (按优先级 A > B > C > D 从高到低排序)
     get filteredConferences() {
       const q = this.searchQuery.trim().toLowerCase();
+      const rank = { A: 1, B: 2, C: 3, D: 4 };
       return this.conferences.filter(c => {
         const matchDomain = this.selectedDomain === '全部' || c.domain === this.selectedDomain;
         const matchTier = this.confTierFilter === 'all' || c.tierCode === this.confTierFilter;
         const matchSearch = !q || [c.title, c.topics, c.tierBasis, c.city].join(' ').toLowerCase().includes(q);
         return matchDomain && matchTier && matchSearch;
-      });
+      }).sort((a, b) => (rank[a.tierCode] || 5) - (rank[b.tierCode] || 5));
     },
 
     get publishedConferences() {
@@ -2055,12 +2056,13 @@ window.workbenchApp = function () {
 
     get filteredAuditConferences() {
       const q = this.searchQuery.trim().toLowerCase();
+      const rank = { A: 1, B: 2, C: 3, D: 4 };
       return this.auditConferences.filter(c => {
         const matchDomain = this.selectedDomain === '全部' || c.domain === this.selectedDomain;
         const matchTier = this.confTierFilter === 'all' || c.tierCode === this.confTierFilter;
         const matchSearch = !q || [c.title, c.summary, c.city, c.sourceAnchor].join(' ').toLowerCase().includes(q);
         return matchDomain && matchTier && matchSearch;
-      });
+      }).sort((a, b) => (rank[a.tierCode] || 5) - (rank[b.tierCode] || 5));
     },
 
     // STAGE 3 Computed: Hotspot Topics & Boards

@@ -147,12 +147,30 @@ def extract_items_from_summary(summary_text):
     return []
 
 
+def priority_sort_key(item):
+    """按优先级从高到低排序：A级/核心/特级 > B级/重点关注 > C级/常规关注 > D级/低优先级"""
+    if not isinstance(item, dict):
+        return 9
+    p = str(item.get('优先级') or item.get('priority') or item.get('tier_code') or '').upper()
+    if p.startswith('A') or '核心' in p or '特级' in p or '必参' in p or '强烈' in p:
+        return 1
+    if p.startswith('B') or '重点' in p:
+        return 2
+    if p.startswith('C') or '常规' in p:
+        return 3
+    if p.startswith('D') or '低' in p:
+        return 4
+    return 5
+
+
 def save_artifacts_from_items(task_id, items, target_week):
-    """由 Python 网关确定性落盘 latest_result.json 与 Excel 可直接打开的 UTF-8 BOM CSV"""
+    """由 Python 网关确定性落盘 latest_result.json 与 Excel 可直接打开的 UTF-8 BOM CSV（按优先级 A>B>C>D 排序）"""
     ensure_dirs()
     created = []
     if not items:
         return created
+
+    items = sorted(items, key=priority_sort_key)
 
     # 1. 写入 latest_result.json（供网页前端一键自动导入）
     result_obj = {
