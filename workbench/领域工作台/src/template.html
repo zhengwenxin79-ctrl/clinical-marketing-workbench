@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>临床科研热点工作台 · 智能营销闭环平台</title>
+  <script src="pdf.min.js"></script>
   <style id="legacy-styles" media="not all">__STYLE__</style>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -791,9 +792,11 @@
                                 'bg-slate-100 text-slate-600 border-slate-200': item.tierCode === 'D'
                               }"
                               x-text="item.tierBadge"></span>
-                        <span class="text-xs font-bold px-2 py-0.5 rounded-full"
+                        <span class="text-xs font-bold px-2 py-0.5 rounded-full cursor-pointer hover:opacity-80 transition-all select-none"
                               :class="isScheduleReady(item) ? 'bg-emerald-50 text-emerald-700 border border-emerald-200' : 'bg-amber-50 text-amber-700 border border-amber-200'"
-                              x-text="isScheduleReady(item) ? '✓ 详细日程已就绪' : '⏳ 待详细日程公布'"></span>
+                              @click.stop="openScheduleScrapeModal(item)"
+                              title="点击打开日程深搜与PDF/文本上传解析"
+                              x-text="isScheduleReady(item) ? '✓ 详细日程已就绪 (可重新抓取)' : '⏳ 待详细日程公布 (点击上传/深搜)'"></span>
                       </div>
                       <span class="text-xs text-slate-400" x-text="'📅 ' + item.date + ' · ' + item.city"></span>
                     </div>
@@ -812,6 +815,11 @@
                           <span>&nearr;</span>
                         </a>
                       </template>
+                      <button @click.stop="openScheduleScrapeModal(item)"
+                              type="button"
+                              class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold border border-emerald-300 bg-emerald-50 text-emerald-800 hover:bg-emerald-600 hover:text-white transition-all shadow-2xs">
+                        <span>📁 上传日程PDF / 深搜</span>
+                      </button>
                     </div>
 
                     <!-- STATE 1: 提醒抓取日程议题 -->
@@ -2468,22 +2476,34 @@
               <p>针对<b>点击微站「打印」导出的完整日程 PDF</b>、微信长图或小程序日程，可直接<b>上传 PDF 文件</b>，或从 PDF/网页中全选复制粘贴至下方文本框，系统将自动结构化清洗出全部专场与讲者。</p>
             </div>
 
-            <!-- PDF / 文本文件上传区域 -->
-            <div class="flex items-center gap-3 p-3 bg-slate-50 border border-dashed border-emerald-300 rounded-xl">
-              <label class="cursor-pointer inline-flex items-center gap-2 px-3.5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-bold shadow-2xs transition-all">
-                <span>📁 上传日程 PDF / 文本文件</span>
-                <input type="file"
-                       accept=".pdf,.txt,.text,.csv"
-                       @change="handleSchedulePDFUpload($event)"
-                       class="hidden">
-              </label>
-              <span class="text-[11px] text-slate-500">支持「打印」导出的完整 PDF 文件，自动提取全部分页文字</span>
+            <!-- PDF / 文本文件上传区域 (支持点击选择 + 拖拽拖入) -->
+            <div @dragover.prevent="isDraggingScheduleFile = true"
+                 @dragleave.prevent="isDraggingScheduleFile = false"
+                 @drop.prevent="isDraggingScheduleFile = false; handleSchedulePDFUpload($event)"
+                 @click="$refs.schedulePdfFileInput.click()"
+                 class="cursor-pointer p-4 rounded-xl border-2 border-dashed transition-all flex flex-col items-center justify-center text-center space-y-1.5 select-none"
+                 :class="isDraggingScheduleFile ? 'border-blue-500 bg-blue-50/90 scale-[1.01]' : 'border-emerald-300 hover:border-emerald-500 bg-emerald-50/40 hover:bg-emerald-50/70'">
+              <div class="flex items-center gap-2 text-emerald-700 font-bold text-xs">
+                <span class="text-lg">📄</span>
+                <span x-show="!isDraggingScheduleFile">点击选择 或 直接将日程 PDF / 文本拖入此处</span>
+                <span x-show="isDraggingScheduleFile" class="text-blue-600 font-extrabold animate-pulse">松开鼠标，立即自动解析 PDF 全量文字！</span>
+              </div>
+              <p class="text-[11px] text-slate-500">支持微官网「打印」导出的完整 PDF 手册、文本文件，内置本地 PDF.js 引擎秒级解析</p>
+              <input type="file"
+                     x-ref="schedulePdfFileInput"
+                     accept=".pdf,.txt,.text,.csv"
+                     @change="handleSchedulePDFUpload($event)"
+                     class="hidden">
             </div>
 
             <textarea x-model="scheduleScrapePastedText"
+                      @dragover.prevent="isDraggingScheduleFile = true"
+                      @dragleave.prevent="isDraggingScheduleFile = false"
+                      @drop.prevent="isDraggingScheduleFile = false; handleSchedulePDFUpload($event)"
                       rows="6"
-                      placeholder="也可在此直接粘贴日程文本或 PDF 复制内容，例如：&#10;第一分论坛：心血管代谢与泛血管健康&#10;讲题：泛血管动脉粥样硬化微环境单细胞空间组学&#10;讲者：葛均波 院士（复旦大学附属中山医院）&#10;第二分论坛：心衰前沿与精准转化&#10;讲题：心力衰竭患者血浆外泌体转录组预后模型&#10;讲者：张健 教授（中国医学科学院阜外医院）"
-                      class="w-full p-3 text-xs border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 font-mono leading-relaxed bg-slate-50/50"></textarea>
+                      placeholder="也可在此直接粘贴日程文本，或将 PDF 文件直接拖拽到此文本框中即可自动解析..."
+                      class="w-full p-3 text-xs border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 font-mono leading-relaxed bg-slate-50/50"
+                      :class="isDraggingScheduleFile ? 'border-blue-500 bg-blue-50/50 ring-2 ring-blue-400' : ''"></textarea>
             <button @click="startScheduleDeepScrape(true)"
                     :disabled="isScheduleScraping || !scheduleScrapePastedText.trim()"
                     class="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50 text-white font-bold text-sm shadow-xs transition-all flex items-center justify-center gap-2">

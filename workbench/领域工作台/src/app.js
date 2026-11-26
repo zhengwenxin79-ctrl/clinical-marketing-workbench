@@ -2191,6 +2191,7 @@ window.workbenchApp = function () {
     scheduleScrapeMode: 'auto', // 'auto' | 'paste'
     scheduleScrapePastedText: '',
     isScheduleScraping: false,
+    isDraggingScheduleFile: false,
     scheduleScrapeProgress: {
       percent: 0,
       message: '',
@@ -2198,40 +2199,99 @@ window.workbenchApp = function () {
     },
     _schedPollTimer: null,
 
-    handleSchedulePDFUpload(event) {
-      const file = event.target.files && event.target.files[0];
-      if (!file) return;
-
-      if (file.type === 'application/pdf' || file.name.endsWith('.pdf')) {
-        const reader = new FileReader();
-        this.showToast('📄 正在从 PDF 中提取全量日程文字...', 'info');
-        reader.onload = async (e) => {
-          const base64Data = String(e.target.result || '').split(',')[1];
-          try {
-            const res = await fetch('http://127.0.0.1:8899/api/mailbox/parse-pdf', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ filename: file.name, pdf_base64: base64Data })
-            });
-            const data = await res.json();
-            if (data.success && data.text) {
-              this.scheduleScrapePastedText = data.text;
-              this.showToast(`📄 成功解析【${file.name}】共 ${data.page_count} 页（${data.text.length} 字）！可直接点击下方一键智能入库。`, 'success');
-            } else {
-              this.showToast('PDF 文本提取失败：' + (data.message || '可能为纯图片扫描件'), 'error');
-            }
-          } catch (err) {
-            this.showToast('无法连接 8899 网关解析 PDF', 'error');
+    async parsePdfLocally(file) {
+      if (typeof window !== 'undefined' && window.pdfjsLib) {
+        try {
+          if (!window.pdfjsLib.GlobalWorkerOptions.workerSrc) {
+            window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'pdf.worker.min.js';
           }
-        };
-        reader.readAsDataURL(file);
+          const arrayBuffer = await file.arrayBuffer();
+          const loadingTask = window.pdfjsLib.getDocument({ data: arrayBuffer });
+          const pdf = await loadingTask.promise;
+          let fullText = '';
+          for (let i = 1; i <= pdf.numPages; i++) {
+            const page = await pdf.getPage(i);
+            const content = await page.getTextContent();
+            const strings = content.items.map(it => it.str).filter(s => s && s.trim());
+            if (strings.length) {
+              fullText += `=== 第 ${i} 页 ===\n` + strings.join(' ') + '\n\n';
+            }
+          }
+          if (fullText.trim()) {
+            return { success: true, text: fullText.trim(), page_count: pdf.numPages };
+          }
+        } catch (e) {
+          console.warn('本地 PDF.js 解析异常:', e);
+        }
+      }
+      return null;
+    },
+
+    async processScheduleFile(file) {
+      if (!file) return;
+      const isPdf = file.type === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf');
+      this.showToast(`📄 正在提取【${file.name}】日程内容...`, 'info');
+
+      if (isPdf) {
+        // 1. 优先尝试浏览器端原生 PDF.js 解析（零网络、零跨域限制、即刻完成）
+        try {
+          const localRes = await this.parsePdfLocally(file);
+          if (localRes && localRes.text) {
+            this.scheduleScrapePastedText = localRes.text;
+            this.showToast(`✅ 成功提取【${file.name}】共 ${localRes.page_count} 页（${localRes.text.length} 字）！请点击下方一键智能入库。`, 'success');
+            return;
+          }
+        } catch (localErr) {
+          console.warn('本地 pdf.js 解析遇阻，启用后台网关兜底:', localErr);
+        }
+
+        // 2. 兜底调用后台 8899 网关 Python pypdf 提取
+        try {
+          const reader = new FileReader();
+          reader.onload = async (e) => {
+            const base64Data = String(e.target.result || '').split(',')[1];
+            try {
+              const res = await fetch('http://127.0.0.1:8899/api/mailbox/parse-pdf', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ filename: file.name, pdf_base64: base64Data })
+              });
+              const data = await res.json();
+              if (data.success && data.text) {
+                this.scheduleScrapePastedText = data.text;
+                this.showToast(`✅ 成功解析【${file.name}】共 ${data.page_count} 页（${data.text.length} 字）！请点击下方一键智能入库。`, 'success');
+              } else {
+                this.showToast('PDF 文本提取失败：' + (data.message || '可能为纯图片扫描件'), 'error');
+              }
+            } catch (err) {
+              this.showToast('无法解析该 PDF，请检查是否为包含文字图层的学术日程 PDF，或直接复制日程文本粘贴。', 'error');
+            }
+          };
+          reader.readAsDataURL(file);
+        } catch (readErr) {
+          this.showToast('读取 PDF 失败：' + readErr.message, 'error');
+        }
       } else {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-          this.scheduleScrapePastedText = String(e.target.result || '');
-          this.showToast(`📄 成功导入文本文件（共 ${this.scheduleScrapePastedText.length} 字）！`, 'success');
-        };
-        reader.readAsText(file, 'utf-8');
+        // 纯文本文件 (.txt, .csv, .text)
+        try {
+          const text = await file.text();
+          this.scheduleScrapePastedText = text;
+          this.showToast(`✅ 成功导入文本文件【${file.name}】（共 ${text.length} 字）！`, 'success');
+        } catch (err) {
+          this.showToast('读取文本文件失败：' + err.message, 'error');
+        }
+      }
+    },
+
+    handleSchedulePDFUpload(event) {
+      this.isDraggingScheduleFile = false;
+      const file = (event.target && event.target.files && event.target.files[0]) ||
+                   (event.dataTransfer && event.dataTransfer.files && event.dataTransfer.files[0]);
+      if (file) {
+        this.processScheduleFile(file);
+      }
+      if (event.target && event.target.value) {
+        event.target.value = '';
       }
     },
 
