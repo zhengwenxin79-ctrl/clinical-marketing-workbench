@@ -625,7 +625,7 @@
                       <span>📅 <span x-text="item.date"></span></span>
                       <span>📍 <span x-text="item.venue || item.city"></span></span>
                     </p>
-                    <p class="text-sm text-slate-600 bg-slate-50 p-3.5 rounded-xl border border-slate-100 line-clamp-2 mb-3" x-text="item.summary"></p>
+                    <p class="text-sm text-slate-600 bg-slate-50 p-3.5 rounded-xl border border-slate-100 leading-relaxed whitespace-pre-line break-words mb-3" x-text="item.summary"></p>
 
                     <!-- Direct Clickable Source & Schedule Links from Gold-Standard Excel/CSV -->
                     <div x-show="item.sourceLinks && item.sourceLinks.length" class="flex flex-wrap items-center gap-2">
