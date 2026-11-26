@@ -446,6 +446,23 @@ def run_codebuddy_worker(task_id, task_payload, cli_path):
                 for ln in first_lines:
                     logs.append(f"📝 {ln[:140]}")
 
+            # 自动化触发：执行后置构建 Hook，刷新工作台并重新输出钉钉 4 套数据库 (export_pages.py -> export_dingtalk.py)
+            try:
+                export_script = os.path.join(BASE_DIR, 'tools', 'export_pages.py')
+                if os.path.exists(export_script):
+                    logs.append(f"[{time.strftime('%H:%M:%S')}] 🔄 正在自动触发全库更新与钉钉多维表同步 (export_pages.py)...")
+                    sub_res = subprocess.run([sys.executable, '-X', 'utf8', export_script], capture_output=True, text=True, cwd=BASE_DIR)
+                    if sub_res.returncode == 0:
+                        logs.append(f"[{time.strftime('%H:%M:%S')}] 🚀 钉钉多维表与工作台数据已自动全量刷新成功！")
+                        # 尝试调用钉钉同步网关 (sync_dingtalk_api.py)
+                        sync_script = os.path.join(BASE_DIR, 'tools', 'sync_dingtalk_api.py')
+                        if os.path.exists(sync_script):
+                            subprocess.run([sys.executable, sync_script], capture_output=True, text=True, cwd=BASE_DIR)
+                    else:
+                        logs.append(f"[{time.strftime('%H:%M:%S')}] ⚠️ 触发自动构建警告: {sub_res.stderr[:200]}")
+            except Exception as e:
+                logs.append(f"[{time.strftime('%H:%M:%S')}] ⚠️ 触发自动构建异常: {e}")
+
             write_progress({
                 "task_id": task_id,
                 "status": "done",
