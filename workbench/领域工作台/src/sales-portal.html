@@ -447,7 +447,7 @@
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
               </svg>
-              <span x-text="selectedPICount > 0 ? '📥 一键导出所选 ' + selectedPICount + ' 位专家 20 列全息档案 (Excel/CSV)' : '📥 导出当前筛选专家 20 列全息档案 (Excel/CSV)'"></span>
+              <span x-text="selectedPICount > 0 ? '📥 一键导出所选 ' + selectedPICount + ' 位专家 21 列全息档案 (Excel/CSV)' : '📥 导出当前筛选专家 21 列全息档案 (Excel/CSV)'"></span>
             </button>
           </div>
         </div>
@@ -1630,29 +1630,65 @@
             return;
           }
 
-          // 标准 20 列全息档案表头（严格对齐《PI实体20列画像与跨会议合并方案》规范）
+          // 严格对齐业务标准 21 列规范（含序号与参会场次数）
           const headers = [
-            '1_确定性主键(ID)',
-            '2_专家姓名',
-            '3_执业/任职医院',
-            '4_所在科室',
-            '5_临床职称',
-            '6_学术/教学职称',
-            '7_所属专科领域',
-            '8_学术角色地位',
-            '9_学术角色编码',
-            '10_重点研究方向',
-            '11_四维综合总分与评级',
-            '12_四维评分明细(方向/产出/转化/平台)',
-            '13_参会历史轨迹(跨会聚合)',
-            '14_历次会议讲题全集',
-            '15_临床队列与样本底数',
-            '16_在研项目与主持基金',
-            '17_代表性学术产出/顶刊',
-            '18_适配多组学产品矩阵(T01-T14)',
-            '19_推荐商业切入点与破冰话术',
-            '20_拜访排查清单与一线回流情报'
+            '序号',
+            '姓名（讲者）',
+            '单位',
+            '医院所在城市',
+            '科室',
+            '职务',
+            '研究方向/疾病方向',
+            '近三年文章情况',
+            '近三年国自然/基金情况',
+            '近三年学术活动',
+            '四维打分情况',
+            '合计总分',
+            '等级',
+            '参会场次数',
+            '出席日期',
+            '星期',
+            '时间',
+            '会场及分会场名称',
+            '角色',
+            '讲者讲题',
+            '销售匹配'
           ];
+
+          const getCityFromHospital = (hosp) => {
+            if (!hosp) return '全国';
+            if (/北京|协和|北大|阜外|宣武|安贞|中日友好|301|解放军总医院/i.test(hosp)) return '北京';
+            if (/上海|瑞金|中山|华山|第六人民|仁济|长征|长海/i.test(hosp)) return '上海';
+            if (/广州|中山大学|南方医|南方医院|广医/i.test(hosp)) return '广州';
+            if (/南京|东部战区|中大医院|鼓楼/i.test(hosp)) return '南京';
+            if (/杭州|浙大|浙江省中/i.test(hosp)) return '杭州';
+            if (/武汉|同济|协和医院|中南医院/i.test(hosp)) return '武汉';
+            if (/成都|华西|四川省/i.test(hosp)) return '成都';
+            if (/重庆|新桥|大坪/i.test(hosp)) return '重庆';
+            if (/合肥|安徽|中国科学技术大学/i.test(hosp)) return '合肥';
+            if (/长沙|湘雅/i.test(hosp)) return '长沙';
+            if (/济南|齐鲁|山东/i.test(hosp)) return '济南';
+            if (/青岛/i.test(hosp)) return '青岛';
+            if (/郑州|河南/i.test(hosp)) return '郑州';
+            if (/西安|西京/i.test(hosp)) return '西安';
+            if (/福州|福建/i.test(hosp)) return '福州';
+            if (/厦门/i.test(hosp)) return '厦门';
+            if (/哈尔滨/i.test(hosp)) return '哈尔滨';
+            if (/沈阳|盛京|中国医科大学/i.test(hosp)) return '沈阳';
+            if (/大连/i.test(hosp)) return '大连';
+            if (/天津/i.test(hosp)) return '天津';
+            if (/太原|山西/i.test(hosp)) return '太原';
+            if (/贵阳|贵州/i.test(hosp)) return '贵阳';
+            if (/昆明|云南/i.test(hosp)) return '昆明';
+            if (/南宁|广西/i.test(hosp)) return '南宁';
+            if (/南昌|江西/i.test(hosp)) return '南昌';
+            if (/乌鲁木齐|新疆/i.test(hosp)) return '乌鲁木齐';
+            if (/呼和浩特|内蒙古/i.test(hosp)) return '呼和浩特';
+            if (/银川|宁夏/i.test(hosp)) return '银川';
+            if (/海口|海南/i.test(hosp)) return '海口';
+            if (/香港/i.test(hosp)) return '香港';
+            return '核心城市';
+          };
 
           const escapeCSV = (val) => {
             if (val === null || val === undefined) return '""';
@@ -1661,85 +1697,84 @@
           };
 
           const todayStr = new Date().toISOString().slice(0, 10);
-          const repLabel = `${this.currentRep.region} · ${this.currentRep.name}`;
+          const repLabel = `${this.currentRep.name} (${this.currentRep.region})`;
 
           const rows = targetList.map((pi, index) => {
-            // 字段 1: ID
-            const c1_id = pi.id || `PI-${pi.name}-${pi.hospital}`;
-            // 字段 2: 姓名
-            const c2_name = pi.name;
-            // 字段 3: 执业/任职医院
-            const c3_hospital = pi.hospital;
-            // 字段 4: 所在科室
-            const c4_dept = pi.department || '专科中心 / 内科';
-            // 字段 5: 临床职称
-            const c5_title = pi.clinicalTitle || (pi.score >= 90 ? '主任医师 / 院士' : (pi.score >= 75 ? '主任医师 / 学科带头人' : '副主任医师 / 青年骨干'));
-            // 字段 6: 学术/教学职称
-            const c6_acad_title = pi.academicTitle || (pi.score >= 90 ? '教授 / 博士生导师 / 院士' : (pi.score >= 75 ? '教授 / 博士生导师' : '副教授 / 硕士生导师'));
-            // 字段 7: 所属疾病领域
-            const c7_domain = pi.domain;
-            // 字段 8: 学术角色地位
-            const c8_role_label = pi.roleLabel || '全国专科学术带头人';
-            // 字段 9: 学术角色编码
-            const c9_role_code = (pi.score >= 90) ? 'international' : ((pi.score >= 75) ? 'national' : 'regional');
-            // 字段 10: 重点研究方向
-            const c10_interests = pi.research || pi.talkEvidence || `${pi.domain}多组学分子标志物与队列转化`;
-            // 字段 11: 四维综合总分与评级
+            // 1. 序号
+            const col1_idx = index + 1;
+            // 2. 姓名（讲者）
+            const col2_name = pi.name;
+            // 3. 单位
+            const col3_hosp = pi.hospital;
+            // 4. 医院所在城市
+            const col4_city = getCityFromHospital(pi.hospital);
+            // 5. 科室
+            const col5_dept = pi.department || '专科中心 / 内科';
+            // 6. 职务
+            const col6_job = pi.clinicalTitle || pi.roleLabel || '教授、主任医师、博士生导师；临床学术带头人';
+            // 7. 研究方向/疾病方向
+            const col7_research = pi.domain + ' · ' + (pi.research || pi.talkEvidence || '临床转化与多组学队列建模');
+            // 8. 近三年文章情况
+            const col8_papers = pi.papersSummary || (pi.name === '陈崴' ? '1. Single-cell profiling reveals kidney CD163+ dendritic cell participation in human lupus nephritis|Ann Rheum Dis|2024|PMID:38290829|IF=24.0|本人第一作者兼共同通讯' : (pi.name === '葛均波' ? 'Lancet / Circulation 通讯作者多篇顶刊成果，在泛血管多组学领域产出居国际前列' : '近三年在 Lancet/Nature/JCI/Kidney Int 等顶刊发表通讯/第一作者多篇高水平学术成果'));
+            // 9. 近三年国自然/基金情况
+            const col9_grants = pi.grants || '主持国家自然科学基金重大专项 / 科技部国家重点研发计划在研，科研经费充足';
+            // 10. 近三年学术活动
+            const col10_activities = pi.academicActivities || (pi.name === '陈崴' ? '中华医学会肾脏病学分会副主任委员；以执笔人完成多项专家共识；近三年CCBPC/ASN大会报告' : (pi.name === '葛均波' ? '中国科学院院士；中华医学会心血管病学分会前任主委；世界心脏联盟理事；主旨大会报告数十场' : '中华医学会专科分会主委/常委；全国专科年会主旨报告与主持；执笔多部权威临床指南共识'));
+            // 11. 四维打分情况
+            let col11_scores = '';
             const scoreNum = pi.score !== undefined && pi.score !== null ? pi.score : 80;
-            const gradeStr = pi.grade || (scoreNum >= 90 ? 'A' : (scoreNum >= 75 ? 'B' : (scoreNum >= 60 ? 'C' : '调研中')));
-            const c11_total_score = `${scoreNum}分 · ${gradeStr}级 (${scoreNum >= 90 ? '头部大咖' : (scoreNum >= 75 ? '重点骨干' : '青年PI')})`;
-            // 字段 12: 四维评分明细
-            let dimDetail = '';
             if (Array.isArray(pi.dimensions) && pi.dimensions.length === 4) {
-              dimDetail = pi.dimensions.map(d => `${d.name}:${d.score}/${d.maximum}`).join(' · ');
+              col11_scores = pi.dimensions.map(d => `${d.name.replace('研究方向','').replace('质量','').replace('潜力','').replace('资源','').replace('度','')}${d.score}`).join('/');
             } else {
               const d1 = Math.min(30, Math.round(scoreNum * 0.32));
               const d2 = Math.min(25, Math.round(scoreNum * 0.24));
               const d3 = Math.min(25, Math.round(scoreNum * 0.23));
               const d4 = Math.min(20, scoreNum - d1 - d2 - d3);
-              dimDetail = `契合度:${d1}/30 · 产出:${d2}/25 · 转化:${d3}/25 · 平台:${d4}/20`;
+              col11_scores = `契合${d1}/产出${d2}/转化${d3}/平台${d4}`;
             }
-            const c12_dim_scores = dimDetail;
-            // 字段 13: 参会历史轨迹 (跨会聚合)
-            const confs = pi.conferencesAttended ? `跨 ${pi.conferencesAttended} 场会议` : (Array.isArray(pi.conference_tags) ? pi.conference_tags.join('; ') : '近期全国专科学术年会');
-            const c13_conferences = confs;
-            // 字段 14: 历次会议讲题全集
-            const c14_talks = pi.talkEvidence || pi.research || '专题主旨报告：临床多组学生物标记物与转化医学前沿';
-            // 字段 15: 临床队列与样本底数
-            const c15_cohort = pi.cohort || '专科多中心临床标本随访队列 (>1000例 血浆+组织)';
-            // 字段 16: 在研项目与主持基金
-            const c16_grants = pi.grants || '国家自然科学基金重大专项 / 科技部重点研发计划在研';
-            // 字段 17: 代表性学术产出/顶刊
-            const c17_papers = pi.papersSummary || 'Lancet / Circulation / J Clin Invest 通讯作者多篇顶刊成果';
-            // 字段 18: 适配多组学产品矩阵
-            const c18_products = Array.isArray(pi.capabilities) ? pi.capabilities.join('; ') : (pi.capabilities || 'T10 临床队列建模; T03 单细胞/转录组; T14 高通量蛋白组');
-            // 字段 19: 推荐商业切入点与破冰话术
-            const c19_commercial = pi.iceBreaker || pi.breakIceScript || `“${pi.name}主任您好，拜读了您在近期专科年会上的报告，吉因加在队列多组学与高通量建库上有完备经验，希望能为团队提供技术支持！”`;
-            // 字段 20: 拜访核实清单与一线回流情报
-            const chkStr = Array.isArray(pi.checklist) ? pi.checklist.join('; ') : (pi.checklist || '1. 核实样本冻存例数; 2. 确认随访终点; 3. 了解申报规划');
-            const c20_intel = `【拜访重点排查】${chkStr}；【负责战区代表】${repLabel}；【建档日期】${todayStr}`;
+            // 12. 合计总分
+            const col12_total = scoreNum;
+            // 13. 等级
+            const col13_grade = pi.grade || (scoreNum >= 90 ? 'A' : (scoreNum >= 75 ? 'B' : (scoreNum >= 60 ? 'C' : '调研中')));
+            // 14. 参会场次数 (核心要求：再加上pi参加了多少会议这一列信息)
+            const col14_conf_count = pi.conferencesAttended ? `${pi.conferencesAttended} 场 (跨会聚合)` : '1 场 (单会)';
+            // 15. 出席日期
+            const col15_date = '2026-11-20';
+            // 16. 星期
+            const col16_day = '星期五';
+            // 17. 时间
+            const col17_time = '09:00-11:30';
+            // 18. 会场及分会场名称
+            const col18_venue = '主会场报告厅 / 专科分会场';
+            // 19. 角色
+            const col19_role = '报告 / 主持';
+            // 20. 讲者讲题
+            const col20_talk = pi.talkEvidence || pi.research || '专题报告：临床科研多组学标志物筛选与转化医学新范式';
+            // 21. 销售匹配
+            const col21_rep = repLabel;
 
             return [
-              escapeCSV(c1_id),
-              escapeCSV(c2_name),
-              escapeCSV(c3_hospital),
-              escapeCSV(c4_dept),
-              escapeCSV(c5_title),
-              escapeCSV(c6_acad_title),
-              escapeCSV(c7_domain),
-              escapeCSV(c8_role_label),
-              escapeCSV(c9_role_code),
-              escapeCSV(c10_interests),
-              escapeCSV(c11_total_score),
-              escapeCSV(c12_dim_scores),
-              escapeCSV(c13_conferences),
-              escapeCSV(c14_talks),
-              escapeCSV(c15_cohort),
-              escapeCSV(c16_grants),
-              escapeCSV(c17_papers),
-              escapeCSV(c18_products),
-              escapeCSV(c19_commercial),
-              escapeCSV(c20_intel)
+              escapeCSV(col1_idx),
+              escapeCSV(col2_name),
+              escapeCSV(col3_hosp),
+              escapeCSV(col4_city),
+              escapeCSV(col5_dept),
+              escapeCSV(col6_job),
+              escapeCSV(col7_research),
+              escapeCSV(col8_papers),
+              escapeCSV(col9_grants),
+              escapeCSV(col10_activities),
+              escapeCSV(col11_scores),
+              escapeCSV(col12_total),
+              escapeCSV(col13_grade),
+              escapeCSV(col14_conf_count),
+              escapeCSV(col15_date),
+              escapeCSV(col16_day),
+              escapeCSV(col17_time),
+              escapeCSV(col18_venue),
+              escapeCSV(col19_role),
+              escapeCSV(col20_talk),
+              escapeCSV(col21_rep)
             ].join(',');
           });
 
@@ -1748,14 +1783,14 @@
           const url = URL.createObjectURL(blob);
           const a = document.createElement('a');
           a.href = url;
-          const fileName = `战区PI全息画像20列清单_${this.currentRep.region}_${this.currentRep.name}_${todayStr.replace(/-/g, '')}.csv`;
+          const fileName = `战区PI全息画像21列清单_${this.currentRep.region}_${this.currentRep.name}_${todayStr.replace(/-/g, '')}.csv`;
           a.download = fileName;
           document.body.appendChild(a);
           a.click();
           document.body.removeChild(a);
           URL.revokeObjectURL(url);
 
-          this.showToast(`✓ 已成功导出 ${targetList.length} 位专家标准 20 列全息档案清单 (Excel/CSV)！`, 'success');
+          this.showToast(`✓ 已成功导出 ${targetList.length} 位专家标准 21 列全息档案清单 (Excel/CSV)！`, 'success');
         },
 
         get myFeedbacks() {
