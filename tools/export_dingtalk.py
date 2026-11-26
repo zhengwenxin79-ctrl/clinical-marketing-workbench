@@ -11,6 +11,8 @@ import csv
 import json
 import re
 import sqlite3
+import zipfile
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -239,23 +241,43 @@ def build_conferences_table():
         }
     ]
 
-    # 动态融入数据库与审核队列中所有人工已批准 (approved) 的会议
+    # 动态融入数据库与审核队列中所有人工已批准 (approved) 的会议并规范去重
     try:
-        existing_names = {c["会议名称"] for c in conferences}
+        def get_conf_token(name, abbr=""):
+            combined = f"{name} {abbr}".upper()
+            for token in ["CDS", "ADA", "CCSN", "PMC", "STROKE", "脑卒中", "OCC", "CCHC", "CCCP", "SHRA", "CACP", "EASD", "CSCO", "RSNA", "AHA"]:
+                if token in combined:
+                    return token
+            return re.sub(r'[^A-Z0-9\u4e00-\u9fa5]', '', name.upper())
+
+        token_to_conf = {}
+        for c in conferences:
+            tok = get_conf_token(c["会议名称"], c.get("会议简称", ""))
+            token_to_conf[tok] = c
+
         queue_file = ROOT / "workbench/框架配置/static_demo_queue.json"
         if queue_file.exists():
             with open(queue_file, "r", encoding="utf-8") as f:
                 queue_items = json.load(f)
             for it in queue_items:
                 if it.get("review_status") == "approved" or it.get("status") == "approved":
-                    cname = it.get("conference_name") or it.get("name")
-                    if cname and cname not in existing_names:
-                        existing_names.add(cname)
+                    cname = it.get("conference_name") or it.get("name") or ""
+                    cabbr = it.get("abbreviation") or ""
+                    tok = get_conf_token(cname, cabbr)
+                    if tok in token_to_conf:
+                        # 命中已有会议（如 CDS 2026 - Updated 命中 CONF-CDS2026，ADA 2026 命中 CONF-ADA2026）
+                        # 更新现有会议的状态与审批标记，杜绝重复会议生成
+                        existing = token_to_conf[tok]
+                        existing["追踪状态"] = "已人工审核批准入库 · 重点跟进"
+                        if it.get("review_note"):
+                            existing["现场蹲点攻坚建议"] = it.get("review_note")
+                    else:
                         tier = it.get("tier_code") or it.get("tier") or "Tier B"
-                        conferences.append({
-                            "会议编号": f"CONF-APP-{len(conferences)+1:03d}",
+                        clean_code = f"CONF-{tok.replace(' ', '')}2026" if len(tok) < 10 else f"CONF-APP-{len(conferences)+1:03d}"
+                        new_conf = {
+                            "会议编号": clean_code,
                             "会议名称": cname,
-                            "会议简称": it.get("abbreviation") or cname[:15],
+                            "会议简称": cabbr or cname[:15],
                             "专科疾病领域": it.get("field_name") or it.get("field_id") or "临床转化",
                             "召开日期": f"{it.get('start_date', '')} 至 {it.get('end_date', '')}".strip(" 至 ") or "待定",
                             "举办城市": it.get("city") or "全国重点城市",
@@ -267,7 +289,9 @@ def build_conferences_table():
                             "核心参会大咖": it.get("speakers") or "知名PI/学科带头人",
                             "官方网址": it.get("official_url") or it.get("schedule_url") or "",
                             "现场蹲点攻坚建议": it.get("review_note") or "按已审批攻坚策略重点跟进。"
-                        })
+                        }
+                        token_to_conf[tok] = new_conf
+                        conferences.append(new_conf)
     except Exception as e:
         print(f"  -> Error merging dynamic approved conferences: {e}")
     headers = [
@@ -280,6 +304,85 @@ def build_conferences_table():
 # ==========================================
 # 2. TABLE 2: PI TALENT 21-COL (专家全息档案库)
 # ==========================================
+def load_real_pis_from_xlsx():
+    """从本地真实采集底表（如 CCSN 2026 587人 20/21列 Excel）自动提取全量 PI 数据"""
+    candidate_paths = [
+        Path(r"C:\Users\geneplus\.gemini\antigravity\brain\643ce252-88ad-436a-98fa-a7dafe9e1ee4\.user_uploaded\media_1795656419243_20b7bb4f.xlsx"),
+        Path(r"C:\Users\geneplus\WorkBuddy\会议PI信息收集\CCSN2026\CCSN2026_PI调研_全量595人_20列_v2补查修订_20261117_1705.xlsx"),
+    ]
+    target_path = None
+    for p in candidate_paths:
+        if p.exists():
+            target_path = p
+            break
+    if not target_path:
+        return []
+
+    try:
+        z = zipfile.ZipFile(target_path)
+        ns = '{http://schemas.openxmlformats.org/spreadsheetml/2006/main}'
+        ss_xml = ET.fromstring(z.read('xl/sharedStrings.xml'))
+        shared_strings = []
+        for si in ss_xml.findall(f'{ns}si'):
+            t = si.find(f'{ns}t')
+            if t is not None and t.text:
+                shared_strings.append(t.text)
+            else:
+                shared_strings.append(''.join([e.text for e in si.iter(f'{ns}t') if e.text]))
+        
+        s1_xml = ET.fromstring(z.read('xl/worksheets/sheet1.xml'))
+        rows = []
+        for r in s1_xml.iter(f'{ns}row'):
+            row_vals = {}
+            for c in r.iter(f'{ns}c'):
+                ref = c.attrib.get('r', '')
+                t = c.attrib.get('t', '')
+                v = c.find(f'{ns}v')
+                val = v.text if v is not None else ''
+                if t == 's' and val.isdigit():
+                    idx = int(val)
+                    val = shared_strings[idx] if idx < len(shared_strings) else val
+                col_letter = ''.join([ch for ch in ref if ch.isalpha()])
+                row_vals[col_letter] = val
+            if row_vals:
+                rows.append(row_vals)
+
+        parsed_pis = []
+        for r in rows[1:]:
+            name = r.get('B', '').strip()
+            if not name:
+                continue
+            score_str = r.get('L', '').strip()
+            score_val = int(score_str) if score_str.isdigit() else 75
+            pi_dict = {
+                '序号': len(parsed_pis) + 1,
+                '姓名（讲者）': name,
+                '单位': r.get('C', ''),
+                '医院所在城市': r.get('D', ''),
+                '科室': r.get('E', ''),
+                '职务': r.get('F', ''),
+                '研究方向/疾病方向': r.get('G', ''),
+                '近三年文章情况': r.get('H', ''),
+                '近三年国自然/基金情况': r.get('I', ''),
+                '近三年学术活动': r.get('J', ''),
+                '四维打分情况': r.get('K', ''),
+                '合计总分': score_val,
+                '等级': r.get('M', 'B') or ('A' if score_val >= 90 else ('B' if score_val >= 75 else ('C' if score_val >= 60 else 'D'))),
+                '参会场次数': '跨 1 场重点会议 (CCSN 2026)',
+                '出席日期': r.get('N', ''),
+                '星期': r.get('O', ''),
+                '时间': r.get('P', ''),
+                '会场及分会场名称': f"{r.get('Q', '')} · {r.get('R', '')}".strip(' ·'),
+                '角色': r.get('S', '报告/主持'),
+                '讲者讲题': r.get('U', ''),
+                '销售匹配': r.get('V', '待分配')
+            }
+            parsed_pis.append(pi_dict)
+        return parsed_pis
+    except Exception as e:
+        print(f"  -> Error loading real PIs from Excel: {e}")
+        return []
+
 def build_pi_table():
     pis = [
         {
@@ -514,6 +617,19 @@ def build_pi_table():
         }
     ]
 
+    # 动态加载真实大表 (587 人) 并与精调核心专家去重融合
+    real_pis = load_real_pis_from_xlsx()
+    if real_pis:
+        curated_names = {p["姓名（讲者）"] for p in pis}
+        for rp in real_pis:
+            if rp["姓名（讲者）"] not in curated_names:
+                curated_names.add(rp["姓名（讲者）"])
+                rp["序号"] = len(pis) + 1
+                pis.append(rp)
+        # 统一重新编排序号
+        for idx, p in enumerate(pis, 1):
+            p["序号"] = idx
+
     headers = [
         "序号", "姓名（讲者）", "单位", "医院所在城市", "科室", "职务",
         "研究方向/疾病方向", "近三年文章情况", "近三年国自然/基金情况",
@@ -526,13 +642,46 @@ def build_pi_table():
 # 3. TABLE 3: PRODUCTS & CAPABILITIES (吉因加产品与技术能力库)
 # ==========================================
 def build_capabilities_table():
-    capabilities = [
-        {
-            "能力编号": "T01",
-            "类别": "前沿技术平台",
+    cap_file = ROOT / "workbench/原始资料/WorkBuddy更新_2026-11-18/公司能力底表_2026-11-10.md"
+    capabilities = []
+    if cap_file.exists():
+        try:
+            with open(cap_file, 'r', encoding='utf-8') as f:
+                for line in f:
+                    line = line.strip()
+                    if line.startswith('|') and re.match(r'\|\s*([DTP]\d+)\s*\|', line):
+                        parts = [p.strip() for p in line.split('|')[1:-1]]
+                        if len(parts) >= 7:
+                            cid = parts[0]
+                            name = parts[1]
+                            status = parts[2].replace('**', '')
+                            scope = parts[3]
+                            keywords = parts[4]
+                            assoc = parts[5]
+                            boundary = parts[6]
+                            
+                            cat = '临床转化方案' if cid.startswith('D') else ('前沿技术平台' if cid.startswith('T') else '检测产品/试剂盒')
+                            capabilities.append({
+                                '能力编号': cid,
+                                '类别': cat,
+                                '产品/技术名称': name,
+                                '确认状态': status,
+                                '技术原理与服务定位': scope,
+                                '适用样本类型': '外周血血浆/组织/体液/队列数据',
+                                '解决的临床科研痛点': boundary or '临床早筛与机制研究难点',
+                                '匹配疾病专科领域': keywords,
+                                '核心匹配研究问题': keywords,
+                                '推荐产品技术组合': assoc,
+                                '典型顶刊合作发表范式': 'Lancet / NEJM / Nature Genetics 顶刊范式',
+                                '销售拜访话术与切入建议': f'探讨围绕 {keywords} 与 {name} 的转化研究合作'
+                            })
+        except Exception as e:
+            print(f"  -> Error loading capabilities markdown: {e}")
+
+    # 保留精校的 9 项深度话术作为覆盖增强
+    detailed_map = {
+        "T01": {
             "产品/技术名称": "cfRNA 捕获测序与溯源分析 (cfRNA-Seq)",
-            "确认状态": "已确认 · 公开平台布局",
-            "技术原理与服务定位": "微量外周血循环游离 RNA (cell-free RNA) 靶向捕获建库，通过组织特异性转录本溯源器官损伤来源。",
             "适用样本类型": "微量外周血血浆 (1-2mL)、脑脊液、房水等微量体液",
             "解决的临床科研痛点": "常规生化指标滞后，无创穿刺活检风险高，微量体液常规RNA降解快建库失败率高。",
             "匹配疾病专科领域": "泛血管疾病、急性脑损伤、器官移植排斥、心肌损伤、自免疾病",
@@ -541,12 +690,8 @@ def build_capabilities_table():
             "典型顶刊合作发表范式": "Lancet, Circulation, Nature Communications 高分体液标志物文章",
             "销售拜访话术与切入建议": "针对手握大样本血浆队列但未做组学的临床PI，建议用cfRNA打出第一篇无创液体活检高分论文。"
         },
-        {
-            "能力编号": "T02",
-            "类别": "前沿技术平台",
+        "T02": {
             "产品/技术名称": "cfDNA 甲基化检测与分析 (GM-seq)",
-            "确认状态": "已确认 · 公开技术平台",
-            "技术原理与服务定位": "基于重亚硫酸盐或免转化酶法的高敏 cfDNA 甲基化测序，提供全基因组或靶向区域甲基化图谱与组织起源反卷积。",
             "适用样本类型": "外周血游离 DNA (cfDNA, 5-10ng)、尿液、胸腹水",
             "解决的临床科研痛点": "单一基因突变检出率低，早期疾病缺乏高灵敏度表观遗传学标志物。",
             "匹配疾病专科领域": "肿瘤早筛早诊、移植肾损伤监测、糖尿病肾病、脑血管损伤",
@@ -555,12 +700,8 @@ def build_capabilities_table():
             "典型顶刊合作发表范式": "Gut, Hepatology, Clinical Chemistry 表观遗传转化论文",
             "销售拜访话术与切入建议": "结合医院随访队列，探讨 cfDNA 甲基化标志物在早期疾病分型与预后随访中的高特异性价值。"
         },
-        {
-            "能力编号": "T03",
-            "类别": "前沿技术平台",
+        "T03": {
             "产品/技术名称": "单细胞与单核转录组测序 (InCell / scRNA-seq)",
-            "确认状态": "已确认 · 核心主力平台",
-            "技术原理与服务定位": "高通量液滴微流控单细胞/单核 RNA-seq (scRNA/snRNA)，联合 VDJ 免疫组库解析细胞异质性。",
             "适用样本类型": "临床穿刺活检鲜样、PBMC活细胞、冻存组织细胞核、微量免疫细胞",
             "解决的临床科研痛点": "常规批量(Bulk)测序掩盖稀有致病细胞亚群，难以阐明细胞-细胞互作机制与免疫克隆演化。",
             "匹配疾病专科领域": "风湿免疫(SLE/RA)、肾小球肾炎、心血管动脉硬化、慢阻肺气道炎症、神经免疫",
@@ -569,12 +710,8 @@ def build_capabilities_table():
             "典型顶刊合作发表范式": "Nature, Immunity, Cell Stem Cell, Science Immunology 机制顶刊",
             "销售拜访话术与切入建议": "针对国自然重点/重大在研团队，单细胞已是机制深度的标配，建议从 PBMC 活细胞冻存与质控入手机器人标准化建库。"
         },
-        {
-            "能力编号": "T04",
-            "类别": "前沿技术平台",
+        "T04": {
             "产品/技术名称": "空间转录组学与时空病理 (Spatial Omics)",
-            "确认状态": "已确认 · 公开先进平台",
-            "技术原理与服务定位": "原位空间分辨转录组测序，在组织形态病理切片上原位保留基因表达坐标与细胞空间拓扑关系。",
             "适用样本类型": "FFPE 石蜡切片、OCT 包埋新鲜冰冻切片、临床穿刺组织",
             "解决的临床科研痛点": "单细胞测序丢失组织空间原位结构信息，病理形态与分子表达难以精确对齐。",
             "匹配疾病专科领域": "器官纤维化(肾/肝/肺)、动脉硬化斑块微环境、肿瘤浸润前沿、神经病理",
@@ -583,12 +720,8 @@ def build_capabilities_table():
             "典型顶刊合作发表范式": "Cell, Nature Genetics, Advanced Science 空间图谱级论文",
             "销售拜访话术与切入建议": "主任手头有珍贵的临床肾穿/组织活检蜡块时，空间转录组是激活历史样本产出顶刊的最大利器。"
         },
-        {
-            "能力编号": "T10",
-            "类别": "前沿技术平台",
+        "T10": {
             "产品/技术名称": "6Dmarker / V-USE：大规模临床队列多组学整合与生信建模",
-            "确认状态": "已确认 · 核心算法中枢",
-            "技术原理与服务定位": "结合临床变量、随访终点与高通量组学数据，采用高维机器学习与可解释因果推断算法筛选 Biomarker 并建立预测模型。",
             "适用样本类型": "多中心临床队列数据、表型数据、多组学矩阵 (转录/蛋白/代谢)",
             "解决的临床科研痛点": "临床专家有大样本但生信分析能力薄弱，常规差异基因筛选难以支撑 10 分以上高质量模型发表。",
             "匹配疾病专科领域": "全慢病领域：代谢大队列、卒中队列、泛血管队列、慢阻肺队列、肾脏队列",
@@ -597,12 +730,8 @@ def build_capabilities_table():
             "典型顶刊合作发表范式": "BMJ, Lancet Digital Health, Nature Medicine 队列模型论文",
             "销售拜访话术与切入建议": "吉因加可派驻资深生信工程师协助课题组开展 6Dmarker 算法联合建模，提供从方案设计到顶刊返修的全程支持。"
         },
-        {
-            "能力编号": "T14",
-            "类别": "前沿技术平台",
+        "T14": {
             "产品/技术名称": "高通量蛋白组学 (4D-DIA / Olink Target / 超敏微量体液)",
-            "确认状态": "已确认 · 快速增长平台",
-            "技术原理与服务定位": "超高灵敏度质谱 4D-DIA 与邻位延伸测定 (PEA)，覆盖千例级血浆、尿液、房水及脑脊液低丰度蛋白定量。",
             "适用样本类型": "临床配对血浆/血清、尿液、脑脊液、微量房水、细胞分泌物",
             "解决的临床科研痛点": "高丰度白蛋白掩盖低丰度关键功能蛋白，微量体液样本量不足常规质谱检测要求。",
             "匹配疾病专科领域": "糖尿病并发症、神经退行性病变、急性卒中再灌注、自身免疫抗体筛查",
@@ -611,12 +740,8 @@ def build_capabilities_table():
             "典型顶刊合作发表范式": "Cell Reports Medicine, Circulation Research, Science Translational Medicine",
             "销售拜访话术与切入建议": "针对不想消耗过多宝贵临床样本的课题，主推微量体液 4D-DIA 超敏蛋白组，50微升即可跑全流程。"
         },
-        {
-            "能力编号": "P01",
-            "类别": "临床检测产品/试剂盒",
+        "P01": {
             "产品/技术名称": "人 EGFR/KRAS/ALK 基因突变检测试剂盒 (吉先锋三基因)",
-            "确认状态": "已确认 · 获批 NMPA 三类医疗器械注册证",
-            "技术原理与服务定位": "基于联合探针锚定聚合测序技术，定性检测肺癌患者福尔马林固定石蜡包埋(FFPE)组织DNA中的驱动突变。",
             "适用样本类型": "FFPE 肿瘤组织标本、活检穿刺组织",
             "解决的临床科研痛点": "临床合规用药靶点伴随诊断，高准确度检测单碱基替换、插入缺失和基因融合。",
             "匹配疾病专科领域": "呼吸科、胸外科、肿瘤科",
@@ -625,12 +750,8 @@ def build_capabilities_table():
             "典型顶刊合作发表范式": "JTO, Lung Cancer 靶向临床试验与伴随诊断文章",
             "销售拜访话术与切入建议": "持证成熟产品，可协助院内共建规范化 NGS 实验室或开展多中心临床伴随诊断科研。"
         },
-        {
-            "能力编号": "P03",
-            "类别": "临床检测产品/试剂盒",
+        "P03": {
             "产品/技术名称": "吉长安 MRD (微小残留病灶动态监测)",
-            "确认状态": "已确认 · 核心品牌产品",
-            "技术原理与服务定位": "超高深度外周血循环肿瘤 DNA (ctDNA) 靶向测序，检测限达 0.01%，动态评估术后微小病灶与复发风险。",
             "适用样本类型": "配对肿瘤组织 + 外周血血浆 (10mL)",
             "解决的临床科研痛点": "影像学检测窗口滞后，无法在分子水平提早数月预警肿瘤术后复发转移。",
             "匹配疾病专科领域": "胸外科、普外科、肿瘤内科、介入科",
@@ -639,12 +760,8 @@ def build_capabilities_table():
             "典型顶刊合作发表范式": "Cancer Discovery, JCO, Annals of Oncology 前瞻性介入试验",
             "销售拜访话术与切入建议": "主攻外科大主任的前瞻性围手术期队列，协助牵头全国性或大区级 MRD 真实世界临床研究。"
         },
-        {
-            "能力编号": "P06",
-            "类别": "研发管线/专科转化",
+        "P06": {
             "产品/技术名称": "移知安 (器官移植免疫耐受与损伤分子监测)",
-            "确认状态": "待核实 · 本地资料研发管线",
-            "技术原理与服务定位": "结合供者来源游离 DNA (dd-cfDNA) 丰度与受者免疫组库特征，无创评估移植肾/肝排斥反应及免疫耐受。",
             "适用样本类型": "受者外周血血浆、尿液",
             "解决的临床科研痛点": "移植术后频繁行移植肾穿刺活检创伤大、出血风险高，血肌酐等生化指标对排斥反应预警滞后。",
             "匹配疾病专科领域": "肾脏移植科、泌尿外科、肝移植科",
@@ -653,7 +770,12 @@ def build_capabilities_table():
             "典型顶刊合作发表范式": "American Journal of Transplantation, Kidney International 移植顶级期刊",
             "销售拜访话术与切入建议": "针对肾移植中心带头人（如陈江华、张克勤等），切入无创分子活检与药物减量多中心临床科研合作。"
         }
-    ]
+    }
+    for cap in capabilities:
+        cid = cap.get("能力编号")
+        if cid in detailed_map:
+            cap.update(detailed_map[cid])
+
     headers = [
         "能力编号", "类别", "产品/技术名称", "确认状态", "技术原理与服务定位",
         "适用样本类型", "解决的临床科研痛点", "匹配疾病专科领域", "核心匹配研究问题",
