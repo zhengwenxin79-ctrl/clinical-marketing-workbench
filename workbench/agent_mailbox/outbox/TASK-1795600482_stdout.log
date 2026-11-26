@@ -1,0 +1,14 @@
+已加载并核对技能文件：`D:\Users\skills\conference-collection-rating\SKILL.md` 与内置副本内容一致（v1.1，2026-11-25）。但当前会话的权限配置使任务无法完成交付，需要先由你处理。
+
+**阻塞点**
+
+1. **无法生成 Excel 交付物**：`Write` 与 `Bash` 均被拒绝（非交互模式无审批弹窗）。技能要求交付 `会议收集评级_YYYYMMDD-YYYYMMDD.xlsx`，当前无法创建任何文件。
+2. **无法严格读取 D:\ 下的 references**：`Read`/`Glob` 对该路径被拒；`PowerShell` 只能读出来自中文的乱码（GBK 字节被按 UTF-8 解码），无法逐字遵循「组织与渠道表」「核心会议系列表」原文。
+3. **可用的部分**：`WebSearch`/`WebFetch` 正常，联网核实会议通知这一环节可以执行。
+
+**请二选一**
+
+- 以 `codebuddy -p -y "<prompt>"` 或 `--permission-mode bypassPermissions` 重跑，并在 `permissions.allow` 中加入 `Read`、`Glob`、`Write`、`Bash`（`PowerShell` 亦建议放开），这样我能按技能完整执行并生成 .xlsx。
+- 或明确授权「仅以聊天内表格输出，不生成 Excel」，并确认目标周。本次你未指定日期，按技能默认应取北京时间下一自然周：**2026-11-30 至 2026-12-06**；若另有指定日期请直接给出。
+
+确认后我再继续会议收集与初评。

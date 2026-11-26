@@ -1,5 +1,5 @@
 {
-  "task_id": "TASK-1795655076",
+  "task_id": "TASK-1795661079",
   "skill_name": "conference-collection-rating",
   "skill_file": "D:\\Users\\智能营销_Antigravity开发交接包_20261119\\clinical-marketing-antigravity-20261119\\skills\\conference-collection-rating\\SKILL.md",
   "scope": "upcoming_week",
@@ -12,7 +12,7 @@
     "自免",
     "泛血管"
   ],
-  "created_at": "2026-11-26 09:04:36",
+  "created_at": "2026-11-26 10:44:39",
   "status": "done",
-  "finished_at": "2026-11-26 09:06:23"
+  "finished_at": "2026-11-26 10:46:43"
 }

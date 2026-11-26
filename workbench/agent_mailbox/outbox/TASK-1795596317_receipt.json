@@ -1,0 +1,9 @@
+{
+  "task_id": "TASK-1795596317",
+  "return_code": 0,
+  "elapsed_seconds": 163,
+  "summary": "",
+  "stderr": "502 安全连接建立失败：可能被防火墙或代理拦截了 HTTPS 流量（Client network socket disconnected before secure TLS connection was established） (proxy: NO_PROXY=*; no_proxy=* -> https://wb.tencentbuddy.com) (01a211e275dc75b68fb2dc34f4ca00dc/01a211e1-8dd1-7015-88e4-c552e9610cb7)\n",
+  "artifacts": [],
+  "finished_at": "2026-11-25 16:48:00"
+}

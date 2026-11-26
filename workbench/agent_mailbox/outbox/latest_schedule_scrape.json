@@ -1,0 +1,2014 @@
+{
+  "updated_at": "2026-11-26 16:19:27",
+  "task_id": "TASK-SCHED-1795681164",
+  "conference_id": "CONF_TEST_CDS",
+  "conference_name": "中华医学会第二十八次糖尿病学术会议 (CDS 2026)",
+  "schedule_status": "已公布详细日程",
+  "detailed_schedule_url": "https://cds26.tiemeeting.com/CN/Program/Details",
+  "topics_count": 8,
+  "speakers_count": 244,
+  "topics": [
+    {
+      "name": "CDS 2026 全体大会与开幕式",
+      "boardName": "糖尿病",
+      "summary": "CDS 2026 CDS 2026 全体大会与开幕式（汇集全国糖尿病临床专家特邀报告）",
+      "sampleTalk": "基层糖尿病管理基本要求及健康管理流程"
+    },
+    {
+      "name": "国家基层糖尿病防治管理指南培训",
+      "boardName": "糖尿病",
+      "summary": "CDS 2026 国家基层糖尿病防治管理指南培训（汇集全国糖尿病临床专家特邀报告）",
+      "sampleTalk": "糖尿病筛查、诊断、分型、及血糖监测"
+    },
+    {
+      "name": "国家基层肥胖症综合管理技术指南培训",
+      "boardName": "糖尿病",
+      "summary": "CDS 2026 国家基层肥胖症综合管理技术指南培训（汇集全国糖尿病临床专家特邀报告）",
+      "sampleTalk": "糖尿病慢性并发症的诊治要点"
+    },
+    {
+      "name": "糖尿病前沿转化与多组学标志物研讨专场",
+      "boardName": "糖尿病",
+      "summary": "CDS 2026 糖尿病前沿转化与多组学标志物研讨专场（汇集全国糖尿病临床专家特邀报告）",
+      "sampleTalk": "糖尿病急性并发症的识别与处理"
+    },
+    {
+      "name": "糖尿病并发症筛查与早期干预论坛",
+      "boardName": "糖尿病",
+      "summary": "CDS 2026 糖尿病并发症筛查与早期干预论坛（汇集全国糖尿病临床专家特邀报告）",
+      "sampleTalk": "糖尿病的治疗原则、目标及综合干预管理"
+    },
+    {
+      "name": "胰岛功能保护与血糖监测技术进展论坛",
+      "boardName": "糖尿病",
+      "summary": "CDS 2026 胰岛功能保护与血糖监测技术进展论坛（汇集全国糖尿病临床专家特邀报告）",
+      "sampleTalk": "糖尿病治疗之口服降糖药物"
+    },
+    {
+      "name": "糖尿病微血管病变与肾病前沿专场",
+      "boardName": "糖尿病",
+      "summary": "CDS 2026 糖尿病微血管病变与肾病前沿专场（汇集全国糖尿病临床专家特邀报告）",
+      "sampleTalk": "糖尿病治疗之注射制剂"
+    },
+    {
+      "name": "糖尿病大血管病变与心血管代谢前沿论坛",
+      "boardName": "糖尿病",
+      "summary": "CDS 2026 糖尿病大血管病变与心血管代谢前沿论坛（汇集全国糖尿病临床专家特邀报告）",
+      "sampleTalk": "糖尿病的中医治疗"
+    }
+  ],
+  "speakers": [
+    {
+      "name": "蔡淳",
+      "hospital": "上海交通大学医学院附属第六人民医院",
+      "topic": "基层糖尿病管理基本要求及健康管理流程",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "徐向进",
+      "hospital": "中国人民解放军联勤保障部队第九〇〇医院",
+      "topic": "糖尿病筛查、诊断、分型、及血糖监测",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "温俊平",
+      "hospital": "福州大学附属福建省立医院",
+      "topic": "糖尿病慢性并发症的诊治要点",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "吴佩文",
+      "hospital": "福建医科大学附属第一医院",
+      "topic": "糖尿病急性并发症的识别与处理",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "李学军",
+      "hospital": "厦门大学附属第一医院",
+      "topic": "糖尿病的治疗原则、目标及综合干预管理",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "黄敬泽",
+      "hospital": "福建医科大学附属协和医院",
+      "topic": "糖尿病治疗之口服降糖药物",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "刘长勤",
+      "hospital": "厦门大学附属第一医院",
+      "topic": "糖尿病治疗之注射制剂",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "杨叔禹",
+      "hospital": "厦门大学附属第一医院",
+      "topic": "糖尿病的中医治疗",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "秦映芬",
+      "hospital": "广西医科大学第一附属医院",
+      "topic": "肥胖症的长期管理的挑战",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "赵艳艳",
+      "hospital": "郑州大学第一附属医院",
+      "topic": "理性看待2型糖尿病患者体重管理",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "陈频",
+      "hospital": "中国人民解放军联勤保障部队第九〇〇医院",
+      "topic": "肥胖症的药物治疗",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "陈宁",
+      "hospital": "复旦大学附属中山医院厦门医院",
+      "topic": "肥胖症的诊断和评估",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "刘礼斌",
+      "hospital": "福建医科大学附属协和医院",
+      "topic": "糖尿病肾病的治疗",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "林明珠",
+      "hospital": "厦门大学附属第一医院",
+      "topic": "糖尿病肾病的生活方式干预",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "关美萍",
+      "hospital": "南方医科大学南方医院",
+      "topic": "肾感油虑：脂肪代谢在糖尿病肾脏病的作用机制探索",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "郭丰",
+      "hospital": "郑州大学第一附属医院",
+      "topic": "糖尿病合并慢性肾脏病的诊治思考",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "潘琦",
+      "hospital": "北京医院国家老年医学中心",
+      "topic": "卫健委培训项目中期进展会",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "杨雁",
+      "hospital": "华中科技大学同济医学院附属同济医院",
+      "topic": "共识向新，早启共管——2026 ADA/EASD共识更新下的SGLT2i定位升级",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "吕晓希",
+      "hospital": "中国医学科学院药物研究所",
+      "topic": "GLP-1/GIP双受体激动剂的药学设计与分子机制解析",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "关海霞",
+      "hospital": "广东省人民医院",
+      "topic": "创新双靶，GLP-1/GIP双受体激动剂引领肥胖治疗新格局",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "向光大",
+      "hospital": "中国人民解放军中部战区总医院",
+      "topic": "减重与肌肉流失的平衡",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "肖新华",
+      "hospital": "中国医学科学院北京协和医院",
+      "topic": "从CKM命名缺陷解析MLCK命名体系核心优势",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "高凌",
+      "hospital": "武汉大学人民医院",
+      "topic": "糖尿病逆转，未来已来还是前路无期",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "张化冰",
+      "hospital": "中国医学科学院北京协和医院",
+      "topic": "AI在医疗服务中的机遇与风险",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "杨文英",
+      "hospital": "中日友好医院",
+      "topic": "尽早行动 刻不容缓 - 重塑肥胖疾病认知",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "李启富",
+      "hospital": "重庆医科大学附属第一医院",
+      "topic": "强效出击 从容改变 - 口服小分子非肽类GLP-1RA开启中国口服减重新纪元",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "石勇铨",
+      "hospital": "中国人民解放军海军军医大学第二附属医院",
+      "topic": "代谢困局背后，肥胖管理能否迎来破局时刻？",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "蒋升",
+      "hospital": "新疆医科大学第一附属医院",
+      "topic": "T2D持续进展的背后，疾病修正能否改写治疗结局？",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "王丽敏",
+      "hospital": "中国疾病预防控制中心慢病中心",
+      "topic": "中国代谢共病疾病负担及流行病学现状",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "耿婷婷",
+      "hospital": "华中科技大学",
+      "topic": "肥胖的流行病学",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "郑雪瑛",
+      "hospital": "中国科学技术大学附属第一医院（安徽省立医院）",
+      "topic": "1型糖尿病的人群地图与环境印记",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "李光伟",
+      "hospital": "中国医学科学院阜外医院",
+      "topic": "糖尿病脑血管并发症的流行病学（大庆研究34年随访结果）",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "纪立农",
+      "hospital": "北京大学人民医院",
+      "topic": "糖尿病心血管并发症的流行病学",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "毕艳",
+      "hospital": "南京大学医学院附属鼓楼医院",
+      "topic": "糖尿病认知障碍的流行病学",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "张翼飞",
+      "hospital": "上海交通大学医学院附属瑞金医院",
+      "topic": "糖尿病肾病的流行病学",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "袁明霞",
+      "hospital": "首都医科大学附属北京友谊医院",
+      "topic": "超越血糖 聚焦获益——探索基础胰岛素GLP-1RA的循证",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "邹梦晨",
+      "hospital": "南方医科大学南方医院",
+      "topic": "基础胰岛素GLP-1RA在T2DM患者中的临床应用",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "于淼",
+      "hospital": "中国医学科学院北京协和医院",
+      "topic": "司美格鲁肽T2D真实世界研究进展：从全球经验到中国洞察",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "张惠杰",
+      "hospital": "复旦大学附属中山医院",
+      "topic": "司美格鲁肽2.4mg：从单疾病治疗迈向CKLM综合管理",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "周智广",
+      "hospital": "中南大学湘雅二医院",
+      "topic": "中国1型糖尿病的异质性与抗体检测",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "魏玉虾",
+      "hospital": "华中科技大学",
+      "topic": "成年期1型糖尿病的病因和预后影响因素识别",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "苏恒",
+      "hospital": "云南省阜外心血管病医院",
+      "topic": "1型糖尿病的心脏损伤",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "傅君芬",
+      "hospital": "浙江大学医学院附属儿童医院",
+      "topic": "“智趣糖豆”1型糖尿病创新管理实践",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "吴迪",
+      "hospital": "首都医科大学附属北京儿童医院",
+      "topic": "聚焦儿童1型糖尿病，深耕临床精细化",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "张梅",
+      "hospital": "江苏省人民医院（南京医科大学第一附属医院）",
+      "topic": "1型糖尿病低血糖与脑结构改变：影像证据及临床应对",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "李晓牧",
+      "hospital": "浙江大学医学院附属第一医院",
+      "topic": "从长期体重管理的依从性困境看博凡格鲁肽的创新与突破",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "龚元松",
+      "hospital": "华为终端",
+      "topic": "智能穿戴设备在血糖管理中的价值与应用",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "李延兵",
+      "hospital": "中山大学附属第一医院",
+      "topic": "CGM在糖尿病人血糖管理中的应用进展",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "李伟",
+      "hospital": "中国医学科学院北京协和医院",
+      "topic": "CGM与智能手表协同创新研究：糖尿病风险筛查及高血糖事件研究",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "王伟好",
+      "hospital": "北京医院国家老年医学中心",
+      "topic": "糖尿病并发症心血管自主神经病变筛查方法的进展",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "刘铭",
+      "hospital": "天津医科大学总医院",
+      "topic": "β细胞胰岛素抵抗/自分泌调控异常在胰岛功能和机体血糖稳态中的作用",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "杨金奎",
+      "hospital": "首都医科大学附属北京同仁医院",
+      "topic": "组织蛋白酶L在肝脏胰岛素抵抗与MASH中的作用及新药发现",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "陈树春",
+      "hospital": "河北省人民医院",
+      "topic": "胰岛素抵抗的研究进展",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "刘峰",
+      "hospital": "中南大学湘雅二医院",
+      "topic": "从DNA感知到代谢调控：cGAS信号通路的作用及机制",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "徐焱成",
+      "hospital": "武汉大学中南医院",
+      "topic": "胰岛素抵抗研究进展（临床）及治疗应对措施",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "袁涛",
+      "hospital": "中国医学科学院北京协和医院",
+      "topic": "从病例解析胰岛素抵抗综合征的诊断与个体化管理",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "殷峻",
+      "hospital": "上海交通大学医学院附属第六人民医院",
+      "topic": "肥胖与消瘦：特殊类型糖尿病的胰岛素抵抗",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "何庆",
+      "hospital": "天津医科大学总医院",
+      "topic": "多毛如男、闭经、黑棘皮：一例以严重高雄激素血症为突出表型的A型胰岛素抵抗综合征",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "陈晓平",
+      "hospital": "中日友好医院",
+      "topic": "机制破局 强效减重 ——玛仕度肽是更适合中国人的减重和代谢治疗方案",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "单忠艳",
+      "hospital": "中国医科大学附属第一医院",
+      "topic": "替妥尤单抗治疗甲状腺眼病专家共识解读",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "张秀英",
+      "hospital": "北京大学人民医院",
+      "topic": "从RESTORE‑1到RESTORE‑2：—中国唯一获批甲状腺眼病适应症药物的循证之路",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "陆静毅",
+      "hospital": "上海交通大学医学院附属第六人民医院",
+      "topic": "CGM应用于院内血糖管理",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "强薇",
+      "hospital": "西安交通大学第一附属医院",
+      "topic": "基于CGM的住院2型糖尿病精细化管理——从动态表型到出院安全",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "王育璠",
+      "hospital": "上海市第一人民医院",
+      "topic": "AI 技术糖尿病管理中运用以及思考",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "宋振强",
+      "hospital": "天津医科大学朱宪彝纪念医院",
+      "topic": "1型糖尿病的血糖监测与管理——天津模式",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "杨艳",
+      "hospital": "四川省医学科学院&#183;四川省人民医院",
+      "topic": "近红外光声技术在血糖异常初筛中的系统化探索与便携化实践",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "张亚光",
+      "hospital": "哈尔滨医科大学附属第二医院",
+      "topic": "基于Pt-SnO₂/ZnO的超灵敏丙酮呼气传感器及其在糖尿病监测中的应用",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "薛欣宇",
+      "hospital": "电子科技大学",
+      "topic": "无线可穿戴式监测调节闭环胰岛素微泵的研究",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "徐勇",
+      "hospital": "西南医科大学附属医院",
+      "topic": "百年降糖今朝归稳——从降糖达标到稳态管理的药物迭代",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "鲁瑾",
+      "hospital": "中国人民解放军海军军医大学第一附属医院",
+      "topic": "葡萄糖激酶在血糖稳态调控中的作用机制",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "马建华",
+      "hospital": "南京市第一医院",
+      "topic": "葡萄糖激酶激活剂的临床研究与应用进展",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "周健",
+      "hospital": "上海交大医学院附属第六人民医院",
+      "topic": "人工智能与CGM",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "聂泽东",
+      "hospital": "中国科学院深圳先进技术研究院",
+      "topic": "人工智能驱动的血糖监测变革与具身化代谢健康管理",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "于霞",
+      "hospital": "东北大学",
+      "topic": "多设备CGM自适应基础模型的开发及临床应用",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "王从义",
+      "hospital": "华中科技大学同济医学院附属同济医院",
+      "topic": "β细胞来源的代谢物特异性靶向脂肪细胞以维持代谢稳态",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "陈宏",
+      "hospital": "南方医科大学珠江医院",
+      "topic": "对肥胖最新指南的认识与思考",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "张俊清",
+      "hospital": "北京大学第一医院",
+      "topic": "从病理生理到临床，探讨GLP-1RA与基础胰岛素联合应用的重要性",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "章秋",
+      "hospital": "安徽医科大学第一附属医院",
+      "topic": "糖尿病合并肥胖人群的行为辅导与心理支持新进展",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "顾楠",
+      "hospital": "北京大学第一医院",
+      "topic": "青少年1型糖尿病家庭系统干预新进展",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "武雅学",
+      "hospital": "首都医科大学附属北京回龙观医院",
+      "topic": "2型糖尿病的正念干预新进展",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "高玲玲",
+      "hospital": "北京糖尿病协会",
+      "topic": "EASD2026糖尿病困扰评估与管理循证临床实践指南解读",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "郭晓蕙",
+      "hospital": "北京大学第一医院",
+      "topic": "AI推动的DSMES照护新思考-从质到量的范式转变",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "邢秋玲",
+      "hospital": "天津医科大学朱宪彝纪念医院",
+      "topic": "糖尿病数字化自我管理实践工具新进展",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "徐玉善",
+      "hospital": "昆明医科大学第一附属医院",
+      "topic": "数字化赋能糖尿病健康教育-助力糖尿病闭环管理",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "王广",
+      "hospital": "首都医科大学附属北京朝阳医院",
+      "topic": "全球FDC前沿进展",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "李玲",
+      "hospital": "东南大学附属中大医院",
+      "topic": "重症患者持续葡萄糖监测系统应用专家共识解读",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "黄德斌",
+      "hospital": "长沙市第三医院",
+      "topic": "DPCC湖南天心区模式",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "马青云",
+      "hospital": "中国香港中文大学",
+      "topic": "妊娠期糖尿病的远期并发症及干预策略",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "黄锟",
+      "hospital": "安徽医科大学公共卫生学院",
+      "topic": "妊娠期高血糖对母婴产后代谢健康的影响——马鞍山队列研究",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "王海宁",
+      "hospital": "北京大学第三医院",
+      "topic": "妊娠期高血糖药物治疗的新争议新证据",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "厉平",
+      "hospital": "中国医科大学附属盛京医院",
+      "topic": "妊娠期糖尿病中的特殊面孔——数据解锁隐匿亚型",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "沈洁",
+      "hospital": "南方医科大学第八附属医院",
+      "topic": "孕早期妊娠糖尿病预测研究进展",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "丁国莲",
+      "hospital": "复旦大学附属妇产科医院",
+      "topic": "GDM子代胰岛发育及功能异常的表观遗传调控机制",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "田利民",
+      "hospital": "四川省医学科学院&#183;四川省人民医院",
+      "topic": "集成式持续葡萄糖监测系统（iCGM）中国专家共识解读",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "曾天舒",
+      "hospital": "华中科技大学同济医学院附属协和医院",
+      "topic": "CGM循证及临床应用新进展",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "徐明彤",
+      "hospital": "中山大学孙逸仙纪念医院",
+      "topic": "钙离子通道调节剂的演进与临床诊疗实践",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "陈丽",
+      "hospital": "山东大学齐鲁医院",
+      "topic": "口服降糖固定复方的循证与临床选用",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "李小英",
+      "hospital": "复旦大学附属中山医院",
+      "topic": "固定复方制剂的临床应用",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "姬秋和",
+      "hospital": "西安国际医学中心医院",
+      "topic": "注射固定复方制剂临床抉择与用药要点",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "母义明",
+      "hospital": "解放军总医院第一医学中心",
+      "topic": "GLP-1在体重管理中的研究现状和未来发展方向",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "陈莉明",
+      "hospital": "天津医科大学朱宪彝纪念医院",
+      "topic": "GLP‑1系双靶点激动剂临床证据与差异化选择",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "洪天配",
+      "hospital": "北京大学第三医院",
+      "topic": "三受体激动剂研发进展与临床未来展望",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "秦洁",
+      "hospital": "山西省人民医院",
+      "topic": "从达标到超越-高级混合闭环系统的循证疗效全景",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "武晓泓",
+      "hospital": "浙江省人民医院",
+      "topic": "科技减负回归生活-高级混合闭环系统让糖尿病管理更简单更安心",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "高蕾莉",
+      "hospital": "北京大学人民医院",
+      "topic": "“双靶双偏向型” GLP-1/GIP受体激动剂奥莱泊肽，长期体重管理的安全耐受干预策略探讨",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "袁戈恒",
+      "hospital": "北京大学第一医院",
+      "topic": "糖尿病卒中：不一样的ASCVD",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "张宇辉",
+      "hospital": "中国医学科学院阜外医院",
+      "topic": "糖尿病心肌损伤的防治进展",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "祝之明",
+      "hospital": "中国人民解放军陆军特色医学中心",
+      "topic": "肥胖-醛固酮轴双重驱动MCK及其干预",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "王宁荐",
+      "hospital": "上海健康医学院附属浦东公利医院",
+      "topic": "浅谈肠促胰素药物的心血管获益",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "汪志红",
+      "hospital": "重庆医科大学附属第一医院",
+      "topic": "循证视角下2型糖尿病肾病缓解的治疗进展",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "高莹",
+      "hospital": "北京大学第一医院",
+      "topic": "从循证证据看GLP-1RA优化应用策略：GLP-1RA控制不佳优化治疗方案临床实践指南解读",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "臧丽",
+      "hospital": "解放军总医院第一医学中心",
+      "topic": "聚焦前沿:FRC临床共识的学术解读",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "董志勇",
+      "hospital": "广东省人民医院",
+      "topic": "代谢手术在中国进展",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "包玉倩",
+      "hospital": "上海交通大学医学院附属第六人民医院",
+      "topic": "内分泌代谢科在代谢手术管理中的作用",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "李伟正",
+      "hospital": "中南大学湘雅三医院",
+      "topic": "代谢手术修正临床肥胖",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "刘超",
+      "hospital": "南京中医药大学附属中西医结合医院",
+      "topic": "内分泌激素−肝脏轴：关联与意义",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "周嘉强",
+      "hospital": "浙江大学医学院附属邵逸夫医院",
+      "topic": "减重药物个性化选择策略",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "李霞",
+      "hospital": "中南大学湘雅二医院",
+      "topic": "1型糖尿病精准管理的若干问题",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "李益明",
+      "hospital": "复旦大学附属华山医院",
+      "topic": "糖尿病周围神经病变（DPN）“麻、刺、痛”治疗新选择",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "孙子林",
+      "hospital": "东南大学附属中大医院",
+      "topic": "2型糖尿病并发症人群的运动干预与实施要点",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "石文惠",
+      "hospital": "中国疾病预防中心",
+      "topic": "运动干预对老年糖尿病复元力的作用",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "常翠青",
+      "hospital": "北京大学第三医院",
+      "topic": "体重管理不同阶段运动干预方法",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "郭建军",
+      "hospital": "首都体育学院",
+      "topic": "体医融合式体重管理门诊建设",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "李全民",
+      "hospital": "中国人民解放军火箭军特色医学中心",
+      "topic": "中西医结合治疗糖尿病的年度报告",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "杨书",
+      "hospital": "北京大学深圳医院",
+      "topic": "灵芝三醇对糖尿病肾病的保护作用及机制研究",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "王世东",
+      "hospital": "北京中医药大学东直门医院",
+      "topic": "中药糖尿病视网膜病变的研究进展",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "万亨",
+      "hospital": "南方医科大学第八附属医院",
+      "topic": "TED于微处见真章-关键篇",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "刘向阳",
+      "hospital": "天津医科大学朱宪彝纪念医院",
+      "topic": "TED于微处见真章-解锁篇",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "王彦",
+      "hospital": "山西医科大学第一医院",
+      "topic": "TED于微处见真章-实战篇",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "李晋",
+      "hospital": "南京大学医学院附属鼓楼医院",
+      "topic": "TED于微处见真章-重塑篇",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "张磊",
+      "hospital": "上海交通大学医学院附属第六人民医院",
+      "topic": "TED于微处见真章-探索篇",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "张雨薇",
+      "hospital": "四川大学华西医院",
+      "topic": "T2D相关CKD管理，心肾保护药物应序贯联合",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "秦贵军",
+      "hospital": "郑州大学第一医院",
+      "topic": "多内分泌代谢卵巢综合征（PMOS）对糖代谢的影响及研究进展",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "任艳",
+      "hospital": "四川大学华西医院",
+      "topic": "原发性醛固酮增多症糖代谢异常及治疗相关研究进展",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "姚兰",
+      "hospital": "武汉大学人民医院",
+      "topic": "代谢网络与心血管疾病新认知",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "章晓燕",
+      "hospital": "复旦大学附属中山医院",
+      "topic": "糖尿病患者的肾脏病鉴别诊断要点",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "张淼",
+      "hospital": "贵州医科大学附属医院",
+      "topic": "iCGM国内外标准解读",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "姜宏卫",
+      "hospital": "河南科技大学第一附属医院",
+      "topic": "iCGM中国临床数据解读",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "张宝玉",
+      "hospital": "首都医科大学附属北京安贞医院",
+      "topic": "精准定位，协同管理---新型降糖药时代的磺脲类药物价值再审视",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "冉兴无",
+      "hospital": "四川大学华西医院",
+      "topic": "糖尿病足管理进展",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "王爱萍",
+      "hospital": "中国人民解放军东部战区空军医院",
+      "topic": "糖尿病周围血管病变的诊治进展",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "朱迪",
+      "hospital": "中国人民解放军空军特色医学中心",
+      "topic": "糖尿病足患者的心血管风险评估",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "王宁",
+      "hospital": "北京中医药大学东直门医院",
+      "topic": "去腐生肌、煨脓长肉与湿性愈合理论",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "徐俊",
+      "hospital": "天津医科大学朱宪彝纪念医院",
+      "topic": "糖尿病足感染新进展",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "陈文明",
+      "hospital": "复旦大学可信具身智能研究院",
+      "topic": "从足踝精细运动解析到智能可穿戴技术",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "王中京",
+      "hospital": "武汉市中心医院",
+      "topic": "细胞治疗用于糖尿病足的现状与转化思考",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "王爱红",
+      "hospital": "中国人民解放军总医院第九医学中心",
+      "topic": "糖尿病肾足诊疗策略",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "冯波",
+      "hospital": "上海市东方医院（同济大学附属东方医院）",
+      "topic": "超长效GLP-1RA临床研究最新进展",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "AliciaJenkins",
+      "hospital": "国际糖尿病联盟西太平洋地区(IDFWPR)主席",
+      "topic": "IDF指南与研究新证据：推动2型糖尿病个体化管理",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "张朝云",
+      "hospital": "复旦大学附属华山医院",
+      "topic": "氧化应激相关靶点在糖尿病肾病防治中的研究进展",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "薛耀明",
+      "hospital": "广州南方医科大学南方医院",
+      "topic": "糖尿病肾脏病诊疗最新进展",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "朱虹",
+      "hospital": "温州医科大学附属第一医院",
+      "topic": "糖尿病微血管并发症与肿瘤：争议与困惑",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "常宝成",
+      "hospital": "天津医科大学朱宪彝纪念医院",
+      "topic": "低血糖与糖尿病肾病",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "侯新国",
+      "hospital": "山东大学齐鲁医院",
+      "topic": "司美格鲁肽III期临床研究结果及临床价值解读",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "王清",
+      "hospital": "中日联谊医院",
+      "topic": "糖尿病痛性神经病变的诊疗进展",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "胡吉",
+      "hospital": "苏州大学附属第二医院",
+      "topic": "糖尿病痛性神经病变的中枢机制",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "王维敏",
+      "hospital": "南京大学医学院附属鼓楼医院",
+      "topic": "糖尿病大纤维神经病变的机制及诊治进展",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "吴静",
+      "hospital": "中南大学湘雅医院",
+      "topic": "糖尿病小纤维神经病变的机制及诊治进展",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "于宁",
+      "hospital": "上海交大医学院附属仁济医院浦南分院",
+      "topic": "糖尿病泌尿生殖系统神经病变的诊治",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "鲁一兵",
+      "hospital": "南京医科大学第二附属医院",
+      "topic": "糖尿病胃肠道自主神经病变的诊治",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "王桂侠",
+      "hospital": "吉林大学第一医院",
+      "topic": "从指南看PPAR全激动剂对老年糖尿病患者的治疗获益",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "郑燕林",
+      "hospital": "成都中医药大学附属医院",
+      "topic": "治疗糖尿病视网膜病变临床试验解读",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "汪忠霞",
+      "hospital": "安徽中医药大学第二附属医院",
+      "topic": "糖尿病视网膜病变病例分享",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "董文兰",
+      "hospital": "中国疾控中心慢病中心",
+      "topic": "中国代谢共病疾病负担及流行病学现状",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "李舍予",
+      "hospital": "四川大学华西医院",
+      "topic": "代谢肝心肾综合征——探究代谢起源的多器官损害",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "杜建玲",
+      "hospital": "大连医科大学附属第一医院",
+      "topic": "MAFLD靶向治疗现状及展望",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "李于",
+      "hospital": "中科院上海营养与健康研究所",
+      "topic": "FABP1介导棕榈酸与脂肪生成参与子代肝脏脂肪变性",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "常永生",
+      "hospital": "天津医科大学基础医学院",
+      "topic": "RNF10与MASH",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "陈伟",
+      "hospital": "中国医学科学院北京协和医院",
+      "topic": "糖尿病合并肥胖少肌症患者的医学营养治疗",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "葛声",
+      "hospital": "上海交通大学医学院附属第六人民医院",
+      "topic": "糖尿病体重管理中“质”与“量”的取舍",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "JanakaKaralliedde",
+      "hospital": "King&#39;sCollegeLondon,Guy&#39;sandStThomasHospitalLondon",
+      "topic": "EASD 2026年会精粹：心肾代谢疾病精选亮点与临床意义",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "JuliaMader",
+      "hospital": "格拉茨医科大学内分泌学和糖尿病学系",
+      "topic": "EASD 2026 热点关注聚焦肠促胰素：从作用机制到真实世界，我们能学到什么？",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "匡洪宇",
+      "hospital": "哈尔滨医科大学附属第一医院",
+      "topic": "代谢相关疾病干预新视野：聚焦肠促胰素类药物",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "贾鹏",
+      "hospital": "武汉大学",
+      "topic": "基于多源数据的糖尿病危险因素研究",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "权金星",
+      "hospital": "甘肃省人民医院",
+      "topic": "紧密型医联体模式下基层糖尿病专科建设",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "李军",
+      "hospital": "石河子大学第一附属医院",
+      "topic": "基于数据驱动的血糖管理实践",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "刘昊凌",
+      "hospital": "哈尔滨医科大学附属第一医院",
+      "topic": "寒冷气候下基层糖尿病规范化诊疗能力建设实践",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "陈开宁",
+      "hospital": "海南省人民医院",
+      "topic": "数字疗法赋能基层糖尿病管理",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "李晶",
+      "hospital": "天津医科大学朱宪彝纪念医院",
+      "topic": "“三一照护”赋能基层糖尿病管理",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "杨进",
+      "hospital": "北京大学第三医院",
+      "topic": "区域化糖尿病管理体系建设-海淀模式",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "蔡霞",
+      "hospital": "南昌大学第二附属医院",
+      "topic": "肌少症、肌少症性肥胖与T2DM",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "胡承",
+      "hospital": "上海交通大学医学院附属第六人民医院",
+      "topic": "骨骼肌DPT促进GDF15分泌改善糖脂代谢紊乱",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "顾愹",
+      "hospital": "江苏省人民医院（南京医科大学第一附属医院）",
+      "topic": "1型糖尿病免疫治疗主要终点评估：进展、挑战与展望",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "谢雨婷",
+      "hospital": "中南大学湘雅二医院",
+      "topic": "CD3单抗的临床应用与副反应处理规范",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "刘兴国",
+      "hospital": "中国科学院广州生物医药与健康研究院",
+      "topic": "线粒体胶囊移植缓解重大疾病的功能障碍",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "肖扬",
+      "hospital": "中南大学湘雅二医院",
+      "topic": "调节性T细胞与1型糖尿病",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "杨涛",
+      "hospital": "江苏省人民医院（南京医科大学第一附属医院）",
+      "topic": "胰岛β细胞功能的多维评估体系",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "朱剑",
+      "hospital": "江南大学附属医院",
+      "topic": "胰岛β细胞功能与保护专家共识解读",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "朱云霞",
+      "hospital": "南京医科大学",
+      "topic": "激酶BRSK2响应不同信号介导胰岛beta细胞功能从代偿走向失代偿",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "谢晓敏",
+      "hospital": "银川市第一人民医院",
+      "topic": "多内分泌轴紊乱与胰岛功能损伤",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "韩晓",
+      "hospital": "南京医科大学基础医学院",
+      "topic": "基因转录调控与beta细胞去分化转分化",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "殷浩",
+      "hospital": "中国人民解放军海军军医大学第二附属医院",
+      "topic": "胰岛暨再生胰岛移植的长征经验",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "杨吉春",
+      "hospital": "北京大学",
+      "topic": "代谢性疾病起源于肝脏：基于线粒体功能调控的证据和思考",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "孟卓贤",
+      "hospital": "浙江大学",
+      "topic": "骨骼肌脂肪对话与代谢稳态调控",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "惠晓艳",
+      "hospital": "中国香港中文大学深圳研究院",
+      "topic": "米色脂肪细胞离子转运循环与代谢失衡",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "赵琳",
+      "hospital": "复旦大学附属中山医院",
+      "topic": "CGM 注册临床试验的设计逻辑-uCGM以严谨回应标准",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "刘静",
+      "hospital": "甘肃省人民医院",
+      "topic": "糖尿病心理问题、生活方式现状及规范化干预对策",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "赵林华",
+      "hospital": "中国中医科学院广安门医院",
+      "topic": "糖尿病现代中医诊疗体系构建与心理研究",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "向小军",
+      "hospital": "中南大学湘雅二医院",
+      "topic": "肥胖的\"心\"视角：双向影响及系统干预",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "任会霞",
+      "hospital": "首都医学科学创新中心",
+      "topic": "胰腺胰岛的全局同步化在体内维持血糖稳态",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "李金娥",
+      "hospital": "南昌大学第二附属医院",
+      "topic": "中药小分子促进干细胞向胰岛素分泌细胞分化的机制研究",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "吕庆国",
+      "hospital": "四川大学华西医院",
+      "topic": "破局有力，循证筑底——新一代原研高选择性URAT1抑制剂为痛风降尿酸治疗注入新动能",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "赵寅",
+      "hospital": "华中科技大学同济医学院附属同济医院",
+      "topic": "关键蛋白质翻译后修饰介导糖尿病视网膜病变发病机制的研究进展",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "李华婷",
+      "hospital": "上海交通大学医学院附属第六人民医院",
+      "topic": "基于眼底图像的糖尿病并发症筛查预警",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "邹华杰",
+      "hospital": "青海大学附属医院",
+      "topic": "降糖治疗与视力保护：糖尿病视网膜病变管理的新证据",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "邹海东",
+      "hospital": "上海交通大学医学院附属第一人民医院",
+      "topic": "糖尿病视网膜病变的肠道微生态相关机制研究",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "孙蓓",
+      "hospital": "天津医科大学朱宪彝纪念医院",
+      "topic": "糖尿病视网膜病变的血管稳态失衡",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "刘东方",
+      "hospital": "重庆医科大学附属第二医院",
+      "topic": "干细胞及生物治疗在糖尿病视网膜病变的研究进展",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "于雪",
+      "hospital": "北京医院国家老年医学中心",
+      "topic": "糖尿病肥胖和心衰",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "周琼",
+      "hospital": "中国医学科学院阜外医院",
+      "topic": "心力衰竭和肥胖的治疗进展",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "林珊珊",
+      "hospital": "悉尼科技大学",
+      "topic": "糖尿病肌少症：早期识别与干预策略",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "赵芳",
+      "hospital": "中日友好医院",
+      "topic": "新时代背景下中国糖尿病专科护理 高质量建设的思考",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "张明霞",
+      "hospital": "北大人民医院",
+      "topic": "基于患者需求的糖尿病创新教育工具研发与临床应用实践",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "武全莹",
+      "hospital": "北京医院国家老年医学中心",
+      "topic": "CGM的准确性及其对低血糖预判的价值",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "陈晓春",
+      "hospital": "浙江大学医学院附属儿童医院",
+      "topic": "1型糖尿病过渡期管理的实践与探索",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "郭佳",
+      "hospital": "中南大学护理学院",
+      "topic": "妊娠期糖尿病“诊-治-护”一体化临床辅助决策系统的研发",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "高敏",
+      "hospital": "华中科技大学同济医学院附属同济医院",
+      "topic": "糖尿病认知障碍特殊人群教育管理的范式转变与多学科实践",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "王煜非",
+      "hospital": "上海交通大学医学院附属第六人民医院",
+      "topic": "CGM临床价值再审视:从血糖指标到临床决策",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "雷闽湘",
+      "hospital": "中南大学湘雅医院",
+      "topic": "中国1类创新药GLP-1RA周制剂治疗2 型糖尿病长期依从因素的思考",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "刘建民",
+      "hospital": "上海交通大学医学院附属瑞金医院",
+      "topic": "糖尿病合并骨质疏松的综合管理",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "滕晓春",
+      "hospital": "中国医科大学附属第一医院",
+      "topic": "糖尿病合并血脂异常的综合管理",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "王颜刚",
+      "hospital": "青岛大学附属医院",
+      "topic": "高尿酸血症及其相关病中西医结合治疗指南",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "樊碧发",
+      "hospital": "中日友好医院",
+      "topic": "痛性糖尿病周围神经病变药物治疗中国专家共识",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "廖鑫",
+      "hospital": "遵义医科大学附属医院",
+      "topic": "胰岛素静脉输注临床应用专家共识（2026版）",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "张翔",
+      "hospital": "中国香港中文大学",
+      "topic": "代谢性肝病的基础与转化研究",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "郑怡",
+      "hospital": "中国人民解放军陆军军医大学第二附属医院",
+      "topic": "糖脂代谢紊乱与靶器官损伤",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "黄哲",
+      "hospital": "上海交通大学生命科学技术学院",
+      "topic": "代谢性肝病的靶点探索",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "倪岳琼",
+      "hospital": "上海交通大学医学院附属第六人民医院",
+      "topic": "多组学与AI赋能代谢病精准生活方式干预",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "刘铁民",
+      "hospital": "复旦大学生命科学院",
+      "topic": "减重过程中的增肌策略",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "廖云飞",
+      "hospital": "华中科技大学同济医学院附属协和医院",
+      "topic": "多维管理模式在内分泌代谢疾病中的应用与思考",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "陆颖理",
+      "hospital": "上海交通大学医学院附属第九人民医院",
+      "topic": "食物成瘾相关大脑G蛋白偶联受体与糖脂代谢",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "郭航",
+      "hospital": "天津医科大学朱宪彝纪念医院",
+      "topic": "代谢稳态失衡驱动糖尿病肾病进展的新机制",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "陈勇",
+      "hospital": "华中科技大学同济医学院附属同济医院",
+      "topic": "米色脂肪研究进展",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "陈颖",
+      "hospital": "复旦大学附属中山医院",
+      "topic": "糖尿病和肥胖的AI管理新技术",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "王进",
+      "hospital": "南京大学医学院附属鼓楼医院",
+      "topic": "脂-脑通讯为核心的肥胖干预新策略",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "黄佳琦",
+      "hospital": "中南大学湘雅二医院",
+      "topic": "精准营养与代谢健康的大数据视角",
+      "role": "专科学术骨干",
+      "tierCode": "A",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "迟毓婧",
+      "hospital": "北京大学人民医院",
+      "topic": "靶向分泌蛋白的代谢相关性疾病治疗：内分泌诊疗新策略的探索",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "程新",
+      "hospital": "中国科学院分子细胞科学卓越创新中心",
+      "topic": "胰岛组织的体外再造及临床应用",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "汪锴",
+      "hospital": "北京大学基础医学院",
+      "topic": "肠道微生物代谢多样性挖掘及其在代谢性疾病中的作用研究",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "RichardDonnelly",
+      "hospital": "SchoolofMedicineandSurgicalSciences,UniversityofNottingham,UK",
+      "topic": "Getting Published in a High-Impact Journal:   Editorial Perspectives from Diabetes, Obesity & Metabolism",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "ZhenqiLiu",
+      "hospital": "DivisionofEndocrinologyandMetabolismUniversityofVirginiaHealthSystem",
+      "topic": "Incretin receptor agonism, muscle health, and cardiometabolic implications",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "朱瑶",
+      "hospital": "中华糖尿病杂志",
+      "topic": "从投稿到发表：医学论文的通关之路",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "李卓",
+      "hospital": "吉林大学第一医院",
+      "topic": "国家科技项目申报与全程科研管理",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    },
+    {
+      "name": "王杰",
+      "hospital": "首都医科大学附属北京朝阳医院",
+      "topic": "如何应用临床数据开展科研",
+      "role": "专科学术骨干",
+      "tierCode": "B",
+      "scoreLabel": "重点讲者"
+    }
+  ]
+}

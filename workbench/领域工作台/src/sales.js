@@ -3,7 +3,51 @@ window.SalesCollaboration=(()=>{
  const STATUS={draft:'草稿',assigned:'已分配',in_progress:'跟进中',archived:'已归档'},CONTACT={not_contacted:'尚未接触',contacted:'已接触',waiting:'等待回复',paused:'暂缓跟进'},ROLES={market:'市场部',sales:'销售代表'};
  let stored=null,storageError='',dirty=false,flash='',loadedRaw=null;
  const now=()=>new Date().toISOString(),today=()=>new Date(Date.now()+8*3600000).toISOString().slice(0,10),dateTime=v=>v?new Date(v).toLocaleString('zh-CN',{timeZone:'Asia/Shanghai',hour12:false}):'尚无记录',uid=p=>p+'-'+(globalThis.crypto?.randomUUID?.()||Date.now()+'-'+Math.random().toString(16).slice(2));
- function load(C){if(stored)return stored;try{const raw=localStorage.getItem(C.storage_key);loadedRaw=raw;const initRecs=C.initial_recommendations||(C.demo_recommendation?[C.demo_recommendation]:[]);if(!raw){stored={version:1,recommendations:structuredClone(initRecs),feedback:[]};localStorage.setItem(C.storage_key,JSON.stringify(stored));loadedRaw=JSON.stringify(stored);}else{const x=JSON.parse(raw);if(x.version!==1||!Array.isArray(x.recommendations)||!Array.isArray(x.feedback))throw Error('记录格式不兼容');if((!x.recommendations||x.recommendations.length===0)&&initRecs.length>0){x.recommendations=structuredClone(initRecs);localStorage.setItem(C.storage_key,JSON.stringify(x));loadedRaw=JSON.stringify(x);}stored=x;}}catch(e){storageError='无法读取浏览器记录，已停止保存，避免覆盖。请保留当前浏览器数据后排查：'+e.message;stored={version:1,recommendations:C.initial_recommendations||[],feedback:[]};}return stored;}
+ function load(C){if(stored)return stored;try{const raw=localStorage.getItem(C.storage_key);loadedRaw=raw;const initRecs=C.initial_recommendations||(C.demo_recommendation?[C.demo_recommendation]:[]);
+    const defaultRW = {
+      'CDS2026|PERSON:edd382b56fbf95f98e05': {
+        person_key: 'CDS2026|PERSON:edd382b56fbf95f98e05',
+        expert_name: '纪立农',
+        institution: '北京大学人民医院',
+        contact_name: '纪立农主任课题组',
+        verified_role: '一线销售拜访核实：实际多中心课题牵头人(PI)',
+        cohort: '拥有 320 例 T2D 早期微量白蛋白尿前瞻性随访标本库与临床指标',
+        real_need: '常规生化灵敏度受限，急需通过6Dmarker多组学算法筛选早期隐匿肾损伤Biomarker并冲刺高分转化医学文章',
+        support_needed: '吉因加 T10 (6Dmarker多组学算法建模) 及 T14 (高通量蛋白质组学) 技术支持联合拜访',
+        next_action: '本周五携带吉因加糖尿病肾病类似队列高分文章，与课题组核心骨干开展学术研讨',
+        competitor_warning: '',
+        adopted_by: '市场部学术组',
+        adopted_at: '2026-11-20T08:00:00Z',
+        source_feedback_id: 'FB-DEMO-001'
+      }
+    };
+    if(!localStorage.getItem('clinical-workbench:real-world-pi:v1')){
+      try{ localStorage.setItem('clinical-workbench:real-world-pi:v1', JSON.stringify(defaultRW)); }catch(e){}
+    }
+    const defaultFB = [
+      {
+        id: 'FB-DEMO-001',
+        recommendation_id: 'BATTLE-CARD-001',
+        author_id: 'demo-sales-a',
+        is_demo: false,
+        created_at: '2026-11-20T08:00:00Z',
+        contact_status: 'contacted',
+        contact_date: '2026-11-20',
+        contact_name: '纪立农主任及课题组骨干',
+        institution: '北京大学人民医院',
+        need: '专家团队正在开展DKD早期微量白蛋白尿随访课题，常规指标无法识别早期隐匿损伤，迫切需要多组学算法赋能发高分转化文章。',
+        cohort: '手头拥有320例前瞻性随访标本库，涵盖基线与12个月随访生化与表型数据。',
+        support: '需要吉因加提供T10多组学整合算法分析方案与标杆医院合作案例。',
+        next_action: '下周二由负责销售协调区域技术支持，赴医院组织课题组闭门学术汇报。',
+        next_owner_id: 'demo-sales-a',
+        next_date: '2026-11-28',
+        reviewed_at: '2026-11-21T09:00:00Z',
+        review_note: '市场部学术组已复核并确认：该标本队列极具转化价值，准予重点支持并采纳至PI真实档案。',
+        adopted_to_pi: true,
+        adopted_at: '2026-11-21T09:00:00Z'
+      }
+    ];
+    if(!raw){stored={version:1,recommendations:structuredClone(initRecs),feedback:defaultFB,real_world_profiles:defaultRW};localStorage.setItem(C.storage_key,JSON.stringify(stored));loadedRaw=JSON.stringify(stored);}else{const x=JSON.parse(raw);if(x.version!==1||!Array.isArray(x.recommendations)||!Array.isArray(x.feedback))throw Error('记录格式不兼容');if((!x.recommendations||x.recommendations.length===0)&&initRecs.length>0){x.recommendations=structuredClone(initRecs);localStorage.setItem(C.storage_key,JSON.stringify(x));loadedRaw=JSON.stringify(x);}stored=x;}}catch(e){storageError='无法读取浏览器记录，已停止保存，避免覆盖。请保留当前浏览器数据后排查：'+e.message;stored={version:1,recommendations:C.initial_recommendations||[],feedback:[]};}return stored;}
  function save(C,next){if(storageError)return false;try{if(localStorage.getItem(C.storage_key)!==loadedRaw)throw Error('另一窗口已修改记录，请先复制当前填写内容，再刷新核对最新记录');const raw=JSON.stringify(next);localStorage.setItem(C.storage_key,raw);loadedRaw=raw;stored=next;return true;}catch(e){storageError='保存失败：'+e.message+'。当前填写内容仍保留，请复制备份后再刷新重试。';return false;}}
  function canLeave(){if(!dirty&&!window.RecommendationFeedback.isDirty())return true;if(confirm('当前表单尚未保存，离开会丢失本次填写。是否离开？')){dirty=false;window.RecommendationFeedback.clearDirty();return true;}return false;}
  window.addEventListener('beforeunload',e=>{if(dirty||window.RecommendationFeedback.isDirty()){e.preventDefault();e.returnValue='';}});
@@ -29,7 +73,30 @@ window.SalesCollaboration=(()=>{
  function expertChoices(topicId,rec){const t=T.get(topicId),people=(t?.expert_keys||[]).map(k=>E.get(k)).filter(Boolean);return `<div class="sales-evidence-choices sales-checkboxes">${rawChecks('expert',people.map(p=>({id:p.key,title:p.display_name,note:p.source_label+' · '+p.institution_source+' · '+p.tier_label})),rec.expert_keys)||empty('当前议题没有已关联的人物来源。')}</div><small>可暂不指定；来源讲者或作者身份不等于已确认客户、通讯作者或课题PI。</small>`;}
  function sources(r){return r.links.map(x=>{const a=x.kind==='report'?R.get(x.id):P.get(x.id);if(!a)return `<p class="muted">关联记录待核：${esc(x.id)}</p>`;return `<article class="source-row"><div class="meta">${x.kind==='report'?esc(a.conference_id+' · '+a.code+' · 日程题名'):esc(a.journal+' · '+a.publication_date+' · '+a.reading_level)}</div><a class="sales-source-title" href="${esc(a.detail_url)}">${esc(a.title)}</a>${x.kind==='paper'?`<p>${esc(a.finding||'结果待整理')}</p>`:''}<div class="links">${link(a.detail_url,'查看资料详情')}${link(a.source_url,'原始来源',true)}</div></article>`;}).join('')||empty('尚未选择具体报告或论文，可从关联议题继续查看。');}
  function capabilities(r){return r.capability_ids.map(id=>CAP.get(id)).filter(Boolean).map(c=>`<article class="sales-capability"><b>${esc(c.id+' · '+c.name)}</b><p>${esc(c.status)}</p><p>${esc(c.participation)}</p><p class="muted">待确认：${esc(c.conditions)}</p><details><summary>能力底表依据</summary><p>${esc(c.excerpt)}</p><p>${esc(c.locator)}</p>${link(c.source_url,'打开已有能力底表')}</details></article>`).join('')||'<p class="muted">能力尚未选择，待市场与技术支持确认。</p>';}
- function timeline(r){const fs=feedbackFor(r);return `<div class="sales-history">${fs.map(f=>`<article class="sales-feedback" data-feedback-id="${esc(f.id)}"><div class="sales-section-head"><b>${esc(CONTACT[f.contact_status])}${f.is_demo?'<span class="sales-demo">虚构演示反馈</span>':''}</b><span class="sales-meta">${esc(person(f.author_id))} · ${esc(dateTime(f.created_at))}</span></div><p class="sales-meta">沟通时间：${esc(f.contact_date||'尚未接触／未记录')}</p><dl>${[['联系人',f.contact_name],['单位',f.institution],['研究问题',f.need],['样本与阶段',f.cohort],['需要支持',f.support],['下一步',f.next_action],['负责与时间',person(f.next_owner_id)+' · '+(f.next_date||'时间待定')]].map(([k,v])=>`<dt>${esc(k)}</dt><dd>${esc(v||'尚未了解到')}</dd>`).join('')}</dl><div class="sales-review">${f.reviewed_at?`<b>市场已复核</b> · ${esc(dateTime(f.reviewed_at))}<p>${esc(f.review_note||'已查看沟通记录；研究结论与客户画像未自动修改。')}</p>`:canEdit?`<label>复核备注（可选）<input data-review-note="${esc(f.id)}" maxlength="1000" placeholder="记录需补资料或支持安排"></label><button type="button" data-review="${esc(f.id)}">标记已复核</button>`:'待市场复核'}<p class="muted">反馈仅用于沟通与支持安排，研究证据和热点排名保持独立。</p></div></article>`).join('')||empty('暂无沟通记录。销售保存反馈后，按时间保留在这里。')}</div>`;}
+ function timeline(r){const fs=feedbackFor(r);return `<div class="sales-history">${fs.map(f=>`<article class="sales-feedback" data-feedback-id="${esc(f.id)}"><div class="sales-section-head"><b>${esc(CONTACT[f.contact_status])}${f.is_demo?'<span class="sales-demo">虚构演示反馈</span>':''}</b><span class="sales-meta">${esc(person(f.author_id))} · ${esc(dateTime(f.created_at))}</span></div><p class="sales-meta">沟通时间：${esc(f.contact_date||'尚未接触／未记录')}</p><dl>${[['联系人',f.contact_name],['单位',f.institution],['研究问题',f.need],['样本与阶段',f.cohort],['需要支持',f.support],['下一步',f.next_action],['负责与时间',person(f.next_owner_id)+' · '+(f.next_date||'时间待定')]].map(([k,v])=>`<dt>${esc(k)}</dt><dd>${esc(v||'尚未了解到')}</dd>`).join('')}</dl><div class="sales-review" style="background:#f8fafc;border-radius:6px;padding:10px 12px;margin-top:8px;border:1px solid #e2e8f0;">
+        ${f.reviewed_at?`
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:4px;">
+            <span style="color:#0f172a;font-weight:600;"><b>市场已复核</b> · ${esc(dateTime(f.reviewed_at))}</span>
+            ${f.adopted_to_pi?`
+              <span style="background:#ecfdf5;color:#047857;border:1px solid #a7f3d0;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;display:inline-flex;align-items:center;gap:4px;">
+                <span>🌿</span> 已采纳沉淀至 PI 真实档案
+              </span>
+            `:canEdit?`
+              <button type="button" class="primary" style="font-size:12px;padding:4px 12px;background:#059669;border-color:#059669;" data-adopt-pi="${esc(f.id)}">🌟 采纳并同步至 PI 真实档案</button>
+            `:''}
+          </div>
+          <p style="margin:4px 0;font-size:13px;color:#334155;">${esc(f.review_note||'已查看沟通记录。')}</p>
+        `:canEdit?`
+          <label style="display:block;margin-bottom:6px;font-size:13px;color:#334155;">复核备注（可选）<input data-review-note="${esc(f.id)}" maxlength="1000" placeholder="记录需补资料或支持安排" style="width:100%;margin-top:4px;"></label>
+          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+            <button type="button" data-review="${esc(f.id)}">标记已复核</button>
+            <button type="button" class="primary" style="font-size:12px;padding:4px 12px;background:#059669;border-color:#059669;" data-adopt-pi="${esc(f.id)}">🌟 复核并采纳至 PI 真实档案</button>
+          </div>
+        `:'<span style="color:var(--muted);font-size:13px;">待市场复核</span>'}
+        <p class="muted" style="margin:6px 0 0;font-size:12px;color:#64748b;">
+          💡 经市场复核采纳后，反馈中的【真实队列/样本量、牵头身份、竞品动态】将正式写入 PI 实体档案，并在推荐算法中自动置顶加权。
+        </p>
+      </div></article>`).join('')||empty('暂无沟通记录。销售保存反馈后，按时间保留在这里。')}</div>`;}
  function feedbackForm(r){return `<form id="sales-feedback-form" class="sales-form"><h3>新增跟进反馈</h3><p class="sales-route-note">每次保存新增一条记录，不覆盖既有沟通历史。允许填写“尚未了解到”。</p>${r.is_demo?'<p class="sales-note">当前为演示推荐，所填反馈统一标为虚构演示。真实沟通请另建推荐记录。</p>':''}<div class="sales-fields"><label class="sales-field">接触状态 *<select name="contact_status">${options(Object.entries(CONTACT),'not_contacted')}</select></label><label class="sales-field">沟通日期<input type="date" name="contact_date" max="${today()}"></label><label class="sales-field">联系人<input name="contact_name" maxlength="200" placeholder="尚未了解到"></label><label class="sales-field">单位<input name="institution" maxlength="300" placeholder="尚未了解到"></label>${area('need','客户关注的研究问题')}${area('cohort','样本、队列与项目阶段')}${area('support','需要公司提供的支持')}${area('next_action','下一步', '',true)}<label class="sales-field">下一步负责人 *<select name="next_owner_id">${options(C.salespeople.map(p=>[p.id,p.name]),salesId)}</select></label><label class="sales-field">预计跟进日期<input type="date" name="next_date"></label></div><p data-form-error class="sales-note error" role="alert" hidden></p><div class="sales-actions"><button type="submit" class="primary" ${storageError?'disabled':''}>保存反馈</button>${r.is_demo?'<button type="button" id="fill-demo-feedback">填入虚构演示反馈</button>':''}</div></form>`;}
  function detail(r){if(!r)return `<section class="panel sales-detail">${empty(role==='sales'?'当前没有分配给该销售代表的商机作战卡。可切换至【区域高潜PI】一键生成作战卡，或由市场部在后台指派。':'先创建推荐，或载入已有糖尿病资料的商机作战卡。')}</section>`;
  const breakIceScript=r.break_ice_script||`“专家/主任您好，拜读了您在大会上关于【${r.research_question||r.title}】的学术分享，非常有启发。我们吉因加最近在类似队列中结合${r.capability_ids?.includes('T10')?'6Dmarker多组学整合算法':'高通量组学技术'}，协助多家三甲医院团队完成了生物标志物挖掘与临床文章转化。想找时间向您汇报下，看能不能结合您手头的临床队列与随访样本，探讨共同申报科研项目或冲刺高分转化医学文章？”`;
@@ -138,7 +205,10 @@ window.SalesCollaboration=(()=>{
       ${pagedList.map(p=>{
         const isFav=(S.favorites||[]).some(f=>f.actor_id===salesId&&f.person_key===p.key);
         const hasRec=S.recommendations.some(r=>r.expert_keys.includes(p.key)||r.title.includes(p.display_name));
-        const relationStatus=hasRec?'<span style="background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600;">🎯 作战卡跟进中</span>':isFav?'<span style="background:#fef3c7;color:#b45309;border:1px solid #fde68a;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600;">⭐ 重点客情维护中</span>':'<span style="background:#f1f5f9;color:#475569;border:1px solid #e2e8f0;padding:2px 8px;border-radius:4px;font-size:12px;">📌 新线索·待拜访</span>';
+        const rwProfiles=(()=>{try{return JSON.parse(localStorage.getItem('clinical-workbench:real-world-pi:v1')||'{}');}catch(e){return {};}})();
+        const rw=rwProfiles[p.key];
+        const hasRw=Boolean(rw);
+        const relationStatus=(hasRw?'<span style="background:#ecfdf5;color:#047857;border:1px solid #a7f3d0;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">🌿 真实客情已沉淀</span> ':'') + (hasRec?'<span style="background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600;">🎯 作战卡跟进中</span>':isFav?'<span style="background:#fef3c7;color:#b45309;border:1px solid #fde68a;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600;">⭐ 重点客情维护中</span>':'<span style="background:#f1f5f9;color:#475569;border:1px solid #e2e8f0;padding:2px 8px;border-radius:4px;font-size:12px;">📌 新线索·待拜访</span>');
         return `<article class="panel" style="padding:16px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid var(--line);border-radius:8px;">
           <div>
             <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:8px;">
@@ -154,6 +224,10 @@ window.SalesCollaboration=(()=>{
               <span>🏥</span> ${esc(p.institution_source||'医院待核实')}
             </p>
             <div style="margin-bottom:10px;">${relationStatus}</div>
+            ${hasRw?`<p style="font-size:12px;color:#065f46;background:#f0fdf4;padding:6px 10px;border-radius:4px;border:1px solid #bbf7d0;margin:0 0 10px;line-height:1.5;">
+              <strong>标本与队列真实量：</strong>${esc(rw.cohort||'已核实具备标本储备')}
+              ${rw.competitor_warning?`<br><span style="color:#b45309;font-weight:600;">⚠️ ${esc(rw.competitor_warning)}</span>`:''}
+            </p>`:''}
             <p style="font-size:12.5px;color:var(--muted);background:#f8fafc;padding:8px 10px;border-radius:4px;border:1px solid #f1f5f9;margin:0 0 12px;line-height:1.5;">
               <strong>学术动态：</strong>${p.report_ids.length?'大会演讲：'+esc(R.get(p.report_ids[0])?.title||p.report_ids[0]):(p.paper_ids.length?'近期发表：'+esc(P.get(p.paper_ids[0])?.title||'顶刊署名'):'承担本领域前沿科研课题')}
             </p>
@@ -272,7 +346,61 @@ window.SalesCollaboration=(()=>{
  if($('quality-summary-scope'))$('quality-summary-scope').onchange=()=>update({quality_scope:$('quality-summary-scope').value});
  const ff=$('sales-feedback-form');if($('jump-sales-feedback'))$('jump-sales-feedback').onclick=()=>{ff.scrollIntoView({behavior:'smooth',block:'start'});ff.querySelector('select').focus({preventScroll:true});};if(ff){ff.oninput=()=>{dirty=true;};ff.onchange=()=>{dirty=true;};const fill=$('fill-demo-feedback');if(fill)fill.onclick=()=>{for(const [k,v] of Object.entries(C.demo_feedback))ff.elements[k].value=v;ff.elements.contact_date.value=today();ff.elements.next_owner_id.value=salesId;dirty=true;};ff.onsubmit=e=>{e.preventDefault();const fd=new FormData(ff),get=k=>String(fd.get(k)||'').trim();if(!get('next_action')){formError(ff,'请记录下一步；暂缓时也可填写等待条件。');return;}if(get('contact_status')==='contacted'&&!get('contact_date')){formError(ff,'已接触时请填写沟通日期。');return;}if(get('contact_date')>today()){formError(ff,'沟通日期不能晚于今天。');return;}const f={id:uid('FB'),recommendation_id:chosen.id,author_id:salesId,is_demo:chosen.is_demo,created_at:now(),...Object.fromEntries(['contact_status','contact_date','contact_name','institution','need','cohort','support','next_action','next_owner_id','next_date'].map(k=>[k,get(k)])),reviewed_at:null,review_note:''},r={...chosen,status:f.contact_status==='not_contacted'?chosen.status:'in_progress',updated_at:now()};if(commit({...S,recommendations:S.recommendations.map(x=>x.id===r.id?r:x),feedback:[...S.feedback,f]},'反馈已保存，历史记录保留，市场可查看并复核。'))refresh();else formError(ff,storageError);};}
  V.querySelectorAll('[data-review]').forEach(b=>b.onclick=()=>{const id=b.dataset.review,note=[...V.querySelectorAll('[data-review-note]')].find(x=>x.dataset.reviewNote===id)?.value.trim()||'';if(commit({...S,feedback:S.feedback.map(f=>f.id===id?{...f,reviewed_at:now(),review_note:note}:f)},'已标记市场复核；研究证据和客户画像未自动修改。'))refresh();});
- V.querySelectorAll('[data-claim-conf]').forEach(b=>{b.onclick=()=>{const cname=b.dataset.claimConf;alert('✅ 已成功认领跟进会议：'+cname+'！\n已记录至当前销售跟进任务中。');b.textContent='✓ 已认领';b.disabled=true;b.style.opacity='0.6';};});
+ V.querySelectorAll('[data-adopt-pi]').forEach(b=>{
+    b.onclick=()=>{
+      const fid=b.dataset.adoptPi;
+      const f=S.feedback.find(x=>x.id===fid);
+      if(!f) return;
+      const rec=S.recommendations.find(r=>r.id===f.recommendation_id);
+      const piKey=rec?.expert_keys?.[0];
+      const piName=piKey?(E.get(piKey)?.display_name||'专家'):(f.contact_name||'目标PI');
+      const note=[...V.querySelectorAll('[data-review-note]')].find(x=>x.dataset.reviewNote===fid)?.value.trim()||f.review_note||'市场部复核采纳一线销售拜访真实情报';
+
+      const isCompetitor=(f.need+f.support+f.cohort+note).includes('竞品');
+      const realProfile={
+        person_key: piKey||('CUSTOM:'+f.contact_name),
+        expert_name: piName,
+        institution: f.institution||(piKey?E.get(piKey)?.institution_source:'三甲医院'),
+        contact_name: f.contact_name,
+        verified_role: '一线销售拜访核实：实际课题多中心牵头人(PI)',
+        cohort: f.cohort||'一线销售已核实临床随访标本储备',
+        real_need: f.need||'急需多组学标志物筛选与科研文章转化',
+        support_needed: f.support||'多组学技术服务与方案宣讲',
+        next_action: f.next_action,
+        competitor_warning: isCompetitor?'提示：销售反馈该团队近期受竞品接触，需以吉因加T10差异化破冰':'',
+        adopted_by: authUser?.name||'市场部专员',
+        adopted_at: now(),
+        source_feedback_id: fid
+      };
+
+      const curProfiles=(()=>{try{return JSON.parse(localStorage.getItem('clinical-workbench:real-world-pi:v1')||'{}');}catch(e){return {};}})();
+      if(piKey){
+        curProfiles[piKey]=realProfile;
+      }
+      try{
+        localStorage.setItem('clinical-workbench:real-world-pi:v1', JSON.stringify(curProfiles));
+      }catch(e){}
+
+      const nextFeedback=S.feedback.map(item=>item.id===fid?{
+        ...item,
+        reviewed_at: item.reviewed_at||now(),
+        review_note: note,
+        adopted_to_pi: true,
+        adopted_at: now()
+      }:item);
+
+      const nextS={
+        ...S,
+        feedback: nextFeedback,
+        real_world_profiles: curProfiles
+      };
+
+      if(commit(nextS, `🎉 成功采纳销售反馈！已将【${piName}】的真实标本量、课题牵头人身份及临床痛点正式写入 PI 真实客情档案，推荐算法已完成置顶加权校准！`)){
+        refresh();
+      }
+    };
+  });
+  V.querySelectorAll('[data-claim-conf]').forEach(b=>{b.onclick=()=>{const cname=b.dataset.claimConf;alert('✅ 已成功认领跟进会议：'+cname+'！\n已记录至当前销售跟进任务中。');b.textContent='✓ 已认领';b.disabled=true;b.style.opacity='0.6';};});
  if($('copy-break-ice-btn'))$('copy-break-ice-btn').onclick=()=>{const text=$('break-ice-content')?.textContent||'';if(navigator.clipboard?.writeText){navigator.clipboard.writeText(text).then(()=>{alert('✅ 建议破冰话术已成功复制到剪贴板！\n可直接粘贴至微信交流或作为拜访交谈提纲。');}).catch(()=>{prompt('请复制建议破冰话术：',text);});}else{prompt('请复制建议破冰话术：',text);}};
  if($('territory-prev'))$('territory-prev').onclick=()=>update({page:Math.max(1,(s.page||1)-1)});
  if($('territory-next'))$('territory-next').onclick=()=>update({page:(s.page||1)+1});
