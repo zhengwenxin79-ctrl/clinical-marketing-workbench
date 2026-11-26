@@ -1391,6 +1391,40 @@ class MailboxBridgeHandler(BaseHTTPRequestHandler):
                     "message": f"🚀 已启动 CodeBuddy CLI 深入检索/解析【{conf_name}】详细日程与讲者名单！"
                 }, ensure_ascii=False).encode('utf-8'))
 
+        elif self.path == '/api/mailbox/parse-pdf':
+            try:
+                import base64, io, pypdf
+                pdf_b64 = body.get('pdf_base64', '')
+                if not pdf_b64:
+                    self._set_headers(400)
+                    self.wfile.write(json.dumps({"success": False, "message": "缺少 pdf_base64 数据"}).encode('utf-8'))
+                    return
+                pdf_bytes = base64.b64decode(pdf_b64)
+                reader = pypdf.PdfReader(io.BytesIO(pdf_bytes))
+                page_texts = []
+                for p_idx, page in enumerate(reader.pages):
+                    txt = page.extract_text()
+                    if txt and txt.strip():
+                        page_texts.append(f"=== 第 {p_idx + 1} 页 ===\n" + txt.strip())
+                full_text = "\n\n".join(page_texts)
+                if not full_text.strip():
+                    self._set_headers(200)
+                    self.wfile.write(json.dumps({
+                        "success": False,
+                        "message": "该 PDF 页面中未提取到文字图层（可能为纯图片扫描件，建议使用 OCR 或微官网复制）"
+                    }, ensure_ascii=False).encode('utf-8'))
+                    return
+                self._set_headers(200)
+                self.wfile.write(json.dumps({
+                    "success": True,
+                    "page_count": len(reader.pages),
+                    "text_length": len(full_text),
+                    "text": full_text
+                }, ensure_ascii=False).encode('utf-8'))
+            except Exception as exc:
+                self._set_headers(500)
+                self.wfile.write(json.dumps({"success": False, "message": str(exc)}).encode('utf-8'))
+
         elif self.path == '/api/mailbox/update_progress':
             write_progress(body)
             self._set_headers(200)

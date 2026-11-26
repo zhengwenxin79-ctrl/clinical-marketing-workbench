@@ -2198,6 +2198,43 @@ window.workbenchApp = function () {
     },
     _schedPollTimer: null,
 
+    handleSchedulePDFUpload(event) {
+      const file = event.target.files && event.target.files[0];
+      if (!file) return;
+
+      if (file.type === 'application/pdf' || file.name.endsWith('.pdf')) {
+        const reader = new FileReader();
+        this.showToast('📄 正在从 PDF 中提取全量日程文字...', 'info');
+        reader.onload = async (e) => {
+          const base64Data = String(e.target.result || '').split(',')[1];
+          try {
+            const res = await fetch('http://127.0.0.1:8899/api/mailbox/parse-pdf', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ filename: file.name, pdf_base64: base64Data })
+            });
+            const data = await res.json();
+            if (data.success && data.text) {
+              this.scheduleScrapePastedText = data.text;
+              this.showToast(`📄 成功解析【${file.name}】共 ${data.page_count} 页（${data.text.length} 字）！可直接点击下方一键智能入库。`, 'success');
+            } else {
+              this.showToast('PDF 文本提取失败：' + (data.message || '可能为纯图片扫描件'), 'error');
+            }
+          } catch (err) {
+            this.showToast('无法连接 8899 网关解析 PDF', 'error');
+          }
+        };
+        reader.readAsDataURL(file);
+      } else {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          this.scheduleScrapePastedText = String(e.target.result || '');
+          this.showToast(`📄 成功导入文本文件（共 ${this.scheduleScrapePastedText.length} 字）！`, 'success');
+        };
+        reader.readAsText(file, 'utf-8');
+      }
+    },
+
     openScheduleScrapeModal(conf) {
       this.selectedScrapeConf = conf;
       this.scheduleScrapeMode = 'auto';
