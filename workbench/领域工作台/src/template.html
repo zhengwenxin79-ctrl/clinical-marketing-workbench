@@ -2431,10 +2431,25 @@
 
           <!-- 通道 A 内容 -->
           <div x-show="scheduleScrapeMode === 'auto'" class="space-y-3">
-            <div class="bg-blue-50/60 border border-blue-200 rounded-xl p-3.5 text-xs text-blue-900 leading-relaxed space-y-1">
-              <div class="font-bold">💡 联网深搜说明：</div>
-              <p>系统将调度本地 CodeBuddy CLI 深入检索该会议已公开的详细学术日程、各分论坛专题、报告题目与讲者医院信息。</p>
-              <div class="text-slate-600 font-mono text-[11px] truncate" x-text="'目标网址：' + (selectedScrapeConf.scheduleUrl || selectedScrapeConf.officialUrl || '全网医学会议库定向追踪')"></div>
+            <div class="bg-blue-50/60 border border-blue-200 rounded-xl p-3.5 text-xs text-blue-900 leading-relaxed space-y-2.5">
+              <div class="flex items-center justify-between">
+                <span class="font-bold">🎯 定向日程检索网址（支持手动更正）：</span>
+                <span class="text-[11px] text-blue-700 font-normal">支持互慧网/微官网/公众号日程链接</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <input type="url"
+                       x-model="selectedScrapeConf.scheduleUrl"
+                       placeholder="https://www.hoohui.cn/new-schedule/#/1/home/1833"
+                       class="flex-1 px-3 py-2 bg-white border border-blue-300 rounded-xl text-xs font-mono text-slate-800 focus:ring-2 focus:ring-blue-500 shadow-2xs">
+                <button @click="saveUpdatedScheduleUrl(selectedScrapeConf)"
+                        type="button"
+                        class="px-3.5 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-bold shrink-0 shadow-2xs transition-all">
+                  💾 保存更正
+                </button>
+              </div>
+              <p class="text-[11px] text-slate-500 leading-relaxed">
+                💡 初始检索若给的是综合目录页（如严道医声网），可在此直接更正为真实官方日程微站（如互慧网 <code>https://www.hoohui.cn/new-schedule/#/1/home/1833</code>），Agent 将定向从此网址抓取分论坛与讲者。
+              </p>
             </div>
             <button @click="startScheduleDeepScrape(false)"
                     :disabled="isScheduleScraping"

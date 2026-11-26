@@ -2150,6 +2150,42 @@ window.workbenchApp = function () {
       return '📅 官方详细日程 ↗';
     },
 
+    saveUpdatedScheduleUrl(conf) {
+      if (!conf || !conf.scheduleUrl) return;
+      const cleanUrl = String(conf.scheduleUrl).trim();
+      conf.scheduleUrl = cleanUrl;
+
+      if (!conf.sourceLinks) conf.sourceLinks = [];
+      const schedLink = conf.sourceLinks.find(l => l.type === 'schedule');
+      if (schedLink) {
+        schedLink.url = cleanUrl;
+        schedLink.label = '📅 官方日程微站';
+      } else {
+        conf.sourceLinks.unshift({
+          label: '📅 官方日程微站',
+          url: cleanUrl,
+          type: 'schedule'
+        });
+      }
+
+      if (/hoohui|schedule|program|agenda/i.test(cleanUrl)) {
+        conf.schedulePublished = true;
+        conf.scheduleStatusNote = '已更正为官方日程微站';
+      }
+
+      writeStore('clinical-workbench:conferences:v1', this.conferences);
+      const auditItem = this.auditConferences.find(c => c.id === conf.id || c.title === conf.title);
+      if (auditItem) {
+        auditItem.scheduleUrl = cleanUrl;
+        auditItem.sourceLinks = conf.sourceLinks;
+        auditItem.schedulePublished = conf.schedulePublished;
+        auditItem.scheduleStatusNote = conf.scheduleStatusNote;
+        writeStore('clinical-workbench:audit-conferences:v1', this.auditConferences);
+      }
+
+      this.showToast('✅ 官方日程网址更正成功并已保存！', 'success');
+    },
+
     showScheduleScrapeModal: false,
     selectedScrapeConf: null,
     scheduleScrapeMode: 'auto', // 'auto' | 'paste'
